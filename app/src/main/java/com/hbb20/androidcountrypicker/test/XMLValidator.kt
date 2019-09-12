@@ -34,10 +34,9 @@ class XMLValidator {
         if (xmlPullParser == null) {
             problems.add(
                 Problem(
-                    title = ProblemTitle.MISSING_FILE,
-                    desc = "No file named $fileName found.",
+                    category = ProblemCategory.MISSING_FILE,
                     fileName = fileName,
-                    solution = "Add $fileName file under raw/ directory."
+                    solution = "[$fileName] Add translation file under raw/ directory. (Use [$xmlNewLanguageTemplateFileName] as a template)"
                 )
             )
             return problems
@@ -66,35 +65,33 @@ class XMLValidator {
                         if (alpha2NameCode.isNullOrBlank()) {
                             problems.add(
                                 Problem(
-                                    title = ProblemTitle.MISSING_PROPERTY,
-                                    desc = "Alpha 2 namecode. ",
+                                    category = ProblemCategory.MISSING_PROPERTY,
                                     fileName = fileName,
-                                    solution = "Add Alpha2 name code for Country entry at position #$entryCounter or remove entry."
+                                    solution = "[#$entryCounter] Add Alpha2 name code for entry."
                                 )
                             )
                         } else {
+                            //report extra entries
                             if (entryCounter > nameCodeAndNamePairList.size) {
                                 if (!extraEntriesProblemAdded) {
                                     problems.add(
                                         Problem(
-                                            title = ProblemTitle.EXTRA_ENTRIES,
-                                            desc = "More entries than baselist.",
+                                            category = ProblemCategory.EXTRA_ENTRIES,
                                             fileName = fileName,
-                                            solution = "Remove extra entries: Make sure $fileName is in sync with $xmlBaseListFileName."
+                                            solution = "Remove extra entries: Make sure [$fileName] is in sync with [$xmlBaseListFileName]."
                                         )
                                     )
                                     extraEntriesProblemAdded = true
                                 }
                             } else {
-                                //if there is no extra entry found
+                                //if there is no extra entry found, then check name code is in sync with base list
                                 val baseCountryAlpha2 = nameCodeList[entryCounter]
                                 if (baseCountryAlpha2 != alpha2NameCode) {
                                     problems.add(
                                         Problem(
-                                            title = ProblemTitle.INVALID_VALUE,
-                                            desc = "Found $alpha2NameCode, Expected ${nameCodeAndNamePairList[entryCounter]}",
+                                            category = ProblemCategory.INVALID_ORDER,
                                             fileName = xmlBaseListFileName,
-                                            solution = "$alpha2NameCode instead of ${nameCodeAndNamePairList[entryCounter]}. Correct entries and order."
+                                            solution = "[$alpha2NameCode] found instead of [${nameCodeAndNamePairList[entryCounter]}]. "
                                         )
                                     )
                                 }
@@ -104,19 +101,18 @@ class XMLValidator {
                             if (translation.isNullOrBlank()) {
                                 problems.add(
                                     Problem(
-                                        title = ProblemTitle.MISSING_PROPERTY,
-                                        desc = "Translation for $alpha2NameCode",
+                                        category = ProblemCategory.MISSING_PROPERTY,
                                         fileName = fileName,
-                                        solution = "$alpha2NameCode : Add valid translation"
+                                        solution = "[$alpha2NameCode->$xmlTranslationKey]"
                                     )
                                 )
                             } else if (translation.contains(xmlTodoTag) && fileName != xmlNewLanguageTemplateFileName) {
+                                // if xmlTodoTag was not removed then translation is not update (except template file)
                                 problems.add(
                                     Problem(
-                                        title = ProblemTitle.MISSING_PROPERTY,
-                                        desc = "Translation for $alpha2NameCode",
+                                        category = ProblemCategory.MISSING_PROPERTY,
                                         fileName = fileName,
-                                        solution = "$alpha2NameCode : Remove todo and add translation."
+                                        solution = "[$alpha2NameCode->$xmlTranslationKey] : Remove `$xmlTodoTag` and add valid translation."
                                     )
                                 )
                             }
@@ -125,10 +121,9 @@ class XMLValidator {
                             if (verified.isNullOrBlank()) {
                                 problems.add(
                                     Problem(
-                                        title = ProblemTitle.MISSING_PROPERTY,
-                                        desc = "Verified",
+                                        category = ProblemCategory.MISSING_PROPERTY,
                                         fileName = fileName,
-                                        solution = "$alpha2NameCode : Add `$xmlVerifiedKey` = [Y/N] property for $alpha2NameCode"
+                                        solution = "[$alpha2NameCode->$xmlVerifiedKey]"
                                     )
                                 )
                             } else {
@@ -141,10 +136,9 @@ class XMLValidator {
                                     else -> {
                                         problems.add(
                                             Problem(
-                                                title = ProblemTitle.INVALID_VALUE,
-                                                desc = "$verified is not a valid value for verified.",
+                                                category = ProblemCategory.INVALID_VALUE,
                                                 fileName = fileName,
-                                                solution = "$alpha2NameCode : Set value of $xmlVerifiedKey to [$xmlVerifiedYESValue] if translation is verified otherwise set [$xmlVerifiedNOValue]."
+                                                solution = "[$alpha2NameCode->$xmlVerifiedKey] : Use [$xmlVerifiedYESValue] or [$xmlVerifiedNOValue]."
                                             )
                                         )
                                     }
@@ -155,14 +149,32 @@ class XMLValidator {
                     } else if (name in expectedMessagesKeys) {
                         existingMessageKeys.add(name)
                         val translation = xmlPullParser.getAttributeValue(null, xmlTranslationKey)
+                        if (translation.isNullOrBlank()) {
+                            problems.add(
+                                Problem(
+                                    category = ProblemCategory.MISSING_PROPERTY,
+                                    fileName = fileName,
+                                    solution = "[$name->$xmlTranslationKey]"
+                                )
+                            )
+                        } else if (translation.contains(xmlTodoTag) && fileName != xmlNewLanguageTemplateFileName) {
+                            // if xmlTodoTag was not removed then translation is not update (except template file)
+                            problems.add(
+                                Problem(
+                                    category = ProblemCategory.MISSING_PROPERTY,
+                                    fileName = fileName,
+                                    solution = "[$name->$xmlTranslationKey] : Remove `$xmlTodoTag` and add valid translation."
+                                )
+                            )
+                        }
+
                         val verified = xmlPullParser.getAttributeValue(null, xmlVerifiedKey)
                         if (translation.isNullOrBlank()) {
                             problems.add(
                                 Problem(
-                                    title = ProblemTitle.MISSING_PROPERTY,
-                                    desc = "Missing translation for $name",
+                                    category = ProblemCategory.MISSING_PROPERTY,
                                     fileName = fileName,
-                                    solution = "$name : Add translation"
+                                    solution = "[$name] : Add translation."
                                 )
                             )
                         }
@@ -176,10 +188,9 @@ class XMLValidator {
                             else -> {
                                 problems.add(
                                     Problem(
-                                        title = ProblemTitle.INVALID_VALUE,
-                                        desc = "$verified is not a valid value for verified.",
+                                        category = ProblemCategory.INVALID_VALUE,
                                         fileName = fileName,
-                                        solution = "$name : Set value of $xmlVerifiedKey to [$xmlVerifiedYESValue] if translation is verified otherwise set [$xmlVerifiedNOValue]."
+                                        solution = "[$name->$xmlVerifiedKey] : Use [$xmlVerifiedYESValue] or [$xmlVerifiedNOValue]."
                                     )
                                 )
                             }
@@ -193,10 +204,9 @@ class XMLValidator {
         if (unverifiedTranslationCount > 0 && fileName != xmlNewLanguageTemplateFileName) {
             problems.add(
                 Problem(
-                    title = ProblemTitle.UNVERIFIED_ENTRIES,
-                    desc = "$unverifiedTranslationCount country names are not verified.",
+                    category = ProblemCategory.UNVERIFIED_ENTRIES,
                     fileName = fileName,
-                    solution = "Verify $unverifiedTranslationCount translations and make verified = [Y]"
+                    solution = "[$unverifiedTranslationCount entries] needs verification. Look for entries [verified=\"N\"]"
                 )
             )
         }
@@ -206,10 +216,9 @@ class XMLValidator {
             if (expectedMessageKey !in existingMessageKeys) {
                 problems.add(
                     Problem(
-                        title = ProblemTitle.MISSING_PROPERTY,
-                        desc = "Missing $expectedMessageKey",
+                        category = ProblemCategory.MISSING_PROPERTY,
                         fileName = fileName,
-                        solution = "Add $expectedMessageKey to the `a_message_list`."
+                        solution = "[$expectedMessageKey] : Add message entry."
                     )
                 )
             }
@@ -226,8 +235,7 @@ class XMLValidator {
         if (xmlPullParser == null) {
             problems.add(
                 Problem(
-                    title = ProblemTitle.MISSING_FILE,
-                    desc = "No file named $xmlBaseListFileName found.",
+                    category = ProblemCategory.MISSING_FILE,
                     fileName = xmlBaseListFileName,
                     solution = "Add $xmlBaseListFileName file under raw/ directory."
                 )
@@ -252,10 +260,9 @@ class XMLValidator {
                         if (alpha2NameCode.isNullOrBlank()) {
                             problems.add(
                                 Problem(
-                                    title = ProblemTitle.MISSING_PROPERTY,
-                                    desc = "Alpha 2 namecode. ",
+                                    category = ProblemCategory.MISSING_PROPERTY,
                                     fileName = xmlBaseListFileName,
-                                    solution = "Add Alpha2 name code for Country entry at position #$entryCounter"
+                                    solution = "[#$entryCounter] Add $xmlAlpha2Key for entry"
                                 )
                             )
                         } else {
@@ -263,10 +270,9 @@ class XMLValidator {
                             if (!verifyAlphaCodeRegex(alpha2NameCode, 2)) {
                                 problems.add(
                                     Problem(
-                                        title = ProblemTitle.INVALID_VALUE,
-                                        desc = "Alpha2 name code: $alpha2NameCode.",
+                                        category = ProblemCategory.INVALID_VALUE,
                                         fileName = xmlBaseListFileName,
-                                        solution = "$alpha2NameCode : Correct alpha2 code for Country entry at position #$entryCounter. It should be 2 UPPER case alphabetic characters e.g. `IN`"
+                                        solution = "[$alpha2NameCode] : Correct alpha2 code for entry #$entryCounter."
                                     )
                                 )
                             }
@@ -275,10 +281,9 @@ class XMLValidator {
                             if (nameCodeList.contains(alpha2NameCode)) {
                                 problems.add(
                                     Problem(
-                                        title = ProblemTitle.DUPLICATE_ENTRY,
-                                        desc = "alpha2NameCode : $alpha2NameCode",
+                                        category = ProblemCategory.DUPLICATE_ENTRY,
                                         fileName = xmlBaseListFileName,
-                                        solution = "$alpha2NameCode : Remove duplicate entries."
+                                        solution = "[$alpha2NameCode] : Remove duplicate entries."
                                     )
                                 )
                             }
@@ -288,10 +293,9 @@ class XMLValidator {
                             if (lastCheckedCode > alpha2NameCode) {
                                 problems.add(
                                     Problem(
-                                        title = ProblemTitle.INVALID_ORDER,
-                                        desc = "$alpha2NameCode: ($alpha2NameCode) should appear before ($lastCheckedCode) ",
+                                        category = ProblemCategory.INVALID_ORDER,
                                         fileName = xmlBaseListFileName,
-                                        solution = "Correct orders of country ($alpha2NameCode) and/or ($lastCheckedCode)"
+                                        solution = "Correct order. [$alpha2NameCode] should appear before [$lastCheckedCode]."
                                     )
                                 )
                             }
@@ -301,19 +305,17 @@ class XMLValidator {
                             if (alpha3NameCode.isNullOrBlank()) {
                                 problems.add(
                                     Problem(
-                                        title = ProblemTitle.MISSING_PROPERTY,
-                                        desc = "Alpha3 namecode for $alpha2NameCode",
+                                        category = ProblemCategory.MISSING_PROPERTY,
                                         fileName = xmlBaseListFileName,
-                                        solution = "$alpha2NameCode : Add Alpha 3 name code"
+                                        solution = "[$alpha2NameCode] : Add Alpha 3 name code"
                                     )
                                 )
                             } else if (!verifyAlphaCodeRegex(alpha3NameCode, 3)) {
                                 problems.add(
                                     Problem(
-                                        title = ProblemTitle.INVALID_VALUE,
-                                        desc = "alpha3 name code for $alpha2NameCode",
+                                        category = ProblemCategory.INVALID_VALUE,
                                         fileName = xmlBaseListFileName,
-                                        solution = "$alpha2NameCode : Correct alpha3 code. 3 UPPER case alphabetic characters e.g. `IND`."
+                                        solution = "[$alpha2NameCode] : Correct alpha3 code."
                                     )
                                 )
                             }
@@ -322,10 +324,9 @@ class XMLValidator {
                             if (phoneCode.isNullOrBlank()) {
                                 problems.add(
                                     Problem(
-                                        title = ProblemTitle.MISSING_PROPERTY,
-                                        desc = "PhoneCode",
+                                        category = ProblemCategory.MISSING_PROPERTY,
                                         fileName = xmlBaseListFileName,
-                                        solution = "$alpha2NameCode : Add phoneCode"
+                                        solution = "[$alpha2NameCode] : Add phoneCode"
                                     )
                                 )
                             } else {
@@ -333,10 +334,9 @@ class XMLValidator {
                                 if (numericPhoneCode == null || numericPhoneCode > 999) {
                                     problems.add(
                                         Problem(
-                                            title = ProblemTitle.INVALID_VALUE,
-                                            desc = "Invalid phoneCode: $phoneCode.",
+                                            category = ProblemCategory.INVALID_VALUE,
                                             fileName = xmlBaseListFileName,
-                                            solution = "$alpha2NameCode : Correct phone code. A number < 1000."
+                                            solution = "[$alpha2NameCode] : Correct phone code."
                                         )
                                     )
                                 }
@@ -346,10 +346,9 @@ class XMLValidator {
                             if (englishName.isNullOrBlank()) {
                                 problems.add(
                                     Problem(
-                                        title = ProblemTitle.MISSING_PROPERTY,
-                                        desc = "EnglishName",
+                                        category = ProblemCategory.MISSING_PROPERTY,
                                         fileName = xmlBaseListFileName,
-                                        solution = "$alpha2NameCode : Add English name"
+                                        solution = "[$alpha2NameCode] : Add English name"
                                     )
                                 )
                             }

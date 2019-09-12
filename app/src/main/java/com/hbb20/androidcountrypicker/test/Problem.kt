@@ -1,22 +1,29 @@
 package com.hbb20.androidcountrypicker.test
 
+import com.hbb20.countrypicker.loge
+import com.hbb20.countrypicker.logw
+
 class Problem(
-    val title: ProblemTitle,
-    val desc: String? = null,
+    val category: ProblemCategory,
     val fileName: String,
-    val level: ProblemLevel = ProblemLevel.ERROR,
     val solution: String
 ) {
+    override fun toString(): String {
+        return "$category :: $fileName ::=> $solution"
+    }
 
+    fun log(){
+        if(category == ProblemCategory.UNVERIFIED_ENTRIES){
+            logw(toString())
+        }else{
+            loge(toString())
+        }
+    }
 }
 
-enum class ProblemLevel {
-    ERROR,
-    WARNING
-}
 
 
-enum class ProblemTitle(text: String) {
+enum class ProblemCategory(text: String) {
     INVALID_VALUE("Invalid key for property"),
     MISSING_PROPERTY("Missing Property"),
     MISSING_FILE("Missing File"),

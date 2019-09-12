@@ -33,6 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/test_pass"
+        android:textColor="@color/test_pass_color"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/problemsRecyclerView"
         app:layout_constraintEnd_toEndOf="parent"

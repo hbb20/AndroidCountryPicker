@@ -38,7 +38,7 @@ class TestActivity : AppCompatActivity() {
         ).show()
         logd("List of problems")
         problems.forEach {
-            logd(it.solution)
+            it.log()
         }
     }
 
