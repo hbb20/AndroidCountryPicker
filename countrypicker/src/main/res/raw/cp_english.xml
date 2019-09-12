@@ -13,12 +13,8 @@
         <dialog_title
             translation="Select a country"
             verified="Y" />
-        <!--"Select a country"-->
-        <empty_selection_message_long
-            translation="Select a country"
-            verified="Y" />
         <!--"Country"-->
-        <empty_selection_message_short
+        <empty_selection_message
             translation="Country"
             verified="Y" />
     </a_message_list>

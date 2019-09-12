@@ -93,7 +93,7 @@ fun loadDataStoreFromXML(
 fun loadBaseList(context: Context) {
     if (!::baseList.isInitialized) {
         val countryList = mutableMapOf<String, BaseCountry>()
-        val xmlPullParser = getRawXMLPullParser(context = context, fileName = baseListFileName)!!
+        val xmlPullParser = getRawXMLPullParser(context = context, fileName = xmlBaseListFileName)!!
         var event = xmlPullParser.eventType
         while (event != XmlPullParser.END_DOCUMENT) {
             val name = xmlPullParser.name

@@ -11,16 +11,22 @@ class XMLValidator {
     fun checkAllXMLFiles(context: Context): List<Problem> {
         val problems = mutableListOf<Problem>()
         problems.addAll(checkBaseList(context))
-        problems.addAll(checkTranslationFile(context, CPLanguage.ENGLISH, nameCodeList))
+        problems.addAll(
+            checkTranslationFile(
+                context,
+                CPLanguage.ENGLISH.translationFileName,
+                nameCodeList
+            )
+        )
+        problems.addAll(checkTranslationFile(context, xmlNewLanguageTemplateFileName, nameCodeList))
         return problems
     }
 
     private fun checkTranslationFile(
         context: Context,
-        language: CPLanguage,
+        fileName: String,
         nameCodeAndNamePairList: List<String>
     ): List<Problem> {
-        val fileName = language.translationFileName
         val problems = mutableListOf<Problem>()
         val xmlPullParser = getRawXMLPullParser(context = context, fileName = fileName)
 
@@ -31,7 +37,7 @@ class XMLValidator {
                     title = ProblemTitle.MISSING_FILE,
                     desc = "No file named $fileName found.",
                     fileName = fileName,
-                    solution = "$language: Add $fileName file under raw/ directory."
+                    solution = "Add $fileName file under raw/ directory."
                 )
             )
             return problems
@@ -40,13 +46,12 @@ class XMLValidator {
         var extraEntriesProblemAdded = false
         var entryCounter = 0
         var unverifiedTranslationCount = 0
-        var existingMessageKeys = mutableSetOf<String>()
+        val existingMessageKeys = mutableSetOf<String>()
         val expectedMessagesKeys = setOf(
             xmlDialogNoResultAckMessageKey,
             xmlDialogSearchHintMessageKey,
             xmlDialogTitleKey,
-            xmlEmptySelectionMessageLongKey,
-            xmlEmptySelectionMessageShortKey
+            xmlEmptySelectionText
         )
         while (event != XmlPullParser.END_DOCUMENT) {
             val name = xmlPullParser.name
@@ -75,7 +80,7 @@ class XMLValidator {
                                             title = ProblemTitle.EXTRA_ENTRIES,
                                             desc = "More entries than baselist.",
                                             fileName = fileName,
-                                            solution = "Remove extra entries: Make sure $fileName is in sync with $baseListFileName."
+                                            solution = "Remove extra entries: Make sure $fileName is in sync with $xmlBaseListFileName."
                                         )
                                     )
                                     extraEntriesProblemAdded = true
@@ -88,7 +93,7 @@ class XMLValidator {
                                         Problem(
                                             title = ProblemTitle.INVALID_VALUE,
                                             desc = "Found $alpha2NameCode, Expected ${nameCodeAndNamePairList[entryCounter]}",
-                                            fileName = baseListFileName,
+                                            fileName = xmlBaseListFileName,
                                             solution = "$alpha2NameCode instead of ${nameCodeAndNamePairList[entryCounter]}. Correct entries and order."
                                         )
                                     )
@@ -102,7 +107,16 @@ class XMLValidator {
                                         title = ProblemTitle.MISSING_PROPERTY,
                                         desc = "Translation for $alpha2NameCode",
                                         fileName = fileName,
-                                        solution = "$alpha2NameCode : Add translation"
+                                        solution = "$alpha2NameCode : Add valid translation"
+                                    )
+                                )
+                            } else if (translation.contains(xmlTodoTag) && fileName != xmlNewLanguageTemplateFileName) {
+                                problems.add(
+                                    Problem(
+                                        title = ProblemTitle.MISSING_PROPERTY,
+                                        desc = "Translation for $alpha2NameCode",
+                                        fileName = fileName,
+                                        solution = "$alpha2NameCode : Remove todo and add translation."
                                     )
                                 )
                             }
@@ -176,7 +190,7 @@ class XMLValidator {
         }
 
         //unverified translation
-        if (unverifiedTranslationCount > 0) {
+        if (unverifiedTranslationCount > 0 && fileName != xmlNewLanguageTemplateFileName) {
             problems.add(
                 Problem(
                     title = ProblemTitle.UNVERIFIED_ENTRIES,
@@ -188,8 +202,8 @@ class XMLValidator {
         }
 
         //missing message entries
-        for(expectedMessageKey in expectedMessagesKeys){
-            if(expectedMessageKey  !in existingMessageKeys){
+        for (expectedMessageKey in expectedMessagesKeys) {
+            if (expectedMessageKey !in existingMessageKeys) {
                 problems.add(
                     Problem(
                         title = ProblemTitle.MISSING_PROPERTY,
@@ -206,16 +220,16 @@ class XMLValidator {
 
     private fun checkBaseList(context: Context): List<Problem> {
         val problems = mutableListOf<Problem>()
-        val xmlPullParser = getRawXMLPullParser(context = context, fileName = baseListFileName)
+        val xmlPullParser = getRawXMLPullParser(context = context, fileName = xmlBaseListFileName)
 
         //if pullParser is null means file is missing.
         if (xmlPullParser == null) {
             problems.add(
                 Problem(
                     title = ProblemTitle.MISSING_FILE,
-                    desc = "No file named $baseListFileName found.",
-                    fileName = baseListFileName,
-                    solution = "Add $baseListFileName file under raw/ directory."
+                    desc = "No file named $xmlBaseListFileName found.",
+                    fileName = xmlBaseListFileName,
+                    solution = "Add $xmlBaseListFileName file under raw/ directory."
                 )
             )
             return problems
@@ -240,7 +254,7 @@ class XMLValidator {
                                 Problem(
                                     title = ProblemTitle.MISSING_PROPERTY,
                                     desc = "Alpha 2 namecode. ",
-                                    fileName = baseListFileName,
+                                    fileName = xmlBaseListFileName,
                                     solution = "Add Alpha2 name code for Country entry at position #$entryCounter"
                                 )
                             )
@@ -251,7 +265,7 @@ class XMLValidator {
                                     Problem(
                                         title = ProblemTitle.INVALID_VALUE,
                                         desc = "Alpha2 name code: $alpha2NameCode.",
-                                        fileName = baseListFileName,
+                                        fileName = xmlBaseListFileName,
                                         solution = "$alpha2NameCode : Correct alpha2 code for Country entry at position #$entryCounter. It should be 2 UPPER case alphabetic characters e.g. `IN`"
                                     )
                                 )
@@ -263,7 +277,7 @@ class XMLValidator {
                                     Problem(
                                         title = ProblemTitle.DUPLICATE_ENTRY,
                                         desc = "alpha2NameCode : $alpha2NameCode",
-                                        fileName = baseListFileName,
+                                        fileName = xmlBaseListFileName,
                                         solution = "$alpha2NameCode : Remove duplicate entries."
                                     )
                                 )
@@ -276,7 +290,7 @@ class XMLValidator {
                                     Problem(
                                         title = ProblemTitle.INVALID_ORDER,
                                         desc = "$alpha2NameCode: ($alpha2NameCode) should appear before ($lastCheckedCode) ",
-                                        fileName = baseListFileName,
+                                        fileName = xmlBaseListFileName,
                                         solution = "Correct orders of country ($alpha2NameCode) and/or ($lastCheckedCode)"
                                     )
                                 )
@@ -289,7 +303,7 @@ class XMLValidator {
                                     Problem(
                                         title = ProblemTitle.MISSING_PROPERTY,
                                         desc = "Alpha3 namecode for $alpha2NameCode",
-                                        fileName = baseListFileName,
+                                        fileName = xmlBaseListFileName,
                                         solution = "$alpha2NameCode : Add Alpha 3 name code"
                                     )
                                 )
@@ -298,7 +312,7 @@ class XMLValidator {
                                     Problem(
                                         title = ProblemTitle.INVALID_VALUE,
                                         desc = "alpha3 name code for $alpha2NameCode",
-                                        fileName = baseListFileName,
+                                        fileName = xmlBaseListFileName,
                                         solution = "$alpha2NameCode : Correct alpha3 code. 3 UPPER case alphabetic characters e.g. `IND`."
                                     )
                                 )
@@ -310,7 +324,7 @@ class XMLValidator {
                                     Problem(
                                         title = ProblemTitle.MISSING_PROPERTY,
                                         desc = "PhoneCode",
-                                        fileName = baseListFileName,
+                                        fileName = xmlBaseListFileName,
                                         solution = "$alpha2NameCode : Add phoneCode"
                                     )
                                 )
@@ -321,7 +335,7 @@ class XMLValidator {
                                         Problem(
                                             title = ProblemTitle.INVALID_VALUE,
                                             desc = "Invalid phoneCode: $phoneCode.",
-                                            fileName = baseListFileName,
+                                            fileName = xmlBaseListFileName,
                                             solution = "$alpha2NameCode : Correct phone code. A number < 1000."
                                         )
                                     )
@@ -334,7 +348,7 @@ class XMLValidator {
                                     Problem(
                                         title = ProblemTitle.MISSING_PROPERTY,
                                         desc = "EnglishName",
-                                        fileName = baseListFileName,
+                                        fileName = xmlBaseListFileName,
                                         solution = "$alpha2NameCode : Add English name"
                                     )
                                 )

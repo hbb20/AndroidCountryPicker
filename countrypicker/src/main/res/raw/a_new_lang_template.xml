@@ -1,1221 +1,1234 @@
 <?xml version="1.0" encoding="utf-8"?>
 <data>
-    <messages>
-        <ccp_dialog_title translation="todo: update" />
-        <ccp_dialog_search_hint_message translation="todo: update" />
-        <ccp_dialog_no_result_ack_message translation='todo: update' />
-    </messages>
+    <a_message_list>
+        <!--"No matching country found"-->
+        <dialog_no_result_ack_message
+            translation="__TODO__ Add translation of `No matching country found`"
+            verified="N" />
+        <!--"Search..."-->
+        <dialog_search_hint_message
+            translation="__TODO__ Add translation of `Search...`"
+            verified="N" />
+        <!--"Select a country"-->
+        <dialog_title
+            translation="__TODO__ Add translation of `Select a country`"
+            verified="N" />
+        <!--"Country"-->
+        <empty_selection_message
+            translation="__TODO__ Add translation of `Country`"
+            verified="N" />
+    </a_message_list>
 
     <countries>
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Andorra"
-            name_code="ad"
-            phone_code="376" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="United Arab Emirates (UAE)"
-            name_code="ae"
-            phone_code="971" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Afghanistan"
-            name_code="af"
-            phone_code="93" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Antigua and Barbuda"
-            name_code="ag"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Anguilla"
-            name_code="ai"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Albania"
-            name_code="al"
-            phone_code="355" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Armenia"
-            name_code="am"
-            phone_code="374" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Angola"
-            name_code="ao"
-            phone_code="244" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Antarctica"
-            name_code="aq"
-            phone_code="672" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Argentina"
-            name_code="ar"
-            phone_code="54" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="American Samoa"
-            name_code="as"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Austria"
-            name_code="at"
-            phone_code="43" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Australia"
-            name_code="au"
-            phone_code="61" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Aruba"
-            name_code="aw"
-            phone_code="297" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Åland Islands"
-            name_code="ax"
-            phone_code="358" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Azerbaijan"
-            name_code="az"
-            phone_code="994" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Bosnia And Herzegovina"
-            name_code="ba"
-            phone_code="387" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Barbados"
-            name_code="bb"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Bangladesh"
-            name_code="bd"
-            phone_code="880" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Belgium"
-            name_code="be"
-            phone_code="32" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Burkina Faso"
-            name_code="bf"
-            phone_code="226" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Bulgaria"
-            name_code="bg"
-            phone_code="359" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Bahrain"
-            name_code="bh"
-            phone_code="973" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Burundi"
-            name_code="bi"
-            phone_code="257" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Benin"
-            name_code="bj"
-            phone_code="229" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Saint Barthélemy"
-            name_code="bl"
-            phone_code="590" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Bermuda"
-            name_code="bm"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Brunei Darussalam"
-            name_code="bn"
-            phone_code="673" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Bolivia, Plurinational State Of"
-            name_code="bo"
-            phone_code="591" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Brazil"
-            name_code="br"
-            phone_code="55" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Bahamas"
-            name_code="bs"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Bhutan"
-            name_code="bt"
-            phone_code="975" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Botswana"
-            name_code="bw"
-            phone_code="267" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Belarus"
-            name_code="by"
-            phone_code="375" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Belize"
-            name_code="bz"
-            phone_code="501" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Canada"
-            name_code="ca"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Cocos (keeling) Islands"
-            name_code="cc"
-            phone_code="61" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Congo, The Democratic Republic Of The"
-            name_code="cd"
-            phone_code="243" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Central African Republic"
-            name_code="cf"
-            phone_code="236" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Congo"
-            name_code="cg"
-            phone_code="242" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Switzerland"
-            name_code="ch"
-            phone_code="41" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Côte D'ivoire"
-            name_code="ci"
-            phone_code="225" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Cook Islands"
-            name_code="ck"
-            phone_code="682" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Chile"
-            name_code="cl"
-            phone_code="56" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Cameroon"
-            name_code="cm"
-            phone_code="237" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="China"
-            name_code="cn"
-            phone_code="86" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Colombia"
-            name_code="co"
-            phone_code="57" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Costa Rica"
-            name_code="cr"
-            phone_code="506" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Cuba"
-            name_code="cu"
-            phone_code="53" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Cape Verde"
-            name_code="cv"
-            phone_code="238" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Curaçao"
-            name_code="cw"
-            phone_code="599" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Christmas Island"
-            name_code="cx"
-            phone_code="61" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Cyprus"
-            name_code="cy"
-            phone_code="357" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Czech Republic"
-            name_code="cz"
-            phone_code="420" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Germany"
-            name_code="de"
-            phone_code="49" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Djibouti"
-            name_code="dj"
-            phone_code="253" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Denmark"
-            name_code="dk"
-            phone_code="45" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Dominica"
-            name_code="dm"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Dominican Republic"
-            name_code="do"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Algeria"
-            name_code="dz"
-            phone_code="213" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Ecuador"
-            name_code="ec"
-            phone_code="593" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Estonia"
-            name_code="ee"
-            phone_code="372" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Egypt"
-            name_code="eg"
-            phone_code="20" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Eritrea"
-            name_code="er"
-            phone_code="291" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Spain"
-            name_code="es"
-            phone_code="34" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Ethiopia"
-            name_code="et"
-            phone_code="251" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Finland"
-            name_code="fi"
-            phone_code="358" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Fiji"
-            name_code="fj"
-            phone_code="679" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Falkland Islands (malvinas)"
-            name_code="fk"
-            phone_code="500" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Micronesia, Federated States Of"
-            name_code="fm"
-            phone_code="691" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Faroe Islands"
-            name_code="fo"
-            phone_code="298" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="France"
-            name_code="fr"
-            phone_code="33" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Gabon"
-            name_code="ga"
-            phone_code="241" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="United Kingdom"
-            name_code="gb"
-            phone_code="44" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Grenada"
-            name_code="gd"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Georgia"
-            name_code="ge"
-            phone_code="995" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="French Guyana"
-            name_code="gf"
-            phone_code="594" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Guernsey"
-            name_code="gg"
-            phone_code="44" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Ghana"
-            name_code="gh"
-            phone_code="233" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Gibraltar"
-            name_code="gi"
-            phone_code="350" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Greenland"
-            name_code="gl"
-            phone_code="299" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Gambia"
-            name_code="gm"
-            phone_code="220" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Guinea"
-            name_code="gn"
-            phone_code="224" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Guadeloupe"
-            name_code="gp"
-            phone_code="590" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Equatorial Guinea"
-            name_code="gq"
-            phone_code="240" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Greece"
-            name_code="gr"
-            phone_code="30" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Guatemala"
-            name_code="gt"
-            phone_code="502" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Guam"
-            name_code="gu"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Guinea-bissau"
-            name_code="gw"
-            phone_code="245" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Guyana"
-            name_code="gy"
-            phone_code="592" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Hong Kong"
-            name_code="hk"
-            phone_code="852" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Honduras"
-            name_code="hn"
-            phone_code="504" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Croatia"
-            name_code="hr"
-            phone_code="385" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Haiti"
-            name_code="ht"
-            phone_code="509" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Hungary"
-            name_code="hu"
-            phone_code="36" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Indonesia"
-            name_code="id"
-            phone_code="62" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Ireland"
-            name_code="ie"
-            phone_code="353" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Israel"
-            name_code="il"
-            phone_code="972" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Isle Of Man"
-            name_code="im"
-            phone_code="44" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Iceland"
-            name_code="is"
-            phone_code="354" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="India"
-            name_code="in"
-            phone_code="91" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="British Indian Ocean Territory"
-            name_code="io"
-            phone_code="246" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Iraq"
-            name_code="iq"
-            phone_code="964" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Iran, Islamic Republic Of"
-            name_code="ir"
-            phone_code="98" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Italy"
-            name_code="it"
-            phone_code="39" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Jersey"
-            name_code="je"
-            phone_code="44" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Jamaica"
-            name_code="jm"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Jordan"
-            name_code="jo"
-            phone_code="962" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Japan"
-            name_code="jp"
-            phone_code="81" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Kenya"
-            name_code="ke"
-            phone_code="254" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Kyrgyzstan"
-            name_code="kg"
-            phone_code="996" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Cambodia"
-            name_code="kh"
-            phone_code="855" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Kiribati"
-            name_code="ki"
-            phone_code="686" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Comoros"
-            name_code="km"
-            phone_code="269" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Saint Kitts and Nevis"
-            name_code="kn"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="North Korea"
-            name_code="kp"
-            phone_code="850" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="South Korea"
-            name_code="kr"
-            phone_code="82" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Kuwait"
-            name_code="kw"
-            phone_code="965" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Cayman Islands"
-            name_code="ky"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Kazakhstan"
-            name_code="kz"
-            phone_code="7" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Lao People's Democratic Republic"
-            name_code="la"
-            phone_code="856" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Lebanon"
-            name_code="lb"
-            phone_code="961" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Saint Lucia"
-            name_code="lc"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Liechtenstein"
-            name_code="li"
-            phone_code="423" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Sri Lanka"
-            name_code="lk"
-            phone_code="94" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Liberia"
-            name_code="lr"
-            phone_code="231" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Lesotho"
-            name_code="ls"
-            phone_code="266" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Lithuania"
-            name_code="lt"
-            phone_code="370" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Luxembourg"
-            name_code="lu"
-            phone_code="352" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Latvia"
-            name_code="lv"
-            phone_code="371" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Libya"
-            name_code="ly"
-            phone_code="218" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Morocco"
-            name_code="ma"
-            phone_code="212" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Monaco"
-            name_code="mc"
-            phone_code="377" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Moldova, Republic Of"
-            name_code="md"
-            phone_code="373" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Montenegro"
-            name_code="me"
-            phone_code="382" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Saint Martin"
-            name_code="mf"
-            phone_code="590" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Madagascar"
-            name_code="mg"
-            phone_code="261" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Marshall Islands"
-            name_code="mh"
-            phone_code="692" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Macedonia (FYROM)"
-            name_code="mk"
-            phone_code="389" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Mali"
-            name_code="ml"
-            phone_code="223" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Myanmar"
-            name_code="mm"
-            phone_code="95" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Mongolia"
-            name_code="mn"
-            phone_code="976" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Macau"
-            name_code="mo"
-            phone_code="853" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Northern Mariana Islands"
-            name_code="mp"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Martinique"
-            name_code="mq"
-            phone_code="596" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Mauritania"
-            name_code="mr"
-            phone_code="222" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Montserrat"
-            name_code="ms"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Malta"
-            name_code="mt"
-            phone_code="356" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Mauritius"
-            name_code="mu"
-            phone_code="230" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Maldives"
-            name_code="mv"
-            phone_code="960" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Malawi"
-            name_code="mw"
-            phone_code="265" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Mexico"
-            name_code="mx"
-            phone_code="52" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Malaysia"
-            name_code="my"
-            phone_code="60" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Mozambique"
-            name_code="mz"
-            phone_code="258" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Namibia"
-            name_code="na"
-            phone_code="264" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="New Caledonia"
-            name_code="nc"
-            phone_code="687" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Niger"
-            name_code="ne"
-            phone_code="227" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Norfolk Islands"
-            name_code="nf"
-            phone_code="672" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Nigeria"
-            name_code="ng"
-            phone_code="234" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Nicaragua"
-            name_code="ni"
-            phone_code="505" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Netherlands"
-            name_code="nl"
-            phone_code="31" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Norway"
-            name_code="no"
-            phone_code="47" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Nepal"
-            name_code="np"
-            phone_code="977" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Nauru"
-            name_code="nr"
-            phone_code="674" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Niue"
-            name_code="nu"
-            phone_code="683" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="New Zealand"
-            name_code="nz"
-            phone_code="64" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Oman"
-            name_code="om"
-            phone_code="968" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Panama"
-            name_code="pa"
-            phone_code="507" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Peru"
-            name_code="pe"
-            phone_code="51" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="French Polynesia"
-            name_code="pf"
-            phone_code="689" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Papua New Guinea"
-            name_code="pg"
-            phone_code="675" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Philippines"
-            name_code="ph"
-            phone_code="63" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Pakistan"
-            name_code="pk"
-            phone_code="92" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Poland"
-            name_code="pl"
-            phone_code="48" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Saint Pierre And Miquelon"
-            name_code="pm"
-            phone_code="508" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Pitcairn Islands"
-            name_code="pn"
-            phone_code="870" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Puerto Rico"
-            name_code="pr"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Palestine"
-            name_code="ps"
-            phone_code="970" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Portugal"
-            name_code="pt"
-            phone_code="351" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Palau"
-            name_code="pw"
-            phone_code="680" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Paraguay"
-            name_code="py"
-            phone_code="595" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Qatar"
-            name_code="qa"
-            phone_code="974" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Réunion"
-            name_code="re"
-            phone_code="262" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Romania"
-            name_code="ro"
-            phone_code="40" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Serbia"
-            name_code="rs"
-            phone_code="381" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Russian Federation"
-            name_code="ru"
-            phone_code="7" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Rwanda"
-            name_code="rw"
-            phone_code="250" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Saudi Arabia"
-            name_code="sa"
-            phone_code="966" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Solomon Islands"
-            name_code="sb"
-            phone_code="677" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Seychelles"
-            name_code="sc"
-            phone_code="248" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Sudan"
-            name_code="sd"
-            phone_code="249" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Sweden"
-            name_code="se"
-            phone_code="46" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Singapore"
-            name_code="sg"
-            phone_code="65" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Saint Helena, Ascension And Tristan Da Cunha"
-            name_code="sh"
-            phone_code="290" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Slovenia"
-            name_code="si"
-            phone_code="386" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Slovakia"
-            name_code="sk"
-            phone_code="421" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Sierra Leone"
-            name_code="sl"
-            phone_code="232" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="San Marino"
-            name_code="sm"
-            phone_code="378" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Senegal"
-            name_code="sn"
-            phone_code="221" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Somalia"
-            name_code="so"
-            phone_code="252" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Suriname"
-            name_code="sr"
-            phone_code="597" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="South Sudan"
-            name_code="ss"
-            phone_code="211" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Sao Tome And Principe"
-            name_code="st"
-            phone_code="239" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="El Salvador"
-            name_code="sv"
-            phone_code="503" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Sint Maarten"
-            name_code="sx"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Syrian Arab Republic"
-            name_code="sy"
-            phone_code="963" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Swaziland"
-            name_code="sz"
-            phone_code="268" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Turks and Caicos Islands"
-            name_code="tc"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Chad"
-            name_code="td"
-            phone_code="235" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Togo"
-            name_code="tg"
-            phone_code="228" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Thailand"
-            name_code="th"
-            phone_code="66" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Tajikistan"
-            name_code="tj"
-            phone_code="992" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Tokelau"
-            name_code="tk"
-            phone_code="690" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Timor-leste"
-            name_code="tl"
-            phone_code="670" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Turkmenistan"
-            name_code="tm"
-            phone_code="993" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Tunisia"
-            name_code="tn"
-            phone_code="216" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Tonga"
-            name_code="to"
-            phone_code="676" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Turkey"
-            name_code="tr"
-            phone_code="90" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Trinidad &amp; Tobago"
-            name_code="tt"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Tuvalu"
-            name_code="tv"
-            phone_code="688" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Taiwan"
-            name_code="tw"
-            phone_code="886" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Tanzania, United Republic Of"
-            name_code="tz"
-            phone_code="255" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Ukraine"
-            name_code="ua"
-            phone_code="380" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Uganda"
-            name_code="ug"
-            phone_code="256" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="United States (USA)"
-            name_code="us"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Uruguay"
-            name_code="uy"
-            phone_code="598" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Uzbekistan"
-            name_code="uz"
-            phone_code="998" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Holy See (vatican City State)"
-            name_code="va"
-            phone_code="379" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Saint Vincent &amp; The Grenadines"
-            name_code="vc"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Venezuela, Bolivarian Republic Of"
-            name_code="ve"
-            phone_code="58" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="British Virgin Islands"
-            name_code="vg"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="US Virgin Islands"
-            name_code="vi"
-            phone_code="1" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Vietnam"
-            name_code="vn"
-            phone_code="84" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Vanuatu"
-            name_code="vu"
-            phone_code="678" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Wallis And Futuna"
-            name_code="wf"
-            phone_code="681" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Samoa"
-            name_code="ws"
-            phone_code="685" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Kosovo"
-            name_code="xk"
-            phone_code="383" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Yemen"
-            name_code="ye"
-            phone_code="967" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Mayotte"
-            name_code="yt"
-            phone_code="262" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="South Africa"
-            name_code="za"
-            phone_code="27" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Zambia"
-            name_code="zm"
-            phone_code="260" />
-        <country
-            name="TODO: replace with  translated country name"
-            english_name="Zimbabwe"
-            name_code="zw"
-            phone_code="263" />
+        <!--Andorra-->
+        <country
+            a2="AD"
+            translation="__TODO__ Add translation of `Andorra`"
+            verified="N" />
+        <!--United Arab Emirates (UAE)-->
+        <country
+            a2="AE"
+            translation="__TODO__ Add translation of `United Arab Emirates (UAE)`"
+            verified="N" />
+        <!--Afghanistan-->
+        <country
+            a2="AF"
+            translation="__TODO__ Add translation of `Afghanistan`"
+            verified="N" />
+        <!--Antigua and Barbuda-->
+        <country
+            a2="AG"
+            translation="__TODO__ Add translation of `Antigua and Barbuda`"
+            verified="N" />
+        <!--Anguilla-->
+        <country
+            a2="AI"
+            translation="__TODO__ Add translation of `Anguilla`"
+            verified="N" />
+        <!--Albania-->
+        <country
+            a2="AL"
+            translation="__TODO__ Add translation of `Albania`"
+            verified="N" />
+        <!--Armenia-->
+        <country
+            a2="AM"
+            translation="__TODO__ Add translation of `Armenia`"
+            verified="N" />
+        <!--Angola-->
+        <country
+            a2="AO"
+            translation="__TODO__ Add translation of `Angola`"
+            verified="N" />
+        <!--Antarctica-->
+        <country
+            a2="AQ"
+            translation="__TODO__ Add translation of `Antarctica`"
+            verified="N" />
+        <!--Argentina-->
+        <country
+            a2="AR"
+            translation="__TODO__ Add translation of `Argentina`"
+            verified="N" />
+        <!--American Samoa-->
+        <country
+            a2="AS"
+            translation="__TODO__ Add translation of `American Samoa`"
+            verified="N" />
+        <!--Austria-->
+        <country
+            a2="AT"
+            translation="__TODO__ Add translation of `Austria`"
+            verified="N" />
+        <!--Australia-->
+        <country
+            a2="AU"
+            translation="__TODO__ Add translation of `Australia`"
+            verified="N" />
+        <!--Aruba-->
+        <country
+            a2="AW"
+            translation="__TODO__ Add translation of `Aruba`"
+            verified="N" />
+        <!--Åland Islands-->
+        <country
+            a2="AX"
+            translation="__TODO__ Add translation of `Åland Islands`"
+            verified="N" />
+        <!--Azerbaijan-->
+        <country
+            a2="AZ"
+            translation="__TODO__ Add translation of `Azerbaijan`"
+            verified="N" />
+        <!--Bosnia And Herzegovina-->
+        <country
+            a2="BA"
+            translation="__TODO__ Add translation of `Bosnia And Herzegovina`"
+            verified="N" />
+        <!--Barbados-->
+        <country
+            a2="BB"
+            translation="__TODO__ Add translation of `Barbados`"
+            verified="N" />
+        <!--Bangladesh-->
+        <country
+            a2="BD"
+            translation="__TODO__ Add translation of `Bangladesh`"
+            verified="N" />
+        <!--Belgium-->
+        <country
+            a2="BE"
+            translation="__TODO__ Add translation of `Belgium`"
+            verified="N" />
+        <!--Burkina Faso-->
+        <country
+            a2="BF"
+            translation="__TODO__ Add translation of `Burkina Faso`"
+            verified="N" />
+        <!--Bulgaria-->
+        <country
+            a2="BG"
+            translation="__TODO__ Add translation of `Bulgaria`"
+            verified="N" />
+        <!--Bahrain-->
+        <country
+            a2="BH"
+            translation="__TODO__ Add translation of `Bahrain`"
+            verified="N" />
+        <!--Burundi-->
+        <country
+            a2="BI"
+            translation="__TODO__ Add translation of `Burundi`"
+            verified="N" />
+        <!--Benin-->
+        <country
+            a2="BJ"
+            translation="__TODO__ Add translation of `Benin`"
+            verified="N" />
+        <!--Saint Barthélemy-->
+        <country
+            a2="BL"
+            translation="__TODO__ Add translation of `Saint Barthélemy`"
+            verified="N" />
+        <!--Bermuda-->
+        <country
+            a2="BM"
+            translation="__TODO__ Add translation of `Bermuda`"
+            verified="N" />
+        <!--Brunei Darussalam-->
+        <country
+            a2="BN"
+            translation="__TODO__ Add translation of `Brunei Darussalam`"
+            verified="N" />
+        <!--Bolivia, Plurinational State Of-->
+        <country
+            a2="BO"
+            translation="__TODO__ Add translation of `Bolivia, Plurinational State Of`"
+            verified="N" />
+        <!--Brazil-->
+        <country
+            a2="BR"
+            translation="__TODO__ Add translation of `Brazil`"
+            verified="N" />
+        <!--Bahamas-->
+        <country
+            a2="BS"
+            translation="__TODO__ Add translation of `Bahamas`"
+            verified="N" />
+        <!--Bhutan-->
+        <country
+            a2="BT"
+            translation="__TODO__ Add translation of `Bhutan`"
+            verified="N" />
+        <!--Botswana-->
+        <country
+            a2="BW"
+            translation="__TODO__ Add translation of `Botswana`"
+            verified="N" />
+        <!--Belarus-->
+        <country
+            a2="BY"
+            translation="__TODO__ Add translation of `Belarus`"
+            verified="N" />
+        <!--Belize-->
+        <country
+            a2="BZ"
+            translation="__TODO__ Add translation of `Belize`"
+            verified="N" />
+        <!--Canada-->
+        <country
+            a2="CA"
+            translation="__TODO__ Add translation of `Canada`"
+            verified="N" />
+        <!--Cocos (keeling) Islands-->
+        <country
+            a2="CC"
+            translation="__TODO__ Add translation of `Cocos (keeling) Islands`"
+            verified="N" />
+        <!--Congo, The Democratic Republic Of The-->
+        <country
+            a2="CD"
+            translation="__TODO__ Add translation of `Congo, The Democratic Republic Of The`"
+            verified="N" />
+        <!--Central African Republic-->
+        <country
+            a2="CF"
+            translation="__TODO__ Add translation of `Central African Republic`"
+            verified="N" />
+        <!--Congo-->
+        <country
+            a2="CG"
+            translation="__TODO__ Add translation of `Congo`"
+            verified="N" />
+        <!--Switzerland-->
+        <country
+            a2="CH"
+            translation="__TODO__ Add translation of `Switzerland`"
+            verified="N" />
+        <!--Côte D'ivoire-->
+        <country
+            a2="CI"
+            translation="__TODO__ Add translation of `Côte D'ivoire`"
+            verified="N" />
+        <!--Cook Islands-->
+        <country
+            a2="CK"
+            translation="__TODO__ Add translation of `Cook Islands`"
+            verified="N" />
+        <!--Chile-->
+        <country
+            a2="CL"
+            translation="__TODO__ Add translation of `Chile`"
+            verified="N" />
+        <!--Cameroon-->
+        <country
+            a2="CM"
+            translation="__TODO__ Add translation of `Cameroon`"
+            verified="N" />
+        <!--China-->
+        <country
+            a2="CN"
+            translation="__TODO__ Add translation of `China`"
+            verified="N" />
+        <!--Colombia-->
+        <country
+            a2="CO"
+            translation="__TODO__ Add translation of `Colombia`"
+            verified="N" />
+        <!--Costa Rica-->
+        <country
+            a2="CR"
+            translation="__TODO__ Add translation of `Costa Rica`"
+            verified="N" />
+        <!--Cuba-->
+        <country
+            a2="CU"
+            translation="__TODO__ Add translation of `Cuba`"
+            verified="N" />
+        <!--Cape Verde-->
+        <country
+            a2="CV"
+            translation="__TODO__ Add translation of `Cape Verde`"
+            verified="N" />
+        <!--Curaçao-->
+        <country
+            a2="CW"
+            translation="__TODO__ Add translation of `Curaçao`"
+            verified="N" />
+        <!--Christmas Island-->
+        <country
+            a2="CX"
+            translation="__TODO__ Add translation of `Christmas Island`"
+            verified="N" />
+        <!--Cyprus-->
+        <country
+            a2="CY"
+            translation="__TODO__ Add translation of `Cyprus`"
+            verified="N" />
+        <!--Czech Republic-->
+        <country
+            a2="CZ"
+            translation="__TODO__ Add translation of `Czech Republic`"
+            verified="N" />
+        <!--Germany-->
+        <country
+            a2="DE"
+            translation="__TODO__ Add translation of `Germany`"
+            verified="N" />
+        <!--Djibouti-->
+        <country
+            a2="DJ"
+            translation="__TODO__ Add translation of `Djibouti`"
+            verified="N" />
+        <!--Denmark-->
+        <country
+            a2="DK"
+            translation="__TODO__ Add translation of `Denmark`"
+            verified="N" />
+        <!--Dominica-->
+        <country
+            a2="DM"
+            translation="__TODO__ Add translation of `Dominica`"
+            verified="N" />
+        <!--Dominican Republic-->
+        <country
+            a2="DO"
+            translation="__TODO__ Add translation of `Dominican Republic`"
+            verified="N" />
+        <!--Algeria-->
+        <country
+            a2="DZ"
+            translation="__TODO__ Add translation of `Algeria`"
+            verified="N" />
+        <!--Ecuador-->
+        <country
+            a2="EC"
+            translation="__TODO__ Add translation of `Ecuador`"
+            verified="N" />
+        <!--Estonia-->
+        <country
+            a2="EE"
+            translation="__TODO__ Add translation of `Estonia`"
+            verified="N" />
+        <!--Egypt-->
+        <country
+            a2="EG"
+            translation="__TODO__ Add translation of `Egypt`"
+            verified="N" />
+        <!--Eritrea-->
+        <country
+            a2="ER"
+            translation="__TODO__ Add translation of `Eritrea`"
+            verified="N" />
+        <!--Spain-->
+        <country
+            a2="ES"
+            translation="__TODO__ Add translation of `Spain`"
+            verified="N" />
+        <!--Ethiopia-->
+        <country
+            a2="ET"
+            translation="__TODO__ Add translation of `Ethiopia`"
+            verified="N" />
+        <!--Finland-->
+        <country
+            a2="FI"
+            translation="__TODO__ Add translation of `Finland`"
+            verified="N" />
+        <!--Fiji-->
+        <country
+            a2="FJ"
+            translation="__TODO__ Add translation of `Fiji`"
+            verified="N" />
+        <!--Falkland Islands (malvinas)-->
+        <country
+            a2="FK"
+            translation="__TODO__ Add translation of `Falkland Islands (malvinas)`"
+            verified="N" />
+        <!--Micronesia, Federated States Of-->
+        <country
+            a2="FM"
+            translation="__TODO__ Add translation of `Micronesia, Federated States Of`"
+            verified="N" />
+        <!--Faroe Islands-->
+        <country
+            a2="FO"
+            translation="__TODO__ Add translation of `Faroe Islands`"
+            verified="N" />
+        <!--France-->
+        <country
+            a2="FR"
+            translation="__TODO__ Add translation of `France`"
+            verified="N" />
+        <!--Gabon-->
+        <country
+            a2="GA"
+            translation="__TODO__ Add translation of `Gabon`"
+            verified="N" />
+        <!--United Kingdom-->
+        <country
+            a2="GB"
+            translation="__TODO__ Add translation of `United Kingdom`"
+            verified="N" />
+        <!--Grenada-->
+        <country
+            a2="GD"
+            translation="__TODO__ Add translation of `Grenada`"
+            verified="N" />
+        <!--Georgia-->
+        <country
+            a2="GE"
+            translation="__TODO__ Add translation of `Georgia`"
+            verified="N" />
+        <!--French Guyana-->
+        <country
+            a2="GF"
+            translation="__TODO__ Add translation of `French Guyana`"
+            verified="N" />
+        <!--Guernsey-->
+        <country
+            a2="GG"
+            translation="__TODO__ Add translation of `Guernsey`"
+            verified="N" />
+        <!--Ghana-->
+        <country
+            a2="GH"
+            translation="__TODO__ Add translation of `Ghana`"
+            verified="N" />
+        <!--Gibraltar-->
+        <country
+            a2="GI"
+            translation="__TODO__ Add translation of `Gibraltar`"
+            verified="N" />
+        <!--Greenland-->
+        <country
+            a2="GL"
+            translation="__TODO__ Add translation of `Greenland`"
+            verified="N" />
+        <!--Gambia-->
+        <country
+            a2="GM"
+            translation="__TODO__ Add translation of `Gambia`"
+            verified="N" />
+        <!--Guinea-->
+        <country
+            a2="GN"
+            translation="__TODO__ Add translation of `Guinea`"
+            verified="N" />
+        <!--Guadeloupe-->
+        <country
+            a2="GP"
+            translation="__TODO__ Add translation of `Guadeloupe`"
+            verified="N" />
+        <!--Equatorial Guinea-->
+        <country
+            a2="GQ"
+            translation="__TODO__ Add translation of `Equatorial Guinea`"
+            verified="N" />
+        <!--Greece-->
+        <country
+            a2="GR"
+            translation="__TODO__ Add translation of `Greece`"
+            verified="N" />
+        <!--Guatemala-->
+        <country
+            a2="GT"
+            translation="__TODO__ Add translation of `Guatemala`"
+            verified="N" />
+        <!--Guam-->
+        <country
+            a2="GU"
+            translation="__TODO__ Add translation of `Guam`"
+            verified="N" />
+        <!--Guinea-bissau-->
+        <country
+            a2="GW"
+            translation="__TODO__ Add translation of `Guinea-bissau`"
+            verified="N" />
+        <!--Guyana-->
+        <country
+            a2="GY"
+            translation="__TODO__ Add translation of `Guyana`"
+            verified="N" />
+        <!--Hong Kong-->
+        <country
+            a2="HK"
+            translation="__TODO__ Add translation of `Hong Kong`"
+            verified="N" />
+        <!--Honduras-->
+        <country
+            a2="HN"
+            translation="__TODO__ Add translation of `Honduras`"
+            verified="N" />
+        <!--Croatia-->
+        <country
+            a2="HR"
+            translation="__TODO__ Add translation of `Croatia`"
+            verified="N" />
+        <!--Haiti-->
+        <country
+            a2="HT"
+            translation="__TODO__ Add translation of `Haiti`"
+            verified="N" />
+        <!--Hungary-->
+        <country
+            a2="HU"
+            translation="__TODO__ Add translation of `Hungary`"
+            verified="N" />
+        <!--Indonesia-->
+        <country
+            a2="ID"
+            translation="__TODO__ Add translation of `Indonesia`"
+            verified="N" />
+        <!--Ireland-->
+        <country
+            a2="IE"
+            translation="__TODO__ Add translation of `Ireland`"
+            verified="N" />
+        <!--Israel-->
+        <country
+            a2="IL"
+            translation="__TODO__ Add translation of `Israel`"
+            verified="N" />
+        <!--Isle Of Man-->
+        <country
+            a2="IM"
+            translation="__TODO__ Add translation of `Isle Of Man`"
+            verified="N" />
+        <!--India-->
+        <country
+            a2="IN"
+            translation="__TODO__ Add translation of `India`"
+            verified="N" />
+        <!--British Indian Ocean Territory-->
+        <country
+            a2="IO"
+            translation="__TODO__ Add translation of `British Indian Ocean Territory`"
+            verified="N" />
+        <!--Iraq-->
+        <country
+            a2="IQ"
+            translation="__TODO__ Add translation of `Iraq`"
+            verified="N" />
+        <!--Iran, Islamic Republic Of-->
+        <country
+            a2="IR"
+            translation="__TODO__ Add translation of `Iran, Islamic Republic Of`"
+            verified="N" />
+        <!--Iceland-->
+        <country
+            a2="IS"
+            translation="__TODO__ Add translation of `Iceland`"
+            verified="N" />
+        <!--Italy-->
+        <country
+            a2="IT"
+            translation="__TODO__ Add translation of `Italy`"
+            verified="N" />
+        <!--Jersey-->
+        <country
+            a2="JE"
+            translation="__TODO__ Add translation of `Jersey`"
+            verified="N" />
+        <!--Jamaica-->
+        <country
+            a2="JM"
+            translation="__TODO__ Add translation of `Jamaica`"
+            verified="N" />
+        <!--Jordan-->
+        <country
+            a2="JO"
+            translation="__TODO__ Add translation of `Jordan`"
+            verified="N" />
+        <!--Japan-->
+        <country
+            a2="JP"
+            translation="__TODO__ Add translation of `Japan`"
+            verified="N" />
+        <!--Kenya-->
+        <country
+            a2="KE"
+            translation="__TODO__ Add translation of `Kenya`"
+            verified="N" />
+        <!--Kyrgyzstan-->
+        <country
+            a2="KG"
+            translation="__TODO__ Add translation of `Kyrgyzstan`"
+            verified="N" />
+        <!--Cambodia-->
+        <country
+            a2="KH"
+            translation="__TODO__ Add translation of `Cambodia`"
+            verified="N" />
+        <!--Kiribati-->
+        <country
+            a2="KI"
+            translation="__TODO__ Add translation of `Kiribati`"
+            verified="N" />
+        <!--Comoros-->
+        <country
+            a2="KM"
+            translation="__TODO__ Add translation of `Comoros`"
+            verified="N" />
+        <!--Saint Kitts and Nevis-->
+        <country
+            a2="KN"
+            translation="__TODO__ Add translation of `Saint Kitts and Nevis`"
+            verified="N" />
+        <!--North Korea-->
+        <country
+            a2="KP"
+            translation="__TODO__ Add translation of `North Korea`"
+            verified="N" />
+        <!--South Korea-->
+        <country
+            a2="KR"
+            translation="__TODO__ Add translation of `South Korea`"
+            verified="N" />
+        <!--Kuwait-->
+        <country
+            a2="KW"
+            translation="__TODO__ Add translation of `Kuwait`"
+            verified="N" />
+        <!--Cayman Islands-->
+        <country
+            a2="KY"
+            translation="__TODO__ Add translation of `Cayman Islands`"
+            verified="N" />
+        <!--Kazakhstan-->
+        <country
+            a2="KZ"
+            translation="__TODO__ Add translation of `Kazakhstan`"
+            verified="N" />
+        <!--Lao People's Democratic Republic-->
+        <country
+            a2="LA"
+            translation="__TODO__ Add translation of `Lao People's Democratic Republic`"
+            verified="N" />
+        <!--Lebanon-->
+        <country
+            a2="LB"
+            translation="__TODO__ Add translation of `Lebanon`"
+            verified="N" />
+        <!--Saint Lucia-->
+        <country
+            a2="LC"
+            translation="__TODO__ Add translation of `Saint Lucia`"
+            verified="N" />
+        <!--Liechtenstein-->
+        <country
+            a2="LI"
+            translation="__TODO__ Add translation of `Liechtenstein`"
+            verified="N" />
+        <!--Sri Lanka-->
+        <country
+            a2="LK"
+            translation="__TODO__ Add translation of `Sri Lanka`"
+            verified="N" />
+        <!--Liberia-->
+        <country
+            a2="LR"
+            translation="__TODO__ Add translation of `Liberia`"
+            verified="N" />
+        <!--Lesotho-->
+        <country
+            a2="LS"
+            translation="__TODO__ Add translation of `Lesotho`"
+            verified="N" />
+        <!--Lithuania-->
+        <country
+            a2="LT"
+            translation="__TODO__ Add translation of `Lithuania`"
+            verified="N" />
+        <!--Luxembourg-->
+        <country
+            a2="LU"
+            translation="__TODO__ Add translation of `Luxembourg`"
+            verified="N" />
+        <!--Latvia-->
+        <country
+            a2="LV"
+            translation="__TODO__ Add translation of `Latvia`"
+            verified="N" />
+        <!--Libya-->
+        <country
+            a2="LY"
+            translation="__TODO__ Add translation of `Libya`"
+            verified="N" />
+        <!--Morocco-->
+        <country
+            a2="MA"
+            translation="__TODO__ Add translation of `Morocco`"
+            verified="N" />
+        <!--Monaco-->
+        <country
+            a2="MC"
+            translation="__TODO__ Add translation of `Monaco`"
+            verified="N" />
+        <!--Moldova, Republic Of-->
+        <country
+            a2="MD"
+            translation="__TODO__ Add translation of `Moldova, Republic Of`"
+            verified="N" />
+        <!--Montenegro-->
+        <country
+            a2="ME"
+            translation="__TODO__ Add translation of `Montenegro`"
+            verified="N" />
+        <!--Saint Martin-->
+        <country
+            a2="MF"
+            translation="__TODO__ Add translation of `Saint Martin`"
+            verified="N" />
+        <!--Madagascar-->
+        <country
+            a2="MG"
+            translation="__TODO__ Add translation of `Madagascar`"
+            verified="N" />
+        <!--Marshall Islands-->
+        <country
+            a2="MH"
+            translation="__TODO__ Add translation of `Marshall Islands`"
+            verified="N" />
+        <!--Macedonia (FYROM)-->
+        <country
+            a2="MK"
+            translation="__TODO__ Add translation of `Macedonia (FYROM)`"
+            verified="N" />
+        <!--Mali-->
+        <country
+            a2="ML"
+            translation="__TODO__ Add translation of `Mali`"
+            verified="N" />
+        <!--Myanmar-->
+        <country
+            a2="MM"
+            translation="__TODO__ Add translation of `Myanmar`"
+            verified="N" />
+        <!--Mongolia-->
+        <country
+            a2="MN"
+            translation="__TODO__ Add translation of `Mongolia`"
+            verified="N" />
+        <!--Macau-->
+        <country
+            a2="MO"
+            translation="__TODO__ Add translation of `Macau`"
+            verified="N" />
+        <!--Northern Mariana Islands-->
+        <country
+            a2="MP"
+            translation="__TODO__ Add translation of `Northern Mariana Islands`"
+            verified="N" />
+        <!--Martinique-->
+        <country
+            a2="MQ"
+            translation="__TODO__ Add translation of `Martinique`"
+            verified="N" />
+        <!--Mauritania-->
+        <country
+            a2="MR"
+            translation="__TODO__ Add translation of `Mauritania`"
+            verified="N" />
+        <!--Montserrat-->
+        <country
+            a2="MS"
+            translation="__TODO__ Add translation of `Montserrat`"
+            verified="N" />
+        <!--Malta-->
+        <country
+            a2="MT"
+            translation="__TODO__ Add translation of `Malta`"
+            verified="N" />
+        <!--Mauritius-->
+        <country
+            a2="MU"
+            translation="__TODO__ Add translation of `Mauritius`"
+            verified="N" />
+        <!--Maldives-->
+        <country
+            a2="MV"
+            translation="__TODO__ Add translation of `Maldives`"
+            verified="N" />
+        <!--Malawi-->
+        <country
+            a2="MW"
+            translation="__TODO__ Add translation of `Malawi`"
+            verified="N" />
+        <!--Mexico-->
+        <country
+            a2="MX"
+            translation="__TODO__ Add translation of `Mexico`"
+            verified="N" />
+        <!--Malaysia-->
+        <country
+            a2="MY"
+            translation="__TODO__ Add translation of `Malaysia`"
+            verified="N" />
+        <!--Mozambique-->
+        <country
+            a2="MZ"
+            translation="__TODO__ Add translation of `Mozambique`"
+            verified="N" />
+        <!--Namibia-->
+        <country
+            a2="NA"
+            translation="__TODO__ Add translation of `Namibia`"
+            verified="N" />
+        <!--New Caledonia-->
+        <country
+            a2="NC"
+            translation="__TODO__ Add translation of `New Caledonia`"
+            verified="N" />
+        <!--Niger-->
+        <country
+            a2="NE"
+            translation="__TODO__ Add translation of `Niger`"
+            verified="N" />
+        <!--Norfolk Islands-->
+        <country
+            a2="NF"
+            translation="__TODO__ Add translation of `Norfolk Islands`"
+            verified="N" />
+        <!--Nigeria-->
+        <country
+            a2="NG"
+            translation="__TODO__ Add translation of `Nigeria`"
+            verified="N" />
+        <!--Nicaragua-->
+        <country
+            a2="NI"
+            translation="__TODO__ Add translation of `Nicaragua`"
+            verified="N" />
+        <!--Netherlands-->
+        <country
+            a2="NL"
+            translation="__TODO__ Add translation of `Netherlands`"
+            verified="N" />
+        <!--Norway-->
+        <country
+            a2="NO"
+            translation="__TODO__ Add translation of `Norway`"
+            verified="N" />
+        <!--Nepal-->
+        <country
+            a2="NP"
+            translation="__TODO__ Add translation of `Nepal`"
+            verified="N" />
+        <!--Nauru-->
+        <country
+            a2="NR"
+            translation="__TODO__ Add translation of `Nauru`"
+            verified="N" />
+        <!--Niue-->
+        <country
+            a2="NU"
+            translation="__TODO__ Add translation of `Niue`"
+            verified="N" />
+        <!--New Zealand-->
+        <country
+            a2="NZ"
+            translation="__TODO__ Add translation of `New Zealand`"
+            verified="N" />
+        <!--Oman-->
+        <country
+            a2="OM"
+            translation="__TODO__ Add translation of `Oman`"
+            verified="N" />
+        <!--Panama-->
+        <country
+            a2="PA"
+            translation="__TODO__ Add translation of `Panama`"
+            verified="N" />
+        <!--Peru-->
+        <country
+            a2="PE"
+            translation="__TODO__ Add translation of `Peru`"
+            verified="N" />
+        <!--French Polynesia-->
+        <country
+            a2="PF"
+            translation="__TODO__ Add translation of `French Polynesia`"
+            verified="N" />
+        <!--Papua New Guinea-->
+        <country
+            a2="PG"
+            translation="__TODO__ Add translation of `Papua New Guinea`"
+            verified="N" />
+        <!--Philippines-->
+        <country
+            a2="PH"
+            translation="__TODO__ Add translation of `Philippines`"
+            verified="N" />
+        <!--Pakistan-->
+        <country
+            a2="PK"
+            translation="__TODO__ Add translation of `Pakistan`"
+            verified="N" />
+        <!--Poland-->
+        <country
+            a2="PL"
+            translation="__TODO__ Add translation of `Poland`"
+            verified="N" />
+        <!--Saint Pierre And Miquelon-->
+        <country
+            a2="PM"
+            translation="__TODO__ Add translation of `Saint Pierre And Miquelon`"
+            verified="N" />
+        <!--Pitcairn Islands-->
+        <country
+            a2="PN"
+            translation="__TODO__ Add translation of `Pitcairn Islands`"
+            verified="N" />
+        <!--Puerto Rico-->
+        <country
+            a2="PR"
+            translation="__TODO__ Add translation of `Puerto Rico`"
+            verified="N" />
+        <!--Palestine-->
+        <country
+            a2="PS"
+            translation="__TODO__ Add translation of `Palestine`"
+            verified="N" />
+        <!--Portugal-->
+        <country
+            a2="PT"
+            translation="__TODO__ Add translation of `Portugal`"
+            verified="N" />
+        <!--Palau-->
+        <country
+            a2="PW"
+            translation="__TODO__ Add translation of `Palau`"
+            verified="N" />
+        <!--Paraguay-->
+        <country
+            a2="PY"
+            translation="__TODO__ Add translation of `Paraguay`"
+            verified="N" />
+        <!--Qatar-->
+        <country
+            a2="QA"
+            translation="__TODO__ Add translation of `Qatar`"
+            verified="N" />
+        <!--Réunion-->
+        <country
+            a2="RE"
+            translation="__TODO__ Add translation of `Réunion`"
+            verified="N" />
+        <!--Romania-->
+        <country
+            a2="RO"
+            translation="__TODO__ Add translation of `Romania`"
+            verified="N" />
+        <!--Serbia-->
+        <country
+            a2="RS"
+            translation="__TODO__ Add translation of `Serbia`"
+            verified="N" />
+        <!--Russian Federation-->
+        <country
+            a2="RU"
+            translation="__TODO__ Add translation of `Russian Federation`"
+            verified="N" />
+        <!--Rwanda-->
+        <country
+            a2="RW"
+            translation="__TODO__ Add translation of `Rwanda`"
+            verified="N" />
+        <!--Saudi Arabia-->
+        <country
+            a2="SA"
+            translation="__TODO__ Add translation of `Saudi Arabia`"
+            verified="N" />
+        <!--Solomon Islands-->
+        <country
+            a2="SB"
+            translation="__TODO__ Add translation of `Solomon Islands`"
+            verified="N" />
+        <!--Seychelles-->
+        <country
+            a2="SC"
+            translation="__TODO__ Add translation of `Seychelles`"
+            verified="N" />
+        <!--Sudan-->
+        <country
+            a2="SD"
+            translation="__TODO__ Add translation of `Sudan`"
+            verified="N" />
+        <!--Sweden-->
+        <country
+            a2="SE"
+            translation="__TODO__ Add translation of `Sweden`"
+            verified="N" />
+        <!--Singapore-->
+        <country
+            a2="SG"
+            translation="__TODO__ Add translation of `Singapore`"
+            verified="N" />
+        <!--Saint Helena, Ascension And Tristan Da Cunha-->
+        <country
+            a2="SH"
+            translation="__TODO__ Add translation of `Saint Helena, Ascension And Tristan Da Cunha`"
+            verified="N" />
+        <!--Slovenia-->
+        <country
+            a2="SI"
+            translation="__TODO__ Add translation of `Slovenia`"
+            verified="N" />
+        <!--Slovakia-->
+        <country
+            a2="SK"
+            translation="__TODO__ Add translation of `Slovakia`"
+            verified="N" />
+        <!--Sierra Leone-->
+        <country
+            a2="SL"
+            translation="__TODO__ Add translation of `Sierra Leone`"
+            verified="N" />
+        <!--San Marino-->
+        <country
+            a2="SM"
+            translation="__TODO__ Add translation of `San Marino`"
+            verified="N" />
+        <!--Senegal-->
+        <country
+            a2="SN"
+            translation="__TODO__ Add translation of `Senegal`"
+            verified="N" />
+        <!--Somalia-->
+        <country
+            a2="SO"
+            translation="__TODO__ Add translation of `Somalia`"
+            verified="N" />
+        <!--Suriname-->
+        <country
+            a2="SR"
+            translation="__TODO__ Add translation of `Suriname`"
+            verified="N" />
+        <!--South Sudan-->
+        <country
+            a2="SS"
+            translation="__TODO__ Add translation of `South Sudan`"
+            verified="N" />
+        <!--Sao Tome And Principe-->
+        <country
+            a2="ST"
+            translation="__TODO__ Add translation of `Sao Tome And Principe`"
+            verified="N" />
+        <!--El Salvador-->
+        <country
+            a2="SV"
+            translation="__TODO__ Add translation of `El Salvador`"
+            verified="N" />
+        <!--Sint Maarten-->
+        <country
+            a2="SX"
+            translation="__TODO__ Add translation of `Sint Maarten`"
+            verified="N" />
+        <!--Syrian Arab Republic-->
+        <country
+            a2="SY"
+            translation="__TODO__ Add translation of `Syrian Arab Republic`"
+            verified="N" />
+        <!--Swaziland-->
+        <country
+            a2="SZ"
+            translation="__TODO__ Add translation of `Swaziland`"
+            verified="N" />
+        <!--Turks and Caicos Islands-->
+        <country
+            a2="TC"
+            translation="__TODO__ Add translation of `Turks and Caicos Islands`"
+            verified="N" />
+        <!--Chad-->
+        <country
+            a2="TD"
+            translation="__TODO__ Add translation of `Chad`"
+            verified="N" />
+        <!--Togo-->
+        <country
+            a2="TG"
+            translation="__TODO__ Add translation of `Togo`"
+            verified="N" />
+        <!--Thailand-->
+        <country
+            a2="TH"
+            translation="__TODO__ Add translation of `Thailand`"
+            verified="N" />
+        <!--Tajikistan-->
+        <country
+            a2="TJ"
+            translation="__TODO__ Add translation of `Tajikistan`"
+            verified="N" />
+        <!--Tokelau-->
+        <country
+            a2="TK"
+            translation="__TODO__ Add translation of `Tokelau`"
+            verified="N" />
+        <!--Timor-leste-->
+        <country
+            a2="TL"
+            translation="__TODO__ Add translation of `Timor-leste`"
+            verified="N" />
+        <!--Turkmenistan-->
+        <country
+            a2="TM"
+            translation="__TODO__ Add translation of `Turkmenistan`"
+            verified="N" />
+        <!--Tunisia-->
+        <country
+            a2="TN"
+            translation="__TODO__ Add translation of `Tunisia`"
+            verified="N" />
+        <!--Tonga-->
+        <country
+            a2="TO"
+            translation="__TODO__ Add translation of `Tonga`"
+            verified="N" />
+        <!--Turkey-->
+        <country
+            a2="TR"
+            translation="__TODO__ Add translation of `Turkey`"
+            verified="N" />
+        <!--Trinidad &amp; Tobago-->
+        <country
+            a2="TT"
+            translation="__TODO__ Add translation of `Trinidad &amp; Tobago`"
+            verified="N" />
+        <!--Tuvalu-->
+        <country
+            a2="TV"
+            translation="__TODO__ Add translation of `Tuvalu`"
+            verified="N" />
+        <!--Taiwan-->
+        <country
+            a2="TW"
+            translation="__TODO__ Add translation of `Taiwan`"
+            verified="N" />
+        <!--Tanzania, United Republic Of-->
+        <country
+            a2="TZ"
+            translation="__TODO__ Add translation of `Tanzania, United Republic Of`"
+            verified="N" />
+        <!--Ukraine-->
+        <country
+            a2="UA"
+            translation="__TODO__ Add translation of `Ukraine`"
+            verified="N" />
+        <!--Uganda-->
+        <country
+            a2="UG"
+            translation="__TODO__ Add translation of `Uganda`"
+            verified="N" />
+        <!--United States-->
+        <country
+            a2="US"
+            translation="__TODO__ Add translation of `United States`"
+            verified="N" />
+        <!--Uruguay-->
+        <country
+            a2="UY"
+            translation="__TODO__ Add translation of `Uruguay`"
+            verified="N" />
+        <!--Uzbekistan-->
+        <country
+            a2="UZ"
+            translation="__TODO__ Add translation of `Uzbekistan`"
+            verified="N" />
+        <!--Holy See (vatican City State)-->
+        <country
+            a2="VA"
+            translation="__TODO__ Add translation of `Holy See (vatican City State)`"
+            verified="N" />
+        <!--Saint Vincent &amp; The Grenadines-->
+        <country
+            a2="VC"
+            translation="__TODO__ Add translation of `Saint Vincent &amp; The Grenadines`"
+            verified="N" />
+        <!--Venezuela, Bolivarian Republic Of-->
+        <country
+            a2="VE"
+            translation="__TODO__ Add translation of `Venezuela, Bolivarian Republic Of`"
+            verified="N" />
+        <!--British Virgin Islands-->
+        <country
+            a2="VG"
+            translation="__TODO__ Add translation of `British Virgin Islands`"
+            verified="N" />
+        <!--US Virgin Islands-->
+        <country
+            a2="VI"
+            translation="__TODO__ Add translation of `US Virgin Islands`"
+            verified="N" />
+        <!--Vietnam-->
+        <country
+            a2="VN"
+            translation="__TODO__ Add translation of `Vietnam`"
+            verified="N" />
+        <!--Vanuatu-->
+        <country
+            a2="VU"
+            translation="__TODO__ Add translation of `Vanuatu`"
+            verified="N" />
+        <!--Wallis And Futuna-->
+        <country
+            a2="WF"
+            translation="__TODO__ Add translation of `Wallis And Futuna`"
+            verified="N" />
+        <!--Samoa-->
+        <country
+            a2="WS"
+            translation="__TODO__ Add translation of `Samoa`"
+            verified="N" />
+        <!--Kosovo-->
+        <country
+            a2="XK"
+            translation="__TODO__ Add translation of `Kosovo`"
+            verified="N" />
+        <!--Yemen-->
+        <country
+            a2="YE"
+            translation="__TODO__ Add translation of `Yemen`"
+            verified="N" />
+        <!--Mayotte-->
+        <country
+            a2="YT"
+            translation="__TODO__ Add translation of `Mayotte`"
+            verified="N" />
+        <!--South Africa-->
+        <country
+            a2="ZA"
+            translation="__TODO__ Add translation of `South Africa`"
+            verified="N" />
+        <!--Zambia-->
+        <country
+            a2="ZM"
+            translation="__TODO__ Add translation of `Zambia`"
+            verified="N" />
+        <!--Zimbabwe-->
+        <country
+            a2="ZW"
+            translation="__TODO__ Add translation of `Zimbabwe`"
+            verified="N" />
     </countries>
 </data>
