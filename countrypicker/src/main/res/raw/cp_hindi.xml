@@ -1,0 +1,979 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+    <messages>
+        <dialog_title translation="देश चुनिए" />
+        <dialog_search_hint_message translation="खोज करें ..." />
+        <dialog_no_result_ack_message translation="परिणाम नहीं मिला" />
+    </messages>
+
+    <countries>
+        <!--Andorra-->
+        <country
+            name="अंडोरा"
+            nCode="AD" />
+        <!--United Arab Emirates (UAE)-->
+        <country
+            name="संयुक्त अरब अमीरात"
+            nCode="AE" />
+        <!--Afghanistan-->
+        <country
+            name="अफ़ग़ानिस्तान"
+            nCode="AF" />
+        <!--Antigua and Barbuda-->
+        <country
+            name="अंतिगुया और बार्बूडा"
+            nCode="AG" />
+        <!--Anguilla-->
+        <country
+            name="एंगुइला"
+            nCode="AI" />
+        <!--Albania-->
+        <country
+            name="अल्बानिया"
+            nCode="AL" />
+        <!--Armenia-->
+        <country
+            name="आर्मीनिया"
+            nCode="AM" />
+        <!--Angola-->
+        <country
+            name="अंगोला"
+            nCode="AO" />
+        <!--Antarctica-->
+        <country
+            name="अंटार्कटिका"
+            nCode="AQ" />
+        <!--Argentina-->
+        <country
+            name="अर्जेंटीना"
+            nCode="AR" />
+        <!--American Samoa-->
+        <country
+            name="अमेरिकन समोआ"
+            nCode="AS" />
+        <!--Austria-->
+        <country
+            name="ऑस्ट्रिया"
+            nCode="AT" />
+        <!--Australia-->
+        <country
+            name="ऑस्ट्रेलिया"
+            nCode="AU" />
+        <!--Aruba-->
+        <country
+            name="अरूबा"
+            nCode="AW" />
+        <!--Åland Islands-->
+        <country
+            name="एलैंड द्वीप समूह"
+            nCode="AX" />
+        <!--Azerbaijan-->
+        <country
+            name="आज़रबाइजान"
+            nCode="AZ" />
+        <!--Bosnia And Herzegovina-->
+        <country
+            name="बोस्निया और हर्जेगोविना"
+            nCode="BA" />
+        <!--Barbados-->
+        <country
+            name="बारबाडोस"
+            nCode="BB" />
+        <!--Bangladesh-->
+        <country
+            name="बांग्लादेश"
+            nCode="BD" />
+        <!--Belgium-->
+        <country
+            name="बेल्जियम"
+            nCode="BE" />
+        <!--Burkina Faso-->
+        <country
+            name="बुर्किना फासो"
+            nCode="BF" />
+        <!--Bulgaria-->
+        <country
+            name="बुल्गारिया"
+            nCode="BG" />
+        <!--Bahrain-->
+        <country
+            name="बहरीन"
+            nCode="BH" />
+        <!--Burundi-->
+        <country
+            name="बुस्र्न्दी"
+            nCode="BI" />
+        <!--Benin-->
+        <country
+            name="बेनिन"
+            nCode="BJ" />
+        <!--Saint Barthélemy-->
+        <country
+            name="सेंट Barthélemy"
+            nCode="BL" />
+        <!--Bermuda-->
+        <country
+            name="बरमूडा"
+            nCode="BM" />
+        <!--Brunei Darussalam-->
+        <country
+            name="ब्रुनेई दारुस्सलाम"
+            nCode="BN" />
+        <!--Bolivia, Plurinational State Of-->
+        <country
+            name="बोलीविया, प्लूरिनेशनल स्टेट ऑफ़"
+            nCode="BO" />
+        <!--Brazil-->
+        <country
+            name="ब्राज़िल"
+            nCode="BR" />
+        <!--Bahamas-->
+        <country
+            name="बहामा"
+            nCode="BS" />
+        <!--Bhutan-->
+        <country
+            name="भूटान"
+            nCode="BT" />
+        <!--Botswana-->
+        <country
+            name="बोत्सवाना"
+            nCode="BW" />
+        <!--Belarus-->
+        <country
+            name="बेलोरूस"
+            nCode="BY" />
+        <!--Belize-->
+        <country
+            name="बेलीज"
+            nCode="BZ" />
+        <!--Canada-->
+        <country
+            name="कनाडा"
+            nCode="CA" />
+        <!--Cocos (keeling) Islands-->
+        <country
+            name="कोकोस (कीलिंग) द्वीप"
+            nCode="CC" />
+        <!--Congo, The Democratic Republic Of The-->
+        <country
+            name="कांगो लोकतांत्रिक गणराज्य"
+            nCode="CD" />
+        <!--Central African Republic-->
+        <country
+            name="केंद्रीय अफ्रीकन गणराज्य"
+            nCode="CF" />
+        <!--Congo-->
+        <country
+            name="कांगो"
+            nCode="CG" />
+        <!--Switzerland-->
+        <country
+            name="स्विट्जरलैंड"
+            nCode="CH" />
+        <!--Côte D'ivoire-->
+        <country
+            name="कोटे डी एंड apos; आइवर"
+            nCode="CI" />
+        <!--Cook Islands-->
+        <country
+            name="कुक द्वीपसमूह"
+            nCode="CK" />
+        <!--Chile-->
+        <country
+            name="चिली"
+            nCode="CL" />
+        <!--Cameroon-->
+        <country
+            name="कैमरून"
+            nCode="CM" />
+        <!--China-->
+        <country
+            name="चीन"
+            nCode="CN" />
+        <!--Colombia-->
+        <country
+            name="कोलम्बिया"
+            nCode="CO" />
+        <!--Costa Rica-->
+        <country
+            name="कोस्टा रिका"
+            nCode="CR" />
+        <!--Cuba-->
+        <country
+            name="क्यूबा"
+            nCode="CU" />
+        <!--Cape Verde-->
+        <country
+            name="केप वर्दे"
+            nCode="CV" />
+        <!--Curaçao-->
+        <country
+            name="कुराकाओ"
+            nCode="CW" />
+        <!--Christmas Island-->
+        <country
+            name="क्रिसमस द्वीप"
+            nCode="CX" />
+        <!--Cyprus-->
+        <country
+            name="साइप्रस"
+            nCode="CY" />
+        <!--Czech Republic-->
+        <country
+            name="चेक गणतंत्र"
+            nCode="CZ" />
+        <!--Germany-->
+        <country
+            name="जर्मनी"
+            nCode="DE" />
+        <!--Djibouti-->
+        <country
+            name="जिबूती"
+            nCode="DJ" />
+        <!--Denmark-->
+        <country
+            name="डेनमार्क"
+            nCode="DK" />
+        <!--Dominica-->
+        <country
+            name="डोमिनिका"
+            nCode="DM" />
+        <!--Dominican Republic-->
+        <country
+            name="डोमिनिकन गणराज्य"
+            nCode="DO" />
+        <!--Algeria-->
+        <country
+            name="एलजीरिया"
+            nCode="DZ" />
+        <!--Ecuador-->
+        <country
+            name="इक्वेडोर"
+            nCode="EC" />
+        <!--Estonia-->
+        <country
+            name="एस्तोनिया"
+            nCode="EE" />
+        <!--Egypt-->
+        <country
+            name="मिस्र"
+            nCode="EG" />
+        <!--Eritrea-->
+        <country
+            name="इरिट्रिया"
+            nCode="ER" />
+        <!--Spain-->
+        <country
+            name="स्पेन"
+            nCode="ES" />
+        <!--Ethiopia-->
+        <country
+            name="इथियोपिया"
+            nCode="ET" />
+        <!--Finland-->
+        <country
+            name="फिनलैंड"
+            nCode="FI" />
+        <!--Fiji-->
+        <country
+            name="फ़िजी"
+            nCode="FJ" />
+        <!--Falkland Islands (malvinas)-->
+        <country
+            name="फ़ॉकलैंड द्वीप (माल्विनास)"
+            nCode="FK" />
+        <!--Micronesia, Federated States Of-->
+        <country
+            name="माइक्रोनेशिया Federated के राज्य अमेरिका"
+            nCode="FM" />
+        <!--Faroe Islands-->
+        <country
+            name="फ़ैरो द्वीप"
+            nCode="FO" />
+        <!--France-->
+        <country
+            name="फ्रांस"
+            nCode="FR" />
+        <!--Gabon-->
+        <country
+            name="गैबॉन"
+            nCode="GA" />
+        <!--United Kingdom-->
+        <country
+            name="यूनाइटेड किंगडम"
+            nCode="GB" />
+        <!--Grenada-->
+        <country
+            name="ग्रेनेडा"
+            nCode="GD" />
+        <!--Georgia-->
+        <country
+            name="जॉर्जिया"
+            nCode="GE" />
+        <!--French Guyana-->
+        <country
+            name="गुयाना"
+            nCode="GF" />
+        <!--Guernsey-->
+        <country
+            name="ग्वेर्नसे"
+            nCode="GG" />
+        <!--Ghana-->
+        <country
+            name="घाना"
+            nCode="GH" />
+        <!--Gibraltar-->
+        <country
+            name="जिब्राल्टर"
+            nCode="GI" />
+        <!--Greenland-->
+        <country
+            name="ग्रीनलैंड"
+            nCode="GL" />
+        <!--Gambia-->
+        <country
+            name="गाम्बिया"
+            nCode="GM" />
+        <!--Guinea-->
+        <country
+            name="गिन्नी"
+            nCode="GN" />
+        <!--Guadeloupe-->
+        <country
+            name="ग्वाडेलोप"
+            nCode="GP" />
+        <!--Equatorial Guinea-->
+        <country
+            name="भूमध्यवर्ती गिनी"
+            nCode="GQ" />
+        <!--Greece-->
+        <country
+            name="यूनान"
+            nCode="GR" />
+        <!--Guatemala-->
+        <country
+            name="ग्वाटेमाला"
+            nCode="GT" />
+        <!--Guam-->
+        <country
+            name="गुआम"
+            nCode="GU" />
+        <!--Guinea-bissau-->
+        <country
+            name="गिनी-बिसाऊ"
+            nCode="GW" />
+        <!--Guyana-->
+        <country
+            name="गुयाना"
+            nCode="GY" />
+        <!--Hong Kong-->
+        <country
+            name="हॉगकॉग"
+            nCode="HK" />
+        <!--Honduras-->
+        <country
+            name="होंडुरस"
+            nCode="HN" />
+        <!--Croatia-->
+        <country
+            name="क्रोएशिया"
+            nCode="HR" />
+        <!--Haiti-->
+        <country
+            name="हैती"
+            nCode="HT" />
+        <!--Hungary-->
+        <country
+            name="हंगरी"
+            nCode="HU" />
+        <!--Indonesia-->
+        <country
+            name="इंडोनेशिया"
+            nCode="ID" />
+        <!--Ireland-->
+        <country
+            name="आयरलैंड"
+            nCode="IE" />
+        <!--Israel-->
+        <country
+            name="इजराइल"
+            nCode="IL" />
+        <!--Isle Of Man-->
+        <country
+            name="मैन द्वीप"
+            nCode="IM" />
+        <!--Iceland-->
+        <country
+            name="आइसलैंड"
+            nCode="IS" />
+        <!--India-->
+        <country
+            name="भारत"
+            nCode="IN" />
+        <!--British Indian Ocean Territory-->
+        <country
+            name="ब्रिटेन और भारतीय समुद्री क्षेत्र"
+            nCode="IO" />
+        <!--Iraq-->
+        <country
+            name="इराक"
+            nCode="IQ" />
+        <!--Iran, Islamic Republic Of-->
+        <country
+            name="ईरान (इस्लामिक रिपब्लिक ऑफ)"
+            nCode="IR" />
+        <!--Italy-->
+        <country
+            name="इटली"
+            nCode="IT" />
+        <!--Jersey-->
+        <country
+            name="जर्सी"
+            nCode="JE" />
+        <!--Jamaica-->
+        <country
+            name="जमैका"
+            nCode="JM" />
+        <!--Jordan-->
+        <country
+            name="जॉर्डन"
+            nCode="JO" />
+        <!--Japan-->
+        <country
+            name="जापान"
+            nCode="JP" />
+        <!--Kenya-->
+        <country
+            name="केन्या"
+            nCode="KE" />
+        <!--Kyrgyzstan-->
+        <country
+            name="किर्गिज़स्तान"
+            nCode="KG" />
+        <!--Cambodia-->
+        <country
+            name="कंबोडिया"
+            nCode="KH" />
+        <!--Kiribati-->
+        <country
+            name="किरिबाती"
+            nCode="KI" />
+        <!--Comoros-->
+        <country
+            name="कोमोरोस"
+            nCode="KM" />
+        <!--Saint Kitts and Nevis-->
+        <country
+            name="संत किट्ट्स और नेविस"
+            nCode="KN" />
+        <!--North Korea-->
+        <country
+            name="कोरिया"
+            nCode="KP" />
+        <!--South Korea-->
+        <country
+            name="कोरिया गणतंत्र"
+            nCode="KR" />
+        <!--Kuwait-->
+        <country
+            name="कुवैट"
+            nCode="KW" />
+        <!--Cayman Islands-->
+        <country
+            name="केमैन टापू"
+            nCode="KY" />
+        <!--Kazakhstan-->
+        <country
+            name="कजाखस्तान"
+            nCode="KZ" />
+        <!--Lao People's Democratic Republic-->
+        <country
+            name="लाओ पीपुल्स' की लोकतांत्रिक गणराज्य"
+            nCode="LA" />
+        <!--Lebanon-->
+        <country
+            name="लेबनान"
+            nCode="LB" />
+        <!--Saint Lucia-->
+        <country
+            name="सेंट लूसिया"
+            nCode="LC" />
+        <!--Liechtenstein-->
+        <country
+            name="लिकटेंस्टीन"
+            nCode="LI" />
+        <!--Sri Lanka-->
+        <country
+            name="श्री लंका"
+            nCode="LK" />
+        <!--Liberia-->
+        <country
+            name="लाइबेरिया"
+            nCode="LR" />
+        <!--Lesotho-->
+        <country
+            name="लिसोटो"
+            nCode="LS" />
+        <!--Lithuania-->
+        <country
+            name="लिथुआनिया"
+            nCode="LT" />
+        <!--Luxembourg-->
+        <country
+            name="लक्जमबर्ग"
+            nCode="LU" />
+        <!--Latvia-->
+        <country
+            name="लातविया"
+            nCode="LV" />
+        <!--Libya-->
+        <country
+            name="लीबिया"
+            nCode="LY" />
+        <!--Morocco-->
+        <country
+            name="मोरक्को"
+            nCode="MA" />
+        <!--Monaco-->
+        <country
+            name="मोनाको"
+            nCode="MC" />
+        <!--Moldova, Republic Of-->
+        <country
+            name="मोल्दोवा, गणराज्य के"
+            nCode="MD" />
+        <!--Montenegro-->
+        <country
+            name="मोंटेनेग्रो"
+            nCode="ME" />
+        <!--Saint Martin-->
+        <country
+            name="संत मार्टिन"
+            nCode="MF" />
+        <!--Madagascar-->
+        <country
+            name="मेडागास्कर"
+            nCode="MG" />
+        <!--Marshall Islands-->
+        <country
+            name="मार्शल द्वीप समूह"
+            nCode="MH" />
+        <!--Macedonia (FYROM)-->
+        <country
+            name="मैसिडोनिया, पूर्व युगोस्लाव गणराज्य"
+            nCode="MK" />
+        <!--Mali-->
+        <country
+            name="माली"
+            nCode="ML" />
+        <!--Myanmar-->
+        <country
+            name="म्यांमार"
+            nCode="MM" />
+        <!--Mongolia-->
+        <country
+            name="मंगोलिया"
+            nCode="MN" />
+        <!--Macau-->
+        <country
+            name="मकाऊ"
+            nCode="MO" />
+        <!--Northern Mariana Islands-->
+        <country
+            name="उत्तरी मरीयाना द्वीप समूह"
+            nCode="MP" />
+        <!--Martinique-->
+        <country
+            name="मार्टीनिक"
+            nCode="MQ" />
+        <!--Mauritania-->
+        <country
+            name="मॉरिटानिया"
+            nCode="MR" />
+        <!--Montserrat-->
+        <country
+            name="मोंटेसेराट"
+            nCode="MS" />
+        <!--Malta-->
+        <country
+            name="माल्टा"
+            nCode="MT" />
+        <!--Mauritius-->
+        <country
+            name="मॉरीशस"
+            nCode="MU" />
+        <!--Maldives-->
+        <country
+            name="मालदीव"
+            nCode="MV" />
+        <!--Malawi-->
+        <country
+            name="मलावी"
+            nCode="MW" />
+        <!--Mexico-->
+        <country
+            name="मेक्सिको"
+            nCode="MX" />
+        <!--Malaysia-->
+        <country
+            name="मलेशिया"
+            nCode="MY" />
+        <!--Mozambique-->
+        <country
+            name="मोजाम्बिक"
+            nCode="MZ" />
+        <!--Namibia-->
+        <country
+            name="नामीबिया"
+            nCode="NA" />
+        <!--New Caledonia-->
+        <country
+            name="न्यू कैलेडोनिया"
+            nCode="NC" />
+        <!--Niger-->
+        <country
+            name="नाइजर"
+            nCode="NE" />
+        <!--Norfolk Islands-->
+        <country
+            name="नॉरफ़ॉक द्वीप समूह"
+            nCode="NF" />
+        <!--Nigeria-->
+        <country
+            name="नाइजीरिया"
+            nCode="NG" />
+        <!--Nicaragua-->
+        <country
+            name="निकारागुआ"
+            nCode="NI" />
+        <!--Netherlands-->
+        <country
+            name="नीदरलैंड्स"
+            nCode="NL" />
+        <!--Norway-->
+        <country
+            name="नॉर्वे"
+            nCode="NO" />
+        <!--Nepal-->
+        <country
+            name="नेपाल"
+            nCode="NP" />
+        <!--Nauru-->
+        <country
+            name="नाउरू"
+            nCode="NR" />
+        <!--Niue-->
+        <country
+            name="नियू"
+            nCode="NU" />
+        <!--New Zealand-->
+        <country
+            name="न्यूजीलैंड"
+            nCode="NZ" />
+        <!--Oman-->
+        <country
+            name="ओमान"
+            nCode="OM" />
+        <!--Panama-->
+        <country
+            name="पनामा"
+            nCode="PA" />
+        <!--Peru-->
+        <country
+            name="पेरू"
+            nCode="PE" />
+        <!--French Polynesia-->
+        <country
+            name="फ्रेंच पॉलीनेशिया"
+            nCode="PF" />
+        <!--Papua New Guinea-->
+        <country
+            name="पापुआ न्यू गिनी"
+            nCode="PG" />
+        <!--Philippines-->
+        <country
+            name="फिलीपींस"
+            nCode="PH" />
+        <!--Pakistan-->
+        <country
+            name="पाकिस्तान"
+            nCode="PK" />
+        <!--Poland-->
+        <country
+            name="पोलैंड"
+            nCode="PL" />
+        <!--Saint Pierre And Miquelon-->
+        <country
+            name="सेंट पियरे और मिकेलॉन"
+            nCode="PM" />
+        <!--Pitcairn Islands-->
+        <country
+            name="पिटकेर्न"
+            nCode="PN" />
+        <!--Puerto Rico-->
+        <country
+            name="प्यूर्टो रिको"
+            nCode="PR" />
+        <!--Palestine-->
+        <country
+            name="फिलिस्तीन"
+            nCode="PS" />
+        <!--Portugal-->
+        <country
+            name="पुर्तगाल"
+            nCode="PT" />
+        <!--Palau-->
+        <country
+            name="पलाऊ"
+            nCode="PW" />
+        <!--Paraguay-->
+        <country
+            name="परागुआ"
+            nCode="PY" />
+        <!--Qatar-->
+        <country
+            name="कतर"
+            nCode="QA" />
+        <!--Réunion-->
+        <country
+            name="बैठक"
+            nCode="RE" />
+        <!--Romania-->
+        <country
+            name="रोमानिया"
+            nCode="RO" />
+        <!--Serbia-->
+        <country
+            name="सर्बिया"
+            nCode="RS" />
+        <!--Russian Federation-->
+        <country
+            name="रूसी संघ"
+            nCode="RU" />
+        <!--Rwanda-->
+        <country
+            name="रवांडा"
+            nCode="RW" />
+        <!--Saudi Arabia-->
+        <country
+            name="सऊदी अरब"
+            nCode="SA" />
+        <!--Solomon Islands-->
+        <country
+            name="सोलोमन द्वीप"
+            nCode="SB" />
+        <!--Seychelles-->
+        <country
+            name="सेशेल्स"
+            nCode="SC" />
+        <!--Sudan-->
+        <country
+            name="सूडान"
+            nCode="SD" />
+        <!--Sweden-->
+        <country
+            name="स्वीडन"
+            nCode="SE" />
+        <!--Singapore-->
+        <country
+            name="सिंगापुर"
+            nCode="SG" />
+        <!--Saint Helena, Ascension And Tristan Da Cunha-->
+        <country
+            name="सेंट हेलेना, उदगम और ट्रिस्टन दा कुन्हा"
+            nCode="SH" />
+        <!--Slovenia-->
+        <country
+            name="स्लोवेनिया"
+            nCode="SI" />
+        <!--Slovakia-->
+        <country
+            name="स्लोवाकिया"
+            nCode="SK" />
+        <!--Sierra Leone-->
+        <country
+            name="सियरा लिओन"
+            nCode="SL" />
+        <!--San Marino-->
+        <country
+            name="सैन मैरीनो"
+            nCode="SM" />
+        <!--Senegal-->
+        <country
+            name="सेनेगल"
+            nCode="SN" />
+        <!--Somalia-->
+        <country
+            name="सोमालिया"
+            nCode="SO" />
+        <!--Suriname-->
+        <country
+            name="सूरीनाम"
+            nCode="SR" />
+        <!--South Sudan-->
+        <country
+            name="दक्षिण सूडान"
+            nCode="SS" />
+        <!--Sao Tome And Principe-->
+        <country
+            name="साओ टोमे और प्रिंसिपे"
+            nCode="ST" />
+        <!--El Salvador-->
+        <country
+            name="एल साल्वाडोर"
+            nCode="SV" />
+        <!--Sint Maarten-->
+        <country
+            name="सिंट मार्टेन"
+            nCode="SX" />
+        <!--Syrian Arab Republic-->
+        <country
+            name="सीरिया अरब गणतंत्र"
+            nCode="SY" />
+        <!--Swaziland-->
+        <country
+            name="स्वाजीलैंड"
+            nCode="SZ" />
+        <!--Turks and Caicos Islands-->
+        <country
+            name="तुर्क्स और कैकोज़ द्वीपसमूह"
+            nCode="TC" />
+        <!--Chad-->
+        <country
+            name="काग़ज़ का टुकड़ा"
+            nCode="TD" />
+        <!--Togo-->
+        <country
+            name="जाना"
+            nCode="TG" />
+        <!--Thailand-->
+        <country
+            name="थाईलैंड"
+            nCode="TH" />
+        <!--Tajikistan-->
+        <country
+            name="तजाकिस्तान"
+            nCode="TJ" />
+        <!--Tokelau-->
+        <country
+            name="टोकेलाऊ"
+            nCode="TK" />
+        <!--Timor-leste-->
+        <country
+            name="तिमोर-लेस्ते"
+            nCode="TL" />
+        <!--Turkmenistan-->
+        <country
+            name="तुर्कमेनिस्तान"
+            nCode="TM" />
+        <!--Tunisia-->
+        <country
+            name="ट्यूनीशिया"
+            nCode="TN" />
+        <!--Tonga-->
+        <country
+            name="टोंगा"
+            nCode="TO" />
+        <!--Turkey-->
+        <country
+            name="तुर्की"
+            nCode="TR" />
+        <!--Trinidad &amp; Tobago-->
+        <country
+            name="ट्रिनिडाड और टोबैगो"
+            nCode="TT" />
+        <!--Tuvalu-->
+        <country
+            name="तुवालु"
+            nCode="TV" />
+        <!--Taiwan-->
+        <country
+            name="ताइवान"
+            nCode="TW" />
+        <!--Tanzania, United Republic Of-->
+        <country
+            name="तंजानिया, संयुक्त गणराज्य"
+            nCode="TZ" />
+        <!--Ukraine-->
+        <country
+            name="यूक्रेन"
+            nCode="UA" />
+        <!--Uganda-->
+        <country
+            name="युगांडा"
+            nCode="UG" />
+        <!--United States (USA)-->
+        <country
+            name="संयुक्त राज्य अमेरिका"
+            nCode="US" />
+        <!--Uruguay-->
+        <country
+            name="उरुग्वे"
+            nCode="UY" />
+        <!--Uzbekistan-->
+        <country
+            name="उज़्बेकिस्तान"
+            nCode="UZ" />
+        <!--Holy See (vatican City State)-->
+        <country
+            name="पवित्र देखो (वैटिकन सिटी राज्य)"
+            nCode="VA" />
+        <!--Saint Vincent &amp; The Grenadines-->
+        <country
+            name="सेंट विंसेंट और द ग्रेनाडाइन्स"
+            nCode="VC" />
+        <!--Venezuela, Bolivarian Republic Of-->
+        <country
+            name="वेनेजुएला, के Bolivarian गणराज्य"
+            nCode="VE" />
+        <!--British Virgin Islands-->
+        <country
+            name="ब्रिटिश वर्जिन आइसलैण्ड्स"
+            nCode="VG" />
+        <!--US Virgin Islands-->
+        <country
+            name="यूएस वर्जिन द्वीप"
+            nCode="VI" />
+        <!--Vietnam-->
+        <country
+            name="वियतनाम"
+            nCode="VN" />
+        <!--Vanuatu-->
+        <country
+            name="वानुअतु"
+            nCode="VU" />
+        <!--Wallis And Futuna-->
+        <country
+            name="वाली और फ़्युटुना"
+            nCode="WF" />
+        <!--Samoa-->
+        <country
+            name="समोआ"
+            nCode="WS" />
+        <!--Kosovo-->
+        <country
+            name="कोसोवो"
+            nCode="XK" />
+        <!--Yemen-->
+        <country
+            name="यमन"
+            nCode="YE" />
+        <!--Mayotte-->
+        <country
+            name="मैयट"
+            nCode="YT" />
+        <!--South Africa-->
+        <country
+            name="दक्षिण अफ्रीका"
+            nCode="ZA" />
+        <!--Zambia-->
+        <country
+            name="जाम्बिया"
+            nCode="ZM" />
+        <!--Zimbabwe-->
+        <country
+            name="जिम्बाब्वे"
+            nCode="ZW" />
+    </countries>
+</data>

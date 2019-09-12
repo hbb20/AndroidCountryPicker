@@ -1,0 +1,17 @@
+package com.hbb20.countrypicker
+
+const val xmlAlpha2Key = "a2"
+const val xmlAlpha3Key = "a3"
+const val xmlEnglishNameKey = "eName"
+const val xmlPhoneCodeKey = "pCode"
+const val xmlCountryKey = "country"
+const val xmlTranslationKey = "translation"
+const val xmlVerifiedKey = "verified"
+const val xmlVerifiedYESValue = "Y"
+const val xmlVerifiedNOValue = "N"
+const val baseListFileName = "cp_a_base_country_list.xml"
+const val xmlDialogNoResultAckMessageKey = "dialog_no_result_ack_message"
+const val xmlDialogSearchHintMessageKey = "dialog_search_hint_message"
+const val xmlDialogTitleKey = "dialog_title"
+const val xmlEmptySelectionMessageLongKey = "empty_selection_message_long"
+const val xmlEmptySelectionMessageShortKey = "empty_selection_message_short"
