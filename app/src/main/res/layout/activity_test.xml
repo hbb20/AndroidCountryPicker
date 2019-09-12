@@ -6,16 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".test.TestActivity">
 
+    <ImageView
+        android:id="@+id/imgTestPass"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:contentDescription="@string/check_image_to_show_test_pass"
+        android:src="@drawable/ic_check_circle_24dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvTestPass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/problemsRecyclerView" />
 
-    <Button
-        android:id="@+id/btnStartTest"
+    <ProgressBar
+        android:id="@+id/testProgressRing"
+        style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start Test"
+        app:layout_constraintBottom_toBottomOf="@+id/problemsRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/problemsRecyclerView"
+        app:layout_constraintTop_toTopOf="@+id/problemsRecyclerView" />
+
+    <TextView
+        android:id="@+id/tvTestPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/test_pass"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/problemsRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgTestPass" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/testPassViews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="tvTestPass,imgTestPass" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/problemsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="startTest"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

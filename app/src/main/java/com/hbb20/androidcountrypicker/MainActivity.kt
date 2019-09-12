@@ -11,9 +11,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        if(resources.getBoolean(R.bool.launch_test_immediately)){
+            launchTestActivity()
+        }
     }
 
-    fun launchTestActivity(view: View) {
+    @JvmOverloads
+    fun launchTestActivity(view: View? = null) {
         startActivity(Intent(this, TestActivity::class.java))
     }
 }
