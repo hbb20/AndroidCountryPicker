@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    @JvmOverloads
     fun launchTestActivity(view: View? = null) {
         startActivity(Intent(this, TestActivity::class.java))
     }
