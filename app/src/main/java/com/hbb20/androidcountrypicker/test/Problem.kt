@@ -23,8 +23,8 @@ class Problem(
 
 
 
-enum class ProblemCategory(text: String) {
-    INVALID_VALUE("Invalid key for property"),
+enum class ProblemCategory(val text: String) {
+    INVALID_VALUE("Invalid value"),
     MISSING_PROPERTY("Missing Property"),
     MISSING_FILE("Missing File"),
     DUPLICATE_ENTRY("Duplicate Entry"),

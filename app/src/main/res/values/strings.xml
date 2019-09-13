@@ -3,4 +3,7 @@
     <string name="start_test">Start Test</string>
     <string name="test_pass">All files are in good health.</string>
     <string name="check_image_to_show_test_pass">Check image to show test pass</string>
+    <string name="file_icon">File icon</string>
+    <string name="category_icon">Category icon</string>
+    <string name="error_icon">Error Icon</string>
 </resources>

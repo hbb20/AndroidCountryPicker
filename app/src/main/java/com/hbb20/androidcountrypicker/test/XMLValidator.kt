@@ -90,7 +90,7 @@ class XMLValidator {
                                     problems.add(
                                         Problem(
                                             category = ProblemCategory.INVALID_ORDER,
-                                            fileName = xmlBaseListFileName,
+                                            fileName = fileName,
                                             solution = "[$alpha2NameCode] found instead of [${nameCodeAndNamePairList[entryCounter]}]. "
                                         )
                                     )
@@ -103,7 +103,7 @@ class XMLValidator {
                                     Problem(
                                         category = ProblemCategory.MISSING_PROPERTY,
                                         fileName = fileName,
-                                        solution = "[$alpha2NameCode->$xmlTranslationKey]"
+                                        solution = "[$alpha2NameCode -> $xmlTranslationKey]"
                                     )
                                 )
                             } else if (translation.contains(xmlTodoTag) && fileName != xmlNewLanguageTemplateFileName) {
@@ -112,7 +112,7 @@ class XMLValidator {
                                     Problem(
                                         category = ProblemCategory.MISSING_PROPERTY,
                                         fileName = fileName,
-                                        solution = "[$alpha2NameCode->$xmlTranslationKey] : Remove `$xmlTodoTag` and add valid translation."
+                                        solution = "[$alpha2NameCode -> $xmlTranslationKey] : Remove `$xmlTodoTag` and add valid translation."
                                     )
                                 )
                             }
@@ -123,7 +123,7 @@ class XMLValidator {
                                     Problem(
                                         category = ProblemCategory.MISSING_PROPERTY,
                                         fileName = fileName,
-                                        solution = "[$alpha2NameCode->$xmlVerifiedKey]"
+                                        solution = "[$alpha2NameCode -> $xmlVerifiedKey]"
                                     )
                                 )
                             } else {
@@ -133,12 +133,21 @@ class XMLValidator {
                                     xmlVerifiedNOValue -> {
                                         unverifiedTranslationCount++
                                     }
+                                    null -> {
+                                        problems.add(
+                                            Problem(
+                                                category = ProblemCategory.MISSING_PROPERTY,
+                                                fileName = fileName,
+                                                solution = "[$alpha2NameCode -> $xmlVerifiedKey]"
+                                            )
+                                        )
+                                    }
                                     else -> {
                                         problems.add(
                                             Problem(
                                                 category = ProblemCategory.INVALID_VALUE,
                                                 fileName = fileName,
-                                                solution = "[$alpha2NameCode->$xmlVerifiedKey] : Use [$xmlVerifiedYESValue] or [$xmlVerifiedNOValue]."
+                                                solution = "[$alpha2NameCode -> $xmlVerifiedKey]"
                                             )
                                         )
                                     }
@@ -154,7 +163,7 @@ class XMLValidator {
                                 Problem(
                                     category = ProblemCategory.MISSING_PROPERTY,
                                     fileName = fileName,
-                                    solution = "[$name->$xmlTranslationKey]"
+                                    solution = "[$name -> $xmlTranslationKey]"
                                 )
                             )
                         } else if (translation.contains(xmlTodoTag) && fileName != xmlNewLanguageTemplateFileName) {
@@ -163,12 +172,11 @@ class XMLValidator {
                                 Problem(
                                     category = ProblemCategory.MISSING_PROPERTY,
                                     fileName = fileName,
-                                    solution = "[$name->$xmlTranslationKey] : Remove `$xmlTodoTag` and add valid translation."
+                                    solution = "[$name -> $xmlTranslationKey] : Remove `$xmlTodoTag` and add valid translation."
                                 )
                             )
                         }
 
-                        val verified = xmlPullParser.getAttributeValue(null, xmlVerifiedKey)
                         if (translation.isNullOrBlank()) {
                             problems.add(
                                 Problem(
@@ -179,18 +187,27 @@ class XMLValidator {
                             )
                         }
 
-                        when (verified) {
+                        when (xmlPullParser.getAttributeValue(null, xmlVerifiedKey)) {
                             xmlVerifiedYESValue -> {
                             }
                             xmlVerifiedNOValue -> {
                                 unverifiedTranslationCount++
+                            }
+                            null -> {
+                                problems.add(
+                                    Problem(
+                                        category = ProblemCategory.MISSING_PROPERTY,
+                                        fileName = fileName,
+                                        solution = "[$name -> $xmlVerifiedKey]"
+                                    )
+                                )
                             }
                             else -> {
                                 problems.add(
                                     Problem(
                                         category = ProblemCategory.INVALID_VALUE,
                                         fileName = fileName,
-                                        solution = "[$name->$xmlVerifiedKey] : Use [$xmlVerifiedYESValue] or [$xmlVerifiedNOValue]."
+                                        solution = "[$name -> $xmlVerifiedKey]"
                                     )
                                 )
                             }
@@ -206,7 +223,7 @@ class XMLValidator {
                 Problem(
                     category = ProblemCategory.UNVERIFIED_ENTRIES,
                     fileName = fileName,
-                    solution = "[$unverifiedTranslationCount entries] needs verification. Look for entries [verified=\"N\"]"
+                    solution = "[$unverifiedTranslationCount entries] needs translation verification."
                 )
             )
         }
