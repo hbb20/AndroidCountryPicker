@@ -11,13 +11,14 @@ class XMLValidator {
     fun checkAllXMLFiles(context: Context): List<Problem> {
         val problems = mutableListOf<Problem>()
         problems.addAll(checkBaseList(context))
-        problems.addAll(
-            checkTranslationFile(
-                context,
-                CPLanguage.ENGLISH.translationFileName,
-                nameCodeList
+        for (language in listOf(CPLanguage.ENGLISH, CPLanguage.AFRIKAANS))
+            problems.addAll(
+                checkTranslationFile(
+                    context,
+                    language.translationFileName,
+                    nameCodeList
+                )
             )
-        )
         problems.addAll(checkTranslationFile(context, xmlNewLanguageTemplateFileName, nameCodeList))
         return problems
     }
@@ -25,7 +26,7 @@ class XMLValidator {
     private fun checkTranslationFile(
         context: Context,
         fileName: String,
-        nameCodeAndNamePairList: List<String>
+        baseNameCodeLise: List<String>
     ): List<Problem> {
         val problems = mutableListOf<Problem>()
         val xmlPullParser = getRawXMLPullParser(context = context, fileName = fileName)
@@ -72,7 +73,7 @@ class XMLValidator {
                             )
                         } else {
                             //report extra entries
-                            if (entryCounter > nameCodeAndNamePairList.size) {
+                            if (entryCounter > baseNameCodeLise.size) {
                                 if (!extraEntriesProblemAdded) {
                                     problems.add(
                                         Problem(
@@ -91,7 +92,7 @@ class XMLValidator {
                                         Problem(
                                             category = ProblemCategory.INVALID_ORDER,
                                             fileName = fileName,
-                                            solution = "[$alpha2NameCode] found instead of [${nameCodeAndNamePairList[entryCounter]}]. "
+                                            solution = "[$alpha2NameCode] found instead of [${baseNameCodeLise[entryCounter]}]. "
                                         )
                                     )
                                 }
