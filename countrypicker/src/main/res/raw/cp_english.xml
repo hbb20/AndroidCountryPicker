@@ -3,7 +3,7 @@
     <a_message_list>
         <!--"Results not found"-->
         <dialog_no_result_ack_message
-            translation="No matching country found"
+            translation="No matching result found"
             verified="Y" />
         <!--"Search..."-->
         <dialog_search_hint_message
