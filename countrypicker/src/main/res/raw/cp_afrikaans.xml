@@ -15,7 +15,7 @@
             verified="N" />
         <!--"Country"-->
         <empty_selection_message
-            translation="nasie"
+            translation="Nasie"
             verified="N" />
     </a_message_list>
 
