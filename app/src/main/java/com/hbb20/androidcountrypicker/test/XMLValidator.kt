@@ -11,7 +11,7 @@ class XMLValidator {
     fun checkAllXMLFiles(context: Context): List<Problem> {
         val problems = mutableListOf<Problem>()
         problems.addAll(checkBaseList(context))
-        for (language in listOf(CPLanguage.ENGLISH, CPLanguage.AFRIKAANS))
+        for (language in listOf(CPLanguage.ENGLISH, CPLanguage.AFRIKAANS, CPLanguage.ARABIC))
             problems.addAll(
                 checkTranslationFile(
                     context,
