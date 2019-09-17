@@ -7,4 +7,5 @@
     <color name="dark_gray">#1D1D1D</color>
     <color name="error_color">#B3402E</color>
     <color name="warning_color">#E5AF1E</color>
+    <color name="light_gray">#e5e5e5</color>
 </resources>
