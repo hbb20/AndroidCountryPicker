@@ -3,1232 +3,1232 @@
     <a_message_list>
         <!--"No matching result found"-->
         <dialog_no_result_ack_message
-            translation=" لا يوجد نتائج"
+            translation="ফলাফল পাওয়া যায়নি"
             verified="N" />
         <!--"Search..."-->
         <dialog_search_hint_message
-            translation="بحث"
+            translation="অনুসন্ধান..."
             verified="N" />
         <!--"Select a country"-->
         <dialog_title
-            translation="اختار دولة"
+            translation="দেশ নির্বাচন করুন"
             verified="N" />
         <!--"Country"-->
         <empty_selection_message
-            translation="دولة"
+            translation="রাষ্ট্র"
             verified="N" />
     </a_message_list>
 
     <countries>
         <!--Andorra-->
         <country
-            translation="أندورا"
             a2="AD"
+            translation="এ্যান্ডোরা"
             verified="N" />
         <!--United Arab Emirates (UAE)-->
         <country
-            translation="الإمارات العربية المتحدة"
             a2="AE"
+            translation="সংযুক্ত আরব আমিরাত"
             verified="N" />
         <!--Afghanistan-->
         <country
-            translation="أفغانستان"
             a2="AF"
+            translation="আফগানিস্তান"
             verified="N" />
         <!--Antigua and Barbuda-->
         <country
-            translation="أنتيغوا وبربودا"
             a2="AG"
+            translation="অ্যান্টিগুয়া ও বার্বুডা"
             verified="N" />
         <!--Anguilla-->
         <country
-            translation="أنغويلا"
             a2="AI"
+            translation="এ্যাঙ্গুইলা"
             verified="N" />
         <!--Albania-->
         <country
-            translation="ألبانيا"
             a2="AL"
+            translation="আল্বেনিয়া"
             verified="N" />
         <!--Armenia-->
         <country
-            translation="أرمينيا"
             a2="AM"
+            translation="আরমেনিয়া"
             verified="N" />
         <!--Angola-->
         <country
-            translation="أنغولا"
             a2="AO"
+            translation="অ্যাঙ্গোলা"
             verified="N" />
         <!--Antarctica-->
         <country
-            translation="القطب الجنوبي"
             a2="AQ"
+            translation="আইল অব ম্যান"
             verified="N" />
         <!--Argentina-->
         <country
-            translation="الأرجنتين"
             a2="AR"
+            translation="আর্জিণ্টিনা"
             verified="N" />
         <!--American Samoa-->
         <country
-            translation="ساموا الأمريكية"
             a2="AS"
+            translation="আমেরিকান সামোয়া"
             verified="N" />
         <!--Austria-->
         <country
-            translation="النمسا"
             a2="AT"
+            translation="অস্ট্রিয়া"
             verified="N" />
         <!--Australia-->
         <country
-            translation="أستراليا"
             a2="AU"
+            translation="অস্ট্রেলিয়া"
             verified="N" />
         <!--Aruba-->
         <country
-            translation="أروبا"
             a2="AW"
+            translation="আরুবা"
             verified="N" />
         <!--Åland Islands-->
         <country
-            translation="جزر آلاند"
             a2="AX"
+            translation="এল্যান্ড দ্বীপপুঞ্জ"
             verified="N" />
         <!--Azerbaijan-->
         <country
-            translation="أذربيجان"
             a2="AZ"
+            translation="আজেরবাইজান"
             verified="N" />
         <!--Bosnia And Herzegovina-->
         <country
-            translation="البوسنة والهرسك"
             a2="BA"
+            translation="বসনিয়া ও হার্জেগোভিনা"
             verified="N" />
         <!--Barbados-->
         <country
-            translation="باربادوس"
             a2="BB"
+            translation="বার্বাডোস"
             verified="N" />
         <!--Bangladesh-->
         <country
-            translation="بنغلاديش"
             a2="BD"
+            translation="বাংলাদেশ"
             verified="N" />
         <!--Belgium-->
         <country
-            translation="بلجيكا"
             a2="BE"
+            translation="বেলজিয়াম"
             verified="N" />
         <!--Burkina Faso-->
         <country
-            translation="بوركينا فاسو"
             a2="BF"
+            translation="বুর্কিনা ফাসো"
             verified="N" />
         <!--Bulgaria-->
         <country
-            translation="بلغاريا"
             a2="BG"
+            translation="বুলগেরিয়া"
             verified="N" />
         <!--Bahrain-->
         <country
-            translation="البحرين"
             a2="BH"
+            translation="বাহরাইন"
             verified="N" />
         <!--Burundi-->
         <country
-            translation="بوروندي"
             a2="BI"
+            translation="বুরুন্ডি"
             verified="N" />
         <!--Benin-->
         <country
-            translation="بنين"
             a2="BJ"
+            translation="বেনিন"
             verified="N" />
         <!--Saint Barthélemy-->
         <country
-            translation="سانت بارتيليمي"
             a2="BL"
+            translation="সেন্ট বারথেলিমি"
             verified="N" />
         <!--Bermuda-->
         <country
-            translation="برمودا"
             a2="BM"
+            translation="বারমুডা"
             verified="N" />
         <!--Brunei Darussalam-->
         <country
-            translation="بروناي"
             a2="BN"
+            translation="ব্রুনাই দারুসসালাম"
             verified="N" />
         <!--Bolivia, Plurinational State Of-->
         <country
-            translation="بوليفيا"
             a2="BO"
+            translation="বলিভিয়া, বহুজাতিক রাষ্ট্র"
             verified="N" />
         <!--Brazil-->
         <country
-            translation="البرازيل"
             a2="BR"
+            translation="ব্রাজিল"
             verified="N" />
         <!--Bahamas-->
         <country
-            translation="باهاماس"
             a2="BS"
+            translation="বাহামা"
             verified="N" />
         <!--Bhutan-->
         <country
-            translation="بوتان"
             a2="BT"
+            translation="ভুটান"
             verified="N" />
         <!--Botswana-->
         <country
-            translation="بوتسوانا"
             a2="BW"
+            translation="বোট্স্বানা"
             verified="N" />
         <!--Belarus-->
         <country
-            translation="روسيا البيضاء"
             a2="BY"
+            translation="বেলারুশ"
             verified="N" />
         <!--Belize-->
         <country
-            translation="بليز"
             a2="BZ"
+            translation="বেলিজ"
             verified="N" />
         <!--Canada-->
         <country
-            translation="كندا"
             a2="CA"
+            translation="কানাডা"
             verified="N" />
         <!--Cocos (keeling) Islands-->
         <country
-            translation="جزر كوكوس"
             a2="CC"
+            translation="কোকোস (কিলিং) দ্বীপপুঞ্জ"
             verified="N" />
         <!--Congo, The Democratic Republic Of The-->
         <country
-            translation="الكونفو"
             a2="CD"
+            translation="কঙ্গো, গণতান্ত্রিক প্রজাতন্ত্র"
             verified="N" />
         <!--Central African Republic-->
         <country
-            translation="جمهورية افريقيا الوسطى"
             a2="CF"
+            translation="মধ্য আফ্রিকান প্রজাতন্ত্র"
             verified="N" />
         <!--Congo-->
         <country
-            translation="الكونغو"
             a2="CG"
+            translation="কঙ্গো"
             verified="N" />
         <!--Switzerland-->
         <country
-            translation="سويسرا"
             a2="CH"
+            translation="সুইজারল্যান্ড"
             verified="N" />
         <!--Côte D'ivoire-->
         <country
-            translation="ساحل العاج"
             a2="CI"
+            translation="কোত ডি সমেত Ivoire"
             verified="N" />
         <!--Cook Islands-->
         <country
-            translation="جزر كوك"
             a2="CK"
+            translation="কুক দ্বীপপুঞ্জ"
             verified="N" />
         <!--Chile-->
         <country
-            translation="تشيلي"
             a2="CL"
+            translation="চিলি"
             verified="N" />
         <!--Cameroon-->
         <country
-            translation="الكاميرون"
             a2="CM"
+            translation="ক্যামেরুন"
             verified="N" />
         <!--China-->
         <country
-            translation="الصين"
             a2="CN"
+            translation="চীন"
             verified="N" />
         <!--Colombia-->
         <country
-            translation="كولومبيا"
             a2="CO"
+            translation="কলোমবিয়া"
             verified="N" />
         <!--Costa Rica-->
         <country
-            translation="كوستا ريكا"
             a2="CR"
+            translation="কোস্টারিকা"
             verified="N" />
         <!--Cuba-->
         <country
-            translation="كوبا"
             a2="CU"
+            translation="কুবা"
             verified="N" />
         <!--Cape Verde-->
         <country
-            translation="الرأس الأخضر"
             a2="CV"
+            translation="কেপ ভার্দে"
             verified="N" />
         <!--Curaçao-->
         <country
-            translation="كوراكاو"
             a2="CW"
+            translation="কুরাসাও"
             verified="N" />
         <!--Christmas Island-->
         <country
-            translation="جزيرة الكريسماس"
             a2="CX"
+            translation="ক্রিস্টমাস দ্বীপ"
             verified="N" />
         <!--Cyprus-->
         <country
-            translation="قبرص"
             a2="CY"
+            translation="সাইপ্রাসদ্বিপ"
             verified="N" />
         <!--Czech Republic-->
         <country
-            translation="جمهورية التشيك"
             a2="CZ"
+            translation="চেক প্রজাতন্ত্র"
             verified="N" />
         <!--Germany-->
         <country
-            translation="ألمانيا"
             a2="DE"
+            translation="জার্মানি"
             verified="N" />
         <!--Djibouti-->
         <country
-            translation="جيبوتي"
             a2="DJ"
+            translation="জিবুতি"
             verified="N" />
         <!--Denmark-->
         <country
-            translation="الدنمارك"
             a2="DK"
+            translation="ডেন্মার্ক্"
             verified="N" />
         <!--Dominica-->
         <country
-            translation="دومينيكا"
             a2="DM"
+            translation="ডোমিনিকা"
             verified="N" />
         <!--Dominican Republic-->
         <country
-            translation="جمهورية الدومنيكان"
             a2="DO"
+            translation="ডোমিনিকান প্রজাতন্ত্র"
             verified="N" />
         <!--Algeria-->
         <country
-            translation="الجزائر"
             a2="DZ"
+            translation="আলজেরিয়া"
             verified="N" />
         <!--Ecuador-->
         <country
-            translation="الإكوادور"
             a2="EC"
+            translation="ইকোয়াডর"
             verified="N" />
         <!--Estonia-->
         <country
-            translation="استونيا"
             a2="EE"
+            translation="এস্তোনিয়াদেশ"
             verified="N" />
         <!--Egypt-->
         <country
-            translation="مصر"
             a2="EG"
+            translation="মিশর"
             verified="N" />
         <!--Eritrea-->
         <country
-            translation="إريتريا"
             a2="ER"
+            translation="ইরিত্রিয়া"
             verified="N" />
         <!--Spain-->
         <country
-            translation="إسبانيا"
             a2="ES"
+            translation="স্পেন"
             verified="N" />
         <!--Ethiopia-->
         <country
-            translation="أثيوبيا"
             a2="ET"
+            translation="ইথিওপিয়া"
             verified="N" />
         <!--Finland-->
         <country
-            translation="فنلندا"
             a2="FI"
+            translation="ফিনল্যাণ্ড"
             verified="N" />
         <!--Fiji-->
         <country
-            translation="فيجي"
             a2="FJ"
+            translation="ফিজি"
             verified="N" />
         <!--Falkland Islands (malvinas)-->
         <country
-            translation="جزر فوكلاند"
             a2="FK"
+            translation="ফকল্যান্ড দ্বীপপুঞ্জ (মালভিনাস)"
             verified="N" />
         <!--Micronesia, Federated States Of-->
         <country
-            translation="ولايات ميكرونيسيا المتحدة"
             a2="FM"
+            translation="মাইক্রোনেশিয়া, সংযুক্ত রাষ্ট্র"
             verified="N" />
         <!--Faroe Islands-->
         <country
-            translation="جزر فارو"
             a2="FO"
+            translation="ফারো দ্বীপপুঞ্জ"
             verified="N" />
         <!--France-->
         <country
-            translation="فرنسا"
             a2="FR"
+            translation="ফ্রান্স"
             verified="N" />
         <!--Gabon-->
         <country
-            translation="الغابون"
             a2="GA"
+            translation="গাবোনবাদ্যযন্ত্র"
             verified="N" />
         <!--United Kingdom-->
         <country
-            translation="المملكة المتحدة"
             a2="GB"
+            translation="যুক্তরাজ্য"
             verified="N" />
         <!--Grenada-->
         <country
-            translation="غرينادا"
             a2="GD"
+            translation="গ্রেনাডা"
             verified="N" />
         <!--Georgia-->
         <country
-            translation="جورجيا"
             a2="GE"
+            translation="জর্জিয়া"
             verified="N" />
         <!--French Guyana-->
         <country
-            translation="غويانا الفرنسية"
             a2="GF"
+            translation="ফরাসি গায়ানা"
             verified="N" />
         <!--Guernsey-->
         <country
-            translation="غيرنسي"
             a2="GG"
+            translation="গেঁজি"
             verified="N" />
         <!--Ghana-->
         <country
-            translation="غانا"
             a2="GH"
+            translation="ঘানা"
             verified="N" />
         <!--Gibraltar-->
         <country
-            translation="جبل طارق"
             a2="GI"
+            translation="জিব্রালটার"
             verified="N" />
         <!--Greenland-->
         <country
-            translation="جرينلاند"
             a2="GL"
+            translation="গ্রীনল্যাণ্ড"
             verified="N" />
         <!--Gambia-->
         <country
-            translation="غامبيا"
             a2="GM"
+            translation="গাম্বিয়াদেশ"
             verified="N" />
         <!--Guinea-->
         <country
-            translation="غينيا"
             a2="GN"
+            translation="গিনি"
             verified="N" />
         <!--Guadeloupe-->
         <country
-            translation="جوادلوب"
             a2="GP"
+            translation="গুয়াডেলোপ"
             verified="N" />
         <!--Equatorial Guinea-->
         <country
-            translation="غينيا الإستوائية"
             a2="GQ"
+            translation="নিরক্ষীয় গিনি"
             verified="N" />
         <!--Greece-->
         <country
-            translation="اليونان"
             a2="GR"
+            translation="গ্রীস"
             verified="N" />
         <!--Guatemala-->
         <country
-            translation="غواتيمالا"
             a2="GT"
+            translation="গুয়াটেমালা"
             verified="N" />
         <!--Guam-->
         <country
-            translation="غوام"
             a2="GU"
+            translation="গুয়াম"
             verified="N" />
         <!--Guinea-bissau-->
         <country
-            translation="غينيا بيساو"
             a2="GW"
+            translation="গিনি বিসাউ"
             verified="N" />
         <!--Guyana-->
         <country
-            translation="غيانا"
             a2="GY"
+            translation="গিয়ানা"
             verified="N" />
         <!--Hong Kong-->
         <country
-            translation="هونغ كونغ"
             a2="HK"
+            translation="হংকং"
             verified="N" />
         <!--Honduras-->
         <country
-            translation="هندوراس"
             a2="HN"
+            translation="হন্ডুরাস"
             verified="N" />
         <!--Croatia-->
         <country
-            translation="كرواتيا"
             a2="HR"
+            translation="ক্রোয়েশিয়া"
             verified="N" />
         <!--Haiti-->
         <country
-            translation="هايتي"
             a2="HT"
+            translation="হাইতি"
             verified="N" />
         <!--Hungary-->
         <country
-            translation="المجر"
             a2="HU"
+            translation="হাঙ্গেরি"
             verified="N" />
         <!--Indonesia-->
         <country
-            translation="أندونيسيا"
             a2="ID"
+            translation="ইন্দোনেশিয়া"
             verified="N" />
         <!--Ireland-->
         <country
-            translation="جمهورية أيرلندا"
             a2="IE"
+            translation="আয়ারল্যাণ্ড"
             verified="N" />
         <!--Israel-->
         <country
-            translation="إسرائيل"
             a2="IL"
+            translation="ইসরাইল"
             verified="N" />
         <!--Isle Of Man-->
         <country
-            translation="جزيرة مان"
             a2="IM"
+            translation="আইল অব ম্যান"
             verified="N" />
         <!--India-->
         <country
-            translation="الهند"
             a2="IN"
+            translation="ভারত"
             verified="N" />
         <!--British Indian Ocean Territory-->
         <country
-            translation="إقليم المحيط البريطاني الهندي"
             a2="IO"
+            translation="ব্রিটিশ ভারতীয় মহাসাগর অঞ্চল"
             verified="N" />
         <!--Iraq-->
         <country
-            translation="العراق"
             a2="IQ"
+            translation="ইরাক"
             verified="N" />
         <!--Iran, Islamic Republic Of-->
         <country
-            translation="إيران"
             a2="IR"
+            translation="ইরান, ইসলামী প্রজাতন্ত্রের"
             verified="N" />
         <!--Iceland-->
         <country
-            translation="آيسلندا"
             a2="IS"
+            translation="আইস্ল্যাণ্ড"
             verified="N" />
         <!--Italy-->
         <country
-            translation="إيطاليا"
             a2="IT"
+            translation="ইতালি"
             verified="N" />
         <!--Jersey-->
         <country
-            translation="جيرسي"
             a2="JE"
+            translation="জার্সি"
             verified="N" />
         <!--Jamaica-->
         <country
-            translation="جامايكا"
             a2="JM"
+            translation="জ্যামাইকা"
             verified="N" />
         <!--Jordan-->
         <country
-            translation="الأردن"
             a2="JO"
+            translation="জর্দান"
             verified="N" />
         <!--Japan-->
         <country
-            translation="اليابان"
             a2="JP"
+            translation="জাপান"
             verified="N" />
         <!--Kenya-->
         <country
-            translation="كينيا"
             a2="KE"
+            translation="কেনিয়া"
             verified="N" />
         <!--Kyrgyzstan-->
         <country
-            translation="قرغيزستان"
             a2="KG"
+            translation="কিরগিজস্তান"
             verified="N" />
         <!--Cambodia-->
         <country
-            translation="كمبوديا"
             a2="KH"
+            translation="কাম্বোডিয়া"
             verified="N" />
         <!--Kiribati-->
         <country
-            translation="كيريباتي"
             a2="KI"
+            translation="কিরিবাতি"
             verified="N" />
         <!--Comoros-->
         <country
-            translation="جزر القمر"
             a2="KM"
+            translation="কমোরোস"
             verified="N" />
         <!--Saint Kitts and Nevis-->
         <country
-            translation="سانت كيتس ونيفيس"
             a2="KN"
+            translation="সেন্ট কিটস ও নেভিস"
             verified="N" />
         <!--North Korea-->
         <country
-            translation="كوريا الشمالية"
             a2="KP"
+            translation="কোরিয়া, গণতান্ত্রিক সমেত গুলি প্রজাতন্ত্র"
             verified="N" />
         <!--South Korea-->
         <country
-            translation="كوريا الجنوبية"
             a2="KR"
+            translation="কোরিয়া"
             verified="N" />
         <!--Kuwait-->
         <country
-            translation="الكويت"
             a2="KW"
+            translation="কুয়েত"
             verified="N" />
         <!--Cayman Islands-->
         <country
-            translation="جزر كايمان"
             a2="KY"
+            translation="কেম্যান দ্বীপপুঞ্জ"
             verified="N" />
         <!--Kazakhstan-->
         <country
-            translation="كازاخستان"
             a2="KZ"
+            translation="কাজাকস্থান"
             verified="N" />
         <!--Lao People's Democratic Republic-->
         <country
-            translation="لاوس"
             a2="LA"
+            translation="লাও পিপলস সমেত গুলি ডেমোক্রেটিক রিপাবলিক"
             verified="N" />
         <!--Lebanon-->
         <country
-            translation="لبنان"
             a2="LB"
+            translation="লেবানন"
             verified="N" />
         <!--Saint Lucia-->
         <country
-            translation="القديسة لوسيا"
             a2="LC"
+            translation="সেন্ট লুসিয়া"
             verified="N" />
         <!--Liechtenstein-->
         <country
-            translation="ليختنشتاين"
             a2="LI"
+            translation="লিচেনস্টেইন"
             verified="N" />
         <!--Sri Lanka-->
         <country
-            translation="سيريلانكا"
             a2="LK"
+            translation="শ্রীলংকা"
             verified="N" />
         <!--Liberia-->
         <country
-            translation="ليبيريا"
             a2="LR"
+            translation="লাইবেরিয়া"
             verified="N" />
         <!--Lesotho-->
         <country
-            translation="ليسوتو"
             a2="LS"
+            translation="লেসোথো"
             verified="N" />
         <!--Lithuania-->
         <country
-            translation="ليتوانيا"
             a2="LT"
+            translation="লিত্ভা"
             verified="N" />
         <!--Luxembourg-->
         <country
-            translation="لوكسمبورغ"
             a2="LU"
+            translation="লাক্সেমবার্গ"
             verified="N" />
         <!--Latvia-->
         <country
-            translation="لاتفيا"
             a2="LV"
+            translation="ল্যাট্ভিআ"
             verified="N" />
         <!--Libya-->
         <country
-            translation="ليبيا"
             a2="LY"
+            translation="লিবিয়া"
             verified="N" />
         <!--Morocco-->
         <country
-            translation="المغرب"
             a2="MA"
+            translation="মরক্কো"
             verified="N" />
         <!--Monaco-->
         <country
-            translation="موناكو"
             a2="MC"
+            translation="মোনাকো"
             verified="N" />
         <!--Moldova, Republic Of-->
         <country
-            translation="مولدافيا"
             a2="MD"
+            translation="মোল্দাভিয়া, প্রজাতন্ত্রের"
             verified="N" />
         <!--Montenegro-->
         <country
-            translation="الجبل الأسود"
             a2="ME"
+            translation="মন্টিনিগ্রো"
             verified="N" />
         <!--Saint Martin-->
         <country
-            translation="القديس مارتن"
             a2="MF"
+            translation="সেন্ট মার্টিন"
             verified="N" />
         <!--Madagascar-->
         <country
-            translation="مدغشقر"
             a2="MG"
+            translation="ম্যাডাগ্যাস্কার"
             verified="N" />
         <!--Marshall Islands-->
         <country
-            translation="جزر مارشال"
             a2="MH"
+            translation="মার্শাল দ্বীপপুঞ্জ"
             verified="N" />
         <!--Macedonia (FYROM)-->
         <country
-            translation="مقدونيا، جمهورية يوغوسلافيا السابقة"
             a2="MK"
+            translation="ম্যাসেডোনিয়া, সাবেক যুগোস্লাভ প্রজাতন্ত্র"
             verified="N" />
         <!--Mali-->
         <country
-            translation="مالي"
             a2="ML"
+            translation="মালি"
             verified="N" />
         <!--Myanmar-->
         <country
-            translation="ميانمار"
             a2="MM"
+            translation="মায়ানমার"
             verified="N" />
         <!--Mongolia-->
         <country
-            translation="منغوليا"
             a2="MN"
+            translation="মঙ্গোলিআ"
             verified="N" />
         <!--Macau-->
         <country
-            translation="ماكاو"
             a2="MO"
+            translation="ম্যাকাও"
             verified="N" />
         <!--Northern Mariana Islands-->
         <country
-            translation="جزر مريانا الشمالية"
             a2="MP"
+            translation="উত্তর মারিয়ানা দ্বীপপুঞ্জ"
             verified="N" />
         <!--Martinique-->
         <country
-            translation="مارتينيك"
             a2="MQ"
+            translation="মার্টিনিক"
             verified="N" />
         <!--Mauritania-->
         <country
-            translation="موريتانيا"
             a2="MR"
+            translation="মৌরিতানিয়া"
             verified="N" />
         <!--Montserrat-->
         <country
-            translation="مونتسيرات"
             a2="MS"
+            translation="মন্টসেরাট"
             verified="N" />
         <!--Malta-->
         <country
-            translation="مالطا"
             a2="MT"
+            translation="মালটা"
             verified="N" />
         <!--Mauritius-->
         <country
-            translation="موريشيوس"
             a2="MU"
+            translation="মরিশাস"
             verified="N" />
         <!--Maldives-->
         <country
-            translation="جزر المالديف"
             a2="MV"
+            translation="মালদ্বীপ"
             verified="N" />
         <!--Malawi-->
         <country
-            translation="ملاوي"
             a2="MW"
+            translation="মালাউই"
             verified="N" />
         <!--Mexico-->
         <country
-            translation="المكسيك"
             a2="MX"
+            translation="মেক্সিকো"
             verified="N" />
         <!--Malaysia-->
         <country
-            translation="ماليزيا"
             a2="MY"
+            translation="মালয়েশিয়া"
             verified="N" />
         <!--Mozambique-->
         <country
-            translation="موزمبيق"
             a2="MZ"
+            translation="মোজাম্বিক"
             verified="N" />
         <!--Namibia-->
         <country
-            translation="ناميبيا"
             a2="NA"
+            translation="নামিবিয়া"
             verified="N" />
         <!--New Caledonia-->
         <country
-            translation="كاليدونيا الجديدة"
             a2="NC"
+            translation="নতুন ক্যালেডোনিয়া"
             verified="N" />
         <!--Niger-->
         <country
-            translation="النيجر"
             a2="NE"
+            translation="নাইজারনদী"
             verified="N" />
         <!--Norfolk Islands-->
         <country
-            translation="جزر نورفولك"
             a2="NF"
+            translation="নরফোক দ্বীপপুঞ্জ"
             verified="N" />
         <!--Nigeria-->
         <country
-            translation="نيجيريا"
             a2="NG"
+            translation="নাইজিরিয়াদেশ"
             verified="N" />
         <!--Nicaragua-->
         <country
-            translation="نيكاراغوا"
             a2="NI"
+            translation="নিক্যার্যাগিউআদেশ"
             verified="N" />
         <!--Netherlands-->
         <country
-            translation="هولندا"
             a2="NL"
+            translation="নেদারল্যান্ডস"
             verified="N" />
         <!--Norway-->
         <country
-            translation="النرويج"
             a2="NO"
+            translation="নরত্তএদেশ"
             verified="N" />
         <!--Nepal-->
         <country
-            translation="نيبال"
             a2="NP"
+            translation="নেপাল"
             verified="N" />
         <!--Nauru-->
         <country
-            translation="ناورو"
             a2="NR"
+            translation="নাউরু"
             verified="N" />
         <!--Niue-->
         <country
-            translation="نيوي"
             a2="NU"
+            translation="নিউয়ে"
             verified="N" />
         <!--New Zealand-->
         <country
-            translation="نيوزيلاندا"
             a2="NZ"
+            translation="নিউজিল্যান্ড"
             verified="N" />
         <!--Oman-->
         <country
-            translation="سلطنة عمان"
             a2="OM"
+            translation="ওমান"
             verified="N" />
         <!--Panama-->
         <country
-            translation="بناما"
             a2="PA"
+            translation="পানামা"
             verified="N" />
         <!--Peru-->
         <country
-            translation="بيرو"
             a2="PE"
+            translation="পেরু"
             verified="N" />
         <!--French Polynesia-->
         <country
-            translation="بولينيزيا الفرنسية"
             a2="PF"
+            translation="ফরাসি পলিনেশিয়া"
             verified="N" />
         <!--Papua New Guinea-->
         <country
-            translation="بابوا غينيا الجديدة"
             a2="PG"
+            translation="পাপুয়া নিউ গিনি"
             verified="N" />
         <!--Philippines-->
         <country
-            translation="الفلبين"
             a2="PH"
+            translation="ফিলিপাইন"
             verified="N" />
         <!--Pakistan-->
         <country
-            translation="باكستان"
             a2="PK"
+            translation="পাকিস্তান"
             verified="N" />
         <!--Poland-->
         <country
-            translation="بولندا"
             a2="PL"
+            translation="পোল্যান্ড"
             verified="N" />
         <!--Saint Pierre And Miquelon-->
         <country
-            translation="سان بيار وميكلون"
             a2="PM"
+            translation="সেন্ট পিয়ের ও মিকুয়েলন"
             verified="N" />
         <!--Pitcairn Islands-->
         <country
-            translation="جزر بيتكيرن"
             a2="PN"
+            translation="পিটকেয়ার্ন"
             verified="N" />
         <!--Puerto Rico-->
         <country
-            translation="بورتوريكو"
             a2="PR"
+            translation="পুয়ের্তো রিকো"
             verified="N" />
         <!--Palestine-->
         <country
-            translation="فلسطين"
             a2="PS"
+            translation="প্যালেস্টাইন"
             verified="N" />
         <!--Portugal-->
         <country
-            translation="البرتغال"
             a2="PT"
+            translation="পর্তুগাল"
             verified="N" />
         <!--Palau-->
         <country
-            translation="بالاو"
             a2="PW"
+            translation="পালাও"
             verified="N" />
         <!--Paraguay-->
         <country
-            translation="باراغواي"
             a2="PY"
+            translation="প্যারাগুয়ে"
             verified="N" />
         <!--Qatar-->
         <country
-            translation="قطر"
             a2="QA"
+            translation="কাতার"
             verified="N" />
         <!--Réunion-->
         <country
-            translation="لا ريونيون"
             a2="RE"
+            translation="পুনর্মিলন"
             verified="N" />
         <!--Romania-->
         <country
-            translation="رومانيا"
             a2="RO"
+            translation="রুমানিয়া"
             verified="N" />
         <!--Serbia-->
         <country
-            translation="صربيا"
             a2="RS"
+            translation="সার্বিয়া"
             verified="N" />
         <!--Russian Federation-->
         <country
-            translation="روسيا"
             a2="RU"
+            translation="রাশিয়ান ফেডারেশন"
             verified="N" />
         <!--Rwanda-->
         <country
-            translation="رواندا"
             a2="RW"
+            translation="রুয়ান্ডা"
             verified="N" />
         <!--Saudi Arabia-->
         <country
-            translation="المملكة العربية السعودية"
             a2="SA"
+            translation="সৌদি আরব"
             verified="N" />
         <!--Solomon Islands-->
         <country
-            translation="جزر سليمان"
             a2="SB"
+            translation="সলোমান দ্বীপপুঞ্জ"
             verified="N" />
         <!--Seychelles-->
         <country
-            translation="سيشيل"
             a2="SC"
+            translation="সিসিলি"
             verified="N" />
         <!--Sudan-->
         <country
-            translation="السودان"
             a2="SD"
+            translation="সুদান"
             verified="N" />
         <!--Sweden-->
         <country
-            translation="السويد"
             a2="SE"
+            translation="সুইডেন"
             verified="N" />
         <!--Singapore-->
         <country
-            translation="سنغافورة"
             a2="SG"
+            translation="সিঙ্গাপুর"
             verified="N" />
         <!--Saint Helena, Ascension And Tristan Da Cunha-->
         <country
-            translation="سانت هيلانة"
             a2="SH"
+            translation="সেন্ট হেলেনা, অ্যাসেনশন ও ত্রিস্তান দা কুনহা"
             verified="N" />
         <!--Slovenia-->
         <country
-            translation="سلوفينيا"
             a2="SI"
+            translation="স্লোভেনিয়া"
             verified="N" />
         <!--Slovakia-->
         <country
-            translation="سلوفاكيا"
             a2="SK"
+            translation="স্লোভাকিয়া"
             verified="N" />
         <!--Sierra Leone-->
         <country
-            translation="سيرا ليون"
             a2="SL"
+            translation="সিয়েরা লিওন"
             verified="N" />
         <!--San Marino-->
         <country
-            translation="سان مارينو"
             a2="SM"
+            translation="সান মারিনো"
             verified="N" />
         <!--Senegal-->
         <country
-            translation="السنغال"
             a2="SN"
+            translation="সেনেগাল"
             verified="N" />
         <!--Somalia-->
         <country
-            translation="الصومال"
             a2="SO"
+            translation="সোমালিয়া"
             verified="N" />
         <!--Suriname-->
         <country
-            translation="سورينام"
             a2="SR"
+            translation="সুরিনাম"
             verified="N" />
         <!--South Sudan-->
         <country
-            translation="جنوب السودان"
             a2="SS"
+            translation="দক্ষিণ সুদান"
             verified="N" />
         <!--Sao Tome And Principe-->
         <country
-            translation="ساو تومي وبرينسيبي"
             a2="ST"
+            translation="সাও টোমে এবং প্রিনসিপে"
             verified="N" />
         <!--El Salvador-->
         <country
-            translation="السلفادور"
             a2="SV"
+            translation="এল সালভাদর"
             verified="N" />
         <!--Sint Maarten-->
         <country
-            translation="سانت مارتن"
             a2="SX"
+            translation="সিন্ট মার্টেন"
             verified="N" />
         <!--Syrian Arab Republic-->
         <country
-            translation="سوريا"
             a2="SY"
+            translation="সিরিয় আরব প্রজাতন্ত্র"
             verified="N" />
         <!--Swaziland-->
         <country
-            translation="سوازيلاند"
             a2="SZ"
+            translation="সোয়াজিল্যান্ড"
             verified="N" />
         <!--Turks and Caicos Islands-->
         <country
-            translation="جزر تركس وكايكوس"
             a2="TC"
+            translation="টার্কস্ ও কেইকোস দ্বীপপুঞ্জ"
             verified="N" />
         <!--Chad-->
         <country
-            translation="تشاد"
             a2="TD"
+            translation="মত্স্যবিশেষ"
             verified="N" />
         <!--Togo-->
         <country
-            translation="توغو"
             a2="TG"
+            translation="যাও"
             verified="N" />
         <!--Thailand-->
         <country
-            translation="تايلاند"
             a2="TH"
+            translation="থাইল্যান্ড"
             verified="N" />
         <!--Tajikistan-->
         <country
-            translation="طاجيكستان"
             a2="TJ"
+            translation="তাজিকিস্তান"
             verified="N" />
         <!--Tokelau-->
         <country
-            translation="توكيلاو"
             a2="TK"
+            translation="টোকেলাউ"
             verified="N" />
         <!--Timor-leste-->
         <country
-            translation="تيمور الشرقية"
             a2="TL"
+            translation="টিমর-লেস্টে"
             verified="N" />
         <!--Turkmenistan-->
         <country
-            translation="تركمانستان"
             a2="TM"
+            translation="তুর্কমেনিস্তান"
             verified="N" />
         <!--Tunisia-->
         <country
-            translation="تونس"
             a2="TN"
+            translation="টিউনিস্"
             verified="N" />
         <!--Tonga-->
         <country
-            translation="تونغا"
             a2="TO"
+            translation="টাঙ্গা"
             verified="N" />
         <!--Turkey-->
         <country
-            translation="تركيا"
             a2="TR"
+            translation="তুরস্ক"
             verified="N" />
         <!--Trinidad &amp; Tobago-->
         <country
-            translation="ترينيداد وتوباغو"
             a2="TT"
+            translation="ত্রিনিদাদ ও টোবাগো"
             verified="N" />
         <!--Tuvalu-->
         <country
-            translation="توفالو"
             a2="TV"
+            translation="টুভালু"
             verified="N" />
         <!--Taiwan-->
         <country
-            translation="تايوان"
             a2="TW"
+            translation="তাইওয়ান"
             verified="N" />
         <!--Tanzania, United Republic Of-->
         <country
-            translation="تنزانيا"
             a2="TZ"
+            translation="তাঞ্জানিয়া, ইউনাইটেড প্রজাতন্ত্রের"
             verified="N" />
         <!--Ukraine-->
         <country
-            translation="أوكرانيا"
             a2="UA"
+            translation="ইউক্রেইন্"
             verified="N" />
         <!--Uganda-->
         <country
-            translation="أوغندا"
             a2="UG"
+            translation="উগান্ডা"
             verified="N" />
         <!--United States (USA)-->
         <country
-            translation="الولايات المتحدة"
             a2="US"
+            translation="যুক্তরাষ্ট্র"
             verified="N" />
         <!--Uruguay-->
         <country
-            translation="أوروغواي"
             a2="UY"
+            translation="উরুগুয়ে"
             verified="N" />
         <!--Uzbekistan-->
         <country
-            translation="أوزبكستان"
             a2="UZ"
+            translation="উজ্বেকিস্থান"
             verified="N" />
         <!--Holy See (vatican City State)-->
         <country
-            translation="الفاتيكان"
             a2="VA"
+            translation="হোলি সি (ভ্যাটিকান সিটি)"
             verified="N" />
         <!--Saint Vincent &amp; The Grenadines-->
         <country
-            translation="سانت فينسنت والغرينادين"
             a2="VC"
+            translation="সেন্ট ভিনসেন্ট ও গ্রেনাডিনস"
             verified="N" />
         <!--Venezuela, Bolivarian Republic Of-->
         <country
-            translation="فنزويلا"
             a2="VE"
+            translation="ভেনেজুয়েলা, ভার্জিন দ্বীপপুঞ্জের"
             verified="N" />
         <!--British Virgin Islands-->
         <country
-            translation="جزر العذراء البريطانية"
             a2="VG"
+            translation="ব্রিটিশ ভার্জিন দ্বীপপুঞ্জ"
             verified="N" />
         <!--US Virgin Islands-->
         <country
-            translation="جزر فيرجن الأمريكية"
             a2="VI"
+            translation="মার্কিন ভার্জিন দ্বীপপুঞ্জ"
             verified="N" />
         <!--Vietnam-->
         <country
-            translation="فيتنام"
             a2="VN"
+            translation="ভিয়েতনামে"
             verified="N" />
         <!--Vanuatu-->
         <country
-            translation="فانواتو"
             a2="VU"
+            translation="ভানুয়াতু"
             verified="N" />
         <!--Wallis And Futuna-->
         <country
-            translation="واليس وفوتونا"
             a2="WF"
+            translation="ওয়ালিস এবং ফুটুনা"
             verified="N" />
         <!--Samoa-->
         <country
-            translation="ساموا"
             a2="WS"
+            translation="সামোয়া"
             verified="N" />
         <!--Kosovo-->
         <country
-            translation="كوسوفو"
             a2="XK"
+            translation="কসোভো"
             verified="N" />
         <!--Yemen-->
         <country
-            translation="اليمن"
             a2="YE"
+            translation="ইমেন"
             verified="N" />
         <!--Mayotte-->
         <country
-            translation="مايوت"
             a2="YT"
+            translation="মায়োত্তে"
             verified="N" />
         <!--South Africa-->
         <country
-            translation="جنوب أفريقيا"
             a2="ZA"
+            translation="দক্ষিন আফ্রিকা"
             verified="N" />
         <!--Zambia-->
         <country
-            translation="زامبيا"
             a2="ZM"
+            translation="জাম্বিয়া"
             verified="N" />
         <!--Zimbabwe-->
         <country
-            translation="زيمبابوي"
             a2="ZW"
+            translation="জিম্বাবুয়ে"
             verified="N" />
     </countries>
 </data>

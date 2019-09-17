@@ -11,7 +11,7 @@ class XMLValidator {
     fun checkAllXMLFiles(context: Context): List<Problem> {
         val problems = mutableListOf<Problem>()
         problems.addAll(checkBaseList(context))
-        for (language in listOf(CPLanguage.ENGLISH, CPLanguage.AFRIKAANS, CPLanguage.ARABIC))
+        for (language in CPLanguage.values())
             problems.addAll(
                 checkTranslationFile(
                     context,
@@ -213,6 +213,14 @@ class XMLValidator {
                                 )
                             }
                         }
+                    } else if(name !in setOf(xmlMessageListKey, xmlDataKey, xmlCountriesKey)){
+                        problems.add(
+                            Problem(
+                                category = ProblemCategory.EXTRA_ENTRIES,
+                                fileName = fileName,
+                                solution = "Remove entry with [$name] tag."
+                            )
+                        )
                     }
             }
             event = xmlPullParser.next()

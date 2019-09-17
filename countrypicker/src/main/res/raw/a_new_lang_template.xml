@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <data>
     <a_message_list>
-        <!--"No matching country found"-->
+        <!--"No matching result found"-->
         <dialog_no_result_ack_message
             translation="__TODO__ Add translation of `No matching result found`"
             verified="N" />
