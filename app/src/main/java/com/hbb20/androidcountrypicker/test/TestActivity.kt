@@ -5,7 +5,10 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hbb20.androidcountrypicker.R
+import com.hbb20.countrypicker.CPLanguage
 import com.hbb20.countrypicker.logd
+import com.hbb20.countrypicker.xmlBaseListFileName
+import com.hbb20.countrypicker.xmlNewLanguageTemplateFileName
 import kotlinx.android.synthetic.main.activity_test.*
 
 class TestActivity : AppCompatActivity() {
@@ -53,8 +56,18 @@ class TestActivity : AppCompatActivity() {
 
     private fun prepareProblemRVAdapter(problems: List<Problem>): ProblemsRVAdapter {
         val rvItems = mutableListOf<ProblemRVItem>()
-        problems.groupBy { it.fileName }.forEach { (fileName, fileProblems) ->
-            rvItems.add(ProblemFileRVItem(fileName))
+        val problemsGroupedByFile = getEmptyMapForFileNameToProblem()
+        problemsGroupedByFile.putAll(problems.groupBy { it.fileName })
+        problemsGroupedByFile.forEach { mapEntry ->
+            val fileName = mapEntry.key
+            val fileProblems = mapEntry.value
+            rvItems.add(
+                ProblemFileRVItem(
+                    fileName,
+                    fileProblems.filter { it.category != ProblemCategory.UNVERIFIED_ENTRIES }.count(),
+                    fileProblems.filter { it.category == ProblemCategory.UNVERIFIED_ENTRIES }.count()
+                )
+            )
             fileProblems.groupBy { it.category }.forEach { (categoryName, categoryProblems) ->
                 rvItems.add(ProblemCategoryRVItem(categoryName.text))
                 categoryProblems.forEach {
@@ -63,6 +76,20 @@ class TestActivity : AppCompatActivity() {
             }
         }
         return ProblemsRVAdapter(this, rvItems)
+    }
+
+    /**
+     * this will return a map [fileName] -> emptyProblem List.
+     * This will be helpful to show which files are problem free.
+     */
+    private fun getEmptyMapForFileNameToProblem(): MutableMap<String, List<Problem>> {
+        val result = mutableMapOf<String, List<Problem>>()
+        result[xmlBaseListFileName] = emptyList()
+        result[xmlNewLanguageTemplateFileName] = emptyList()
+        for (language in CPLanguage.values()) {
+            result[language.translationFileName] = emptyList()
+        }
+        return result
     }
 
     private fun showPassScreen() {

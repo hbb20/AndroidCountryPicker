@@ -69,15 +69,34 @@ class ProblemsRVAdapter(
 }
 
 sealed class ProblemRVItem
-class ProblemFileRVItem(val fileName: String) : ProblemRVItem()
+class ProblemFileRVItem(
+    val fileName: String,
+    val criticalProblemCount: Int,
+    val nonCriticalProblemCount: Int
+) : ProblemRVItem()
+
 class ProblemCategoryRVItem(val categoryName: String) : ProblemRVItem()
 class ProblemInfoRVItem(val problem: Problem) : ProblemRVItem()
 
 sealed class ProblemVH(itemView: View) : RecyclerView.ViewHolder(itemView)
 class ProblemFileVH(itemView: View) : ProblemVH(itemView) {
     val tvFileName = itemView.findViewById<TextView>(R.id.tvFileName)
+    val tvErrorCount = itemView.findViewById<TextView>(R.id.tvErrorCount)
+    val imgStatusIcon = itemView.findViewById<ImageView>(R.id.imgStatusIcon)
     fun bindItem(problemFileRVItem: ProblemFileRVItem) {
         tvFileName.text = problemFileRVItem.fileName
+        if (problemFileRVItem.criticalProblemCount == 0) {
+            if (problemFileRVItem.nonCriticalProblemCount > 0) {
+                imgStatusIcon.setImageResource(R.drawable.ic_warning)
+            } else {
+                imgStatusIcon.setImageResource(R.drawable.ic_check_circle_24dp)
+            }
+            tvErrorCount.visibility = View.GONE
+        } else {
+            imgStatusIcon.setImageResource(R.drawable.ic_error_outline)
+            tvErrorCount.visibility = View.VISIBLE
+            tvErrorCount.text = "${problemFileRVItem.criticalProblemCount}"
+        }
     }
 }
 
