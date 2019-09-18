@@ -1,0 +1,1233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+    <a_message_list>
+        <!--"No matching result found"-->
+        <dialog_no_result_ack_message
+            translation="Ничего не найдено"
+            verified="N" />
+        <!--"Search..."-->
+        <dialog_search_hint_message
+            translation="Поиск..."
+            verified="N" />
+        <!--"Select a country"-->
+        <dialog_title
+            translation="Выберите страну"
+            verified="N" />
+        <!--"Country"-->
+        <empty_selection_message
+            translation="Страна"
+            verified="N" />
+    </a_message_list>
+    <countries>
+        <!--Andorra-->
+        <country
+            a2="AD"
+            translation="Андорра"
+            verified="N" />
+        <!--United Arab Emirates (UAE)-->
+        <country
+            a2="AE"
+            translation="Объединенные Арабские Эмираты"
+            verified="N" />
+        <!--Afghanistan-->
+        <country
+            a2="AF"
+            translation="Афганистан"
+            verified="N" />
+        <!--Antigua and Barbuda-->
+        <country
+            a2="AG"
+            translation="Антигуа и Барбуда"
+            verified="N" />
+        <!--Anguilla-->
+        <country
+            a2="AI"
+            translation="Ангилья"
+            verified="N" />
+        <!--Albania-->
+        <country
+            a2="AL"
+            translation="Албания"
+            verified="N" />
+        <!--Armenia-->
+        <country
+            a2="AM"
+            translation="Армения"
+            verified="N" />
+        <!--Angola-->
+        <country
+            a2="AO"
+            translation="Ангола"
+            verified="N" />
+        <!--Antarctica-->
+        <country
+            a2="AQ"
+            translation="Антарктида"
+            verified="N" />
+        <!--Argentina-->
+        <country
+            a2="AR"
+            translation="Аргентина"
+            verified="N" />
+        <!--American Samoa-->
+        <country
+            a2="AS"
+            translation="Американское Самоа"
+            verified="N" />
+        <!--Austria-->
+        <country
+            a2="AT"
+            translation="Австрия"
+            verified="N" />
+        <!--Australia-->
+        <country
+            a2="AU"
+            translation="Австралия"
+            verified="N" />
+        <!--Aruba-->
+        <country
+            a2="AW"
+            translation="Аруба"
+            verified="N" />
+        <!--Åland Islands-->
+        <country
+            a2="AX"
+            translation="Аландские острова"
+            verified="N" />
+        <!--Azerbaijan-->
+        <country
+            a2="AZ"
+            translation="Азербайджан"
+            verified="N" />
+        <!--Bosnia And Herzegovina-->
+        <country
+            a2="BA"
+            translation="Босния и Герцеговина"
+            verified="N" />
+        <!--Barbados-->
+        <country
+            a2="BB"
+            translation="Барбадос"
+            verified="N" />
+        <!--Bangladesh-->
+        <country
+            a2="BD"
+            translation="Бангладеш"
+            verified="N" />
+        <!--Belgium-->
+        <country
+            a2="BE"
+            translation="Бельгия"
+            verified="N" />
+        <!--Burkina Faso-->
+        <country
+            a2="BF"
+            translation="Буркина-Фасо"
+            verified="N" />
+        <!--Bulgaria-->
+        <country
+            a2="BG"
+            translation="Болгария"
+            verified="N" />
+        <!--Bahrain-->
+        <country
+            a2="BH"
+            translation="Бахрейн"
+            verified="N" />
+        <!--Burundi-->
+        <country
+            a2="BI"
+            translation="Бурунди"
+            verified="N" />
+        <!--Benin-->
+        <country
+            a2="BJ"
+            translation="Бенин"
+            verified="N" />
+        <!--Saint Barthélemy-->
+        <country
+            a2="BL"
+            translation="Сен-Бартельми"
+            verified="N" />
+        <!--Bermuda-->
+        <country
+            a2="BM"
+            translation="Бермудские острова"
+            verified="N" />
+        <!--Brunei Darussalam-->
+        <country
+            a2="BN"
+            translation="Бруней-Даруссалам"
+            verified="N" />
+        <!--Bolivia, Plurinational State Of-->
+        <country
+            a2="BO"
+            translation="Боливия, Многонациональное Государство"
+            verified="N" />
+        <!--Brazil-->
+        <country
+            a2="BR"
+            translation="Бразилия"
+            verified="N" />
+        <!--Bahamas-->
+        <country
+            a2="BS"
+            translation="Багамские о-ва"
+            verified="N" />
+        <!--Bhutan-->
+        <country
+            a2="BT"
+            translation="Бутан"
+            verified="N" />
+        <!--Botswana-->
+        <country
+            a2="BW"
+            translation="Ботсвана"
+            verified="N" />
+        <!--Belarus-->
+        <country
+            a2="BY"
+            translation="Беларусь"
+            verified="N" />
+        <!--Belize-->
+        <country
+            a2="BZ"
+            translation="Белиз"
+            verified="N" />
+        <!--Canada-->
+        <country
+            a2="CA"
+            translation="Канада"
+            verified="N" />
+        <!--Cocos (keeling) Islands-->
+        <country
+            a2="CC"
+            translation="Кокосовые (Килинг) Острова"
+            verified="N" />
+        <!--Congo, The Democratic Republic Of The-->
+        <country
+            a2="CD"
+            translation="Конго, Демократическая Республика"
+            verified="N" />
+        <!--Central African Republic-->
+        <country
+            a2="CF"
+            translation="Центрально-Африканская Республика"
+            verified="N" />
+        <!--Congo-->
+        <country
+            a2="CG"
+            translation="Конго"
+            verified="N" />
+        <!--Switzerland-->
+        <country
+            a2="CH"
+            translation="Швейцария"
+            verified="N" />
+        <!--Côte D'ivoire-->
+        <country
+            a2="CI"
+            translation="Кот-д’Ивуар"
+            verified="N" />
+        <!--Cook Islands-->
+        <country
+            a2="CK"
+            translation="Острова Кука"
+            verified="N" />
+        <!--Chile-->
+        <country
+            a2="CL"
+            translation="Чили"
+            verified="N" />
+        <!--Cameroon-->
+        <country
+            a2="CM"
+            translation="Камерун"
+            verified="N" />
+        <!--China-->
+        <country
+            a2="CN"
+            translation="Китай"
+            verified="N" />
+        <!--Colombia-->
+        <country
+            a2="CO"
+            translation="Колумбия"
+            verified="N" />
+        <!--Costa Rica-->
+        <country
+            a2="CR"
+            translation="Коста-Рика"
+            verified="N" />
+        <!--Cuba-->
+        <country
+            a2="CU"
+            translation="Куба"
+            verified="N" />
+        <!--Cape Verde-->
+        <country
+            a2="CV"
+            translation="Кабо-Верде"
+            verified="N" />
+        <!--Curaçao-->
+        <country
+            a2="CW"
+            translation="ликер кюрасо"
+            verified="N" />
+        <!--Christmas Island-->
+        <country
+            a2="CX"
+            translation="Остров Рождества"
+            verified="N" />
+        <!--Cyprus-->
+        <country
+            a2="CY"
+            translation="Кипр"
+            verified="N" />
+        <!--Czech Republic-->
+        <country
+            a2="CZ"
+            translation="Чешская Республика"
+            verified="N" />
+        <!--Germany-->
+        <country
+            a2="DE"
+            translation="Германия"
+            verified="N" />
+        <!--Djibouti-->
+        <country
+            a2="DJ"
+            translation="Джибути"
+            verified="N" />
+        <!--Denmark-->
+        <country
+            a2="DK"
+            translation="Дания"
+            verified="N" />
+        <!--Dominica-->
+        <country
+            a2="DM"
+            translation="Доминика"
+            verified="N" />
+        <!--Dominican Republic-->
+        <country
+            a2="DO"
+            translation="Доминиканская Республика"
+            verified="N" />
+        <!--Algeria-->
+        <country
+            a2="DZ"
+            translation="Алжир"
+            verified="N" />
+        <!--Ecuador-->
+        <country
+            a2="EC"
+            translation="Эквадор"
+            verified="N" />
+        <!--Estonia-->
+        <country
+            a2="EE"
+            translation="Эстония"
+            verified="N" />
+        <!--Egypt-->
+        <country
+            a2="EG"
+            translation="Египет"
+            verified="N" />
+        <!--Eritrea-->
+        <country
+            a2="ER"
+            translation="Эритрея"
+            verified="N" />
+        <!--Spain-->
+        <country
+            a2="ES"
+            translation="Испания"
+            verified="N" />
+        <!--Ethiopia-->
+        <country
+            a2="ET"
+            translation="Эфиопия"
+            verified="N" />
+        <!--Finland-->
+        <country
+            a2="FI"
+            translation="Финляндия"
+            verified="N" />
+        <!--Fiji-->
+        <country
+            a2="FJ"
+            translation="Фиджи"
+            verified="N" />
+        <!--Falkland Islands (malvinas)-->
+        <country
+            a2="FK"
+            translation="Фолклендские (Мальвинские)"
+            verified="N" />
+        <!--Micronesia, Federated States Of-->
+        <country
+            a2="FM"
+            translation="Микронезия, Федеративные Штаты"
+            verified="N" />
+        <!--Faroe Islands-->
+        <country
+            a2="FO"
+            translation="Фарерские острова"
+            verified="N" />
+        <!--France-->
+        <country
+            a2="FR"
+            translation="Франция"
+            verified="N" />
+        <!--Gabon-->
+        <country
+            a2="GA"
+            translation="Габон"
+            verified="N" />
+        <!--United Kingdom-->
+        <country
+            a2="GB"
+            translation="Великобритания"
+            verified="N" />
+        <!--Grenada-->
+        <country
+            a2="GD"
+            translation="Гренада"
+            verified="N" />
+        <!--Georgia-->
+        <country
+            a2="GE"
+            translation="Грузия"
+            verified="N" />
+        <!--French Guyana-->
+        <country
+            a2="GF"
+            translation="Французская Гвиана"
+            verified="N" />
+        <!--Guernsey-->
+        <country
+            a2="GG"
+            translation="Гернси"
+            verified="N" />
+        <!--Ghana-->
+        <country
+            a2="GH"
+            translation="Гана"
+            verified="N" />
+        <!--Gibraltar-->
+        <country
+            a2="GI"
+            translation="Гибралтар"
+            verified="N" />
+        <!--Greenland-->
+        <country
+            a2="GL"
+            translation="Гренландия"
+            verified="N" />
+        <!--Gambia-->
+        <country
+            a2="GM"
+            translation="Гамбия"
+            verified="N" />
+        <!--Guinea-->
+        <country
+            a2="GN"
+            translation="Гвинея"
+            verified="N" />
+        <!--Guadeloupe-->
+        <country
+            a2="GP"
+            translation="Гваделупа"
+            verified="N" />
+        <!--Equatorial Guinea-->
+        <country
+            a2="GQ"
+            translation="Экваториальная Гвинея"
+            verified="N" />
+        <!--Greece-->
+        <country
+            a2="GR"
+            translation="Греция"
+            verified="N" />
+        <!--Guatemala-->
+        <country
+            a2="GT"
+            translation="Гватемала"
+            verified="N" />
+        <!--Guam-->
+        <country
+            a2="GU"
+            translation="Гуам"
+            verified="N" />
+        <!--Guinea-bissau-->
+        <country
+            a2="GW"
+            translation="Гвинея-Бисау"
+            verified="N" />
+        <!--Guyana-->
+        <country
+            a2="GY"
+            translation="Гайана"
+            verified="N" />
+        <!--Hong Kong-->
+        <country
+            a2="HK"
+            translation="Гонконг"
+            verified="N" />
+        <!--Honduras-->
+        <country
+            a2="HN"
+            translation="Гондурас"
+            verified="N" />
+        <!--Croatia-->
+        <country
+            a2="HR"
+            translation="Хорватия"
+            verified="N" />
+        <!--Haiti-->
+        <country
+            a2="HT"
+            translation="Гаити"
+            verified="N" />
+        <!--Hungary-->
+        <country
+            a2="HU"
+            translation="Венгрия"
+            verified="N" />
+        <!--Indonesia-->
+        <country
+            a2="ID"
+            translation="Индонезия"
+            verified="N" />
+        <!--Ireland-->
+        <country
+            a2="IE"
+            translation="Ирландия"
+            verified="N" />
+        <!--Israel-->
+        <country
+            a2="IL"
+            translation="Израиль"
+            verified="N" />
+        <!--Isle Of Man-->
+        <country
+            a2="IM"
+            translation="Остров Мэн"
+            verified="N" />
+        <!--India-->
+        <country
+            a2="IN"
+            translation="Индия"
+            verified="N" />
+        <!--British Indian Ocean Territory-->
+        <country
+            a2="IO"
+            translation="Британская территория Индийского океана"
+            verified="N" />
+        <!--Iraq-->
+        <country
+            a2="IQ"
+            translation="Ирак"
+            verified="N" />
+        <!--Iran, Islamic Republic Of-->
+        <country
+            a2="IR"
+            translation="Иран, Исламская Республика"
+            verified="N" />
+        <!--Iceland-->
+        <country
+            a2="IS"
+            translation="Исландия"
+            verified="N" />
+        <!--Italy-->
+        <country
+            a2="IT"
+            translation="Италия"
+            verified="N" />
+        <!--Jersey-->
+        <country
+            a2="JE"
+            translation="Джерси"
+            verified="N" />
+        <!--Jamaica-->
+        <country
+            a2="JM"
+            translation="Ямайка"
+            verified="N" />
+        <!--Jordan-->
+        <country
+            a2="JO"
+            translation="Иордания"
+            verified="N" />
+        <!--Japan-->
+        <country
+            a2="JP"
+            translation="Япония"
+            verified="N" />
+        <!--Kenya-->
+        <country
+            a2="KE"
+            translation="Кения"
+            verified="N" />
+        <!--Kyrgyzstan-->
+        <country
+            a2="KG"
+            translation="Киргизия"
+            verified="N" />
+        <!--Cambodia-->
+        <country
+            a2="KH"
+            translation="Камбоджа"
+            verified="N" />
+        <!--Kiribati-->
+        <country
+            a2="KI"
+            translation="Кирибати"
+            verified="N" />
+        <!--Comoros-->
+        <country
+            a2="KM"
+            translation="Коморские острова"
+            verified="N" />
+        <!--Saint Kitts and Nevis-->
+        <country
+            a2="KN"
+            translation="Сент-Китс и Невис"
+            verified="N" />
+        <!--North Korea-->
+        <country
+            a2="KP"
+            translation="Корейская Народно-Демократическая Республика"
+            verified="N" />
+        <!--South Korea-->
+        <country
+            a2="KR"
+            translation="Республика Корея"
+            verified="N" />
+        <!--Kuwait-->
+        <country
+            a2="KW"
+            translation="Кувейт"
+            verified="N" />
+        <!--Cayman Islands-->
+        <country
+            a2="KY"
+            translation="Каймановы острова"
+            verified="N" />
+        <!--Kazakhstan-->
+        <country
+            a2="KZ"
+            translation="Казахстан"
+            verified="N" />
+        <!--Lao People's Democratic Republic-->
+        <country
+            a2="LA"
+            translation="Демократическая Республика Лао"
+            verified="N" />
+        <!--Lebanon-->
+        <country
+            a2="LB"
+            translation="Ливан"
+            verified="N" />
+        <!--Saint Lucia-->
+        <country
+            a2="LC"
+            translation="Санкт-Люсия"
+            verified="N" />
+        <!--Liechtenstein-->
+        <country
+            a2="LI"
+            translation="Лихтенштейн"
+            verified="N" />
+        <!--Sri Lanka-->
+        <country
+            a2="LK"
+            translation="Шри Ланка"
+            verified="N" />
+        <!--Liberia-->
+        <country
+            a2="LR"
+            translation="Либерия"
+            verified="N" />
+        <!--Lesotho-->
+        <country
+            a2="LS"
+            translation="Лесото"
+            verified="N" />
+        <!--Lithuania-->
+        <country
+            a2="LT"
+            translation="Литва"
+            verified="N" />
+        <!--Luxembourg-->
+        <country
+            a2="LU"
+            translation="Люксембург"
+            verified="N" />
+        <!--Latvia-->
+        <country
+            a2="LV"
+            translation="Латвия"
+            verified="N" />
+        <!--Libya-->
+        <country
+            a2="LY"
+            translation="Ливия"
+            verified="N" />
+        <!--Morocco-->
+        <country
+            a2="MA"
+            translation="Марокко"
+            verified="N" />
+        <!--Monaco-->
+        <country
+            a2="MC"
+            translation="Монако"
+            verified="N" />
+        <!--Moldova, Republic Of-->
+        <country
+            a2="MD"
+            translation="Молдова"
+            verified="N" />
+        <!--Montenegro-->
+        <country
+            a2="ME"
+            translation="Черногория"
+            verified="N" />
+        <!--Saint Martin-->
+        <country
+            a2="MF"
+            translation="Сен-Мартен"
+            verified="N" />
+        <!--Madagascar-->
+        <country
+            a2="MG"
+            translation="Мадагаскар"
+            verified="N" />
+        <!--Marshall Islands-->
+        <country
+            a2="MH"
+            translation="Маршалловы острова"
+            verified="N" />
+        <!--Macedonia (FYROM)-->
+        <country
+            a2="MK"
+            translation="Бывшая югославская Республика Македония"
+            verified="N" />
+        <!--Mali-->
+        <country
+            a2="ML"
+            translation="Мали"
+            verified="N" />
+        <!--Myanmar-->
+        <country
+            a2="MM"
+            translation="Мьянма"
+            verified="N" />
+        <!--Mongolia-->
+        <country
+            a2="MN"
+            translation="Монголия"
+            verified="N" />
+        <!--Macau-->
+        <country
+            a2="MO"
+            translation="Макао"
+            verified="N" />
+        <!--Northern Mariana Islands-->
+        <country
+            a2="MP"
+            translation="Северные Марианские острова"
+            verified="N" />
+        <!--Martinique-->
+        <country
+            a2="MQ"
+            translation="Мартиника"
+            verified="N" />
+        <!--Mauritania-->
+        <country
+            a2="MR"
+            translation="Мавритания"
+            verified="N" />
+        <!--Montserrat-->
+        <country
+            a2="MS"
+            translation="Монсеррат"
+            verified="N" />
+        <!--Malta-->
+        <country
+            a2="MT"
+            translation="Мальта"
+            verified="N" />
+        <!--Mauritius-->
+        <country
+            a2="MU"
+            translation="Маврикий"
+            verified="N" />
+        <!--Maldives-->
+        <country
+            a2="MV"
+            translation="Мальдивы"
+            verified="N" />
+        <!--Malawi-->
+        <country
+            a2="MW"
+            translation="Малави"
+            verified="N" />
+        <!--Mexico-->
+        <country
+            a2="MX"
+            translation="Мексика"
+            verified="N" />
+        <!--Malaysia-->
+        <country
+            a2="MY"
+            translation="Малайзия"
+            verified="N" />
+        <!--Mozambique-->
+        <country
+            a2="MZ"
+            translation="Мозамбик"
+            verified="N" />
+        <!--Namibia-->
+        <country
+            a2="NA"
+            translation="Намибия"
+            verified="N" />
+        <!--New Caledonia-->
+        <country
+            a2="NC"
+            translation="Новая Каледония"
+            verified="N" />
+        <!--Niger-->
+        <country
+            a2="NE"
+            translation="Нигер"
+            verified="N" />
+        <!--Norfolk Islands-->
+        <country
+            a2="NF"
+            translation="Норфолкские острова"
+            verified="N" />
+        <!--Nigeria-->
+        <country
+            a2="NG"
+            translation="Нигерия"
+            verified="N" />
+        <!--Nicaragua-->
+        <country
+            a2="NI"
+            translation="Никарагуа"
+            verified="N" />
+        <!--Netherlands-->
+        <country
+            a2="NL"
+            translation="Нидерланды"
+            verified="N" />
+        <!--Norway-->
+        <country
+            a2="NO"
+            translation="Норвегия"
+            verified="N" />
+        <!--Nepal-->
+        <country
+            a2="NP"
+            translation="Непал"
+            verified="N" />
+        <!--Nauru-->
+        <country
+            a2="NR"
+            translation="Науру"
+            verified="N" />
+        <!--Niue-->
+        <country
+            a2="NU"
+            translation="Ниуэ"
+            verified="N" />
+        <!--New Zealand-->
+        <country
+            a2="NZ"
+            translation="Новая Зеландия"
+            verified="N" />
+        <!--Oman-->
+        <country
+            a2="OM"
+            translation="Оман"
+            verified="N" />
+        <!--Panama-->
+        <country
+            a2="PA"
+            translation="Панама"
+            verified="N" />
+        <!--Peru-->
+        <country
+            a2="PE"
+            translation="Перу"
+            verified="N" />
+        <!--French Polynesia-->
+        <country
+            a2="PF"
+            translation="Французская Полинезия"
+            verified="N" />
+        <!--Papua New Guinea-->
+        <country
+            a2="PG"
+            translation="Папуа - Новая Гвинея"
+            verified="N" />
+        <!--Philippines-->
+        <country
+            a2="PH"
+            translation="Филиппины"
+            verified="N" />
+        <!--Pakistan-->
+        <country
+            a2="PK"
+            translation="Пакистан"
+            verified="N" />
+        <!--Poland-->
+        <country
+            a2="PL"
+            translation="Польша"
+            verified="N" />
+        <!--Saint Pierre And Miquelon-->
+        <country
+            a2="PM"
+            translation="Сен-Пьер и Микелон"
+            verified="N" />
+        <!--Pitcairn Islands-->
+        <country
+            a2="PN"
+            translation="Питкэрн"
+            verified="N" />
+        <!--Puerto Rico-->
+        <country
+            a2="PR"
+            translation="Пуэрто-Рико"
+            verified="N" />
+        <!--Palestine-->
+        <country
+            a2="PS"
+            translation="Палестина"
+            verified="N" />
+        <!--Portugal-->
+        <country
+            a2="PT"
+            translation="Португалия"
+            verified="N" />
+        <!--Palau-->
+        <country
+            a2="PW"
+            translation="Палау"
+            verified="N" />
+        <!--Paraguay-->
+        <country
+            a2="PY"
+            translation="Парагвай"
+            verified="N" />
+        <!--Qatar-->
+        <country
+            a2="QA"
+            translation="Катар"
+            verified="N" />
+        <!--Réunion-->
+        <country
+            a2="RE"
+            translation="Реюньон"
+            verified="N" />
+        <!--Romania-->
+        <country
+            a2="RO"
+            translation="Румыния"
+            verified="N" />
+        <!--Serbia-->
+        <country
+            a2="RS"
+            translation="Сербия"
+            verified="N" />
+        <!--Russian Federation-->
+        <country
+            a2="RU"
+            translation="Российская Федерация"
+            verified="N" />
+        <!--Rwanda-->
+        <country
+            a2="RW"
+            translation="Руанда"
+            verified="N" />
+        <!--Saudi Arabia-->
+        <country
+            a2="SA"
+            translation="Саудовская Аравия"
+            verified="N" />
+        <!--Solomon Islands-->
+        <country
+            a2="SB"
+            translation="Соломоновы острова"
+            verified="N" />
+        <!--Seychelles-->
+        <country
+            a2="SC"
+            translation="Сейшельские острова"
+            verified="N" />
+        <!--Sudan-->
+        <country
+            a2="SD"
+            translation="Судан"
+            verified="N" />
+        <!--Sweden-->
+        <country
+            a2="SE"
+            translation="Швеция"
+            verified="N" />
+        <!--Singapore-->
+        <country
+            a2="SG"
+            translation="Сингапур"
+            verified="N" />
+        <!--Saint Helena, Ascension And Tristan Da Cunha-->
+        <country
+            a2="SH"
+            translation="Святой Елены, Вознесения и Тристан-да-Кунья"
+            verified="N" />
+        <!--Slovenia-->
+        <country
+            a2="SI"
+            translation="Словения"
+            verified="N" />
+        <!--Slovakia-->
+        <country
+            a2="SK"
+            translation="Словакия"
+            verified="N" />
+        <!--Sierra Leone-->
+        <country
+            a2="SL"
+            translation="Сьерра-Леоне"
+            verified="N" />
+        <!--San Marino-->
+        <country
+            a2="SM"
+            translation="Сан-Марино"
+            verified="N" />
+        <!--Senegal-->
+        <country
+            a2="SN"
+            translation="Сенегал"
+            verified="N" />
+        <!--Somalia-->
+        <country
+            a2="SO"
+            translation="Сомали"
+            verified="N" />
+        <!--Suriname-->
+        <country
+            a2="SR"
+            translation="Суринам"
+            verified="N" />
+        <!--South Sudan-->
+        <country
+            a2="SS"
+            translation="южный Судан"
+            verified="N" />
+        <!--Sao Tome And Principe-->
+        <country
+            a2="ST"
+            translation="Сан-Томе и Принсипи"
+            verified="N" />
+        <!--El Salvador-->
+        <country
+            a2="SV"
+            translation="Сальвадор"
+            verified="N" />
+        <!--Sint Maarten-->
+        <country
+            a2="SX"
+            translation="Синт-Маартен"
+            verified="N" />
+        <!--Syrian Arab Republic-->
+        <country
+            a2="SY"
+            translation="Сирийская Арабская Республика"
+            verified="N" />
+        <!--Swaziland-->
+        <country
+            a2="SZ"
+            translation="Свазиленд"
+            verified="N" />
+        <!--Turks and Caicos Islands-->
+        <country
+            a2="TC"
+            translation="Острова Теркс и Кайкос"
+            verified="N" />
+        <!--Chad-->
+        <country
+            a2="TD"
+            translation="Чад"
+            verified="N" />
+        <!--Togo-->
+        <country
+            a2="TG"
+            translation="Togo"
+            verified="N" />
+        <!--Thailand-->
+        <country
+            a2="TH"
+            translation="Таиланд"
+            verified="N" />
+        <!--Tajikistan-->
+        <country
+            a2="TJ"
+            translation="Таджикистан"
+            verified="N" />
+        <!--Tokelau-->
+        <country
+            a2="TK"
+            translation="Токелау"
+            verified="N" />
+        <!--Timor-leste-->
+        <country
+            a2="TL"
+            translation="Тимор-Лешти"
+            verified="N" />
+        <!--Turkmenistan-->
+        <country
+            a2="TM"
+            translation="Туркменистан"
+            verified="N" />
+        <!--Tunisia-->
+        <country
+            a2="TN"
+            translation="Тунис"
+            verified="N" />
+        <!--Tonga-->
+        <country
+            a2="TO"
+            translation="Тонга"
+            verified="N" />
+        <!--Turkey-->
+        <country
+            a2="TR"
+            translation="Турция"
+            verified="N" />
+        <!--Trinidad &amp; Tobago-->
+        <country
+            a2="TT"
+            translation="Тринидад и Тобаго"
+            verified="N" />
+        <!--Tuvalu-->
+        <country
+            a2="TV"
+            translation="Тувалу"
+            verified="N" />
+        <!--Taiwan-->
+        <country
+            a2="TW"
+            translation="Тайвань"
+            verified="N" />
+        <!--Tanzania, United Republic Of-->
+        <country
+            a2="TZ"
+            translation="Танзания, Объединенная Республика"
+            verified="N" />
+        <!--Ukraine-->
+        <country
+            a2="UA"
+            translation="Украина"
+            verified="N" />
+        <!--Uganda-->
+        <country
+            a2="UG"
+            translation="Уганда"
+            verified="N" />
+        <!--United States (USA)-->
+        <country
+            a2="US"
+            translation="Соединенные Штаты"
+            verified="N" />
+        <!--Uruguay-->
+        <country
+            a2="UY"
+            translation="Уругвай"
+            verified="N" />
+        <!--Uzbekistan-->
+        <country
+            a2="UZ"
+            translation="Узбекистан"
+            verified="N" />
+        <!--Holy See (vatican City State)-->
+        <country
+            a2="VA"
+            translation="Святейший Престол (Ватикан)"
+            verified="N" />
+        <!--Saint Vincent &amp; The Grenadines-->
+        <country
+            a2="VC"
+            translation="Сент-Винсент и Гренадины"
+            verified="N" />
+        <!--Venezuela, Bolivarian Republic Of-->
+        <country
+            a2="VE"
+            translation="Венесуэла, Боливарианская Республика"
+            verified="N" />
+        <!--British Virgin Islands-->
+        <country
+            a2="VG"
+            translation="Британские Виргинские острова"
+            verified="N" />
+        <!--US Virgin Islands-->
+        <country
+            a2="VI"
+            translation="Американские Виргинские острова"
+            verified="N" />
+        <!--Vietnam-->
+        <country
+            a2="VN"
+            translation="Вьетнам"
+            verified="N" />
+        <!--Vanuatu-->
+        <country
+            a2="VU"
+            translation="Вануату"
+            verified="N" />
+        <!--Wallis And Futuna-->
+        <country
+            a2="WF"
+            translation="Уоллис и Футуна"
+            verified="N" />
+        <!--Samoa-->
+        <country
+            a2="WS"
+            translation="Самоа"
+            verified="N" />
+        <!--Kosovo-->
+        <country
+            a2="XK"
+            translation="Косово"
+            verified="N" />
+        <!--Yemen-->
+        <country
+            a2="YE"
+            translation="Йемен"
+            verified="N" />
+        <!--Mayotte-->
+        <country
+            a2="YT"
+            translation="Майотта"
+            verified="N" />
+        <!--South Africa-->
+        <country
+            a2="ZA"
+            translation="Южная Африка"
+            verified="N" />
+        <!--Zambia-->
+        <country
+            a2="ZM"
+            translation="Замбия"
+            verified="N" />
+        <!--Zimbabwe-->
+        <country
+            a2="ZW"
+            translation="Зимбабве"
+            verified="N" />
+    </countries>
+</data>
