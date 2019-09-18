@@ -1,4 +1,4 @@
-package com.hbb20.countrypicker
+package com.hbb20
 
 data class CPDataStore(
     val cpLanguage: CPLanguage,

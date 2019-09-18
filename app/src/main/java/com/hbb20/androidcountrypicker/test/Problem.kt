@@ -1,7 +1,7 @@
 package com.hbb20.androidcountrypicker.test
 
-import com.hbb20.countrypicker.loge
-import com.hbb20.countrypicker.logw
+import com.hbb20.loge
+import com.hbb20.logw
 
 class Problem(
     val category: ProblemCategory,

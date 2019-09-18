@@ -1,4 +1,4 @@
-package com.hbb20.countrypicker
+package com.hbb20
 
 import java.util.*
 

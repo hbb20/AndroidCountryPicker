@@ -1,9 +1,8 @@
-package com.hbb20.countrypicker
+package com.hbb20
 
 import android.content.Context
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserFactory
-import java.lang.Exception
 import java.util.*
 
 internal lateinit var baseList: HashMap<String, BaseCountry>
@@ -93,7 +92,10 @@ fun loadDataStoreFromXML(
 fun loadBaseList(context: Context) {
     if (!::baseList.isInitialized) {
         val countryList = mutableMapOf<String, BaseCountry>()
-        val xmlPullParser = getRawXMLPullParser(context = context, fileName = xmlBaseListFileName)!!
+        val xmlPullParser = getRawXMLPullParser(
+            context = context,
+            fileName = xmlBaseListFileName
+        )!!
         var event = xmlPullParser.eventType
         while (event != XmlPullParser.END_DOCUMENT) {
             val name = xmlPullParser.name
@@ -102,10 +104,21 @@ fun loadBaseList(context: Context) {
                     if (name == xmlCountryKey) {
                         val nameCode = xmlPullParser.getAttributeValue(null, xmlAlpha2Key)
                         val alpha3 = xmlPullParser.getAttributeValue(null, xmlAlpha3Key)
-                        val phoneCode = xmlPullParser.getAttributeValue(null, xmlPhoneCodeKey)
-                        val englishName = xmlPullParser.getAttributeValue(null, xmlEnglishNameKey)
+                        val phoneCode = xmlPullParser.getAttributeValue(
+                            null,
+                            xmlPhoneCodeKey
+                        )
+                        val englishName = xmlPullParser.getAttributeValue(
+                            null,
+                            xmlEnglishNameKey
+                        )
                         countryList[nameCode] =
-                            BaseCountry(englishName, nameCode, alpha3, phoneCode.toShort())
+                            BaseCountry(
+                                englishName,
+                                nameCode,
+                                alpha3,
+                                phoneCode.toShort()
+                            )
                     }
             }
             event = xmlPullParser.next()

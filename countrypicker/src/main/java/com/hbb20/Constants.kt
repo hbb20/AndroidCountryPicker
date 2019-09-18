@@ -1,4 +1,4 @@
-package com.hbb20.countrypicker
+package com.hbb20
 
 const val xmlAlpha2Key = "a2"
 const val xmlAlpha3Key = "a3"

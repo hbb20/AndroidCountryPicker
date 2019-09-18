@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.hbb20.*
 import com.hbb20.androidcountrypicker.R
-import com.hbb20.countrypicker.*
 import kotlinx.android.synthetic.main.activity_test.*
 
 class TestActivity : AppCompatActivity() {

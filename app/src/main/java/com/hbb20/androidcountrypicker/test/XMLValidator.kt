@@ -1,7 +1,7 @@
 package com.hbb20.androidcountrypicker.test
 
 import android.content.Context
-import com.hbb20.countrypicker.*
+import com.hbb20.*
 import org.xmlpull.v1.XmlPullParser
 
 
@@ -20,7 +20,12 @@ class XMLValidator {
                     nameCodeList
                 )
             )
-        problems.addAll(checkTranslationFile(context, xmlNewLanguageTemplateFileName, nameCodeList))
+        problems.addAll(
+            checkTranslationFile(
+                context,
+                xmlNewLanguageTemplateFileName, nameCodeList
+            )
+        )
         return problems
     }
 
@@ -79,9 +84,18 @@ class XMLValidator {
             when (event) {
                 XmlPullParser.END_TAG ->
                     if (name == xmlCountryKey) {
-                        val alpha2NameCode = xmlPullParser.getAttributeValue(null, xmlAlpha2Key)
-                        val translation = xmlPullParser.getAttributeValue(null, xmlTranslationKey)
-                        val verified = xmlPullParser.getAttributeValue(null, xmlVerifiedKey)
+                        val alpha2NameCode = xmlPullParser.getAttributeValue(
+                            null,
+                            xmlAlpha2Key
+                        )
+                        val translation = xmlPullParser.getAttributeValue(
+                            null,
+                            xmlTranslationKey
+                        )
+                        val verified = xmlPullParser.getAttributeValue(
+                            null,
+                            xmlVerifiedKey
+                        )
 
                         //check primary key
                         if (alpha2NameCode.isNullOrBlank()) {
@@ -180,7 +194,10 @@ class XMLValidator {
                         }
                     } else if (name in expectedMessagesKeys) {
                         existingMessageKeys.add(name)
-                        val translation = xmlPullParser.getAttributeValue(null, xmlTranslationKey)
+                        val translation = xmlPullParser.getAttributeValue(
+                            null,
+                            xmlTranslationKey
+                        )
                         if (translation.isNullOrBlank()) {
                             problems.add(
                                 Problem(
@@ -235,7 +252,12 @@ class XMLValidator {
                                 )
                             }
                         }
-                    } else if (name !in setOf(xmlMessageListKey, xmlDataKey, xmlCountriesKey)) {
+                    } else if (name !in setOf(
+                            xmlMessageListKey,
+                            xmlDataKey,
+                            xmlCountriesKey
+                        )
+                    ) {
                         problems.add(
                             Problem(
                                 category = ProblemCategory.EXTRA_ENTRIES,
@@ -277,7 +299,10 @@ class XMLValidator {
 
     private fun checkBaseList(context: Context): List<Problem> {
         val problems = mutableListOf<Problem>()
-        val xmlPullParser = getRawXMLPullParser(context = context, fileName = xmlBaseListFileName)
+        val xmlPullParser = getRawXMLPullParser(
+            context = context,
+            fileName = xmlBaseListFileName
+        )
 
         //if pullParser is null means file is missing.
         if (xmlPullParser == null) {
@@ -299,10 +324,22 @@ class XMLValidator {
             when (event) {
                 XmlPullParser.END_TAG ->
                     if (name == xmlCountryKey) {
-                        val alpha2NameCode = xmlPullParser.getAttributeValue(null, xmlAlpha2Key)
-                        val alpha3NameCode = xmlPullParser.getAttributeValue(null, xmlAlpha3Key)
-                        val phoneCode = xmlPullParser.getAttributeValue(null, xmlPhoneCodeKey)
-                        val englishName = xmlPullParser.getAttributeValue(null, xmlEnglishNameKey)
+                        val alpha2NameCode = xmlPullParser.getAttributeValue(
+                            null,
+                            xmlAlpha2Key
+                        )
+                        val alpha3NameCode = xmlPullParser.getAttributeValue(
+                            null,
+                            xmlAlpha3Key
+                        )
+                        val phoneCode = xmlPullParser.getAttributeValue(
+                            null,
+                            xmlPhoneCodeKey
+                        )
+                        val englishName = xmlPullParser.getAttributeValue(
+                            null,
+                            xmlEnglishNameKey
+                        )
 
                         //check primary key
                         if (alpha2NameCode.isNullOrBlank()) {
