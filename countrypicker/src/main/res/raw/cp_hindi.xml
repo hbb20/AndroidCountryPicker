@@ -1,979 +1,1234 @@
 <?xml version="1.0" encoding="utf-8"?>
 <data>
-    <messages>
-        <dialog_title translation="देश चुनिए" />
-        <dialog_search_hint_message translation="खोज करें ..." />
-        <dialog_no_result_ack_message translation="परिणाम नहीं मिला" />
-    </messages>
+    <a_message_list>
+        <!--"No matching result found"-->
+        <dialog_no_result_ack_message
+            translation="परिणाम नहीं मिला"
+            verified="N" />
+        <!--"Search..."-->
+        <dialog_search_hint_message
+            translation="खोज करें ..."
+            verified="N" />
+        <!--"Select a country"-->
+        <dialog_title
+            translation="देश चुनिए"
+            verified="N" />
+        <!--"Country"-->
+        <empty_selection_message
+            translation="देश"
+            verified="N" />
+    </a_message_list>
 
     <countries>
         <!--Andorra-->
         <country
-            name="अंडोरा"
-            nCode="AD" />
+            a2="AD"
+            translation="अंडोरा"
+            verified="N" />
         <!--United Arab Emirates (UAE)-->
         <country
-            name="संयुक्त अरब अमीरात"
-            nCode="AE" />
+            a2="AE"
+            translation="संयुक्त अरब अमीरात"
+            verified="N" />
         <!--Afghanistan-->
         <country
-            name="अफ़ग़ानिस्तान"
-            nCode="AF" />
+            a2="AF"
+            translation="अफ़ग़ानिस्तान"
+            verified="N" />
         <!--Antigua and Barbuda-->
         <country
-            name="अंतिगुया और बार्बूडा"
-            nCode="AG" />
+            a2="AG"
+            translation="अंतिगुया और बार्बूडा"
+            verified="N" />
         <!--Anguilla-->
         <country
-            name="एंगुइला"
-            nCode="AI" />
+            a2="AI"
+            translation="एंगुइला"
+            verified="N" />
         <!--Albania-->
         <country
-            name="अल्बानिया"
-            nCode="AL" />
+            a2="AL"
+            translation="अल्बानिया"
+            verified="N" />
         <!--Armenia-->
         <country
-            name="आर्मीनिया"
-            nCode="AM" />
+            a2="AM"
+            translation="आर्मीनिया"
+            verified="N" />
         <!--Angola-->
         <country
-            name="अंगोला"
-            nCode="AO" />
+            a2="AO"
+            translation="अंगोला"
+            verified="N" />
         <!--Antarctica-->
         <country
-            name="अंटार्कटिका"
-            nCode="AQ" />
+            a2="AQ"
+            translation="अंटार्कटिका"
+            verified="N" />
         <!--Argentina-->
         <country
-            name="अर्जेंटीना"
-            nCode="AR" />
+            a2="AR"
+            translation="अर्जेंटीना"
+            verified="N" />
         <!--American Samoa-->
         <country
-            name="अमेरिकन समोआ"
-            nCode="AS" />
+            a2="AS"
+            translation="अमेरिकन समोआ"
+            verified="N" />
         <!--Austria-->
         <country
-            name="ऑस्ट्रिया"
-            nCode="AT" />
+            a2="AT"
+            translation="ऑस्ट्रिया"
+            verified="N" />
         <!--Australia-->
         <country
-            name="ऑस्ट्रेलिया"
-            nCode="AU" />
+            a2="AU"
+            translation="ऑस्ट्रेलिया"
+            verified="N" />
         <!--Aruba-->
         <country
-            name="अरूबा"
-            nCode="AW" />
+            a2="AW"
+            translation="अरूबा"
+            verified="N" />
         <!--Åland Islands-->
         <country
-            name="एलैंड द्वीप समूह"
-            nCode="AX" />
+            a2="AX"
+            translation="एलैंड द्वीप समूह"
+            verified="N" />
         <!--Azerbaijan-->
         <country
-            name="आज़रबाइजान"
-            nCode="AZ" />
+            a2="AZ"
+            translation="आज़रबाइजान"
+            verified="N" />
         <!--Bosnia And Herzegovina-->
         <country
-            name="बोस्निया और हर्जेगोविना"
-            nCode="BA" />
+            a2="BA"
+            translation="बोस्निया और हर्जेगोविना"
+            verified="N" />
         <!--Barbados-->
         <country
-            name="बारबाडोस"
-            nCode="BB" />
+            a2="BB"
+            translation="बारबाडोस"
+            verified="N" />
         <!--Bangladesh-->
         <country
-            name="बांग्लादेश"
-            nCode="BD" />
+            a2="BD"
+            translation="बांग्लादेश"
+            verified="N" />
         <!--Belgium-->
         <country
-            name="बेल्जियम"
-            nCode="BE" />
+            a2="BE"
+            translation="बेल्जियम"
+            verified="N" />
         <!--Burkina Faso-->
         <country
-            name="बुर्किना फासो"
-            nCode="BF" />
+            a2="BF"
+            translation="बुर्किना फासो"
+            verified="N" />
         <!--Bulgaria-->
         <country
-            name="बुल्गारिया"
-            nCode="BG" />
+            a2="BG"
+            translation="बुल्गारिया"
+            verified="N" />
         <!--Bahrain-->
         <country
-            name="बहरीन"
-            nCode="BH" />
+            a2="BH"
+            translation="बहरीन"
+            verified="N" />
         <!--Burundi-->
         <country
-            name="बुस्र्न्दी"
-            nCode="BI" />
+            a2="BI"
+            translation="बुस्र्न्दी"
+            verified="N" />
         <!--Benin-->
         <country
-            name="बेनिन"
-            nCode="BJ" />
+            a2="BJ"
+            translation="बेनिन"
+            verified="N" />
         <!--Saint Barthélemy-->
         <country
-            name="सेंट Barthélemy"
-            nCode="BL" />
+            a2="BL"
+            translation="सेंट Barthélemy"
+            verified="N" />
         <!--Bermuda-->
         <country
-            name="बरमूडा"
-            nCode="BM" />
+            a2="BM"
+            translation="बरमूडा"
+            verified="N" />
         <!--Brunei Darussalam-->
         <country
-            name="ब्रुनेई दारुस्सलाम"
-            nCode="BN" />
+            a2="BN"
+            translation="ब्रुनेई दारुस्सलाम"
+            verified="N" />
         <!--Bolivia, Plurinational State Of-->
         <country
-            name="बोलीविया, प्लूरिनेशनल स्टेट ऑफ़"
-            nCode="BO" />
+            a2="BO"
+            translation="बोलीविया, प्लूरिनेशनल स्टेट ऑफ़"
+            verified="N" />
         <!--Brazil-->
         <country
-            name="ब्राज़िल"
-            nCode="BR" />
+            a2="BR"
+            translation="ब्राज़िल"
+            verified="N" />
         <!--Bahamas-->
         <country
-            name="बहामा"
-            nCode="BS" />
+            a2="BS"
+            translation="बहामा"
+            verified="N" />
         <!--Bhutan-->
         <country
-            name="भूटान"
-            nCode="BT" />
+            a2="BT"
+            translation="भूटान"
+            verified="N" />
         <!--Botswana-->
         <country
-            name="बोत्सवाना"
-            nCode="BW" />
+            a2="BW"
+            translation="बोत्सवाना"
+            verified="N" />
         <!--Belarus-->
         <country
-            name="बेलोरूस"
-            nCode="BY" />
+            a2="BY"
+            translation="बेलोरूस"
+            verified="N" />
         <!--Belize-->
         <country
-            name="बेलीज"
-            nCode="BZ" />
+            a2="BZ"
+            translation="बेलीज"
+            verified="N" />
         <!--Canada-->
         <country
-            name="कनाडा"
-            nCode="CA" />
+            a2="CA"
+            translation="कनाडा"
+            verified="N" />
         <!--Cocos (keeling) Islands-->
         <country
-            name="कोकोस (कीलिंग) द्वीप"
-            nCode="CC" />
+            a2="CC"
+            translation="कोकोस (कीलिंग) द्वीप"
+            verified="N" />
         <!--Congo, The Democratic Republic Of The-->
         <country
-            name="कांगो लोकतांत्रिक गणराज्य"
-            nCode="CD" />
+            a2="CD"
+            translation="कांगो लोकतांत्रिक गणराज्य"
+            verified="N" />
         <!--Central African Republic-->
         <country
-            name="केंद्रीय अफ्रीकन गणराज्य"
-            nCode="CF" />
+            a2="CF"
+            translation="केंद्रीय अफ्रीकन गणराज्य"
+            verified="N" />
         <!--Congo-->
         <country
-            name="कांगो"
-            nCode="CG" />
+            a2="CG"
+            translation="कांगो"
+            verified="N" />
         <!--Switzerland-->
         <country
-            name="स्विट्जरलैंड"
-            nCode="CH" />
+            a2="CH"
+            translation="स्विट्जरलैंड"
+            verified="N" />
         <!--Côte D'ivoire-->
         <country
-            name="कोटे डी एंड apos; आइवर"
-            nCode="CI" />
+            a2="CI"
+            translation="कोटे डी एंड apos; आइवर"
+            verified="N" />
         <!--Cook Islands-->
         <country
-            name="कुक द्वीपसमूह"
-            nCode="CK" />
+            a2="CK"
+            translation="कुक द्वीपसमूह"
+            verified="N" />
         <!--Chile-->
         <country
-            name="चिली"
-            nCode="CL" />
+            a2="CL"
+            translation="चिली"
+            verified="N" />
         <!--Cameroon-->
         <country
-            name="कैमरून"
-            nCode="CM" />
+            a2="CM"
+            translation="कैमरून"
+            verified="N" />
         <!--China-->
         <country
-            name="चीन"
-            nCode="CN" />
+            a2="CN"
+            translation="चीन"
+            verified="N" />
         <!--Colombia-->
         <country
-            name="कोलम्बिया"
-            nCode="CO" />
+            a2="CO"
+            translation="कोलम्बिया"
+            verified="N" />
         <!--Costa Rica-->
         <country
-            name="कोस्टा रिका"
-            nCode="CR" />
+            a2="CR"
+            translation="कोस्टा रिका"
+            verified="N" />
         <!--Cuba-->
         <country
-            name="क्यूबा"
-            nCode="CU" />
+            a2="CU"
+            translation="क्यूबा"
+            verified="N" />
         <!--Cape Verde-->
         <country
-            name="केप वर्दे"
-            nCode="CV" />
+            a2="CV"
+            translation="केप वर्दे"
+            verified="N" />
         <!--Curaçao-->
         <country
-            name="कुराकाओ"
-            nCode="CW" />
+            a2="CW"
+            translation="कुराकाओ"
+            verified="N" />
         <!--Christmas Island-->
         <country
-            name="क्रिसमस द्वीप"
-            nCode="CX" />
+            a2="CX"
+            translation="क्रिसमस द्वीप"
+            verified="N" />
         <!--Cyprus-->
         <country
-            name="साइप्रस"
-            nCode="CY" />
+            a2="CY"
+            translation="साइप्रस"
+            verified="N" />
         <!--Czech Republic-->
         <country
-            name="चेक गणतंत्र"
-            nCode="CZ" />
+            a2="CZ"
+            translation="चेक गणतंत्र"
+            verified="N" />
         <!--Germany-->
         <country
-            name="जर्मनी"
-            nCode="DE" />
+            a2="DE"
+            translation="जर्मनी"
+            verified="N" />
         <!--Djibouti-->
         <country
-            name="जिबूती"
-            nCode="DJ" />
+            a2="DJ"
+            translation="जिबूती"
+            verified="N" />
         <!--Denmark-->
         <country
-            name="डेनमार्क"
-            nCode="DK" />
+            a2="DK"
+            translation="डेनमार्क"
+            verified="N" />
         <!--Dominica-->
         <country
-            name="डोमिनिका"
-            nCode="DM" />
+            a2="DM"
+            translation="डोमिनिका"
+            verified="N" />
         <!--Dominican Republic-->
         <country
-            name="डोमिनिकन गणराज्य"
-            nCode="DO" />
+            a2="DO"
+            translation="डोमिनिकन गणराज्य"
+            verified="N" />
         <!--Algeria-->
         <country
-            name="एलजीरिया"
-            nCode="DZ" />
+            a2="DZ"
+            translation="एलजीरिया"
+            verified="N" />
         <!--Ecuador-->
         <country
-            name="इक्वेडोर"
-            nCode="EC" />
+            a2="EC"
+            translation="इक्वेडोर"
+            verified="N" />
         <!--Estonia-->
         <country
-            name="एस्तोनिया"
-            nCode="EE" />
+            a2="EE"
+            translation="एस्तोनिया"
+            verified="N" />
         <!--Egypt-->
         <country
-            name="मिस्र"
-            nCode="EG" />
+            a2="EG"
+            translation="मिस्र"
+            verified="N" />
         <!--Eritrea-->
         <country
-            name="इरिट्रिया"
-            nCode="ER" />
+            a2="ER"
+            translation="इरिट्रिया"
+            verified="N" />
         <!--Spain-->
         <country
-            name="स्पेन"
-            nCode="ES" />
+            a2="ES"
+            translation="स्पेन"
+            verified="N" />
         <!--Ethiopia-->
         <country
-            name="इथियोपिया"
-            nCode="ET" />
+            a2="ET"
+            translation="इथियोपिया"
+            verified="N" />
         <!--Finland-->
         <country
-            name="फिनलैंड"
-            nCode="FI" />
+            a2="FI"
+            translation="फिनलैंड"
+            verified="N" />
         <!--Fiji-->
         <country
-            name="फ़िजी"
-            nCode="FJ" />
+            a2="FJ"
+            translation="फ़िजी"
+            verified="N" />
         <!--Falkland Islands (malvinas)-->
         <country
-            name="फ़ॉकलैंड द्वीप (माल्विनास)"
-            nCode="FK" />
+            a2="FK"
+            translation="फ़ॉकलैंड द्वीप (माल्विनास)"
+            verified="N" />
         <!--Micronesia, Federated States Of-->
         <country
-            name="माइक्रोनेशिया Federated के राज्य अमेरिका"
-            nCode="FM" />
+            a2="FM"
+            translation="माइक्रोनेशिया Federated के राज्य अमेरिका"
+            verified="N" />
         <!--Faroe Islands-->
         <country
-            name="फ़ैरो द्वीप"
-            nCode="FO" />
+            a2="FO"
+            translation="फ़ैरो द्वीप"
+            verified="N" />
         <!--France-->
         <country
-            name="फ्रांस"
-            nCode="FR" />
+            a2="FR"
+            translation="फ्रांस"
+            verified="N" />
         <!--Gabon-->
         <country
-            name="गैबॉन"
-            nCode="GA" />
+            a2="GA"
+            translation="गैबॉन"
+            verified="N" />
         <!--United Kingdom-->
         <country
-            name="यूनाइटेड किंगडम"
-            nCode="GB" />
+            a2="GB"
+            translation="यूनाइटेड किंगडम"
+            verified="N" />
         <!--Grenada-->
         <country
-            name="ग्रेनेडा"
-            nCode="GD" />
+            a2="GD"
+            translation="ग्रेनेडा"
+            verified="N" />
         <!--Georgia-->
         <country
-            name="जॉर्जिया"
-            nCode="GE" />
+            a2="GE"
+            translation="जॉर्जिया"
+            verified="N" />
         <!--French Guyana-->
         <country
-            name="गुयाना"
-            nCode="GF" />
+            a2="GF"
+            translation="गुयाना"
+            verified="N" />
         <!--Guernsey-->
         <country
-            name="ग्वेर्नसे"
-            nCode="GG" />
+            a2="GG"
+            translation="ग्वेर्नसे"
+            verified="N" />
         <!--Ghana-->
         <country
-            name="घाना"
-            nCode="GH" />
+            a2="GH"
+            translation="घाना"
+            verified="N" />
         <!--Gibraltar-->
         <country
-            name="जिब्राल्टर"
-            nCode="GI" />
+            a2="GI"
+            translation="जिब्राल्टर"
+            verified="N" />
         <!--Greenland-->
         <country
-            name="ग्रीनलैंड"
-            nCode="GL" />
+            a2="GL"
+            translation="ग्रीनलैंड"
+            verified="N" />
         <!--Gambia-->
         <country
-            name="गाम्बिया"
-            nCode="GM" />
+            a2="GM"
+            translation="गाम्बिया"
+            verified="N" />
         <!--Guinea-->
         <country
-            name="गिन्नी"
-            nCode="GN" />
+            a2="GN"
+            translation="गिन्नी"
+            verified="N" />
         <!--Guadeloupe-->
         <country
-            name="ग्वाडेलोप"
-            nCode="GP" />
+            a2="GP"
+            translation="ग्वाडेलोप"
+            verified="N" />
         <!--Equatorial Guinea-->
         <country
-            name="भूमध्यवर्ती गिनी"
-            nCode="GQ" />
+            a2="GQ"
+            translation="भूमध्यवर्ती गिनी"
+            verified="N" />
         <!--Greece-->
         <country
-            name="यूनान"
-            nCode="GR" />
+            a2="GR"
+            translation="यूनान"
+            verified="N" />
         <!--Guatemala-->
         <country
-            name="ग्वाटेमाला"
-            nCode="GT" />
+            a2="GT"
+            translation="ग्वाटेमाला"
+            verified="N" />
         <!--Guam-->
         <country
-            name="गुआम"
-            nCode="GU" />
+            a2="GU"
+            translation="गुआम"
+            verified="N" />
         <!--Guinea-bissau-->
         <country
-            name="गिनी-बिसाऊ"
-            nCode="GW" />
+            a2="GW"
+            translation="गिनी-बिसाऊ"
+            verified="N" />
         <!--Guyana-->
         <country
-            name="गुयाना"
-            nCode="GY" />
+            a2="GY"
+            translation="गुयाना"
+            verified="N" />
         <!--Hong Kong-->
         <country
-            name="हॉगकॉग"
-            nCode="HK" />
+            a2="HK"
+            translation="हॉगकॉग"
+            verified="N" />
         <!--Honduras-->
         <country
-            name="होंडुरस"
-            nCode="HN" />
+            a2="HN"
+            translation="होंडुरस"
+            verified="N" />
         <!--Croatia-->
         <country
-            name="क्रोएशिया"
-            nCode="HR" />
+            a2="HR"
+            translation="क्रोएशिया"
+            verified="N" />
         <!--Haiti-->
         <country
-            name="हैती"
-            nCode="HT" />
+            a2="HT"
+            translation="हैती"
+            verified="N" />
         <!--Hungary-->
         <country
-            name="हंगरी"
-            nCode="HU" />
+            a2="HU"
+            translation="हंगरी"
+            verified="N" />
         <!--Indonesia-->
         <country
-            name="इंडोनेशिया"
-            nCode="ID" />
+            a2="ID"
+            translation="इंडोनेशिया"
+            verified="N" />
         <!--Ireland-->
         <country
-            name="आयरलैंड"
-            nCode="IE" />
+            a2="IE"
+            translation="आयरलैंड"
+            verified="N" />
         <!--Israel-->
         <country
-            name="इजराइल"
-            nCode="IL" />
+            a2="IL"
+            translation="इजराइल"
+            verified="N" />
         <!--Isle Of Man-->
         <country
-            name="मैन द्वीप"
-            nCode="IM" />
-        <!--Iceland-->
-        <country
-            name="आइसलैंड"
-            nCode="IS" />
+            a2="IM"
+            translation="मैन द्वीप"
+            verified="N" />
         <!--India-->
         <country
-            name="भारत"
-            nCode="IN" />
+            a2="IN"
+            translation="भारत"
+            verified="N" />
         <!--British Indian Ocean Territory-->
         <country
-            name="ब्रिटेन और भारतीय समुद्री क्षेत्र"
-            nCode="IO" />
+            a2="IO"
+            translation="ब्रिटेन और भारतीय समुद्री क्षेत्र"
+            verified="N" />
         <!--Iraq-->
         <country
-            name="इराक"
-            nCode="IQ" />
+            a2="IQ"
+            translation="इराक"
+            verified="N" />
         <!--Iran, Islamic Republic Of-->
         <country
-            name="ईरान (इस्लामिक रिपब्लिक ऑफ)"
-            nCode="IR" />
+            a2="IR"
+            translation="ईरान (इस्लामिक रिपब्लिक ऑफ)"
+            verified="N" />
+        <!--Iceland-->
+        <country
+            a2="IS"
+            translation="आइसलैंड"
+            verified="N" />
         <!--Italy-->
         <country
-            name="इटली"
-            nCode="IT" />
+            a2="IT"
+            translation="इटली"
+            verified="N" />
         <!--Jersey-->
         <country
-            name="जर्सी"
-            nCode="JE" />
+            a2="JE"
+            translation="जर्सी"
+            verified="N" />
         <!--Jamaica-->
         <country
-            name="जमैका"
-            nCode="JM" />
+            a2="JM"
+            translation="जमैका"
+            verified="N" />
         <!--Jordan-->
         <country
-            name="जॉर्डन"
-            nCode="JO" />
+            a2="JO"
+            translation="जॉर्डन"
+            verified="N" />
         <!--Japan-->
         <country
-            name="जापान"
-            nCode="JP" />
+            a2="JP"
+            translation="जापान"
+            verified="N" />
         <!--Kenya-->
         <country
-            name="केन्या"
-            nCode="KE" />
+            a2="KE"
+            translation="केन्या"
+            verified="N" />
         <!--Kyrgyzstan-->
         <country
-            name="किर्गिज़स्तान"
-            nCode="KG" />
+            a2="KG"
+            translation="किर्गिज़स्तान"
+            verified="N" />
         <!--Cambodia-->
         <country
-            name="कंबोडिया"
-            nCode="KH" />
+            a2="KH"
+            translation="कंबोडिया"
+            verified="N" />
         <!--Kiribati-->
         <country
-            name="किरिबाती"
-            nCode="KI" />
+            a2="KI"
+            translation="किरिबाती"
+            verified="N" />
         <!--Comoros-->
         <country
-            name="कोमोरोस"
-            nCode="KM" />
+            a2="KM"
+            translation="कोमोरोस"
+            verified="N" />
         <!--Saint Kitts and Nevis-->
         <country
-            name="संत किट्ट्स और नेविस"
-            nCode="KN" />
+            a2="KN"
+            translation="संत किट्ट्स और नेविस"
+            verified="N" />
         <!--North Korea-->
         <country
-            name="कोरिया"
-            nCode="KP" />
+            a2="KP"
+            translation="कोरिया"
+            verified="N" />
         <!--South Korea-->
         <country
-            name="कोरिया गणतंत्र"
-            nCode="KR" />
+            a2="KR"
+            translation="कोरिया गणतंत्र"
+            verified="N" />
         <!--Kuwait-->
         <country
-            name="कुवैट"
-            nCode="KW" />
+            a2="KW"
+            translation="कुवैट"
+            verified="N" />
         <!--Cayman Islands-->
         <country
-            name="केमैन टापू"
-            nCode="KY" />
+            a2="KY"
+            translation="केमैन टापू"
+            verified="N" />
         <!--Kazakhstan-->
         <country
-            name="कजाखस्तान"
-            nCode="KZ" />
+            a2="KZ"
+            translation="कजाखस्तान"
+            verified="N" />
         <!--Lao People's Democratic Republic-->
         <country
-            name="लाओ पीपुल्स' की लोकतांत्रिक गणराज्य"
-            nCode="LA" />
+            a2="LA"
+            translation="लाओ पीपुल्स' की लोकतांत्रिक गणराज्य"
+            verified="N" />
         <!--Lebanon-->
         <country
-            name="लेबनान"
-            nCode="LB" />
+            a2="LB"
+            translation="लेबनान"
+            verified="N" />
         <!--Saint Lucia-->
         <country
-            name="सेंट लूसिया"
-            nCode="LC" />
+            a2="LC"
+            translation="सेंट लूसिया"
+            verified="N" />
         <!--Liechtenstein-->
         <country
-            name="लिकटेंस्टीन"
-            nCode="LI" />
+            a2="LI"
+            translation="लिकटेंस्टीन"
+            verified="N" />
         <!--Sri Lanka-->
         <country
-            name="श्री लंका"
-            nCode="LK" />
+            a2="LK"
+            translation="श्री लंका"
+            verified="N" />
         <!--Liberia-->
         <country
-            name="लाइबेरिया"
-            nCode="LR" />
+            a2="LR"
+            translation="लाइबेरिया"
+            verified="N" />
         <!--Lesotho-->
         <country
-            name="लिसोटो"
-            nCode="LS" />
+            a2="LS"
+            translation="लिसोटो"
+            verified="N" />
         <!--Lithuania-->
         <country
-            name="लिथुआनिया"
-            nCode="LT" />
+            a2="LT"
+            translation="लिथुआनिया"
+            verified="N" />
         <!--Luxembourg-->
         <country
-            name="लक्जमबर्ग"
-            nCode="LU" />
+            a2="LU"
+            translation="लक्जमबर्ग"
+            verified="N" />
         <!--Latvia-->
         <country
-            name="लातविया"
-            nCode="LV" />
+            a2="LV"
+            translation="लातविया"
+            verified="N" />
         <!--Libya-->
         <country
-            name="लीबिया"
-            nCode="LY" />
+            a2="LY"
+            translation="लीबिया"
+            verified="N" />
         <!--Morocco-->
         <country
-            name="मोरक्को"
-            nCode="MA" />
+            a2="MA"
+            translation="मोरक्को"
+            verified="N" />
         <!--Monaco-->
         <country
-            name="मोनाको"
-            nCode="MC" />
+            a2="MC"
+            translation="मोनाको"
+            verified="N" />
         <!--Moldova, Republic Of-->
         <country
-            name="मोल्दोवा, गणराज्य के"
-            nCode="MD" />
+            a2="MD"
+            translation="मोल्दोवा, गणराज्य के"
+            verified="N" />
         <!--Montenegro-->
         <country
-            name="मोंटेनेग्रो"
-            nCode="ME" />
+            a2="ME"
+            translation="मोंटेनेग्रो"
+            verified="N" />
         <!--Saint Martin-->
         <country
-            name="संत मार्टिन"
-            nCode="MF" />
+            a2="MF"
+            translation="संत मार्टिन"
+            verified="N" />
         <!--Madagascar-->
         <country
-            name="मेडागास्कर"
-            nCode="MG" />
+            a2="MG"
+            translation="मेडागास्कर"
+            verified="N" />
         <!--Marshall Islands-->
         <country
-            name="मार्शल द्वीप समूह"
-            nCode="MH" />
+            a2="MH"
+            translation="मार्शल द्वीप समूह"
+            verified="N" />
         <!--Macedonia (FYROM)-->
         <country
-            name="मैसिडोनिया, पूर्व युगोस्लाव गणराज्य"
-            nCode="MK" />
+            a2="MK"
+            translation="मैसिडोनिया, पूर्व युगोस्लाव गणराज्य"
+            verified="N" />
         <!--Mali-->
         <country
-            name="माली"
-            nCode="ML" />
+            a2="ML"
+            translation="माली"
+            verified="N" />
         <!--Myanmar-->
         <country
-            name="म्यांमार"
-            nCode="MM" />
+            a2="MM"
+            translation="म्यांमार"
+            verified="N" />
         <!--Mongolia-->
         <country
-            name="मंगोलिया"
-            nCode="MN" />
+            a2="MN"
+            translation="मंगोलिया"
+            verified="N" />
         <!--Macau-->
         <country
-            name="मकाऊ"
-            nCode="MO" />
+            a2="MO"
+            translation="मकाऊ"
+            verified="N" />
         <!--Northern Mariana Islands-->
         <country
-            name="उत्तरी मरीयाना द्वीप समूह"
-            nCode="MP" />
+            a2="MP"
+            translation="उत्तरी मरीयाना द्वीप समूह"
+            verified="N" />
         <!--Martinique-->
         <country
-            name="मार्टीनिक"
-            nCode="MQ" />
+            a2="MQ"
+            translation="मार्टीनिक"
+            verified="N" />
         <!--Mauritania-->
         <country
-            name="मॉरिटानिया"
-            nCode="MR" />
+            a2="MR"
+            translation="मॉरिटानिया"
+            verified="N" />
         <!--Montserrat-->
         <country
-            name="मोंटेसेराट"
-            nCode="MS" />
+            a2="MS"
+            translation="मोंटेसेराट"
+            verified="N" />
         <!--Malta-->
         <country
-            name="माल्टा"
-            nCode="MT" />
+            a2="MT"
+            translation="माल्टा"
+            verified="N" />
         <!--Mauritius-->
         <country
-            name="मॉरीशस"
-            nCode="MU" />
+            a2="MU"
+            translation="मॉरीशस"
+            verified="N" />
         <!--Maldives-->
         <country
-            name="मालदीव"
-            nCode="MV" />
+            a2="MV"
+            translation="मालदीव"
+            verified="N" />
         <!--Malawi-->
         <country
-            name="मलावी"
-            nCode="MW" />
+            a2="MW"
+            translation="मलावी"
+            verified="N" />
         <!--Mexico-->
         <country
-            name="मेक्सिको"
-            nCode="MX" />
+            a2="MX"
+            translation="मेक्सिको"
+            verified="N" />
         <!--Malaysia-->
         <country
-            name="मलेशिया"
-            nCode="MY" />
+            a2="MY"
+            translation="मलेशिया"
+            verified="N" />
         <!--Mozambique-->
         <country
-            name="मोजाम्बिक"
-            nCode="MZ" />
+            a2="MZ"
+            translation="मोजाम्बिक"
+            verified="N" />
         <!--Namibia-->
         <country
-            name="नामीबिया"
-            nCode="NA" />
+            a2="NA"
+            translation="नामीबिया"
+            verified="N" />
         <!--New Caledonia-->
         <country
-            name="न्यू कैलेडोनिया"
-            nCode="NC" />
+            a2="NC"
+            translation="न्यू कैलेडोनिया"
+            verified="N" />
         <!--Niger-->
         <country
-            name="नाइजर"
-            nCode="NE" />
+            a2="NE"
+            translation="नाइजर"
+            verified="N" />
         <!--Norfolk Islands-->
         <country
-            name="नॉरफ़ॉक द्वीप समूह"
-            nCode="NF" />
+            a2="NF"
+            translation="नॉरफ़ॉक द्वीप समूह"
+            verified="N" />
         <!--Nigeria-->
         <country
-            name="नाइजीरिया"
-            nCode="NG" />
+            a2="NG"
+            translation="नाइजीरिया"
+            verified="N" />
         <!--Nicaragua-->
         <country
-            name="निकारागुआ"
-            nCode="NI" />
+            a2="NI"
+            translation="निकारागुआ"
+            verified="N" />
         <!--Netherlands-->
         <country
-            name="नीदरलैंड्स"
-            nCode="NL" />
+            a2="NL"
+            translation="नीदरलैंड्स"
+            verified="N" />
         <!--Norway-->
         <country
-            name="नॉर्वे"
-            nCode="NO" />
+            a2="NO"
+            translation="नॉर्वे"
+            verified="N" />
         <!--Nepal-->
         <country
-            name="नेपाल"
-            nCode="NP" />
+            a2="NP"
+            translation="नेपाल"
+            verified="N" />
         <!--Nauru-->
         <country
-            name="नाउरू"
-            nCode="NR" />
+            a2="NR"
+            translation="नाउरू"
+            verified="N" />
         <!--Niue-->
         <country
-            name="नियू"
-            nCode="NU" />
+            a2="NU"
+            translation="नियू"
+            verified="N" />
         <!--New Zealand-->
         <country
-            name="न्यूजीलैंड"
-            nCode="NZ" />
+            a2="NZ"
+            translation="न्यूजीलैंड"
+            verified="N" />
         <!--Oman-->
         <country
-            name="ओमान"
-            nCode="OM" />
+            a2="OM"
+            translation="ओमान"
+            verified="N" />
         <!--Panama-->
         <country
-            name="पनामा"
-            nCode="PA" />
+            a2="PA"
+            translation="पनामा"
+            verified="N" />
         <!--Peru-->
         <country
-            name="पेरू"
-            nCode="PE" />
+            a2="PE"
+            translation="पेरू"
+            verified="N" />
         <!--French Polynesia-->
         <country
-            name="फ्रेंच पॉलीनेशिया"
-            nCode="PF" />
+            a2="PF"
+            translation="फ्रेंच पॉलीनेशिया"
+            verified="N" />
         <!--Papua New Guinea-->
         <country
-            name="पापुआ न्यू गिनी"
-            nCode="PG" />
+            a2="PG"
+            translation="पापुआ न्यू गिनी"
+            verified="N" />
         <!--Philippines-->
         <country
-            name="फिलीपींस"
-            nCode="PH" />
+            a2="PH"
+            translation="फिलीपींस"
+            verified="N" />
         <!--Pakistan-->
         <country
-            name="पाकिस्तान"
-            nCode="PK" />
+            a2="PK"
+            translation="पाकिस्तान"
+            verified="N" />
         <!--Poland-->
         <country
-            name="पोलैंड"
-            nCode="PL" />
+            a2="PL"
+            translation="पोलैंड"
+            verified="N" />
         <!--Saint Pierre And Miquelon-->
         <country
-            name="सेंट पियरे और मिकेलॉन"
-            nCode="PM" />
+            a2="PM"
+            translation="सेंट पियरे और मिकेलॉन"
+            verified="N" />
         <!--Pitcairn Islands-->
         <country
-            name="पिटकेर्न"
-            nCode="PN" />
+            a2="PN"
+            translation="पिटकेर्न"
+            verified="N" />
         <!--Puerto Rico-->
         <country
-            name="प्यूर्टो रिको"
-            nCode="PR" />
+            a2="PR"
+            translation="प्यूर्टो रिको"
+            verified="N" />
         <!--Palestine-->
         <country
-            name="फिलिस्तीन"
-            nCode="PS" />
+            a2="PS"
+            translation="फिलिस्तीन"
+            verified="N" />
         <!--Portugal-->
         <country
-            name="पुर्तगाल"
-            nCode="PT" />
+            a2="PT"
+            translation="पुर्तगाल"
+            verified="N" />
         <!--Palau-->
         <country
-            name="पलाऊ"
-            nCode="PW" />
+            a2="PW"
+            translation="पलाऊ"
+            verified="N" />
         <!--Paraguay-->
         <country
-            name="परागुआ"
-            nCode="PY" />
+            a2="PY"
+            translation="परागुआ"
+            verified="N" />
         <!--Qatar-->
         <country
-            name="कतर"
-            nCode="QA" />
+            a2="QA"
+            translation="कतर"
+            verified="N" />
         <!--Réunion-->
         <country
-            name="बैठक"
-            nCode="RE" />
+            a2="RE"
+            translation="बैठक"
+            verified="N" />
         <!--Romania-->
         <country
-            name="रोमानिया"
-            nCode="RO" />
+            a2="RO"
+            translation="रोमानिया"
+            verified="N" />
         <!--Serbia-->
         <country
-            name="सर्बिया"
-            nCode="RS" />
+            a2="RS"
+            translation="सर्बिया"
+            verified="N" />
         <!--Russian Federation-->
         <country
-            name="रूसी संघ"
-            nCode="RU" />
+            a2="RU"
+            translation="रूसी संघ"
+            verified="N" />
         <!--Rwanda-->
         <country
-            name="रवांडा"
-            nCode="RW" />
+            a2="RW"
+            translation="रवांडा"
+            verified="N" />
         <!--Saudi Arabia-->
         <country
-            name="सऊदी अरब"
-            nCode="SA" />
+            a2="SA"
+            translation="सऊदी अरब"
+            verified="N" />
         <!--Solomon Islands-->
         <country
-            name="सोलोमन द्वीप"
-            nCode="SB" />
+            a2="SB"
+            translation="सोलोमन द्वीप"
+            verified="N" />
         <!--Seychelles-->
         <country
-            name="सेशेल्स"
-            nCode="SC" />
+            a2="SC"
+            translation="सेशेल्स"
+            verified="N" />
         <!--Sudan-->
         <country
-            name="सूडान"
-            nCode="SD" />
+            a2="SD"
+            translation="सूडान"
+            verified="N" />
         <!--Sweden-->
         <country
-            name="स्वीडन"
-            nCode="SE" />
+            a2="SE"
+            translation="स्वीडन"
+            verified="N" />
         <!--Singapore-->
         <country
-            name="सिंगापुर"
-            nCode="SG" />
+            a2="SG"
+            translation="सिंगापुर"
+            verified="N" />
         <!--Saint Helena, Ascension And Tristan Da Cunha-->
         <country
-            name="सेंट हेलेना, उदगम और ट्रिस्टन दा कुन्हा"
-            nCode="SH" />
+            a2="SH"
+            translation="सेंट हेलेना, उदगम और ट्रिस्टन दा कुन्हा"
+            verified="N" />
         <!--Slovenia-->
         <country
-            name="स्लोवेनिया"
-            nCode="SI" />
+            a2="SI"
+            translation="स्लोवेनिया"
+            verified="N" />
         <!--Slovakia-->
         <country
-            name="स्लोवाकिया"
-            nCode="SK" />
+            a2="SK"
+            translation="स्लोवाकिया"
+            verified="N" />
         <!--Sierra Leone-->
         <country
-            name="सियरा लिओन"
-            nCode="SL" />
+            a2="SL"
+            translation="सियरा लिओन"
+            verified="N" />
         <!--San Marino-->
         <country
-            name="सैन मैरीनो"
-            nCode="SM" />
+            a2="SM"
+            translation="सैन मैरीनो"
+            verified="N" />
         <!--Senegal-->
         <country
-            name="सेनेगल"
-            nCode="SN" />
+            a2="SN"
+            translation="सेनेगल"
+            verified="N" />
         <!--Somalia-->
         <country
-            name="सोमालिया"
-            nCode="SO" />
+            a2="SO"
+            translation="सोमालिया"
+            verified="N" />
         <!--Suriname-->
         <country
-            name="सूरीनाम"
-            nCode="SR" />
+            a2="SR"
+            translation="सूरीनाम"
+            verified="N" />
         <!--South Sudan-->
         <country
-            name="दक्षिण सूडान"
-            nCode="SS" />
+            a2="SS"
+            translation="दक्षिण सूडान"
+            verified="N" />
         <!--Sao Tome And Principe-->
         <country
-            name="साओ टोमे और प्रिंसिपे"
-            nCode="ST" />
+            a2="ST"
+            translation="साओ टोमे और प्रिंसिपे"
+            verified="N" />
         <!--El Salvador-->
         <country
-            name="एल साल्वाडोर"
-            nCode="SV" />
+            a2="SV"
+            translation="एल साल्वाडोर"
+            verified="N" />
         <!--Sint Maarten-->
         <country
-            name="सिंट मार्टेन"
-            nCode="SX" />
+            a2="SX"
+            translation="सिंट मार्टेन"
+            verified="N" />
         <!--Syrian Arab Republic-->
         <country
-            name="सीरिया अरब गणतंत्र"
-            nCode="SY" />
+            a2="SY"
+            translation="सीरिया अरब गणतंत्र"
+            verified="N" />
         <!--Swaziland-->
         <country
-            name="स्वाजीलैंड"
-            nCode="SZ" />
+            a2="SZ"
+            translation="स्वाजीलैंड"
+            verified="N" />
         <!--Turks and Caicos Islands-->
         <country
-            name="तुर्क्स और कैकोज़ द्वीपसमूह"
-            nCode="TC" />
+            a2="TC"
+            translation="तुर्क्स और कैकोज़ द्वीपसमूह"
+            verified="N" />
         <!--Chad-->
         <country
-            name="काग़ज़ का टुकड़ा"
-            nCode="TD" />
+            a2="TD"
+            translation="काग़ज़ का टुकड़ा"
+            verified="N" />
         <!--Togo-->
         <country
-            name="जाना"
-            nCode="TG" />
+            a2="TG"
+            translation="जाना"
+            verified="N" />
         <!--Thailand-->
         <country
-            name="थाईलैंड"
-            nCode="TH" />
+            a2="TH"
+            translation="थाईलैंड"
+            verified="N" />
         <!--Tajikistan-->
         <country
-            name="तजाकिस्तान"
-            nCode="TJ" />
+            a2="TJ"
+            translation="तजाकिस्तान"
+            verified="N" />
         <!--Tokelau-->
         <country
-            name="टोकेलाऊ"
-            nCode="TK" />
+            a2="TK"
+            translation="टोकेलाऊ"
+            verified="N" />
         <!--Timor-leste-->
         <country
-            name="तिमोर-लेस्ते"
-            nCode="TL" />
+            a2="TL"
+            translation="तिमोर-लेस्ते"
+            verified="N" />
         <!--Turkmenistan-->
         <country
-            name="तुर्कमेनिस्तान"
-            nCode="TM" />
+            a2="TM"
+            translation="तुर्कमेनिस्तान"
+            verified="N" />
         <!--Tunisia-->
         <country
-            name="ट्यूनीशिया"
-            nCode="TN" />
+            a2="TN"
+            translation="ट्यूनीशिया"
+            verified="N" />
         <!--Tonga-->
         <country
-            name="टोंगा"
-            nCode="TO" />
+            a2="TO"
+            translation="टोंगा"
+            verified="N" />
         <!--Turkey-->
         <country
-            name="तुर्की"
-            nCode="TR" />
+            a2="TR"
+            translation="तुर्की"
+            verified="N" />
         <!--Trinidad &amp; Tobago-->
         <country
-            name="ट्रिनिडाड और टोबैगो"
-            nCode="TT" />
+            a2="TT"
+            translation="ट्रिनिडाड और टोबैगो"
+            verified="N" />
         <!--Tuvalu-->
         <country
-            name="तुवालु"
-            nCode="TV" />
+            a2="TV"
+            translation="तुवालु"
+            verified="N" />
         <!--Taiwan-->
         <country
-            name="ताइवान"
-            nCode="TW" />
+            a2="TW"
+            translation="ताइवान"
+            verified="N" />
         <!--Tanzania, United Republic Of-->
         <country
-            name="तंजानिया, संयुक्त गणराज्य"
-            nCode="TZ" />
+            a2="TZ"
+            translation="तंजानिया, संयुक्त गणराज्य"
+            verified="N" />
         <!--Ukraine-->
         <country
-            name="यूक्रेन"
-            nCode="UA" />
+            a2="UA"
+            translation="यूक्रेन"
+            verified="N" />
         <!--Uganda-->
         <country
-            name="युगांडा"
-            nCode="UG" />
+            a2="UG"
+            translation="युगांडा"
+            verified="N" />
         <!--United States (USA)-->
         <country
-            name="संयुक्त राज्य अमेरिका"
-            nCode="US" />
+            a2="US"
+            translation="संयुक्त राज्य अमेरिका"
+            verified="N" />
         <!--Uruguay-->
         <country
-            name="उरुग्वे"
-            nCode="UY" />
+            a2="UY"
+            translation="उरुग्वे"
+            verified="N" />
         <!--Uzbekistan-->
         <country
-            name="उज़्बेकिस्तान"
-            nCode="UZ" />
+            a2="UZ"
+            translation="उज़्बेकिस्तान"
+            verified="N" />
         <!--Holy See (vatican City State)-->
         <country
-            name="पवित्र देखो (वैटिकन सिटी राज्य)"
-            nCode="VA" />
+            a2="VA"
+            translation="पवित्र देखो (वैटिकन सिटी राज्य)"
+            verified="N" />
         <!--Saint Vincent &amp; The Grenadines-->
         <country
-            name="सेंट विंसेंट और द ग्रेनाडाइन्स"
-            nCode="VC" />
+            a2="VC"
+            translation="सेंट विंसेंट और द ग्रेनाडाइन्स"
+            verified="N" />
         <!--Venezuela, Bolivarian Republic Of-->
         <country
-            name="वेनेजुएला, के Bolivarian गणराज्य"
-            nCode="VE" />
+            a2="VE"
+            translation="वेनेजुएला, के Bolivarian गणराज्य"
+            verified="N" />
         <!--British Virgin Islands-->
         <country
-            name="ब्रिटिश वर्जिन आइसलैण्ड्स"
-            nCode="VG" />
+            a2="VG"
+            translation="ब्रिटिश वर्जिन आइसलैण्ड्स"
+            verified="N" />
         <!--US Virgin Islands-->
         <country
-            name="यूएस वर्जिन द्वीप"
-            nCode="VI" />
+            a2="VI"
+            translation="यूएस वर्जिन द्वीप"
+            verified="N" />
         <!--Vietnam-->
         <country
-            name="वियतनाम"
-            nCode="VN" />
+            a2="VN"
+            translation="वियतनाम"
+            verified="N" />
         <!--Vanuatu-->
         <country
-            name="वानुअतु"
-            nCode="VU" />
+            a2="VU"
+            translation="वानुअतु"
+            verified="N" />
         <!--Wallis And Futuna-->
         <country
-            name="वाली और फ़्युटुना"
-            nCode="WF" />
+            a2="WF"
+            translation="वाली और फ़्युटुना"
+            verified="N" />
         <!--Samoa-->
         <country
-            name="समोआ"
-            nCode="WS" />
+            a2="WS"
+            translation="समोआ"
+            verified="N" />
         <!--Kosovo-->
         <country
-            name="कोसोवो"
-            nCode="XK" />
+            a2="XK"
+            translation="कोसोवो"
+            verified="N" />
         <!--Yemen-->
         <country
-            name="यमन"
-            nCode="YE" />
+            a2="YE"
+            translation="यमन"
+            verified="N" />
         <!--Mayotte-->
         <country
-            name="मैयट"
-            nCode="YT" />
+            a2="YT"
+            translation="मैयट"
+            verified="N" />
         <!--South Africa-->
         <country
-            name="दक्षिण अफ्रीका"
-            nCode="ZA" />
+            a2="ZA"
+            translation="दक्षिण अफ्रीका"
+            verified="N" />
         <!--Zambia-->
         <country
-            name="जाम्बिया"
-            nCode="ZM" />
+            a2="ZM"
+            translation="जाम्बिया"
+            verified="N" />
         <!--Zimbabwe-->
         <country
-            name="जिम्बाब्वे"
-            nCode="ZW" />
+            a2="ZW"
+            translation="जिम्बाब्वे"
+            verified="N" />
     </countries>
 </data>
