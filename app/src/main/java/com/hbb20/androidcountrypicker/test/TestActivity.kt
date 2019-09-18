@@ -5,10 +5,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hbb20.androidcountrypicker.R
-import com.hbb20.countrypicker.CPLanguage
-import com.hbb20.countrypicker.logd
-import com.hbb20.countrypicker.xmlBaseListFileName
-import com.hbb20.countrypicker.xmlNewLanguageTemplateFileName
+import com.hbb20.countrypicker.*
 import kotlinx.android.synthetic.main.activity_test.*
 
 class TestActivity : AppCompatActivity() {
@@ -84,6 +81,7 @@ class TestActivity : AppCompatActivity() {
      */
     private fun getEmptyMapForFileNameToProblem(): MutableMap<String, List<Problem>> {
         val result = mutableMapOf<String, List<Problem>>()
+        result[xmlLanguageFileName] = emptyList()
         result[xmlBaseListFileName] = emptyList()
         result[xmlNewLanguageTemplateFileName] = emptyList()
         for (language in CPLanguage.values()) {

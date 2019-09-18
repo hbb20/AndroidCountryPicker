@@ -36,6 +36,7 @@ enum class CPLanguage(
     SWEDISH("sv"),
     TURKISH("tr"),
     UKRAINIAN("uk"),
+    URDU("ur"),
     UZBEK("uz"),
     VIETNAMESE("vi");
 

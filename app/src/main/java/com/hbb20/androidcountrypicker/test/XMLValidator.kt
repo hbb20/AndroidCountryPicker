@@ -10,6 +10,7 @@ class XMLValidator {
 
     fun checkAllXMLFiles(context: Context): List<Problem> {
         val problems = mutableListOf<Problem>()
+        problems.addAll(checkLanguageOrder())
         problems.addAll(checkBaseList(context))
         for (language in CPLanguage.values())
             problems.addAll(
@@ -20,6 +21,26 @@ class XMLValidator {
                 )
             )
         problems.addAll(checkTranslationFile(context, xmlNewLanguageTemplateFileName, nameCodeList))
+        return problems
+    }
+
+    private fun checkLanguageOrder(): Collection<Problem> {
+        val problems = mutableListOf<Problem>()
+        var lastLanguage: CPLanguage? = null
+        for (language in CPLanguage.values()) {
+            lastLanguage?.let {
+                if (it.name > language.name) {
+                    problems.add(
+                        Problem(
+                            category = ProblemCategory.INVALID_ORDER,
+                            fileName = xmlLanguageFileName,
+                            solution = "Reorder ${it.name} and ${language.name}."
+                        )
+                    )
+                }
+            }
+            lastLanguage = language
+        }
         return problems
     }
 
@@ -71,6 +92,7 @@ class XMLValidator {
                                     solution = "[#$entryCounter] Add Alpha2 name code for entry."
                                 )
                             )
+                            entryCounter++
                         } else {
                             //report extra entries
                             if (entryCounter > baseNameCodeLise.size) {
@@ -213,7 +235,7 @@ class XMLValidator {
                                 )
                             }
                         }
-                    } else if(name !in setOf(xmlMessageListKey, xmlDataKey, xmlCountriesKey)){
+                    } else if (name !in setOf(xmlMessageListKey, xmlDataKey, xmlCountriesKey)) {
                         problems.add(
                             Problem(
                                 category = ProblemCategory.EXTRA_ENTRIES,
