@@ -1,5 +1,6 @@
 package com.hbb20
 
+internal const val CP_TAG = "CountryPicker"
 const val xmlAlpha2Key = "a2"
 const val xmlAlpha3Key = "a3"
 const val xmlEnglishNameKey = "eName"
@@ -14,7 +15,7 @@ const val xmlNewLanguageTemplateFileName = "a_new_lang_template.xml"
 const val xmlDialogNoResultAckMessageKey = "dialog_no_result_ack_message"
 const val xmlDialogSearchHintMessageKey = "dialog_search_hint_message"
 const val xmlDialogTitleKey = "dialog_title"
-const val xmlEmptySelectionText = "empty_selection_message"
+const val xmlEmptySelectionTextKey = "empty_selection_message"
 const val xmlTodoTag = "__TODO__"
 const val xmlMessageListKey = "a_message_list"
 const val xmlDataKey = "data"

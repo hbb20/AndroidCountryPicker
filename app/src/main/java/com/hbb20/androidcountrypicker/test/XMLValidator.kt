@@ -55,10 +55,9 @@ class XMLValidator {
         baseNameCodeLise: List<String>
     ): List<Problem> {
         val problems = mutableListOf<Problem>()
-        val xmlPullParser = getRawXMLPullParser(context = context, fileName = fileName)
-
-        //if pullParser is null means file is missing.
-        if (xmlPullParser == null) {
+        val xmlPullParser = try {
+            CountryFileReader.getRawXMLPullParser(context = context, fileName = fileName)
+        } catch (exception: Exception) {
             problems.add(
                 Problem(
                     category = ProblemCategory.MISSING_FILE,
@@ -68,6 +67,7 @@ class XMLValidator {
             )
             return problems
         }
+
         var event = xmlPullParser.eventType
         var extraEntriesProblemAdded = false
         var entryCounter = 0
@@ -77,7 +77,7 @@ class XMLValidator {
             xmlDialogNoResultAckMessageKey,
             xmlDialogSearchHintMessageKey,
             xmlDialogTitleKey,
-            xmlEmptySelectionText
+            xmlEmptySelectionTextKey
         )
         while (event != XmlPullParser.END_DOCUMENT) {
             val name = xmlPullParser.name
@@ -299,7 +299,7 @@ class XMLValidator {
 
     private fun checkBaseList(context: Context): List<Problem> {
         val problems = mutableListOf<Problem>()
-        val xmlPullParser = getRawXMLPullParser(
+        val xmlPullParser = CountryFileReader.getRawXMLPullParser(
             context = context,
             fileName = xmlBaseListFileName
         )

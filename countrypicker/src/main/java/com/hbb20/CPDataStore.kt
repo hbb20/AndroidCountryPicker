@@ -5,5 +5,6 @@ data class CPDataStore(
     val masterCountryList: List<CPCountry>,
     val dialogTitle: String,
     val searchHint: String,
-    val noResultAck: String
+    val noResultAck: String,
+    val emptySelectionText: String
 )
