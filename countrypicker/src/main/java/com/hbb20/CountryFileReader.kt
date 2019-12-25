@@ -4,9 +4,21 @@ import android.content.Context
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserFactory
 
-object CountryFileReader {
-    private lateinit var baseList: HashMap<String, BaseCountry>
+interface CountryFileReading {
     fun loadDataStoreFromXML(
+        context: Context,
+        language: CPLanguage
+    ): CPDataStore
+
+    fun getRawXMLPullParser(
+        context: Context,
+        fileName: String
+    ): XmlPullParser
+}
+
+object CountryFileReader : CountryFileReading {
+    private lateinit var baseList: HashMap<String, BaseCountry>
+    override fun loadDataStoreFromXML(
         context: Context,
         language: CPLanguage
     ): CPDataStore {
@@ -76,7 +88,7 @@ object CountryFileReader {
 
         return CPDataStore(
             cpLanguage = language,
-            masterCountryList = masterCountryList,
+            countryList = masterCountryList,
             dialogTitle = dialogTitleText,
             searchHint = searchHintText,
             noResultAck = noResultAckMsg,
@@ -112,10 +124,10 @@ object CountryFileReader {
                             )
                             countryList[nameCode] =
                                 BaseCountry(
-                                    englishName,
-                                    nameCode,
-                                    alpha3,
-                                    phoneCode.toShort()
+                                    englishName = englishName,
+                                    alpha2 = nameCode,
+                                    alpha3 = alpha3,
+                                    phoneCode = phoneCode.toShort()
                                 )
                         }
                 }
@@ -128,7 +140,7 @@ object CountryFileReader {
     /**
      * This will create an XML Pull Parser factory.
      */
-    fun getRawXMLPullParser(
+    override fun getRawXMLPullParser(
         context: Context,
         fileName: String
     ): XmlPullParser {
