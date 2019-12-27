@@ -18,6 +18,7 @@ class ProblemsRVAdapter(
     private val fileNameViewType = 0
     private val categoryNameType = 1
     private val problemInfoType = 2
+    private val summaryViewType = 3
     private val layoutInflater = LayoutInflater.from(context)
 
     override fun onCreateViewHolder(
@@ -29,6 +30,7 @@ class ProblemsRVAdapter(
                 fileNameViewType -> R.layout.problem_filename_row
                 categoryNameType -> R.layout.problem_category_row
                 problemInfoType -> R.layout.problem_info_row
+                summaryViewType -> R.layout.problem_summary_status_row
                 else -> throw IllegalArgumentException("Unexpected viewType.")
             },
             parent,
@@ -39,6 +41,7 @@ class ProblemsRVAdapter(
             fileNameViewType -> ProblemFileVH(rowView)
             categoryNameType -> ProblemCategoryVH(rowView)
             problemInfoType -> ProblemInfoVH(rowView)
+            summaryViewType -> SummaryVH(rowView)
             else -> throw IllegalArgumentException("Unexpected viewType.")
         }
     }
@@ -55,6 +58,7 @@ class ProblemsRVAdapter(
             is ProblemFileVH -> holder.bindItem(rvItems[position] as ProblemFileRVItem)
             is ProblemCategoryVH -> holder.bindItem(rvItems[position] as ProblemCategoryRVItem)
             is ProblemInfoVH -> holder.bindItem(rvItems[position] as ProblemInfoRVItem)
+            is SummaryVH -> holder.bindItem(rvItems[position] as StatusSummary)
         }
     }
 
@@ -63,6 +67,7 @@ class ProblemsRVAdapter(
             is ProblemFileRVItem -> fileNameViewType
             is ProblemCategoryRVItem -> categoryNameType
             is ProblemInfoRVItem -> problemInfoType
+            is StatusSummary -> summaryViewType
         }
     }
 
@@ -75,13 +80,18 @@ class ProblemFileRVItem(
     val nonCriticalProblemCount: Int
 ) : ProblemRVItem()
 
+class StatusSummary(
+    val errorCount: Int,
+    val warningCount: Int
+) : ProblemRVItem()
+
 class ProblemCategoryRVItem(val categoryName: String) : ProblemRVItem()
 class ProblemInfoRVItem(val problem: Problem) : ProblemRVItem()
 
 sealed class ProblemVH(itemView: View) : RecyclerView.ViewHolder(itemView)
 class ProblemFileVH(itemView: View) : ProblemVH(itemView) {
     val tvFileName = itemView.findViewById<TextView>(R.id.tvFileName)
-    val tvErrorCount = itemView.findViewById<TextView>(R.id.tvErrorCount)
+    val tvErrorCount = itemView.findViewById<TextView>(R.id.tvCriticalCount)
     val imgStatusIcon = itemView.findViewById<ImageView>(R.id.imgStatusIcon)
     fun bindItem(problemFileRVItem: ProblemFileRVItem) {
         tvFileName.text = problemFileRVItem.fileName
@@ -131,3 +141,21 @@ class ProblemInfoVH(itemView: View) : ProblemVH(itemView) {
     }
 }
 
+class SummaryVH(itemView: View) : ProblemVH(itemView) {
+    val imgStatus = itemView.findViewById<ImageView>(R.id.imgStatus)
+    val tvCriticalErrorCount = itemView.findViewById<TextView>(R.id.tvCriticalSummaryCount)
+    val tvNonCriticalErrorCount = itemView.findViewById<TextView>(R.id.tvNonCriticalCount)
+    fun bindItem(statusSummary: StatusSummary) {
+        val statusImageId = if (statusSummary.errorCount > 0) {
+            R.drawable.ic_error_outline
+        } else if (statusSummary.warningCount > 0) {
+            R.drawable.ic_warning
+        } else {
+            R.drawable.ic_check_circle_24dp
+        }
+
+        imgStatus.setImageResource(statusImageId)
+        tvCriticalErrorCount.text = statusSummary.errorCount.toString()
+        tvNonCriticalErrorCount.text = statusSummary.warningCount.toString()
+    }
+}

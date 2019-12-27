@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.hbb20.CPDataStoreGenerator
 import com.hbb20.androidcountrypicker.test.TestActivity
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +21,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadCP() {
-        val cpDataStore = CPDataStoreGenerator.generate(this)
         Log.d("DataStore", "generated")
     }
 
