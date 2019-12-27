@@ -33,7 +33,7 @@ android {
 
 dependencies {
     testImplementation 'org.robolectric:robolectric:4.3'
-    annotationProcessor 'com.google.auto.value:auto-value:1.4.1'
+    annotationProcessor 'com.google.auto.value:auto-value:1.5.2'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -43,5 +43,5 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation project(path: ':countrypicker')
-    implementation 'androidx.recyclerview:recyclerview:1.1.0-beta04'
+    implementation 'androidx.recyclerview:recyclerview:1.2.0-alpha01'
 }
