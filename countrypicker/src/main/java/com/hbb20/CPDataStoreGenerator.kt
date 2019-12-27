@@ -3,8 +3,7 @@ package com.hbb20
 import android.content.Context
 
 object CPDataStoreGenerator {
-    private var masterCountryList: List<CPCountry>? = null
-    private var masterListLanguage: CPLanguage? = null
+    private var masterDataStore: CPDataStore? = null
 
     fun generate(
         context: Context,
@@ -14,13 +13,20 @@ object CPDataStoreGenerator {
         customExcludedCountries: String = "",
         countryFileReader: CountryFileReading = CountryFileReader
     ): CPDataStore {
-        val xmlDataStore = countryFileReader.loadDataStoreFromXML(context, defaultLanguage)
-        masterCountryList = xmlDataStore.countryList
-        masterListLanguage = xmlDataStore.cpLanguage
-        var countryList =
-            filterCustomMasterList(xmlDataStore.countryList, customMasterCountries)
-        countryList = filterExcludedCountriesList(countryList, customExcludedCountries)
-        return xmlDataStore.copy(countryList = countryList)
+        val languageToLoad = defaultLanguage
+
+        if (masterDataStore?.cpLanguage != languageToLoad) {
+            masterDataStore = countryFileReader.loadDataStoreFromXML(context, defaultLanguage)
+        }
+
+        masterDataStore?.let {
+            var countryList =
+                filterCustomMasterList(it.countryList, customMasterCountries)
+            countryList = filterExcludedCountriesList(countryList, customExcludedCountries)
+            return it.copy(countryList = countryList)
+        }
+
+        throw IllegalStateException("MasterDataStore can not be null at this point.")
     }
 
     private fun filterExcludedCountriesList(

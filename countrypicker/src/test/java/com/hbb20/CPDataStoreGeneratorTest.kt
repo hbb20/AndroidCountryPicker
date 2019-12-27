@@ -1,14 +1,16 @@
 package com.hbb20
 
 import android.content.Context
-import com.nhaarman.mockitokotlin2.mock
+import com.nhaarman.mockitokotlin2.*
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
+import org.mockito.Mockito
 
 class CPDataStoreGeneratorTest {
 
     private val context = mock<Context> {}
+
 
     @Test
     fun generate() {
@@ -25,6 +27,7 @@ class CPDataStoreGeneratorTest {
                 customMasterCountries = "AU,TG,ZA",
                 countryFileReader = MockCountryFileReader
             )
+
         assertTrue(dataStore.countryList.any { it.alpha2Code == "AU" })
         assertTrue(dataStore.countryList.any { it.alpha2Code == "TG" })
         assertTrue(dataStore.countryList.any { it.alpha2Code == "ZA" })
@@ -271,6 +274,86 @@ class CPDataStoreGeneratorTest {
             )
         //master list: AU,TG,ZA,LKA,GHA,AFG
         assertEquals(6, dataStore.countryList.size)
+    }
+
+    @Test
+    fun `check duplicate file reading is not done for the same language`() {
+        val fileReader = mock<CountryFileReading> {}
+        whenever(fileReader.loadDataStoreFromXML(any(), any())).thenReturn(
+            getSampleDataStore(
+                CPLanguage.ENGLISH
+            )
+        )
+        val dataStore =
+            CPDataStoreGenerator.generate(
+                context,
+                defaultLanguage = CPLanguage.ENGLISH,
+                countryFileReader = fileReader
+            )
+        verify(fileReader, Mockito.times(1)).loadDataStoreFromXML(any(), any())
+        val dataStore2 =
+            CPDataStoreGenerator.generate(
+                context,
+                defaultLanguage = CPLanguage.ENGLISH,
+                countryFileReader = fileReader
+            )
+        verify(fileReader, Mockito.times(1)).loadDataStoreFromXML(any(), any())
+    }
+
+    @Test
+    fun `check correct requested file is read`() {
+        val fileReader = mock<CountryFileReading> {}
+        whenever(fileReader.loadDataStoreFromXML(any(), any())).thenReturn(
+            getSampleDataStore(
+                CPLanguage.ENGLISH
+            )
+        )
+        val dataStore =
+            CPDataStoreGenerator.generate(
+                context,
+                defaultLanguage = CPLanguage.JAPANESE,
+                countryFileReader = fileReader
+            )
+        verify(fileReader, Mockito.times(1)).loadDataStoreFromXML(any(), eq(CPLanguage.JAPANESE))
+        verify(fileReader, Mockito.times(0)).loadDataStoreFromXML(any(), eq(CPLanguage.ENGLISH))
+    }
+
+    @Test
+    fun `file read take place if language changes`() {
+        val fileReader = mock<CountryFileReading> {}
+        whenever(fileReader.loadDataStoreFromXML(any(), eq(CPLanguage.HINDI))).thenReturn(
+            getSampleDataStore(CPLanguage.HINDI)
+        )
+        whenever(fileReader.loadDataStoreFromXML(any(), eq(CPLanguage.URDU))).thenReturn(
+            getSampleDataStore(CPLanguage.URDU)
+        )
+        var dataStore =
+            CPDataStoreGenerator.generate(
+                context,
+                defaultLanguage = CPLanguage.HINDI,
+                countryFileReader = fileReader
+            )
+        assertEquals(CPLanguage.HINDI, dataStore.cpLanguage)
+        verify(fileReader, Mockito.times(1)).loadDataStoreFromXML(any(), eq(CPLanguage.HINDI))
+        verify(fileReader, Mockito.times(0)).loadDataStoreFromXML(any(), eq(CPLanguage.URDU))
+        dataStore =
+            CPDataStoreGenerator.generate(
+                context,
+                defaultLanguage = CPLanguage.URDU,
+                countryFileReader = fileReader
+            )
+        assertEquals(CPLanguage.URDU, dataStore.cpLanguage)
+        verify(fileReader, Mockito.times(1)).loadDataStoreFromXML(any(), eq(CPLanguage.HINDI))
+        verify(fileReader, Mockito.times(1)).loadDataStoreFromXML(any(), eq(CPLanguage.URDU))
+        dataStore =
+            CPDataStoreGenerator.generate(
+                context,
+                defaultLanguage = CPLanguage.HINDI,
+                countryFileReader = fileReader
+            )
+        assertEquals(CPLanguage.HINDI, dataStore.cpLanguage)
+        verify(fileReader, Mockito.times(2)).loadDataStoreFromXML(any(), eq(CPLanguage.HINDI))
+        verify(fileReader, Mockito.times(1)).loadDataStoreFromXML(any(), eq(CPLanguage.URDU))
     }
 
 }
