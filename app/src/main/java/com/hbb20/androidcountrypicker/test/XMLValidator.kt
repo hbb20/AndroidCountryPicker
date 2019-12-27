@@ -217,16 +217,6 @@ class XMLValidator {
                             )
                         }
 
-                        if (translation.isNullOrBlank()) {
-                            problems.add(
-                                Problem(
-                                    category = ProblemCategory.MISSING_PROPERTY,
-                                    fileName = fileName,
-                                    solution = "[$name] : Add translation."
-                                )
-                            )
-                        }
-
                         when (xmlPullParser.getAttributeValue(null, xmlVerifiedKey)) {
                             xmlVerifiedYESValue -> {
                             }

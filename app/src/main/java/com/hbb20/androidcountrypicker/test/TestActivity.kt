@@ -53,6 +53,13 @@ class TestActivity : AppCompatActivity() {
 
     private fun prepareProblemRVAdapter(problems: List<Problem>): ProblemsRVAdapter {
         val rvItems = mutableListOf<ProblemRVItem>()
+
+        //add summary view
+        val nonCriticalIssues =
+            problems.filter { it.category == ProblemCategory.UNVERIFIED_ENTRIES }.size
+        val criticalIssues = problems.size - nonCriticalIssues
+        rvItems.add(StatusSummary(criticalIssues, nonCriticalIssues))
+
         val problemsGroupedByFile = getEmptyMapForFileNameToProblem()
         problemsGroupedByFile.putAll(problems.groupBy { it.fileName })
         problemsGroupedByFile.forEach { mapEntry ->

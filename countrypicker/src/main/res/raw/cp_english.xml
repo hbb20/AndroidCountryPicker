@@ -16,7 +16,7 @@
         <!--"Country"-->
         <empty_selection_message
             translation="Country"
-            verified="Y" />
+            verified="" />
     </a_message_list>
 
 
