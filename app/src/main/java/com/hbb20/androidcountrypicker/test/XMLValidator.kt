@@ -8,6 +8,11 @@ import org.xmlpull.v1.XmlPullParser
 class XMLValidator {
     val nameCodeList = mutableListOf<String>()
 
+    fun hasAnyCriticalIssue(context: Context): Boolean {
+        val problems = checkAllXMLFiles(context)
+        return problems.any { it.category != ProblemCategory.UNVERIFIED_ENTRIES }
+    }
+
     fun checkAllXMLFiles(context: Context): List<Problem> {
         val problems = mutableListOf<Problem>()
         problems.addAll(checkLanguageOrder())
