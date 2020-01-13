@@ -104,11 +104,11 @@
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:onClick="openDialogDirectly"
+                android:onClick="loadInEpoxyRecyclerView"
                 android:paddingVertical="16dp"
                 android:paddingStart="8dp"
                 android:paddingLeft="8dp"
-                android:text="Open Dialog Directly"
+                android:text="Load in (Epoxy) Recycler"
                 android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>

@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun openDialogDirectly(view: View) {
-        startActivity(Intent(this, OpenDialogDirectlyActivity::class.java))
+    fun loadInEpoxyRecyclerView(view: View) {
+        startActivity(Intent(this, CustomRecyclerViewActivity::class.java))
     }
 }
