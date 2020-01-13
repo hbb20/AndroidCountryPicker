@@ -10,7 +10,8 @@ object CPRecyclerViewHelper {
         epoxyRecyclerView: EpoxyRecyclerView,
         cpDataStore: CPDataStore,
         preferredCountryCodes: String = "",
-        filterQuery: String = ""
+        filterQuery: String = "",
+        onCountryClickListener: ((CPCountry) -> Unit)
     ) {
         val filteredCountries = filterCountries(cpDataStore.countryList, filterQuery)
         val preferredCountries =
@@ -21,7 +22,9 @@ object CPRecyclerViewHelper {
         if (preferredCountries.isNotEmpty()) {
             epoxyModels.addAll(
                 preferredCountries.map { country ->
-                    CountryRowModel_().id("preferredCountry${country.alpha2Code}").country(country)
+                    CountryRowModel_().id("preferredCountry${country.alpha2Code}")
+                        .country(country)
+                        .clickListener(onCountryClickListener)
                 }
             )
             epoxyModels.add(DividerRowModel_().id("preferredCountryDivider"))
@@ -32,6 +35,7 @@ object CPRecyclerViewHelper {
                 CountryRowModel_()
                     .id(it.alpha2Code)
                     .country(it)
+                    .clickListener(onCountryClickListener)
             }
         )
 

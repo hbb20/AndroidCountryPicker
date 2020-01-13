@@ -1,6 +1,7 @@
 package com.hbb20.androidcountrypicker
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.hbb20.CPDataStoreGenerator
 import com.hbb20.countrypicker.CPRecyclerViewHelper
@@ -18,13 +19,17 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
         //        recyclerView.layoutManager = LinearLayoutManager(this)
         //        recyclerView.adapter = CPRecyclerViewAdapter(this, CPDataStoreGenerator.generate(this))
         CPRecyclerViewHelper.load(
-            recyclerView, CPDataStoreGenerator.generate(this), preferredCountryCodes = "IN,US"
-        )
-        CPRecyclerViewHelper.load(
             recyclerView,
             CPDataStoreGenerator.generate(this),
             preferredCountryCodes = "IN,US",
-            filterQuery = "United"
+            filterQuery = "United",
+            onCountryClickListener = { cpCountry ->
+                Toast.makeText(
+                    this,
+                    "Selected ${cpCountry.englishName}",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
         )
     }
 

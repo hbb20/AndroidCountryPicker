@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/countryRow"
     android:clickable="true"
     android:foreground="?attr/selectableItemBackground"
     android:minHeight="@dimen/grid_6x"

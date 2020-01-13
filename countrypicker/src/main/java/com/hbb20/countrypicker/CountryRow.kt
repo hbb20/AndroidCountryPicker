@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.widget.FrameLayout
 import com.airbnb.epoxy.AfterPropsSet
+import com.airbnb.epoxy.CallbackProp
 import com.airbnb.epoxy.ModelProp
 import com.airbnb.epoxy.ModelView
 import com.hbb20.CPCountry
@@ -22,6 +23,16 @@ class CountryRow @JvmOverloads constructor(
 
     lateinit var country: CPCountry
         @ModelProp set
+
+
+    @CallbackProp
+    fun clickListener(clickListener: ((CPCountry) -> Unit)?) {
+        setOnClickListener { clickListener?.invoke(country) }
+    }
+
+    override fun setOnClickListener(l: OnClickListener?) {
+        countryRow.setOnClickListener(l)
+    }
 
     @AfterPropsSet
     fun updateViews() {
