@@ -50,4 +50,7 @@ dependencies {
     ext.epoxyVersion = '3.9.0'
     implementation "com.airbnb.android:epoxy:$epoxyVersion"
 
+
+    implementation 'androidx.emoji:emoji-bundled:1.0.0'
+
 }

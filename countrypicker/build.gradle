@@ -48,6 +48,7 @@ dependencies {
     ext.epoxyVersion = '3.9.0'
     implementation "com.airbnb.android:epoxy:$epoxyVersion"
     kapt "com.airbnb.android:epoxy-processor:$epoxyVersion"
+    implementation 'androidx.emoji:emoji:1.0.0'
 }
 repositories {
     mavenCentral()

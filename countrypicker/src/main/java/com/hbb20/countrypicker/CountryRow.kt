@@ -36,7 +36,8 @@ class CountryRow @JvmOverloads constructor(
 
     @AfterPropsSet
     fun updateViews() {
-        tvCountryName.text = country.name
+        tvCountryName.text = country.flagEmoji + country.name
+        tvEmoji.text = country.flagEmoji
     }
 
 }

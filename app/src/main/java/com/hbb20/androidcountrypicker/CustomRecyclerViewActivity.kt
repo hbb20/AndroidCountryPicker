@@ -22,7 +22,6 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
             recyclerView,
             CPDataStoreGenerator.generate(this),
             preferredCountryCodes = "IN,US",
-            filterQuery = "United",
             onCountryClickListener = { cpCountry ->
                 Toast.makeText(
                     this,
@@ -32,6 +31,4 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
             }
         )
     }
-
-
 }

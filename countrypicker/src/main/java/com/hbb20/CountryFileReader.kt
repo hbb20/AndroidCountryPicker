@@ -81,6 +81,7 @@ object CountryFileReader : CountryFileReading {
                     englishName = baseCountry.englishName,
                     alpha2Code = baseCountry.alpha2,
                     alpha3Code = baseCountry.alpha3,
+                    flagEmoji = baseCountry.flagEmoji,
                     phoneCode = baseCountry.phoneCode
                 )
             }
@@ -114,6 +115,7 @@ object CountryFileReader : CountryFileReading {
                         if (name == xmlCountryKey) {
                             val nameCode = xmlPullParser.getAttributeValue(null, xmlAlpha2Key)
                             val alpha3 = xmlPullParser.getAttributeValue(null, xmlAlpha3Key)
+                            val flagEmoji = xmlPullParser.getAttributeValue(null, xmlFlagEmojiKey)
                             val phoneCode = xmlPullParser.getAttributeValue(
                                 null,
                                 xmlPhoneCodeKey
@@ -127,6 +129,7 @@ object CountryFileReader : CountryFileReading {
                                     englishName = englishName,
                                     alpha2 = nameCode,
                                     alpha3 = alpha3,
+                                    flagEmoji = flagEmoji,
                                     phoneCode = phoneCode.toShort()
                                 )
                         }

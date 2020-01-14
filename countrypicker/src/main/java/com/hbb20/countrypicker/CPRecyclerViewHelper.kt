@@ -13,6 +13,7 @@ object CPRecyclerViewHelper {
         filterQuery: String = "",
         onCountryClickListener: ((CPCountry) -> Unit)
     ) {
+
         val filteredCountries = filterCountries(cpDataStore.countryList, filterQuery)
         val preferredCountries =
             extractPreferredCountries(filteredCountries, preferredCountryCodes)
