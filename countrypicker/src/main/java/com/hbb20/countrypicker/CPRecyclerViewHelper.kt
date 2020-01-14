@@ -4,6 +4,7 @@ import com.airbnb.epoxy.EpoxyModel
 import com.airbnb.epoxy.EpoxyRecyclerView
 import com.hbb20.CPCountry
 import com.hbb20.CPDataStore
+import com.hbb20.countrypicker.config.CPRecyclerViewConfig
 
 object CPRecyclerViewHelper {
     fun load(
@@ -11,7 +12,8 @@ object CPRecyclerViewHelper {
         cpDataStore: CPDataStore,
         preferredCountryCodes: String = "",
         filterQuery: String = "",
-        onCountryClickListener: ((CPCountry) -> Unit)
+        onCountryClickListener: ((CPCountry) -> Unit),
+        cpRecyclerViewConfig: CPRecyclerViewConfig = CPRecyclerViewConfig()
     ) {
 
         val filteredCountries = filterCountries(cpDataStore.countryList, filterQuery)
@@ -26,17 +28,20 @@ object CPRecyclerViewHelper {
                     CountryRowModel_().id("preferredCountry${country.alpha2Code}")
                         .country(country)
                         .clickListener(onCountryClickListener)
+                        .recyclerViewConfig(cpRecyclerViewConfig)
                 }
             )
             epoxyModels.add(DividerRowModel_().id("preferredCountryDivider"))
         }
 
+        //add all other countries
         epoxyModels.addAll(
             filteredCountries.map {
                 CountryRowModel_()
                     .id(it.alpha2Code)
                     .country(it)
                     .clickListener(onCountryClickListener)
+                    .recyclerViewConfig(cpRecyclerViewConfig)
             }
         )
 

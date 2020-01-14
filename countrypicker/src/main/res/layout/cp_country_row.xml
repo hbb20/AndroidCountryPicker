@@ -8,27 +8,55 @@
     android:clickable="true"
     android:foreground="?attr/selectableItemBackground"
     android:minHeight="@dimen/grid_6x"
+    android:focusable="true"
     android:padding="@dimen/grid_1x">
 
-    <androidx.emoji.widget.EmojiTextView
-        android:id="@+id/tvEmoji"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/flagHolder"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/grid_1x"
+        android:layout_marginLeft="@dimen/grid_1x"
         android:textColor="@android:color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tvCountryName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="🏁" />
+        app:layout_constraintTop_toTopOf="@id/tvCountryName">
+
+        <TextView
+            android:id="@+id/tvEmojiFlag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="🏁" />
+
+        <ImageView
+            android:id="@+id/imgFlag"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="Flag Image"
+            android:textColor="@android:color/black"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_flag_black_24dp"
+            tools:text="🏁" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/tvCountryName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/grid_1x"
-        android:layout_marginLeft="@dimen/grid_1x"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="@dimen/grid_1x"
         android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/flagHolder"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tvEmoji"
         tools:text="India (IN)" />
 </androidx.constraintlayout.widget.ConstraintLayout>
