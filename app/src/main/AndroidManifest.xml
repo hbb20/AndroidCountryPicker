@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".OpenDialogDirectlyActivity"></activity>
+        <activity android:name=".CustomRecyclerViewActivity"></activity>
         <activity android:name=".test.TestActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
