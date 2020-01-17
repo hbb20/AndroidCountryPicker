@@ -43,7 +43,7 @@ class CountryRow @JvmOverloads constructor(
 
     @AfterPropsSet
     fun updateViews() {
-        tvCountryName.text = country.name
+        tvCountryName.text = CPTextUtil.prepare(recyclerViewConfig.rowText, country)
         applyFlag()
 
         //apply config

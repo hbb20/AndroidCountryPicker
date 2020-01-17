@@ -25,7 +25,7 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
             CPDataStoreGenerator.generate(this),
             preferredCountryCodes = "IN,US",
             cpRecyclerViewConfig = CPRecyclerViewConfig(
-                rowFontSizeInSP = 16f,
+                rowFontSizeInSP = 14f,
                 flagProvider = DefaultEmojiFlagProvider()
             ),
             onCountryClickListener = { cpCountry ->
