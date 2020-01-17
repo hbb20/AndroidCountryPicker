@@ -7,5 +7,6 @@ import com.hbb20.countrypicker.FlagProvider
 data class CPRecyclerViewConfig(
     val rowFontSizeInSP: Float = 14f,
     val flagProvider: FlagProvider? = null,
-    val rowText: String = "${CPInfoUnit.NAME.template}"
+    val rowTextTemplate: String = "${CPInfoUnit.NAME.template}",
+    val highlightedTextTemplate: String? = null
 )

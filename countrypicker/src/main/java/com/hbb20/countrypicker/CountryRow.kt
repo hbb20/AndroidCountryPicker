@@ -43,11 +43,22 @@ class CountryRow @JvmOverloads constructor(
 
     @AfterPropsSet
     fun updateViews() {
-        tvCountryName.text = CPTextUtil.prepare(recyclerViewConfig.rowText, country)
+        tvCountryName.text = CPTextUtil.prepare(recyclerViewConfig.rowTextTemplate, country)
+        setHighlightedInfo()
         applyFlag()
 
         //apply config
         applyTextSize()
+    }
+
+    private fun setHighlightedInfo() {
+        val template = recyclerViewConfig.highlightedTextTemplate
+        if (template != null) {
+            tvHighlightedInfo.visibility = View.VISIBLE
+            tvHighlightedInfo.text = CPTextUtil.prepare(template, country)
+        } else {
+            tvHighlightedInfo.visibility = View.GONE
+        }
     }
 
     private fun applyFlag() {
@@ -97,6 +108,10 @@ class CountryRow @JvmOverloads constructor(
     private fun applyTextSize() {
         tvCountryName.setTextSize(TypedValue.COMPLEX_UNIT_SP, recyclerViewConfig.rowFontSizeInSP)
         tvEmojiFlag.setTextSize(TypedValue.COMPLEX_UNIT_SP, recyclerViewConfig.rowFontSizeInSP)
+        tvHighlightedInfo.setTextSize(
+            TypedValue.COMPLEX_UNIT_SP,
+            recyclerViewConfig.rowFontSizeInSP
+        )
     }
 
 }

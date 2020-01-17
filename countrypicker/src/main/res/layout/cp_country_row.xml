@@ -44,7 +44,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_flag_black_24dp"
+            tools:src="@drawable/ic_flag_black"
             tools:text="🏁" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -58,17 +58,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/flagHolder"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tvHighlightedInfoField"
+        app:layout_constraintEnd_toStartOf="@+id/tvHighlightedInfo"
         app:layout_constraintHorizontal_bias="0"
         tools:text="India (IN)" />
 
     <TextView
-        android:id="@+id/tvHighlightedInfoField"
+        android:id="@+id/tvHighlightedInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/grid_1x"
         android:textColor="@android:color/black"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
