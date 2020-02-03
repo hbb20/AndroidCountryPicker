@@ -49,6 +49,7 @@ dependencies {
     implementation "com.airbnb.android:epoxy:$epoxyVersion"
     kapt "com.airbnb.android:epoxy-processor:$epoxyVersion"
     implementation 'androidx.emoji:emoji:1.0.0'
+    implementation 'org.apache.commons:commons-csv:1.7'
 }
 
 repositories {

@@ -25,7 +25,7 @@ object CPRecyclerViewHelper {
         if (preferredCountries.isNotEmpty()) {
             epoxyModels.addAll(
                 preferredCountries.map { country ->
-                    CountryRowModel_().id("preferredCountry${country.alpha2Code}")
+                    CountryRowModel_().id("preferredCountry${country.alpha2}")
                         .country(country)
                         .clickListener(onCountryClickListener)
                         .recyclerViewConfig(cpRecyclerViewConfig)
@@ -38,7 +38,7 @@ object CPRecyclerViewHelper {
         epoxyModels.addAll(
             filteredCountries.map {
                 CountryRowModel_()
-                    .id(it.alpha2Code)
+                    .id(it.alpha2)
                     .country(it)
                     .clickListener(onCountryClickListener)
                     .recyclerViewConfig(cpRecyclerViewConfig)
@@ -54,11 +54,11 @@ object CPRecyclerViewHelper {
     ): List<CPCountry> {
         return preferredCountryCodes.split(",").map { it.trim() }.mapNotNull { alphaCode ->
             when (alphaCode.length) {
-                2 -> countries.find { cpCountry -> cpCountry.alpha2Code.equals(alphaCode, true) }
-                3 -> countries.find { cpCountry -> cpCountry.alpha3Code.equals(alphaCode, true) }
+                2 -> countries.find { cpCountry -> cpCountry.alpha2.equals(alphaCode, true) }
+                3 -> countries.find { cpCountry -> cpCountry.alpha3.equals(alphaCode, true) }
                 else -> null
             }
-        }.distinctBy { it.alpha2Code }
+        }.distinctBy { it.alpha2 }
     }
 
     fun filterCountries(
@@ -68,8 +68,8 @@ object CPRecyclerViewHelper {
         return countryList.filter {
             it.name.contains(filterQuery, true) ||
                     it.englishName.contains(filterQuery, true) ||
-                    it.alpha2Code.contains(filterQuery, true) ||
-                    it.alpha3Code.contains(filterQuery, true) ||
+                    it.alpha2.contains(filterQuery, true) ||
+                    it.alpha3.contains(filterQuery, true) ||
                     it.phoneCode.toString().contains(filterQuery, true)
         }
     }

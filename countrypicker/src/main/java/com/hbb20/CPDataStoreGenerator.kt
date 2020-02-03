@@ -7,23 +7,20 @@ object CPDataStoreGenerator {
 
     fun generate(
         context: Context,
-        defaultLanguage: CPLanguage = CPLanguage.ENGLISH,
-        autoDetectLanguage: Boolean = false,
         customMasterCountries: String = "",
         customExcludedCountries: String = "",
-        countryFileReader: CountryFileReading = CountryFileReader
+        countryFileReader: CountryFileReading = DefaultCountryFileReader
     ): CPDataStore {
-        val languageToLoad = defaultLanguage
 
-        if (masterDataStore?.cpLanguage != languageToLoad) {
-            masterDataStore = countryFileReader.loadDataStoreFromXML(context, defaultLanguage)
+        if (masterDataStore == null) {
+            masterDataStore = countryFileReader.readDataStoreFromFile(context)
         }
 
         masterDataStore?.let {
             var countryList =
                 filterCustomMasterList(it.countryList, customMasterCountries)
             countryList = filterExcludedCountriesList(countryList, customExcludedCountries)
-            return it.copy(countryList = countryList)
+            return it.copy(countryList = countryList.toMutableList())
         }
 
         throw IllegalStateException("MasterDataStore can not be null at this point.")
@@ -35,7 +32,7 @@ object CPDataStoreGenerator {
     ): List<CPCountry> {
         val countryAlphaCodes = customExcludedCountries.split(",").map { it.trim() }
         val filteredCountries = countryList.filterNot {
-            countryAlphaCodes.contains(it.alpha2Code) || countryAlphaCodes.contains(it.alpha3Code)
+            countryAlphaCodes.contains(it.alpha2) || countryAlphaCodes.contains(it.alpha3)
         }
         return if (filteredCountries.isNotEmpty()) {
             filteredCountries
@@ -50,7 +47,7 @@ object CPDataStoreGenerator {
     ): List<CPCountry> {
         val countryAlphaCodes = customExcludedCountries.split(",").map { it.trim() }
         val customMasterCountries = masterCountryList.filter {
-            countryAlphaCodes.contains(it.alpha2Code) || countryAlphaCodes.contains(it.alpha3Code)
+            countryAlphaCodes.contains(it.alpha2) || countryAlphaCodes.contains(it.alpha3)
         }
 
         /**
