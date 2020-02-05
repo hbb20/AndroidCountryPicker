@@ -48,6 +48,7 @@
         app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
+        android:text="Lunch Data Test Screen"
         android:id="@+id/btnOpenTestActivity"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="0dp"
@@ -56,7 +57,7 @@
         android:foreground="?android:attr/selectableItemBackground"
         android:onClick="launchTestActivity"
         android:padding="24dp"
-        android:text="Lunch XML Test Screen"
+        android:visibility="gone"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
