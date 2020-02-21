@@ -12,7 +12,7 @@ object CPDataStoreGenerator {
         countryFileReader: CountryFileReading = DefaultCountryFileReader,
         useCache: Boolean = true
     ): CPDataStore {
-
+        onMethodBegin("GenerateDataStore")
         if (masterDataStore == null || !useCache) {
             masterDataStore = countryFileReader.readMasterDataFromFiles(resources)
         }
@@ -21,6 +21,7 @@ object CPDataStoreGenerator {
             var countryList =
                 filterCustomMasterList(it.countryList, customMasterCountries)
             countryList = filterExcludedCountriesList(countryList, customExcludedCountries)
+            logMethodEnd("GenerateDataStore")
             return it.copy(countryList = countryList.toMutableList())
         }
 

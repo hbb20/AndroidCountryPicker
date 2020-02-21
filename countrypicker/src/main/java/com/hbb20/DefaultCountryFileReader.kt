@@ -17,10 +17,12 @@ object DefaultCountryFileReader : CountryFileReading {
     private lateinit var baseCountries: List<BaseCountry>
 
     override fun readMasterDataFromFiles(resources: Resources): CPDataStore {
+        onMethodBegin("readMasterDataFromFiles")
         loadBaseListFromCsv(resources)
         val messageGroup = loadMessageGroup(resources)
         val translations = loadCountryNameTranslationsFromCsv(resources)
         val cpCountries = baseCountries.map { CPCountry.from(it, translations[it.alpha2]) }
+        logMethodEnd("readMasterDataFromFiles")
         return CPDataStore(cpCountries.toMutableList(), messageGroup)
     }
 
@@ -28,6 +30,7 @@ object DefaultCountryFileReader : CountryFileReading {
      * this will load the base list only if it's not already initialized.
      */
     private fun loadBaseListFromCsv(resources: Resources) {
+        onMethodBegin("loadBaseListFromCsv")
         val ins: InputStream = resources.openRawResource(R.raw.cp_country_info)
 
         // parse the file into csv values
@@ -60,12 +63,14 @@ object DefaultCountryFileReader : CountryFileReading {
         }
         this.baseCountries = baseCountries
         ins.close()
+        logMethodEnd("loadBaseListFromCsv")
     }
 
     /**
      * this will load the translations
      */
     private fun loadCountryNameTranslationsFromCsv(resources: Resources): HashMap<String, String> {
+        onMethodBegin("loadCountryNameTranslationsFromCsv")
         val ins: InputStream = resources.openRawResource(R.raw.cp_country_translation)
         // parse the file into csv values
         val csvParser = CSVParser(
@@ -81,6 +86,7 @@ object DefaultCountryFileReader : CountryFileReading {
         }
 
         ins.close()
+        logMethodEnd("loadCountryNameTranslationsFromCsv")
         return translations
     }
 
@@ -88,11 +94,14 @@ object DefaultCountryFileReader : CountryFileReading {
      * this will load the messageCollection from csv
      */
     private fun loadMessageGroup(resources: Resources): CPDataStore.MessageGroup {
-        return CPDataStore.MessageGroup(
+        onMethodBegin("loadMessageGroup")
+        val messageGroup = CPDataStore.MessageGroup(
             noMatchMsg = resources.getString(R.string.cp_no_match_msg),
             searchHint = resources.getString(R.string.cp_search_hint),
             dialogTitle = resources.getString(R.string.cp_dialog_title),
             selectionPlaceholderText = resources.getString(R.string.cp_selection_place_holder)
         )
+        logMethodEnd("loadMessageGroup")
+        return messageGroup
     }
 }
