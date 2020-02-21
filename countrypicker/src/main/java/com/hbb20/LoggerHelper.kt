@@ -1,17 +1,19 @@
 package com.hbb20
 
-import android.util.Log
+import timber.log.Timber
 
 internal const val LOG_TAG = "CountryPicker"
 
-fun logd(debugMessage: String) {
-    Log.d(LOG_TAG, debugMessage)
+val methodStartTimeMap = mutableMapOf<String, Long>()
+
+fun onMethodBegin(methodName: String) {
+    methodStartTimeMap[methodName] = System.currentTimeMillis()
 }
 
-fun logw(debugMessage: String) {
-    Log.w(LOG_TAG, debugMessage)
-}
-
-fun loge(errorMessage: String) {
-    Log.e(LOG_TAG, errorMessage)
+fun logMethodEnd(methodName: String) {
+    methodStartTimeMap[methodName]?.let {
+        val current = System.currentTimeMillis()
+        Timber.tag("CP Method Time").d("$methodName : ${(current - it) / 1000.00} sec")
+        methodStartTimeMap.remove(methodName)
+    }
 }

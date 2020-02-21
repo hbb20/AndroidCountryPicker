@@ -1,7 +1,6 @@
 package com.hbb20.androidcountrypicker.test
 
-import com.hbb20.loge
-import com.hbb20.logw
+import timber.log.Timber
 
 class Problem(
     val category: ProblemCategory,
@@ -12,15 +11,14 @@ class Problem(
         return "$category :: $fileName ::=> $solution"
     }
 
-    fun log(){
-        if(category == ProblemCategory.UNVERIFIED_ENTRIES){
-            logw(toString())
-        }else{
-            loge(toString())
+    fun log() {
+        if (category == ProblemCategory.UNVERIFIED_ENTRIES) {
+            Timber.w(toString())
+        } else {
+            Timber.e(toString())
         }
     }
 }
-
 
 
 enum class ProblemCategory(val text: String) {

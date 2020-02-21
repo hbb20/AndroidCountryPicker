@@ -4,9 +4,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.hbb20.*
 import com.hbb20.androidcountrypicker.R
+import com.hbb20.xmlBaseListFileName
+import com.hbb20.xmlLanguageFileName
+import com.hbb20.xmlNewLanguageTemplateFileName
 import kotlinx.android.synthetic.main.activity_test.*
+import timber.log.Timber
 
 class TestActivity : AppCompatActivity() {
 
@@ -42,7 +45,7 @@ class TestActivity : AppCompatActivity() {
         problemsRecyclerView.layoutManager = LinearLayoutManager(this)
 
 
-        logd("====== List of CP problems =====")
+        Timber.d("====== List of CP problems =====")
         problems.forEach {
             it.log()
         }
@@ -91,9 +94,9 @@ class TestActivity : AppCompatActivity() {
         result[xmlLanguageFileName] = emptyList()
         result[xmlBaseListFileName] = emptyList()
         result[xmlNewLanguageTemplateFileName] = emptyList()
-        for (language in CPLanguage.values()) {
-            result[language.translationFileName] = emptyList()
-        }
+        //        for (language in CPLanguage.values()) {
+        //            result[language.translationFileName] = emptyList()
+        //        }
         return result
     }
 

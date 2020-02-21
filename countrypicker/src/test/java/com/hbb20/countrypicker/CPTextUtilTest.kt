@@ -1,6 +1,5 @@
 package com.hbb20.countrypicker
 
-import com.hbb20.CPLanguage
 import com.hbb20.getSampleDataStore
 import org.junit.Assert
 import org.junit.Test
@@ -9,20 +8,20 @@ class CPTextUtilTest {
 
     @Test
     fun `NAME template is replaced`() {
-        val country = getSampleDataStore(cpLanguage = CPLanguage.ENGLISH).countryList.find {
-            it.alpha2Code == "IN"
+        val country = getSampleDataStore().countryList.find {
+            it.alpha2 == "IN"
         }!!
-        val displayText = CPTextUtil.prepare("(${CPInfoUnit.NAME.template})", country)
+        val displayText = CPTextUtil.prepare("(${CPInfoUnit.NAME})", country)
         Assert.assertEquals("(India)", displayText)
     }
 
     @Test
     fun `ALPHA2 template is replaced`() {
-        val country = getSampleDataStore(cpLanguage = CPLanguage.ENGLISH).countryList.find {
-            it.alpha2Code == "IN"
+        val country = getSampleDataStore().countryList.find {
+            it.alpha2 == "IN"
         }!!
         val displayText = CPTextUtil.prepare(
-            "${CPInfoUnit.NAME.template} - (${CPInfoUnit.ALPHA2.template})",
+            "${CPInfoUnit.NAME} - (${CPInfoUnit.ALPHA2})",
             country
         )
         Assert.assertEquals("India - (IN)", displayText)
@@ -30,11 +29,11 @@ class CPTextUtilTest {
 
     @Test
     fun `ALPHA3 template is replaced`() {
-        val country = getSampleDataStore(cpLanguage = CPLanguage.ENGLISH).countryList.find {
-            it.alpha2Code == "IN"
+        val country = getSampleDataStore().countryList.find {
+            it.alpha2 == "IN"
         }!!
         val displayText = CPTextUtil.prepare(
-            "${CPInfoUnit.NAME.template} - (${CPInfoUnit.ALPHA3.template})",
+            "${CPInfoUnit.NAME} - (${CPInfoUnit.ALPHA3})",
             country
         )
         Assert.assertEquals("India - (IND)", displayText)
@@ -42,11 +41,11 @@ class CPTextUtilTest {
 
     @Test
     fun `PhoneCode template is replaced`() {
-        val country = getSampleDataStore(cpLanguage = CPLanguage.ENGLISH).countryList.find {
-            it.alpha2Code == "IN"
+        val country = getSampleDataStore().countryList.find {
+            it.alpha2 == "IN"
         }!!
         val displayText = CPTextUtil.prepare(
-            "${CPInfoUnit.NAME.template} (+${CPInfoUnit.PHONECODE.template})",
+            "${CPInfoUnit.NAME} (+${CPInfoUnit.PHONECODE})",
             country
         )
         Assert.assertEquals("India (+91)", displayText)
@@ -54,10 +53,10 @@ class CPTextUtilTest {
 
     @Test
     fun `EnglishName template is replaced`() {
-        val country = getSampleDataStore(cpLanguage = CPLanguage.ENGLISH).countryList.find {
-            it.alpha2Code == "IN"
+        val country = getSampleDataStore().countryList.find {
+            it.alpha2 == "IN"
         }!!.copy(englishName = "TestingEnglishName")
-        val displayText = CPTextUtil.prepare("'${CPInfoUnit.ENGLISHNAME.template}'", country)
+        val displayText = CPTextUtil.prepare("'${CPInfoUnit.ENGLISHNAME}'", country)
         Assert.assertEquals("'TestingEnglishName'", displayText)
     }
 }

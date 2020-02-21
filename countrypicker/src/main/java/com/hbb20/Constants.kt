@@ -22,3 +22,7 @@ const val xmlMessageListKey = "a_message_list"
 const val xmlDataKey = "data"
 const val xmlCountriesKey = "countries"
 const val xmlLanguageFileName = "CPLanguage.kt"
+
+const val CP_COUNTRY_INFO_CSV = "cp_country_info"
+const val CP_COUNTRY_TRANSLATION_CSV = "cp_country_translation"
+const val CP_MESSAGE_TRANSLATION_CSV = "cp_message_translation"

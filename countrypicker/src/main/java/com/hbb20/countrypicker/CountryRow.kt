@@ -77,7 +77,7 @@ class CountryRow @JvmOverloads constructor(
                 }
                 is CustomFlagImageProvider -> {
                     showFlag(FlagView.IMAGE)
-                    imgFlag.setImageResource(flagProvider.getFlagResIdForAlphaCode(country.alpha2Code))
+                    imgFlag.setImageResource(flagProvider.getFlagResIdForAlphaCode(country.alpha2))
                 }
             }
         } else {

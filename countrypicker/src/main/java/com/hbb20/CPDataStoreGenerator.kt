@@ -1,29 +1,28 @@
 package com.hbb20
 
-import android.content.Context
+import android.content.res.Resources
 
 object CPDataStoreGenerator {
     private var masterDataStore: CPDataStore? = null
 
     fun generate(
-        context: Context,
-        defaultLanguage: CPLanguage = CPLanguage.ENGLISH,
-        autoDetectLanguage: Boolean = false,
+        resources: Resources,
         customMasterCountries: String = "",
         customExcludedCountries: String = "",
-        countryFileReader: CountryFileReading = CountryFileReader
+        countryFileReader: CountryFileReading = DefaultCountryFileReader,
+        useCache: Boolean = true
     ): CPDataStore {
-        val languageToLoad = defaultLanguage
-
-        if (masterDataStore?.cpLanguage != languageToLoad) {
-            masterDataStore = countryFileReader.loadDataStoreFromXML(context, defaultLanguage)
+        onMethodBegin("GenerateDataStore")
+        if (masterDataStore == null || !useCache) {
+            masterDataStore = countryFileReader.readMasterDataFromFiles(resources)
         }
 
         masterDataStore?.let {
             var countryList =
                 filterCustomMasterList(it.countryList, customMasterCountries)
             countryList = filterExcludedCountriesList(countryList, customExcludedCountries)
-            return it.copy(countryList = countryList)
+            logMethodEnd("GenerateDataStore")
+            return it.copy(countryList = countryList.toMutableList())
         }
 
         throw IllegalStateException("MasterDataStore can not be null at this point.")
@@ -35,7 +34,7 @@ object CPDataStoreGenerator {
     ): List<CPCountry> {
         val countryAlphaCodes = customExcludedCountries.split(",").map { it.trim() }
         val filteredCountries = countryList.filterNot {
-            countryAlphaCodes.contains(it.alpha2Code) || countryAlphaCodes.contains(it.alpha3Code)
+            countryAlphaCodes.contains(it.alpha2) || countryAlphaCodes.contains(it.alpha3)
         }
         return if (filteredCountries.isNotEmpty()) {
             filteredCountries
@@ -50,7 +49,7 @@ object CPDataStoreGenerator {
     ): List<CPCountry> {
         val countryAlphaCodes = customExcludedCountries.split(",").map { it.trim() }
         val customMasterCountries = masterCountryList.filter {
-            countryAlphaCodes.contains(it.alpha2Code) || countryAlphaCodes.contains(it.alpha3Code)
+            countryAlphaCodes.contains(it.alpha2) || countryAlphaCodes.contains(it.alpha3)
         }
 
         /**
@@ -61,5 +60,9 @@ object CPDataStoreGenerator {
         } else {
             masterCountryList
         }
+    }
+
+    fun invalidateCache() {
+        masterDataStore = null
     }
 }

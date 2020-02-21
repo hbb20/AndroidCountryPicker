@@ -18,12 +18,10 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        //        recyclerView.layoutManager = LinearLayoutManager(this)
-        //        recyclerView.adapter = CPRecyclerViewAdapter(this, CPDataStoreGenerator.generate(this))
         CPRecyclerViewHelper.load(
             recyclerView,
-            CPDataStoreGenerator.generate(this),
-            preferredCountryCodes = "IN,US",
+            CPDataStoreGenerator.generate(resources),
+            preferredCountryCodes = "IN,US,NZ,RU",
             cpRecyclerViewConfig = CPRecyclerViewConfig(
                 rowFontSizeInSP = 14f,
                 flagProvider = DefaultEmojiFlagProvider()
