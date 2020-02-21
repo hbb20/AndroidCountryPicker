@@ -18,10 +18,10 @@ object DefaultCountryFileReader : CountryFileReading {
 
     override fun readMasterDataFromFiles(resources: Resources): CPDataStore {
         loadBaseListFromCsv(resources)
-        val messageCollection = loadMessageCollectionFromCsv(resources)
+        val messageGroup = loadMessageGroup(resources)
         val translations = loadCountryNameTranslationsFromCsv(resources)
         val cpCountries = baseCountries.map { CPCountry.from(it, translations[it.alpha2]) }
-        return CPDataStore(cpCountries.toMutableList(), messageCollection)
+        return CPDataStore(cpCountries.toMutableList(), messageGroup)
     }
 
     /**
@@ -65,7 +65,7 @@ object DefaultCountryFileReader : CountryFileReading {
     /**
      * this will load the translations
      */
-    private fun loadCountryNameTranslationsFromCsv(resources: Resources): MutableMap<String, String> {
+    private fun loadCountryNameTranslationsFromCsv(resources: Resources): HashMap<String, String> {
         val ins: InputStream = resources.openRawResource(R.raw.cp_country_translation)
         // parse the file into csv values
         val csvParser = CSVParser(
@@ -75,7 +75,7 @@ object DefaultCountryFileReader : CountryFileReading {
                 .withTrim()
         )
 
-        val translations = mutableMapOf<String, String>()
+        val translations = hashMapOf<String, String>()
         for (row in csvParser) {
             translations[row["alpha2"]] = row["translatedName"]
         }
@@ -87,26 +87,12 @@ object DefaultCountryFileReader : CountryFileReading {
     /**
      * this will load the messageCollection from csv
      */
-    private fun loadMessageCollectionFromCsv(resources: Resources): CPDataStore.MessageCollection {
-        val ins: InputStream = resources.openRawResource(R.raw.cp_message_translation)
-        // parse the file into csv values
-        val csvParser = CSVParser(
-            ins.bufferedReader(), CSVFormat.DEFAULT
-                .withFirstRecordAsHeader()
-                .withIgnoreHeaderCase()
-                .withTrim()
+    private fun loadMessageGroup(resources: Resources): CPDataStore.MessageGroup {
+        return CPDataStore.MessageGroup(
+            noMatchMsg = resources.getString(R.string.cp_no_match_msg),
+            searchHint = resources.getString(R.string.cp_search_hint),
+            dialogTitle = resources.getString(R.string.cp_dialog_title),
+            selectionPlaceholderText = resources.getString(R.string.cp_selection_place_holder)
         )
-
-        var messageCollection: CPDataStore.MessageCollection = CPDataStore.MessageCollection()
-        csvParser.records[0]?.apply {
-            messageCollection = CPDataStore.MessageCollection(
-                this["NoMatchMsg"],
-                this["SearchHint"],
-                this["DialogTitle"],
-                this["SelectionPlaceholder"]
-            )
-        }
-        ins.close()
-        return messageCollection
     }
 }

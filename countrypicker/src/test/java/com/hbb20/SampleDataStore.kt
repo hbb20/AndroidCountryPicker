@@ -186,7 +186,7 @@ fun getSampleDataStore(): CPDataStore {
     )
     return CPDataStore(
         masterCountryList,
-        CPDataStore.MessageCollection(
+        CPDataStore.MessageGroup(
             "No matching result found",
             "Search...",
             "Select a country",

@@ -13,6 +13,6 @@ class OpenDialogDirectlyActivity : AppCompatActivity() {
     }
 
     fun openCPDialog(view: View) {
-        val cpDataStore = CPDataStoreGenerator.generate(this)
+        val cpDataStore = CPDataStoreGenerator.generate(resources)
     }
 }

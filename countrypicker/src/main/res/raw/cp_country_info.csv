@@ -103,7 +103,7 @@ ID,IDN,Indonesia,Indonesians,360,Jakarta,1904569,266794980,IDR,Indonesian Rupiah
 IE,IRL,Ireland,Irish,372,Dublin,70273,4803748,EUR,Euro,€,ie,🇮🇪,353
 IL,ISR,Israel,Israelis,376,Jerusalem,20770,8452841,ILS,Israeli New Shekel,₪,il,🇮🇱,972
 IM,IMN,Isle of Man,Manx,833,Douglas,572,84831,GBP,British Pound,£,im,🇮🇲,44
-IN,IND,India,Indians,356,New Delhi,3287263,1354051854,INR,Indian Rupee,₹,in,🇮🇳,911
+IN    ,IND   ,India                                               ,Indians                                  ,356        ,New Delhi                     ,3287263 ,1354051854,INR         ,Indian Rupee                           ,₹             ,in   ,🇮🇳     ,91
 IO,IOT,British Indian Ocean Territory,British,86,Diego Garcia,54400,3000,GBP,British Pound,£,io,🇮🇴,246
 IQ,IRQ,Iraq,Iraqis,368,Baghdad,438317,39339753,IQD,Iraqi Dinar,د.ع,iq,🇮🇶,964
 IR,IRN,Iran (Islamic Republic of),Iranians,364,Tehran,1648195,82011735,IRR,Iranian Rial,﷼,ir,🇮🇷,98

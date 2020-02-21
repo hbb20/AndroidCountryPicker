@@ -22,7 +22,7 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
         //        recyclerView.adapter = CPRecyclerViewAdapter(this, CPDataStoreGenerator.generate(this))
         CPRecyclerViewHelper.load(
             recyclerView,
-            CPDataStoreGenerator.generate(this),
+            CPDataStoreGenerator.generate(resources),
             preferredCountryCodes = "IN,US",
             cpRecyclerViewConfig = CPRecyclerViewConfig(
                 rowFontSizeInSP = 14f,
