@@ -1,19 +1,20 @@
 package com.hbb20
 
-import android.content.Context
+import android.content.res.Resources
 
 object CPDataStoreGenerator {
     private var masterDataStore: CPDataStore? = null
 
     fun generate(
-        context: Context,
+        resources: Resources,
         customMasterCountries: String = "",
         customExcludedCountries: String = "",
-        countryFileReader: CountryFileReading = DefaultCountryFileReader
+        countryFileReader: CountryFileReading = DefaultCountryFileReader,
+        useCache: Boolean = true
     ): CPDataStore {
 
-        if (masterDataStore == null) {
-            masterDataStore = countryFileReader.readDataStoreFromFile(context)
+        if (masterDataStore == null || !useCache) {
+            masterDataStore = countryFileReader.readMasterDataFromFiles(resources)
         }
 
         masterDataStore?.let {
@@ -58,5 +59,9 @@ object CPDataStoreGenerator {
         } else {
             masterCountryList
         }
+    }
+
+    fun invalidateCache() {
+        masterDataStore = null
     }
 }

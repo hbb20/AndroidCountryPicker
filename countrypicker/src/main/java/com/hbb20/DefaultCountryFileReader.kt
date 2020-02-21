@@ -1,24 +1,25 @@
 package com.hbb20
 
-import android.content.Context
+import android.content.res.Resources
+import com.hbb20.countrypicker.R
 import org.apache.commons.csv.CSVFormat
 import org.apache.commons.csv.CSVParser
 import java.io.InputStream
 
 
 interface CountryFileReading {
-    fun readDataStoreFromFile(
-        context: Context
+    fun readMasterDataFromFiles(
+        resources: Resources
     ): CPDataStore
 }
 
 object DefaultCountryFileReader : CountryFileReading {
     private lateinit var baseCountries: List<BaseCountry>
 
-    override fun readDataStoreFromFile(context: Context): CPDataStore {
-        loadBaseListFromCsv(context)
-        val messageCollection = loadMessageCollectionFromCsv(context)
-        val translations = loadCountryNameTranslationsFromCsv(context)
+    override fun readMasterDataFromFiles(resources: Resources): CPDataStore {
+        loadBaseListFromCsv(resources)
+        val messageCollection = loadMessageCollectionFromCsv(resources)
+        val translations = loadCountryNameTranslationsFromCsv(resources)
         val cpCountries = baseCountries.map { CPCountry.from(it, translations[it.alpha2]) }
         return CPDataStore(cpCountries.toMutableList(), messageCollection)
     }
@@ -26,13 +27,9 @@ object DefaultCountryFileReader : CountryFileReading {
     /**
      * this will load the base list only if it's not already initialized.
      */
-    private fun loadBaseListFromCsv(context: Context) {
-        val ins: InputStream = context.resources.openRawResource(
-            context.resources.getIdentifier(
-                CP_COUNTRY_INFO_CSV,
-                "raw", context.packageName
-            )
-        )
+    private fun loadBaseListFromCsv(resources: Resources) {
+        val ins: InputStream = resources.openRawResource(R.raw.cp_country_info)
+
         // parse the file into csv values
         val csvParser = CSVParser(
             ins.bufferedReader(), CSVFormat.DEFAULT
@@ -68,13 +65,8 @@ object DefaultCountryFileReader : CountryFileReading {
     /**
      * this will load the translations
      */
-    private fun loadCountryNameTranslationsFromCsv(context: Context): MutableMap<String, String> {
-        val ins: InputStream = context.resources.openRawResource(
-            context.resources.getIdentifier(
-                CP_COUNTRY_TRANSLATION_CSV,
-                "raw", context.packageName
-            )
-        )
+    private fun loadCountryNameTranslationsFromCsv(resources: Resources): MutableMap<String, String> {
+        val ins: InputStream = resources.openRawResource(R.raw.cp_country_translation)
         // parse the file into csv values
         val csvParser = CSVParser(
             ins.bufferedReader(), CSVFormat.DEFAULT
@@ -95,13 +87,8 @@ object DefaultCountryFileReader : CountryFileReading {
     /**
      * this will load the messageCollection from csv
      */
-    private fun loadMessageCollectionFromCsv(context: Context): CPDataStore.MessageCollection {
-        val ins: InputStream = context.resources.openRawResource(
-            context.resources.getIdentifier(
-                CP_MESSAGE_TRANSLATION_CSV,
-                "raw", context.packageName
-            )
-        )
+    private fun loadMessageCollectionFromCsv(resources: Resources): CPDataStore.MessageCollection {
+        val ins: InputStream = resources.openRawResource(R.raw.cp_message_translation)
         // parse the file into csv values
         val csvParser = CSVParser(
             ins.bufferedReader(), CSVFormat.DEFAULT
