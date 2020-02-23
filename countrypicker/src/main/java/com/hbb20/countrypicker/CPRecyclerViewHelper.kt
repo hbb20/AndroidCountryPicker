@@ -1,5 +1,7 @@
 package com.hbb20.countrypicker
 
+import android.widget.EditText
+import androidx.core.widget.doOnTextChanged
 import com.airbnb.epoxy.EpoxyModel
 import com.airbnb.epoxy.EpoxyRecyclerView
 import com.hbb20.CPCountry
@@ -11,9 +13,37 @@ object CPRecyclerViewHelper {
         epoxyRecyclerView: EpoxyRecyclerView,
         cpDataStore: CPDataStore,
         preferredCountryCodes: String = "",
-        filterQuery: String = "",
         onCountryClickListener: ((CPCountry) -> Unit),
-        cpRecyclerViewConfig: CPRecyclerViewConfig = CPRecyclerViewConfig()
+        cpRecyclerViewConfig: CPRecyclerViewConfig = CPRecyclerViewConfig(),
+        queryEditText: EditText? = null
+    ) {
+        loadForQuery(
+            epoxyRecyclerView,
+            cpDataStore,
+            preferredCountryCodes,
+            onCountryClickListener,
+            cpRecyclerViewConfig
+        )
+
+        queryEditText?.doOnTextChanged { text, _, _, _ ->
+            loadForQuery(
+                epoxyRecyclerView,
+                cpDataStore,
+                preferredCountryCodes,
+                onCountryClickListener,
+                cpRecyclerViewConfig,
+                text.toString()
+            )
+        }
+    }
+
+    private fun loadForQuery(
+        epoxyRecyclerView: EpoxyRecyclerView,
+        cpDataStore: CPDataStore,
+        preferredCountryCodes: String = "",
+        onCountryClickListener: ((CPCountry) -> Unit),
+        cpRecyclerViewConfig: CPRecyclerViewConfig = CPRecyclerViewConfig(),
+        filterQuery: String = ""
     ) {
 
         val filteredCountries = filterCountries(cpDataStore.countryList, filterQuery)

@@ -32,7 +32,8 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
                     "Selected ${cpCountry.englishName}",
                     Toast.LENGTH_LONG
                 ).show()
-            }
+            },
+            queryEditText = etQuery
         )
     }
 }
