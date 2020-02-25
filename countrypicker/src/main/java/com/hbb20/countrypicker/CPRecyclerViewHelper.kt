@@ -75,6 +75,15 @@ object CPRecyclerViewHelper {
             }
         )
 
+        //if filtered countries is empty, add no match ack row
+        if (filteredCountries.isEmpty()) {
+            epoxyModels.add(
+                NoMatchRowModel_()
+                    .id("noResultAck")
+                    .noMatchAckText(cpDataStore.messageGroup.noMatchMsg)
+            )
+        }
+
         epoxyRecyclerView.setModels(epoxyModels)
     }
 

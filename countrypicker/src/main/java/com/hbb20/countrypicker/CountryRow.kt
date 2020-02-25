@@ -43,7 +43,7 @@ class CountryRow @JvmOverloads constructor(
 
     @AfterPropsSet
     fun updateViews() {
-        tvCountryName.text = CPTextUtil.prepare(recyclerViewConfig.rowTextTemplate, country)
+        tvCountryName.text = recyclerViewConfig.rowTextGenerator?.invoke(country) ?: country.name
         setHighlightedInfo()
         applyFlag()
 
@@ -52,10 +52,10 @@ class CountryRow @JvmOverloads constructor(
     }
 
     private fun setHighlightedInfo() {
-        val template = recyclerViewConfig.highlightedTextTemplate
-        if (template != null) {
+        val highlightedText = recyclerViewConfig.highlightedTextGenerator?.invoke(country)
+        if (highlightedText != null) {
             tvHighlightedInfo.visibility = View.VISIBLE
-            tvHighlightedInfo.text = CPTextUtil.prepare(template, country)
+            tvHighlightedInfo.text = highlightedText
         } else {
             tvHighlightedInfo.visibility = View.GONE
         }

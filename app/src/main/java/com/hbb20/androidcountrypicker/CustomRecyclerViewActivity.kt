@@ -17,10 +17,13 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
         setupRecyclerView()
     }
 
+
     private fun setupRecyclerView() {
+        val dataStore = CPDataStoreGenerator.generate(resources)
+        dataStore.countryList.sortByDescending { it.population }
         CPRecyclerViewHelper.load(
             recyclerView,
-            CPDataStoreGenerator.generate(resources),
+            dataStore,
             preferredCountryCodes = "IN,US,NZ,RU",
             cpRecyclerViewConfig = CPRecyclerViewConfig(
                 rowFontSizeInSP = 14f,
