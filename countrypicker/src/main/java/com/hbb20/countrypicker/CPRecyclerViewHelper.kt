@@ -13,6 +13,7 @@ object CPRecyclerViewHelper {
         epoxyRecyclerView: EpoxyRecyclerView,
         cpDataStore: CPDataStore,
         preferredCountryCodes: String = "",
+        preferredCurrencyCodes: String = "",
         onCountryClickListener: ((CPCountry) -> Unit),
         cpRecyclerViewConfig: CPRecyclerViewConfig = CPRecyclerViewConfig(),
         queryEditText: EditText? = null
@@ -21,6 +22,7 @@ object CPRecyclerViewHelper {
             epoxyRecyclerView,
             cpDataStore,
             preferredCountryCodes,
+            preferredCurrencyCodes,
             onCountryClickListener,
             cpRecyclerViewConfig
         )
@@ -30,6 +32,7 @@ object CPRecyclerViewHelper {
                 epoxyRecyclerView,
                 cpDataStore,
                 preferredCountryCodes,
+                preferredCurrencyCodes,
                 onCountryClickListener,
                 cpRecyclerViewConfig,
                 text.toString()
@@ -41,6 +44,7 @@ object CPRecyclerViewHelper {
         epoxyRecyclerView: EpoxyRecyclerView,
         cpDataStore: CPDataStore,
         preferredCountryCodes: String = "",
+        preferredCurrencyCodes: String = "",
         onCountryClickListener: ((CPCountry) -> Unit),
         cpRecyclerViewConfig: CPRecyclerViewConfig = CPRecyclerViewConfig(),
         filterQuery: String = ""
@@ -48,7 +52,11 @@ object CPRecyclerViewHelper {
 
         val filteredCountries = filterCountries(cpDataStore.countryList, filterQuery)
         val preferredCountries =
-            extractPreferredCountries(filteredCountries, preferredCountryCodes)
+            extractPreferredCountries(
+                filteredCountries,
+                preferredCountryCodes,
+                preferredCurrencyCodes
+            )
         val epoxyModels = mutableListOf<EpoxyModel<*>>()
 
         //add preferredCountries to RecyclerView
@@ -89,27 +97,40 @@ object CPRecyclerViewHelper {
 
     fun extractPreferredCountries(
         countries: List<CPCountry>,
-        preferredCountryCodes: String
+        preferredCountryCodes: String = "",
+        preferredCurrencyCodes: String = ""
     ): List<CPCountry> {
-        return preferredCountryCodes.split(",").map { it.trim() }.mapNotNull { alphaCode ->
+        val result = preferredCountryCodes.split(",").map { it.trim() }.mapNotNull { alphaCode ->
             when (alphaCode.length) {
                 2 -> countries.find { cpCountry -> cpCountry.alpha2.equals(alphaCode, true) }
                 3 -> countries.find { cpCountry -> cpCountry.alpha3.equals(alphaCode, true) }
                 else -> null
             }
-        }.distinctBy { it.alpha2 }
+        }.toMutableList()
+
+        preferredCurrencyCodes.split(",").map { it.trim() }.map { currencyCode ->
+            result.addAll(countries.filter { it.currencyCode == currencyCode })
+        }
+
+        return result.distinctBy { it.alpha2 }
     }
 
     fun filterCountries(
         countryList: List<CPCountry>,
         filterQuery: String
     ): List<CPCountry> {
+        if (filterQuery.isBlank()) return countryList
         return countryList.filter {
             it.name.contains(filterQuery, true) ||
                     it.englishName.contains(filterQuery, true) ||
                     it.alpha2.contains(filterQuery, true) ||
                     it.alpha3.contains(filterQuery, true) ||
-                    it.phoneCode.toString().contains(filterQuery, true)
+                    it.phoneCode.toString().contains(filterQuery, true) ||
+                    it.currencyCode.contains(filterQuery, true) ||
+                    it.currencyName.contains(filterQuery, true) ||
+                    it.currencySymbol.contains(filterQuery, true) ||
+                    it.cctld.contains(filterQuery, true) ||
+                    it.demonym.contains(filterQuery, true)
         }
     }
 }

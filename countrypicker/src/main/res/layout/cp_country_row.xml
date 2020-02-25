@@ -6,22 +6,27 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:clickable="true"
+    android:focusable="true"
     android:foreground="?attr/selectableItemBackground"
     android:minHeight="@dimen/grid_6x"
-    android:focusable="true"
-    android:padding="@dimen/grid_1x">
+    android:paddingStart="@dimen/grid_1x"
+    android:paddingLeft="@dimen/grid_1x"
+    android:paddingTop="@dimen/grid_0hx"
+    android:paddingEnd="@dimen/grid_0hx"
+    android:paddingRight="@dimen/grid_0hx"
+    android:paddingBottom="@dimen/grid_0hx">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/flagHolder"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/grid_1x"
         android:layout_marginLeft="@dimen/grid_1x"
         android:textColor="@android:color/black"
-        app:layout_constraintBottom_toBottomOf="@id/tvCountryName"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvCountryName">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/tvEmojiFlag"
@@ -50,17 +55,32 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/tvCountryName"
+        android:id="@+id/tvMainText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/grid_1x"
+        android:layout_marginLeft="@dimen/grid_1x"
+        android:layout_marginTop="@dimen/grid_0hx"
+        android:layout_marginRight="@dimen/grid_1x"
+        app:layout_constraintBottom_toTopOf="@+id/tvSecondaryText"
         android:textColor="@android:color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvHighlightedInfo"
+        app:layout_goneMarginBottom="@dimen/grid_0hx"
         app:layout_constraintStart_toEndOf="@id/flagHolder"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tvHighlightedInfo"
-        app:layout_constraintHorizontal_bias="0"
-        tools:text="India (IN)" />
+        tools:text="India" />
+
+    <TextView
+        android:id="@+id/tvSecondaryText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/grid_0hx"
+        android:text="Indian Rupee (INR)"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tvMainText"
+        app:layout_constraintStart_toStartOf="@id/tvMainText"
+        app:layout_constraintTop_toBottomOf="@+id/tvMainText" />
 
     <TextView
         android:id="@+id/tvHighlightedInfo"

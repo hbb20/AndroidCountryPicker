@@ -20,11 +20,10 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
 
     private fun setupRecyclerView() {
         val dataStore = CPDataStoreGenerator.generate(resources)
-        dataStore.countryList.sortByDescending { it.population }
         CPRecyclerViewHelper.load(
             recyclerView,
             dataStore,
-            preferredCountryCodes = "IN,US,NZ,RU",
+            preferredCountryCodes = "IN,US,NZ,GZ",
             cpRecyclerViewConfig = CPRecyclerViewConfig(
                 rowFontSizeInSP = 14f,
                 flagProvider = DefaultEmojiFlagProvider()

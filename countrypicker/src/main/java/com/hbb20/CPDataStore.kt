@@ -1,7 +1,7 @@
 package com.hbb20
 
 data class CPDataStore(
-    val countryList: MutableList<CPCountry>,
+    var countryList: MutableList<CPCountry>,
     val messageGroup: MessageGroup
 ) {
     data class MessageGroup(

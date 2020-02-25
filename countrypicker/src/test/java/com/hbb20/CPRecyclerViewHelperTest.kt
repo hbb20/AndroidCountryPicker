@@ -53,6 +53,34 @@ class CPRecyclerViewHelperTest {
     }
 
     @Test
+    fun preferredCurrencyCodes() {
+        val dataStore =
+            CPDataStoreGenerator.generate(resources, countryFileReader = MockCountryFileReader)
+        val preferredCountries =
+            CPRecyclerViewHelper.extractPreferredCountries(
+                dataStore.countryList,
+                preferredCurrencyCodes = "INR,USD"
+            )
+        assertEquals("IN", preferredCountries[0].alpha2)
+        assertEquals("US", preferredCountries[1].alpha2)
+    }
+
+    @Test
+    fun removeDuplicateFromPreferredCurrencyCodesAndCountryCodes() {
+        val dataStore =
+            CPDataStoreGenerator.generate(resources, countryFileReader = MockCountryFileReader)
+        val preferredCountries =
+            CPRecyclerViewHelper.extractPreferredCountries(
+                dataStore.countryList,
+                "IN,LK",
+                "INR,USD"
+            )
+        assertEquals("IN", preferredCountries[0].alpha2)
+        assertEquals("LK", preferredCountries[1].alpha2)
+        assertEquals("US", preferredCountries[2].alpha2)
+    }
+
+    @Test
     fun invalidCodesAvoidedSafely() {
         val dataStore =
             CPDataStoreGenerator.generate(resources, countryFileReader = MockCountryFileReader)

@@ -43,12 +43,22 @@ class CountryRow @JvmOverloads constructor(
 
     @AfterPropsSet
     fun updateViews() {
-        tvCountryName.text = recyclerViewConfig.rowTextGenerator?.invoke(country) ?: country.name
+        tvMainText.text = recyclerViewConfig.mainTextGenerator?.invoke(country) ?: country.name
+        setSecondaryText(recyclerViewConfig.secondaryTextGenerator?.invoke(country))
         setHighlightedInfo()
         applyFlag()
 
         //apply config
         applyTextSize()
+    }
+
+    private fun setSecondaryText(secondaryText: String?) {
+        if (secondaryText == null) {
+            tvSecondaryText.visibility = View.GONE
+        } else {
+            tvSecondaryText.visibility = View.VISIBLE
+            tvSecondaryText.text = secondaryText
+        }
     }
 
     private fun setHighlightedInfo() {
@@ -106,8 +116,10 @@ class CountryRow @JvmOverloads constructor(
     }
 
     private fun applyTextSize() {
-        tvCountryName.setTextSize(TypedValue.COMPLEX_UNIT_SP, recyclerViewConfig.rowFontSizeInSP)
-        tvEmojiFlag.setTextSize(TypedValue.COMPLEX_UNIT_SP, recyclerViewConfig.rowFontSizeInSP)
+        tvMainText.setTextSize(TypedValue.COMPLEX_UNIT_SP, recyclerViewConfig.rowFontSizeInSP)
+        val emojiSize: Float =
+            if (recyclerViewConfig.secondaryTextGenerator == null) recyclerViewConfig.rowFontSizeInSP else recyclerViewConfig.rowFontSizeInSP * 1.3f
+        tvEmojiFlag.setTextSize(TypedValue.COMPLEX_UNIT_SP, emojiSize)
         tvHighlightedInfo.setTextSize(
             TypedValue.COMPLEX_UNIT_SP,
             recyclerViewConfig.rowFontSizeInSP

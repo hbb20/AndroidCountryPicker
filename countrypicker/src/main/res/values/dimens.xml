@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="grid_0hx">4dp</dimen>
     <dimen name="grid_1x">8dp</dimen>
+    <dimen name="grid_1hx">12dp</dimen>
     <dimen name="grid_2x">16dp</dimen>
+    <dimen name="grid_2hx">20dp</dimen>
     <dimen name="grid_3x">24dp</dimen>
     <dimen name="grid_4x">32dp</dimen>
     <dimen name="grid_5x">40dp</dimen>
