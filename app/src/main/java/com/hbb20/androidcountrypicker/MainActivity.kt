@@ -31,8 +31,8 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(this, TestActivity::class.java))
     }
 
-    fun openCustomDataStoreActivity(view: View) {
-
+    fun openDialogDirectly(view: View) {
+        startActivity(Intent(this, OpenDialogDirectlyActivity::class.java))
     }
 
     fun loadInEpoxyRecyclerView(view: View) {

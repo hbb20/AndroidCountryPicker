@@ -93,11 +93,11 @@
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:onClick="openCustomDataStoreActivity"
+                android:onClick="openDialogDirectly"
                 android:paddingVertical="16dp"
                 android:paddingStart="8dp"
                 android:paddingLeft="8dp"
-                android:text="Custom Data Store"
+                android:text="Dialog"
                 android:textStyle="bold" />
 
             <TextView

@@ -4,4 +4,5 @@
     <string name="cp_search_hint">શોધ કરો…</string>
     <string name="cp_dialog_title">દેશ પસંદ કરો</string>
     <string name="cp_selection_place_holder">દેશ</string>
+    <string name="cp_clear_selection">પસંદગી સાફ કરો</string>
 </resources>

@@ -2,6 +2,7 @@ package com.hbb20
 
 import android.content.res.Resources
 import com.hbb20.countrypicker.CPRecyclerViewHelper
+import com.hbb20.countrypicker.config.CPRecyclerViewConfig
 import com.nhaarman.mockitokotlin2.mock
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
@@ -119,7 +120,11 @@ class CPRecyclerViewHelperTest {
         val dataStore =
             CPDataStoreGenerator.generate(resources, countryFileReader = MockCountryFileReader)
         val filteredCountries =
-            CPRecyclerViewHelper.filterCountries(dataStore.countryList, "United States")
+            CPRecyclerViewHelper.filterCountries(
+                dataStore.countryList,
+                "United States",
+                CPRecyclerViewConfig()
+            )
         assertEquals("US", filteredCountries[0].alpha2)
         assertEquals(1, filteredCountries.size)
     }
@@ -129,7 +134,11 @@ class CPRecyclerViewHelperTest {
         val dataStore =
             CPDataStoreGenerator.generate(resources, countryFileReader = MockCountryFileReader)
         val filteredCountries =
-            CPRecyclerViewHelper.filterCountries(dataStore.countryList, "United")
+            CPRecyclerViewHelper.filterCountries(
+                dataStore.countryList,
+                "United",
+                CPRecyclerViewConfig()
+            )
         assertEquals("US", filteredCountries[0].alpha2)
         assertEquals(1, filteredCountries.size)
     }
@@ -139,7 +148,11 @@ class CPRecyclerViewHelperTest {
         val dataStore =
             CPDataStoreGenerator.generate(resources, countryFileReader = MockCountryFileReader)
         val filteredCountries =
-            CPRecyclerViewHelper.filterCountries(dataStore.countryList, "United States")
+            CPRecyclerViewHelper.filterCountries(
+                dataStore.countryList,
+                "United States",
+                CPRecyclerViewConfig()
+            )
         assertEquals("US", filteredCountries[0].alpha2)
         assertEquals(1, filteredCountries.size)
     }
@@ -149,7 +162,11 @@ class CPRecyclerViewHelperTest {
         val dataStore =
             CPDataStoreGenerator.generate(resources, countryFileReader = MockCountryFileReader)
         val filteredCountries =
-            CPRecyclerViewHelper.filterCountries(dataStore.countryList, "nited")
+            CPRecyclerViewHelper.filterCountries(
+                dataStore.countryList,
+                "nited",
+                CPRecyclerViewConfig()
+            )
         assertEquals("US", filteredCountries[0].alpha2)
         assertEquals(1, filteredCountries.size)
     }
@@ -158,7 +175,11 @@ class CPRecyclerViewHelperTest {
     fun `filter for alpha3 code`() {
         val dataStore =
             CPDataStoreGenerator.generate(resources, countryFileReader = MockCountryFileReader)
-        val filteredCountries = CPRecyclerViewHelper.filterCountries(dataStore.countryList, "LKA")
+        val filteredCountries = CPRecyclerViewHelper.filterCountries(
+            dataStore.countryList,
+            "LKA",
+            CPRecyclerViewConfig(highlightedTextGenerator = { it.alpha3 })
+        )
         assertEquals("LK", filteredCountries[0].alpha2)
         assertEquals(1, filteredCountries.size)
     }
@@ -167,7 +188,11 @@ class CPRecyclerViewHelperTest {
     fun `filter for alpha2 code`() {
         val dataStore =
             CPDataStoreGenerator.generate(resources, countryFileReader = MockCountryFileReader)
-        val filteredCountries = CPRecyclerViewHelper.filterCountries(dataStore.countryList, "LK")
+        val filteredCountries = CPRecyclerViewHelper.filterCountries(
+            dataStore.countryList,
+            "LK",
+            CPRecyclerViewConfig(highlightedTextGenerator = { it.alpha2 })
+        )
         assertEquals("LK", filteredCountries[0].alpha2)
         assertEquals(1, filteredCountries.size)
     }
@@ -176,7 +201,11 @@ class CPRecyclerViewHelperTest {
     fun `filter for phone code`() {
         val dataStore =
             CPDataStoreGenerator.generate(resources, countryFileReader = MockCountryFileReader)
-        val filteredCountries = CPRecyclerViewHelper.filterCountries(dataStore.countryList, "94")
+        val filteredCountries = CPRecyclerViewHelper.filterCountries(
+            dataStore.countryList,
+            "94",
+            CPRecyclerViewConfig(highlightedTextGenerator = { it.phoneCode.toString() })
+        )
         assertEquals("LK", filteredCountries[0].alpha2)
         assertEquals(1, filteredCountries.size)
     }
@@ -185,7 +214,11 @@ class CPRecyclerViewHelperTest {
     fun `filter for partial phone code`() {
         val dataStore =
             CPDataStoreGenerator.generate(resources, countryFileReader = MockCountryFileReader)
-        val filteredCountries = CPRecyclerViewHelper.filterCountries(dataStore.countryList, "9")
+        val filteredCountries = CPRecyclerViewHelper.filterCountries(
+            dataStore.countryList,
+            "9",
+            CPRecyclerViewConfig(highlightedTextGenerator = { it.phoneCode.toString() })
+        )
         assertTrue(filteredCountries.any { it.alpha2 == "AF" })
         assertTrue(filteredCountries.any { it.alpha2 == "IN" })
         assertTrue(filteredCountries.any { it.alpha2 == "LK" })

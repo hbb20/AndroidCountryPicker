@@ -23,9 +23,8 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
         CPRecyclerViewHelper.load(
             recyclerView,
             dataStore,
-            preferredCountryCodes = "IN,US,NZ,GZ",
             cpRecyclerViewConfig = CPRecyclerViewConfig(
-                rowFontSizeInSP = 14f,
+                highlightedTextGenerator = { "+${it.phoneCode}" },
                 flagProvider = DefaultEmojiFlagProvider()
             ),
             onCountryClickListener = { cpCountry ->

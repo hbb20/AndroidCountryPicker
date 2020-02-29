@@ -1,15 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.airbnb.epoxy.EpoxyRecyclerView
-        android:id="@+id/ervCountryList"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid_2x"
+            android:layout_marginLeft="@dimen/grid_2x"
+            android:layout_marginEnd="@dimen/grid_2x"
+            android:layout_marginRight="@dimen/grid_2x"
+            android:paddingTop="@dimen/grid_2x"
+            android:paddingBottom="@dimen/grid_2x"
+            android:textAppearance="@style/cp_dialog_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Select Country" />
+
+        <EditText
+            android:id="@+id/etQuery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:ems="10"
+            android:hint="Search..."
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toStartOf="@+id/img_clear_query"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            app:layout_goneMarginEnd="@dimen/grid_2x"
+            app:layout_goneMarginTop="@dimen/grid_2x" />
+
+        <ImageView
+            android:id="@+id/img_clear_query"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/grid_2x"
+            android:layout_marginRight="@dimen/grid_2x"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="@dimen/grid_1hx"
+            android:src="@drawable/ic_cp_backspace"
+            app:layout_constraintBottom_toBottomOf="@+id/etQuery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etQuery" />
+
+        <com.airbnb.epoxy.EpoxyRecyclerView
+            android:id="@+id/ervCountryList"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnClearSelection"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etQuery" />
+
+        <Button
+            android:id="@+id/btnClearSelection"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/grid_1x"
+            android:layout_marginRight="@dimen/grid_1x"
+            android:layout_marginBottom="@dimen/grid_1x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Clear Selection" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

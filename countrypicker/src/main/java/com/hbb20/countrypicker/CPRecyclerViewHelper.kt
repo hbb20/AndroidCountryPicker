@@ -12,8 +12,8 @@ object CPRecyclerViewHelper {
     fun load(
         epoxyRecyclerView: EpoxyRecyclerView,
         cpDataStore: CPDataStore,
-        preferredCountryCodes: String = "",
-        preferredCurrencyCodes: String = "",
+        preferredCountryCodes: String? = null,
+        preferredCurrencyCodes: String? = null,
         onCountryClickListener: ((CPCountry) -> Unit),
         cpRecyclerViewConfig: CPRecyclerViewConfig = CPRecyclerViewConfig(),
         queryEditText: EditText? = null
@@ -43,14 +43,15 @@ object CPRecyclerViewHelper {
     private fun loadForQuery(
         epoxyRecyclerView: EpoxyRecyclerView,
         cpDataStore: CPDataStore,
-        preferredCountryCodes: String = "",
-        preferredCurrencyCodes: String = "",
+        preferredCountryCodes: String? = "",
+        preferredCurrencyCodes: String? = "",
         onCountryClickListener: ((CPCountry) -> Unit),
         cpRecyclerViewConfig: CPRecyclerViewConfig = CPRecyclerViewConfig(),
         filterQuery: String = ""
     ) {
 
-        val filteredCountries = filterCountries(cpDataStore.countryList, filterQuery)
+        val filteredCountries =
+            filterCountries(cpDataStore.countryList, filterQuery, cpRecyclerViewConfig)
         val preferredCountries =
             extractPreferredCountries(
                 filteredCountries,
@@ -97,18 +98,21 @@ object CPRecyclerViewHelper {
 
     fun extractPreferredCountries(
         countries: List<CPCountry>,
-        preferredCountryCodes: String = "",
-        preferredCurrencyCodes: String = ""
+        preferredCountryCodes: String? = "",
+        preferredCurrencyCodes: String? = ""
     ): List<CPCountry> {
-        val result = preferredCountryCodes.split(",").map { it.trim() }.mapNotNull { alphaCode ->
-            when (alphaCode.length) {
+        val result = mutableListOf<CPCountry>()
+
+        preferredCountryCodes?.split(",")?.map { it.trim() }?.mapNotNull { alphaCode ->
+            val country = when (alphaCode.length) {
                 2 -> countries.find { cpCountry -> cpCountry.alpha2.equals(alphaCode, true) }
                 3 -> countries.find { cpCountry -> cpCountry.alpha3.equals(alphaCode, true) }
                 else -> null
             }
-        }.toMutableList()
+            country?.let { result.add(it) }
+        }
 
-        preferredCurrencyCodes.split(",").map { it.trim() }.map { currencyCode ->
+        preferredCurrencyCodes?.split(",")?.map { it.trim() }?.map { currencyCode ->
             result.addAll(countries.filter { it.currencyCode == currencyCode })
         }
 
@@ -117,20 +121,23 @@ object CPRecyclerViewHelper {
 
     fun filterCountries(
         countryList: List<CPCountry>,
-        filterQuery: String
+        filterQuery: String,
+        cpRecyclerViewConfig: CPRecyclerViewConfig
     ): List<CPCountry> {
         if (filterQuery.isBlank()) return countryList
         return countryList.filter {
-            it.name.contains(filterQuery, true) ||
-                    it.englishName.contains(filterQuery, true) ||
-                    it.alpha2.contains(filterQuery, true) ||
-                    it.alpha3.contains(filterQuery, true) ||
-                    it.phoneCode.toString().contains(filterQuery, true) ||
-                    it.currencyCode.contains(filterQuery, true) ||
-                    it.currencyName.contains(filterQuery, true) ||
-                    it.currencySymbol.contains(filterQuery, true) ||
-                    it.cctld.contains(filterQuery, true) ||
-                    it.demonym.contains(filterQuery, true)
+
+            cpRecyclerViewConfig.mainTextGenerator(it).contains(
+                filterQuery,
+                true
+            ) || (cpRecyclerViewConfig.secondaryTextGenerator?.invoke(it)?.contains(
+                filterQuery,
+                true
+            ) ?: false)
+                    || (cpRecyclerViewConfig.highlightedTextGenerator?.invoke(it)?.contains(
+                filterQuery,
+                true
+            ) ?: false)
         }
     }
 }
