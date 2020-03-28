@@ -13,7 +13,7 @@ interface CountryFileReading {
     ): CPDataStore
 }
 
-object DefaultCountryFileReader : CountryFileReading {
+object CPFileReader : CountryFileReading {
     private lateinit var baseCountries: List<BaseCountry>
 
     override fun readMasterDataFromFiles(resources: Resources): CPDataStore {

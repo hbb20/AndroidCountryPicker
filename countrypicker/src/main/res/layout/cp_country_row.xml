@@ -13,8 +13,8 @@
     android:paddingLeft="@dimen/grid_1x"
     android:paddingTop="@dimen/grid_0hx"
     android:paddingEnd="@dimen/grid_0hx"
-    android:paddingRight="@dimen/grid_0hx"
-    android:paddingBottom="@dimen/grid_0hx">
+    android:paddingRight="@dimen/grid_1x"
+    android:paddingBottom="@dimen/grid_1x">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -41,11 +41,12 @@
         <ImageView
             android:id="@+id/imgFlag"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/grid_2x"
+            android:minHeight="@dimen/grid_2x"
             android:adjustViewBounds="true"
             android:contentDescription="Flag Image"
             android:textColor="@android:color/black"
-            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

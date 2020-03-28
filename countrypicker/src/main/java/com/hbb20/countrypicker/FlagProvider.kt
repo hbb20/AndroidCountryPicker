@@ -9,5 +9,5 @@ sealed class FlagProvider
 class DefaultEmojiFlagProvider(val useEmojiCompat: Boolean = false) : FlagProvider()
 
 abstract class CustomFlagImageProvider : FlagProvider() {
-    abstract fun getFlagResIdForAlphaCode(alpha2Code: String): Int
+    abstract fun getFlag(alpha2Code: String): Int
 }

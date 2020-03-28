@@ -4,13 +4,19 @@ import android.content.res.Resources
 
 object CPDataStoreGenerator {
     private var masterDataStore: CPDataStore? = null
+    const val defaultMasterCountries = ""
+    const val defaultExcludedCountries = ""
+    const val defaultUseCache = true
+    val defaultCountryFileReader = CPFileReader
+    val defaultDataStoreModifier = null
 
     fun generate(
         resources: Resources,
-        customMasterCountries: String = "",
-        customExcludedCountries: String = "",
-        countryFileReader: CountryFileReading = DefaultCountryFileReader,
-        useCache: Boolean = true
+        customMasterCountries: String = defaultMasterCountries,
+        customExcludedCountries: String = defaultExcludedCountries,
+        countryFileReader: CountryFileReading = defaultCountryFileReader,
+        useCache: Boolean = defaultUseCache,
+        customDataStoreModifier: ((CPDataStore) -> (Unit))? = defaultDataStoreModifier
     ): CPDataStore {
         onMethodBegin("GenerateDataStore")
         if (masterDataStore == null || !useCache) {
@@ -21,8 +27,9 @@ object CPDataStoreGenerator {
             var countryList =
                 filterCustomMasterList(it.countryList, customMasterCountries)
             countryList = filterExcludedCountriesList(countryList, customExcludedCountries)
-            logMethodEnd("GenerateDataStore")
-            return it.copy(countryList = countryList.toMutableList())
+            val dataStore = it.copy(countryList = countryList.toMutableList())
+            customDataStoreModifier?.invoke(dataStore)
+            return dataStore
         }
 
         throw IllegalStateException("MasterDataStore can not be null at this point.")
