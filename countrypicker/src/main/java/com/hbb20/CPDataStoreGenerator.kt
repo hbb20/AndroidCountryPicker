@@ -8,15 +8,13 @@ object CPDataStoreGenerator {
     const val defaultExcludedCountries = ""
     const val defaultUseCache = true
     val defaultCountryFileReader = CPFileReader
-    val defaultDataStoreModifier = null
 
     fun generate(
         resources: Resources,
         customMasterCountries: String = defaultMasterCountries,
         customExcludedCountries: String = defaultExcludedCountries,
         countryFileReader: CountryFileReading = defaultCountryFileReader,
-        useCache: Boolean = defaultUseCache,
-        customDataStoreModifier: ((CPDataStore) -> (Unit))? = defaultDataStoreModifier
+        useCache: Boolean = defaultUseCache
     ): CPDataStore {
         onMethodBegin("GenerateDataStore")
         if (masterDataStore == null || !useCache) {
@@ -27,9 +25,7 @@ object CPDataStoreGenerator {
             var countryList =
                 filterCustomMasterList(it.countryList, customMasterCountries)
             countryList = filterExcludedCountriesList(countryList, customExcludedCountries)
-            val dataStore = it.copy(countryList = countryList.toMutableList())
-            customDataStoreModifier?.invoke(dataStore)
-            return dataStore
+            return it.copy(countryList = countryList.toMutableList())
         }
 
         throw IllegalStateException("MasterDataStore can not be null at this point.")

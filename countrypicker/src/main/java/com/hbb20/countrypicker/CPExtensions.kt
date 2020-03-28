@@ -9,13 +9,14 @@ import com.hbb20.CPDataStoreGenerator
 import com.hbb20.CountryFileReading
 import com.hbb20.countrypicker.config.CPCountryRowConfig
 
+val defaultDataStoreModifier = null
 fun RecyclerView.loadCountries(
     resources: Resources,
     customMasterCountries: String = CPDataStoreGenerator.defaultMasterCountries,
     customExcludedCountries: String = CPDataStoreGenerator.defaultExcludedCountries,
     countryFileReader: CountryFileReading = CPDataStoreGenerator.defaultCountryFileReader,
     useCache: Boolean = CPDataStoreGenerator.defaultUseCache,
-    customDataStoreModifier: ((CPDataStore) -> (Unit))? = CPDataStoreGenerator.defaultDataStoreModifier,
+    customDataStoreModifier: ((CPDataStore) -> (Unit))? = defaultDataStoreModifier,
     rowFontSizeInSP: Float = CPCountryRowConfig.defaultFontSize,
     flagProvider: FlagProvider? = CPCountryRowConfig.defaultFlagProvider,
     mainTextGenerator: ((CPCountry) -> String) = CPCountryRowConfig.defaultMainTextGenerator,
@@ -31,9 +32,10 @@ fun RecyclerView.loadCountries(
         customMasterCountries,
         customExcludedCountries,
         countryFileReader,
-        useCache,
-        customDataStoreModifier
+        useCache
     )
+
+    customDataStoreModifier?.invoke(cpDataStore)
 
     val cpRecyclerViewConfig = CPCountryRowConfig(
         rowFontSizeInSP,

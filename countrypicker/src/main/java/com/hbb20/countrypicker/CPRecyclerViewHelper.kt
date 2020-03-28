@@ -42,11 +42,15 @@ class CPRecyclerViewHelper(
     }
 
     private fun updateViewForQuery(query: String) {
+        updateDataForQuery(query)
+        epoxyController.setData(controllerData)
+    }
+
+    fun updateDataForQuery(query: String) {
         controllerData.preferredCountries =
             allPreferredCountries.filterCountries(query, cpCountryRowConfig)
         controllerData.allCountries =
             cpDataStore.countryList.filterCountries(query, cpCountryRowConfig)
-        epoxyController.setData(controllerData)
     }
 
     fun attachRecyclerView(recyclerView: RecyclerView) {
