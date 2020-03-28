@@ -36,14 +36,14 @@
             android:ems="10"
             android:hint="Search..."
             android:inputType="textPersonName"
-            app:layout_constraintEnd_toStartOf="@+id/img_clear_query"
+            app:layout_constraintEnd_toStartOf="@+id/imgClearQuery"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTitle"
             app:layout_goneMarginEnd="@dimen/grid_2x"
             app:layout_goneMarginTop="@dimen/grid_2x" />
 
         <ImageView
-            android:id="@+id/img_clear_query"
+            android:id="@+id/imgClearQuery"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_alignParentEnd="true"

@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.Window
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.epoxy.EpoxyRecyclerView
 import com.hbb20.CPDataStoreGenerator
@@ -27,10 +27,23 @@ class OpenDialogDirectlyActivity : AppCompatActivity() {
         dialog.window?.setContentView(dialogView)
 
         val erv: EpoxyRecyclerView = dialogView.findViewById(R.id.ervCountryList)
+        val etQuery: EditText = dialogView.findViewById(R.id.etQuery)
+        val imgClearQuery: ImageView = dialogView.findViewById(R.id.imgClearQuery)
+        val tvTitle: TextView = dialogView.findViewById(R.id.tvTitle)
+        val btnClearSelection: Button = dialogView.findViewById(R.id.btnClearSelection)
+
+        tvTitle.text = cpDataStore.messageGroup.dialogTitle
+        btnClearSelection.text = cpDataStore.messageGroup.clearSelectionText
+
         CPRecyclerViewHelper.load(erv, cpDataStore, onCountryClickListener = {
             Toast.makeText(this, "Country Selected", Toast.LENGTH_LONG).show()
             dialog.dismiss()
         })
+
+        btnClearSelection.setOnClickListener {
+            Toast.makeText(this, "Selection Cleared", Toast.LENGTH_LONG).show()
+            dialog.dismiss()
+        }
 
         dialog.show()
     }

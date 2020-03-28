@@ -8,6 +8,7 @@ data class CPDataStore(
         var noMatchMsg: String = "No matching result found",
         var searchHint: String = "Search...",
         var dialogTitle: String = "Select a country",
-        var selectionPlaceholderText: String = "Country"
+        var selectionPlaceholderText: String = "Country",
+        var clearSelectionText: String = "Clear Selection"
     )
 }

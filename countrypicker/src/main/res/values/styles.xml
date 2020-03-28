@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="cp_dialog_title" parent="TextAppearance.MaterialComponents.Headline6" />
+    <style name="cp_dialog_title" parent="TextAppearance.AppCompat.Headline" />
 </resources>
