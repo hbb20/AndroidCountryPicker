@@ -320,6 +320,4 @@ class CPDataStoreGeneratorTest {
             )
         verify(fileReader, Mockito.times(2)).readMasterDataFromFiles(any())
     }
-
-
 }

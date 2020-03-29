@@ -2,101 +2,65 @@ package com.hbb20.countrypicker
 
 import android.widget.EditText
 import androidx.core.widget.doOnTextChanged
-import com.airbnb.epoxy.EpoxyModel
-import com.airbnb.epoxy.EpoxyRecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.hbb20.CPCountry
 import com.hbb20.CPDataStore
-import com.hbb20.countrypicker.config.CPRecyclerViewConfig
+import com.hbb20.countrypicker.config.CPCountryRowConfig
+import com.hbb20.countrypicker.recyclerview.CountryListController
+import com.hbb20.countrypicker.recyclerview.CountryListControllerData
 
-object CPRecyclerViewHelper {
-    fun load(
-        epoxyRecyclerView: EpoxyRecyclerView,
-        cpDataStore: CPDataStore,
-        preferredCountryCodes: String? = null,
-        preferredCurrencyCodes: String? = null,
-        onCountryClickListener: ((CPCountry) -> Unit),
-        cpRecyclerViewConfig: CPRecyclerViewConfig = CPRecyclerViewConfig(),
-        queryEditText: EditText? = null
-    ) {
-        loadForQuery(
-            epoxyRecyclerView,
-            cpDataStore,
-            preferredCountryCodes,
-            preferredCurrencyCodes,
-            onCountryClickListener,
-            cpRecyclerViewConfig
-        )
+class CPRecyclerViewHelper(
+    private val cpDataStore: CPDataStore,
+    onCountryClickListener: ((CPCountry) -> Unit),
+    private val cpCountryRowConfig: CPCountryRowConfig = CPCountryRowConfig(),
+    preferredCountryCodes: String? = null,
+    preferredCurrencyCodes: String? = null
+) {
 
-        queryEditText?.doOnTextChanged { text, _, _, _ ->
-            loadForQuery(
-                epoxyRecyclerView,
-                cpDataStore,
-                preferredCountryCodes,
-                preferredCurrencyCodes,
-                onCountryClickListener,
-                cpRecyclerViewConfig,
-                text.toString()
-            )
+    var allPreferredCountries = extractPreferredCountries(
+        cpDataStore.countryList,
+        preferredCountryCodes,
+        preferredCurrencyCodes
+    )
+        private set
+
+    val epoxyController by lazy { CountryListController() }
+
+    val controllerData = CountryListControllerData(
+        allPreferredCountries,
+        cpDataStore.countryList,
+        onCountryClickListener,
+        cpCountryRowConfig,
+        cpDataStore
+    )
+
+    fun attachFilterQueryEditText(queryEditText: EditText?) {
+        queryEditText?.doOnTextChanged { query, _, _, _ ->
+            updateViewForQuery(query.toString())
         }
     }
 
-    private fun loadForQuery(
-        epoxyRecyclerView: EpoxyRecyclerView,
-        cpDataStore: CPDataStore,
-        preferredCountryCodes: String? = "",
-        preferredCurrencyCodes: String? = "",
-        onCountryClickListener: ((CPCountry) -> Unit),
-        cpRecyclerViewConfig: CPRecyclerViewConfig = CPRecyclerViewConfig(),
-        filterQuery: String = ""
-    ) {
-
-        val filteredCountries =
-            filterCountries(cpDataStore.countryList, filterQuery, cpRecyclerViewConfig)
-        val preferredCountries =
-            extractPreferredCountries(
-                filteredCountries,
-                preferredCountryCodes,
-                preferredCurrencyCodes
-            )
-        val epoxyModels = mutableListOf<EpoxyModel<*>>()
-
-        //add preferredCountries to RecyclerView
-        if (preferredCountries.isNotEmpty()) {
-            epoxyModels.addAll(
-                preferredCountries.map { country ->
-                    CountryRowModel_().id("preferredCountry${country.alpha2}")
-                        .country(country)
-                        .clickListener(onCountryClickListener)
-                        .recyclerViewConfig(cpRecyclerViewConfig)
-                }
-            )
-            epoxyModels.add(DividerRowModel_().id("preferredCountryDivider"))
-        }
-
-        //add all other countries
-        epoxyModels.addAll(
-            filteredCountries.map {
-                CountryRowModel_()
-                    .id(it.alpha2)
-                    .country(it)
-                    .clickListener(onCountryClickListener)
-                    .recyclerViewConfig(cpRecyclerViewConfig)
-            }
-        )
-
-        //if filtered countries is empty, add no match ack row
-        if (filteredCountries.isEmpty()) {
-            epoxyModels.add(
-                NoMatchRowModel_()
-                    .id("noResultAck")
-                    .noMatchAckText(cpDataStore.messageGroup.noMatchMsg)
-            )
-        }
-
-        epoxyRecyclerView.setModels(epoxyModels)
+    private fun updateViewForQuery(query: String) {
+        updateDataForQuery(query)
+        epoxyController.setData(controllerData)
     }
 
-    fun extractPreferredCountries(
+    fun updateDataForQuery(query: String) {
+        controllerData.preferredCountries =
+            allPreferredCountries.filterCountries(query, cpCountryRowConfig)
+        controllerData.allCountries =
+            cpDataStore.countryList.filterCountries(query, cpCountryRowConfig)
+    }
+
+    fun attachRecyclerView(recyclerView: RecyclerView) {
+        recyclerView.layoutManager = LinearLayoutManager(recyclerView.context)
+        epoxyController.setData(controllerData)
+        recyclerView.adapter = epoxyController.adapter
+    }
+
+
+    private fun extractPreferredCountries(
         countries: List<CPCountry>,
         preferredCountryCodes: String? = "",
         preferredCurrencyCodes: String? = ""
@@ -119,22 +83,21 @@ object CPRecyclerViewHelper {
         return result.distinctBy { it.alpha2 }
     }
 
-    fun filterCountries(
-        countryList: List<CPCountry>,
-        filterQuery: String,
-        cpRecyclerViewConfig: CPRecyclerViewConfig
-    ): List<CPCountry> {
-        if (filterQuery.isBlank()) return countryList
-        return countryList.filter {
 
-            cpRecyclerViewConfig.mainTextGenerator(it).contains(
+    private fun List<CPCountry>.filterCountries(
+        filterQuery: String,
+        cpCountryRowConfig: CPCountryRowConfig
+    ): List<CPCountry> {
+        if (filterQuery.isBlank()) return this
+        return this.filter {
+            cpCountryRowConfig.mainTextGenerator(it).contains(
                 filterQuery,
                 true
-            ) || (cpRecyclerViewConfig.secondaryTextGenerator?.invoke(it)?.contains(
+            ) || (cpCountryRowConfig.secondaryTextGenerator?.invoke(it)?.contains(
                 filterQuery,
                 true
             ) ?: false)
-                    || (cpRecyclerViewConfig.highlightedTextGenerator?.invoke(it)?.contains(
+                    || (cpCountryRowConfig.highlightedTextGenerator?.invoke(it)?.contains(
                 filterQuery,
                 true
             ) ?: false)

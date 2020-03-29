@@ -11,7 +11,7 @@ import com.airbnb.epoxy.CallbackProp
 import com.airbnb.epoxy.ModelProp
 import com.airbnb.epoxy.ModelView
 import com.hbb20.CPCountry
-import com.hbb20.countrypicker.config.CPRecyclerViewConfig
+import com.hbb20.countrypicker.config.CPCountryRowConfig
 import kotlinx.android.synthetic.main.cp_country_row.view.*
 
 @ModelView(autoLayout = ModelView.Size.MATCH_WIDTH_WRAP_HEIGHT)
@@ -29,7 +29,7 @@ class CountryRow @JvmOverloads constructor(
     lateinit var country: CPCountry
         @ModelProp set
 
-    var recyclerViewConfig = CPRecyclerViewConfig()
+    var recyclerViewConfig = CPCountryRowConfig()
         @ModelProp set
 
     @CallbackProp
@@ -43,7 +43,7 @@ class CountryRow @JvmOverloads constructor(
 
     @AfterPropsSet
     fun updateViews() {
-        tvMainText.text = recyclerViewConfig.mainTextGenerator?.invoke(country) ?: country.name
+        tvMainText.text = recyclerViewConfig.mainTextGenerator.invoke(country)
         setSecondaryText(recyclerViewConfig.secondaryTextGenerator?.invoke(country))
         setHighlightedInfo()
         applyFlag()
@@ -87,7 +87,7 @@ class CountryRow @JvmOverloads constructor(
                 }
                 is CustomFlagImageProvider -> {
                     showFlag(FlagView.IMAGE)
-                    imgFlag.setImageResource(flagProvider.getFlagResIdForAlphaCode(country.alpha2))
+                    imgFlag.setImageResource(flagProvider.getFlag(country.alpha2))
                 }
             }
         } else {

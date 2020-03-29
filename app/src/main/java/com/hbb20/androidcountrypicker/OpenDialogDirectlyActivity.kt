@@ -5,11 +5,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.Window
-import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.epoxy.EpoxyRecyclerView
 import com.hbb20.CPDataStoreGenerator
-import com.hbb20.countrypicker.CPRecyclerViewHelper
 
 class OpenDialogDirectlyActivity : AppCompatActivity() {
 
@@ -34,16 +36,6 @@ class OpenDialogDirectlyActivity : AppCompatActivity() {
 
         tvTitle.text = cpDataStore.messageGroup.dialogTitle
         btnClearSelection.text = cpDataStore.messageGroup.clearSelectionText
-
-        CPRecyclerViewHelper.load(erv, cpDataStore, onCountryClickListener = {
-            Toast.makeText(this, "Country Selected", Toast.LENGTH_LONG).show()
-            dialog.dismiss()
-        })
-
-        btnClearSelection.setOnClickListener {
-            Toast.makeText(this, "Selection Cleared", Toast.LENGTH_LONG).show()
-            dialog.dismiss()
-        }
 
         dialog.show()
     }
