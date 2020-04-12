@@ -60,32 +60,6 @@ class CPRecyclerViewHelperTest {
     }
 
     @Test
-    fun preferredCurrencyCodes() {
-        val helper = CPRecyclerViewHelper(
-            cpDataStore = dataStore,
-            preferredCurrencyCodes = "INR,USD",
-            onCountryClickListener = mock()
-        )
-
-        assertEquals("IN", helper.allPreferredCountries[0].alpha2)
-        assertEquals("US", helper.allPreferredCountries[1].alpha2)
-    }
-
-    @Test
-    fun removeDuplicateFromPreferredCurrencyCodesAndCountryCodes() {
-        val helper = CPRecyclerViewHelper(
-            cpDataStore = dataStore,
-            preferredCountryCodes = "IN,LK",
-            preferredCurrencyCodes = "INR,USD",
-            onCountryClickListener = mock()
-        )
-
-        assertEquals("IN", helper.allPreferredCountries[0].alpha2)
-        assertEquals("LK", helper.allPreferredCountries[1].alpha2)
-        assertEquals("US", helper.allPreferredCountries[2].alpha2)
-    }
-
-    @Test
     fun invalidCodesAvoidedSafely() {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,

@@ -1,17 +1,12 @@
 package com.hbb20.countrypicker
 
-import android.content.res.Resources
 import android.widget.EditText
 import androidx.recyclerview.widget.RecyclerView
-import com.hbb20.CPCountry
-import com.hbb20.CPDataStore
-import com.hbb20.CPDataStoreGenerator
-import com.hbb20.CountryFileReading
+import com.hbb20.*
 import com.hbb20.countrypicker.config.CPCountryRowConfig
 
 val defaultDataStoreModifier = null
 fun RecyclerView.loadCountries(
-    resources: Resources,
     customMasterCountries: String = CPDataStoreGenerator.defaultMasterCountries,
     customExcludedCountries: String = CPDataStoreGenerator.defaultExcludedCountries,
     countryFileReader: CountryFileReading = CPDataStoreGenerator.defaultCountryFileReader,
@@ -24,9 +19,9 @@ fun RecyclerView.loadCountries(
     highlightedTextGenerator: ((CPCountry) -> String)? = CPCountryRowConfig.defaultHighlightedTextGenerator,
     filterQueryEditText: EditText? = null,
     preferredCountryCodes: String? = null,
-    preferredCurrencyCodes: String? = null,
     onCountryClickListener: ((CPCountry) -> Unit)
 ) {
+    onMethodBegin("loadCountries")
     val cpDataStore = CPDataStoreGenerator.generate(
         resources,
         customMasterCountries,
@@ -49,10 +44,10 @@ fun RecyclerView.loadCountries(
         cpDataStore,
         onCountryClickListener,
         cpRecyclerViewConfig,
-        preferredCountryCodes,
-        preferredCurrencyCodes
+        preferredCountryCodes
     )
 
     cpRecyclerViewHelper.attachRecyclerView(this)
     cpRecyclerViewHelper.attachFilterQueryEditText(filterQueryEditText)
+    logMethodEnd("loadCountries")
 }

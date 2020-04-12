@@ -17,7 +17,6 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
 
     private fun setupRecyclerView() {
         recyclerView.loadCountries(
-            resources = resources,
             filterQueryEditText = etQuery
         ) { selectedCountry ->
             Toast.makeText(this, selectedCountry.name, Toast.LENGTH_SHORT).show()

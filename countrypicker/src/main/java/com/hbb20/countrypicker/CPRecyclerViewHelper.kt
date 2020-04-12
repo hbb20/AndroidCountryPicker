@@ -14,14 +14,12 @@ class CPRecyclerViewHelper(
     private val cpDataStore: CPDataStore,
     onCountryClickListener: ((CPCountry) -> Unit),
     private val cpCountryRowConfig: CPCountryRowConfig = CPCountryRowConfig(),
-    preferredCountryCodes: String? = null,
-    preferredCurrencyCodes: String? = null
+    preferredCountryCodes: String? = null
 ) {
 
     var allPreferredCountries = extractPreferredCountries(
         cpDataStore.countryList,
-        preferredCountryCodes,
-        preferredCurrencyCodes
+        preferredCountryCodes
     )
         private set
 
@@ -62,8 +60,7 @@ class CPRecyclerViewHelper(
 
     private fun extractPreferredCountries(
         countries: List<CPCountry>,
-        preferredCountryCodes: String? = "",
-        preferredCurrencyCodes: String? = ""
+        preferredCountryCodes: String? = ""
     ): List<CPCountry> {
         val result = mutableListOf<CPCountry>()
 
@@ -74,10 +71,6 @@ class CPRecyclerViewHelper(
                 else -> null
             }
             country?.let { result.add(it) }
-        }
-
-        preferredCurrencyCodes?.split(",")?.map { it.trim() }?.map { currencyCode ->
-            result.addAll(countries.filter { it.currencyCode == currencyCode })
         }
 
         return result.distinctBy { it.alpha2 }
