@@ -4,6 +4,7 @@ import android.app.Dialog
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.Window
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -80,6 +81,13 @@ class CPDialogHelper(
         ) { selectedCountry ->
             onCountryClickListener(selectedCountry)
             dialog.dismiss()
+        }
+
+        if (cpDialogConfig.showFullScreen) {
+            dialog.window?.setLayout(
+                WindowManager.LayoutParams.MATCH_PARENT,
+                WindowManager.LayoutParams.MATCH_PARENT
+            )
         }
 
         return dialog

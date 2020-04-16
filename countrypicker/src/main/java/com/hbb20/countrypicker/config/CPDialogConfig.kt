@@ -9,10 +9,12 @@ data class CPDialogConfig(
     val dialogViewIds: CPDialogViewIds = defaultCPDialogViewIds,
     val allowSearch: Boolean = defaultCPDialogAllowSearch,
     val allowClearSelection: Boolean = defaultCPDialogAllowClearSelection,
-    val showTitle: Boolean = defaultCPDialogDefaultShowTitle
+    val showTitle: Boolean = defaultCPDialogDefaultShowTitle,
+    val showFullScreen: Boolean = defaultCPDialogShowFullScreen
 ) {
     companion object {
         const val defaultCPDialogAllowSearch = true
+        const val defaultCPDialogShowFullScreen = false
         const val defaultCPDialogAllowClearSelection = false
         const val defaultCPDialogDefaultShowTitle = true
         val defaultCPDialogViewIds = CPDialogViewIds(

@@ -119,6 +119,7 @@ fun Context.launchCountryPickerDialog(
     allowSearch: Boolean = CPDialogConfig.defaultCPDialogAllowSearch,
     allowClearSelection: Boolean = CPDialogConfig.defaultCPDialogAllowClearSelection,
     showTitle: Boolean = CPDialogConfig.defaultCPDialogDefaultShowTitle,
+    showFullScreen: Boolean = CPDialogConfig.defaultCPDialogShowFullScreen,
     onCountryClickListener: ((CPCountry?) -> Unit)
 ) {
     val cpDataStore = CPDataStoreGenerator.generate(
@@ -135,7 +136,8 @@ fun Context.launchCountryPickerDialog(
         dialogViewIds = dialogViewIds,
         allowSearch = allowSearch,
         allowClearSelection = allowClearSelection,
-        showTitle = showTitle
+        showTitle = showTitle,
+        showFullScreen = showFullScreen
     )
 
     val cpCountryRowConfig = CPCountryRowConfig(

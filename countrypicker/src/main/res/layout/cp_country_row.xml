@@ -83,8 +83,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/grid_0hx"
         android:text="Indian Rupee (INR)"
-        android:textSize="12sp"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/tvMainText"
         app:layout_constraintStart_toStartOf="@id/tvMainText"
