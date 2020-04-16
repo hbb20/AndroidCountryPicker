@@ -1,4 +1,4 @@
-package com.hbb20
+package com.hbb20.countrypicker.logger
 
 import timber.log.Timber
 

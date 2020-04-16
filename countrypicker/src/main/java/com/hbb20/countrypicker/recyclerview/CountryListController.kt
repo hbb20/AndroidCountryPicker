@@ -1,12 +1,9 @@
 package com.hbb20.countrypicker.recyclerview
 
 import com.airbnb.epoxy.TypedEpoxyController
-import com.hbb20.CPCountry
-import com.hbb20.CPDataStore
 import com.hbb20.countrypicker.config.CPCountryRowConfig
-import com.hbb20.countrypicker.countryRow
-import com.hbb20.countrypicker.dividerRow
-import com.hbb20.countrypicker.noMatchRow
+import com.hbb20.countrypicker.models.CPCountry
+import com.hbb20.countrypicker.models.CPDataStore
 
 data class CountryListControllerData(
     var preferredCountries: List<CPCountry>,

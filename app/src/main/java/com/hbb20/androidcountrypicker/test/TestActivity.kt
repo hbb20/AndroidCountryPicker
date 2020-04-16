@@ -5,9 +5,9 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hbb20.androidcountrypicker.R
-import com.hbb20.xmlBaseListFileName
-import com.hbb20.xmlLanguageFileName
-import com.hbb20.xmlNewLanguageTemplateFileName
+import com.hbb20.countrypicker.models.xmlBaseListFileName
+import com.hbb20.countrypicker.models.xmlLanguageFileName
+import com.hbb20.countrypicker.models.xmlNewLanguageTemplateFileName
 import kotlinx.android.synthetic.main.activity_test.*
 import timber.log.Timber
 

@@ -1,4 +1,4 @@
-package com.hbb20.countrypicker.config
+package com.hbb20.countrypicker.dialog
 
 import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes
@@ -17,14 +17,15 @@ data class CPDialogConfig(
         const val defaultCPDialogShowFullScreen = false
         const val defaultCPDialogAllowClearSelection = false
         const val defaultCPDialogDefaultShowTitle = true
-        val defaultCPDialogViewIds = CPDialogViewIds(
-            R.layout.cp_dialog,
-            R.id.rvCountryList,
-            R.id.tvTitle,
-            R.id.etQuery,
-            R.id.imgClearQuery,
-            R.id.btnClearSelection
-        )
+        val defaultCPDialogViewIds =
+            CPDialogViewIds(
+                R.layout.cp_dialog,
+                R.id.rvCountryList,
+                R.id.tvTitle,
+                R.id.etQuery,
+                R.id.imgClearQuery,
+                R.id.btnClearSelection
+            )
     }
 }
 

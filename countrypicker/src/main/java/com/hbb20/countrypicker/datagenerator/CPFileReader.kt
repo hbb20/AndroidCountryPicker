@@ -1,7 +1,12 @@
-package com.hbb20
+package com.hbb20.countrypicker.datagenerator
 
 import android.content.res.Resources
 import com.hbb20.countrypicker.R
+import com.hbb20.countrypicker.logger.logMethodEnd
+import com.hbb20.countrypicker.logger.onMethodBegin
+import com.hbb20.countrypicker.models.BaseCountry
+import com.hbb20.countrypicker.models.CPCountry
+import com.hbb20.countrypicker.models.CPDataStore
 import org.apache.commons.csv.CSVFormat
 import org.apache.commons.csv.CSVParser
 import java.io.InputStream
@@ -18,12 +23,23 @@ object CPFileReader : CountryFileReading {
 
     override fun readMasterDataFromFiles(resources: Resources): CPDataStore {
         onMethodBegin("readMasterDataFromFiles")
-        loadBaseListFromCsv(resources)
-        val messageGroup = loadMessageGroup(resources)
-        val translations = loadCountryNameTranslationsFromCsv(resources)
+        loadBaseListFromCsv(
+            resources
+        )
+        val messageGroup =
+            loadMessageGroup(
+                resources
+            )
+        val translations =
+            loadCountryNameTranslationsFromCsv(
+                resources
+            )
         val cpCountries = baseCountries.map { CPCountry.from(it, translations[it.alpha2]) }
         logMethodEnd("readMasterDataFromFiles")
-        return CPDataStore(cpCountries.toMutableList(), messageGroup)
+        return CPDataStore(
+            cpCountries.toMutableList(),
+            messageGroup
+        )
     }
 
     /**
@@ -61,7 +77,7 @@ object CPFileReader : CountryFileReading {
                 )
             )
         }
-        this.baseCountries = baseCountries
+        CPFileReader.baseCountries = baseCountries
         ins.close()
         logMethodEnd("loadBaseListFromCsv")
     }

@@ -1,21 +1,19 @@
-package com.hbb20.countrypicker
+package com.hbb20.countrypicker.recyclerview
 
 import android.widget.EditText
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.hbb20.CPCountry
-import com.hbb20.CPDataStore
 import com.hbb20.countrypicker.config.CPCountryRowConfig
 import com.hbb20.countrypicker.config.CPRecyclerViewConfig
-import com.hbb20.countrypicker.recyclerview.CountryListController
-import com.hbb20.countrypicker.recyclerview.CountryListControllerData
+import com.hbb20.countrypicker.models.CPCountry
+import com.hbb20.countrypicker.models.CPDataStore
 
 class CPRecyclerViewHelper(
     private val cpDataStore: CPDataStore,
     onCountryClickListener: ((CPCountry) -> Unit),
     private val cpCountryRowConfig: CPCountryRowConfig = CPCountryRowConfig(),
-    cpRecyclerViewConfig: CPRecyclerViewConfig
+    cpRecyclerViewConfig: CPRecyclerViewConfig = CPRecyclerViewConfig()
 ) {
 
     var allPreferredCountries = extractPreferredCountries(

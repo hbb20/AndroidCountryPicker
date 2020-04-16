@@ -1,4 +1,4 @@
-package com.hbb20.countrypicker
+package com.hbb20.countrypicker.recyclerview
 
 import android.content.Context
 import android.util.AttributeSet
@@ -10,8 +10,11 @@ import com.airbnb.epoxy.AfterPropsSet
 import com.airbnb.epoxy.CallbackProp
 import com.airbnb.epoxy.ModelProp
 import com.airbnb.epoxy.ModelView
-import com.hbb20.CPCountry
+import com.hbb20.countrypicker.CustomCPFlagImageProvider
+import com.hbb20.countrypicker.DefaultEmojiFlagProvider
+import com.hbb20.countrypicker.R
 import com.hbb20.countrypicker.config.CPCountryRowConfig
+import com.hbb20.countrypicker.models.CPCountry
 import kotlinx.android.synthetic.main.cp_country_row.view.*
 
 @ModelView(autoLayout = ModelView.Size.MATCH_WIDTH_WRAP_HEIGHT)
@@ -72,7 +75,7 @@ class CountryRow @JvmOverloads constructor(
     }
 
     private fun applyFlag() {
-        val flagProvider = recyclerViewConfig.flagProvider
+        val flagProvider = recyclerViewConfig.CPFlagProvider
         if (flagProvider != null) {
             when (flagProvider) {
                 is DefaultEmojiFlagProvider -> {
@@ -85,7 +88,7 @@ class CountryRow @JvmOverloads constructor(
                         }
                     tvEmojiFlag.text = flagEmoji
                 }
-                is CustomFlagImageProvider -> {
+                is CustomCPFlagImageProvider -> {
                     showFlag(FlagView.IMAGE)
                     imgFlag.setImageResource(flagProvider.getFlag(country.alpha2))
                 }

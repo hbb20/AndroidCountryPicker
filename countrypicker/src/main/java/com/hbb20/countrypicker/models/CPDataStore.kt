@@ -1,4 +1,4 @@
-package com.hbb20
+package com.hbb20.countrypicker.models
 
 data class CPDataStore(
     var countryList: MutableList<CPCountry>,

@@ -1,13 +1,13 @@
 package com.hbb20.countrypicker.config
 
-import com.hbb20.CPCountry
+import com.hbb20.countrypicker.CPFlagProvider
 import com.hbb20.countrypicker.DefaultEmojiFlagProvider
-import com.hbb20.countrypicker.FlagProvider
+import com.hbb20.countrypicker.models.CPCountry
 
 
 data class CPCountryRowConfig(
     val rowFontSizeInSP: Float = defaultFontSize,
-    val flagProvider: FlagProvider? = defaultFlagProvider,
+    val CPFlagProvider: CPFlagProvider? = defaultFlagProvider,
     val mainTextGenerator: ((CPCountry) -> String) = defaultMainTextGenerator,
     val secondaryTextGenerator: ((CPCountry) -> String)? = defaultSecondaryTextGenerator,
     val highlightedTextGenerator: ((CPCountry) -> String)? = defaultHighlightedTextGenerator

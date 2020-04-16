@@ -1,4 +1,4 @@
-package com.hbb20.countrypicker
+package com.hbb20.countrypicker.dialog
 
 import android.app.Dialog
 import android.content.Context
@@ -12,11 +12,11 @@ import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.RecyclerView
-import com.hbb20.CPCountry
-import com.hbb20.CPDataStore
 import com.hbb20.countrypicker.config.CPCountryRowConfig
-import com.hbb20.countrypicker.config.CPDialogConfig
 import com.hbb20.countrypicker.config.CPRecyclerViewConfig
+import com.hbb20.countrypicker.models.CPCountry
+import com.hbb20.countrypicker.models.CPDataStore
+import com.hbb20.countrypicker.recyclerview.loadCountriesUsingDataStoreAndConfig
 
 class CPDialogHelper(
     private val cpDataStore: CPDataStore,
@@ -72,6 +72,7 @@ class CPDialogHelper(
         etQuery?.isVisible = cpDialogConfig.allowSearch
         etQuery?.hint = cpDataStore.messageGroup.searchHint
         etQuery?.doOnTextChanged { _, _, _, _ -> refreshClearQueryButton() }
+        refreshClearQueryButton()
 
         recyclerView.loadCountriesUsingDataStoreAndConfig(
             cpDataStore,

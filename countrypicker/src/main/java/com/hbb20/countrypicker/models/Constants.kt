@@ -1,4 +1,4 @@
-package com.hbb20
+package com.hbb20.countrypicker.models
 
 internal const val CP_TAG = "CountryPicker"
 const val xmlAlpha2Key = "a2"

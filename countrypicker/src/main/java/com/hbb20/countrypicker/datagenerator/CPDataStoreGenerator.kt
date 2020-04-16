@@ -1,13 +1,17 @@
-package com.hbb20
+package com.hbb20.countrypicker.datagenerator
 
 import android.content.res.Resources
+import com.hbb20.countrypicker.logger.onMethodBegin
+import com.hbb20.countrypicker.models.CPCountry
+import com.hbb20.countrypicker.models.CPDataStore
 
 object CPDataStoreGenerator {
     private var masterDataStore: CPDataStore? = null
     const val defaultMasterCountries = ""
     const val defaultExcludedCountries = ""
     const val defaultUseCache = true
-    val defaultCountryFileReader = CPFileReader
+    val defaultCountryFileReader =
+        CPFileReader
 
     fun generate(
         resources: Resources,
@@ -23,8 +27,15 @@ object CPDataStoreGenerator {
 
         masterDataStore?.let {
             var countryList =
-                filterCustomMasterList(it.countryList, customMasterCountries)
-            countryList = filterExcludedCountriesList(countryList, customExcludedCountries)
+                filterCustomMasterList(
+                    it.countryList,
+                    customMasterCountries
+                )
+            countryList =
+                filterExcludedCountriesList(
+                    countryList,
+                    customExcludedCountries
+                )
             return it.copy(countryList = countryList.toMutableList())
         }
 
