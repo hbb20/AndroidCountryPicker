@@ -13,7 +13,7 @@ data class CPCountryRowConfig(
     val highlightedTextGenerator: ((CPCountry) -> String)? = defaultHighlightedTextGenerator
 ) {
     companion object {
-        const val defaultFontSize = 14f
+        const val defaultFontSize = 16f
         val defaultFlagProvider = DefaultEmojiFlagProvider()
         val defaultMainTextGenerator: ((CPCountry) -> String) = { it.name }
         val defaultSecondaryTextGenerator = null

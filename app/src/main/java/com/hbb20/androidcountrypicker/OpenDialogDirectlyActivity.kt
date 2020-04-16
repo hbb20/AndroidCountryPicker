@@ -58,12 +58,7 @@ class OpenDialogDirectlyActivity : AppCompatActivity() {
     }
 
     fun openCPDialog(view: View) {
-        launchCountryPickerDialog(showTitle = false,
-            allowSearch = false,
-            preferredCountryCodes = "IN,US,PK",
-            mainTextGenerator = { country -> "${country.name} (${country.alpha2})" },
-            highlightedTextGenerator = { country -> "+${country.phoneCode}" },
-            secondaryTextGenerator = { country -> "(${country.capitalEnglishName})" }) { selectedCountry ->
+        launchCountryPickerDialog { selectedCountry ->
             Toast.makeText(
                 this,
                 selectedCountry?.alpha2,

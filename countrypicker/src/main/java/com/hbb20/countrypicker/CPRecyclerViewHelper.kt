@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.hbb20.CPCountry
 import com.hbb20.CPDataStore
 import com.hbb20.countrypicker.config.CPCountryRowConfig
+import com.hbb20.countrypicker.config.CPRecyclerViewConfig
 import com.hbb20.countrypicker.recyclerview.CountryListController
 import com.hbb20.countrypicker.recyclerview.CountryListControllerData
 
@@ -14,12 +15,12 @@ class CPRecyclerViewHelper(
     private val cpDataStore: CPDataStore,
     onCountryClickListener: ((CPCountry) -> Unit),
     private val cpCountryRowConfig: CPCountryRowConfig = CPCountryRowConfig(),
-    preferredCountryCodes: String? = null
+    cpRecyclerViewConfig: CPRecyclerViewConfig
 ) {
 
     var allPreferredCountries = extractPreferredCountries(
         cpDataStore.countryList,
-        preferredCountryCodes
+        cpRecyclerViewConfig.preferredCountryCodes
     )
         private set
 
