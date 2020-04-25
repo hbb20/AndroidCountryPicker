@@ -1,7 +1,7 @@
 package com.hbb20.countrypicker.datagenerator
 
+import android.content.Context
 import android.content.res.Resources
-import android.util.Log
 import com.hbb20.countrypicker.R
 import com.hbb20.countrypicker.logger.logMethodEnd
 import com.hbb20.countrypicker.logger.onMethodBegin
@@ -9,32 +9,26 @@ import com.hbb20.countrypicker.models.BaseCountry
 import com.hbb20.countrypicker.models.CPCountry
 import com.hbb20.countrypicker.models.CPDataStore
 import masterBaseList
-import org.apache.commons.csv.CSVFormat
-import org.apache.commons.csv.CSVParser
-import java.io.InputStream
 
 
 interface CountryFileReading {
     fun readMasterDataFromFiles(
-        resources: Resources
+        context: Context
     ): CPDataStore
 }
 
 object CPFileReader : CountryFileReading {
     private var baseCountries: List<BaseCountry> = masterBaseList
 
-    override fun readMasterDataFromFiles(resources: Resources): CPDataStore {
+    override fun readMasterDataFromFiles(context: Context): CPDataStore {
         onMethodBegin("readMasterDataFromFiles")
-        //        loadBaseListFromCsv(
-        //            resources
-        //        )
         val messageGroup =
             loadMessageGroup(
-                resources
+                context.resources
             )
         val translations =
-            loadCountryNameTranslationsFromCsv(
-                resources
+            loadCountryNameTranslations(
+                context
             )
         val cpCountries = baseCountries.map { CPCountry.from(it, translations[it.alpha2]) }
         logMethodEnd("readMasterDataFromFiles")
@@ -45,89 +39,22 @@ object CPFileReader : CountryFileReading {
     }
 
     /**
-     * this will load the base list only if it's not already initialized.
-     */
-    private fun loadBaseListFromCsv(resources: Resources) {
-        onMethodBegin("loadBaseListFromCsv")
-        val ins: InputStream = resources.openRawResource(R.raw.cp_country_info)
-
-        // parse the file into csv values
-        val csvParser = CSVParser(
-            ins.bufferedReader(), CSVFormat.DEFAULT
-                .withFirstRecordAsHeader()
-                .withIgnoreHeaderCase()
-                .withTrim()
-        )
-
-        val baseCountries = mutableListOf<BaseCountry>()
-        for (row in csvParser) {
-            baseCountries.add(
-                BaseCountry(
-                    alpha2 = row["alpha2"],
-                    alpha3 = row["alpha3"],
-                    englishName = row["englishName"],
-                    demonym = row["demonym"],
-                    capitalEnglishName = row["capitalEnglishName"],
-                    areaKM2 = row["areaKM2"],
-                    population = row["population"].toLong(),
-                    currencyCode = row["currencyCode"],
-                    currencyName = row["currencyName"],
-                    currencySymbol = row["currencySymbol"],
-                    cctld = row["cctld"],
-                    flagEmoji = row["flagEmoji"],
-                    phoneCode = row["phoneCode"].toShort()
-                )
-            )
-        }
-        CPFileReader.baseCountries = baseCountries
-        baseCountries.forEach {
-            it.apply {
-                Log.d(
-                    "BaseCountry >>", "val country$alpha2 = " +
-                            "BaseCountry(" +
-                            "alpha2 = \"$alpha2\"," +
-                            "alpha3 = \"$alpha3\"," +
-                            "englishName = \"$englishName\"," +
-                            "demonym = \"$demonym\"," +
-                            "capitalEnglishName = \"$capitalEnglishName\"," +
-                            "areaKM2 = \"$areaKM2\"," +
-                            "population = $population," +
-                            "currencyCode = \"$currencyCode\"," +
-                            "currencyName = \"$currencyName\"," +
-                            "currencySymbol = \"$currencySymbol\"," +
-                            "cctld = \"$cctld\"," +
-                            "flagEmoji = \"$flagEmoji\"," +
-                            "phoneCode = $phoneCode" +
-                            ")"
-                )
-            }
-        }
-        ins.close()
-        logMethodEnd("loadBaseListFromCsv")
-    }
-
-    /**
      * this will load the translations
      */
-    private fun loadCountryNameTranslationsFromCsv(resources: Resources): HashMap<String, String> {
-        onMethodBegin("loadCountryNameTranslationsFromCsv")
-        val ins: InputStream = resources.openRawResource(R.raw.cp_country_translation)
-        // parse the file into csv values
-        val csvParser = CSVParser(
-            ins.bufferedReader(), CSVFormat.DEFAULT
-                .withFirstRecordAsHeader()
-                .withIgnoreHeaderCase()
-                .withTrim()
-        )
-
-        val translations = hashMapOf<String, String>()
-        for (row in csvParser) {
-            translations[row["alpha2"]] = row["translatedName"]
+    private fun loadCountryNameTranslations(context: Context): HashMap<String, String> {
+        onMethodBegin("loadCountryNameTranslations")
+        val result = hashMapOf<String, String>()
+        masterBaseList.forEach { country ->
+            val resId: Int = context.resources.getIdentifier(
+                "cp_${country.alpha2}_name",
+                "string",
+                context.packageName
+            )
+            val name: String = context.getString(resId)
+            result[country.alpha2] = name
         }
-
-        ins.close()
-        logMethodEnd("loadCountryNameTranslationsFromCsv")
-        return translations
+        logMethodEnd("loadCountryNameTranslations")
+        return result
     }
 
     /**

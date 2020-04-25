@@ -1,6 +1,6 @@
 package com.hbb20.countrypicker.datagenerator
 
-import android.content.res.Resources
+import android.content.Context
 import com.hbb20.countrypicker.logger.onMethodBegin
 import com.hbb20.countrypicker.models.CPCountry
 import com.hbb20.countrypicker.models.CPDataStore
@@ -14,7 +14,7 @@ object CPDataStoreGenerator {
         CPFileReader
 
     fun generate(
-        resources: Resources,
+        context: Context,
         customMasterCountries: String = defaultMasterCountries,
         customExcludedCountries: String = defaultExcludedCountries,
         countryFileReader: CountryFileReading = defaultCountryFileReader,
@@ -22,7 +22,7 @@ object CPDataStoreGenerator {
     ): CPDataStore {
         onMethodBegin("GenerateDataStore")
         if (masterDataStore == null || !useCache) {
-            masterDataStore = countryFileReader.readMasterDataFromFiles(resources)
+            masterDataStore = countryFileReader.readMasterDataFromFiles(context)
         }
 
         masterDataStore?.let {

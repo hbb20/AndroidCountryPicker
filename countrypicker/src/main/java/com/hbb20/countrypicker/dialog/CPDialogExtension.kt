@@ -31,7 +31,7 @@ fun Context.launchCountryPickerDialog(
     onCountryClickListener: ((CPCountry?) -> Unit)
 ) {
     val cpDataStore = CPDataStoreGenerator.generate(
-        resources = resources,
+        context = this,
         customMasterCountries = customMasterCountries,
         customExcludedCountries = customExcludedCountries,
         countryFileReader = countryFileReader,

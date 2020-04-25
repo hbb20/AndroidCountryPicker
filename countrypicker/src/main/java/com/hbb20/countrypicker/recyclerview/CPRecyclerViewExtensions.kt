@@ -30,7 +30,7 @@ fun RecyclerView.loadCountries(
 ) {
     onMethodBegin("loadCountries")
     val cpDataStore = CPDataStoreGenerator.generate(
-        resources,
+        context,
         customMasterCountries,
         customExcludedCountries,
         countryFileReader,
