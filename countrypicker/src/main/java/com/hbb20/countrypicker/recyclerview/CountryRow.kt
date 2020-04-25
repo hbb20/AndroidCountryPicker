@@ -18,7 +18,7 @@ import com.hbb20.countrypicker.models.CPCountry
 import kotlinx.android.synthetic.main.cp_country_row.view.*
 
 @ModelView(autoLayout = ModelView.Size.MATCH_WIDTH_WRAP_HEIGHT)
-class CountryRow @JvmOverloads constructor(
+internal class CountryRow @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0

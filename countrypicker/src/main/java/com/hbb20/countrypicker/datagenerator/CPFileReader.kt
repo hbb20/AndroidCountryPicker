@@ -1,12 +1,14 @@
 package com.hbb20.countrypicker.datagenerator
 
 import android.content.res.Resources
+import android.util.Log
 import com.hbb20.countrypicker.R
 import com.hbb20.countrypicker.logger.logMethodEnd
 import com.hbb20.countrypicker.logger.onMethodBegin
 import com.hbb20.countrypicker.models.BaseCountry
 import com.hbb20.countrypicker.models.CPCountry
 import com.hbb20.countrypicker.models.CPDataStore
+import masterBaseList
 import org.apache.commons.csv.CSVFormat
 import org.apache.commons.csv.CSVParser
 import java.io.InputStream
@@ -19,13 +21,13 @@ interface CountryFileReading {
 }
 
 object CPFileReader : CountryFileReading {
-    private lateinit var baseCountries: List<BaseCountry>
+    private var baseCountries: List<BaseCountry> = masterBaseList
 
     override fun readMasterDataFromFiles(resources: Resources): CPDataStore {
         onMethodBegin("readMasterDataFromFiles")
-        loadBaseListFromCsv(
-            resources
-        )
+        //        loadBaseListFromCsv(
+        //            resources
+        //        )
         val messageGroup =
             loadMessageGroup(
                 resources
@@ -78,6 +80,28 @@ object CPFileReader : CountryFileReading {
             )
         }
         CPFileReader.baseCountries = baseCountries
+        baseCountries.forEach {
+            it.apply {
+                Log.d(
+                    "BaseCountry >>", "val country$alpha2 = " +
+                            "BaseCountry(" +
+                            "alpha2 = \"$alpha2\"," +
+                            "alpha3 = \"$alpha3\"," +
+                            "englishName = \"$englishName\"," +
+                            "demonym = \"$demonym\"," +
+                            "capitalEnglishName = \"$capitalEnglishName\"," +
+                            "areaKM2 = \"$areaKM2\"," +
+                            "population = $population," +
+                            "currencyCode = \"$currencyCode\"," +
+                            "currencyName = \"$currencyName\"," +
+                            "currencySymbol = \"$currencySymbol\"," +
+                            "cctld = \"$cctld\"," +
+                            "flagEmoji = \"$flagEmoji\"," +
+                            "phoneCode = $phoneCode" +
+                            ")"
+                )
+            }
+        }
         ins.close()
         logMethodEnd("loadBaseListFromCsv")
     }

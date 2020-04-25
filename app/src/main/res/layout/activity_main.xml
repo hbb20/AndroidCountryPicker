@@ -111,6 +111,11 @@
                 android:paddingLeft="8dp"
                 android:text="Load in (Epoxy) Recycler"
                 android:textStyle="bold" />
+
+            <com.hbb20.CountryPickerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/grid_2x" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
