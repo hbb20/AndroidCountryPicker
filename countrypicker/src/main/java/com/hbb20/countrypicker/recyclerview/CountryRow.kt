@@ -119,14 +119,9 @@ internal class CountryRow @JvmOverloads constructor(
     }
 
     private fun applyTextSize() {
-        tvMainText.setTextSize(TypedValue.COMPLEX_UNIT_SP, recyclerViewConfig.rowFontSizeInSP)
         val emojiSize: Float =
-            if (recyclerViewConfig.secondaryTextGenerator == null) recyclerViewConfig.rowFontSizeInSP else recyclerViewConfig.rowFontSizeInSP * 1.3f
-        tvEmojiFlag.setTextSize(TypedValue.COMPLEX_UNIT_SP, emojiSize)
-        tvHighlightedInfo.setTextSize(
-            TypedValue.COMPLEX_UNIT_SP,
-            recyclerViewConfig.rowFontSizeInSP
-        )
+            if (recyclerViewConfig.secondaryTextGenerator == null) tvMainText.textSize else tvMainText.textSize * 1.3f
+        tvEmojiFlag.setTextSize(TypedValue.COMPLEX_UNIT_PX, emojiSize)
     }
 
 }

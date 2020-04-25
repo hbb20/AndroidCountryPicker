@@ -17,7 +17,6 @@ fun Context.launchCountryPickerDialog(
     countryFileReader: CountryFileReading = CPDataStoreGenerator.defaultCountryFileReader,
     useCache: Boolean = CPDataStoreGenerator.defaultUseCache,
     customDataStoreModifier: ((CPDataStore) -> (Unit))? = defaultDataStoreModifier,
-    rowFontSizeInSP: Float = CPCountryRowConfig.defaultFontSize,
     CPFlagProvider: CPFlagProvider? = CPCountryRowConfig.defaultFlagProvider,
     mainTextGenerator: ((CPCountry) -> String) = CPCountryRowConfig.defaultMainTextGenerator,
     secondaryTextGenerator: ((CPCountry) -> String)? = CPCountryRowConfig.defaultSecondaryTextGenerator,
@@ -49,7 +48,6 @@ fun Context.launchCountryPickerDialog(
     )
 
     val cpCountryRowConfig = CPCountryRowConfig(
-        rowFontSizeInSP = rowFontSizeInSP,
         CPFlagProvider = CPFlagProvider,
         mainTextGenerator = mainTextGenerator,
         secondaryTextGenerator = secondaryTextGenerator,
@@ -62,11 +60,11 @@ fun Context.launchCountryPickerDialog(
 
     val helper =
         CPDialogHelper(
-            cpDataStore,
-            onCountryClickListener,
-            cpDialogConfig,
-            cpRecyclerViewConfig,
-            cpCountryRowConfig
+            cpDataStore = cpDataStore,
+            cpDialogConfig = cpDialogConfig,
+            cpRecyclerViewConfig = cpRecyclerViewConfig,
+            cpCountryRowConfig = cpCountryRowConfig,
+            onCountryClickListener = onCountryClickListener
         )
 
     val dialog = helper.createDialog(this)

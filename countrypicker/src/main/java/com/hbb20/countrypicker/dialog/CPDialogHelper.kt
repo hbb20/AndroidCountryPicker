@@ -20,10 +20,10 @@ import com.hbb20.countrypicker.recyclerview.loadCountriesUsingDataStoreAndConfig
 
 class CPDialogHelper(
     private val cpDataStore: CPDataStore,
-    val onCountryClickListener: (CPCountry?) -> Unit,
     private val cpDialogConfig: CPDialogConfig,
     private val cpRecyclerViewConfig: CPRecyclerViewConfig,
-    private val cpCountryRowConfig: CPCountryRowConfig
+    private val cpCountryRowConfig: CPCountryRowConfig,
+    val onCountryClickListener: (CPCountry?) -> Unit
 ) {
     fun createDialog(context: Context): Dialog {
         val dialog = Dialog(context)

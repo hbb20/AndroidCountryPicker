@@ -113,9 +113,14 @@
                 android:textStyle="bold" />
 
             <com.hbb20.CountryPickerView
-                android:layout_width="wrap_content"
+                android:id="@+id/countryPicker"
+                android:layout_width="100dp"
+                android:clickable="true"
                 android:layout_height="wrap_content"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
                 android:padding="@dimen/grid_2x" />
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

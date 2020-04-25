@@ -6,11 +6,11 @@ import com.hbb20.countrypicker.R
 
 
 data class CPDialogConfig(
-    val dialogViewIds: CPDialogViewIds = defaultCPDialogViewIds,
-    val allowSearch: Boolean = defaultCPDialogAllowSearch,
-    val allowClearSelection: Boolean = defaultCPDialogAllowClearSelection,
-    val showTitle: Boolean = defaultCPDialogDefaultShowTitle,
-    val showFullScreen: Boolean = defaultCPDialogShowFullScreen
+    var dialogViewIds: CPDialogViewIds = defaultCPDialogViewIds,
+    var allowSearch: Boolean = defaultCPDialogAllowSearch,
+    var allowClearSelection: Boolean = defaultCPDialogAllowClearSelection,
+    var showTitle: Boolean = defaultCPDialogDefaultShowTitle,
+    var showFullScreen: Boolean = defaultCPDialogShowFullScreen
 ) {
     companion object {
         const val defaultCPDialogAllowSearch = true

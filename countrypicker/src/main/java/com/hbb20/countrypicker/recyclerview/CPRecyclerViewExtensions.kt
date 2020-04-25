@@ -19,7 +19,6 @@ fun RecyclerView.loadCountries(
     countryFileReader: CountryFileReading = CPDataStoreGenerator.defaultCountryFileReader,
     useCache: Boolean = CPDataStoreGenerator.defaultUseCache,
     customDataStoreModifier: ((CPDataStore) -> (Unit))? = defaultDataStoreModifier,
-    rowFontSizeInSP: Float = CPCountryRowConfig.defaultFontSize,
     CPFlagProvider: CPFlagProvider? = CPCountryRowConfig.defaultFlagProvider,
     mainTextGenerator: ((CPCountry) -> String) = CPCountryRowConfig.defaultMainTextGenerator,
     secondaryTextGenerator: ((CPCountry) -> String)? = CPCountryRowConfig.defaultSecondaryTextGenerator,
@@ -41,7 +40,6 @@ fun RecyclerView.loadCountries(
 
     loadCountriesUsingDataStore(
         cpDataStore,
-        rowFontSizeInSP,
         CPFlagProvider,
         mainTextGenerator,
         secondaryTextGenerator,
@@ -56,7 +54,6 @@ fun RecyclerView.loadCountries(
 
 fun RecyclerView.loadCountriesUsingDataStore(
     cpDataStore: CPDataStore,
-    rowFontSizeInSP: Float = CPCountryRowConfig.defaultFontSize,
     CPFlagProvider: CPFlagProvider? = CPCountryRowConfig.defaultFlagProvider,
     mainTextGenerator: ((CPCountry) -> String) = CPCountryRowConfig.defaultMainTextGenerator,
     secondaryTextGenerator: ((CPCountry) -> String)? = CPCountryRowConfig.defaultSecondaryTextGenerator,
@@ -66,7 +63,6 @@ fun RecyclerView.loadCountriesUsingDataStore(
     onCountryClickListener: ((CPCountry) -> Unit)
 ) {
     val cpCountryRowConfig = CPCountryRowConfig(
-        rowFontSizeInSP = rowFontSizeInSP,
         CPFlagProvider = CPFlagProvider,
         mainTextGenerator = mainTextGenerator,
         secondaryTextGenerator = secondaryTextGenerator,

@@ -10,8 +10,7 @@ object CPDataStoreGenerator {
     const val defaultMasterCountries = ""
     const val defaultExcludedCountries = ""
     const val defaultUseCache = true
-    val defaultCountryFileReader =
-        CPFileReader
+    val defaultCountryFileReader = CPFileReader
 
     fun generate(
         context: Context,
