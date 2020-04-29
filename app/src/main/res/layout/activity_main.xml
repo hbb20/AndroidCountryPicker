@@ -115,6 +115,9 @@
             <com.hbb20.CountryPickerView
                 android:id="@+id/countryPicker"
                 app:cpDialog_allowSearch="false"
+                app:cpDialog_allowClearSelection="true"
+                app:cpDialog_showFullScreen="true"
+                app:cpDialog_showTitle="false"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
