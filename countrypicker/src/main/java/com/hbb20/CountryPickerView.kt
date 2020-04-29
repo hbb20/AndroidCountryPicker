@@ -12,6 +12,7 @@ import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
 import com.hbb20.countrypicker.dialog.CPDialogConfig
 import com.hbb20.countrypicker.dialog.CPDialogHelper
 import com.hbb20.countrypicker.helper.readDialogConfigFromAttrs
+import com.hbb20.countrypicker.helper.readListConfigFromAttrs
 import com.hbb20.countrypicker.models.CPCountry
 
 class CountryPickerView @JvmOverloads constructor(
@@ -42,6 +43,8 @@ class CountryPickerView @JvmOverloads constructor(
             context.theme.obtainStyledAttributes(attrs, R.styleable.CountryPickerView, 0, 0)
         styledAttrs?.let {
             dialogConfig = readDialogConfigFromAttrs(styledAttrs)
+            listConfig = readListConfigFromAttrs(styledAttrs)
+            styledAttrs.recycle()
         }
     }
 

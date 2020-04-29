@@ -23,7 +23,7 @@ fun RecyclerView.loadCountries(
     mainTextGenerator: ((CPCountry) -> String) = CPRowConfig.defaultMainTextGenerator,
     secondaryTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultSecondaryTextGenerator,
     highlightedTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultHighlightedTextGenerator,
-    preferredCountryCodes: String? = CPListConfig.defaultPreferredCountryCodes,
+    preferredCountryCodes: String? = CPListConfig.defaultCPListPreferredCountryCodes,
     filterQueryEditText: EditText? = null,
     onCountryClickListener: ((CPCountry) -> Unit)
 ) {
@@ -58,7 +58,7 @@ fun RecyclerView.loadCountriesUsingDataStore(
     mainTextGenerator: ((CPCountry) -> String) = CPRowConfig.defaultMainTextGenerator,
     secondaryTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultSecondaryTextGenerator,
     highlightedTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultHighlightedTextGenerator,
-    preferredCountryCodes: String? = CPListConfig.defaultPreferredCountryCodes,
+    preferredCountryCodes: String? = CPListConfig.defaultCPListPreferredCountryCodes,
     filterQueryEditText: EditText? = null,
     onCountryClickListener: ((CPCountry) -> Unit)
 ) {

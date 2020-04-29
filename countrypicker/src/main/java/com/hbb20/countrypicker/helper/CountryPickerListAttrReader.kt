@@ -1,35 +1,14 @@
 package com.hbb20.countrypicker.helper
 
 import android.content.res.TypedArray
-import com.hbb20.countrypicker.R.styleable.*
-import com.hbb20.countrypicker.dialog.CPDialogConfig
-import com.hbb20.countrypicker.dialog.CPDialogConfig.Companion.defaultCPDialogAllowClearSelection
-import com.hbb20.countrypicker.dialog.CPDialogConfig.Companion.defaultCPDialogAllowSearch
-import com.hbb20.countrypicker.dialog.CPDialogConfig.Companion.defaultCPDialogShowFullScreen
+import com.hbb20.countrypicker.R.styleable.CountryPickerView_cpList_preferredCountryCodes
+import com.hbb20.countrypicker.config.CPListConfig
 
-internal fun readListConfigFromAttrs(attrs: TypedArray): CPDialogConfig {
-    val allowSearch =
-        attrs.getBoolean(CountryPickerView_cpDialog_allowSearch, defaultCPDialogAllowSearch)
+internal fun readListConfigFromAttrs(attrs: TypedArray): CPListConfig {
+    val preferredCountryCodes =
+        attrs.getString(CountryPickerView_cpList_preferredCountryCodes)
 
-    val allowClearSelection =
-        attrs.getBoolean(
-            CountryPickerView_cpDialog_allowClearSelection,
-            defaultCPDialogAllowClearSelection
-        )
-
-    val showTitle =
-        attrs.getBoolean(
-            CountryPickerView_cpDialog_showTitle,
-            defaultCPDialogAllowClearSelection
-        )
-
-    val showFullScreen =
-        attrs.getBoolean(CountryPickerView_cpDialog_showFullScreen, defaultCPDialogShowFullScreen)
-
-    return CPDialogConfig(
-        allowSearch = allowSearch,
-        allowClearSelection = allowClearSelection,
-        showTitle = showTitle,
-        showFullScreen = showFullScreen
+    return CPListConfig(
+        preferredCountryCodes = preferredCountryCodes
     )
 }

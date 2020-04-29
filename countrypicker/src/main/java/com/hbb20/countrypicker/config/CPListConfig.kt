@@ -2,9 +2,9 @@ package com.hbb20.countrypicker.config
 
 
 data class CPListConfig(
-    var preferredCountryCodes: String? = defaultPreferredCountryCodes
+    var preferredCountryCodes: String? = defaultCPListPreferredCountryCodes
 ) {
     companion object {
-        val defaultPreferredCountryCodes: String? = null
+        val defaultCPListPreferredCountryCodes: String? = null
     }
 }
