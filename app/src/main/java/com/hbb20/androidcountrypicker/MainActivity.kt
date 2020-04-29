@@ -21,12 +21,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun configureCPView() {
         val countryPicker = findViewById<CountryPickerView>(R.id.countryPicker)
-        countryPicker.dialogConfig.showTitle = false
-        countryPicker.recyclerViewConfig.preferredCountryCodes = "IN,US,UK,GB"
-        countryPicker.rowConfig.CPFlagProvider = null
-        countryPicker.rowConfig.mainTextGenerator = { country -> country.capitalEnglishName }
-        countryPicker.rowConfig.secondaryTextGenerator = { country -> country.englishName }
-        countryPicker.rowConfig.highlightedTextGenerator = { country -> country.flagEmoji }
     }
 
     private fun refreshView() {

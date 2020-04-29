@@ -4,21 +4,21 @@ import android.widget.EditText
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.hbb20.countrypicker.config.CPCountryRowConfig
-import com.hbb20.countrypicker.config.CPRecyclerViewConfig
+import com.hbb20.countrypicker.config.CPListConfig
+import com.hbb20.countrypicker.config.CPRowConfig
 import com.hbb20.countrypicker.models.CPCountry
 import com.hbb20.countrypicker.models.CPDataStore
 
 class CPRecyclerViewHelper(
     private val cpDataStore: CPDataStore,
     onCountryClickListener: ((CPCountry) -> Unit),
-    private val cpCountryRowConfig: CPCountryRowConfig = CPCountryRowConfig(),
-    cpRecyclerViewConfig: CPRecyclerViewConfig = CPRecyclerViewConfig()
+    private val cpRowConfig: CPRowConfig = CPRowConfig(),
+    cpListConfig: CPListConfig = CPListConfig()
 ) {
 
     var allPreferredCountries = extractPreferredCountries(
         cpDataStore.countryList,
-        cpRecyclerViewConfig.preferredCountryCodes
+        cpListConfig.preferredCountryCodes
     )
         private set
 
@@ -28,7 +28,7 @@ class CPRecyclerViewHelper(
         allPreferredCountries,
         cpDataStore.countryList,
         onCountryClickListener,
-        cpCountryRowConfig,
+        cpRowConfig,
         cpDataStore
     )
 
@@ -45,9 +45,9 @@ class CPRecyclerViewHelper(
 
     fun updateDataForQuery(query: String) {
         controllerData.preferredCountries =
-            allPreferredCountries.filterCountries(query, cpCountryRowConfig)
+            allPreferredCountries.filterCountries(query, cpRowConfig)
         controllerData.allCountries =
-            cpDataStore.countryList.filterCountries(query, cpCountryRowConfig)
+            cpDataStore.countryList.filterCountries(query, cpRowConfig)
     }
 
     fun attachRecyclerView(recyclerView: RecyclerView) {
@@ -78,18 +78,18 @@ class CPRecyclerViewHelper(
 
     private fun List<CPCountry>.filterCountries(
         filterQuery: String,
-        cpCountryRowConfig: CPCountryRowConfig
+        cpRowConfig: CPRowConfig
     ): List<CPCountry> {
         if (filterQuery.isBlank()) return this
         return this.filter {
-            cpCountryRowConfig.mainTextGenerator(it).contains(
+            cpRowConfig.mainTextGenerator(it).contains(
                 filterQuery,
                 true
-            ) || (cpCountryRowConfig.secondaryTextGenerator?.invoke(it)?.contains(
+            ) || (cpRowConfig.secondaryTextGenerator?.invoke(it)?.contains(
                 filterQuery,
                 true
             ) ?: false)
-                    || (cpCountryRowConfig.highlightedTextGenerator?.invoke(it)?.contains(
+                    || (cpRowConfig.highlightedTextGenerator?.invoke(it)?.contains(
                 filterQuery,
                 true
             ) ?: false)

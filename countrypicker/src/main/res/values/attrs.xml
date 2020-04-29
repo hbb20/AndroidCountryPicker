@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CountryPickerView">
+        <!--CP Dialog properties-->
+        <attr name="cpDialog_allowSearch" format="boolean" />
+        <attr name="cpDialog_allowClearSelection" format="boolean" />
+        <attr name="cpDialog_showTitle" format="boolean" />
+        <attr name="cpDialog_showFullScreen" format="boolean" />
+
+        <!--CP List properties-->
+        <attr name="cpList_preferredCountryCodes" format="string" />
+    </declare-styleable>
+</resources>
