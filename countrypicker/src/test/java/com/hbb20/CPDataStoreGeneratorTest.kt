@@ -282,26 +282,6 @@ class CPDataStoreGeneratorTest {
     }
 
     @Test
-    fun `check duplicate file reading is not done for the same language`() {
-        val fileReader = mock<CountryFileReading> {}
-        whenever(fileReader.readMasterDataFromFiles(any())).thenReturn(
-            getSampleDataStore()
-        )
-        val dataStore =
-            CPDataStoreGenerator.generate(
-                context,
-                countryFileReader = fileReader
-            )
-        verify(fileReader, Mockito.times(1)).readMasterDataFromFiles(any())
-        val dataStore2 =
-            CPDataStoreGenerator.generate(
-                context,
-                countryFileReader = fileReader
-            )
-        verify(fileReader, Mockito.times(1)).readMasterDataFromFiles(any())
-    }
-
-    @Test
     fun `force read file using useCache = false`() {
         val fileReader = mock<CountryFileReading> {}
         CPDataStoreGenerator.invalidateCache()
