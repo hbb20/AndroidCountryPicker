@@ -22,6 +22,7 @@ internal fun readDialogConfigFromAttrs(attrs: TypedArray): CPDialogConfig {
             CountryPickerView_cpDialog_showTitle,
             defaultCPDialogAllowClearSelection
         )
+
     val showFullScreen =
         attrs.getBoolean(CountryPickerView_cpDialog_showFullScreen, defaultCPDialogShowFullScreen)
 
