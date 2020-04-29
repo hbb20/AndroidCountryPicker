@@ -11,6 +11,7 @@ import com.hbb20.countrypicker.config.CPRecyclerViewConfig
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
 import com.hbb20.countrypicker.dialog.CPDialogConfig
 import com.hbb20.countrypicker.dialog.CPDialogHelper
+import com.hbb20.countrypicker.helper.readDialogConfigFromAttrs
 import com.hbb20.countrypicker.models.CPCountry
 
 class CountryPickerView @JvmOverloads constructor(
@@ -25,8 +26,9 @@ class CountryPickerView @JvmOverloads constructor(
     var recyclerViewConfig: CPRecyclerViewConfig = CPRecyclerViewConfig()
     var dialogConfig: CPDialogConfig = CPDialogConfig()
     var selectedCountry: CPCountry? = null
+
     init {
-        applyLayout(attrs)
+        attrs?.let { readAttrs(it) }
         selectedCountry = dataStore.countryList.first { it.alpha2 == "IN" }
         setOnClickListener {
             launchDialog()
@@ -34,15 +36,23 @@ class CountryPickerView @JvmOverloads constructor(
         refresh()
     }
 
+    private fun readAttrs(attrs: AttributeSet) {
+        applyLayout(attrs)
+        val styledAttrs =
+            context.theme.obtainStyledAttributes(attrs, R.styleable.CountryPickerView, 0, 0)
+        styledAttrs?.let {
+            dialogConfig = readDialogConfigFromAttrs(styledAttrs)
+        }
+    }
+
     /**
      * If width is match_parent, 0
      */
-    private fun applyLayout(attrs: AttributeSet?) {
-
+    private fun applyLayout(attrs: AttributeSet) {
         val xmlWidth =
-            attrs?.getAttributeValue("http://schemas.android.com/apk/res/android", "layout_width")
+            attrs.getAttributeValue("http://schemas.android.com/apk/res/android", "layout_width")
         //todo: eventually use single layout and just change constraints
-        if (attrs != null && xmlWidth != null && (xmlWidth == LayoutParams.MATCH_PARENT.toString() || xmlWidth == "fill_parent" || xmlWidth == "match_parent")) {
+        if (xmlWidth != null && (xmlWidth == LayoutParams.MATCH_PARENT.toString() || xmlWidth == "fill_parent" || xmlWidth == "match_parent")) {
             LayoutInflater.from(context)
                 .inflate(R.layout.cp_country_picker_view_constrained, this, true)
         } else {
