@@ -1,6 +1,6 @@
 package com.hbb20
 
-import android.content.res.Resources
+import android.content.Context
 import com.hbb20.countrypicker.config.CPCountryRowConfig
 import com.hbb20.countrypicker.config.CPRecyclerViewConfig
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
@@ -12,9 +12,9 @@ import org.junit.Test
 
 class CPRecyclerViewHelperTest {
 
-    private val resources = mock<Resources> {}
+    private val context = mock<Context> {}
     private val dataStore =
-        CPDataStoreGenerator.generate(resources, countryFileReader = MockCountryFileReader)
+        CPDataStoreGenerator.generate(context, countryFileReader = MockCountryFileReader)
 
     @Test
     fun preferredCountriesWorkWithAlpha2() {

@@ -20,11 +20,11 @@ class CountryPickerView @JvmOverloads constructor(
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
     val dataStore = CPDataStoreGenerator.generate(context)
     val tvCountryInfo: TextView by lazy { findViewById<TextView>(R.id.tvCountryInfo) }
+    val tvEmojiFlag: TextView by lazy { findViewById<TextView>(R.id.tvEmojiFlag) }
     var rowConfig: CPCountryRowConfig = CPCountryRowConfig()
     var recyclerViewConfig: CPRecyclerViewConfig = CPRecyclerViewConfig()
     var dialogConfig: CPDialogConfig = CPDialogConfig()
     var selectedCountry: CPCountry? = null
-
     init {
         applyLayout(attrs)
         selectedCountry = dataStore.countryList.first { it.alpha2 == "IN" }
@@ -38,14 +38,15 @@ class CountryPickerView @JvmOverloads constructor(
      * If width is match_parent, 0
      */
     private fun applyLayout(attrs: AttributeSet?) {
-        LayoutInflater.from(context).inflate(R.layout.cp_country_picker_view, this, true)
+
         val xmlWidth =
             attrs?.getAttributeValue("http://schemas.android.com/apk/res/android", "layout_width")
-        //at run time, match parent value returns LayoutParams.MATCH_PARENT ("-1"), for some android xml preview it returns "fill_parent"
+        //todo: eventually use single layout and just change constraints
         if (attrs != null && xmlWidth != null && (xmlWidth == LayoutParams.MATCH_PARENT.toString() || xmlWidth == "fill_parent" || xmlWidth == "match_parent")) {
-            tvCountryInfo.text = xmlWidth
+            LayoutInflater.from(context)
+                .inflate(R.layout.cp_country_picker_view_constrained, this, true)
         } else {
-            tvCountryInfo.text = xmlWidth ?: "null"
+            LayoutInflater.from(context).inflate(R.layout.cp_country_picker_view, this, true)
         }
     }
 
@@ -60,6 +61,7 @@ class CountryPickerView @JvmOverloads constructor(
     fun refresh() {
         tvCountryInfo.text =
             selectedCountry?.name ?: dataStore.messageGroup.selectionPlaceholderText
+        tvEmojiFlag.text = if (isInEditMode) "\uD83C\uDFC1" else selectedCountry?.flagEmoji
     }
 
     data class State(val country: CPCountry?)
