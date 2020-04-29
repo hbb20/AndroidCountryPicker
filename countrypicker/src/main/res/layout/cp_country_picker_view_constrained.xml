@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/flagHolder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_1x"
+        android:layout_marginLeft="@dimen/grid_1x"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvEmojiFlag"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="🏁" />
+
+        <ImageView
+            android:id="@+id/imgFlag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="Flag Image"
+            android:minWidth="@dimen/grid_2x"
+            android:minHeight="@dimen/grid_2x"
+            android:textColor="@android:color/black"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_flag_black"
+            tools:text="🏁" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvCountryInfo"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:minHeight="48dp"
+        android:paddingStart="@dimen/grid_1x"
+        android:paddingLeft="@dimen/grid_1x"
+        android:paddingEnd="@dimen/grid_1x"
+        android:paddingRight="@dimen/grid_1x"
+        android:text="India (IN)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/icDropdown"
+        app:layout_constraintStart_toEndOf="@id/flagHolder"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginEnd="@dimen/grid_1x" />
+
+    <ImageView
+        android:id="@+id/icDropdown"
+        android:layout_width="@dimen/grid_3x"
+        android:layout_height="@dimen/grid_3x"
+        android:src="@drawable/ic_arrow_drop_down"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</merge>

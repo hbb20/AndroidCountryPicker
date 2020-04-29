@@ -1,19 +1,17 @@
 package com.hbb20.countrypicker.config
 
-import com.hbb20.CPCountry
+import com.hbb20.countrypicker.CPFlagProvider
 import com.hbb20.countrypicker.DefaultEmojiFlagProvider
-import com.hbb20.countrypicker.FlagProvider
+import com.hbb20.countrypicker.models.CPCountry
 
 
 data class CPCountryRowConfig(
-    val rowFontSizeInSP: Float = defaultFontSize,
-    val flagProvider: FlagProvider? = defaultFlagProvider,
-    val mainTextGenerator: ((CPCountry) -> String) = defaultMainTextGenerator,
-    val secondaryTextGenerator: ((CPCountry) -> String)? = defaultSecondaryTextGenerator,
-    val highlightedTextGenerator: ((CPCountry) -> String)? = defaultHighlightedTextGenerator
+    var CPFlagProvider: CPFlagProvider? = defaultFlagProvider,
+    var mainTextGenerator: ((CPCountry) -> String) = defaultMainTextGenerator,
+    var secondaryTextGenerator: ((CPCountry) -> String)? = defaultSecondaryTextGenerator,
+    var highlightedTextGenerator: ((CPCountry) -> String)? = defaultHighlightedTextGenerator
 ) {
     companion object {
-        const val defaultFontSize = 14f
         val defaultFlagProvider = DefaultEmojiFlagProvider()
         val defaultMainTextGenerator: ((CPCountry) -> String) = { it.name }
         val defaultSecondaryTextGenerator = null

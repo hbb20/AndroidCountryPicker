@@ -1,27 +1,24 @@
-package com.hbb20.countrypicker
+package com.hbb20.countrypicker.recyclerview
 
 import android.widget.EditText
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.hbb20.CPCountry
-import com.hbb20.CPDataStore
 import com.hbb20.countrypicker.config.CPCountryRowConfig
-import com.hbb20.countrypicker.recyclerview.CountryListController
-import com.hbb20.countrypicker.recyclerview.CountryListControllerData
+import com.hbb20.countrypicker.config.CPRecyclerViewConfig
+import com.hbb20.countrypicker.models.CPCountry
+import com.hbb20.countrypicker.models.CPDataStore
 
 class CPRecyclerViewHelper(
     private val cpDataStore: CPDataStore,
     onCountryClickListener: ((CPCountry) -> Unit),
     private val cpCountryRowConfig: CPCountryRowConfig = CPCountryRowConfig(),
-    preferredCountryCodes: String? = null,
-    preferredCurrencyCodes: String? = null
+    cpRecyclerViewConfig: CPRecyclerViewConfig = CPRecyclerViewConfig()
 ) {
 
     var allPreferredCountries = extractPreferredCountries(
         cpDataStore.countryList,
-        preferredCountryCodes,
-        preferredCurrencyCodes
+        cpRecyclerViewConfig.preferredCountryCodes
     )
         private set
 
@@ -62,8 +59,7 @@ class CPRecyclerViewHelper(
 
     private fun extractPreferredCountries(
         countries: List<CPCountry>,
-        preferredCountryCodes: String? = "",
-        preferredCurrencyCodes: String? = ""
+        preferredCountryCodes: String? = ""
     ): List<CPCountry> {
         val result = mutableListOf<CPCountry>()
 
@@ -74,10 +70,6 @@ class CPRecyclerViewHelper(
                 else -> null
             }
             country?.let { result.add(it) }
-        }
-
-        preferredCurrencyCodes?.split(",")?.map { it.trim() }?.map { currencyCode ->
-            result.addAll(countries.filter { it.currencyCode == currencyCode })
         }
 
         return result.distinctBy { it.alpha2 }

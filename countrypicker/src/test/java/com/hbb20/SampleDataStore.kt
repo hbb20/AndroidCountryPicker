@@ -1,5 +1,8 @@
 package com.hbb20
 
+import com.hbb20.countrypicker.models.CPCountry
+import com.hbb20.countrypicker.models.CPDataStore
+
 
 fun getSampleDataStore(): CPDataStore {
     val masterCountryList = mutableListOf<CPCountry>()

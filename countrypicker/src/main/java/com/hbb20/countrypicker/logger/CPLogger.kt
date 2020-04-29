@@ -1,6 +1,7 @@
-package com.hbb20
+package com.hbb20.countrypicker.logger
 
 import android.util.Log
+import com.hbb20.countrypicker.models.CP_TAG
 
 object CPLogger {
 

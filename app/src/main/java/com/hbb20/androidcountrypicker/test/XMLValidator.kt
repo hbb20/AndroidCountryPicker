@@ -1,9 +1,9 @@
 package com.hbb20.androidcountrypicker.test
 
 import android.content.Context
-import com.hbb20.CPLanguage
-import com.hbb20.xmlLanguageFileName
-import com.hbb20.xmlNewLanguageTemplateFileName
+import com.hbb20.countrypicker.models.CPLanguage
+import com.hbb20.countrypicker.models.xmlLanguageFileName
+import com.hbb20.countrypicker.models.xmlNewLanguageTemplateFileName
 
 
 class XMLValidator {

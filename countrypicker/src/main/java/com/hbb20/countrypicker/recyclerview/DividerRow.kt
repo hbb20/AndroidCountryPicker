@@ -1,9 +1,10 @@
-package com.hbb20.countrypicker
+package com.hbb20.countrypicker.recyclerview
 
 import android.content.Context
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.airbnb.epoxy.ModelView
+import com.hbb20.countrypicker.R
 
 @ModelView(autoLayout = ModelView.Size.MATCH_WIDTH_WRAP_HEIGHT)
 class DividerRow @JvmOverloads constructor(

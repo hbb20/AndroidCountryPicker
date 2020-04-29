@@ -3,7 +3,7 @@ package com.hbb20.androidcountrypicker
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.hbb20.countrypicker.loadCountries
+import com.hbb20.countrypicker.recyclerview.loadCountries
 import kotlinx.android.synthetic.main.activity_custom_recycler_view.*
 
 class CustomRecyclerViewActivity : AppCompatActivity() {
@@ -17,7 +17,6 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
 
     private fun setupRecyclerView() {
         recyclerView.loadCountries(
-            resources = resources,
             filterQueryEditText = etQuery
         ) { selectedCountry ->
             Toast.makeText(this, selectedCountry.name, Toast.LENGTH_SHORT).show()

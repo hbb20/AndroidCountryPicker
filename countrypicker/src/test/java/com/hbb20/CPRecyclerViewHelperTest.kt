@@ -1,8 +1,10 @@
 package com.hbb20
 
-import android.content.res.Resources
-import com.hbb20.countrypicker.CPRecyclerViewHelper
+import android.content.Context
 import com.hbb20.countrypicker.config.CPCountryRowConfig
+import com.hbb20.countrypicker.config.CPRecyclerViewConfig
+import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
+import com.hbb20.countrypicker.recyclerview.CPRecyclerViewHelper
 import com.nhaarman.mockitokotlin2.mock
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
@@ -10,16 +12,16 @@ import org.junit.Test
 
 class CPRecyclerViewHelperTest {
 
-    private val resources = mock<Resources> {}
+    private val context = mock<Context> {}
     private val dataStore =
-        CPDataStoreGenerator.generate(resources, countryFileReader = MockCountryFileReader)
+        CPDataStoreGenerator.generate(context, countryFileReader = MockCountryFileReader)
 
     @Test
     fun preferredCountriesWorkWithAlpha2() {
 
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
-            preferredCountryCodes = "IN,AU",
+            cpRecyclerViewConfig = CPRecyclerViewConfig(preferredCountryCodes = "IN,AU"),
             onCountryClickListener = mock()
         )
         assertEquals("IN", helper.allPreferredCountries[0].alpha2)
@@ -30,7 +32,7 @@ class CPRecyclerViewHelperTest {
     fun trimCodeBeforePreferred() {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
-            preferredCountryCodes = "IN ,AU",
+            cpRecyclerViewConfig = CPRecyclerViewConfig(preferredCountryCodes = "IN ,AU"),
             onCountryClickListener = mock()
         )
         assertEquals("IN", helper.allPreferredCountries[0].alpha2)
@@ -41,7 +43,7 @@ class CPRecyclerViewHelperTest {
     fun preferredCountriesWorkWithAlpha3() {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
-            preferredCountryCodes = "IND,AUS",
+            cpRecyclerViewConfig = CPRecyclerViewConfig(preferredCountryCodes = "IND,AUS"),
             onCountryClickListener = mock()
         )
         assertEquals("IN", helper.allPreferredCountries[0].alpha2)
@@ -52,7 +54,7 @@ class CPRecyclerViewHelperTest {
     fun preferredCountriesWorkWithAlpha2and3() {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
-            preferredCountryCodes = "IN,AUS",
+            cpRecyclerViewConfig = CPRecyclerViewConfig(preferredCountryCodes = "IN,AUS"),
             onCountryClickListener = mock()
         )
         assertEquals("IN", helper.allPreferredCountries[0].alpha2)
@@ -60,36 +62,10 @@ class CPRecyclerViewHelperTest {
     }
 
     @Test
-    fun preferredCurrencyCodes() {
-        val helper = CPRecyclerViewHelper(
-            cpDataStore = dataStore,
-            preferredCurrencyCodes = "INR,USD",
-            onCountryClickListener = mock()
-        )
-
-        assertEquals("IN", helper.allPreferredCountries[0].alpha2)
-        assertEquals("US", helper.allPreferredCountries[1].alpha2)
-    }
-
-    @Test
-    fun removeDuplicateFromPreferredCurrencyCodesAndCountryCodes() {
-        val helper = CPRecyclerViewHelper(
-            cpDataStore = dataStore,
-            preferredCountryCodes = "IN,LK",
-            preferredCurrencyCodes = "INR,USD",
-            onCountryClickListener = mock()
-        )
-
-        assertEquals("IN", helper.allPreferredCountries[0].alpha2)
-        assertEquals("LK", helper.allPreferredCountries[1].alpha2)
-        assertEquals("US", helper.allPreferredCountries[2].alpha2)
-    }
-
-    @Test
     fun invalidCodesAvoidedSafely() {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
-            preferredCountryCodes = "XX,IN,YYY,21dksaj,AUS",
+            cpRecyclerViewConfig = CPRecyclerViewConfig(preferredCountryCodes = "XX,IN,YYY,21dksaj,AUS"),
             onCountryClickListener = mock()
         )
         assertEquals("IN", helper.allPreferredCountries[0].alpha2)
@@ -100,7 +76,7 @@ class CPRecyclerViewHelperTest {
     fun duplicateCodesAreRemoved() {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
-            preferredCountryCodes = "IN,AUS,IN",
+            cpRecyclerViewConfig = CPRecyclerViewConfig(preferredCountryCodes = "IN,AUS,IN"),
             onCountryClickListener = mock()
         )
 
@@ -113,7 +89,7 @@ class CPRecyclerViewHelperTest {
     fun duplicateCountriesAreRemoved() {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
-            preferredCountryCodes = "IN,AUS,IND",
+            cpRecyclerViewConfig = CPRecyclerViewConfig(preferredCountryCodes = "IN,AUS,IND"),
             onCountryClickListener = mock()
         )
 

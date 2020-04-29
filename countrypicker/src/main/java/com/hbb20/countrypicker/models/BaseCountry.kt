@@ -1,4 +1,4 @@
-package com.hbb20
+package com.hbb20.countrypicker.models
 
 internal data class BaseCountry(
     val alpha2: String,

@@ -1,6 +1,8 @@
 package com.hbb20
 
-import android.content.res.Resources
+import android.content.Context
+import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
+import com.hbb20.countrypicker.datagenerator.CountryFileReading
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
@@ -12,13 +14,13 @@ import org.mockito.Mockito
 
 class CPDataStoreGeneratorTest {
 
-    private val resources = mock<Resources> {}
+    private val context = mock<Context> {}
 
 
     @Test
     fun generate() {
         val dataStore =
-            CPDataStoreGenerator.generate(resources, countryFileReader = MockCountryFileReader)
+            CPDataStoreGenerator.generate(context, countryFileReader = MockCountryFileReader)
         assertEquals(10, dataStore.countryList.size)
     }
 
@@ -26,7 +28,7 @@ class CPDataStoreGeneratorTest {
     fun `only custom master country alpha2 is returned`() {
         val dataStore =
             CPDataStoreGenerator.generate(
-                resources,
+                context,
                 customMasterCountries = "AU,TG,ZA",
                 countryFileReader = MockCountryFileReader
             )
@@ -41,7 +43,7 @@ class CPDataStoreGeneratorTest {
     fun `only custom master country alpha3 is returned`() {
         val dataStore =
             CPDataStoreGenerator.generate(
-                resources,
+                context,
                 customMasterCountries = "LKA,GHA,AFG",
                 countryFileReader = MockCountryFileReader
             )
@@ -55,7 +57,7 @@ class CPDataStoreGeneratorTest {
     fun `only custom master country (alpha3 and alpha2 mix) is returned`() {
         val dataStore =
             CPDataStoreGenerator.generate(
-                resources,
+                context,
                 customMasterCountries = "AU,TG,ZA,LKA,GHA,AFG",
                 countryFileReader = MockCountryFileReader
             )
@@ -72,7 +74,7 @@ class CPDataStoreGeneratorTest {
     fun `invalid alpha3 is ignored for custom master list`() {
         val dataStore =
             CPDataStoreGenerator.generate(
-                resources,
+                context,
                 customMasterCountries = "LKA,GHA,AFG,QQQ",
                 countryFileReader = MockCountryFileReader
             )
@@ -87,7 +89,7 @@ class CPDataStoreGeneratorTest {
     fun `invalid alpha2 is ignored for custom master list`() {
         val dataStore =
             CPDataStoreGenerator.generate(
-                resources,
+                context,
                 customMasterCountries = "AU,TG,QQ,ZA",
                 countryFileReader = MockCountryFileReader
             )
@@ -102,7 +104,7 @@ class CPDataStoreGeneratorTest {
     fun `invalid alpha2 and alpha3 mix is ignored`() {
         val dataStore =
             CPDataStoreGenerator.generate(
-                resources,
+                context,
                 customMasterCountries = "AU,TG,DD,ZA,LKA,GHA,AFG,QQQ",
                 countryFileReader = MockCountryFileReader
             )
@@ -121,7 +123,7 @@ class CPDataStoreGeneratorTest {
     fun `blank custom master list is ignored`() {
         val dataStore =
             CPDataStoreGenerator.generate(
-                resources,
+                context,
                 customMasterCountries = "",
                 countryFileReader = MockCountryFileReader
             )
@@ -132,7 +134,7 @@ class CPDataStoreGeneratorTest {
     fun `invalid custom master list is ignored`() {
         val dataStore =
             CPDataStoreGenerator.generate(
-                resources,
+                context,
                 customMasterCountries = "QQ,DDD,ANYThing",
                 countryFileReader = MockCountryFileReader
             )
@@ -144,7 +146,7 @@ class CPDataStoreGeneratorTest {
     fun `custom excluded countries alpha2`() {
         val dataStore =
             CPDataStoreGenerator.generate(
-                resources,
+                context,
                 customExcludedCountries = "AU,TG,ZA",
                 countryFileReader = MockCountryFileReader
             )
@@ -158,7 +160,7 @@ class CPDataStoreGeneratorTest {
     fun `custom excluded countries alpha3`() {
         val dataStore =
             CPDataStoreGenerator.generate(
-                resources,
+                context,
                 customExcludedCountries = "LKA,GHA,AFG",
                 countryFileReader = MockCountryFileReader
             )
@@ -172,7 +174,7 @@ class CPDataStoreGeneratorTest {
     fun `custom excluded countries alpha2 and alpha3 mix`() {
         val dataStore =
             CPDataStoreGenerator.generate(
-                resources,
+                context,
                 customExcludedCountries = "AU,TG,ZA,LKA,GHA,AFG",
                 countryFileReader = MockCountryFileReader
             )
@@ -189,7 +191,7 @@ class CPDataStoreGeneratorTest {
     fun `invalid alpha3 is ignored for custom excluded list`() {
         val dataStore =
             CPDataStoreGenerator.generate(
-                resources,
+                context,
                 customExcludedCountries = "LKA,GHA,AFG,QQQ",
                 countryFileReader = MockCountryFileReader
             )
@@ -203,7 +205,7 @@ class CPDataStoreGeneratorTest {
     fun `invalid alpha2 is ignored for custom excluded list`() {
         val dataStore =
             CPDataStoreGenerator.generate(
-                resources,
+                context,
                 customExcludedCountries = "AU,TG,QQ,ZA",
                 countryFileReader = MockCountryFileReader
             )
@@ -217,7 +219,7 @@ class CPDataStoreGeneratorTest {
     fun `invalid alpha2 and alpha3 mix is ignored for custom excluded list`() {
         val dataStore =
             CPDataStoreGenerator.generate(
-                resources,
+                context,
                 customExcludedCountries = "AU,TG,DD,ZA,LKA,GHA,AFG,QQQ",
                 countryFileReader = MockCountryFileReader
             )
@@ -234,7 +236,7 @@ class CPDataStoreGeneratorTest {
     fun `blank custom excluded list is ignored`() {
         val dataStore =
             CPDataStoreGenerator.generate(
-                resources,
+                context,
                 customExcludedCountries = "  ",
                 countryFileReader = MockCountryFileReader
             )
@@ -245,7 +247,7 @@ class CPDataStoreGeneratorTest {
     fun `invalid custom excluded list is ignored`() {
         val dataStore =
             CPDataStoreGenerator.generate(
-                resources,
+                context,
                 customExcludedCountries = "QQ,DDD,ANYThing",
                 countryFileReader = MockCountryFileReader
             )
@@ -256,7 +258,7 @@ class CPDataStoreGeneratorTest {
     fun `custom master list and excluded list does not crash`() {
         val dataStore =
             CPDataStoreGenerator.generate(
-                resources,
+                context,
                 customMasterCountries = "AU,TG,DD,ZA,LKA,GHA,AFG,QQQ",
                 customExcludedCountries = "AUS,ZA,IN,QQ,DDD,ANYThing",
                 countryFileReader = MockCountryFileReader
@@ -270,33 +272,13 @@ class CPDataStoreGeneratorTest {
     fun `ignore excluded list if it matches same set as custom master list`() {
         val dataStore =
             CPDataStoreGenerator.generate(
-                resources,
+                context,
                 customMasterCountries = "AU,TG,DD,ZA,LKA,GHA,AFG",
                 customExcludedCountries = "AUS,TG,AU,ZA,LKA,GHA,AFG,QQQ",
                 countryFileReader = MockCountryFileReader
             )
         //master list: AU,TG,ZA,LKA,GHA,AFG
         assertEquals(6, dataStore.countryList.size)
-    }
-
-    @Test
-    fun `check duplicate file reading is not done for the same language`() {
-        val fileReader = mock<CountryFileReading> {}
-        whenever(fileReader.readMasterDataFromFiles(any())).thenReturn(
-            getSampleDataStore()
-        )
-        val dataStore =
-            CPDataStoreGenerator.generate(
-                resources,
-                countryFileReader = fileReader
-            )
-        verify(fileReader, Mockito.times(1)).readMasterDataFromFiles(any())
-        val dataStore2 =
-            CPDataStoreGenerator.generate(
-                resources,
-                countryFileReader = fileReader
-            )
-        verify(fileReader, Mockito.times(1)).readMasterDataFromFiles(any())
     }
 
     @Test
@@ -308,13 +290,13 @@ class CPDataStoreGeneratorTest {
         )
         val dataStore =
             CPDataStoreGenerator.generate(
-                resources,
+                context,
                 countryFileReader = fileReader
             )
         verify(fileReader, Mockito.times(1)).readMasterDataFromFiles(any())
         val dataStore2 =
             CPDataStoreGenerator.generate(
-                resources = resources,
+                context = context,
                 countryFileReader = fileReader,
                 useCache = false
             )

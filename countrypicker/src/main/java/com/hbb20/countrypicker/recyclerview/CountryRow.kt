@@ -1,4 +1,4 @@
-package com.hbb20.countrypicker
+package com.hbb20.countrypicker.recyclerview
 
 import android.content.Context
 import android.util.AttributeSet
@@ -10,12 +10,15 @@ import com.airbnb.epoxy.AfterPropsSet
 import com.airbnb.epoxy.CallbackProp
 import com.airbnb.epoxy.ModelProp
 import com.airbnb.epoxy.ModelView
-import com.hbb20.CPCountry
+import com.hbb20.countrypicker.CustomCPFlagImageProvider
+import com.hbb20.countrypicker.DefaultEmojiFlagProvider
+import com.hbb20.countrypicker.R
 import com.hbb20.countrypicker.config.CPCountryRowConfig
+import com.hbb20.countrypicker.models.CPCountry
 import kotlinx.android.synthetic.main.cp_country_row.view.*
 
 @ModelView(autoLayout = ModelView.Size.MATCH_WIDTH_WRAP_HEIGHT)
-class CountryRow @JvmOverloads constructor(
+internal class CountryRow @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
@@ -72,7 +75,7 @@ class CountryRow @JvmOverloads constructor(
     }
 
     private fun applyFlag() {
-        val flagProvider = recyclerViewConfig.flagProvider
+        val flagProvider = recyclerViewConfig.CPFlagProvider
         if (flagProvider != null) {
             when (flagProvider) {
                 is DefaultEmojiFlagProvider -> {
@@ -85,7 +88,7 @@ class CountryRow @JvmOverloads constructor(
                         }
                     tvEmojiFlag.text = flagEmoji
                 }
-                is CustomFlagImageProvider -> {
+                is CustomCPFlagImageProvider -> {
                     showFlag(FlagView.IMAGE)
                     imgFlag.setImageResource(flagProvider.getFlag(country.alpha2))
                 }
@@ -116,14 +119,9 @@ class CountryRow @JvmOverloads constructor(
     }
 
     private fun applyTextSize() {
-        tvMainText.setTextSize(TypedValue.COMPLEX_UNIT_SP, recyclerViewConfig.rowFontSizeInSP)
         val emojiSize: Float =
-            if (recyclerViewConfig.secondaryTextGenerator == null) recyclerViewConfig.rowFontSizeInSP else recyclerViewConfig.rowFontSizeInSP * 1.3f
-        tvEmojiFlag.setTextSize(TypedValue.COMPLEX_UNIT_SP, emojiSize)
-        tvHighlightedInfo.setTextSize(
-            TypedValue.COMPLEX_UNIT_SP,
-            recyclerViewConfig.rowFontSizeInSP
-        )
+            if (recyclerViewConfig.secondaryTextGenerator == null) tvMainText.textSize else tvMainText.textSize * 1.3f
+        tvEmojiFlag.setTextSize(TypedValue.COMPLEX_UNIT_PX, emojiSize)
     }
 
 }
