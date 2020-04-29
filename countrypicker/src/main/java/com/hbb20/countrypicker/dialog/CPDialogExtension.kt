@@ -2,8 +2,8 @@ package com.hbb20.countrypicker.dialog
 
 import android.content.Context
 import com.hbb20.countrypicker.CPFlagProvider
-import com.hbb20.countrypicker.config.CPCountryRowConfig
-import com.hbb20.countrypicker.config.CPRecyclerViewConfig
+import com.hbb20.countrypicker.config.CPListConfig
+import com.hbb20.countrypicker.config.CPRowConfig
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
 import com.hbb20.countrypicker.datagenerator.CountryFileReading
 import com.hbb20.countrypicker.models.CPCountry
@@ -17,10 +17,10 @@ fun Context.launchCountryPickerDialog(
     countryFileReader: CountryFileReading = CPDataStoreGenerator.defaultCountryFileReader,
     useCache: Boolean = CPDataStoreGenerator.defaultUseCache,
     customDataStoreModifier: ((CPDataStore) -> (Unit))? = defaultDataStoreModifier,
-    CPFlagProvider: CPFlagProvider? = CPCountryRowConfig.defaultFlagProvider,
-    mainTextGenerator: ((CPCountry) -> String) = CPCountryRowConfig.defaultMainTextGenerator,
-    secondaryTextGenerator: ((CPCountry) -> String)? = CPCountryRowConfig.defaultSecondaryTextGenerator,
-    highlightedTextGenerator: ((CPCountry) -> String)? = CPCountryRowConfig.defaultHighlightedTextGenerator,
+    CPFlagProvider: CPFlagProvider? = CPRowConfig.defaultFlagProvider,
+    mainTextGenerator: ((CPCountry) -> String) = CPRowConfig.defaultMainTextGenerator,
+    secondaryTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultSecondaryTextGenerator,
+    highlightedTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultHighlightedTextGenerator,
     preferredCountryCodes: String? = null,
     dialogViewIds: CPDialogViewIds = CPDialogConfig.defaultCPDialogViewIds,
     allowSearch: Boolean = CPDialogConfig.defaultCPDialogAllowSearch,
@@ -47,14 +47,14 @@ fun Context.launchCountryPickerDialog(
         showFullScreen = showFullScreen
     )
 
-    val cpCountryRowConfig = CPCountryRowConfig(
+    val cpCountryRowConfig = CPRowConfig(
         CPFlagProvider = CPFlagProvider,
         mainTextGenerator = mainTextGenerator,
         secondaryTextGenerator = secondaryTextGenerator,
         highlightedTextGenerator = highlightedTextGenerator
     )
 
-    val cpRecyclerViewConfig = CPRecyclerViewConfig(
+    val cpListConfig = CPListConfig(
         preferredCountryCodes = preferredCountryCodes
     )
 
@@ -62,8 +62,8 @@ fun Context.launchCountryPickerDialog(
         CPDialogHelper(
             cpDataStore = cpDataStore,
             cpDialogConfig = cpDialogConfig,
-            cpRecyclerViewConfig = cpRecyclerViewConfig,
-            cpCountryRowConfig = cpCountryRowConfig,
+            cpListConfig = cpListConfig,
+            cpRowConfig = cpCountryRowConfig,
             onCountryClickListener = onCountryClickListener
         )
 

@@ -3,8 +3,8 @@ package com.hbb20.countrypicker.recyclerview
 import android.widget.EditText
 import androidx.recyclerview.widget.RecyclerView
 import com.hbb20.countrypicker.CPFlagProvider
-import com.hbb20.countrypicker.config.CPCountryRowConfig
-import com.hbb20.countrypicker.config.CPRecyclerViewConfig
+import com.hbb20.countrypicker.config.CPListConfig
+import com.hbb20.countrypicker.config.CPRowConfig
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
 import com.hbb20.countrypicker.datagenerator.CountryFileReading
 import com.hbb20.countrypicker.logger.logMethodEnd
@@ -19,11 +19,11 @@ fun RecyclerView.loadCountries(
     countryFileReader: CountryFileReading = CPDataStoreGenerator.defaultCountryFileReader,
     useCache: Boolean = CPDataStoreGenerator.defaultUseCache,
     customDataStoreModifier: ((CPDataStore) -> (Unit))? = defaultDataStoreModifier,
-    CPFlagProvider: CPFlagProvider? = CPCountryRowConfig.defaultFlagProvider,
-    mainTextGenerator: ((CPCountry) -> String) = CPCountryRowConfig.defaultMainTextGenerator,
-    secondaryTextGenerator: ((CPCountry) -> String)? = CPCountryRowConfig.defaultSecondaryTextGenerator,
-    highlightedTextGenerator: ((CPCountry) -> String)? = CPCountryRowConfig.defaultHighlightedTextGenerator,
-    preferredCountryCodes: String? = CPRecyclerViewConfig.defaultPreferredCountryCodes,
+    CPFlagProvider: CPFlagProvider? = CPRowConfig.defaultFlagProvider,
+    mainTextGenerator: ((CPCountry) -> String) = CPRowConfig.defaultMainTextGenerator,
+    secondaryTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultSecondaryTextGenerator,
+    highlightedTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultHighlightedTextGenerator,
+    preferredCountryCodes: String? = CPListConfig.defaultPreferredCountryCodes,
     filterQueryEditText: EditText? = null,
     onCountryClickListener: ((CPCountry) -> Unit)
 ) {
@@ -54,29 +54,29 @@ fun RecyclerView.loadCountries(
 
 fun RecyclerView.loadCountriesUsingDataStore(
     cpDataStore: CPDataStore,
-    CPFlagProvider: CPFlagProvider? = CPCountryRowConfig.defaultFlagProvider,
-    mainTextGenerator: ((CPCountry) -> String) = CPCountryRowConfig.defaultMainTextGenerator,
-    secondaryTextGenerator: ((CPCountry) -> String)? = CPCountryRowConfig.defaultSecondaryTextGenerator,
-    highlightedTextGenerator: ((CPCountry) -> String)? = CPCountryRowConfig.defaultHighlightedTextGenerator,
-    preferredCountryCodes: String? = CPRecyclerViewConfig.defaultPreferredCountryCodes,
+    CPFlagProvider: CPFlagProvider? = CPRowConfig.defaultFlagProvider,
+    mainTextGenerator: ((CPCountry) -> String) = CPRowConfig.defaultMainTextGenerator,
+    secondaryTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultSecondaryTextGenerator,
+    highlightedTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultHighlightedTextGenerator,
+    preferredCountryCodes: String? = CPListConfig.defaultPreferredCountryCodes,
     filterQueryEditText: EditText? = null,
     onCountryClickListener: ((CPCountry) -> Unit)
 ) {
-    val cpCountryRowConfig = CPCountryRowConfig(
+    val cpCountryRowConfig = CPRowConfig(
         CPFlagProvider = CPFlagProvider,
         mainTextGenerator = mainTextGenerator,
         secondaryTextGenerator = secondaryTextGenerator,
         highlightedTextGenerator = highlightedTextGenerator
     )
 
-    val cpRecyclerViewConfig = CPRecyclerViewConfig(preferredCountryCodes = preferredCountryCodes)
+    val cpListConfig = CPListConfig(preferredCountryCodes = preferredCountryCodes)
 
     val cpRecyclerViewHelper =
         CPRecyclerViewHelper(
             cpDataStore = cpDataStore,
             onCountryClickListener = onCountryClickListener,
-            cpCountryRowConfig = cpCountryRowConfig,
-            cpRecyclerViewConfig = cpRecyclerViewConfig
+            cpRowConfig = cpCountryRowConfig,
+            cpListConfig = cpListConfig
         )
 
     cpRecyclerViewHelper.attachRecyclerView(this)
@@ -85,9 +85,8 @@ fun RecyclerView.loadCountriesUsingDataStore(
 
 fun RecyclerView.loadCountriesUsingDataStoreAndConfig(
     cpDataStore: CPDataStore,
-
-    cpCountryRowConfig: CPCountryRowConfig,
-    cpRecyclerViewConfig: CPRecyclerViewConfig,
+    cpRowConfig: CPRowConfig,
+    cpListConfig: CPListConfig,
     filterQueryEditText: EditText? = null,
     onCountryClickListener: (CPCountry) -> Unit
 ) {
@@ -96,8 +95,8 @@ fun RecyclerView.loadCountriesUsingDataStoreAndConfig(
         CPRecyclerViewHelper(
             cpDataStore = cpDataStore,
             onCountryClickListener = onCountryClickListener,
-            cpCountryRowConfig = cpCountryRowConfig,
-            cpRecyclerViewConfig = cpRecyclerViewConfig
+            cpRowConfig = cpRowConfig,
+            cpListConfig = cpListConfig
         )
 
     cpRecyclerViewHelper.attachRecyclerView(this)

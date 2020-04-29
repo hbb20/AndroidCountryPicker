@@ -13,7 +13,7 @@ import com.airbnb.epoxy.ModelView
 import com.hbb20.countrypicker.CustomCPFlagImageProvider
 import com.hbb20.countrypicker.DefaultEmojiFlagProvider
 import com.hbb20.countrypicker.R
-import com.hbb20.countrypicker.config.CPCountryRowConfig
+import com.hbb20.countrypicker.config.CPRowConfig
 import com.hbb20.countrypicker.models.CPCountry
 import kotlinx.android.synthetic.main.cp_country_row.view.*
 
@@ -32,7 +32,7 @@ internal class CountryRow @JvmOverloads constructor(
     lateinit var country: CPCountry
         @ModelProp set
 
-    var recyclerViewConfig = CPCountryRowConfig()
+    var rowConfig = CPRowConfig()
         @ModelProp set
 
     @CallbackProp
@@ -46,8 +46,8 @@ internal class CountryRow @JvmOverloads constructor(
 
     @AfterPropsSet
     fun updateViews() {
-        tvMainText.text = recyclerViewConfig.mainTextGenerator.invoke(country)
-        setSecondaryText(recyclerViewConfig.secondaryTextGenerator?.invoke(country))
+        tvMainText.text = rowConfig.mainTextGenerator.invoke(country)
+        setSecondaryText(rowConfig.secondaryTextGenerator?.invoke(country))
         setHighlightedInfo()
         applyFlag()
 
@@ -65,7 +65,7 @@ internal class CountryRow @JvmOverloads constructor(
     }
 
     private fun setHighlightedInfo() {
-        val highlightedText = recyclerViewConfig.highlightedTextGenerator?.invoke(country)
+        val highlightedText = rowConfig.highlightedTextGenerator?.invoke(country)
         if (highlightedText != null) {
             tvHighlightedInfo.visibility = View.VISIBLE
             tvHighlightedInfo.text = highlightedText
@@ -75,7 +75,7 @@ internal class CountryRow @JvmOverloads constructor(
     }
 
     private fun applyFlag() {
-        val flagProvider = recyclerViewConfig.CPFlagProvider
+        val flagProvider = rowConfig.CPFlagProvider
         if (flagProvider != null) {
             when (flagProvider) {
                 is DefaultEmojiFlagProvider -> {
@@ -120,7 +120,7 @@ internal class CountryRow @JvmOverloads constructor(
 
     private fun applyTextSize() {
         val emojiSize: Float =
-            if (recyclerViewConfig.secondaryTextGenerator == null) tvMainText.textSize else tvMainText.textSize * 1.3f
+            if (rowConfig.secondaryTextGenerator == null) tvMainText.textSize else tvMainText.textSize * 1.3f
         tvEmojiFlag.setTextSize(TypedValue.COMPLEX_UNIT_PX, emojiSize)
     }
 

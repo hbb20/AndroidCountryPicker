@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.hbb20.countrypicker.R
-import com.hbb20.countrypicker.config.CPCountryRowConfig
-import com.hbb20.countrypicker.config.CPRecyclerViewConfig
+import com.hbb20.countrypicker.config.CPListConfig
+import com.hbb20.countrypicker.config.CPRowConfig
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
 import com.hbb20.countrypicker.dialog.CPDialogConfig
 import com.hbb20.countrypicker.dialog.CPDialogHelper
@@ -22,8 +22,8 @@ class CountryPickerView @JvmOverloads constructor(
     val dataStore = CPDataStoreGenerator.generate(context)
     val tvCountryInfo: TextView by lazy { findViewById<TextView>(R.id.tvCountryInfo) }
     val tvEmojiFlag: TextView by lazy { findViewById<TextView>(R.id.tvEmojiFlag) }
-    var rowConfig: CPCountryRowConfig = CPCountryRowConfig()
-    var recyclerViewConfig: CPRecyclerViewConfig = CPRecyclerViewConfig()
+    var rowConfig: CPRowConfig = CPRowConfig()
+    var listConfig: CPListConfig = CPListConfig()
     var dialogConfig: CPDialogConfig = CPDialogConfig()
     var selectedCountry: CPCountry? = null
 
@@ -61,7 +61,7 @@ class CountryPickerView @JvmOverloads constructor(
     }
 
     private fun launchDialog() {
-        val dialogHelper = CPDialogHelper(dataStore, dialogConfig, recyclerViewConfig, rowConfig) {
+        val dialogHelper = CPDialogHelper(dataStore, dialogConfig, listConfig, rowConfig) {
             selectedCountry = it
             refresh()
         }

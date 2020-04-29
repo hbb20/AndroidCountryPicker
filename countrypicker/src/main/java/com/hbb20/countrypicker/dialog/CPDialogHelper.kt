@@ -12,8 +12,8 @@ import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.RecyclerView
-import com.hbb20.countrypicker.config.CPCountryRowConfig
-import com.hbb20.countrypicker.config.CPRecyclerViewConfig
+import com.hbb20.countrypicker.config.CPListConfig
+import com.hbb20.countrypicker.config.CPRowConfig
 import com.hbb20.countrypicker.models.CPCountry
 import com.hbb20.countrypicker.models.CPDataStore
 import com.hbb20.countrypicker.recyclerview.loadCountriesUsingDataStoreAndConfig
@@ -21,8 +21,8 @@ import com.hbb20.countrypicker.recyclerview.loadCountriesUsingDataStoreAndConfig
 class CPDialogHelper(
     private val cpDataStore: CPDataStore,
     private val cpDialogConfig: CPDialogConfig,
-    private val cpRecyclerViewConfig: CPRecyclerViewConfig,
-    private val cpCountryRowConfig: CPCountryRowConfig,
+    private val cpListConfig: CPListConfig,
+    private val cpRowConfig: CPRowConfig,
     val onCountryClickListener: (CPCountry?) -> Unit
 ) {
     fun createDialog(context: Context): Dialog {
@@ -76,8 +76,8 @@ class CPDialogHelper(
 
         recyclerView.loadCountriesUsingDataStoreAndConfig(
             cpDataStore,
-            cpCountryRowConfig,
-            cpRecyclerViewConfig,
+            cpRowConfig,
+            cpListConfig,
             etQuery
         ) { selectedCountry ->
             onCountryClickListener(selectedCountry)
