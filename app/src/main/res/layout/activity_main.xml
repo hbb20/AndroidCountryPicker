@@ -118,6 +118,7 @@
                 app:cpDialog_allowClearSelection="true"
                 app:cpDialog_showFullScreen="true"
                 app:cpDialog_showTitle="false"
+                app:cp_initialSelectionMode="autoDetectCounty"
                 app:cpList_preferredCountryCodes="PK,US,CA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
