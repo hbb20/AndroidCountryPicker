@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
 
-version '0.0.1-apha15'
+version '0.0.1-apha16'
 
 task sourcesJar(type: Jar) {
     archiveClassifier.set('sources')

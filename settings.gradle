@@ -1,1 +1,1 @@
-include ':app', ':AndroidCountryPicker'
+include ':app', ':countrypicker'
