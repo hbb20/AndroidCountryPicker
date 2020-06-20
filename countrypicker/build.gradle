@@ -5,24 +5,25 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
 
-version '0.0.1-apha16'
+version '0.0.1-alpha20'
 
 task sourcesJar(type: Jar) {
     archiveClassifier.set('sources')
     from android.sourceSets.main.java.srcDirs
 }
 ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'AndroidCountryPicker'
     libraryName = 'AndroidCountryPicker'
 
+    bintrayRepo = 'maven'
+    bintrayName = libraryName
+
     publishedGroupId = 'com.hbb20'
-    artifact = 'AndroidCountryPicker'
+    artifactId = libraryName
 
     libraryDescription = 'Android Country Picker (CP) is an android library which provides an easy way to search and select country.'
 
-    siteUrl = 'https://github.com/hbb20/CountryCodePickerProject'
-    gitUrl = 'https://github.com/hbb20/CountryCodePickerProject.git'
+    siteUrl = 'https://github.com/hbb20/AndroidCountryPicker'
+    gitUrl = 'https://github.com/hbb20/AndroidCountryPicker.git'
 
     libraryVersion = this.version
 
@@ -65,7 +66,7 @@ afterEvaluate {
                             {
                                 from components.release
                                 groupId 'com.hbb20'
-                                artifactId "AndroidCountryPicker"
+                                artifactId this.artifactId
                                 version libraryVersion
                                 artifact sourcesJar {
                                     classifier "sources"
@@ -74,40 +75,18 @@ afterEvaluate {
                                     def root = asNode()
                                     root.appendNode("url", siteUrl)
                                     root.children().last() + pomConfig
-//                                    def depsNode = root["dependencies"][0] ?: root.appendNode("dependencies")
-
-//                                    def addDep = {
-//                                        if (it.group == null) return // Avoid empty dependency nodes
-//                                        def dependencyNode = depsNode.appendNode('dependency')
-//                                        dependencyNode.appendNode('groupId', it.group)
-//                                        dependencyNode.appendNode('artifactId', it.name)
-//                                        dependencyNode.appendNode('version', it.version)
-//                                        dependencyNode.appendNode('scope', "runtime")
-//                                    }
-
-                                    // Add deps that everyone has
-//                                    configurations.implementation.allDependencies.each addDep
                                 }
-
-//                        pom.withXml {
-//                            version = libraryVersion
-//                            def dependenciesNode = asNode().appendNode('dependencies')
-//
-//                            configurations.implementation.allDependencies.each {
-//
-//                                if (it.name != 'unspecified') {
-//                                    def dependencyNode = dependenciesNode.appendNode('dependency')
-//                                    dependencyNode.appendNode('groupId', it.group)
-//                                    dependencyNode.appendNode('artifactId', it.name)
-//                                    dependencyNode.appendNode('version', it.version)
-//                                }
-//                            }
-//                        }
                             }
+
                 }
         repositories {
+            // this works for upload but then need to publish manually
+            // it is because we need to send a flag to publish when we upload as param or header of upload request
+            // https://bintray.com/docs/api/#_upload_content
+            // since MavenPublish does not provide any such way, we will continue using BintrayUpload
+            // once we can get that then this will be the cleanest way to publish
             maven {
-                name 'JCenter'
+                name 'Bintray'
                 url "https://api.bintray.com/maven/hbb20/maven/AndroidCountryPicker/"
 
                 credentials {
@@ -117,12 +96,11 @@ afterEvaluate {
             }
         }
     }
-    version = libraryVersion
+
     bintray {
         user = properties.getProperty("bintray.user")
         key = properties.getProperty("bintray.apikey")
         publications = ["AndroidCountryPicker"]
-//        configurations = ['archives']
         pkg {
             repo = bintrayRepo
             name = bintrayName
@@ -202,6 +180,3 @@ dependencies {
     implementation 'androidx.emoji:emoji:1.0.0'
     implementation 'org.apache.commons:commons-csv:1.7'
 }
-
-//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
-
