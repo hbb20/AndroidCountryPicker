@@ -2,6 +2,8 @@ package com.hbb20.countrypicker.dialog
 
 import android.content.Context
 import com.hbb20.countrypicker.CPFlagProvider
+import com.hbb20.countrypicker.config.CPDialogConfig
+import com.hbb20.countrypicker.config.CPDialogViewIds
 import com.hbb20.countrypicker.config.CPListConfig
 import com.hbb20.countrypicker.config.CPRowConfig
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator

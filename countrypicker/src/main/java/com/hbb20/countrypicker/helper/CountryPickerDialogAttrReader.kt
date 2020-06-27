@@ -2,10 +2,10 @@ package com.hbb20.countrypicker.helper
 
 import android.content.res.TypedArray
 import com.hbb20.countrypicker.R.styleable.*
-import com.hbb20.countrypicker.dialog.CPDialogConfig
-import com.hbb20.countrypicker.dialog.CPDialogConfig.Companion.defaultCPDialogAllowClearSelection
-import com.hbb20.countrypicker.dialog.CPDialogConfig.Companion.defaultCPDialogAllowSearch
-import com.hbb20.countrypicker.dialog.CPDialogConfig.Companion.defaultCPDialogShowFullScreen
+import com.hbb20.countrypicker.config.CPDialogConfig
+import com.hbb20.countrypicker.config.CPDialogConfig.Companion.defaultCPDialogAllowClearSelection
+import com.hbb20.countrypicker.config.CPDialogConfig.Companion.defaultCPDialogAllowSearch
+import com.hbb20.countrypicker.config.CPDialogConfig.Companion.defaultCPDialogShowFullScreen
 
 internal fun readDialogConfigFromAttrs(attrs: TypedArray): CPDialogConfig {
     val allowSearch =

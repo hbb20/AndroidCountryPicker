@@ -1,4 +1,4 @@
-package com.hbb20.countrypicker.dialog
+package com.hbb20.countrypicker.config
 
 import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes

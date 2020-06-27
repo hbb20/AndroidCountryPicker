@@ -7,12 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.hbb20.countrypicker.R
-import com.hbb20.countrypicker.config.CPInitialSelectionMode
-import com.hbb20.countrypicker.config.CPListConfig
-import com.hbb20.countrypicker.config.CPRowConfig
-import com.hbb20.countrypicker.config.CPViewConfig
+import com.hbb20.countrypicker.config.*
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
-import com.hbb20.countrypicker.dialog.CPDialogConfig
 import com.hbb20.countrypicker.dialog.CPDialogHelper
 import com.hbb20.countrypicker.helper.CPCountryDetector
 import com.hbb20.countrypicker.helper.readDialogConfigFromAttrs
@@ -32,7 +28,8 @@ class CountryPickerView @JvmOverloads constructor(
     var rowConfig: CPRowConfig = CPRowConfig()
     var viewConfig: CPViewConfig = CPViewConfig()
     var listConfig: CPListConfig = CPListConfig()
-    var dialogConfig: CPDialogConfig = CPDialogConfig()
+    var dialogConfig: CPDialogConfig =
+        CPDialogConfig()
     var selectedCountry: CPCountry? = null
     val countryDetector = CPCountryDetector(context)
 
