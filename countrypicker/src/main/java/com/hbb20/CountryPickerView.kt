@@ -49,10 +49,8 @@ class CountryPickerView @JvmOverloads constructor(
             CPInitialSelectionMode.Empty -> null
             CPInitialSelectionMode.AutoDetectCountry -> autoDetectCountry()
             CPInitialSelectionMode.SpecificCountry -> dataStore.countryList.firstOrNull {
-                it.alpha2.equals(
-                    viewConfig.initialSpecificCountry,
-                    true
-                )
+                it.alpha2.equals(viewConfig.initialSpecificCountry, true) ||
+                        it.alpha3.equals(viewConfig.initialSpecificCountry, true)
             }
         }
     }
