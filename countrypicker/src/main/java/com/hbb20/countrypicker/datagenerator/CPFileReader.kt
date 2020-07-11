@@ -66,7 +66,7 @@ object CPFileReader : CountryFileReading {
             noMatchMsg = resources.getString(R.string.cp_no_match_msg),
             searchHint = resources.getString(R.string.cp_search_hint),
             dialogTitle = resources.getString(R.string.cp_dialog_title),
-            selectionPlaceholderText = resources.getString(R.string.cp_selection_place_holder),
+            selectionPlaceholderText = resources.getString(R.string.cp_selection_placeholder),
             clearSelectionText = resources.getString(R.string.cp_clear_selection)
         )
         logMethodEnd("loadMessageGroup")
