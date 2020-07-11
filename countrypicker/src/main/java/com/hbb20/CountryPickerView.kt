@@ -3,15 +3,12 @@ package com.hbb20
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.hbb20.countrypicker.R
-import com.hbb20.countrypicker.config.CPInitialSelectionMode
-import com.hbb20.countrypicker.config.CPListConfig
-import com.hbb20.countrypicker.config.CPRowConfig
-import com.hbb20.countrypicker.config.CPViewConfig
+import com.hbb20.countrypicker.config.*
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
-import com.hbb20.countrypicker.dialog.CPDialogConfig
 import com.hbb20.countrypicker.dialog.CPDialogHelper
 import com.hbb20.countrypicker.helper.CPCountryDetector
 import com.hbb20.countrypicker.helper.readDialogConfigFromAttrs
@@ -31,7 +28,8 @@ class CountryPickerView @JvmOverloads constructor(
     var rowConfig: CPRowConfig = CPRowConfig()
     var viewConfig: CPViewConfig = CPViewConfig()
     var listConfig: CPListConfig = CPListConfig()
-    var dialogConfig: CPDialogConfig = CPDialogConfig()
+    var dialogConfig: CPDialogConfig =
+        CPDialogConfig()
     var selectedCountry: CPCountry? = null
     val countryDetector = CPCountryDetector(context)
 
@@ -50,7 +48,10 @@ class CountryPickerView @JvmOverloads constructor(
         selectedCountry = when (viewConfig.initialSelectionMode) {
             CPInitialSelectionMode.Empty -> null
             CPInitialSelectionMode.AutoDetectCountry -> autoDetectCountry()
-            CPInitialSelectionMode.SpecificCountry -> dataStore.countryList.first { it.alpha2 == "EE" }
+            CPInitialSelectionMode.SpecificCountry -> dataStore.countryList.firstOrNull {
+                it.alpha2.equals(viewConfig.initialSpecificCountry, true) ||
+                        it.alpha3.equals(viewConfig.initialSpecificCountry, true)
+            }
         }
     }
 
@@ -83,13 +84,13 @@ class CountryPickerView @JvmOverloads constructor(
     private fun applyLayout(attrs: AttributeSet) {
         val xmlWidth =
             attrs.getAttributeValue("http://schemas.android.com/apk/res/android", "layout_width")
-        //todo: eventually use single layout and just change constraints
-        if (xmlWidth != null && (xmlWidth == LayoutParams.MATCH_PARENT.toString() || xmlWidth == "fill_parent" || xmlWidth == "match_parent")) {
-            LayoutInflater.from(context)
-                .inflate(R.layout.cp_country_picker_view_constrained, this, true)
-        } else {
-            LayoutInflater.from(context).inflate(R.layout.cp_country_picker_view, this, true)
-        }
+        val wrapContentValues =
+            setOf(ViewGroup.LayoutParams.WRAP_CONTENT.toString(), "wrap_content")
+        val layoutFile =
+            if (xmlWidth in wrapContentValues) R.layout.cp_country_picker_view
+            else R.layout.cp_country_picker_view_constrained
+        LayoutInflater.from(context)
+            .inflate(layoutFile, this, true)
     }
 
     private fun launchDialog() {
@@ -114,7 +115,7 @@ class CountryPickerView @JvmOverloads constructor(
         tvEmojiFlag.text = if (country == null) {
             " "
         } else {
-            if (isInEditMode) "\uD83C\uDFC1" else country.flagEmoji
+            country.flagEmoji
         }
     }
 
