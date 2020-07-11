@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:theme="@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -11,6 +12,7 @@
 
         <TextView
             android:id="@+id/tvTitle"
+            style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
             android:layout_width="0dp"
             android:layout_height="64dp"
             android:layout_marginStart="@dimen/grid_3x"
@@ -18,7 +20,7 @@
             android:layout_marginEnd="@dimen/grid_3x"
             android:layout_marginRight="@dimen/grid_3x"
             android:firstBaselineToTopHeight="40dp"
-            android:textAppearance="@style/cp_dialog_title"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -65,9 +67,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etQuery" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnClearSelection"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/grid_1x"

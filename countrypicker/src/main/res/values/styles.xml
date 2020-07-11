@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
+        <!-- Customize your theme here. -->
+    </style>
+
     <style name="cp_dialog_title">
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
