@@ -14,7 +14,7 @@
             android:id="@+id/tvTitle"
             style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
             android:layout_width="0dp"
-            android:layout_height="64dp"
+            android:layout_height="56dp"
             android:layout_marginStart="@dimen/grid_3x"
             android:layout_marginLeft="@dimen/grid_3x"
             android:layout_marginEnd="@dimen/grid_3x"

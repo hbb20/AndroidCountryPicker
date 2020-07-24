@@ -63,7 +63,7 @@ fun RecyclerView.loadCountriesUsingDataStore(
     onCountryClickListener: ((CPCountry) -> Unit)
 ) {
     val cpCountryRowConfig = CPRowConfig(
-        CPFlagProvider = CPFlagProvider,
+        cpFlagProvider = CPFlagProvider,
         mainTextGenerator = mainTextGenerator,
         secondaryTextGenerator = secondaryTextGenerator,
         highlightedTextGenerator = highlightedTextGenerator
@@ -71,16 +71,13 @@ fun RecyclerView.loadCountriesUsingDataStore(
 
     val cpListConfig = CPListConfig(preferredCountryCodes = preferredCountryCodes)
 
-    val cpRecyclerViewHelper =
-        CPRecyclerViewHelper(
-            cpDataStore = cpDataStore,
-            onCountryClickListener = onCountryClickListener,
-            cpRowConfig = cpCountryRowConfig,
-            cpListConfig = cpListConfig
-        )
-
-    cpRecyclerViewHelper.attachRecyclerView(this)
-    cpRecyclerViewHelper.attachFilterQueryEditText(filterQueryEditText)
+    loadCountriesUsingDataStoreAndConfig(
+        cpDataStore,
+        cpCountryRowConfig,
+        cpListConfig,
+        filterQueryEditText,
+        onCountryClickListener
+    )
 }
 
 fun RecyclerView.loadCountriesUsingDataStoreAndConfig(

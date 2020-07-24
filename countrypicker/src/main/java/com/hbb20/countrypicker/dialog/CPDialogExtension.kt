@@ -50,7 +50,7 @@ fun Context.launchCountryPickerDialog(
     )
 
     val cpCountryRowConfig = CPRowConfig(
-        CPFlagProvider = CPFlagProvider,
+        cpFlagProvider = CPFlagProvider,
         mainTextGenerator = mainTextGenerator,
         secondaryTextGenerator = secondaryTextGenerator,
         highlightedTextGenerator = highlightedTextGenerator

@@ -5,7 +5,7 @@ import com.hbb20.countrypicker.DefaultEmojiFlagProvider
 import com.hbb20.countrypicker.models.CPCountry
 
 data class CPRowConfig(
-    var CPFlagProvider: CPFlagProvider? = defaultFlagProvider,
+    var cpFlagProvider: CPFlagProvider? = defaultFlagProvider,
     var mainTextGenerator: ((CPCountry) -> String) = defaultMainTextGenerator,
     var secondaryTextGenerator: ((CPCountry) -> String)? = defaultSecondaryTextGenerator,
     var highlightedTextGenerator: ((CPCountry) -> String)? = defaultHighlightedTextGenerator

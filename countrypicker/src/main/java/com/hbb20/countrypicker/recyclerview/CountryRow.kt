@@ -75,7 +75,7 @@ internal class CountryRow @JvmOverloads constructor(
     }
 
     private fun applyFlag() {
-        val flagProvider = rowConfig.CPFlagProvider
+        val flagProvider = rowConfig.cpFlagProvider
         if (flagProvider != null) {
             when (flagProvider) {
                 is DefaultEmojiFlagProvider -> {
