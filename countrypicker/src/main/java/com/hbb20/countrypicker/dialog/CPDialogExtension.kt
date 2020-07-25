@@ -20,7 +20,7 @@ fun Context.launchCountryPickerDialog(
     useCache: Boolean = CPDataStoreGenerator.defaultUseCache,
     customDataStoreModifier: ((CPDataStore) -> (Unit))? = defaultDataStoreModifier,
     CPFlagProvider: CPFlagProvider? = CPRowConfig.defaultFlagProvider,
-    mainTextGenerator: ((CPCountry) -> String) = CPRowConfig.defaultMainTextGenerator,
+    primaryTextGenerator: ((CPCountry) -> String) = CPRowConfig.defaultPrimaryTextGenerator,
     secondaryTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultSecondaryTextGenerator,
     highlightedTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultHighlightedTextGenerator,
     preferredCountryCodes: String? = null,
@@ -51,7 +51,7 @@ fun Context.launchCountryPickerDialog(
 
     val cpCountryRowConfig = CPRowConfig(
         cpFlagProvider = CPFlagProvider,
-        mainTextGenerator = mainTextGenerator,
+        primaryTextGenerator = primaryTextGenerator,
         secondaryTextGenerator = secondaryTextGenerator,
         highlightedTextGenerator = highlightedTextGenerator
     )

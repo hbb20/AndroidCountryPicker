@@ -6,13 +6,13 @@ import com.hbb20.countrypicker.models.CPCountry
 
 data class CPRowConfig(
     var cpFlagProvider: CPFlagProvider? = defaultFlagProvider,
-    var mainTextGenerator: ((CPCountry) -> String) = defaultMainTextGenerator,
+    var primaryTextGenerator: ((CPCountry) -> String) = defaultPrimaryTextGenerator,
     var secondaryTextGenerator: ((CPCountry) -> String)? = defaultSecondaryTextGenerator,
     var highlightedTextGenerator: ((CPCountry) -> String)? = defaultHighlightedTextGenerator
 ) {
     companion object {
         val defaultFlagProvider = DefaultEmojiFlagProvider()
-        val defaultMainTextGenerator: ((CPCountry) -> String) = { it.name }
+        val defaultPrimaryTextGenerator: ((CPCountry) -> String) = { it.name }
         val defaultSecondaryTextGenerator = null
         val defaultHighlightedTextGenerator = null
     }

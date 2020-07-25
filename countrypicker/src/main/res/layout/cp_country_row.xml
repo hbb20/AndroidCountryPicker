@@ -57,7 +57,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/tvMainText"
+        android:id="@+id/tvPrimaryText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/grid_2x"
@@ -84,9 +84,9 @@
         android:layout_marginBottom="@dimen/grid_0hx"
         android:text="Indian Rupee (INR)"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/tvMainText"
-        app:layout_constraintStart_toStartOf="@id/tvMainText"
-        app:layout_constraintTop_toBottomOf="@+id/tvMainText" />
+        app:layout_constraintEnd_toEndOf="@id/tvPrimaryText"
+        app:layout_constraintStart_toStartOf="@id/tvPrimaryText"
+        app:layout_constraintTop_toBottomOf="@+id/tvPrimaryText" />
 
     <TextView
         android:id="@+id/tvHighlightedInfo"

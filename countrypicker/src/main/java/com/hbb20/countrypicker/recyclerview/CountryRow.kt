@@ -46,7 +46,7 @@ internal class CountryRow @JvmOverloads constructor(
 
     @AfterPropsSet
     fun updateViews() {
-        tvMainText.text = rowConfig.mainTextGenerator.invoke(country)
+        tvPrimaryText.text = rowConfig.primaryTextGenerator.invoke(country)
         setSecondaryText(rowConfig.secondaryTextGenerator?.invoke(country))
         setHighlightedInfo()
         applyFlag()
@@ -120,7 +120,7 @@ internal class CountryRow @JvmOverloads constructor(
 
     private fun applyTextSize() {
         val emojiSize: Float =
-            if (rowConfig.secondaryTextGenerator == null) tvMainText.textSize else tvMainText.textSize * 1.3f
+            if (rowConfig.secondaryTextGenerator == null) tvPrimaryText.textSize else tvPrimaryText.textSize * 1.3f
         tvEmojiFlag.setTextSize(TypedValue.COMPLEX_UNIT_PX, emojiSize)
     }
 

@@ -82,7 +82,7 @@ class CPRecyclerViewHelper(
     ): List<CPCountry> {
         if (filterQuery.isBlank()) return this
         return this.filter {
-            cpRowConfig.mainTextGenerator(it).contains(
+            cpRowConfig.primaryTextGenerator(it).contains(
                 filterQuery,
                 true
             ) || (cpRowConfig.secondaryTextGenerator?.invoke(it)?.contains(
