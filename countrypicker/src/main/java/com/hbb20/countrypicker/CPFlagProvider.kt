@@ -8,6 +8,6 @@ sealed class CPFlagProvider
  */
 class DefaultEmojiFlagProvider(val useEmojiCompat: Boolean = false) : CPFlagProvider()
 
-abstract class CustomCPFlagImageProvider : CPFlagProvider() {
+abstract class CPFlagImageProvider : CPFlagProvider() {
     abstract fun getFlag(alpha2Code: String): Int
 }

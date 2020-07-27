@@ -35,7 +35,8 @@ object CPDataStoreGenerator {
                     countryList,
                     customExcludedCountries
                 )
-            return it.copy(countryList = countryList.toMutableList())
+            return it.copy(countryList = countryList.sortedBy { cpCountry -> cpCountry.name }
+                .toMutableList())
         }
 
         throw IllegalStateException("MasterDataStore can not be null at this point.")

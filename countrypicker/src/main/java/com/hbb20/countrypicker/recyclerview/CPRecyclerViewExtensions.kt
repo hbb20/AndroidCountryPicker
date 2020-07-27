@@ -19,12 +19,12 @@ fun RecyclerView.loadCountries(
     countryFileReader: CountryFileReading = CPDataStoreGenerator.defaultCountryFileReader,
     useCache: Boolean = CPDataStoreGenerator.defaultUseCache,
     customDataStoreModifier: ((CPDataStore) -> (Unit))? = defaultDataStoreModifier,
-    CPFlagProvider: CPFlagProvider? = CPRowConfig.defaultFlagProvider,
+    preferredCountryCodes: String? = CPListConfig.defaultCPListPreferredCountryCodes,
+    filterQueryEditText: EditText? = null,
+    cpFlagProvider: CPFlagProvider? = CPRowConfig.defaultFlagProvider,
     primaryTextGenerator: ((CPCountry) -> String) = CPRowConfig.defaultPrimaryTextGenerator,
     secondaryTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultSecondaryTextGenerator,
     highlightedTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultHighlightedTextGenerator,
-    preferredCountryCodes: String? = CPListConfig.defaultCPListPreferredCountryCodes,
-    filterQueryEditText: EditText? = null,
     onCountryClickListener: ((CPCountry) -> Unit)
 ) {
     onMethodBegin("loadCountries")
@@ -40,7 +40,7 @@ fun RecyclerView.loadCountries(
 
     loadCountriesUsingDataStore(
         cpDataStore,
-        CPFlagProvider,
+        cpFlagProvider,
         primaryTextGenerator,
         secondaryTextGenerator,
         highlightedTextGenerator,

@@ -10,7 +10,7 @@ import com.airbnb.epoxy.AfterPropsSet
 import com.airbnb.epoxy.CallbackProp
 import com.airbnb.epoxy.ModelProp
 import com.airbnb.epoxy.ModelView
-import com.hbb20.countrypicker.CustomCPFlagImageProvider
+import com.hbb20.countrypicker.CPFlagImageProvider
 import com.hbb20.countrypicker.DefaultEmojiFlagProvider
 import com.hbb20.countrypicker.R
 import com.hbb20.countrypicker.config.CPRowConfig
@@ -88,7 +88,7 @@ internal class CountryRow @JvmOverloads constructor(
                         }
                     tvEmojiFlag.text = flagEmoji
                 }
-                is CustomCPFlagImageProvider -> {
+                is CPFlagImageProvider -> {
                     showFlag(FlagView.IMAGE)
                     imgFlag.setImageResource(flagProvider.getFlag(country.alpha2))
                 }

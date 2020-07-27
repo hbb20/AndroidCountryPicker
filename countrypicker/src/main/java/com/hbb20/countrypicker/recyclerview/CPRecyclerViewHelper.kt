@@ -11,9 +11,9 @@ import com.hbb20.countrypicker.models.CPDataStore
 
 class CPRecyclerViewHelper(
     private val cpDataStore: CPDataStore,
-    onCountryClickListener: ((CPCountry) -> Unit),
+    cpListConfig: CPListConfig = CPListConfig(),
     private val cpRowConfig: CPRowConfig = CPRowConfig(),
-    cpListConfig: CPListConfig = CPListConfig()
+    onCountryClickListener: ((CPCountry) -> Unit)
 ) {
 
     var allPreferredCountries = extractPreferredCountries(
