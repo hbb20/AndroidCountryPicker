@@ -54,7 +54,7 @@ fun RecyclerView.loadCountries(
 
 fun RecyclerView.loadCountriesUsingDataStore(
     cpDataStore: CPDataStore,
-    CPFlagProvider: CPFlagProvider? = CPRowConfig.defaultFlagProvider,
+    cpFlagProvider: CPFlagProvider? = CPRowConfig.defaultFlagProvider,
     primaryTextGenerator: ((CPCountry) -> String) = CPRowConfig.defaultPrimaryTextGenerator,
     secondaryTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultSecondaryTextGenerator,
     highlightedTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultHighlightedTextGenerator,
@@ -63,7 +63,7 @@ fun RecyclerView.loadCountriesUsingDataStore(
     onCountryClickListener: ((CPCountry) -> Unit)
 ) {
     val cpCountryRowConfig = CPRowConfig(
-        cpFlagProvider = CPFlagProvider,
+        cpFlagProvider = cpFlagProvider,
         primaryTextGenerator = primaryTextGenerator,
         secondaryTextGenerator = secondaryTextGenerator,
         highlightedTextGenerator = highlightedTextGenerator

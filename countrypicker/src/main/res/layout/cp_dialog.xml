@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:theme="@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/tvTitle"
@@ -62,9 +62,11 @@
             android:id="@+id/rvCountryList"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            app:layout_constraintHeight_default="wrap"
             app:layout_constraintBottom_toTopOf="@+id/btnClearSelection"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0"
             app:layout_constraintTop_toBottomOf="@id/etQuery" />
 
         <com.google.android.material.button.MaterialButton
