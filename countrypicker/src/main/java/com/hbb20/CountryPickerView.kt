@@ -15,6 +15,7 @@ import com.hbb20.countrypicker.helper.readDialogConfigFromAttrs
 import com.hbb20.countrypicker.helper.readListConfigFromAttrs
 import com.hbb20.countrypicker.helper.readViewConfigFromAttrs
 import com.hbb20.countrypicker.models.CPCountry
+import com.hbb20.countrypicker.view.CountryPickerViewHelper
 import java.util.*
 
 class CountryPickerView @JvmOverloads constructor(
@@ -28,10 +29,20 @@ class CountryPickerView @JvmOverloads constructor(
     var rowConfig: CPRowConfig = CPRowConfig()
     var viewConfig: CPViewConfig = CPViewConfig()
     var listConfig: CPListConfig = CPListConfig()
-    var dialogConfig: CPDialogConfig =
-        CPDialogConfig()
+    var dialogConfig: CPDialogConfig = CPDialogConfig()
     var selectedCountry: CPCountry? = null
     val countryDetector = CPCountryDetector(context)
+    val helper: CountryPickerViewHelper by lazy {
+        CountryPickerViewHelper(
+            context,
+            dataStore,
+            viewConfig,
+            dialogConfig,
+            listConfig,
+            rowConfig,
+            isInEditMode
+        )
+    }
 
     init {
         attrs?.let { readAttrs(it) }
@@ -112,11 +123,7 @@ class CountryPickerView @JvmOverloads constructor(
      */
     private fun refreshFlag() {
         val country = selectedCountry
-        tvEmojiFlag.text = if (country == null) {
-            " "
-        } else {
-            country.flagEmoji
-        }
+        tvEmojiFlag.text = country?.flagEmoji ?: " "
     }
 
     data class State(val country: CPCountry?)
