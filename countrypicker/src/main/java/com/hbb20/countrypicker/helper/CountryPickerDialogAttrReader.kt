@@ -7,29 +7,36 @@ import com.hbb20.countrypicker.config.CPDialogConfig.Companion.defaultCPDialogAl
 import com.hbb20.countrypicker.config.CPDialogConfig.Companion.defaultCPDialogAllowSearch
 import com.hbb20.countrypicker.config.CPDialogConfig.Companion.defaultCPDialogShowFullScreen
 
-internal fun readDialogConfigFromAttrs(attrs: TypedArray): CPDialogConfig {
-    val allowSearch =
-        attrs.getBoolean(CountryPickerView_cpDialog_allowSearch, defaultCPDialogAllowSearch)
+internal fun readDialogConfigFromAttrs(attrs: TypedArray?): CPDialogConfig {
+    return if (attrs == null) {
+        CPDialogConfig()
+    } else {
+        val allowSearch =
+            attrs.getBoolean(CountryPickerView_cpDialog_allowSearch, defaultCPDialogAllowSearch)
 
-    val allowClearSelection =
-        attrs.getBoolean(
-            CountryPickerView_cpDialog_allowClearSelection,
-            defaultCPDialogAllowClearSelection
+        val allowClearSelection =
+            attrs.getBoolean(
+                CountryPickerView_cpDialog_allowClearSelection,
+                defaultCPDialogAllowClearSelection
+            )
+
+        val showTitle =
+            attrs.getBoolean(
+                CountryPickerView_cpDialog_showTitle,
+                defaultCPDialogAllowClearSelection
+            )
+
+        val showFullScreen =
+            attrs.getBoolean(
+                CountryPickerView_cpDialog_showFullScreen,
+                defaultCPDialogShowFullScreen
+            )
+
+        CPDialogConfig(
+            allowSearch = allowSearch,
+            allowClearSelection = allowClearSelection,
+            showTitle = showTitle,
+            showFullScreen = showFullScreen
         )
-
-    val showTitle =
-        attrs.getBoolean(
-            CountryPickerView_cpDialog_showTitle,
-            defaultCPDialogAllowClearSelection
-        )
-
-    val showFullScreen =
-        attrs.getBoolean(CountryPickerView_cpDialog_showFullScreen, defaultCPDialogShowFullScreen)
-
-    return CPDialogConfig(
-        allowSearch = allowSearch,
-        allowClearSelection = allowClearSelection,
-        showTitle = showTitle,
-        showFullScreen = showFullScreen
-    )
+    }
 }

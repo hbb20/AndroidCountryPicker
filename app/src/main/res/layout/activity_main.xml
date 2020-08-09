@@ -112,22 +112,31 @@
                 android:text="Load in (Epoxy) Recycler"
                 android:textStyle="bold" />
 
+            <RelativeLayout
+                android:id="@+id/rlCustomViewContainter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
+                <TextView
+                    android:id="@+id/tvCustomViewInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 
     <com.hbb20.CountryPickerView
         android:id="@+id/countryPicker"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
         app:cpDialog_allowClearSelection="true"
         app:cpDialog_allowSearch="false"
-        app:cpDialog_showFullScreen="true"
         app:cpDialog_showTitle="false"
         app:cpList_preferredCountryCodes="PK,US,CA"
-        app:cp_initialSelectionMode="specificCountry"
-        app:cp_initialSpecificCountry="in"
+        app:cp_initialSelectionMode="autoDetectCounty"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

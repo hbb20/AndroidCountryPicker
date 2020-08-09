@@ -1,5 +1,7 @@
 package com.hbb20.countrypicker.config
 
+import com.hbb20.countrypicker.CPFlagProvider
+import com.hbb20.countrypicker.DefaultEmojiFlagProvider
 import com.hbb20.countrypicker.helper.CPCountryDetector.Source
 
 enum class CPInitialSelectionMode {
@@ -11,7 +13,8 @@ enum class CPInitialSelectionMode {
 data class CPViewConfig(
     val initialSelectionMode: CPInitialSelectionMode = defaultCPInitialSelectionMode,
     val initialSpecificCountry: String? = defaultCPInitialCountryCode,
-    val countryDetectSources: List<Source> = defaultCountryDetectorSources
+    val countryDetectSources: List<Source> = defaultCountryDetectorSources,
+    val cpFlagProvider: CPFlagProvider? = DefaultEmojiFlagProvider()
 ) {
     companion object {
         val defaultCPInitialSelectionMode = CPInitialSelectionMode.Empty
