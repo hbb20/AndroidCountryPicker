@@ -12,7 +12,7 @@ import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
 import com.hbb20.countrypicker.helper.readDialogConfigFromAttrs
 import com.hbb20.countrypicker.helper.readListConfigFromAttrs
 import com.hbb20.countrypicker.helper.readViewConfigFromAttrs
-import com.hbb20.countrypicker.view.CountryPickerViewHelper
+import com.hbb20.countrypicker.view.CPViewHelper
 
 class CountryPickerView @JvmOverloads constructor(
     context: Context,
@@ -21,7 +21,7 @@ class CountryPickerView @JvmOverloads constructor(
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
     val tvCountryInfo: TextView by lazy { findViewById<TextView>(R.id.tvCountryInfo) }
     val tvEmojiFlag: TextView by lazy { findViewById<TextView>(R.id.tvEmojiFlag) }
-    var helper: CountryPickerViewHelper
+    var helper: CPViewHelper
 
     init {
         applyLayout(attrs)
@@ -29,7 +29,7 @@ class CountryPickerView @JvmOverloads constructor(
         helper.attachViewComponents(this, tvCountryInfo, tvEmojiFlag)
     }
 
-    private fun prepareHelperFromAttr(attrs: AttributeSet?): CountryPickerViewHelper {
+    private fun prepareHelperFromAttr(attrs: AttributeSet?): CPViewHelper {
         val styledAttrs =
             context.theme.obtainStyledAttributes(attrs, R.styleable.CountryPickerView, 0, 0)
         val dataStore = CPDataStoreGenerator.generate(context)
@@ -37,7 +37,7 @@ class CountryPickerView @JvmOverloads constructor(
         val listConfig = readListConfigFromAttrs(styledAttrs)
         val viewConfig = readViewConfigFromAttrs(styledAttrs)
         val rowConfig = CPRowConfig()
-        return CountryPickerViewHelper(
+        return CPViewHelper(
             context,
             dataStore,
             viewConfig,

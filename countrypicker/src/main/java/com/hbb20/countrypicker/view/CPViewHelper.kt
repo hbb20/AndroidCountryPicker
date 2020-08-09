@@ -22,23 +22,23 @@ import com.hbb20.countrypicker.models.CPDataStore
 import timber.log.Timber
 import java.util.*
 
-class CountryPickerViewHelper(
+class CPViewHelper(
     val context: Context,
-    val dataStore: CPDataStore = CPDataStoreGenerator.generate(context),
-    val viewConfig: CPViewConfig = CPViewConfig(),
-    val dialogConfig: CPDialogConfig = CPDialogConfig(),
-    val listConfig: CPListConfig = CPListConfig(),
-    val rowConfig: CPRowConfig = CPRowConfig(cpFlagProvider = viewConfig.cpFlagProvider),
+    val cpDataStore: CPDataStore = CPDataStoreGenerator.generate(context),
+    val cpViewConfig: CPViewConfig = CPViewConfig(),
+    val cpDialogConfig: CPDialogConfig = CPDialogConfig(),
+    val cpListConfig: CPListConfig = CPListConfig(),
+    val cpRowConfig: CPRowConfig = CPRowConfig(cpFlagProvider = cpViewConfig.cpFlagProvider),
     val isInEditMode: Boolean = false
 ) {
     private val _selectedCountry = MutableLiveData<CPCountry>()
     val selectedCountry: LiveData<CPCountry?> = _selectedCountry
     val countryDetector = CPCountryDetector(context)
     private var viewComponentGroup: ViewComponentGroup? = null
-    var onCountryUpdateListener: ((CPCountry?) -> Unit)? = null
+    var onCountryChangedListener: ((CPCountry?) -> Unit)? = null
 
     init {
-        setInitialCountry(viewConfig.initialSelection)
+        setInitialCountry(cpViewConfig.initialSelection)
     }
 
     fun setInitialCountry(
@@ -59,7 +59,7 @@ class CountryPickerViewHelper(
      * CountryCode can be alpha2 or alpha3 code
      */
     fun setCountryForAlphaCode(countryCode: String?) {
-        val country = dataStore.countryList.firstOrNull {
+        val country = cpDataStore.countryList.firstOrNull {
             it.alpha2.equals(countryCode, true) || it.alpha3.equals(countryCode, true)
         }
         setCountry(country)
@@ -72,7 +72,7 @@ class CountryPickerViewHelper(
     fun setAutoDetectedCountry(countryDetectSources: List<CPCountryDetector.Source> = CPViewConfig.defaultCountryDetectorSources) {
         val detectedAlpha2 =
             if (isInEditMode) "US" else countryDetector.detectCountry(countryDetectSources)
-        val detectedCountry = dataStore.countryList.firstOrNull {
+        val detectedCountry = cpDataStore.countryList.firstOrNull {
             it.alpha2.toLowerCase(Locale.ROOT) == detectedAlpha2?.toLowerCase(
                 Locale.ROOT
             )
@@ -81,7 +81,7 @@ class CountryPickerViewHelper(
     }
 
     fun launchDialog() {
-        val dialogHelper = CPDialogHelper(dataStore, dialogConfig, listConfig, rowConfig) {
+        val dialogHelper = CPDialogHelper(cpDataStore, cpDialogConfig, cpListConfig, cpRowConfig) {
             setCountry(it)
         }
         dialogHelper.createDialog(context).show()
@@ -102,7 +102,7 @@ class CountryPickerViewHelper(
     fun setCountry(cpCountry: CPCountry?) {
         _selectedCountry.value = cpCountry
         refreshView()
-        onCountryUpdateListener?.invoke(cpCountry)
+        onCountryChangedListener?.invoke(cpCountry)
     }
 
     fun refreshView() {
@@ -110,9 +110,9 @@ class CountryPickerViewHelper(
         viewComponentGroup?.apply {
             // text
             tvCountryInfo.text =
-                if (selectedCountry != null) viewConfig.viewTextGenerator(selectedCountry) else dataStore.messageGroup.selectionPlaceholderText
+                if (selectedCountry != null) cpViewConfig.viewTextGenerator(selectedCountry) else cpDataStore.messageGroup.selectionPlaceholderText
 
-            val flagProvider = viewConfig.cpFlagProvider
+            val flagProvider = cpViewConfig.cpFlagProvider
             if (flagProvider is DefaultEmojiFlagProvider) {
                 val flagEmoji = when {
                     flagProvider.useEmojiCompat -> EmojiCompat.get()

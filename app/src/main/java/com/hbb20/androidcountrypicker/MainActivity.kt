@@ -5,13 +5,16 @@ import android.os.Bundle
 import android.view.View
 import android.widget.RelativeLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import com.hbb20.CountryPickerView
 import com.hbb20.androidcountrypicker.test.TestActivity
 import com.hbb20.androidcountrypicker.test.XMLValidator
 import com.hbb20.countrypicker.config.CPViewConfig
 import com.hbb20.countrypicker.models.CPCountry
-import com.hbb20.countrypicker.view.CountryPickerViewHelper
+import com.hbb20.countrypicker.view.CPViewHelper
+import com.hbb20.countrypicker.view.prepareCustomCountryPickerView
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -25,25 +28,40 @@ class MainActivity : AppCompatActivity() {
         setCustomView()
     }
 
-    private fun setCustomView() {
+    private fun setCustomViewUsingHelper() {
         val container = findViewById<RelativeLayout>(R.id.rlCustomViewContainter)
         val textView = findViewById<TextView>(R.id.tvCustomViewInfo)
         val viewHelper =
-            CountryPickerViewHelper(
-                this, viewConfig = CPViewConfig(
+            CPViewHelper(
+                this, cpViewConfig = CPViewConfig(
                     initialSelection = CPViewConfig.InitialSelection.SpecificCountry("IN"),
                     cpFlagProvider = null
                 )
             )
         viewHelper.attachViewComponents(container, textView)
-        viewHelper.viewConfig.viewTextGenerator = { country ->
+        viewHelper.cpViewConfig.viewTextGenerator = { country ->
             "${country.name} (${country.alpha3.toUpperCase()})"
         }
     }
 
+    private fun setCustomView() {
+        val container = findViewById<RelativeLayout>(R.id.rlCustomViewContainter)
+        val textView = findViewById<TextView>(R.id.tvCustomViewInfo)
+        val helper = prepareCustomCountryPickerView(
+            containerViewGroup = container,
+            tvSelectedCountryInfo = textView,
+            allowClearSelection = true,
+            initialSelection = CPViewConfig.InitialSelection.SpecificCountry("IND")
+        )
+        helper.selectedCountry.observe(this, Observer { country ->
+            Toast.makeText(this, "Country selected: ${country?.currencyName}", Toast.LENGTH_SHORT)
+                .show()
+        })
+    }
+
     private fun configureCPView() {
         val countryPicker = findViewById<CountryPickerView>(R.id.countryPicker)
-        countryPicker.helper.viewConfig.viewTextGenerator = { cpCountry: CPCountry ->
+        countryPicker.helper.cpViewConfig.viewTextGenerator = { cpCountry: CPCountry ->
             cpCountry.alpha2
         }
         countryPicker.helper.refreshView()
