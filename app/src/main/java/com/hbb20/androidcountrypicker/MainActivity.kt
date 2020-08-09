@@ -10,6 +10,7 @@ import com.hbb20.CountryPickerView
 import com.hbb20.androidcountrypicker.test.TestActivity
 import com.hbb20.androidcountrypicker.test.XMLValidator
 import com.hbb20.countrypicker.config.CPViewConfig
+import com.hbb20.countrypicker.models.CPCountry
 import com.hbb20.countrypicker.view.CountryPickerViewHelper
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -28,12 +29,24 @@ class MainActivity : AppCompatActivity() {
         val container = findViewById<RelativeLayout>(R.id.rlCustomViewContainter)
         val textView = findViewById<TextView>(R.id.tvCustomViewInfo)
         val viewHelper =
-            CountryPickerViewHelper(this, viewConfig = CPViewConfig(cpFlagProvider = null))
+            CountryPickerViewHelper(
+                this, viewConfig = CPViewConfig(
+                    initialSelection = CPViewConfig.InitialSelection.SpecificCountry("IN"),
+                    cpFlagProvider = null
+                )
+            )
         viewHelper.attachViewComponents(container, textView)
+        viewHelper.viewConfig.viewTextGenerator = { country ->
+            "${country.name} (${country.alpha3.toUpperCase()})"
+        }
     }
 
     private fun configureCPView() {
         val countryPicker = findViewById<CountryPickerView>(R.id.countryPicker)
+        countryPicker.helper.viewConfig.viewTextGenerator = { cpCountry: CPCountry ->
+            cpCountry.alpha2
+        }
+        countryPicker.helper.refreshView()
     }
 
     private fun refreshView() {

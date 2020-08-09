@@ -10,7 +10,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.hbb20.countrypicker.CPFlagImageProvider
 import com.hbb20.countrypicker.DefaultEmojiFlagProvider
-import com.hbb20.countrypicker.config.*
+import com.hbb20.countrypicker.config.CPDialogConfig
+import com.hbb20.countrypicker.config.CPListConfig
+import com.hbb20.countrypicker.config.CPRowConfig
+import com.hbb20.countrypicker.config.CPViewConfig
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
 import com.hbb20.countrypicker.dialog.CPDialogHelper
 import com.hbb20.countrypicker.helper.CPCountryDetector
@@ -31,26 +34,24 @@ class CountryPickerViewHelper(
     private val _selectedCountry = MutableLiveData<CPCountry>()
     val selectedCountry: LiveData<CPCountry?> = _selectedCountry
     val countryDetector = CPCountryDetector(context)
-    var attachedViewComponentGroup: ViewComponentGroup? = null
+    private var viewComponentGroup: ViewComponentGroup? = null
     var onCountryUpdateListener: ((CPCountry?) -> Unit)? = null
 
     init {
-        setInitialCountry(
-            viewConfig.initialSelectionMode,
-            viewConfig.initialSpecificCountry,
-            viewConfig.countryDetectSources
-        )
+        setInitialCountry(viewConfig.initialSelection)
     }
 
     fun setInitialCountry(
-        initialSelectionMode: CPInitialSelectionMode,
-        initialSpecificCountry: String?,
-        countryDetectSources: List<CPCountryDetector.Source>
+        initialSelection: CPViewConfig.InitialSelection
     ) {
-        when (initialSelectionMode) {
-            CPInitialSelectionMode.Empty -> clearSelection()
-            CPInitialSelectionMode.AutoDetectCountry -> setAutoDetectedCountry(countryDetectSources)
-            CPInitialSelectionMode.SpecificCountry -> setCountryForAlphaCode(initialSpecificCountry)
+        when (initialSelection) {
+            CPViewConfig.InitialSelection.EmptySelection -> clearSelection()
+            is CPViewConfig.InitialSelection.AutoDetectCountry -> setAutoDetectedCountry(
+                initialSelection.autoDetectSources
+            )
+            is CPViewConfig.InitialSelection.SpecificCountry -> setCountryForAlphaCode(
+                initialSelection.countryCode
+            )
         }
     }
 
@@ -68,7 +69,7 @@ class CountryPickerViewHelper(
         setCountry(null)
     }
 
-    fun setAutoDetectedCountry(countryDetectSources: List<CPCountryDetector.Source> = viewConfig.countryDetectSources) {
+    fun setAutoDetectedCountry(countryDetectSources: List<CPCountryDetector.Source> = CPViewConfig.defaultCountryDetectorSources) {
         val detectedAlpha2 =
             if (isInEditMode) "US" else countryDetector.detectCountry(countryDetectSources)
         val detectedCountry = dataStore.countryList.firstOrNull {
@@ -92,9 +93,9 @@ class CountryPickerViewHelper(
         tvEmojiFlag: TextView? = null,
         imgFlag: ImageView? = null
     ) {
-        this.attachedViewComponentGroup =
+        this.viewComponentGroup =
             ViewComponentGroup(container, tvCountryInfo, tvEmojiFlag, imgFlag)
-        attachedViewComponentGroup?.container?.setOnClickListener { launchDialog() }
+        viewComponentGroup?.container?.setOnClickListener { launchDialog() }
         refreshView()
     }
 
@@ -106,10 +107,10 @@ class CountryPickerViewHelper(
 
     fun refreshView() {
         val selectedCountry = _selectedCountry.value
-        attachedViewComponentGroup?.apply {
+        viewComponentGroup?.apply {
             // text
             tvCountryInfo.text =
-                selectedCountry?.name ?: dataStore.messageGroup.selectionPlaceholderText
+                if (selectedCountry != null) viewConfig.viewTextGenerator(selectedCountry) else dataStore.messageGroup.selectionPlaceholderText
 
             val flagProvider = viewConfig.cpFlagProvider
             if (flagProvider is DefaultEmojiFlagProvider) {

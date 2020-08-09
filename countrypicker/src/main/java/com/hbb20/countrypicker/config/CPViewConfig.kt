@@ -3,22 +3,25 @@ package com.hbb20.countrypicker.config
 import com.hbb20.countrypicker.CPFlagProvider
 import com.hbb20.countrypicker.DefaultEmojiFlagProvider
 import com.hbb20.countrypicker.helper.CPCountryDetector.Source
-
-enum class CPInitialSelectionMode {
-    Empty,
-    AutoDetectCountry,
-    SpecificCountry
-}
+import com.hbb20.countrypicker.models.CPCountry
 
 data class CPViewConfig(
-    val initialSelectionMode: CPInitialSelectionMode = defaultCPInitialSelectionMode,
-    val initialSpecificCountry: String? = defaultCPInitialCountryCode,
-    val countryDetectSources: List<Source> = defaultCountryDetectorSources,
+    val initialSelection: InitialSelection = defaultCPInitialSelectionMode,
+    var viewTextGenerator: ((CPCountry) -> String) = defaultViewTextGenerator,
     val cpFlagProvider: CPFlagProvider? = DefaultEmojiFlagProvider()
 ) {
     companion object {
-        val defaultCPInitialSelectionMode = CPInitialSelectionMode.Empty
-        val defaultCPInitialCountryCode = null
+        val defaultCPInitialSelectionMode = InitialSelection.EmptySelection
         val defaultCountryDetectorSources = listOf(Source.SIM, Source.NETWORK, Source.LOCALE)
+        val defaultViewTextGenerator: ((CPCountry) -> String) = { it.name }
+    }
+
+    sealed class InitialSelection {
+        object EmptySelection : InitialSelection()
+
+        class AutoDetectCountry(val autoDetectSources: List<Source> = defaultCountryDetectorSources) :
+                InitialSelection()
+
+        class SpecificCountry(val countryCode: String) : InitialSelection()
     }
 }

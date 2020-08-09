@@ -2,21 +2,13 @@ package com.hbb20.countrypicker.helper
 
 import android.content.res.TypedArray
 import com.hbb20.countrypicker.R.styleable.*
-import com.hbb20.countrypicker.config.CPInitialSelectionMode
 import com.hbb20.countrypicker.config.CPViewConfig
-import com.hbb20.countrypicker.config.CPViewConfig.Companion.defaultCPInitialSelectionMode
 
 internal fun readViewConfigFromAttrs(attrs: TypedArray?): CPViewConfig {
     return if (attrs == null) {
         CPViewConfig()
     } else {
-        val initialSelectionModeIndex =
-            attrs.getInt(CountryPickerView_cp_initialSelectionMode, -1)
-        val initialSelectionMode =
-            if (initialSelectionModeIndex == -1) defaultCPInitialSelectionMode
-            else CPInitialSelectionMode.values()[initialSelectionModeIndex]
-
-        val initialCountryAlpha2 = attrs.getString(CountryPickerView_cp_initialSpecificCountry)
+        val initialCountryAlphaCode = attrs.getString(CountryPickerView_cp_initialSpecificCountry)
 
         val autoDetectSourcesValue = attrs.getInt(CountryPickerView_cp_autoDetectSources, 123)
         val autoDetectSources =
@@ -30,6 +22,16 @@ internal fun readViewConfigFromAttrs(attrs: TypedArray?): CPViewConfig {
                     }
                 }
 
-        CPViewConfig(initialSelectionMode, initialCountryAlpha2, autoDetectSources)
+        val initialSelectionModeIndex =
+            attrs.getInt(CountryPickerView_cp_initialSelectionMode, -1)
+        val initialSelectionMode =
+            when (initialSelectionModeIndex) {
+                0 -> CPViewConfig.InitialSelection.EmptySelection
+                1 -> CPViewConfig.InitialSelection.AutoDetectCountry(autoDetectSources)
+                2 -> CPViewConfig.InitialSelection.SpecificCountry(initialCountryAlphaCode ?: "")
+                else -> CPViewConfig.defaultCPInitialSelectionMode
+            }
+
+        CPViewConfig(initialSelectionMode)
     }
 }
