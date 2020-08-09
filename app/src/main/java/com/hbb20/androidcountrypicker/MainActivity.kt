@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.hbb20.CountryPickerView
 import com.hbb20.androidcountrypicker.test.TestActivity
 import com.hbb20.androidcountrypicker.test.XMLValidator
+import com.hbb20.countrypicker.config.CPViewConfig
 import com.hbb20.countrypicker.view.CountryPickerViewHelper
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -26,7 +27,8 @@ class MainActivity : AppCompatActivity() {
     private fun setCustomView() {
         val container = findViewById<RelativeLayout>(R.id.rlCustomViewContainter)
         val textView = findViewById<TextView>(R.id.tvCustomViewInfo)
-        val viewHelper = CountryPickerViewHelper(this)
+        val viewHelper =
+            CountryPickerViewHelper(this, viewConfig = CPViewConfig(cpFlagProvider = null))
         viewHelper.attachViewComponents(container, textView)
     }
 

@@ -14,7 +14,7 @@ data class CPViewConfig(
     val initialSelectionMode: CPInitialSelectionMode = defaultCPInitialSelectionMode,
     val initialSpecificCountry: String? = defaultCPInitialCountryCode,
     val countryDetectSources: List<Source> = defaultCountryDetectorSources,
-    val cpFlagProvider: CPFlagProvider = DefaultEmojiFlagProvider()
+    val cpFlagProvider: CPFlagProvider? = DefaultEmojiFlagProvider()
 ) {
     companion object {
         val defaultCPInitialSelectionMode = CPInitialSelectionMode.Empty
