@@ -11,6 +11,7 @@ import androidx.lifecycle.MutableLiveData
 import com.hbb20.countrypicker.CPFlagImageProvider
 import com.hbb20.countrypicker.DefaultEmojiFlagProvider
 import com.hbb20.countrypicker.config.*
+import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
 import com.hbb20.countrypicker.dialog.CPDialogHelper
 import com.hbb20.countrypicker.helper.CPCountryDetector
 import com.hbb20.countrypicker.models.CPCountry
@@ -20,18 +21,18 @@ import java.util.*
 
 class CountryPickerViewHelper(
     val context: Context,
-    val dataStore: CPDataStore,
-    val viewConfig: CPViewConfig,
-    val dialogConfig: CPDialogConfig,
-    val listConfig: CPListConfig,
-    val rowConfig: CPRowConfig,
+    val dataStore: CPDataStore = CPDataStoreGenerator.generate(context),
+    val viewConfig: CPViewConfig = CPViewConfig(),
+    val dialogConfig: CPDialogConfig = CPDialogConfig(),
+    val listConfig: CPListConfig = CPListConfig(),
+    val rowConfig: CPRowConfig = CPRowConfig(cpFlagProvider = viewConfig.cpFlagProvider),
     val isInEditMode: Boolean = false
 ) {
     private val _selectedCountry = MutableLiveData<CPCountry>()
-
     val selectedCountry: LiveData<CPCountry?> = _selectedCountry
     val countryDetector = CPCountryDetector(context)
     var attachedViewComponentGroup: ViewComponentGroup? = null
+    var onCountryUpdateListener: ((CPCountry?) -> Unit)? = null
 
     init {
         setInitialCountry(
@@ -39,10 +40,6 @@ class CountryPickerViewHelper(
             viewConfig.initialSpecificCountry,
             viewConfig.countryDetectSources
         )
-
-        selectedCountry.observeForever { selectedCountry: CPCountry? ->
-            refreshDataOnView()
-        }
     }
 
     fun setInitialCountry(
@@ -60,15 +57,15 @@ class CountryPickerViewHelper(
     /**
      * CountryCode can be alpha2 or alpha3 code
      */
-    private fun setCountryForAlphaCode(countryCode: String?) {
+    fun setCountryForAlphaCode(countryCode: String?) {
         val country = dataStore.countryList.firstOrNull {
             it.alpha2.equals(countryCode, true) || it.alpha3.equals(countryCode, true)
         }
-        _selectedCountry.postValue(country)
+        setCountry(country)
     }
 
-    private fun clearSelection() {
-        _selectedCountry.postValue(null)
+    fun clearSelection() {
+        setCountry(null)
     }
 
     fun setAutoDetectedCountry(countryDetectSources: List<CPCountryDetector.Source> = viewConfig.countryDetectSources) {
@@ -79,12 +76,12 @@ class CountryPickerViewHelper(
                 Locale.ROOT
             )
         }
-        _selectedCountry.postValue(detectedCountry)
+        setCountry(detectedCountry)
     }
 
     fun launchDialog() {
         val dialogHelper = CPDialogHelper(dataStore, dialogConfig, listConfig, rowConfig) {
-            _selectedCountry.postValue(it)
+            setCountry(it)
         }
         dialogHelper.createDialog(context).show()
     }
@@ -95,12 +92,19 @@ class CountryPickerViewHelper(
         tvEmojiFlag: TextView? = null,
         imgFlag: ImageView? = null
     ) {
-        container.setOnClickListener { launchDialog() }
-        this.attachedViewComponentGroup
-        refreshDataOnView()
+        this.attachedViewComponentGroup =
+            ViewComponentGroup(container, tvCountryInfo, tvEmojiFlag, imgFlag)
+        attachedViewComponentGroup?.container?.setOnClickListener { launchDialog() }
+        refreshView()
     }
 
-    fun refreshDataOnView() {
+    fun setCountry(cpCountry: CPCountry?) {
+        _selectedCountry.value = cpCountry
+        refreshView()
+        onCountryUpdateListener?.invoke(cpCountry)
+    }
+
+    fun refreshView() {
         val selectedCountry = _selectedCountry.value
         attachedViewComponentGroup?.apply {
             // text
@@ -133,7 +137,6 @@ class CountryPickerViewHelper(
             }
         }
     }
-
 
     class ViewComponentGroup(
         val container: ViewGroup,
