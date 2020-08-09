@@ -23,12 +23,12 @@ class CountryPickerView @JvmOverloads constructor(
     val tvCountryInfo: TextView by lazy { findViewById<TextView>(R.id.tvCountryInfo) }
     val tvEmojiFlag: TextView by lazy { findViewById<TextView>(R.id.tvEmojiFlag) }
     val imgFlag: ImageView by lazy { findViewById<ImageView>(R.id.imgFlag) }
-    var helper: CPViewHelper
+    var cpViewHelper: CPViewHelper
 
     init {
         applyLayout(attrs)
-        helper = prepareHelperFromAttr(attrs)
-        helper.attachViewComponents(this, tvCountryInfo, tvEmojiFlag, imgFlag)
+        cpViewHelper = prepareHelperFromAttr(attrs)
+        cpViewHelper.attachViewComponents(this, tvCountryInfo, tvEmojiFlag, imgFlag)
     }
 
     private fun prepareHelperFromAttr(attrs: AttributeSet?): CPViewHelper {

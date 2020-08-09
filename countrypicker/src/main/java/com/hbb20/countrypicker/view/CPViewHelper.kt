@@ -31,11 +31,15 @@ class CPViewHelper(
     val cpRowConfig: CPRowConfig = CPRowConfig(cpFlagProvider = cpViewConfig.cpFlagProvider),
     val isInEditMode: Boolean = false
 ) {
-    private val _selectedCountry = MutableLiveData<CPCountry>()
+    private val _selectedCountry = MutableLiveData<CPCountry?>().apply { value = null }
     val selectedCountry: LiveData<CPCountry?> = _selectedCountry
     val countryDetector = CPCountryDetector(context)
     private var viewComponentGroup: ViewComponentGroup? = null
     var onCountryChangedListener: ((CPCountry?) -> Unit)? = null
+        set(value) {
+            field = value
+            field?.invoke(selectedCountry.value)
+        }
 
     init {
         setInitialCountry(cpViewConfig.initialSelection)

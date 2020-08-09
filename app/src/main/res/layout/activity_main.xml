@@ -112,16 +112,17 @@
                 android:text="Load in (Epoxy) Recycler"
                 android:textStyle="bold" />
 
-            <RelativeLayout
-                android:id="@+id/rlCustomViewContainter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/tvCustomViewInfo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:onClick="openCpViewDemo"
+                android:paddingVertical="16dp"
+                android:paddingStart="8dp"
+                android:paddingLeft="8dp"
+                android:text="CP View Demo"
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
 

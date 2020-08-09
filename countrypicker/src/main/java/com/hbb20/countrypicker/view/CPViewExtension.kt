@@ -23,7 +23,7 @@ fun Context.prepareCustomCountryPickerView(
     tvSelectedCountryEmojiFlag: TextView? = null,
     imgSelectedCountryFlag: ImageView? = null,
     initialSelection: CPViewConfig.InitialSelection = CPViewConfig.defaultCPInitialSelectionMode,
-    viewTextGenerator: ((CPCountry) -> String) = CPViewConfig.defaultViewTextGenerator,
+    selectedCountryInfoTextGenerator: ((CPCountry) -> String) = CPViewConfig.defaultSelectedCountryInfoTextGenerator,
     cpFlagProvider: CPFlagProvider? = CPRowConfig.defaultFlagProvider,
     primaryTextGenerator: ((CPCountry) -> String) = CPRowConfig.defaultPrimaryTextGenerator,
     secondaryTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultSecondaryTextGenerator,
@@ -68,7 +68,7 @@ fun Context.prepareCustomCountryPickerView(
 
     val cpViewConfig = CPViewConfig(
         initialSelection = initialSelection,
-        viewTextGenerator = viewTextGenerator,
+        viewTextGenerator = selectedCountryInfoTextGenerator,
         cpFlagProvider = cpFlagProvider
     )
 
