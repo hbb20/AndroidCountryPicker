@@ -113,6 +113,8 @@ class CPViewHelper(
                 if (selectedCountry != null) cpViewConfig.viewTextGenerator(selectedCountry) else cpDataStore.messageGroup.selectionPlaceholderText
 
             val flagProvider = cpViewConfig.cpFlagProvider
+            imgFlag?.isVisible = flagProvider is CPFlagImageProvider
+            tvEmojiFlag?.isVisible = flagProvider is DefaultEmojiFlagProvider
             if (flagProvider is DefaultEmojiFlagProvider) {
                 val flagEmoji = when {
                     flagProvider.useEmojiCompat -> EmojiCompat.get()

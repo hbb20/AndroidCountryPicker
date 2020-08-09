@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import com.hbb20.CountryPickerView
 import com.hbb20.androidcountrypicker.test.TestActivity
 import com.hbb20.androidcountrypicker.test.XMLValidator
+import com.hbb20.countrypicker.CPFlagImageProvider
 import com.hbb20.countrypicker.config.CPViewConfig
 import com.hbb20.countrypicker.models.CPCountry
 import com.hbb20.countrypicker.view.CPViewHelper
@@ -64,7 +65,13 @@ class MainActivity : AppCompatActivity() {
         countryPicker.helper.cpViewConfig.viewTextGenerator = { cpCountry: CPCountry ->
             cpCountry.alpha2
         }
-        countryPicker.helper.refreshView()
+        countryPicker.helper.cpViewConfig.cpFlagProvider = object : CPFlagImageProvider() {
+            override fun getFlag(alpha2Code: String): Int {
+                return R.drawable.ic_flag_black
+            }
+
+        }
+        //        countryPicker.helper.refreshView()
     }
 
     private fun refreshView() {

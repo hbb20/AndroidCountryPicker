@@ -10,8 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OpenDialogDirectlyActivity"></activity>
-        <activity android:name=".CustomRecyclerViewActivity"></activity>
+        <activity android:name=".CountryPickerViewDemoActivity"></activity>
+        <activity android:name=".OpenDialogDirectlyActivity" />
+        <activity android:name=".CustomRecyclerViewActivity" />
         <activity android:name=".test.TestActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

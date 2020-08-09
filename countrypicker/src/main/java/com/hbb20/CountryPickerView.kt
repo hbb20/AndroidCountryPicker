@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.hbb20.countrypicker.R
@@ -21,12 +22,13 @@ class CountryPickerView @JvmOverloads constructor(
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
     val tvCountryInfo: TextView by lazy { findViewById<TextView>(R.id.tvCountryInfo) }
     val tvEmojiFlag: TextView by lazy { findViewById<TextView>(R.id.tvEmojiFlag) }
+    val imgFlag: ImageView by lazy { findViewById<ImageView>(R.id.imgFlag) }
     var helper: CPViewHelper
 
     init {
         applyLayout(attrs)
         helper = prepareHelperFromAttr(attrs)
-        helper.attachViewComponents(this, tvCountryInfo, tvEmojiFlag)
+        helper.attachViewComponents(this, tvCountryInfo, tvEmojiFlag, imgFlag)
     }
 
     private fun prepareHelperFromAttr(attrs: AttributeSet?): CPViewHelper {
