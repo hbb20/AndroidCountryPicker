@@ -5,6 +5,7 @@ import com.hbb20.countrypicker.R.styleable.*
 import com.hbb20.countrypicker.config.CPDialogConfig
 import com.hbb20.countrypicker.config.CPDialogConfig.Companion.defaultCPDialogAllowClearSelection
 import com.hbb20.countrypicker.config.CPDialogConfig.Companion.defaultCPDialogAllowSearch
+import com.hbb20.countrypicker.config.CPDialogConfig.Companion.defaultCPDialogDefaultShowTitle
 import com.hbb20.countrypicker.config.CPDialogConfig.Companion.defaultCPDialogShowFullScreen
 
 internal fun readDialogConfigFromAttrs(attrs: TypedArray?): CPDialogConfig {
@@ -23,7 +24,7 @@ internal fun readDialogConfigFromAttrs(attrs: TypedArray?): CPDialogConfig {
         val showTitle =
             attrs.getBoolean(
                 CountryPickerView_cpDialog_showTitle,
-                defaultCPDialogAllowClearSelection
+                defaultCPDialogDefaultShowTitle
             )
 
         val showFullScreen =

@@ -23,6 +23,7 @@ class CountryPickerView @JvmOverloads constructor(
     val tvCountryInfo: TextView by lazy { findViewById<TextView>(R.id.tvCountryInfo) }
     val tvEmojiFlag: TextView by lazy { findViewById<TextView>(R.id.tvEmojiFlag) }
     val imgFlag: ImageView by lazy { findViewById<ImageView>(R.id.imgFlag) }
+    val imgDropDownIcon: ImageView by lazy { findViewById<ImageView>(R.id.icDropdown) }
     var cpViewHelper: CPViewHelper
 
     init {

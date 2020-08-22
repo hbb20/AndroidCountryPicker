@@ -2,7 +2,6 @@ package com.hbb20.androidcountrypicker
 
 import android.os.Bundle
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.LifecycleOwner
@@ -16,11 +15,12 @@ class CountryPickerViewDemoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_country_picker_view_demo)
         setupCountryPickerView()
-        setupCustomCountryPickerViewCallback()
-        //        setupCustomCountryPickerViewLivedata()
+        //        setupCustomCountryPickerViewCallback()
+        setupCustomCountryPickerViewLivedata()
     }
 
     private fun setupCustomCountryPickerViewCallback() {
+        // bind views
         val customCPContainer =
             findViewById<ConstraintLayout>(R.id.customCountryPickerViewContainer)
         val customCPSelectedCountryTextView = findViewById<TextView>(R.id.tvSelectedCountry)
@@ -32,13 +32,14 @@ class CountryPickerViewDemoActivity : AppCompatActivity() {
             tvSelectedCountryEmojiFlag = customCPEmojiTextView
         ) { selectedCountry: CPCountry? ->
             // listen to change through callback
-            Toast.makeText(this, "Country Selected: ${selectedCountry?.name}", Toast.LENGTH_SHORT)
-                .show()
+            // your code to handle selected country
         }
     }
 
     private fun setupCustomCountryPickerViewLivedata() {
         val lifecycleOwner: LifecycleOwner = this
+
+        // bind views
         val customCPContainer =
             findViewById<ConstraintLayout>(R.id.customCountryPickerViewContainer)
         val customCPSelectedCountryTextView = findViewById<TextView>(R.id.tvSelectedCountry)
@@ -55,11 +56,7 @@ class CountryPickerViewDemoActivity : AppCompatActivity() {
             lifecycleOwner,
             Observer { selectedCountry: CPCountry? ->
                 // observe live data
-                Toast.makeText(
-                    this,
-                    "Country Selected: ${selectedCountry?.name}",
-                    Toast.LENGTH_SHORT
-                ).show()
+                // your code to handle selected country
             })
     }
 
@@ -83,4 +80,5 @@ class CountryPickerViewDemoActivity : AppCompatActivity() {
         // Modify CPRowConfig if you need. Access cpRowConfig through `countryPicker.cpViewHelper`
         // countryPicker.cpViewHelper.cpRowConfig.
     }
+
 }
