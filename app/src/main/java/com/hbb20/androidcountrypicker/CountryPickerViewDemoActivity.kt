@@ -58,6 +58,23 @@ class CountryPickerViewDemoActivity : AppCompatActivity() {
                 // observe live data
                 // your code to handle selected country
             })
+
+
+        // Modify CPViewConfig if you need. Access cpViewConfig through `cpViewHelper`
+        cpViewHelper.cpViewConfig.viewTextGenerator = { cpCountry: CPCountry ->
+            "${cpCountry.name} (${cpCountry.alpha2})"
+        }
+        // make sure to refresh view once view configuration is changed
+        cpViewHelper.refreshView()
+
+        // Modify CPDialogConfig if you need. Access cpDialogConfig through `countryPicker.cpViewHelper`
+        // cpViewHelper.cpDialogConfig.
+
+        // Modify CPListConfig if you need. Access cpListConfig through `countryPicker.cpViewHelper`
+        // cpViewHelper.cpListConfig.
+
+        // Modify CPRowConfig if you need. Access cpRowConfig through `countryPicker.cpViewHelper`
+        // cpViewHelper.cpRowConfig.
     }
 
 
