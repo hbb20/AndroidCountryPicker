@@ -4,3 +4,6 @@
 
 <img height=500 src="https://user-images.githubusercontent.com/4918760/90301130-32916100-de5b-11ea-8238-3f1e03ef325c.png"/>
 
+Credits:
+- [IP2Location](https://www.ip2location.com/) for country data
+
