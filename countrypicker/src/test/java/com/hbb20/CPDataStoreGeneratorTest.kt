@@ -3,18 +3,16 @@ package com.hbb20
 import android.content.Context
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
 import com.hbb20.countrypicker.datagenerator.CountryFileReading
-import com.nhaarman.mockitokotlin2.any
-import com.nhaarman.mockitokotlin2.mock
-import com.nhaarman.mockitokotlin2.verify
-import com.nhaarman.mockitokotlin2.whenever
+import io.mockk.every
+import io.mockk.mockk
+import io.mockk.verify
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
-import org.mockito.Mockito
 
 class CPDataStoreGeneratorTest {
 
-    private val context = mock<Context> {}
+    private val context = mockk<Context> {}
 
 
     @Test
@@ -283,23 +281,21 @@ class CPDataStoreGeneratorTest {
 
     @Test
     fun `force read file using useCache = false`() {
-        val fileReader = mock<CountryFileReading> {}
+        val fileReader = mockk<CountryFileReading> {}
         CPDataStoreGenerator.invalidateCache()
-        whenever(fileReader.readMasterDataFromFiles(any())).thenReturn(
-            getSampleDataStore()
-        )
+        every { fileReader.readMasterDataFromFiles(any()) } returns getSampleDataStore()
         val dataStore =
             CPDataStoreGenerator.generate(
                 context,
                 countryFileReader = fileReader
             )
-        verify(fileReader, Mockito.times(1)).readMasterDataFromFiles(any())
+        verify(exactly = 1) { fileReader.readMasterDataFromFiles(any()) }
         val dataStore2 =
             CPDataStoreGenerator.generate(
                 context = context,
                 countryFileReader = fileReader,
                 useCache = false
             )
-        verify(fileReader, Mockito.times(2)).readMasterDataFromFiles(any())
+        verify(exactly = 2) { fileReader.readMasterDataFromFiles(any()) }
     }
 }
