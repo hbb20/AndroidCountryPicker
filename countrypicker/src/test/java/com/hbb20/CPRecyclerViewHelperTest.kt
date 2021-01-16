@@ -5,14 +5,14 @@ import com.hbb20.countrypicker.config.CPListConfig
 import com.hbb20.countrypicker.config.CPRowConfig
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
 import com.hbb20.countrypicker.recyclerview.CPRecyclerViewHelper
-import com.nhaarman.mockitokotlin2.mock
+import io.mockk.mockk
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class CPRecyclerViewHelperTest {
 
-    private val context = mock<Context> {}
+    private val context = mockk<Context> {}
     private val dataStore =
         CPDataStoreGenerator.generate(context, countryFileReader = MockCountryFileReader)
 
@@ -22,7 +22,7 @@ class CPRecyclerViewHelperTest {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
             cpListConfig = CPListConfig(preferredCountryCodes = "IN,AU"),
-            onCountryClickListener = mock()
+            onCountryClickListener = mockk()
         )
         assertEquals("IN", helper.allPreferredCountries[0].alpha2)
         assertEquals("AU", helper.allPreferredCountries[1].alpha2)
@@ -33,7 +33,7 @@ class CPRecyclerViewHelperTest {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
             cpListConfig = CPListConfig(preferredCountryCodes = "IN ,AU"),
-            onCountryClickListener = mock()
+            onCountryClickListener = mockk()
         )
         assertEquals("IN", helper.allPreferredCountries[0].alpha2)
         assertEquals("AU", helper.allPreferredCountries[1].alpha2)
@@ -44,7 +44,7 @@ class CPRecyclerViewHelperTest {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
             cpListConfig = CPListConfig(preferredCountryCodes = "IND,AUS"),
-            onCountryClickListener = mock()
+            onCountryClickListener = mockk()
         )
         assertEquals("IN", helper.allPreferredCountries[0].alpha2)
         assertEquals("AU", helper.allPreferredCountries[1].alpha2)
@@ -55,7 +55,7 @@ class CPRecyclerViewHelperTest {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
             cpListConfig = CPListConfig(preferredCountryCodes = "IN,AUS"),
-            onCountryClickListener = mock()
+            onCountryClickListener = mockk()
         )
         assertEquals("IN", helper.allPreferredCountries[0].alpha2)
         assertEquals("AU", helper.allPreferredCountries[1].alpha2)
@@ -66,7 +66,7 @@ class CPRecyclerViewHelperTest {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
             cpListConfig = CPListConfig(preferredCountryCodes = "XX,IN,YYY,21dksaj,AUS"),
-            onCountryClickListener = mock()
+            onCountryClickListener = mockk()
         )
         assertEquals("IN", helper.allPreferredCountries[0].alpha2)
         assertEquals("AU", helper.allPreferredCountries[1].alpha2)
@@ -77,7 +77,7 @@ class CPRecyclerViewHelperTest {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
             cpListConfig = CPListConfig(preferredCountryCodes = "IN,AUS,IN"),
-            onCountryClickListener = mock()
+            onCountryClickListener = mockk()
         )
 
         assertEquals("IN", helper.allPreferredCountries[0].alpha2)
@@ -90,7 +90,7 @@ class CPRecyclerViewHelperTest {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
             cpListConfig = CPListConfig(preferredCountryCodes = "IN,AUS,IND"),
-            onCountryClickListener = mock()
+            onCountryClickListener = mockk()
         )
 
         assertEquals("IN", helper.allPreferredCountries[0].alpha2)
@@ -102,7 +102,7 @@ class CPRecyclerViewHelperTest {
     fun `filter for name`() {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
-            onCountryClickListener = mock()
+            onCountryClickListener = mockk()
         )
         helper.updateDataForQuery("United States")
 
@@ -114,7 +114,7 @@ class CPRecyclerViewHelperTest {
     fun `filter for part of name`() {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
-            onCountryClickListener = mock()
+            onCountryClickListener = mockk()
         )
         helper.updateDataForQuery("United")
 
@@ -126,7 +126,7 @@ class CPRecyclerViewHelperTest {
     fun `filter for english name`() {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
-            onCountryClickListener = mock()
+            onCountryClickListener = mockk()
         )
         helper.updateDataForQuery("United States")
 
@@ -138,7 +138,7 @@ class CPRecyclerViewHelperTest {
     fun `filter for part of english name`() {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
-            onCountryClickListener = mock()
+            onCountryClickListener = mockk()
         )
         helper.updateDataForQuery("nited")
 
@@ -151,7 +151,7 @@ class CPRecyclerViewHelperTest {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
             cpRowConfig = CPRowConfig(highlightedTextGenerator = { it.alpha3 }),
-            onCountryClickListener = mock()
+            onCountryClickListener = mockk()
         )
         helper.updateDataForQuery("LKA")
         assertEquals("LK", helper.controllerData.allCountries[0].alpha2)
@@ -163,7 +163,7 @@ class CPRecyclerViewHelperTest {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
             cpRowConfig = CPRowConfig(highlightedTextGenerator = { it.alpha2 }),
-            onCountryClickListener = mock()
+            onCountryClickListener = mockk()
         )
         helper.updateDataForQuery("LK")
         assertEquals("LK", helper.controllerData.allCountries[0].alpha2)
@@ -175,7 +175,7 @@ class CPRecyclerViewHelperTest {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
             cpRowConfig = CPRowConfig(highlightedTextGenerator = { it.phoneCode.toString() }),
-            onCountryClickListener = mock()
+            onCountryClickListener = mockk()
         )
         helper.updateDataForQuery("94")
         assertEquals("LK", helper.controllerData.allCountries[0].alpha2)
@@ -187,7 +187,7 @@ class CPRecyclerViewHelperTest {
         val helper = CPRecyclerViewHelper(
             cpDataStore = dataStore,
             cpRowConfig = CPRowConfig(highlightedTextGenerator = { it.phoneCode.toString() }),
-            onCountryClickListener = mock()
+            onCountryClickListener = mockk()
         )
         helper.updateDataForQuery("9")
 
