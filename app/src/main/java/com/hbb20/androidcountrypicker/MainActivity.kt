@@ -5,17 +5,16 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.hbb20.CountryPickerView
-import com.hbb20.androidcountrypicker.test.TestActivity
-import com.hbb20.androidcountrypicker.test.XMLValidator
+import com.hbb20.androidcountrypicker.databinding.ActivityMainBinding
 import com.hbb20.countrypicker.CPFlagImageProvider
 import com.hbb20.countrypicker.models.CPCountry
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
+    lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         //        EmojiCompat.init(BundledEmojiCompatConfig(this))
         refreshView()
         configureCPView()
@@ -36,17 +35,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun refreshView() {
-        if (XMLValidator().hasAnyCriticalIssue(this)) {
-            criticalErrorGroup.visibility = View.VISIBLE
-            contentView.visibility = View.GONE
-        } else {
-            criticalErrorGroup.visibility = View.GONE
-            contentView.visibility = View.VISIBLE
-        }
-    }
 
-    fun launchTestActivity(view: View? = null) {
-        startActivity(Intent(this, TestActivity::class.java))
     }
 
     fun openDialogDirectly(view: View) {

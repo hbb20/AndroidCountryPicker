@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+    <a_message_list>
+        <!--"No matching result found"-->
+        <dialog_no_result_ack_message translation="પરિણામ મળ્યું નથી" verified="N" />
+        <!--"Search..."-->
+        <dialog_search_hint_message translation="શોધ કરો ..." verified="N" />
+        <!--"Select a country"-->
+        <dialog_title translation="દેશ પસંદ કરો" verified="N" />
+        <!--"Country"-->
+        <empty_selection_message translation="દેશ" verified="N" />
+    </a_message_list>
+    <countries>
+        <!--Andorra-->
+        <country a2="AD" translation="ઍંડોરા" verified="N" />
+        <!--United Arab Emirates (UAE)-->
+        <country a2="AE" translation="સંયુક્ત આરબ અમીરાત" verified="N" />
+        <!--Afghanistan-->
+        <country a2="AF" translation="અફઘાનિસ્તાન" verified="N" />
+        <!--Antigua and Barbuda-->
+        <country a2="AG" translation="એન્ટિગુઆ અને બાર્બુડા" verified="N" />
+        <!--Anguilla-->
+        <country a2="AI" translation="એંગુલા" verified="N" />
+        <!--Albania-->
+        <country a2="AL" translation="અલ્બેનિયા" verified="N" />
+        <!--Armenia-->
+        <country a2="AM" translation="આર્મેનિયા" verified="N" />
+        <!--Angola-->
+        <country a2="AO" translation="અંગોલા" verified="N" />
+        <!--Antarctica-->
+        <country a2="AQ" translation="એન્ટાર્કટિકા" verified="N" />
+        <!--Argentina-->
+        <country a2="AR" translation="અર્જેન્ટીના" verified="N" />
+        <!--American Samoa-->
+        <country a2="AS" translation="અમેરિકન સમોઆ" verified="N" />
+        <!--Austria-->
+        <country a2="AT" translation="ઓસ્ટ્રિયા" verified="N" />
+        <!--Australia-->
+        <country a2="AU" translation="ઓસ્ટ્રેલિયા" verified="N" />
+        <!--Aruba-->
+        <country a2="AW" translation="અરુબા" verified="N" />
+        <!--Åland Islands-->
+        <country a2="AX" translation="ઍલૅન્ડ આઇલેન્ડ્સ" verified="N" />
+        <!--Azerbaijan-->
+        <country a2="AZ" translation="અઝરબૈજાન" verified="N" />
+        <!--Bosnia And Herzegovina-->
+        <country a2="BA" translation="બોસ્નિયા અને હર્ઝેગોવિના" verified="N" />
+        <!--Barbados-->
+        <country a2="BB" translation="બાર્બાડોસ" verified="N" />
+        <!--Bangladesh-->
+        <country a2="BD" translation="બાંગ્લાદેશ" verified="N" />
+        <!--Belgium-->
+        <country a2="BE" translation="બેલ્જીયમ" verified="N" />
+        <!--Burkina Faso-->
+        <country a2="BF" translation="બુર્કિના ફાસો" verified="N" />
+        <!--Bulgaria-->
+        <country a2="BG" translation="બલ્ગેરિયા" verified="N" />
+        <!--Bahrain-->
+        <country a2="BH" translation="બેહરીન" verified="N" />
+        <!--Burundi-->
+        <country a2="BI" translation="બરુન્ડી" verified="N" />
+        <!--Benin-->
+        <country a2="BJ" translation="બેનિન" verified="N" />
+        <!--Saint Barthélemy-->
+        <country a2="BL" translation="સેન્ટ બાર્થેલેમી" verified="N" />
+        <!--Bermuda-->
+        <country a2="BM" translation="બર્મુડા" verified="N" />
+        <!--Brunei Darussalam-->
+        <country a2="BN" translation="બ્રુનેઇ દારુસલામ" verified="N" />
+        <!--Bolivia, Plurinational State Of-->
+        <country a2="BO" translation="બોલિવિયા, પ્લુરિનેશનલ સ્ટેટ" verified="N" />
+        <!--Brazil-->
+        <country a2="BR" translation="બ્રાઝીલ" verified="N" />
+        <!--Bahamas-->
+        <country a2="BS" translation="બહામાસ" verified="N" />
+        <!--Bhutan-->
+        <country a2="BT" translation="ભુતાન" verified="N" />
+        <!--Botswana-->
+        <country a2="BW" translation="બોત્સ્વાના" verified="N" />
+        <!--Belarus-->
+        <country a2="BY" translation="બેલારુસ" verified="N" />
+        <!--Belize-->
+        <country a2="BZ" translation="બેલીઝ" verified="N" />
+        <!--Canada-->
+        <country a2="CA" translation="કેનેડા" verified="N" />
+        <!--Cocos (keeling) Islands-->
+        <country a2="CC" translation="કોકોસ (કીલીંગ) આઇલેન્ડ" verified="N" />
+        <!--Congo, The Democratic Republic Of The-->
+        <country a2="CD" translation="કોંગો, ડેમોક્રેટિક રિપબ્લિક ઓફ" verified="N" />
+        <!--Central African Republic-->
+        <country a2="CF" translation="સેન્ટ્રલ આફ્રિકન રિપબ્લિક" verified="N" />
+        <!--Congo-->
+        <country a2="CG" translation="કોંગો" verified="N" />
+        <!--Switzerland-->
+        <country a2="CH" translation="સ્વિટ્ઝર્લૅન્ડ" verified="N" />
+        <!--Côte D'ivoire-->
+        <country a2="CI" translation="કોટ ડી સાથેની આઈવોર" verified="N" />
+        <!--Cook Islands-->
+        <country a2="CK" translation="કુક આઇલેન્ડ" verified="N" />
+        <!--Chile-->
+        <country a2="CL" translation="ચીલી" verified="N" />
+        <!--Cameroon-->
+        <country a2="CM" translation="કૅમરૂન" verified="N" />
+        <!--China-->
+        <country a2="CN" translation="ચાઇના" verified="N" />
+        <!--Colombia-->
+        <country a2="CO" translation="કોલંબિયા" verified="N" />
+        <!--Costa Rica-->
+        <country a2="CR" translation="કોસ્ટા રિકા" verified="N" />
+        <!--Cuba-->
+        <country a2="CU" translation="ક્યુબા" verified="N" />
+        <!--Cape Verde-->
+        <country a2="CV" translation="કેપ વર્દ" verified="N" />
+        <!--Curaçao-->
+        <country a2="CW" translation="કુરાકો" verified="N" />
+        <!--Christmas Island-->
+        <country a2="CX" translation="ક્રિસ્મસ આઇલેન્ડ" verified="N" />
+        <!--Cyprus-->
+        <country a2="CY" translation="સાયપ્રસ" verified="N" />
+        <!--Czech Republic-->
+        <country a2="CZ" translation="ઝેક રીપબ્લીક" verified="N" />
+        <!--Germany-->
+        <country a2="DE" translation="જર્મની" verified="N" />
+        <!--Djibouti-->
+        <country a2="DJ" translation="જીબુટી" verified="N" />
+        <!--Denmark-->
+        <country a2="DK" translation="ડેનમાર્ક" verified="N" />
+        <!--Dominica-->
+        <country a2="DM" translation="ડોમિનિકા" verified="N" />
+        <!--Dominican Republic-->
+        <country a2="DO" translation="ડોમિનિકન રિપબ્લિક" verified="N" />
+        <!--Algeria-->
+        <country a2="DZ" translation="અલજીર્યા" verified="N" />
+        <!--Ecuador-->
+        <country a2="EC" translation="એક્વાડોર" verified="N" />
+        <!--Estonia-->
+        <country a2="EE" translation="એસ્ટોનિયા" verified="N" />
+        <!--Egypt-->
+        <country a2="EG" translation="ઇજીપ્ટ" verified="N" />
+        <!--Eritrea-->
+        <country a2="ER" translation="એરિટ્રિયા" verified="N" />
+        <!--Spain-->
+        <country a2="ES" translation="સ્પેઇન" verified="N" />
+        <!--Ethiopia-->
+        <country a2="ET" translation="ઇથોપિયા" verified="N" />
+        <!--Finland-->
+        <country a2="FI" translation="ફિનલેન્ડ" verified="N" />
+        <!--Fiji-->
+        <country a2="FJ" translation="ફીજી" verified="N" />
+        <!--Falkland Islands (malvinas)-->
+        <country a2="FK" translation="ફોકલેન્ડ આઇલેન્ડ (માલવિનસ)" verified="N" />
+        <!--Micronesia, Federated States Of-->
+        <country a2="FM" translation="માઇક્રોનેશિયા, ઓફ ફેડરેટેડ સ્ટેટ્સ" verified="N" />
+        <!--Faroe Islands-->
+        <country a2="FO" translation="ફેરો આઇલેન્ડ" verified="N" />
+        <!--France-->
+        <country a2="FR" translation="ફ્રાન્સ" verified="N" />
+        <!--Gabon-->
+        <country a2="GA" translation="ગાબોન" verified="N" />
+        <!--United Kingdom-->
+        <country a2="GB" translation="યુનાઇટેડ કિંગડમ" verified="N" />
+        <!--Grenada-->
+        <country a2="GD" translation="ગ્રેનાડા" verified="N" />
+        <!--Georgia-->
+        <country a2="GE" translation="જ્યોર્જિયા" verified="N" />
+        <!--French Guyana-->
+        <country a2="GF" translation="ફ્રેન્ચ ગુયાના" verified="N" />
+        <!--Guernsey-->
+        <country a2="GG" translation="ગ્યુર્નસી" verified="N" />
+        <!--Ghana-->
+        <country a2="GH" translation="ઘાના" verified="N" />
+        <!--Gibraltar-->
+        <country a2="GI" translation="જીબ્રાલ્ટર" verified="N" />
+        <!--Greenland-->
+        <country a2="GL" translation="ગ્રીનલેન્ડ" verified="N" />
+        <!--Gambia-->
+        <country a2="GM" translation="ગેમ્બિયા" verified="N" />
+        <!--Guinea-->
+        <country a2="GN" translation="ગિની" verified="N" />
+        <!--Guadeloupe-->
+        <country a2="GP" translation="ગ્વાડેલોપ" verified="N" />
+        <!--Equatorial Guinea-->
+        <country a2="GQ" translation="ઈક્વેટોરિયલ ગિની" verified="N" />
+        <!--Greece-->
+        <country a2="GR" translation="ગ્રીસ" verified="N" />
+        <!--Guatemala-->
+        <country a2="GT" translation="ગ્વાટેમાલા" verified="N" />
+        <!--Guam-->
+        <country a2="GU" translation="ગુઆમ" verified="N" />
+        <!--Guinea-bissau-->
+        <country a2="GW" translation="ગિની-બિસ્સાઉ" verified="N" />
+        <!--Guyana-->
+        <country a2="GY" translation="ગયાના" verified="N" />
+        <!--Hong Kong-->
+        <country a2="HK" translation="હોંગ કોંગ" verified="N" />
+        <!--Honduras-->
+        <country a2="HN" translation="હોન્ડુરાસ" verified="N" />
+        <!--Croatia-->
+        <country a2="HR" translation="ક્રોએશિયા" verified="N" />
+        <!--Haiti-->
+        <country a2="HT" translation="હૈતી" verified="N" />
+        <!--Hungary-->
+        <country a2="HU" translation="હંગેરી" verified="N" />
+        <!--Indonesia-->
+        <country a2="ID" translation="ઇન્ડોનેશિયા" verified="N" />
+        <!--Ireland-->
+        <country a2="IE" translation="આયર્લેન્ડ" verified="N" />
+        <!--Israel-->
+        <country a2="IL" translation="ઇઝરાયેલ" verified="N" />
+        <!--Isle Of Man-->
+        <country a2="IM" translation="આઇલ ઓફ માં" verified="N" />
+        <!--India-->
+        <country a2="IN" translation="ભારત" verified="N" />
+        <!--British Indian Ocean Territory-->
+        <country a2="IO" translation="બ્રિટીશ હિંદ મહાસાગર પ્રદેશ" verified="N" />
+        <!--Iraq-->
+        <country a2="IQ" translation="ઇરાક" verified="N" />
+        <!--Iran, Islamic Republic Of-->
+        <country a2="IR" translation="ઈરાન, ઇસ્લામિક રિપબ્લિક" verified="N" />
+        <!--Iceland-->
+        <country a2="IS" translation="આઇસલેન્ડ" verified="N" />
+        <!--Italy-->
+        <country a2="IT" translation="ઇટાલી" verified="N" />
+        <!--Jersey-->
+        <country a2="JE" translation="જર્સી" verified="N" />
+        <!--Jamaica-->
+        <country a2="JM" translation="જમૈકા" verified="N" />
+        <!--Jordan-->
+        <country a2="JO" translation="જોર્ડન" verified="N" />
+        <!--Japan-->
+        <country a2="JP" translation="જાપાન" verified="N" />
+        <!--Kenya-->
+        <country a2="KE" translation="કેન્યા" verified="N" />
+        <!--Kyrgyzstan-->
+        <country a2="KG" translation="કીર્ઘીસ્તાન" verified="N" />
+        <!--Cambodia-->
+        <country a2="KH" translation="કંબોડિયા" verified="N" />
+        <!--Kiribati-->
+        <country a2="KI" translation="કિરીબાટી" verified="N" />
+        <!--Comoros-->
+        <country a2="KM" translation="કોમોરોસ" verified="N" />
+        <!--Saint Kitts and Nevis-->
+        <country a2="KN" translation="સેન્ટ કિટ્સ અને નેવિસ" verified="N" />
+        <!--North Korea-->
+        <country a2="KP" translation="કોરિયા, ડેમોક્રેટિક પીપલ્સ સાથેની એસ રિપબ્લિક" verified="N" />
+        <!--South Korea-->
+        <country a2="KR" translation="કોરિયા" verified="N" />
+        <!--Kuwait-->
+        <country a2="KW" translation="કુવૈત" verified="N" />
+        <!--Cayman Islands-->
+        <country a2="KY" translation="કેમેન ટાપુઓ" verified="N" />
+        <!--Kazakhstan-->
+        <country a2="KZ" translation="કઝાકિસ્તાન" verified="N" />
+        <!--Lao People's Democratic Republic-->
+        <country a2="LA" translation="લાઓ પીપલ્સ સાથેની ઓ ડેમોક્રેટિક રિપબ્લિક" verified="N" />
+        <!--Lebanon-->
+        <country a2="LB" translation="લેબનોન" verified="N" />
+        <!--Saint Lucia-->
+        <country a2="LC" translation="સેન્ટ લુસિયા" verified="N" />
+        <!--Liechtenstein-->
+        <country a2="LI" translation="લૈચટેંસ્ટેઇન" verified="N" />
+        <!--Sri Lanka-->
+        <country a2="LK" translation="શ્રિલંકા" verified="N" />
+        <!--Liberia-->
+        <country a2="LR" translation="લાઇબેરીયા" verified="N" />
+        <!--Lesotho-->
+        <country a2="LS" translation="લેસોથો" verified="N" />
+        <!--Lithuania-->
+        <country a2="LT" translation="લીથુનીયા" verified="N" />
+        <!--Luxembourg-->
+        <country a2="LU" translation="લક્ઝમબર્ગ" verified="N" />
+        <!--Latvia-->
+        <country a2="LV" translation="લેતવિયા" verified="N" />
+        <!--Libya-->
+        <country a2="LY" translation="લિબિયા" verified="N" />
+        <!--Morocco-->
+        <country a2="MA" translation="મોરોક્કો" verified="N" />
+        <!--Monaco-->
+        <country a2="MC" translation="મોનાકો" verified="N" />
+        <!--Moldova, Republic Of-->
+        <country a2="MD" translation="મોલ્ડોવા, રિપબ્લિક ઓફ" verified="N" />
+        <!--Montenegro-->
+        <country a2="ME" translation="મોન્ટેનેગ્રો" verified="N" />
+        <!--Saint Martin-->
+        <country a2="MF" translation="સેન્ટ માર્ટિન" verified="N" />
+        <!--Madagascar-->
+        <country a2="MG" translation="મેડાગાસ્કર" verified="N" />
+        <!--Marshall Islands-->
+        <country a2="MH" translation="માર્શલ આઈલેન્ડ" verified="N" />
+        <!--Macedonia (FYROM)-->
+        <country a2="MK" translation="મેસેડોનિયા, ભૂતપૂર્વ યુગોસ્લાવ રિપબ્લિક" verified="N" />
+        <!--Mali-->
+        <country a2="ML" translation="માલી" verified="N" />
+        <!--Myanmar-->
+        <country a2="MM" translation="મ્યાનમાર" verified="N" />
+        <!--Mongolia-->
+        <country a2="MN" translation="મંગોલિયા" verified="N" />
+        <!--Macau-->
+        <country a2="MO" translation="મકાઓ" verified="N" />
+        <!--Northern Mariana Islands-->
+        <country a2="MP" translation="ઉત્તરીય મેરીયાના ટાપુઓ" verified="N" />
+        <!--Martinique-->
+        <country a2="MQ" translation="માર્ટીનીક" verified="N" />
+        <!--Mauritania-->
+        <country a2="MR" translation="મૌરિટાનિયા" verified="N" />
+        <!--Montserrat-->
+        <country a2="MS" translation="મોંટસેરાત" verified="N" />
+        <!--Malta-->
+        <country a2="MT" translation="માલ્ટા" verified="N" />
+        <!--Mauritius-->
+        <country a2="MU" translation="મોરિશિયસ" verified="N" />
+        <!--Maldives-->
+        <country a2="MV" translation="માલદીવ" verified="N" />
+        <!--Malawi-->
+        <country a2="MW" translation="મલાવી" verified="N" />
+        <!--Mexico-->
+        <country a2="MX" translation="મેક્સિકો" verified="N" />
+        <!--Malaysia-->
+        <country a2="MY" translation="મલેશિયા" verified="N" />
+        <!--Mozambique-->
+        <country a2="MZ" translation="મોઝામ્બિક" verified="N" />
+        <!--Namibia-->
+        <country a2="NA" translation="નામિબિયા" verified="N" />
+        <!--New Caledonia-->
+        <country a2="NC" translation="ન્યુ કેલેડોનીયા" verified="N" />
+        <!--Niger-->
+        <country a2="NE" translation="નાઇજર" verified="N" />
+        <!--Norfolk Islands-->
+        <country a2="NF" translation="નોરફોક ટાપુઓ" verified="N" />
+        <!--Nigeria-->
+        <country a2="NG" translation="નાઇજીરીયા" verified="N" />
+        <!--Nicaragua-->
+        <country a2="NI" translation="નિકારાગુઆ" verified="N" />
+        <!--Netherlands-->
+        <country a2="NL" translation="નેધરલેન્ડ" verified="N" />
+        <!--Norway-->
+        <country a2="NO" translation="નોર્વે" verified="N" />
+        <!--Nepal-->
+        <country a2="NP" translation="નેપાળ" verified="N" />
+        <!--Nauru-->
+        <country a2="NR" translation="નાઉરૂ" verified="N" />
+        <!--Niue-->
+        <country a2="NU" translation="નિયુએ" verified="N" />
+        <!--New Zealand-->
+        <country a2="NZ" translation="ન્યૂઝીલેન્ડ" verified="N" />
+        <!--Oman-->
+        <country a2="OM" translation="ઓમાન" verified="N" />
+        <!--Panama-->
+        <country a2="PA" translation="પનામા" verified="N" />
+        <!--Peru-->
+        <country a2="PE" translation="પેરુ" verified="N" />
+        <!--French Polynesia-->
+        <country a2="PF" translation="ફ્રેન્ચ પોલીનેશિયા" verified="N" />
+        <!--Papua New Guinea-->
+        <country a2="PG" translation="પપુઆ ન્યુ ગીની" verified="N" />
+        <!--Philippines-->
+        <country a2="PH" translation="ફિલિપાઇન્સ" verified="N" />
+        <!--Pakistan-->
+        <country a2="PK" translation="પાકિસ્તાન" verified="N" />
+        <!--Poland-->
+        <country a2="PL" translation="પોલેન્ડ" verified="N" />
+        <!--Saint Pierre And Miquelon-->
+        <country a2="PM" translation="સેન્ટ પીઅર એન્ડ મીક્વેલન" verified="N" />
+        <!--Pitcairn Islands-->
+        <country a2="PN" translation="પીટકૈર્ન" verified="N" />
+        <!--Puerto Rico-->
+        <country a2="PR" translation="પ્યુઅર્ટો રિકો" verified="N" />
+        <!--Palestine-->
+        <country a2="PS" translation="પેલેસ્ટાઇન" verified="N" />
+        <!--Portugal-->
+        <country a2="PT" translation="પોર્ટુગલ" verified="N" />
+        <!--Palau-->
+        <country a2="PW" translation="પલાઉ" verified="N" />
+        <!--Paraguay-->
+        <country a2="PY" translation="પેરાગ્વે" verified="N" />
+        <!--Qatar-->
+        <country a2="QA" translation="કતાર" verified="N" />
+        <!--Réunion-->
+        <country a2="RE" translation="રીયુનિયન" verified="N" />
+        <!--Romania-->
+        <country a2="RO" translation="રોમાનિયા" verified="N" />
+        <!--Serbia-->
+        <country a2="RS" translation="સર્બિયા" verified="N" />
+        <!--Russian Federation-->
+        <country a2="RU" translation="રશિયન ફેડરેશન" verified="N" />
+        <!--Rwanda-->
+        <country a2="RW" translation="રવાન્ડા" verified="N" />
+        <!--Saudi Arabia-->
+        <country a2="SA" translation="સાઉદી અરેબિયા" verified="N" />
+        <!--Solomon Islands-->
+        <country a2="SB" translation="સોલોમન આઇલેન્ડ" verified="N" />
+        <!--Seychelles-->
+        <country a2="SC" translation="સીશલ્સ" verified="N" />
+        <!--Sudan-->
+        <country a2="SD" translation="સુદાન" verified="N" />
+        <!--Sweden-->
+        <country a2="SE" translation="સ્વીડન" verified="N" />
+        <!--Singapore-->
+        <country a2="SG" translation="સિંગાપુર" verified="N" />
+        <!--Saint Helena, Ascension And Tristan Da Cunha-->
+        <country a2="SH" translation="સેન્ટ હેલેના, એસેન્શન અને ટ્રીસ્ટન દા કુન્હા" verified="N" />
+        <!--Slovenia-->
+        <country a2="SI" translation="સાઇપ્રસ" verified="N" />
+        <!--Slovakia-->
+        <country a2="SK" translation="સ્લોવેકિયા" verified="N" />
+        <!--Sierra Leone-->
+        <country a2="SL" translation="સીયેરા લીયોન" verified="N" />
+        <!--San Marino-->
+        <country a2="SM" translation="સૅન મેરિનો" verified="N" />
+        <!--Senegal-->
+        <country a2="SN" translation="સેનેગલ" verified="N" />
+        <!--Somalia-->
+        <country a2="SO" translation="સોમાલિયા" verified="N" />
+        <!--Suriname-->
+        <country a2="SR" translation="સુરીનામ" verified="N" />
+        <!--South Sudan-->
+        <country a2="SS" translation="દક્ષિણ સુદાન" verified="N" />
+        <!--Sao Tome And Principe-->
+        <country a2="ST" translation="સાઓ ટોમ એન્ડ પ્રિન્સાઇપ" verified="N" />
+        <!--El Salvador-->
+        <country a2="SV" translation="એલ સાલ્વાડોર" verified="N" />
+        <!--Sint Maarten-->
+        <country a2="SX" translation="સિન્ટ માર્ટન" verified="N" />
+        <!--Syrian Arab Republic-->
+        <country a2="SY" translation="સીરીયન આરબ રીપબ્લીક" verified="N" />
+        <!--Swaziland-->
+        <country a2="SZ" translation="સ્વાઝીલેન્ડ" verified="N" />
+        <!--Turks and Caicos Islands-->
+        <country a2="TC" translation="ટર્ક્સ અને કેઇકોસ આઇલેન્ડ્સ" verified="N" />
+        <!--Chad-->
+        <country a2="TD" translation="ચાડ" verified="N" />
+        <!--Togo-->
+        <country a2="TG" translation="જાઓ" verified="N" />
+        <!--Thailand-->
+        <country a2="TH" translation="થાઇલેન્ડ" verified="N" />
+        <!--Tajikistan-->
+        <country a2="TJ" translation="તજીકીસ્તાન" verified="N" />
+        <!--Tokelau-->
+        <country a2="TK" translation="તોકેલાઉ" verified="N" />
+        <!--Timor-leste-->
+        <country a2="TL" translation="પૂર્વ તિમોર" verified="N" />
+        <!--Turkmenistan-->
+        <country a2="TM" translation="તુર્કમેનિસ્તાન" verified="N" />
+        <!--Tunisia-->
+        <country a2="TN" translation="ટ્યુનિશિયા" verified="N" />
+        <!--Tonga-->
+        <country a2="TO" translation="ટોંગા" verified="N" />
+        <!--Turkey-->
+        <country a2="TR" translation="તુર્કી" verified="N" />
+        <!--Trinidad &amp; Tobago-->
+        <country a2="TT" translation="ત્રિનિદાદ અને ટોબેગો" verified="N" />
+        <!--Tuvalu-->
+        <country a2="TV" translation="તુવાલુ" verified="N" />
+        <!--Taiwan-->
+        <country a2="TW" translation="તાઇવાન" verified="N" />
+        <!--Tanzania, United Republic Of-->
+        <country a2="TZ" translation="તાંઝાનિયા, યુનાઇટેડ રીપબ્લિક" verified="N" />
+        <!--Ukraine-->
+        <country a2="UA" translation="યુક્રેન" verified="N" />
+        <!--Uganda-->
+        <country a2="UG" translation="યુગાન્ડા" verified="N" />
+        <!--United States (USA)-->
+        <country a2="US" translation="યુનાઈટેડ સ્ટેટ્સ" verified="N" />
+        <!--Uruguay-->
+        <country a2="UY" translation="ઉરુગ્વે" verified="N" />
+        <!--Uzbekistan-->
+        <country a2="UZ" translation="ઉઝબેકિસ્તાન" verified="N" />
+        <!--Holy See (vatican City State)-->
+        <country a2="VA" translation="હોલી સી (વેટીકન સીટી સ્ટેટ)" verified="N" />
+        <!--Saint Vincent &amp; The Grenadines-->
+        <country a2="VC" translation="સેન્ટ વિન્સેન્ટ અને ગ્રેનેડિન્સ" verified="N" />
+        <!--Venezuela, Bolivarian Republic Of-->
+        <country a2="VE" translation="વેનેઝુએલા, બોલિવેરિઅન રિપબ્લિક" verified="N" />
+        <!--British Virgin Islands-->
+        <country a2="VG" translation="બ્રિટિશ વર્જિન ટાપુઓ" verified="N" />
+        <!--US Virgin Islands-->
+        <country a2="VI" translation="યુ વર્જિન આઇલેન્ડ્સ" verified="N" />
+        <!--Vietnam-->
+        <country a2="VN" translation="વેઇત નામ" verified="N" />
+        <!--Vanuatu-->
+        <country a2="VU" translation="વેનૌતા" verified="N" />
+        <!--Wallis And Futuna-->
+        <country a2="WF" translation="વેલીસ એન્ડ ફ્યુટુના" verified="N" />
+        <!--Samoa-->
+        <country a2="WS" translation="સમોઆ" verified="N" />
+        <!--Kosovo-->
+        <country a2="XK" translation="કોસોવો" verified="N" />
+        <!--Yemen-->
+        <country a2="YE" translation="યેમેન" verified="N" />
+        <!--Mayotte-->
+        <country a2="YT" translation="માયોટી" verified="N" />
+        <!--South Africa-->
+        <country a2="ZA" translation="દક્ષિણ આફ્રિકા" verified="N" />
+        <!--Zambia-->
+        <country a2="ZM" translation="ઝામ્બિયા" verified="N" />
+        <!--Zimbabwe-->
+        <country a2="ZW" translation="ઝિમ્બાબ્વે" verified="N" />
+    </countries>
+</data>

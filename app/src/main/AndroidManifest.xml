@@ -13,7 +13,6 @@
         <activity android:name=".CountryPickerViewDemoActivity"></activity>
         <activity android:name=".OpenDialogDirectlyActivity" />
         <activity android:name=".CustomRecyclerViewActivity" />
-        <activity android:name=".test.TestActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -6,6 +6,7 @@ plugins {
 }
 
 apply(from = "$rootDir/countrypicker/publish.gradle")
+apply(from = "$rootDir/countrypicker/generateCPAndroidResource.gradle.kts")
 
 android {
     defaultConfig {

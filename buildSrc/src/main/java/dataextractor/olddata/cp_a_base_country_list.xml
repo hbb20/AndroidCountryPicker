@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+    <countries>
+        <!--Andorra-->
+        <country a2="AD" a3="AND" eName="Andorra" emoji="🇦🇩" pCode="376" />
+        <!--United Arab Emirates (UAE)-->
+        <country a2="AE" a3="ARE" eName="United Arab Emirates (UAE)" emoji="🇦🇪" pCode="971" />
+        <!--Afghanistan-->
+        <country a2="AF" a3="AFG" eName="Afghanistan" emoji="🇦🇫" pCode="93" />
+        <!--Antigua and Barbuda-->
+        <country a2="AG" a3="ATG" eName="Antigua and Barbuda" emoji="🇦🇬" pCode="1" />
+        <!--Anguilla-->
+        <country a2="AI" a3="AIA" eName="Anguilla" emoji="🇦🇮" pCode="1" />
+        <!--Albania-->
+        <country a2="AL" a3="ALB" eName="Albania" emoji="🇦🇱" pCode="355" />
+        <!--Armenia-->
+        <country a2="AM" a3="ARM" eName="Armenia" emoji="🇦🇲" pCode="374" />
+        <!--Angola-->
+        <country a2="AO" a3="AGO" eName="Angola" emoji="🇦🇴" pCode="244" />
+        <!--Antarctica-->
+        <country a2="AQ" a3="ATA" eName="Antarctica" emoji="🇦🇶" pCode="672" />
+        <!--Argentina-->
+        <country a2="AR" a3="ARG" eName="Argentina" emoji="🇦🇷" pCode="54" />
+        <!--American Samoa-->
+        <country a2="AS" a3="ASM" eName="American Samoa" emoji="🇦🇸" pCode="1" />
+        <!--Austria-->
+        <country a2="AT" a3="AUT" eName="Austria" emoji="🇦🇹" pCode="43" />
+        <!--Australia-->
+        <country a2="AU" a3="AUS" eName="Australia" emoji="🇦🇺" pCode="61" />
+        <!--Aruba-->
+        <country a2="AW" a3="ABW" eName="Aruba" emoji="🇦🇼" pCode="297" />
+        <!--Åland Islands-->
+        <country a2="AX" a3="ALA" eName="Åland Islands" emoji="🇦🇽" pCode="358" />
+        <!--Azerbaijan-->
+        <country a2="AZ" a3="AZE" eName="Azerbaijan" emoji="🇦🇿" pCode="994" />
+        <!--Bosnia And Herzegovina-->
+        <country a2="BA" a3="BIH" eName="Bosnia And Herzegovina" emoji="🇧🇦" pCode="387" />
+        <!--Barbados-->
+        <country a2="BB" a3="BRB" eName="Barbados" emoji="🇧🇧" pCode="1" />
+        <!--Bangladesh-->
+        <country a2="BD" a3="BGD" eName="Bangladesh" emoji="🇧🇩" pCode="880" />
+        <!--Belgium-->
+        <country a2="BE" a3="BEL" eName="Belgium" emoji="🇧🇪" pCode="32" />
+        <!--Burkina Faso-->
+        <country a2="BF" a3="BFA" eName="Burkina Faso" emoji="🇧🇫" pCode="226" />
+        <!--Bulgaria-->
+        <country a2="BG" a3="BGR" eName="Bulgaria" emoji="🇧🇬" pCode="359" />
+        <!--Bahrain-->
+        <country a2="BH" a3="BHR" eName="Bahrain" emoji="🇧🇭" pCode="973" />
+        <!--Burundi-->
+        <country a2="BI" a3="BDI" eName="Burundi" emoji="🇧🇮" pCode="257" />
+        <!--Benin-->
+        <country a2="BJ" a3="BEN" eName="Benin" emoji="🇧🇯" pCode="229" />
+        <!--Saint Barthélemy-->
+        <country a2="BL" a3="BLM" eName="Saint Barthélemy" emoji="🇧🇱" pCode="590" />
+        <!--Bermuda-->
+        <country a2="BM" a3="BMU" eName="Bermuda" emoji="🇧🇲" pCode="1" />
+        <!--Brunei Darussalam-->
+        <country a2="BN" a3="BRN" eName="Brunei Darussalam" emoji="🇧🇳" pCode="673" />
+        <!--Bolivia, Plurinational State Of-->
+        <country a2="BO" a3="BOL" eName="Bolivia, Plurinational State Of" emoji="🇧🇴"
+            pCode="591" />
+        <!--Brazil-->
+        <country a2="BR" a3="BRA" eName="Brazil" emoji="🇧🇷" pCode="55" />
+        <!--Bahamas-->
+        <country a2="BS" a3="BHS" eName="Bahamas" emoji="🇧🇸" pCode="1" />
+        <!--Bhutan-->
+        <country a2="BT" a3="BTN" eName="Bhutan" emoji="🇧🇹" pCode="975" />
+        <!--Botswana-->
+        <country a2="BW" a3="BWA" eName="Botswana" emoji="🇧🇼" pCode="267" />
+        <!--Belarus-->
+        <country a2="BY" a3="BLR" eName="Belarus" emoji="🇧🇾" pCode="375" />
+        <!--Belize-->
+        <country a2="BZ" a3="BLZ" eName="Belize" emoji="🇧🇿" pCode="501" />
+        <!--Canada-->
+        <country a2="CA" a3="CAN" eName="Canada" emoji="🇨🇦" pCode="1" />
+        <!--Cocos (keeling) Islands-->
+        <country a2="CC" a3="CCK" eName="Cocos (keeling) Islands" emoji="🇨🇨" pCode="61" />
+        <!--Congo, The Democratic Republic Of The-->
+        <country a2="CD" a3="COD" eName="Congo, The Democratic Republic Of The" emoji="🇨🇩"
+            pCode="243" />
+        <!--Central African Republic-->
+        <country a2="CF" a3="CAF" eName="Central African Republic" emoji="🇨🇫" pCode="236" />
+        <!--Congo-->
+        <country a2="CG" a3="COG" eName="Congo" emoji="🇨🇬" pCode="242" />
+        <!--Switzerland-->
+        <country a2="CH" a3="CHE" eName="Switzerland" emoji="🇨🇭" pCode="41" />
+        <!--Côte D'ivoire-->
+        <country a2="CI" a3="CIV" eName="Côte D'ivoire" emoji="🇨🇮" pCode="225" />
+        <!--Cook Islands-->
+        <country a2="CK" a3="COK" eName="Cook Islands" emoji="🇨🇰" pCode="682" />
+        <!--Chile-->
+        <country a2="CL" a3="CHL" eName="Chile" emoji="🇨🇱" pCode="56" />
+        <!--Cameroon-->
+        <country a2="CM" a3="CMR" eName="Cameroon" emoji="🇨🇲" pCode="237" />
+        <!--China-->
+        <country a2="CN" a3="CHN" eName="China" emoji="🇨🇳" pCode="86" />
+        <!--Colombia-->
+        <country a2="CO" a3="COL" eName="Colombia" emoji="🇨🇴" pCode="57" />
+        <!--Costa Rica-->
+        <country a2="CR" a3="CRI" eName="Costa Rica" emoji="🇨🇷" pCode="506" />
+        <!--Cuba-->
+        <country a2="CU" a3="CUB" eName="Cuba" emoji="🇨🇺" pCode="53" />
+        <!--Cape Verde-->
+        <country a2="CV" a3="CPV" eName="Cape Verde" emoji="🇨🇻" pCode="238" />
+        <!--Curaçao-->
+        <country a2="CW" a3="CUW" eName="Curaçao" emoji="🇨🇼" pCode="599" />
+        <!--Christmas Island-->
+        <country a2="CX" a3="CXR" eName="Christmas Island" emoji="🇨🇽" pCode="61" />
+        <!--Cyprus-->
+        <country a2="CY" a3="CYP" eName="Cyprus" emoji="🇨🇾" pCode="357" />
+        <!--Czech Republic-->
+        <country a2="CZ" a3="CZE" eName="Czech Republic" emoji="🇨🇿" pCode="420" />
+        <!--Germany-->
+        <country a2="DE" a3="DEU" eName="Germany" emoji="🇩🇪" pCode="49" />
+        <!--Djibouti-->
+        <country a2="DJ" a3="DJI" eName="Djibouti" emoji="🇩🇯" pCode="253" />
+        <!--Denmark-->
+        <country a2="DK" a3="DNK" eName="Denmark" emoji="🇩🇰" pCode="45" />
+        <!--Dominica-->
+        <country a2="DM" a3="DMA" eName="Dominica" emoji="🇩🇲" pCode="1" />
+        <!--Dominican Republic-->
+        <country a2="DO" a3="DOM" eName="Dominican Republic" emoji="🇩🇴" pCode="1" />
+        <!--Algeria-->
+        <country a2="DZ" a3="DZA" eName="Algeria" emoji="🇩🇿" pCode="213" />
+        <!--Ecuador-->
+        <country a2="EC" a3="ECU" eName="Ecuador" emoji="🇪🇨" pCode="593" />
+        <!--Estonia-->
+        <country a2="EE" a3="EST" eName="Estonia" emoji="🇪🇪" pCode="372" />
+        <!--Egypt-->
+        <country a2="EG" a3="EGY" eName="Egypt" emoji="🇪🇬" pCode="20" />
+        <!--Eritrea-->
+        <country a2="ER" a3="ERI" eName="Eritrea" emoji="🇪🇷" pCode="291" />
+        <!--Spain-->
+        <country a2="ES" a3="ESP" eName="Spain" emoji="🇪🇸" pCode="34" />
+        <!--Ethiopia-->
+        <country a2="ET" a3="ETH" eName="Ethiopia" emoji="🇪🇹" pCode="251" />
+        <!--Finland-->
+        <country a2="FI" a3="FIN" eName="Finland" emoji="🇫🇮" pCode="358" />
+        <!--Fiji-->
+        <country a2="FJ" a3="FJI" eName="Fiji" emoji="🇫🇯" pCode="679" />
+        <!--Falkland Islands (malvinas)-->
+        <country a2="FK" a3="FLK" eName="Falkland Islands (malvinas)" emoji="🇫🇰" pCode="500" />
+        <!--Micronesia, Federated States Of-->
+        <country a2="FM" a3="FSM" eName="Micronesia, Federated States Of" emoji="🇫🇲"
+            pCode="691" />
+        <!--Faroe Islands-->
+        <country a2="FO" a3="FRO" eName="Faroe Islands" emoji="🇫🇴" pCode="298" />
+        <!--France-->
+        <country a2="FR" a3="FRA" eName="France" emoji="🇫🇷" pCode="33" />
+        <!--Gabon-->
+        <country a2="GA" a3="GAB" eName="Gabon" emoji="🇬🇦" pCode="241" />
+        <!--United Kingdom-->
+        <country a2="GB" a3="GBR" eName="United Kingdom" emoji="🇬🇧" pCode="44" />
+        <!--Grenada-->
+        <country a2="GD" a3="GRD" eName="Grenada" emoji="🇬🇩" pCode="1" />
+        <!--Georgia-->
+        <country a2="GE" a3="GEO" eName="Georgia" emoji="🇬🇪" pCode="995" />
+        <!--French Guyana-->
+        <country a2="GF" a3="GUF" eName="French Guyana" emoji="🇬🇫" pCode="594" />
+        <!--Guernsey-->
+        <country a2="GG" a3="GGY" eName="Guernsey" emoji="🇬🇬" pCode="44" />
+        <!--Ghana-->
+        <country a2="GH" a3="GHA" eName="Ghana" emoji="🇬🇭" pCode="233" />
+        <!--Gibraltar-->
+        <country a2="GI" a3="GIB" eName="Gibraltar" emoji="🇬🇮" pCode="350" />
+        <!--Greenland-->
+        <country a2="GL" a3="GRL" eName="Greenland" emoji="🇬🇱" pCode="299" />
+        <!--Gambia-->
+        <country a2="GM" a3="GMB" eName="Gambia" emoji="🇬🇲" pCode="220" />
+        <!--Guinea-->
+        <country a2="GN" a3="GIN" eName="Guinea" emoji="🇬🇳" pCode="224" />
+        <!--Guadeloupe-->
+        <country a2="GP" a3="GLP" eName="Guadeloupe" emoji="🇬🇵" pCode="590" />
+        <!--Equatorial Guinea-->
+        <country a2="GQ" a3="GNQ" eName="Equatorial Guinea" emoji="🇬🇶" pCode="240" />
+        <!--Greece-->
+        <country a2="GR" a3="GRC" eName="Greece" emoji="🇬🇷" pCode="30" />
+        <!--Guatemala-->
+        <country a2="GT" a3="GTM" eName="Guatemala" emoji="🇬🇹" pCode="502" />
+        <!--Guam-->
+        <country a2="GU" a3="GUM" eName="Guam" emoji="🇬🇺" pCode="1" />
+        <!--Guinea-bissau-->
+        <country a2="GW" a3="GNB" eName="Guinea-bissau" emoji="🇬🇼" pCode="245" />
+        <!--Guyana-->
+        <country a2="GY" a3="GUY" eName="Guyana" emoji="🇬🇾" pCode="592" />
+        <!--Hong Kong-->
+        <country a2="HK" a3="HKG" eName="Hong Kong" emoji="🇭🇰" pCode="852" />
+        <!--Honduras-->
+        <country a2="HN" a3="HND" eName="Honduras" emoji="🇭🇳" pCode="504" />
+        <!--Croatia-->
+        <country a2="HR" a3="HRV" eName="Croatia" emoji="🇭🇷" pCode="385" />
+        <!--Haiti-->
+        <country a2="HT" a3="HTI" eName="Haiti" emoji="🇭🇹" pCode="509" />
+        <!--Hungary-->
+        <country a2="HU" a3="HUN" eName="Hungary" emoji="🇭🇺" pCode="36" />
+        <!--Indonesia-->
+        <country a2="ID" a3="IDN" eName="Indonesia" emoji="🇮🇩" pCode="62" />
+        <!--Ireland-->
+        <country a2="IE" a3="IRL" eName="Ireland" emoji="🇮🇪" pCode="353" />
+        <!--Israel-->
+        <country a2="IL" a3="ISR" eName="Israel" emoji="🇮🇱" pCode="972" />
+        <!--Isle Of Man-->
+        <country a2="IM" a3="IMN" eName="Isle Of Man" emoji="🇮🇲" pCode="44" />
+        <!--India-->
+        <country a2="IN" a3="IND" eName="India" emoji="🇮🇳" pCode="91" />
+        <!--British Indian Ocean Territory-->
+        <country a2="IO" a3="IOT" eName="British Indian Ocean Territory" emoji="🇮🇴" pCode="246" />
+        <!--Iraq-->
+        <country a2="IQ" a3="IRQ" eName="Iraq" emoji="🇮🇶" pCode="964" />
+        <!--Iran, Islamic Republic Of-->
+        <country a2="IR" a3="IRN" eName="Iran, Islamic Republic Of" emoji="🇮🇷" pCode="98" />
+        <!--Iceland-->
+        <country a2="IS" a3="ISL" eName="Iceland" emoji="🇮🇸" pCode="354" />
+        <!--Italy-->
+        <country a2="IT" a3="ITA" eName="Italy" emoji="🇮🇹" pCode="39" />
+        <!--Jersey-->
+        <country a2="JE" a3="JEY" eName="Jersey" emoji="🇯🇪" pCode="44" />
+        <!--Jamaica-->
+        <country a2="JM" a3="JAM" eName="Jamaica" emoji="🇯🇲" pCode="1" />
+        <!--Jordan-->
+        <country a2="JO" a3="JOR" eName="Jordan" emoji="🇯🇴" pCode="962" />
+        <!--Japan-->
+        <country a2="JP" a3="JPN" eName="Japan" emoji="🇯🇵" pCode="81" />
+        <!--Kenya-->
+        <country a2="KE" a3="KEN" eName="Kenya" emoji="🇰🇪" pCode="254" />
+        <!--Kyrgyzstan-->
+        <country a2="KG" a3="KGZ" eName="Kyrgyzstan" emoji="🇰🇬" pCode="996" />
+        <!--Cambodia-->
+        <country a2="KH" a3="KHM" eName="Cambodia" emoji="🇰🇭" pCode="855" />
+        <!--Kiribati-->
+        <country a2="KI" a3="KIR" eName="Kiribati" emoji="🇰🇮" pCode="686" />
+        <!--Comoros-->
+        <country a2="KM" a3="COM" eName="Comoros" emoji="🇰🇲" pCode="269" />
+        <!--Saint Kitts and Nevis-->
+        <country a2="KN" a3="KNA" eName="Saint Kitts and Nevis" emoji="🇰🇳" pCode="1" />
+        <!--North Korea-->
+        <country a2="KP" a3="PRK" eName="North Korea" emoji="🇰🇵" pCode="850" />
+        <!--South Korea-->
+        <country a2="KR" a3="KOR" eName="South Korea" emoji="🇰🇷" pCode="82" />
+        <!--Kuwait-->
+        <country a2="KW" a3="KWT" eName="Kuwait" emoji="🇰🇼" pCode="965" />
+        <!--Cayman Islands-->
+        <country a2="KY" a3="CYM" eName="Cayman Islands" emoji="🇰🇾" pCode="1" />
+        <!--Kazakhstan-->
+        <country a2="KZ" a3="KAZ" eName="Kazakhstan" emoji="🇰🇿" pCode="7" />
+        <!--Lao People's Democratic Republic-->
+        <country a2="LA" a3="LAO" eName="Lao People's Democratic Republic" emoji="🇱🇦"
+            pCode="856" />
+        <!--Lebanon-->
+        <country a2="LB" a3="LBN" eName="Lebanon" emoji="🇱🇧" pCode="961" />
+        <!--Saint Lucia-->
+        <country a2="LC" a3="LCA" eName="Saint Lucia" emoji="🇱🇨" pCode="1" />
+        <!--Liechtenstein-->
+        <country a2="LI" a3="LIE" eName="Liechtenstein" emoji="🇱🇮" pCode="423" />
+        <!--Sri Lanka-->
+        <country a2="LK" a3="LKA" eName="Sri Lanka" emoji="🇱🇰" pCode="94" />
+        <!--Liberia-->
+        <country a2="LR" a3="LBR" eName="Liberia" emoji="🇱🇷" pCode="231" />
+        <!--Lesotho-->
+        <country a2="LS" a3="LSO" eName="Lesotho" emoji="🇱🇸" pCode="266" />
+        <!--Lithuania-->
+        <country a2="LT" a3="LTU" eName="Lithuania" emoji="🇱🇹" pCode="370" />
+        <!--Luxembourg-->
+        <country a2="LU" a3="LUX" eName="Luxembourg" emoji="🇱🇺" pCode="352" />
+        <!--Latvia-->
+        <country a2="LV" a3="LVA" eName="Latvia" emoji="🇱🇻" pCode="371" />
+        <!--Libya-->
+        <country a2="LY" a3="LBY" eName="Libya" emoji="🇱🇾" pCode="218" />
+        <!--Morocco-->
+        <country a2="MA" a3="MAR" eName="Morocco" emoji="🇲🇦" pCode="212" />
+        <!--Monaco-->
+        <country a2="MC" a3="MCO" eName="Monaco" emoji="🇲🇨" pCode="377" />
+        <!--Moldova, Republic Of-->
+        <country a2="MD" a3="MDA" eName="Moldova, Republic Of" emoji="🇲🇩" pCode="373" />
+        <!--Montenegro-->
+        <country a2="ME" a3="MNE" eName="Montenegro" emoji="🇲🇪" pCode="382" />
+        <!--Saint Martin-->
+        <country a2="MF" a3="MAF" eName="Saint Martin" emoji="🇲🇫" pCode="590" />
+        <!--Madagascar-->
+        <country a2="MG" a3="MDG" eName="Madagascar" emoji="🇲🇬" pCode="261" />
+        <!--Marshall Islands-->
+        <country a2="MH" a3="MHL" eName="Marshall Islands" emoji="🇲🇭" pCode="692" />
+        <!--Macedonia (FYROM)-->
+        <country a2="MK" a3="MKD" eName="Macedonia (FYROM)" emoji="🇲🇰" pCode="389" />
+        <!--Mali-->
+        <country a2="ML" a3="MLI" eName="Mali" emoji="🇲🇱" pCode="223" />
+        <!--Myanmar-->
+        <country a2="MM" a3="MMR" eName="Myanmar" emoji="🇲🇲" pCode="95" />
+        <!--Mongolia-->
+        <country a2="MN" a3="MNG" eName="Mongolia" emoji="🇲🇳" pCode="976" />
+        <!--Macau-->
+        <country a2="MO" a3="MAC" eName="Macau" emoji="🇲🇴" pCode="853" />
+        <!--Northern Mariana Islands-->
+        <country a2="MP" a3="MNP" eName="Northern Mariana Islands" emoji="🇲🇵" pCode="1" />
+        <!--Martinique-->
+        <country a2="MQ" a3="MTQ" eName="Martinique" emoji="🇲🇶" pCode="596" />
+        <!--Mauritania-->
+        <country a2="MR" a3="MRT" eName="Mauritania" emoji="🇲🇷" pCode="222" />
+        <!--Montserrat-->
+        <country a2="MS" a3="MSR" eName="Montserrat" emoji="🇲🇸" pCode="1" />
+        <!--Malta-->
+        <country a2="MT" a3="MLT" eName="Malta" emoji="🇲🇹" pCode="356" />
+        <!--Mauritius-->
+        <country a2="MU" a3="MUS" eName="Mauritius" emoji="🇲🇺" pCode="230" />
+        <!--Maldives-->
+        <country a2="MV" a3="MDV" eName="Maldives" emoji="🇲🇻" pCode="960" />
+        <!--Malawi-->
+        <country a2="MW" a3="MWI" eName="Malawi" emoji="🇲🇼" pCode="265" />
+        <!--Mexico-->
+        <country a2="MX" a3="MEX" eName="Mexico" emoji="🇲🇽" pCode="52" />
+        <!--Malaysia-->
+        <country a2="MY" a3="MYS" eName="Malaysia" emoji="🇲🇾" pCode="60" />
+        <!--Mozambique-->
+        <country a2="MZ" a3="MOZ" eName="Mozambique" emoji="🇲🇿" pCode="258" />
+        <!--Namibia-->
+        <country a2="NA" a3="NAM" eName="Namibia" emoji="🇳🇦" pCode="264" />
+        <!--New Caledonia-->
+        <country a2="NC" a3="NCL" eName="New Caledonia" emoji="🇳🇨" pCode="687" />
+        <!--Niger-->
+        <country a2="NE" a3="NER" eName="Niger" emoji="🇳🇪" pCode="227" />
+        <!--Norfolk Islands-->
+        <country a2="NF" a3="NFK" eName="Norfolk Islands" emoji="🇳🇫" pCode="672" />
+        <!--Nigeria-->
+        <country a2="NG" a3="NGA" eName="Nigeria" emoji="🇳🇬" pCode="234" />
+        <!--Nicaragua-->
+        <country a2="NI" a3="NIC" eName="Nicaragua" emoji="🇳🇮" pCode="505" />
+        <!--Netherlands-->
+        <country a2="NL" a3="NLD" eName="Netherlands" emoji="🇳🇱" pCode="31" />
+        <!--Norway-->
+        <country a2="NO" a3="NOR" eName="Norway" emoji="🇳🇴" pCode="47" />
+        <!--Nepal-->
+        <country a2="NP" a3="NPL" eName="Nepal" emoji="🇳🇵" pCode="977" />
+        <!--Nauru-->
+        <country a2="NR" a3="NRU" eName="Nauru" emoji="🇳🇷" pCode="674" />
+        <!--Niue-->
+        <country a2="NU" a3="NIU" eName="Niue" emoji="🇳🇺" pCode="683" />
+        <!--New Zealand-->
+        <country a2="NZ" a3="NZL" eName="New Zealand" emoji="🇳🇿" pCode="64" />
+        <!--Oman-->
+        <country a2="OM" a3="OMN" eName="Oman" emoji="🇴🇲" pCode="968" />
+        <!--Panama-->
+        <country a2="PA" a3="PAN" eName="Panama" emoji="🇵🇦" pCode="507" />
+        <!--Peru-->
+        <country a2="PE" a3="PER" eName="Peru" emoji="🇵🇪" pCode="51" />
+        <!--French Polynesia-->
+        <country a2="PF" a3="PYF" eName="French Polynesia" emoji="🇵🇫" pCode="689" />
+        <!--Papua New Guinea-->
+        <country a2="PG" a3="PNG" eName="Papua New Guinea" emoji="🇵🇬" pCode="675" />
+        <!--Philippines-->
+        <country a2="PH" a3="PHL" eName="Philippines" emoji="🇵🇭" pCode="63" />
+        <!--Pakistan-->
+        <country a2="PK" a3="PAK" eName="Pakistan" emoji="🇵🇰" pCode="92" />
+        <!--Poland-->
+        <country a2="PL" a3="POL" eName="Poland" emoji="🇵🇱" pCode="48" />
+        <!--Saint Pierre And Miquelon-->
+        <country a2="PM" a3="SPM" eName="Saint Pierre And Miquelon" emoji="🇵🇲" pCode="508" />
+        <!--Pitcairn Islands-->
+        <country a2="PN" a3="PCN" eName="Pitcairn Islands" emoji="🇵🇳" pCode="870" />
+        <!--Puerto Rico-->
+        <country a2="PR" a3="PRI" eName="Puerto Rico" emoji="🇵🇷" pCode="1" />
+        <!--Palestine-->
+        <country a2="PS" a3="PSE" eName="Palestine" emoji="🇵🇸" pCode="970" />
+        <!--Portugal-->
+        <country a2="PT" a3="PRT" eName="Portugal" emoji="🇵🇹" pCode="351" />
+        <!--Palau-->
+        <country a2="PW" a3="PLW" eName="Palau" emoji="🇵🇼" pCode="680" />
+        <!--Paraguay-->
+        <country a2="PY" a3="PRY" eName="Paraguay" emoji="🇵🇾" pCode="595" />
+        <!--Qatar-->
+        <country a2="QA" a3="QAT" eName="Qatar" emoji="🇶🇦" pCode="974" />
+        <!--Réunion-->
+        <country a2="RE" a3="REU" eName="Réunion" emoji="🇷🇪" pCode="262" />
+        <!--Romania-->
+        <country a2="RO" a3="ROU" eName="Romania" emoji="🇷🇴" pCode="40" />
+        <!--Serbia-->
+        <country a2="RS" a3="SRB" eName="Serbia" emoji="🇷🇸" pCode="381" />
+        <!--Russian Federation-->
+        <country a2="RU" a3="RUS" eName="Russian Federation" emoji="🇷🇺" pCode="7" />
+        <!--Rwanda-->
+        <country a2="RW" a3="RWA" eName="Rwanda" emoji="🇷🇼" pCode="250" />
+        <!--Saudi Arabia-->
+        <country a2="SA" a3="SAU" eName="Saudi Arabia" emoji="🇸🇦" pCode="966" />
+        <!--Solomon Islands-->
+        <country a2="SB" a3="SLB" eName="Solomon Islands" emoji="🇸🇧" pCode="677" />
+        <!--Seychelles-->
+        <country a2="SC" a3="SYC" eName="Seychelles" emoji="🇸🇨" pCode="248" />
+        <!--Sudan-->
+        <country a2="SD" a3="SDN" eName="Sudan" emoji="🇸🇩" pCode="249" />
+        <!--Sweden-->
+        <country a2="SE" a3="SWE" eName="Sweden" emoji="🇸🇪" pCode="46" />
+        <!--Singapore-->
+        <country a2="SG" a3="SGP" eName="Singapore" emoji="🇸🇬" pCode="65" />
+        <!--Saint Helena, Ascension And Tristan Da Cunha-->
+        <country a2="SH" a3="SHN" eName="Saint Helena, Ascension And Tristan Da Cunha" emoji="🇸🇭"
+            pCode="290" />
+        <!--Slovenia-->
+        <country a2="SI" a3="SVN" eName="Slovenia" emoji="🇸🇮" pCode="386" />
+        <!--Slovakia-->
+        <country a2="SK" a3="SVK" eName="Slovakia" emoji="🇸🇰" pCode="421" />
+        <!--Sierra Leone-->
+        <country a2="SL" a3="SLE" eName="Sierra Leone" emoji="🇸🇱" pCode="232" />
+        <!--San Marino-->
+        <country a2="SM" a3="SMR" eName="San Marino" emoji="🇸🇲" pCode="378" />
+        <!--Senegal-->
+        <country a2="SN" a3="SEN" eName="Senegal" emoji="🇸🇳" pCode="221" />
+        <!--Somalia-->
+        <country a2="SO" a3="SOM" eName="Somalia" emoji="🇸🇴" pCode="252" />
+        <!--Suriname-->
+        <country a2="SR" a3="SUR" eName="Suriname" emoji="🇸🇷" pCode="597" />
+        <!--South Sudan-->
+        <country a2="SS" a3="SSD" eName="South Sudan" emoji="🇸🇸" pCode="211" />
+        <!--Sao Tome And Principe-->
+        <country a2="ST" a3="STP" eName="Sao Tome And Principe" emoji="🇸🇹" pCode="239" />
+        <!--El Salvador-->
+        <country a2="SV" a3="SLV" eName="El Salvador" emoji="🇸🇻" pCode="503" />
+        <!--Sint Maarten-->
+        <country a2="SX" a3="SXM" eName="Sint Maarten" emoji="🇸🇽" pCode="1" />
+        <!--Syrian Arab Republic-->
+        <country a2="SY" a3="SYR" eName="Syrian Arab Republic" emoji="🇸🇾" pCode="963" />
+        <!--Swaziland-->
+        <country a2="SZ" a3="SWZ" eName="Swaziland" emoji="🇸🇿" pCode="268" />
+        <!--Turks and Caicos Islands-->
+        <country a2="TC" a3="TCA" eName="Turks and Caicos Islands" emoji="🇹🇨" pCode="1" />
+        <!--Chad-->
+        <country a2="TD" a3="TCD" eName="Chad" emoji="🇹🇩" pCode="235" />
+        <!--Togo-->
+        <country a2="TG" a3="TGO" eName="Togo" emoji="🇹🇬" pCode="228" />
+        <!--Thailand-->
+        <country a2="TH" a3="THA" eName="Thailand" emoji="🇹🇭" pCode="66" />
+        <!--Tajikistan-->
+        <country a2="TJ" a3="TJK" eName="Tajikistan" emoji="🇹🇯" pCode="992" />
+        <!--Tokelau-->
+        <country a2="TK" a3="TKL" eName="Tokelau" emoji="🇹🇰" pCode="690" />
+        <!--Timor-leste-->
+        <country a2="TL" a3="TLS" eName="Timor-leste" emoji="🇹🇱" pCode="670" />
+        <!--Turkmenistan-->
+        <country a2="TM" a3="TKM" eName="Turkmenistan" emoji="🇹🇲" pCode="993" />
+        <!--Tunisia-->
+        <country a2="TN" a3="TUN" eName="Tunisia" emoji="🇹🇳" pCode="216" />
+        <!--Tonga-->
+        <country a2="TO" a3="TON" eName="Tonga" emoji="🇹🇴" pCode="676" />
+        <!--Turkey-->
+        <country a2="TR" a3="TUR" eName="Turkey" emoji="🇹🇷" pCode="90" />
+        <!--Trinidad &amp; Tobago-->
+        <country a2="TT" a3="TTO" eName="Trinidad &amp; Tobago" emoji="🇹🇹" pCode="1" />
+        <!--Tuvalu-->
+        <country a2="TV" a3="TUV" eName="Tuvalu" emoji="🇹🇻" pCode="688" />
+        <!--Taiwan-->
+        <country a2="TW" a3="TWN" eName="Taiwan" emoji="🇹🇼" pCode="886" />
+        <!--Tanzania, United Republic Of-->
+        <country a2="TZ" a3="TZA" eName="Tanzania, United Republic Of" emoji="🇹🇿" pCode="255" />
+        <!--Ukraine-->
+        <country a2="UA" a3="UKR" eName="Ukraine" emoji="🇺🇦" pCode="380" />
+        <!--Uganda-->
+        <country a2="UG" a3="UGA" eName="Uganda" emoji="🇺🇬" pCode="256" />
+        <!--United States (USA)-->
+        <country a2="US" a3="USA" eName="United States (USA)" emoji="🇺🇸" pCode="1" />
+        <!--Uruguay-->
+        <country a2="UY" a3="URY" eName="Uruguay" emoji="🇺🇾" pCode="598" />
+        <!--Uzbekistan-->
+        <country a2="UZ" a3="UZB" eName="Uzbekistan" emoji="🇺🇿" pCode="998" />
+        <!--Vatican City-->
+        <country a2="VA" a3="VAT" eName="Vatican City" emoji="🇻🇦" pCode="379" />
+        <!--Saint Vincent &amp; The Grenadines-->
+        <country a2="VC" a3="VCT" eName="Saint Vincent &amp; The Grenadines" emoji="🇻🇨"
+            pCode="1" />
+        <!--Venezuela, Bolivarian Republic Of-->
+        <country a2="VE" a3="VEN" eName="Venezuela, Bolivarian Republic Of" emoji="🇻🇪"
+            pCode="58" />
+        <!--British Virgin Islands-->
+        <country a2="VG" a3="VGB" eName="British Virgin Islands" emoji="🇻🇬" pCode="1" />
+        <!--US Virgin Islands-->
+        <country a2="VI" a3="VIR" eName="US Virgin Islands" emoji="🇻🇮" pCode="1" />
+        <!--Vietnam-->
+        <country a2="VN" a3="VNM" eName="Vietnam" emoji="🇻🇳" pCode="84" />
+        <!--Vanuatu-->
+        <country a2="VU" a3="VUT" eName="Vanuatu" emoji="🇻🇺" pCode="678" />
+        <!--Wallis And Futuna-->
+        <country a2="WF" a3="WLF" eName="Wallis And Futuna" emoji="🇼🇫" pCode="681" />
+        <!--Samoa-->
+        <country a2="WS" a3="WSM" eName="Samoa" emoji="🇼🇸" pCode="685" />
+        <!--Kosovo-->
+        <country a2="XK" a3="UNK" eName="Kosovo" emoji="🇽🇰" pCode="383" />
+        <!--Yemen-->
+        <country a2="YE" a3="YEM" eName="Yemen" emoji="🇾🇪" pCode="967" />
+        <!--Mayotte-->
+        <country a2="YT" a3="MYT" eName="Mayotte" emoji="🇾🇹" pCode="262" />
+        <!--South Africa-->
+        <country a2="ZA" a3="ZAF" eName="South Africa" emoji="🇿🇦" pCode="27" />
+        <!--Zambia-->
+        <country a2="ZM" a3="ZMB" eName="Zambia" emoji="🇿🇲" pCode="260" />
+        <!--Zimbabwe-->
+        <country a2="ZW" a3="ZWE" eName="Zimbabwe" emoji="🇿🇼" pCode="263" />
+    </countries>
+</data>
