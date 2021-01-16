@@ -3,8 +3,7 @@ tasks.register("generateCPAndroidResource") {
     description = "Generate android resources from raw files."
 
     doLast {
-        val releaseTag = "build-${BuildData.versionCode}"
-        val releaseTitle = "v${BuildData.versionName}"
-        //        val releaseBodyFile = createGithubReleaseBody()
+        val extractor = CPDataExtractor()
+        extractor.generate()
     }
 }
