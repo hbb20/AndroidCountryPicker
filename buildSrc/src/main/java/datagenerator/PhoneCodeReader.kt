@@ -6,8 +6,8 @@ import java.nio.file.Paths
 private const val ALPHA_2 = "alpha_2"
 private const val PHONE_CODE = "phone_code"
 
-class PhoneCodeReader {
-    fun read(filePath: String = "src/data/PhoneCodes.CSV"): Map<String, Int> {
+class PhoneCodeReader(val dataGeneratorRootDir: String) {
+    fun read(filePath: String = "$dataGeneratorRootDir/data/PhoneCodes.CSV"): Map<String, Int> {
         val reader = Files.newBufferedReader(Paths.get(filePath))
         // parse the file into csv values
         val csvParser = CSVParser(

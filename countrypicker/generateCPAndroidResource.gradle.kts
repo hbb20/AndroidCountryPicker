@@ -3,7 +3,7 @@ tasks.register("generateCPAndroidResource") {
     description = "Generate android resources from raw files."
 
     doLast {
-        val extractor = CPDataExtractor()
+        val extractor = CPDataExtractor("$rootDir")
         extractor.generate()
     }
 }

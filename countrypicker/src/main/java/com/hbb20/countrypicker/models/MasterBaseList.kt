@@ -1,4 +1,4 @@
-import com.hbb20.countrypicker.models.BaseCountry
+package com.hbb20.countrypicker.models
 
 internal val masterBaseList = listOf(
 
@@ -2735,7 +2735,7 @@ internal val masterBaseList = listOf(
     BaseCountry(
         alpha2 = "PS",
         alpha3 = "PSE",
-        englishName = "Palestinian, State of",
+        englishName = "Palestine, State of",
         demonym = "Palestinians",
         capitalEnglishName = "-",
         areaKM2 = "5860",
@@ -2810,7 +2810,7 @@ internal val masterBaseList = listOf(
     BaseCountry(
         alpha2 = "RE",
         alpha3 = "REU",
-        englishName = "Réunion",
+        englishName = "Reunion",
         demonym = "Réunionese",
         capitalEnglishName = "Saint-denis",
         areaKM2 = "2512",

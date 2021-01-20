@@ -8,7 +8,7 @@ import com.hbb20.countrypicker.logger.onMethodBegin
 import com.hbb20.countrypicker.models.BaseCountry
 import com.hbb20.countrypicker.models.CPCountry
 import com.hbb20.countrypicker.models.CPDataStore
-import masterBaseList
+import com.hbb20.countrypicker.models.masterBaseList
 
 
 interface CountryFileReading {

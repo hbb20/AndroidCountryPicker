@@ -1,18 +1,21 @@
-class CPDataExtractor {
+class CPDataExtractor(val projectDir: String) {
+    val dataGeneratorRootPath = "$projectDir/buildSrc/src/main/java/datagenerator"
     fun generate(): Unit {
-        val infoMap = InfoReader().read()
-        val phoneCodeMap = PhoneCodeReader().read()
-        val flagEmojiMap = EmojiReader().read()
+        print("root dir is $projectDir/buildSrc/")
+        val infoMap = InfoReader(dataGeneratorRootPath).read()
+        val phoneCodeMap = PhoneCodeReader(dataGeneratorRootPath).read()
+        val flagEmojiMap = EmojiReader(dataGeneratorRootPath).read()
         val baseCountries = prepareBaseCountryList(infoMap, phoneCodeMap, flagEmojiMap)
         //    FileWriter.writeBaseCountries(baseCountries = baseCountries.values.toList())
-        FileWriter.writeBaseCountriesKt(baseCountries = baseCountries.values.toList())
+        val fileWriter = FileWriter(projectDir)
+        fileWriter.writeBaseCountriesKt(baseCountries = baseCountries.values.toList())
 
         //countryNameTranslations$
-        val languageTranslations = TranslationReader.readAllTranslations()
+        val languageTranslations = TranslationReader(dataGeneratorRootPath).readAllTranslations()
         languageTranslations.forEach {
-            FileWriter.writeLanguageTranslation(languageTranslation = it)
+            fileWriter.writeLanguageTranslation(languageTranslation = it)
             if (it.language == SupportedLanguage.ENGLISH) {
-                FileWriter.writeDefaultTranslationFile(languageTranslation = it)
+                fileWriter.writeDefaultTranslationFile(languageTranslation = it)
             }
         }
     }

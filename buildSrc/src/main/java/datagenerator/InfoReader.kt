@@ -20,9 +20,10 @@ private const val LANG_CODE = "lang_code"
 private const val LANG_NAME = "lang_name"
 private const val CCTLD = "cctld"
 
-class InfoReader {
+class InfoReader(val rootDir: String) {
 
-    fun read(infoFilePath: String = "src/data/IP2LOCATION-COUNTRY-INFORMATION.CSV"): MutableMap<String, InfoCountry> {
+    fun read(infoFilePath: String = "$rootDir/data/ip2location/IP2LOCATION-COUNTRY-INFORMATION.CSV"): MutableMap<String, InfoCountry> {
+        print("infoFilePath = $infoFilePath")
         val reader = Files.newBufferedReader(Paths.get(infoFilePath))
         // parse the file into csv values
         val csvParser = CSVParser(
