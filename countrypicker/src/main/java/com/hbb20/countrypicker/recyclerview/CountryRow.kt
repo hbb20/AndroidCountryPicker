@@ -14,8 +14,8 @@ import com.hbb20.countrypicker.CPFlagImageProvider
 import com.hbb20.countrypicker.DefaultEmojiFlagProvider
 import com.hbb20.countrypicker.R
 import com.hbb20.countrypicker.config.CPRowConfig
+import com.hbb20.countrypicker.databinding.CpCountryRowBinding
 import com.hbb20.countrypicker.models.CPCountry
-import kotlinx.android.synthetic.main.cp_country_row.view.*
 
 @ModelView(autoLayout = ModelView.Size.MATCH_WIDTH_WRAP_HEIGHT)
 internal class CountryRow @JvmOverloads constructor(
@@ -25,8 +25,11 @@ internal class CountryRow @JvmOverloads constructor(
 ) : FrameLayout(context, attrs, defStyleAttr) {
     enum class FlagView { NONE, EMOJI, IMAGE }
 
+    private var binding: CpCountryRowBinding
+
     init {
         inflate(context, R.layout.cp_country_row, this)
+        binding = CpCountryRowBinding.bind(this.findViewById(R.id.countryRow))
     }
 
     lateinit var country: CPCountry
@@ -41,12 +44,12 @@ internal class CountryRow @JvmOverloads constructor(
     }
 
     override fun setOnClickListener(l: OnClickListener?) {
-        countryRow.setOnClickListener(l)
+        binding.countryRow.setOnClickListener(l)
     }
 
     @AfterPropsSet
     fun updateViews() {
-        tvPrimaryText.text = rowConfig.primaryTextGenerator.invoke(country)
+        binding.tvPrimaryText.text = rowConfig.primaryTextGenerator.invoke(country)
         setSecondaryText(rowConfig.secondaryTextGenerator?.invoke(country))
         setHighlightedInfo()
         applyFlag()
@@ -57,20 +60,20 @@ internal class CountryRow @JvmOverloads constructor(
 
     private fun setSecondaryText(secondaryText: String?) {
         if (secondaryText == null) {
-            tvSecondaryText.visibility = View.GONE
+            binding.tvSecondaryText.visibility = View.GONE
         } else {
-            tvSecondaryText.visibility = View.VISIBLE
-            tvSecondaryText.text = secondaryText
+            binding.tvSecondaryText.visibility = View.VISIBLE
+            binding.tvSecondaryText.text = secondaryText
         }
     }
 
     private fun setHighlightedInfo() {
         val highlightedText = rowConfig.highlightedTextGenerator?.invoke(country)
         if (highlightedText != null) {
-            tvHighlightedInfo.visibility = View.VISIBLE
-            tvHighlightedInfo.text = highlightedText
+            binding.tvHighlightedInfo.visibility = View.VISIBLE
+            binding.tvHighlightedInfo.text = highlightedText
         } else {
-            tvHighlightedInfo.visibility = View.GONE
+            binding.tvHighlightedInfo.visibility = View.GONE
         }
     }
 
@@ -86,11 +89,11 @@ internal class CountryRow @JvmOverloads constructor(
                         } else {
                             country.flagEmoji
                         }
-                    tvEmojiFlag.text = flagEmoji
+                    binding.tvEmojiFlag.text = flagEmoji
                 }
                 is CPFlagImageProvider -> {
                     showFlag(FlagView.IMAGE)
-                    imgFlag.setImageResource(flagProvider.getFlag(country.alpha2))
+                    binding.imgFlag.setImageResource(flagProvider.getFlag(country.alpha2))
                 }
             }
         } else {
@@ -101,12 +104,12 @@ internal class CountryRow @JvmOverloads constructor(
     private fun showFlag(flagView: FlagView) {
         val viewToShow = when (flagView) {
             FlagView.NONE -> null
-            FlagView.EMOJI -> tvEmojiFlag
-            FlagView.IMAGE -> imgFlag
+            FlagView.EMOJI -> binding.tvEmojiFlag
+            FlagView.IMAGE -> binding.imgFlag
         }
 
         if (viewToShow != null) {
-            for (view in setOf(imgFlag, tvEmojiFlag)) {
+            for (view in setOf(binding.imgFlag, binding.tvEmojiFlag)) {
                 if (view == viewToShow) {
                     view.visibility = View.VISIBLE
                 } else {
@@ -114,14 +117,14 @@ internal class CountryRow @JvmOverloads constructor(
                 }
             }
         } else {
-            flagHolder.visibility = View.GONE
+            binding.flagHolder.visibility = View.GONE
         }
     }
 
     private fun applyTextSize() {
         val emojiSize: Float =
-            if (rowConfig.secondaryTextGenerator == null) tvPrimaryText.textSize else tvPrimaryText.textSize * 1.3f
-        tvEmojiFlag.setTextSize(TypedValue.COMPLEX_UNIT_PX, emojiSize)
+            if (rowConfig.secondaryTextGenerator == null) binding.tvPrimaryText.textSize else binding.tvPrimaryText.textSize * 1.3f
+        binding.tvEmojiFlag.setTextSize(TypedValue.COMPLEX_UNIT_PX, emojiSize)
     }
 
 }
