@@ -56,7 +56,7 @@ class FileWriter(val projectRootDir: String) {
                     currencySymbol,
                     cctld,
                     flagEmoji,
-                    phoneCode ?: " "
+                    phoneCode
                 )
             }
         }
@@ -68,7 +68,7 @@ class FileWriter(val projectRootDir: String) {
         cpModelDirPath: String = cpModelDir,
         baseCountries: List<BaseCountry>
     ) {
-        val filePath = "$cpModelDirPath/MasterBaseList.kt"
+        val filePath = "$cpModelDirPath/MasterInfoList.kt"
         val file = File(filePath)
         file.parentFile.mkdirs()
 
@@ -77,11 +77,11 @@ class FileWriter(val projectRootDir: String) {
             appendln(
                 "package com.hbb20.countrypicker.models\n" +
                         "\n" +
-                        "internal val masterBaseList = listOf(\n"
+                        "internal val countryInfoList = listOf(\n"
             )
             baseCountries.forEachIndexed { index, it ->
                 var line =
-                    "    BaseCountry(\n" +
+                    "    CountryInfo(\n" +
                             "        alpha2 = \"${it.alpha2}\",\n" +
                             "        alpha3 = \"${it.alpha3}\",\n" +
                             "        englishName = \"${it.englishName}\",\n" +

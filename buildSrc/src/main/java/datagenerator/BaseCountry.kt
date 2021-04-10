@@ -11,24 +11,44 @@ class BaseCountry(
     val currencySymbol: String,
     val cctld: String,
     val flagEmoji: String,
-    val phoneCode: Int?
+    val phoneCode: Int
 ) {
     constructor(
-        infoCountry: InfoCountry,
+        IP2LocationInfoCountry: IP2LocationInfoCountry,
         flagEmoji: String,
-        phoneCode: Int?
+        phoneCode: Int
     ) : this(
-        infoCountry.alpha2,
-        infoCountry.alpha3,
-        infoCountry.englishName,
-        infoCountry.demonym,
-        infoCountry.capitalEnglishName,
-        infoCountry.areaKM2,
-        infoCountry.population.toLong(),
-        infoCountry.currencyCode,
-        infoCountry.currencyName,
-        infoCountry.currencySymbol,
-        infoCountry.cctld,
+        IP2LocationInfoCountry.alpha2,
+        IP2LocationInfoCountry.alpha3,
+        IP2LocationInfoCountry.englishName,
+        IP2LocationInfoCountry.demonym,
+        IP2LocationInfoCountry.capitalEnglishName,
+        IP2LocationInfoCountry.areaKM2,
+        IP2LocationInfoCountry.population.toLong(),
+        IP2LocationInfoCountry.currencyCode,
+        IP2LocationInfoCountry.currencyName,
+        IP2LocationInfoCountry.currencySymbol,
+        IP2LocationInfoCountry.cctld,
+        flagEmoji,
+        phoneCode
+    )
+
+    constructor(
+        additionalCountryInfo: AdditionalCountryInfo,
+        flagEmoji: String,
+        phoneCode: Int
+    ) : this(
+        additionalCountryInfo.alpha2,
+        additionalCountryInfo.alpha3,
+        additionalCountryInfo.englishName,
+        additionalCountryInfo.demonym,
+        additionalCountryInfo.capitalEnglishName,
+        additionalCountryInfo.areaKM2,
+        additionalCountryInfo.population.toLong(),
+        additionalCountryInfo.currencyCode,
+        additionalCountryInfo.currencyName,
+        additionalCountryInfo.currencySymbol,
+        additionalCountryInfo.cctld,
         flagEmoji,
         phoneCode
     )

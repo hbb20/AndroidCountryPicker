@@ -20,9 +20,9 @@ private const val LANG_CODE = "lang_code"
 private const val LANG_NAME = "lang_name"
 private const val CCTLD = "cctld"
 
-class InfoReader(val rootDir: String) {
+class IP2LocationInfoReader(val rootDir: String) {
 
-    fun read(infoFilePath: String = "$rootDir/data/ip2location/IP2LOCATION-COUNTRY-INFORMATION.CSV"): MutableMap<String, InfoCountry> {
+    fun read(infoFilePath: String = "$rootDir/data/ip2location/IP2LOCATION-COUNTRY-INFORMATION.CSV"): MutableMap<String, IP2LocationInfoCountry> {
         print("infoFilePath = $infoFilePath")
         val reader = Files.newBufferedReader(Paths.get(infoFilePath))
         // parse the file into csv values
@@ -32,10 +32,10 @@ class InfoReader(val rootDir: String) {
                 .withIgnoreHeaderCase()
                 .withTrim()
         )
-        val result = mutableMapOf<String, InfoCountry>()
+        val result = mutableMapOf<String, IP2LocationInfoCountry>()
         for (csvRecord in csvParser) {
             val country =
-                InfoCountry(
+                IP2LocationInfoCountry(
                     alpha2 = csvRecord[ALPHA_2],
                     alpha3 = csvRecord[ALPHA_3],
                     englishName = csvRecord[NAME],
@@ -56,7 +56,7 @@ class InfoReader(val rootDir: String) {
 
 }
 
-class InfoCountry(
+class IP2LocationInfoCountry(
     val alpha2: String,
     val alpha3: String,
     val englishName: String,

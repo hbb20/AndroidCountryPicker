@@ -1,8 +1,8 @@
 package com.hbb20.countrypicker.models
 
-internal val masterBaseList = listOf(
+internal val countryInfoList = listOf(
 
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AD",
         alpha3 = "AND",
         englishName = "Andorra",
@@ -17,7 +17,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇩",
         phoneCode = 376
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AE",
         alpha3 = "ARE",
         englishName = "United Arab Emirates",
@@ -32,7 +32,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇪",
         phoneCode = 971
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AF",
         alpha3 = "AFG",
         englishName = "Afghanistan",
@@ -47,7 +47,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇫",
         phoneCode = 93
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AG",
         alpha3 = "ATG",
         englishName = "Antigua and Barbuda",
@@ -62,7 +62,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇬",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AI",
         alpha3 = "AIA",
         englishName = "Anguilla",
@@ -77,7 +77,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇮",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AL",
         alpha3 = "ALB",
         englishName = "Albania",
@@ -92,7 +92,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇱",
         phoneCode = 355
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AM",
         alpha3 = "ARM",
         englishName = "Armenia",
@@ -107,7 +107,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇲",
         phoneCode = 374
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AO",
         alpha3 = "AGO",
         englishName = "Angola",
@@ -122,7 +122,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇴",
         phoneCode = 244
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AQ",
         alpha3 = "ATA",
         englishName = "Antarctica",
@@ -137,7 +137,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇶",
         phoneCode = 672
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AR",
         alpha3 = "ARG",
         englishName = "Argentina",
@@ -152,7 +152,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇷",
         phoneCode = 54
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AS",
         alpha3 = "ASM",
         englishName = "American Samoa",
@@ -167,7 +167,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇸",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AT",
         alpha3 = "AUT",
         englishName = "Austria",
@@ -182,7 +182,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇹",
         phoneCode = 43
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AU",
         alpha3 = "AUS",
         englishName = "Australia",
@@ -197,7 +197,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇺",
         phoneCode = 61
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AW",
         alpha3 = "ABW",
         englishName = "Aruba",
@@ -212,7 +212,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇼",
         phoneCode = 297
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AX",
         alpha3 = "ALA",
         englishName = "Aland Islands",
@@ -227,7 +227,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇽",
         phoneCode = 358
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AZ",
         alpha3 = "AZE",
         englishName = "Azerbaijan",
@@ -242,7 +242,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇿",
         phoneCode = 994
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BA",
         alpha3 = "BIH",
         englishName = "Bosnia and Herzegovina",
@@ -257,7 +257,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇦",
         phoneCode = 387
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BB",
         alpha3 = "BRB",
         englishName = "Barbados",
@@ -272,7 +272,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇧",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BD",
         alpha3 = "BGD",
         englishName = "Bangladesh",
@@ -287,7 +287,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇩",
         phoneCode = 880
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BE",
         alpha3 = "BEL",
         englishName = "Belgium",
@@ -302,7 +302,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇪",
         phoneCode = 32
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BF",
         alpha3 = "BFA",
         englishName = "Burkina Faso",
@@ -317,7 +317,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇫",
         phoneCode = 226
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BG",
         alpha3 = "BGR",
         englishName = "Bulgaria",
@@ -332,7 +332,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇬",
         phoneCode = 359
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BH",
         alpha3 = "BHR",
         englishName = "Bahrain",
@@ -347,7 +347,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇭",
         phoneCode = 973
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BI",
         alpha3 = "BDI",
         englishName = "Burundi",
@@ -362,7 +362,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇮",
         phoneCode = 257
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BJ",
         alpha3 = "BEN",
         englishName = "Benin",
@@ -377,7 +377,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇯",
         phoneCode = 229
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BL",
         alpha3 = "BLM",
         englishName = "Saint Barthelemy",
@@ -392,7 +392,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇱",
         phoneCode = 590
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BM",
         alpha3 = "BMU",
         englishName = "Bermuda",
@@ -407,7 +407,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇲",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BN",
         alpha3 = "BRN",
         englishName = "Brunei Darussalam",
@@ -422,7 +422,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇳",
         phoneCode = 673
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BO",
         alpha3 = "BOL",
         englishName = "Bolivia (Plurinational State of)",
@@ -437,7 +437,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇴",
         phoneCode = 591
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BQ",
         alpha3 = "BES",
         englishName = "Bonaire, Sint Eustatius and Saba",
@@ -452,7 +452,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇶",
         phoneCode = 599
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BR",
         alpha3 = "BRA",
         englishName = "Brazil",
@@ -467,7 +467,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇷",
         phoneCode = 55
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BS",
         alpha3 = "BHS",
         englishName = "Bahamas",
@@ -482,7 +482,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇸",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BT",
         alpha3 = "BTN",
         englishName = "Bhutan",
@@ -497,7 +497,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇹",
         phoneCode = 975
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BV",
         alpha3 = "BVT",
         englishName = "Bouvet Island",
@@ -512,7 +512,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇻",
         phoneCode = 47
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BW",
         alpha3 = "BWA",
         englishName = "Botswana",
@@ -527,7 +527,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇼",
         phoneCode = 267
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BY",
         alpha3 = "BLR",
         englishName = "Belarus",
@@ -542,7 +542,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇾",
         phoneCode = 375
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BZ",
         alpha3 = "BLZ",
         englishName = "Belize",
@@ -557,7 +557,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇿",
         phoneCode = 501
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CA",
         alpha3 = "CAN",
         englishName = "Canada",
@@ -572,7 +572,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇦",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CC",
         alpha3 = "CCK",
         englishName = "Cocos (Keeling) Islands",
@@ -587,7 +587,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇨",
         phoneCode = 61
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CD",
         alpha3 = "COD",
         englishName = "Congo (Democratic Republic of the)",
@@ -602,7 +602,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇩",
         phoneCode = 243
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CF",
         alpha3 = "CAF",
         englishName = "Central African Republic",
@@ -617,7 +617,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇫",
         phoneCode = 236
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CG",
         alpha3 = "COG",
         englishName = "Congo",
@@ -632,7 +632,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇬",
         phoneCode = 242
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CH",
         alpha3 = "CHE",
         englishName = "Switzerland",
@@ -647,7 +647,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇭",
         phoneCode = 41
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CI",
         alpha3 = "CIV",
         englishName = "Cote d'Ivoire",
@@ -662,7 +662,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇮",
         phoneCode = 225
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CK",
         alpha3 = "COK",
         englishName = "Cook Islands",
@@ -677,7 +677,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇰",
         phoneCode = 682
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CL",
         alpha3 = "CHL",
         englishName = "Chile",
@@ -692,7 +692,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇱",
         phoneCode = 56
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CM",
         alpha3 = "CMR",
         englishName = "Cameroon",
@@ -707,7 +707,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇲",
         phoneCode = 237
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CN",
         alpha3 = "CHN",
         englishName = "China",
@@ -722,7 +722,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇳",
         phoneCode = 86
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CO",
         alpha3 = "COL",
         englishName = "Colombia",
@@ -737,7 +737,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇴",
         phoneCode = 57
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CR",
         alpha3 = "CRI",
         englishName = "Costa Rica",
@@ -752,7 +752,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇷",
         phoneCode = 506
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CU",
         alpha3 = "CUB",
         englishName = "Cuba",
@@ -767,7 +767,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇺",
         phoneCode = 53
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CV",
         alpha3 = "CPV",
         englishName = "Cabo Verde",
@@ -782,7 +782,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇻",
         phoneCode = 238
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CW",
         alpha3 = "CUW",
         englishName = "Curaçao",
@@ -797,7 +797,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇼",
         phoneCode = 599
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CX",
         alpha3 = "CXR",
         englishName = "Christmas Island",
@@ -812,7 +812,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇽",
         phoneCode = 61
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CY",
         alpha3 = "CYP",
         englishName = "Cyprus",
@@ -827,7 +827,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇾",
         phoneCode = 357
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CZ",
         alpha3 = "CZE",
         englishName = "Czechia",
@@ -842,7 +842,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇿",
         phoneCode = 420
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "DE",
         alpha3 = "DEU",
         englishName = "Germany",
@@ -857,7 +857,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇩🇪",
         phoneCode = 49
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "DJ",
         alpha3 = "DJI",
         englishName = "Djibouti",
@@ -872,7 +872,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇩🇯",
         phoneCode = 253
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "DK",
         alpha3 = "DNK",
         englishName = "Denmark",
@@ -887,7 +887,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇩🇰",
         phoneCode = 45
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "DM",
         alpha3 = "DMA",
         englishName = "Dominica",
@@ -902,7 +902,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇩🇲",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "DO",
         alpha3 = "DOM",
         englishName = "Dominican Republic",
@@ -917,7 +917,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇩🇴",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "DZ",
         alpha3 = "DZA",
         englishName = "Algeria",
@@ -932,7 +932,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇩🇿",
         phoneCode = 213
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "EC",
         alpha3 = "ECU",
         englishName = "Ecuador",
@@ -947,7 +947,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇪🇨",
         phoneCode = 593
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "EE",
         alpha3 = "EST",
         englishName = "Estonia",
@@ -962,7 +962,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇪🇪",
         phoneCode = 372
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "EG",
         alpha3 = "EGY",
         englishName = "Egypt",
@@ -977,7 +977,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇪🇬",
         phoneCode = 20
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "EH",
         alpha3 = "ESH",
         englishName = "Western Sahara",
@@ -992,7 +992,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇪🇭",
         phoneCode = 212
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "ER",
         alpha3 = "ERI",
         englishName = "Eritrea",
@@ -1007,7 +1007,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇪🇷",
         phoneCode = 291
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "ES",
         alpha3 = "ESP",
         englishName = "Spain",
@@ -1022,7 +1022,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇪🇸",
         phoneCode = 34
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "ET",
         alpha3 = "ETH",
         englishName = "Ethiopia",
@@ -1037,7 +1037,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇪🇹",
         phoneCode = 251
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "FI",
         alpha3 = "FIN",
         englishName = "Finland",
@@ -1052,7 +1052,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇫🇮",
         phoneCode = 358
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "FJ",
         alpha3 = "FJI",
         englishName = "Fiji",
@@ -1067,7 +1067,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇫🇯",
         phoneCode = 679
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "FK",
         alpha3 = "FLK",
         englishName = "Falkland Islands (Malvinas)",
@@ -1082,7 +1082,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇫🇰",
         phoneCode = 500
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "FM",
         alpha3 = "FSM",
         englishName = "Micronesia (Federated States of)",
@@ -1097,7 +1097,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇫🇲",
         phoneCode = 691
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "FO",
         alpha3 = "FRO",
         englishName = "Faroe Islands",
@@ -1112,7 +1112,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇫🇴",
         phoneCode = 298
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "FR",
         alpha3 = "FRA",
         englishName = "France",
@@ -1127,7 +1127,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇫🇷",
         phoneCode = 33
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GA",
         alpha3 = "GAB",
         englishName = "Gabon",
@@ -1142,7 +1142,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇦",
         phoneCode = 241
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GB",
         alpha3 = "GBR",
         englishName = "United Kingdom of Great Britain and Northern Ireland",
@@ -1157,7 +1157,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇧",
         phoneCode = 44
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GD",
         alpha3 = "GRD",
         englishName = "Grenada",
@@ -1172,7 +1172,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇩",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GE",
         alpha3 = "GEO",
         englishName = "Georgia",
@@ -1187,7 +1187,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇪",
         phoneCode = 995
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GF",
         alpha3 = "GUF",
         englishName = "French Guiana",
@@ -1202,7 +1202,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇫",
         phoneCode = 594
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GG",
         alpha3 = "GGY",
         englishName = "Guernsey",
@@ -1217,7 +1217,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇬",
         phoneCode = 44
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GH",
         alpha3 = "GHA",
         englishName = "Ghana",
@@ -1232,7 +1232,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇭",
         phoneCode = 233
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GI",
         alpha3 = "GIB",
         englishName = "Gibraltar",
@@ -1247,7 +1247,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇮",
         phoneCode = 350
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GL",
         alpha3 = "GRL",
         englishName = "Greenland",
@@ -1262,7 +1262,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇱",
         phoneCode = 299
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GM",
         alpha3 = "GMB",
         englishName = "Gambia",
@@ -1277,7 +1277,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇲",
         phoneCode = 220
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GN",
         alpha3 = "GIN",
         englishName = "Guinea",
@@ -1292,7 +1292,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇳",
         phoneCode = 224
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GP",
         alpha3 = "GLP",
         englishName = "Guadeloupe",
@@ -1307,7 +1307,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇵",
         phoneCode = 590
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GQ",
         alpha3 = "GNQ",
         englishName = "Equatorial Guinea",
@@ -1322,7 +1322,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇶",
         phoneCode = 240
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GR",
         alpha3 = "GRC",
         englishName = "Greece",
@@ -1337,7 +1337,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇷",
         phoneCode = 30
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GS",
         alpha3 = "SGS",
         englishName = "South Georgia and the South Sandwich Islands",
@@ -1352,7 +1352,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇸",
         phoneCode = 500
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GT",
         alpha3 = "GTM",
         englishName = "Guatemala",
@@ -1367,7 +1367,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇹",
         phoneCode = 502
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GU",
         alpha3 = "GUM",
         englishName = "Guam",
@@ -1382,7 +1382,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇺",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GW",
         alpha3 = "GNB",
         englishName = "Guinea-Bissau",
@@ -1397,7 +1397,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇼",
         phoneCode = 245
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GY",
         alpha3 = "GUY",
         englishName = "Guyana",
@@ -1412,7 +1412,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇾",
         phoneCode = 592
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "HK",
         alpha3 = "HKG",
         englishName = "Hong Kong",
@@ -1427,7 +1427,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇭🇰",
         phoneCode = 852
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "HM",
         alpha3 = "HMD",
         englishName = "Heard Island and McDonald Islands",
@@ -1442,7 +1442,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇭🇲",
         phoneCode = 672
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "HN",
         alpha3 = "HND",
         englishName = "Honduras",
@@ -1457,7 +1457,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇭🇳",
         phoneCode = 504
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "HR",
         alpha3 = "HRV",
         englishName = "Croatia",
@@ -1472,7 +1472,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇭🇷",
         phoneCode = 385
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "HT",
         alpha3 = "HTI",
         englishName = "Haiti",
@@ -1487,7 +1487,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇭🇹",
         phoneCode = 509
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "HU",
         alpha3 = "HUN",
         englishName = "Hungary",
@@ -1502,7 +1502,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇭🇺",
         phoneCode = 36
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "ID",
         alpha3 = "IDN",
         englishName = "Indonesia",
@@ -1517,7 +1517,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇮🇩",
         phoneCode = 62
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "IE",
         alpha3 = "IRL",
         englishName = "Ireland",
@@ -1532,7 +1532,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇮🇪",
         phoneCode = 353
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "IL",
         alpha3 = "ISR",
         englishName = "Israel",
@@ -1547,7 +1547,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇮🇱",
         phoneCode = 972
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "IM",
         alpha3 = "IMN",
         englishName = "Isle of Man",
@@ -1562,7 +1562,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇮🇲",
         phoneCode = 44
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "IN",
         alpha3 = "IND",
         englishName = "India",
@@ -1577,7 +1577,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇮🇳",
         phoneCode = 91
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "IO",
         alpha3 = "IOT",
         englishName = "British Indian Ocean Territory",
@@ -1592,7 +1592,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇮🇴",
         phoneCode = 246
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "IQ",
         alpha3 = "IRQ",
         englishName = "Iraq",
@@ -1607,7 +1607,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇮🇶",
         phoneCode = 964
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "IR",
         alpha3 = "IRN",
         englishName = "Iran (Islamic Republic of)",
@@ -1622,7 +1622,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇮🇷",
         phoneCode = 98
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "IS",
         alpha3 = "ISL",
         englishName = "Iceland",
@@ -1637,7 +1637,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇮🇸",
         phoneCode = 354
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "IT",
         alpha3 = "ITA",
         englishName = "Italy",
@@ -1652,7 +1652,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇮🇹",
         phoneCode = 39
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "JE",
         alpha3 = "JEY",
         englishName = "Jersey",
@@ -1667,7 +1667,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇯🇪",
         phoneCode = 44
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "JM",
         alpha3 = "JAM",
         englishName = "Jamaica",
@@ -1682,7 +1682,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇯🇲",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "JO",
         alpha3 = "JOR",
         englishName = "Jordan",
@@ -1697,7 +1697,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇯🇴",
         phoneCode = 962
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "JP",
         alpha3 = "JPN",
         englishName = "Japan",
@@ -1712,7 +1712,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇯🇵",
         phoneCode = 81
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KE",
         alpha3 = "KEN",
         englishName = "Kenya",
@@ -1727,7 +1727,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇪",
         phoneCode = 254
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KG",
         alpha3 = "KGZ",
         englishName = "Kyrgyzstan",
@@ -1742,7 +1742,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇬",
         phoneCode = 996
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KH",
         alpha3 = "KHM",
         englishName = "Cambodia",
@@ -1757,7 +1757,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇭",
         phoneCode = 855
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KI",
         alpha3 = "KIR",
         englishName = "Kiribati",
@@ -1772,7 +1772,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇮",
         phoneCode = 686
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KM",
         alpha3 = "COM",
         englishName = "Comoros",
@@ -1787,7 +1787,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇲",
         phoneCode = 269
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KN",
         alpha3 = "KNA",
         englishName = "Saint Kitts and Nevis",
@@ -1802,7 +1802,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇳",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KP",
         alpha3 = "PRK",
         englishName = "Korea (Democratic People's Republic of)",
@@ -1817,7 +1817,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇵",
         phoneCode = 850
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KR",
         alpha3 = "KOR",
         englishName = "Korea (Republic of)",
@@ -1832,7 +1832,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇷",
         phoneCode = 82
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KW",
         alpha3 = "KWT",
         englishName = "Kuwait",
@@ -1847,7 +1847,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇼",
         phoneCode = 965
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KY",
         alpha3 = "CYM",
         englishName = "Cayman Islands",
@@ -1862,7 +1862,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇾",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KZ",
         alpha3 = "KAZ",
         englishName = "Kazakhstan",
@@ -1877,7 +1877,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇿",
         phoneCode = 7
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LA",
         alpha3 = "LAO",
         englishName = "Lao People's Democratic Republic",
@@ -1892,7 +1892,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇦",
         phoneCode = 856
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LB",
         alpha3 = "LBN",
         englishName = "Lebanon",
@@ -1907,7 +1907,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇧",
         phoneCode = 961
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LC",
         alpha3 = "LCA",
         englishName = "Saint Lucia",
@@ -1922,7 +1922,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇨",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LI",
         alpha3 = "LIE",
         englishName = "Liechtenstein",
@@ -1937,7 +1937,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇮",
         phoneCode = 423
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LK",
         alpha3 = "LKA",
         englishName = "Sri Lanka",
@@ -1952,7 +1952,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇰",
         phoneCode = 94
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LR",
         alpha3 = "LBR",
         englishName = "Liberia",
@@ -1967,7 +1967,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇷",
         phoneCode = 231
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LS",
         alpha3 = "LSO",
         englishName = "Lesotho",
@@ -1982,7 +1982,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇸",
         phoneCode = 266
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LT",
         alpha3 = "LTU",
         englishName = "Lithuania",
@@ -1997,7 +1997,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇹",
         phoneCode = 370
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LU",
         alpha3 = "LUX",
         englishName = "Luxembourg",
@@ -2012,7 +2012,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇺",
         phoneCode = 352
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LV",
         alpha3 = "LVA",
         englishName = "Latvia",
@@ -2027,7 +2027,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇻",
         phoneCode = 371
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LY",
         alpha3 = "LBY",
         englishName = "Libya",
@@ -2042,7 +2042,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇾",
         phoneCode = 218
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MA",
         alpha3 = "MAR",
         englishName = "Morocco",
@@ -2057,7 +2057,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇦",
         phoneCode = 212
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MC",
         alpha3 = "MCO",
         englishName = "Monaco",
@@ -2072,7 +2072,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇨",
         phoneCode = 377
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MD",
         alpha3 = "MDA",
         englishName = "Moldova (Republic of)",
@@ -2087,7 +2087,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇩",
         phoneCode = 373
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "ME",
         alpha3 = "MNE",
         englishName = "Montenegro",
@@ -2102,7 +2102,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇪",
         phoneCode = 382
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MF",
         alpha3 = "MAF",
         englishName = "Saint Martin (French Part)",
@@ -2117,7 +2117,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇫",
         phoneCode = 590
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MG",
         alpha3 = "MDG",
         englishName = "Madagascar",
@@ -2132,7 +2132,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇬",
         phoneCode = 261
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MH",
         alpha3 = "MHL",
         englishName = "Marshall Islands",
@@ -2147,7 +2147,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇭",
         phoneCode = 692
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MK",
         alpha3 = "MKD",
         englishName = "North Macedonia",
@@ -2162,7 +2162,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇰",
         phoneCode = 389
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "ML",
         alpha3 = "MLI",
         englishName = "Mali",
@@ -2177,7 +2177,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇱",
         phoneCode = 223
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MM",
         alpha3 = "MMR",
         englishName = "Myanmar",
@@ -2192,7 +2192,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇲",
         phoneCode = 95
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MN",
         alpha3 = "MNG",
         englishName = "Mongolia",
@@ -2207,7 +2207,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇳",
         phoneCode = 976
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MO",
         alpha3 = "MAC",
         englishName = "Macao",
@@ -2222,7 +2222,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇴",
         phoneCode = 853
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MP",
         alpha3 = "MNP",
         englishName = "Northern Mariana Islands",
@@ -2237,7 +2237,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇵",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MQ",
         alpha3 = "MTQ",
         englishName = "Martinique",
@@ -2252,7 +2252,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇶",
         phoneCode = 596
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MR",
         alpha3 = "MRT",
         englishName = "Mauritania",
@@ -2267,7 +2267,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇷",
         phoneCode = 222
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MS",
         alpha3 = "MSR",
         englishName = "Montserrat",
@@ -2282,7 +2282,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇸",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MT",
         alpha3 = "MLT",
         englishName = "Malta",
@@ -2297,7 +2297,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇹",
         phoneCode = 356
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MU",
         alpha3 = "MUS",
         englishName = "Mauritius",
@@ -2312,7 +2312,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇺",
         phoneCode = 230
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MV",
         alpha3 = "MDV",
         englishName = "Maldives",
@@ -2327,7 +2327,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇻",
         phoneCode = 960
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MW",
         alpha3 = "MWI",
         englishName = "Malawi",
@@ -2342,7 +2342,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇼",
         phoneCode = 265
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MX",
         alpha3 = "MEX",
         englishName = "Mexico",
@@ -2357,7 +2357,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇽",
         phoneCode = 52
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MY",
         alpha3 = "MYS",
         englishName = "Malaysia",
@@ -2372,7 +2372,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇾",
         phoneCode = 60
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MZ",
         alpha3 = "MOZ",
         englishName = "Mozambique",
@@ -2387,7 +2387,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇿",
         phoneCode = 258
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NA",
         alpha3 = "NAM",
         englishName = "Namibia",
@@ -2402,7 +2402,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇦",
         phoneCode = 264
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NC",
         alpha3 = "NCL",
         englishName = "New Caledonia",
@@ -2417,7 +2417,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇨",
         phoneCode = 687
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NE",
         alpha3 = "NER",
         englishName = "Niger",
@@ -2432,7 +2432,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇪",
         phoneCode = 227
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NF",
         alpha3 = "NFK",
         englishName = "Norfolk Island",
@@ -2447,7 +2447,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇫",
         phoneCode = 672
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NG",
         alpha3 = "NGA",
         englishName = "Nigeria",
@@ -2462,7 +2462,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇬",
         phoneCode = 234
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NI",
         alpha3 = "NIC",
         englishName = "Nicaragua",
@@ -2477,7 +2477,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇮",
         phoneCode = 505
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NL",
         alpha3 = "NLD",
         englishName = "Netherlands",
@@ -2492,7 +2492,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇱",
         phoneCode = 31
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NO",
         alpha3 = "NOR",
         englishName = "Norway",
@@ -2507,7 +2507,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇴",
         phoneCode = 47
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NP",
         alpha3 = "NPL",
         englishName = "Nepal",
@@ -2522,7 +2522,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇵",
         phoneCode = 977
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NR",
         alpha3 = "NRU",
         englishName = "Nauru",
@@ -2537,7 +2537,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇷",
         phoneCode = 674
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NU",
         alpha3 = "NIU",
         englishName = "Niue",
@@ -2552,7 +2552,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇺",
         phoneCode = 683
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NZ",
         alpha3 = "NZL",
         englishName = "New Zealand",
@@ -2567,7 +2567,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇿",
         phoneCode = 64
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "OM",
         alpha3 = "OMN",
         englishName = "Oman",
@@ -2582,7 +2582,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇴🇲",
         phoneCode = 968
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PA",
         alpha3 = "PAN",
         englishName = "Panama",
@@ -2597,7 +2597,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇦",
         phoneCode = 507
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PE",
         alpha3 = "PER",
         englishName = "Peru",
@@ -2612,7 +2612,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇪",
         phoneCode = 51
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PF",
         alpha3 = "PYF",
         englishName = "French Polynesia",
@@ -2627,7 +2627,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇫",
         phoneCode = 689
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PG",
         alpha3 = "PNG",
         englishName = "Papua New Guinea",
@@ -2642,7 +2642,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇬",
         phoneCode = 675
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PH",
         alpha3 = "PHL",
         englishName = "Philippines",
@@ -2657,7 +2657,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇭",
         phoneCode = 63
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PK",
         alpha3 = "PAK",
         englishName = "Pakistan",
@@ -2672,7 +2672,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇰",
         phoneCode = 92
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PL",
         alpha3 = "POL",
         englishName = "Poland",
@@ -2687,7 +2687,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇱",
         phoneCode = 48
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PM",
         alpha3 = "SPM",
         englishName = "Saint Pierre and Miquelon",
@@ -2702,7 +2702,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇲",
         phoneCode = 508
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PN",
         alpha3 = "PCN",
         englishName = "Pitcairn",
@@ -2717,7 +2717,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇳",
         phoneCode = 870
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PR",
         alpha3 = "PRI",
         englishName = "Puerto Rico",
@@ -2732,7 +2732,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇷",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PS",
         alpha3 = "PSE",
         englishName = "Palestine, State of",
@@ -2747,7 +2747,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇸",
         phoneCode = 970
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PT",
         alpha3 = "PRT",
         englishName = "Portugal",
@@ -2762,7 +2762,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇹",
         phoneCode = 351
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PW",
         alpha3 = "PLW",
         englishName = "Palau",
@@ -2777,7 +2777,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇼",
         phoneCode = 680
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PY",
         alpha3 = "PRY",
         englishName = "Paraguay",
@@ -2792,7 +2792,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇾",
         phoneCode = 595
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "QA",
         alpha3 = "QAT",
         englishName = "Qatar",
@@ -2807,7 +2807,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇶🇦",
         phoneCode = 974
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "RE",
         alpha3 = "REU",
         englishName = "Reunion",
@@ -2822,7 +2822,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇷🇪",
         phoneCode = 262
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "RO",
         alpha3 = "ROU",
         englishName = "Romania",
@@ -2837,7 +2837,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇷🇴",
         phoneCode = 40
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "RS",
         alpha3 = "SRB",
         englishName = "Serbia",
@@ -2852,7 +2852,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇷🇸",
         phoneCode = 381
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "RU",
         alpha3 = "RUS",
         englishName = "Russian Federation",
@@ -2867,7 +2867,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇷🇺",
         phoneCode = 7
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "RW",
         alpha3 = "RWA",
         englishName = "Rwanda",
@@ -2882,7 +2882,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇷🇼",
         phoneCode = 250
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SA",
         alpha3 = "SAU",
         englishName = "Saudi Arabia",
@@ -2897,7 +2897,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇦",
         phoneCode = 966
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SB",
         alpha3 = "SLB",
         englishName = "Solomon Islands",
@@ -2912,7 +2912,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇧",
         phoneCode = 677
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SC",
         alpha3 = "SYC",
         englishName = "Seychelles",
@@ -2927,7 +2927,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇨",
         phoneCode = 248
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SD",
         alpha3 = "SDN",
         englishName = "Sudan",
@@ -2942,7 +2942,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇩",
         phoneCode = 249
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SE",
         alpha3 = "SWE",
         englishName = "Sweden",
@@ -2957,7 +2957,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇪",
         phoneCode = 46
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SG",
         alpha3 = "SGP",
         englishName = "Singapore",
@@ -2972,7 +2972,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇬",
         phoneCode = 65
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SH",
         alpha3 = "SHN",
         englishName = "Saint Helena, Ascension and Tristan da Cunha",
@@ -2987,7 +2987,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇭",
         phoneCode = 290
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SI",
         alpha3 = "SVN",
         englishName = "Slovenia",
@@ -3002,7 +3002,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇮",
         phoneCode = 386
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SJ",
         alpha3 = "SJM",
         englishName = "Svalbard and Jan Mayen",
@@ -3017,7 +3017,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇯",
         phoneCode = 47
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SK",
         alpha3 = "SVK",
         englishName = "Slovakia",
@@ -3032,7 +3032,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇰",
         phoneCode = 421
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SL",
         alpha3 = "SLE",
         englishName = "Sierra Leone",
@@ -3047,7 +3047,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇱",
         phoneCode = 232
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SM",
         alpha3 = "SMR",
         englishName = "San Marino",
@@ -3062,7 +3062,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇲",
         phoneCode = 378
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SN",
         alpha3 = "SEN",
         englishName = "Senegal",
@@ -3077,7 +3077,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇳",
         phoneCode = 221
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SO",
         alpha3 = "SOM",
         englishName = "Somalia",
@@ -3092,7 +3092,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇴",
         phoneCode = 252
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SR",
         alpha3 = "SUR",
         englishName = "Suriname",
@@ -3107,7 +3107,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇷",
         phoneCode = 597
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SS",
         alpha3 = "SSD",
         englishName = "South Sudan",
@@ -3122,7 +3122,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇸",
         phoneCode = 211
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "ST",
         alpha3 = "STP",
         englishName = "Sao Tome and Principe",
@@ -3137,7 +3137,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇹",
         phoneCode = 239
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SV",
         alpha3 = "SLV",
         englishName = "El Salvador",
@@ -3152,7 +3152,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇻",
         phoneCode = 503
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SX",
         alpha3 = "SXM",
         englishName = "Sint Maarten (Dutch Part)",
@@ -3167,7 +3167,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇽",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SY",
         alpha3 = "SYR",
         englishName = "Syrian Arab Republic",
@@ -3182,7 +3182,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇾",
         phoneCode = 963
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SZ",
         alpha3 = "SWZ",
         englishName = "Eswatini",
@@ -3197,7 +3197,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇿",
         phoneCode = 268
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TC",
         alpha3 = "TCA",
         englishName = "Turks and Caicos Islands",
@@ -3212,7 +3212,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇨",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TD",
         alpha3 = "TCD",
         englishName = "Chad",
@@ -3227,7 +3227,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇩",
         phoneCode = 235
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TF",
         alpha3 = "ATF",
         englishName = "French Southern Territories",
@@ -3242,7 +3242,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇫",
         phoneCode = 262
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TG",
         alpha3 = "TGO",
         englishName = "Togo",
@@ -3257,7 +3257,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇬",
         phoneCode = 228
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TH",
         alpha3 = "THA",
         englishName = "Thailand",
@@ -3272,7 +3272,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇭",
         phoneCode = 66
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TJ",
         alpha3 = "TJK",
         englishName = "Tajikistan",
@@ -3287,7 +3287,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇯",
         phoneCode = 992
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TK",
         alpha3 = "TKL",
         englishName = "Tokelau",
@@ -3302,7 +3302,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇰",
         phoneCode = 690
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TL",
         alpha3 = "TLS",
         englishName = "Timor-Leste",
@@ -3317,7 +3317,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇱",
         phoneCode = 670
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TM",
         alpha3 = "TKM",
         englishName = "Turkmenistan",
@@ -3332,7 +3332,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇲",
         phoneCode = 993
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TN",
         alpha3 = "TUN",
         englishName = "Tunisia",
@@ -3347,7 +3347,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇳",
         phoneCode = 216
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TO",
         alpha3 = "TON",
         englishName = "Tonga",
@@ -3362,7 +3362,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇴",
         phoneCode = 676
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TR",
         alpha3 = "TUR",
         englishName = "Turkey",
@@ -3377,7 +3377,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇷",
         phoneCode = 90
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TT",
         alpha3 = "TTO",
         englishName = "Trinidad and Tobago",
@@ -3392,7 +3392,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇹",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TV",
         alpha3 = "TUV",
         englishName = "Tuvalu",
@@ -3407,7 +3407,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇻",
         phoneCode = 688
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TW",
         alpha3 = "TWN",
         englishName = "Taiwan (Province of China)",
@@ -3422,7 +3422,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇼",
         phoneCode = 886
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TZ",
         alpha3 = "TZA",
         englishName = "Tanzania, United Republic of",
@@ -3437,7 +3437,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇿",
         phoneCode = 255
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "UA",
         alpha3 = "UKR",
         englishName = "Ukraine",
@@ -3452,7 +3452,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇺🇦",
         phoneCode = 380
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "UG",
         alpha3 = "UGA",
         englishName = "Uganda",
@@ -3467,7 +3467,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇺🇬",
         phoneCode = 256
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "UM",
         alpha3 = "UMI",
         englishName = "United States Minor Outlying Islands",
@@ -3482,7 +3482,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇺🇲",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "US",
         alpha3 = "USA",
         englishName = "United States of America",
@@ -3497,7 +3497,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇺🇸",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "UY",
         alpha3 = "URY",
         englishName = "Uruguay",
@@ -3512,7 +3512,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇺🇾",
         phoneCode = 598
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "UZ",
         alpha3 = "UZB",
         englishName = "Uzbekistan",
@@ -3527,7 +3527,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇺🇿",
         phoneCode = 998
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "VA",
         alpha3 = "VAT",
         englishName = "Holy See",
@@ -3542,7 +3542,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇻🇦",
         phoneCode = 379
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "VC",
         alpha3 = "VCT",
         englishName = "Saint Vincent and the Grenadines",
@@ -3557,7 +3557,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇻🇨",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "VE",
         alpha3 = "VEN",
         englishName = "Venezuela (Bolivarian Republic of)",
@@ -3572,7 +3572,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇻🇪",
         phoneCode = 58
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "VG",
         alpha3 = "VGB",
         englishName = "Virgin Islands (British)",
@@ -3587,7 +3587,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇻🇬",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "VI",
         alpha3 = "VIR",
         englishName = "Virgin Islands (U.S.)",
@@ -3602,7 +3602,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇻🇮",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "VN",
         alpha3 = "VNM",
         englishName = "Viet Nam",
@@ -3617,7 +3617,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇻🇳",
         phoneCode = 84
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "VU",
         alpha3 = "VUT",
         englishName = "Vanuatu",
@@ -3632,7 +3632,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇻🇺",
         phoneCode = 678
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "WF",
         alpha3 = "WLF",
         englishName = "Wallis and Futuna",
@@ -3647,7 +3647,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇼🇫",
         phoneCode = 681
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "WS",
         alpha3 = "WSM",
         englishName = "Samoa",
@@ -3662,7 +3662,22 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇼🇸",
         phoneCode = 685
     ),
-    BaseCountry(
+    CountryInfo(
+        alpha2 = "XK",
+        alpha3 = "XKX",
+        englishName = "Kosovo",
+        demonym = "Kosovar",
+        capitalEnglishName = "Pristina",
+        areaKM2 = "10887",
+        population = 333333,
+        currencyCode = "AAA",
+        currencyName = "AACurr",
+        currencySymbol = "€",
+        cctld = "aa",
+        flagEmoji = "🇽🇰",
+        phoneCode = 383
+    ),
+    CountryInfo(
         alpha2 = "YE",
         alpha3 = "YEM",
         englishName = "Yemen",
@@ -3677,7 +3692,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇾🇪",
         phoneCode = 967
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "YT",
         alpha3 = "MYT",
         englishName = "Mayotte",
@@ -3692,7 +3707,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇾🇹",
         phoneCode = 262
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "ZA",
         alpha3 = "ZAF",
         englishName = "South Africa",
@@ -3707,7 +3722,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇿🇦",
         phoneCode = 27
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "ZM",
         alpha3 = "ZMB",
         englishName = "Zambia",
@@ -3722,7 +3737,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇿🇲",
         phoneCode = 260
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "ZW",
         alpha3 = "ZWE",
         englishName = "Zimbabwe",
