@@ -1,6 +1,6 @@
 package com.hbb20.countrypicker.models
 
-internal data class BaseCountry(
+internal data class CountryInfo(
     val alpha2: String,
     val alpha3: String,
     val englishName: String,

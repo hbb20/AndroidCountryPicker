@@ -1,15 +1,15 @@
-import com.hbb20.countrypicker.models.BaseCountry
+package com.hbb20.countrypicker.models
 
-internal val masterBaseList = listOf(
+internal val countryInfoList = listOf(
 
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AD",
         alpha3 = "AND",
         englishName = "Andorra",
         demonym = "Andorrans",
         capitalEnglishName = "Andorra la Vella",
         areaKM2 = "468",
-        population = 76953,
+        population = 77265,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -17,14 +17,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇩",
         phoneCode = 376
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AE",
         alpha3 = "ARE",
         englishName = "United Arab Emirates",
         demonym = "Emirians",
         capitalEnglishName = "Abu Dhabi",
         areaKM2 = "83600",
-        population = 9541615,
+        population = 9890402,
         currencyCode = "AED",
         currencyName = "United Arab Emirates Dirham",
         currencySymbol = "د.إ",
@@ -32,14 +32,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇪",
         phoneCode = 971
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AF",
         alpha3 = "AFG",
         englishName = "Afghanistan",
         demonym = "Afghans",
         capitalEnglishName = "Kabul",
         areaKM2 = "652230",
-        population = 36373176,
+        population = 38928346,
         currencyCode = "AFN",
         currencyName = "Afghan Afghani",
         currencySymbol = "؋",
@@ -47,14 +47,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇫",
         phoneCode = 93
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AG",
         alpha3 = "ATG",
         englishName = "Antigua and Barbuda",
         demonym = "Antiguans or Barbudans",
         capitalEnglishName = "Saint John's",
         areaKM2 = "442",
-        population = 103050,
+        population = 97929,
         currencyCode = "XCD",
         currencyName = "East Caribbean Dollar",
         currencySymbol = "$",
@@ -62,14 +62,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇬",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AI",
         alpha3 = "AIA",
         englishName = "Anguilla",
         demonym = "Anguillans",
         capitalEnglishName = "The Valley",
         areaKM2 = "91",
-        population = 15045,
+        population = 15003,
         currencyCode = "XCD",
         currencyName = "East Caribbean Dollar",
         currencySymbol = "$",
@@ -77,14 +77,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇮",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AL",
         alpha3 = "ALB",
         englishName = "Albania",
         demonym = "Albanians",
         capitalEnglishName = "Tirana",
         areaKM2 = "28748",
-        population = 2934363,
+        population = 2877797,
         currencyCode = "ALL",
         currencyName = "Albanian Lek",
         currencySymbol = "L",
@@ -92,14 +92,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇱",
         phoneCode = 355
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AM",
         alpha3 = "ARM",
         englishName = "Armenia",
         demonym = "Armenians",
         capitalEnglishName = "Yerevan",
         areaKM2 = "29743",
-        population = 2934152,
+        population = 2963243,
         currencyCode = "AMD",
         currencyName = "Armenian Dram",
         currencySymbol = "֏",
@@ -107,14 +107,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇲",
         phoneCode = 374
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AO",
         alpha3 = "AGO",
         englishName = "Angola",
         demonym = "Angolans",
         capitalEnglishName = "Luanda",
         areaKM2 = "1246700",
-        population = 30774205,
+        population = 32866272,
         currencyCode = "AOA",
         currencyName = "Angolan Kwanza",
         currencySymbol = "Kz",
@@ -122,7 +122,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇴",
         phoneCode = 244
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AQ",
         alpha3 = "ATA",
         englishName = "Antarctica",
@@ -137,14 +137,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇶",
         phoneCode = 672
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AR",
         alpha3 = "ARG",
         englishName = "Argentina",
         demonym = "Argentines",
         capitalEnglishName = "Buenos Aires",
         areaKM2 = "2780400",
-        population = 44688864,
+        population = 45195774,
         currencyCode = "ARS",
         currencyName = "Argentine Peso",
         currencySymbol = "$",
@@ -152,14 +152,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇷",
         phoneCode = 54
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AS",
         alpha3 = "ASM",
         englishName = "American Samoa",
         demonym = "American Samoans",
         capitalEnglishName = "Pago Pago",
         areaKM2 = "199",
-        population = 55679,
+        population = 55191,
         currencyCode = "USD",
         currencyName = "United States Dollar",
         currencySymbol = "$",
@@ -167,14 +167,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇸",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AT",
         alpha3 = "AUT",
         englishName = "Austria",
         demonym = "Austrians",
         capitalEnglishName = "Vienna",
         areaKM2 = "83871",
-        population = 8751820,
+        population = 9006398,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -182,14 +182,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇹",
         phoneCode = 43
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AU",
         alpha3 = "AUS",
         englishName = "Australia",
         demonym = "Australians",
         capitalEnglishName = "Canberra",
         areaKM2 = "7741220",
-        population = 24772247,
+        population = 25499884,
         currencyCode = "AUD",
         currencyName = "Australian Dollar",
         currencySymbol = "$",
@@ -197,14 +197,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇺",
         phoneCode = 61
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AW",
         alpha3 = "ABW",
         englishName = "Aruba",
         demonym = "Arubans",
         capitalEnglishName = "Oranjestad",
         areaKM2 = "180",
-        population = 105670,
+        population = 106766,
         currencyCode = "AWG",
         currencyName = "Aruban Florin",
         currencySymbol = "Afl",
@@ -212,14 +212,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇼",
         phoneCode = 297
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AX",
         alpha3 = "ALA",
         englishName = "Aland Islands",
         demonym = "Aland Islanders",
         capitalEnglishName = "Mariehamn",
         areaKM2 = "1552",
-        population = 29013,
+        population = 30144,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -227,14 +227,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇽",
         phoneCode = 358
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "AZ",
         alpha3 = "AZE",
         englishName = "Azerbaijan",
         demonym = "Azerbaijanis",
         capitalEnglishName = "Baku",
         areaKM2 = "86600",
-        population = 9923914,
+        population = 10139177,
         currencyCode = "AZN",
         currencyName = "Azerbaijani Manat",
         currencySymbol = "₼",
@@ -242,14 +242,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇦🇿",
         phoneCode = 994
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BA",
         alpha3 = "BIH",
         englishName = "Bosnia and Herzegovina",
         demonym = "Bosnians or Herzegovinians",
         capitalEnglishName = "Sarajevo",
         areaKM2 = "51197",
-        population = 3503554,
+        population = 3280819,
         currencyCode = "BAM",
         currencyName = "Bosnia And Herzegovina Convertible Mark",
         currencySymbol = "KM",
@@ -257,14 +257,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇦",
         phoneCode = 387
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BB",
         alpha3 = "BRB",
         englishName = "Barbados",
         demonym = "Barbadians",
         capitalEnglishName = "Bridgetown",
         areaKM2 = "430",
-        population = 286388,
+        population = 287375,
         currencyCode = "USD",
         currencyName = "United States Dollar",
         currencySymbol = "$",
@@ -272,14 +272,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇧",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BD",
         alpha3 = "BGD",
         englishName = "Bangladesh",
         demonym = "Bangladeshis",
         capitalEnglishName = "Dhaka",
         areaKM2 = "143998",
-        population = 166368149,
+        population = 164689383,
         currencyCode = "BDT",
         currencyName = "Bangladeshi Taka",
         currencySymbol = "৳",
@@ -287,14 +287,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇩",
         phoneCode = 880
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BE",
         alpha3 = "BEL",
         englishName = "Belgium",
         demonym = "Belgians",
         capitalEnglishName = "Brussels",
         areaKM2 = "30528",
-        population = 11498519,
+        population = 11589623,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -302,14 +302,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇪",
         phoneCode = 32
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BF",
         alpha3 = "BFA",
         englishName = "Burkina Faso",
         demonym = "Burkinabe",
         capitalEnglishName = "Ouagadougou",
         areaKM2 = "274200",
-        population = 19751651,
+        population = 20903273,
         currencyCode = "XOF",
         currencyName = "Cfa Franc Bceao",
         currencySymbol = "CFA",
@@ -317,14 +317,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇫",
         phoneCode = 226
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BG",
         alpha3 = "BGR",
         englishName = "Bulgaria",
         demonym = "Bulgarians",
         capitalEnglishName = "Sofia",
         areaKM2 = "110879",
-        population = 7036848,
+        population = 6948445,
         currencyCode = "BGN",
         currencyName = "Bulgarian Lev",
         currencySymbol = "лв",
@@ -332,14 +332,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇬",
         phoneCode = 359
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BH",
         alpha3 = "BHR",
         englishName = "Bahrain",
         demonym = "Bahrainis",
         capitalEnglishName = "Manama",
         areaKM2 = "760",
-        population = 1566993,
+        population = 1701575,
         currencyCode = "BHD",
         currencyName = "Bahraini Dinar",
         currencySymbol = "BD",
@@ -347,14 +347,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇭",
         phoneCode = 973
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BI",
         alpha3 = "BDI",
         englishName = "Burundi",
         demonym = "Burundians",
         capitalEnglishName = "Bujumbura",
         areaKM2 = "27830",
-        population = 11216450,
+        population = 11890784,
         currencyCode = "BIF",
         currencyName = "Burundian Franc",
         currencySymbol = "FBu",
@@ -362,14 +362,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇮",
         phoneCode = 257
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BJ",
         alpha3 = "BEN",
         englishName = "Benin",
         demonym = "Beninese",
         capitalEnglishName = "Porto-Novo",
         areaKM2 = "112622",
-        population = 11485674,
+        population = 12123200,
         currencyCode = "XOF",
         currencyName = "Cfa Franc Bceao",
         currencySymbol = "CFA",
@@ -377,14 +377,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇯",
         phoneCode = 229
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BL",
         alpha3 = "BLM",
         englishName = "Saint Barthelemy",
         demonym = "Barthelemois",
         capitalEnglishName = "Gustavia",
         areaKM2 = "21",
-        population = 8450,
+        population = 9877,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -392,14 +392,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇱",
         phoneCode = 590
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BM",
         alpha3 = "BMU",
         englishName = "Bermuda",
         demonym = "Bermudians",
         capitalEnglishName = "Hamilton",
         areaKM2 = "54",
-        population = 61070,
+        population = 62278,
         currencyCode = "BMD",
         currencyName = "Bermudian Dollar",
         currencySymbol = "$",
@@ -407,14 +407,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇲",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BN",
         alpha3 = "BRN",
         englishName = "Brunei Darussalam",
         demonym = "Bruneians",
         capitalEnglishName = "Bandar Seri Begawan",
         areaKM2 = "5765",
-        population = 434076,
+        population = 437479,
         currencyCode = "SGD",
         currencyName = "Brunei Dollar",
         currencySymbol = "$",
@@ -422,14 +422,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇳",
         phoneCode = 673
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BO",
         alpha3 = "BOL",
         englishName = "Bolivia (Plurinational State of)",
         demonym = "Bolivians",
         capitalEnglishName = "Sucre",
         areaKM2 = "1098581",
-        population = 11215674,
+        population = 11673021,
         currencyCode = "BOB",
         currencyName = "Boliviano",
         currencySymbol = "Bs",
@@ -437,14 +437,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇴",
         phoneCode = 591
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BQ",
         alpha3 = "BES",
         englishName = "Bonaire, Sint Eustatius and Saba",
         demonym = "Bonaire Dutch",
         capitalEnglishName = "Kralendijk",
         areaKM2 = "328",
-        population = 24548,
+        population = 26223,
         currencyCode = "USD",
         currencyName = "United States Dollar",
         currencySymbol = "$",
@@ -452,14 +452,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇶",
         phoneCode = 599
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BR",
         alpha3 = "BRA",
         englishName = "Brazil",
         demonym = "Brazilians",
         capitalEnglishName = "Brasileia",
         areaKM2 = "8514877",
-        population = 210867954,
+        population = 212559417,
         currencyCode = "BRL",
         currencyName = "Brazilian Real",
         currencySymbol = "Cz$",
@@ -467,14 +467,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇷",
         phoneCode = 55
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BS",
         alpha3 = "BHS",
         englishName = "Bahamas",
         demonym = "Bahamians",
         capitalEnglishName = "Nassau",
         areaKM2 = "13880",
-        population = 399285,
+        population = 393244,
         currencyCode = "BSD",
         currencyName = "Bahamian Dollar",
         currencySymbol = "$",
@@ -482,14 +482,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇸",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BT",
         alpha3 = "BTN",
         englishName = "Bhutan",
         demonym = "Bhutanese",
         capitalEnglishName = "Thimphu",
         areaKM2 = "38394",
-        population = 817054,
+        population = 771608,
         currencyCode = "BTN",
         currencyName = "Bhutanese Ngultrum",
         currencySymbol = "Nu.",
@@ -497,7 +497,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇹",
         phoneCode = 975
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BV",
         alpha3 = "BVT",
         englishName = "Bouvet Island",
@@ -512,14 +512,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇻",
         phoneCode = 47
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BW",
         alpha3 = "BWA",
         englishName = "Botswana",
         demonym = "Motswana",
         capitalEnglishName = "Gaborone",
         areaKM2 = "581730",
-        population = 2333201,
+        population = 2351627,
         currencyCode = "BWP",
         currencyName = "Botswana Pula",
         currencySymbol = "P",
@@ -527,14 +527,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇼",
         phoneCode = 267
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BY",
         alpha3 = "BLR",
         englishName = "Belarus",
         demonym = "Belarusians",
         capitalEnglishName = "Minsk",
         areaKM2 = "207600",
-        population = 9452113,
+        population = 9449323,
         currencyCode = "BYR",
         currencyName = "Belarusian Ruble",
         currencySymbol = "Br",
@@ -542,14 +542,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇾",
         phoneCode = 375
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "BZ",
         alpha3 = "BLZ",
         englishName = "Belize",
         demonym = "Belizeans",
         capitalEnglishName = "Belmopan",
         areaKM2 = "22966",
-        population = 382444,
+        population = 397628,
         currencyCode = "BZD",
         currencyName = "Belize Dollar",
         currencySymbol = "$",
@@ -557,14 +557,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇧🇿",
         phoneCode = 501
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CA",
         alpha3 = "CAN",
         englishName = "Canada",
         demonym = "Canadians",
         capitalEnglishName = "Ottawa",
         areaKM2 = "9984670",
-        population = 36953765,
+        population = 37742154,
         currencyCode = "CAD",
         currencyName = "Canadian Dollar",
         currencySymbol = "$",
@@ -572,14 +572,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇦",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CC",
         alpha3 = "CCK",
         englishName = "Cocos (Keeling) Islands",
         demonym = "Cocos Islanders",
         capitalEnglishName = "West Island",
         areaKM2 = "14",
-        population = 628,
+        population = 555,
         currencyCode = "AUD",
         currencyName = "Australian Dollar",
         currencySymbol = "$",
@@ -587,14 +587,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇨",
         phoneCode = 61
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CD",
         alpha3 = "COD",
         englishName = "Congo (Democratic Republic of the)",
         demonym = "Congolese",
         capitalEnglishName = "Kinshasa",
         areaKM2 = "2344858",
-        population = 84004989,
+        population = 89561403,
         currencyCode = "CDF",
         currencyName = "Congolese Franc",
         currencySymbol = "FCFA",
@@ -602,14 +602,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇩",
         phoneCode = 243
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CF",
         alpha3 = "CAF",
         englishName = "Central African Republic",
         demonym = "Central Africans",
         capitalEnglishName = "Bangui",
         areaKM2 = "622984",
-        population = 4737423,
+        population = 4829767,
         currencyCode = "XAF",
         currencyName = "Cfa Franc Beac",
         currencySymbol = "FCFA",
@@ -617,14 +617,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇫",
         phoneCode = 236
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CG",
         alpha3 = "COG",
         englishName = "Congo",
         demonym = "Congolese",
         capitalEnglishName = "Brazzaville",
         areaKM2 = "342000",
-        population = 5399895,
+        population = 5518087,
         currencyCode = "XAF",
         currencyName = "Cfa Franc Beac",
         currencySymbol = "FCFA",
@@ -632,14 +632,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇬",
         phoneCode = 242
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CH",
         alpha3 = "CHE",
         englishName = "Switzerland",
         demonym = "Swiss",
         capitalEnglishName = "Bern",
         areaKM2 = "41277",
-        population = 8544034,
+        population = 8654622,
         currencyCode = "CHF",
         currencyName = "Swiss Franc",
         currencySymbol = "Fr.",
@@ -647,14 +647,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇭",
         phoneCode = 41
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CI",
         alpha3 = "CIV",
         englishName = "Cote d'Ivoire",
         demonym = "Ivorians",
         capitalEnglishName = "Yamoussoukro",
         areaKM2 = "322463",
-        population = 24905843,
+        population = 26378274,
         currencyCode = "XOF",
         currencyName = "Cfa Franc Bceao",
         currencySymbol = "CFA",
@@ -662,14 +662,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇮",
         phoneCode = 225
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CK",
         alpha3 = "COK",
         englishName = "Cook Islands",
         demonym = "Cook Islanders",
         capitalEnglishName = "Avarua",
         areaKM2 = "236",
-        population = 17411,
+        population = 17564,
         currencyCode = "NZD",
         currencyName = "New Zealand Dollar",
         currencySymbol = "$",
@@ -677,14 +677,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇰",
         phoneCode = 682
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CL",
         alpha3 = "CHL",
         englishName = "Chile",
         demonym = "Chileans",
         capitalEnglishName = "Santiago",
         areaKM2 = "756102",
-        population = 18197209,
+        population = 19116201,
         currencyCode = "CLP",
         currencyName = "Chilean Peso",
         currencySymbol = "$",
@@ -692,14 +692,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇱",
         phoneCode = 56
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CM",
         alpha3 = "CMR",
         englishName = "Cameroon",
         demonym = "Cameroonians",
         capitalEnglishName = "Yaounde",
         areaKM2 = "475440",
-        population = 24678234,
+        population = 26545863,
         currencyCode = "XAF",
         currencyName = "Cfa Franc Beac",
         currencySymbol = "FCFA",
@@ -707,14 +707,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇲",
         phoneCode = 237
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CN",
         alpha3 = "CHN",
         englishName = "China",
         demonym = "Chinese",
         capitalEnglishName = "Beijing",
         areaKM2 = "9596961",
-        population = 1415045928,
+        population = 1439323776,
         currencyCode = "CNY",
         currencyName = "Chinese Yuan Renminbi",
         currencySymbol = "¥",
@@ -722,14 +722,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇳",
         phoneCode = 86
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CO",
         alpha3 = "COL",
         englishName = "Colombia",
         demonym = "Colombians",
         capitalEnglishName = "Bogota",
         areaKM2 = "1138910",
-        population = 49464683,
+        population = 50882891,
         currencyCode = "COP",
         currencyName = "Colombian Peso",
         currencySymbol = "$",
@@ -737,14 +737,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇴",
         phoneCode = 57
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CR",
         alpha3 = "CRI",
         englishName = "Costa Rica",
         demonym = "Costa Ricans",
         capitalEnglishName = "San Jose",
         areaKM2 = "51100",
-        population = 4953199,
+        population = 5094118,
         currencyCode = "CRC",
         currencyName = "Costa Rican Colon",
         currencySymbol = "₡",
@@ -752,14 +752,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇷",
         phoneCode = 506
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CU",
         alpha3 = "CUB",
         englishName = "Cuba",
         demonym = "Cubans",
         capitalEnglishName = "Havana",
         areaKM2 = "110860",
-        population = 11489082,
+        population = 11326616,
         currencyCode = "CUC",
         currencyName = "Cuban Convertible Peso",
         currencySymbol = "$",
@@ -767,14 +767,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇺",
         phoneCode = 53
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CV",
         alpha3 = "CPV",
         englishName = "Cabo Verde",
         demonym = "Cabo Verdeans",
         capitalEnglishName = "Praia",
         areaKM2 = "4033",
-        population = 553335,
+        population = 555987,
         currencyCode = "CVE",
         currencyName = "Cape Verde Escudo",
         currencySymbol = "$",
@@ -782,14 +782,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇻",
         phoneCode = 238
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CW",
         alpha3 = "CUW",
         englishName = "Curaçao",
         demonym = "Curacaoans",
         capitalEnglishName = "Willemstad",
         areaKM2 = "444",
-        population = 161577,
+        population = 164093,
         currencyCode = "ANG",
         currencyName = "Nl Antillian Guilder",
         currencySymbol = "ƒ",
@@ -797,14 +797,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇼",
         phoneCode = 599
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CX",
         alpha3 = "CXR",
         englishName = "Christmas Island",
         demonym = "Christmas Islanders",
         capitalEnglishName = "Flying Fish Cove",
         areaKM2 = "135",
-        population = 2205,
+        population = 1955,
         currencyCode = "AUD",
         currencyName = "Australian Dollar",
         currencySymbol = "$",
@@ -812,14 +812,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇽",
         phoneCode = 61
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CY",
         alpha3 = "CYP",
         englishName = "Cyprus",
         demonym = "Cypriots",
         capitalEnglishName = "Nicosia",
         areaKM2 = "9251",
-        population = 1189085,
+        population = 1207359,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -827,14 +827,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇾",
         phoneCode = 357
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "CZ",
         alpha3 = "CZE",
         englishName = "Czechia",
         demonym = "Czechs",
         capitalEnglishName = "Prague",
         areaKM2 = "78867",
-        population = 10625250,
+        population = 10708981,
         currencyCode = "CZK",
         currencyName = "Czech Koruna",
         currencySymbol = "Kč",
@@ -842,14 +842,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇨🇿",
         phoneCode = 420
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "DE",
         alpha3 = "DEU",
         englishName = "Germany",
         demonym = "Germans",
         capitalEnglishName = "Berlin",
         areaKM2 = "357022",
-        population = 82293457,
+        population = 83783942,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -857,14 +857,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇩🇪",
         phoneCode = 49
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "DJ",
         alpha3 = "DJI",
         englishName = "Djibouti",
         demonym = "Djiboutians",
         capitalEnglishName = "Djibouti",
         areaKM2 = "23200",
-        population = 971408,
+        population = 988000,
         currencyCode = "DJF",
         currencyName = "Djiboutian Franc",
         currencySymbol = "Fdj",
@@ -872,14 +872,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇩🇯",
         phoneCode = 253
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "DK",
         alpha3 = "DNK",
         englishName = "Denmark",
         demonym = "Danes",
         capitalEnglishName = "Copenhagen",
         areaKM2 = "43094",
-        population = 5754356,
+        population = 5792202,
         currencyCode = "DKK",
         currencyName = "Danish Krone",
         currencySymbol = "kr.",
@@ -887,14 +887,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇩🇰",
         phoneCode = 45
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "DM",
         alpha3 = "DMA",
         englishName = "Dominica",
         demonym = "Dominicans",
         capitalEnglishName = "Roseau",
         areaKM2 = "751",
-        population = 74308,
+        population = 71986,
         currencyCode = "XCD",
         currencyName = "East Caribbean Dollar",
         currencySymbol = "$",
@@ -902,14 +902,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇩🇲",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "DO",
         alpha3 = "DOM",
         englishName = "Dominican Republic",
         demonym = "Dominicans",
         capitalEnglishName = "Santo Domingo",
         areaKM2 = "48670",
-        population = 10882996,
+        population = 10847910,
         currencyCode = "DOP",
         currencyName = "Dominican Peso",
         currencySymbol = "$",
@@ -917,14 +917,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇩🇴",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "DZ",
         alpha3 = "DZA",
         englishName = "Algeria",
         demonym = "Algerians",
         capitalEnglishName = "Algiers",
         areaKM2 = "2381741",
-        population = 42008054,
+        population = 43851044,
         currencyCode = "DZD",
         currencyName = "Algerian Dinar",
         currencySymbol = "DA",
@@ -932,14 +932,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇩🇿",
         phoneCode = 213
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "EC",
         alpha3 = "ECU",
         englishName = "Ecuador",
         demonym = "Ecuadorians",
         capitalEnglishName = "Quito",
         areaKM2 = "283561",
-        population = 16863425,
+        population = 17643054,
         currencyCode = "USD",
         currencyName = "United States Dollar",
         currencySymbol = "$",
@@ -947,14 +947,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇪🇨",
         phoneCode = 593
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "EE",
         alpha3 = "EST",
         englishName = "Estonia",
         demonym = "Estonians",
         capitalEnglishName = "Tallinn",
         areaKM2 = "45228",
-        population = 1306788,
+        population = 1326535,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -962,14 +962,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇪🇪",
         phoneCode = 372
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "EG",
         alpha3 = "EGY",
         englishName = "Egypt",
         demonym = "Egyptians",
         capitalEnglishName = "Cairo",
         areaKM2 = "1001450",
-        population = 99375741,
+        population = 102334404,
         currencyCode = "EGP",
         currencyName = "Egyptian Pound",
         currencySymbol = "E£",
@@ -977,14 +977,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇪🇬",
         phoneCode = 20
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "EH",
         alpha3 = "ESH",
         englishName = "Western Sahara",
         demonym = "Sahrawis",
         capitalEnglishName = "Laayoune / El Aaiun",
         areaKM2 = "266000",
-        population = 567421,
+        population = 597339,
         currencyCode = "MAD",
         currencyName = "Moroccan Dirham",
         currencySymbol = "DH",
@@ -992,14 +992,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇪🇭",
         phoneCode = 212
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "ER",
         alpha3 = "ERI",
         englishName = "Eritrea",
         demonym = "Eritreans",
         capitalEnglishName = "Asmara",
         areaKM2 = "117600",
-        population = 5187948,
+        population = 3546421,
         currencyCode = "ERN",
         currencyName = "Eritrean Nakfa",
         currencySymbol = "Nkf",
@@ -1007,14 +1007,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇪🇷",
         phoneCode = 291
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "ES",
         alpha3 = "ESP",
         englishName = "Spain",
         demonym = "Spaniards",
         capitalEnglishName = "Madrid",
         areaKM2 = "505370",
-        population = 46397452,
+        population = 46754778,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -1022,14 +1022,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇪🇸",
         phoneCode = 34
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "ET",
         alpha3 = "ETH",
         englishName = "Ethiopia",
         demonym = "Ethiopians",
         capitalEnglishName = "Addis Ababa",
         areaKM2 = "1104300",
-        population = 107534882,
+        population = 114963588,
         currencyCode = "ETB",
         currencyName = "Ethiopian Birr",
         currencySymbol = "Br",
@@ -1037,14 +1037,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇪🇹",
         phoneCode = 251
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "FI",
         alpha3 = "FIN",
         englishName = "Finland",
         demonym = "Finns",
         capitalEnglishName = "Helsinki",
         areaKM2 = "338145",
-        population = 5542517,
+        population = 5540720,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -1052,14 +1052,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇫🇮",
         phoneCode = 358
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "FJ",
         alpha3 = "FJI",
         englishName = "Fiji",
         demonym = "Fijians",
         capitalEnglishName = "Suva",
         areaKM2 = "18274",
-        population = 912241,
+        population = 896445,
         currencyCode = "FJD",
         currencyName = "Fijian Dollar",
         currencySymbol = "$",
@@ -1067,14 +1067,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇫🇯",
         phoneCode = 679
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "FK",
         alpha3 = "FLK",
         englishName = "Falkland Islands (Malvinas)",
         demonym = "Falkland Islanders",
         capitalEnglishName = "Stanley",
         areaKM2 = "12173",
-        population = 2922,
+        population = 3480,
         currencyCode = "FKP",
         currencyName = "Falkland Islands Pound",
         currencySymbol = "£",
@@ -1082,14 +1082,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇫🇰",
         phoneCode = 500
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "FM",
         alpha3 = "FSM",
         englishName = "Micronesia (Federated States of)",
         demonym = "Micronesians",
         capitalEnglishName = "Palikir",
         areaKM2 = "702",
-        population = 106227,
+        population = 548914,
         currencyCode = "USD",
         currencyName = "United States Dollar",
         currencySymbol = "$",
@@ -1097,14 +1097,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇫🇲",
         phoneCode = 691
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "FO",
         alpha3 = "FRO",
         englishName = "Faroe Islands",
         demonym = "Faroese",
         capitalEnglishName = "Torshavn",
         areaKM2 = "1393",
-        population = 49489,
+        population = 48863,
         currencyCode = "DKK",
         currencyName = "Danish Krone",
         currencySymbol = "kr",
@@ -1112,14 +1112,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇫🇴",
         phoneCode = 298
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "FR",
         alpha3 = "FRA",
         englishName = "France",
         demonym = "French",
         capitalEnglishName = "Paris",
         areaKM2 = "643801",
-        population = 65233271,
+        population = 65273511,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -1127,14 +1127,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇫🇷",
         phoneCode = 33
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GA",
         alpha3 = "GAB",
         englishName = "Gabon",
         demonym = "Gabonese",
         capitalEnglishName = "Libreville",
         areaKM2 = "267667",
-        population = 2067561,
+        population = 2225734,
         currencyCode = "XAF",
         currencyName = "Cfa Franc Beac",
         currencySymbol = "FCFA",
@@ -1142,14 +1142,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇦",
         phoneCode = 241
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GB",
         alpha3 = "GBR",
         englishName = "United Kingdom of Great Britain and Northern Ireland",
         demonym = "British",
         capitalEnglishName = "London",
         areaKM2 = "243610",
-        population = 66573504,
+        population = 67886011,
         currencyCode = "GBP",
         currencyName = "British Pound",
         currencySymbol = "£",
@@ -1157,14 +1157,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇧",
         phoneCode = 44
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GD",
         alpha3 = "GRD",
         englishName = "Grenada",
         demonym = "Grenadians",
         capitalEnglishName = "Saint George's",
         areaKM2 = "344",
-        population = 108339,
+        population = 112523,
         currencyCode = "XCD",
         currencyName = "East Caribbean Dollar",
         currencySymbol = "$",
@@ -1172,14 +1172,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇩",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GE",
         alpha3 = "GEO",
         englishName = "Georgia",
         demonym = "Georgians",
         capitalEnglishName = "Tbilisi",
         areaKM2 = "69700",
-        population = 3907131,
+        population = 3989167,
         currencyCode = "GEL",
         currencyName = "Georgian Lari",
         currencySymbol = "₾",
@@ -1187,14 +1187,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇪",
         phoneCode = 995
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GF",
         alpha3 = "GUF",
         englishName = "French Guiana",
         demonym = "French Guianese",
         capitalEnglishName = "Cayenne",
         areaKM2 = "86504",
-        population = 289763,
+        population = 298682,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -1202,14 +1202,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇫",
         phoneCode = 594
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GG",
         alpha3 = "GGY",
         englishName = "Guernsey",
         demonym = "Channel Islanders",
         capitalEnglishName = "Saint Peter Port",
         areaKM2 = "78",
-        population = 66502,
+        population = 63155,
         currencyCode = "GBP",
         currencyName = "Pound Sterling",
         currencySymbol = "£",
@@ -1217,14 +1217,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇬",
         phoneCode = 44
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GH",
         alpha3 = "GHA",
         englishName = "Ghana",
         demonym = "Ghanaians",
         capitalEnglishName = "Accra",
         areaKM2 = "238533",
-        population = 29463643,
+        population = 31072940,
         currencyCode = "GHS",
         currencyName = "Ghanaian New Cedi",
         currencySymbol = "GH₵",
@@ -1232,14 +1232,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇭",
         phoneCode = 233
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GI",
         alpha3 = "GIB",
         englishName = "Gibraltar",
         demonym = "Gibraltarians",
         capitalEnglishName = "Gibraltar",
         areaKM2 = "6",
-        population = 34733,
+        population = 33691,
         currencyCode = "GIP",
         currencyName = "Gibraltar Pound",
         currencySymbol = "£",
@@ -1247,14 +1247,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇮",
         phoneCode = 350
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GL",
         alpha3 = "GRL",
         englishName = "Greenland",
         demonym = "Greenlanders",
         capitalEnglishName = "Nuuk",
         areaKM2 = "2166086",
-        population = 56565,
+        population = 56770,
         currencyCode = "DKK",
         currencyName = "Danish Krone",
         currencySymbol = "kr.",
@@ -1262,14 +1262,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇱",
         phoneCode = 299
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GM",
         alpha3 = "GMB",
         englishName = "Gambia",
         demonym = "Gambians",
         capitalEnglishName = "Banjul",
         areaKM2 = "11295",
-        population = 2163765,
+        population = 2416668,
         currencyCode = "GMD",
         currencyName = "Gambian Dalasi",
         currencySymbol = "D",
@@ -1277,14 +1277,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇲",
         phoneCode = 220
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GN",
         alpha3 = "GIN",
         englishName = "Guinea",
         demonym = "Guineans",
         capitalEnglishName = "Conakry",
         areaKM2 = "245857",
-        population = 13052608,
+        population = 13132795,
         currencyCode = "GNF",
         currencyName = "Guinean Franc",
         currencySymbol = "FG",
@@ -1292,14 +1292,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇳",
         phoneCode = 224
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GP",
         alpha3 = "GLP",
         englishName = "Guadeloupe",
         demonym = "Guadeloupians",
         capitalEnglishName = "Basse-terre",
         areaKM2 = "1630",
-        population = 449173,
+        population = 400124,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -1307,14 +1307,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇵",
         phoneCode = 590
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GQ",
         alpha3 = "GNQ",
         englishName = "Equatorial Guinea",
         demonym = "Equatorial Guineans",
         capitalEnglishName = "Malabo",
         areaKM2 = "28051",
-        population = 1313894,
+        population = 1402985,
         currencyCode = "XAF",
         currencyName = "Cfa Franc Beac",
         currencySymbol = "FCFA",
@@ -1322,14 +1322,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇶",
         phoneCode = 240
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GR",
         alpha3 = "GRC",
         englishName = "Greece",
         demonym = "Greeks",
         capitalEnglishName = "Athens",
         areaKM2 = "131957",
-        population = 11142161,
+        population = 10423054,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -1337,14 +1337,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇷",
         phoneCode = 30
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GS",
         alpha3 = "SGS",
         englishName = "South Georgia and the South Sandwich Islands",
         demonym = "South Georgian or South Sandwich Islander",
         capitalEnglishName = "Grytviken",
         areaKM2 = "3903",
-        population = 100,
+        population = 0,
         currencyCode = "GBP",
         currencyName = "Pound Sterling",
         currencySymbol = "£",
@@ -1352,14 +1352,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇸",
         phoneCode = 500
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GT",
         alpha3 = "GTM",
         englishName = "Guatemala",
         demonym = "Guatemalans",
         capitalEnglishName = "Guatemala City",
         areaKM2 = "108889",
-        population = 17245346,
+        population = 17915568,
         currencyCode = "GTQ",
         currencyName = "Guatemalan Quetzal",
         currencySymbol = "Q",
@@ -1367,14 +1367,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇹",
         phoneCode = 502
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GU",
         alpha3 = "GUM",
         englishName = "Guam",
         demonym = "Guamanians",
         capitalEnglishName = "Hagatna",
         areaKM2 = "544",
-        population = 165718,
+        population = 168775,
         currencyCode = "USD",
         currencyName = "United States Dollar",
         currencySymbol = "$",
@@ -1382,14 +1382,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇺",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GW",
         alpha3 = "GNB",
         englishName = "Guinea-Bissau",
         demonym = "Bissau-Guineans",
         capitalEnglishName = "Bissau",
         areaKM2 = "36125",
-        population = 1907268,
+        population = 1968001,
         currencyCode = "XOF",
         currencyName = "Cfa Franc Bceao",
         currencySymbol = "CFA",
@@ -1397,14 +1397,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇼",
         phoneCode = 245
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "GY",
         alpha3 = "GUY",
         englishName = "Guyana",
         demonym = "Guyanese",
         capitalEnglishName = "Georgetown",
         areaKM2 = "214969",
-        population = 782225,
+        population = 786552,
         currencyCode = "GYD",
         currencyName = "Guyanese Dollar",
         currencySymbol = "$",
@@ -1412,14 +1412,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇬🇾",
         phoneCode = 592
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "HK",
         alpha3 = "HKG",
         englishName = "Hong Kong",
         demonym = "Hong Kongese",
         capitalEnglishName = "-",
         areaKM2 = "1104",
-        population = 7428887,
+        population = 7496981,
         currencyCode = "HKD",
         currencyName = "Hong Kong Dollar",
         currencySymbol = "$",
@@ -1427,7 +1427,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇭🇰",
         phoneCode = 852
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "HM",
         alpha3 = "HMD",
         englishName = "Heard Island and McDonald Islands",
@@ -1442,14 +1442,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇭🇲",
         phoneCode = 672
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "HN",
         alpha3 = "HND",
         englishName = "Honduras",
         demonym = "Hondurans",
         capitalEnglishName = "Tegucigalpa",
         areaKM2 = "112090",
-        population = 9417167,
+        population = 9904607,
         currencyCode = "HNL",
         currencyName = "Honduran Lempira",
         currencySymbol = "L",
@@ -1457,14 +1457,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇭🇳",
         phoneCode = 504
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "HR",
         alpha3 = "HRV",
         englishName = "Croatia",
         demonym = "Croatians",
         capitalEnglishName = "Zagreb",
         areaKM2 = "56594",
-        population = 4164783,
+        population = 4105267,
         currencyCode = "HRK",
         currencyName = "Croatian Kuna",
         currencySymbol = "kn",
@@ -1472,14 +1472,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇭🇷",
         phoneCode = 385
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "HT",
         alpha3 = "HTI",
         englishName = "Haiti",
         demonym = "Haitians",
         capitalEnglishName = "Port-au-prince",
         areaKM2 = "27750",
-        population = 11112945,
+        population = 11402528,
         currencyCode = "HTG",
         currencyName = "Haitian Gourde",
         currencySymbol = "G",
@@ -1487,14 +1487,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇭🇹",
         phoneCode = 509
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "HU",
         alpha3 = "HUN",
         englishName = "Hungary",
         demonym = "Hungarians",
         capitalEnglishName = "Budapest",
         areaKM2 = "93028",
-        population = 9688847,
+        population = 9660351,
         currencyCode = "HUF",
         currencyName = "Hungarian Forint",
         currencySymbol = "Ft",
@@ -1502,14 +1502,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇭🇺",
         phoneCode = 36
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "ID",
         alpha3 = "IDN",
         englishName = "Indonesia",
         demonym = "Indonesians",
         capitalEnglishName = "Jakarta",
         areaKM2 = "1904569",
-        population = 266794980,
+        population = 273523615,
         currencyCode = "IDR",
         currencyName = "Indonesian Rupiah",
         currencySymbol = "Rp",
@@ -1517,14 +1517,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇮🇩",
         phoneCode = 62
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "IE",
         alpha3 = "IRL",
         englishName = "Ireland",
         demonym = "Irish",
         capitalEnglishName = "Dublin",
         areaKM2 = "70273",
-        population = 4803748,
+        population = 4937786,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -1532,14 +1532,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇮🇪",
         phoneCode = 353
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "IL",
         alpha3 = "ISR",
         englishName = "Israel",
         demonym = "Israelis",
         capitalEnglishName = "Jerusalem",
         areaKM2 = "20770",
-        population = 8452841,
+        population = 8655535,
         currencyCode = "ILS",
         currencyName = "Israeli New Shekel",
         currencySymbol = "₪",
@@ -1547,14 +1547,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇮🇱",
         phoneCode = 972
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "IM",
         alpha3 = "IMN",
         englishName = "Isle of Man",
         demonym = "Manx",
         capitalEnglishName = "Douglas",
         areaKM2 = "572",
-        population = 84831,
+        population = 85033,
         currencyCode = "GBP",
         currencyName = "British Pound",
         currencySymbol = "£",
@@ -1562,14 +1562,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇮🇲",
         phoneCode = 44
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "IN",
         alpha3 = "IND",
         englishName = "India",
         demonym = "Indians",
         capitalEnglishName = "New Delhi",
         areaKM2 = "3287263",
-        population = 1354051854,
+        population = 1380004385,
         currencyCode = "INR",
         currencyName = "Indian Rupee",
         currencySymbol = "₹",
@@ -1577,7 +1577,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇮🇳",
         phoneCode = 91
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "IO",
         alpha3 = "IOT",
         englishName = "British Indian Ocean Territory",
@@ -1592,14 +1592,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇮🇴",
         phoneCode = 246
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "IQ",
         alpha3 = "IRQ",
         englishName = "Iraq",
         demonym = "Iraqis",
         capitalEnglishName = "Baghdad",
         areaKM2 = "438317",
-        population = 39339753,
+        population = 40222493,
         currencyCode = "IQD",
         currencyName = "Iraqi Dinar",
         currencySymbol = "د.ع",
@@ -1607,14 +1607,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇮🇶",
         phoneCode = 964
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "IR",
         alpha3 = "IRN",
         englishName = "Iran (Islamic Republic of)",
         demonym = "Iranians",
         capitalEnglishName = "Tehran",
         areaKM2 = "1648195",
-        population = 82011735,
+        population = 83992949,
         currencyCode = "IRR",
         currencyName = "Iranian Rial",
         currencySymbol = "﷼",
@@ -1622,14 +1622,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇮🇷",
         phoneCode = 98
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "IS",
         alpha3 = "ISL",
         englishName = "Iceland",
         demonym = "Icelanders",
         capitalEnglishName = "Reykjavik",
         areaKM2 = "103000",
-        population = 337780,
+        population = 341243,
         currencyCode = "ISK",
         currencyName = "Iceland Krona",
         currencySymbol = "kr",
@@ -1637,14 +1637,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇮🇸",
         phoneCode = 354
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "IT",
         alpha3 = "ITA",
         englishName = "Italy",
         demonym = "Italians",
         capitalEnglishName = "Roma",
         areaKM2 = "301340",
-        population = 59290969,
+        population = 60461826,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -1652,14 +1652,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇮🇹",
         phoneCode = 39
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "JE",
         alpha3 = "JEY",
         englishName = "Jersey",
         demonym = "Channel Islanders",
         capitalEnglishName = "Saint Helier",
         areaKM2 = "116",
-        population = 166083,
+        population = 107800,
         currencyCode = "GBP",
         currencyName = "British Pound",
         currencySymbol = "£",
@@ -1667,14 +1667,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇯🇪",
         phoneCode = 44
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "JM",
         alpha3 = "JAM",
         englishName = "Jamaica",
         demonym = "Jamaicans",
         capitalEnglishName = "Kingston",
         areaKM2 = "10991",
-        population = 2898677,
+        population = 2961167,
         currencyCode = "JMD",
         currencyName = "Jamaican Dollar",
         currencySymbol = "$",
@@ -1682,14 +1682,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇯🇲",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "JO",
         alpha3 = "JOR",
         englishName = "Jordan",
         demonym = "Jordanians",
         capitalEnglishName = "Amman",
         areaKM2 = "89342",
-        population = 9903802,
+        population = 10203134,
         currencyCode = "JOD",
         currencyName = "Jordanian Dinar",
         currencySymbol = "د.أ",
@@ -1697,14 +1697,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇯🇴",
         phoneCode = 962
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "JP",
         alpha3 = "JPN",
         englishName = "Japan",
         demonym = "Japanese",
         capitalEnglishName = "Tokyo",
         areaKM2 = "377915",
-        population = 127185332,
+        population = 126476461,
         currencyCode = "JPY",
         currencyName = "Japanese Yen",
         currencySymbol = "¥",
@@ -1712,14 +1712,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇯🇵",
         phoneCode = 81
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KE",
         alpha3 = "KEN",
         englishName = "Kenya",
         demonym = "Kenyans",
         capitalEnglishName = "Nairobi",
         areaKM2 = "580367",
-        population = 50950879,
+        population = 53771296,
         currencyCode = "KES",
         currencyName = "Kenyan Shilling",
         currencySymbol = "KSh",
@@ -1727,14 +1727,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇪",
         phoneCode = 254
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KG",
         alpha3 = "KGZ",
         englishName = "Kyrgyzstan",
         demonym = "Kyrgyzstanis",
         capitalEnglishName = "Bishkek",
         areaKM2 = "199951",
-        population = 6132932,
+        population = 6524195,
         currencyCode = "KGS",
         currencyName = "Kyrgyzstani Som",
         currencySymbol = "Лв",
@@ -1742,14 +1742,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇬",
         phoneCode = 996
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KH",
         alpha3 = "KHM",
         englishName = "Cambodia",
         demonym = "Cambodians",
         capitalEnglishName = "Phnom Penh",
         areaKM2 = "181035",
-        population = 16245729,
+        population = 16718965,
         currencyCode = "KHR",
         currencyName = "Cambodian Riel",
         currencySymbol = "៛",
@@ -1757,14 +1757,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇭",
         phoneCode = 855
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KI",
         alpha3 = "KIR",
         englishName = "Kiribati",
         demonym = "I-Kiribati",
         capitalEnglishName = "Tarawa",
         areaKM2 = "811",
-        population = 118414,
+        population = 119449,
         currencyCode = "AUD",
         currencyName = "Australian Dollar",
         currencySymbol = "$",
@@ -1772,14 +1772,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇮",
         phoneCode = 686
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KM",
         alpha3 = "COM",
         englishName = "Comoros",
         demonym = "Comorans",
         capitalEnglishName = "Moroni",
         areaKM2 = "2235",
-        population = 832347,
+        population = 869601,
         currencyCode = "KMF",
         currencyName = "Comoro Franc",
         currencySymbol = "CF",
@@ -1787,14 +1787,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇲",
         phoneCode = 269
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KN",
         alpha3 = "KNA",
         englishName = "Saint Kitts and Nevis",
         demonym = "Kittitians or Nevisians",
         capitalEnglishName = "Basseterre",
         areaKM2 = "261",
-        population = 55850,
+        population = 53199,
         currencyCode = "XCD",
         currencyName = "East Caribbean Dollar",
         currencySymbol = "$",
@@ -1802,14 +1802,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇳",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KP",
         alpha3 = "PRK",
         englishName = "Korea (Democratic People's Republic of)",
         demonym = "Koreans",
         capitalEnglishName = "Pyongyang",
         areaKM2 = "120538",
-        population = 25610672,
+        population = 25778816,
         currencyCode = "KPW",
         currencyName = "North Korean Won",
         currencySymbol = "₩",
@@ -1817,14 +1817,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇵",
         phoneCode = 850
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KR",
         alpha3 = "KOR",
         englishName = "Korea (Republic of)",
         demonym = "Koreans",
         capitalEnglishName = "Seoul",
         areaKM2 = "99720",
-        population = 51164435,
+        population = 51269185,
         currencyCode = "KRW",
         currencyName = "South-korean Won",
         currencySymbol = "₩",
@@ -1832,14 +1832,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇷",
         phoneCode = 82
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KW",
         alpha3 = "KWT",
         englishName = "Kuwait",
         demonym = "Kuwaitis",
         capitalEnglishName = "Kuwait",
         areaKM2 = "17818",
-        population = 4197128,
+        population = 4270571,
         currencyCode = "KWD",
         currencyName = "Kuwaiti Dinar",
         currencySymbol = "KD",
@@ -1847,14 +1847,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇼",
         phoneCode = 965
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KY",
         alpha3 = "CYM",
         englishName = "Cayman Islands",
         demonym = "Caymanians",
         capitalEnglishName = "George Town",
         areaKM2 = "264",
-        population = 62348,
+        population = 65722,
         currencyCode = "KYD",
         currencyName = "Cayman Islands Dollar",
         currencySymbol = "$",
@@ -1862,14 +1862,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇾",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "KZ",
         alpha3 = "KAZ",
         englishName = "Kazakhstan",
         demonym = "Kazakhstanis",
         capitalEnglishName = "Astana",
         areaKM2 = "2724900",
-        population = 18403860,
+        population = 18776707,
         currencyCode = "KZT",
         currencyName = "Kazakhstani Tenge",
         currencySymbol = "₸",
@@ -1877,14 +1877,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇰🇿",
         phoneCode = 7
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LA",
         alpha3 = "LAO",
         englishName = "Lao People's Democratic Republic",
         demonym = "Laos",
         capitalEnglishName = "Vientiane",
         areaKM2 = "236800",
-        population = 6961210,
+        population = 7275560,
         currencyCode = "LAK",
         currencyName = "Lao Kip",
         currencySymbol = "₭",
@@ -1892,14 +1892,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇦",
         phoneCode = 856
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LB",
         alpha3 = "LBN",
         englishName = "Lebanon",
         demonym = "Lebanese",
         capitalEnglishName = "Beirut",
         areaKM2 = "10400",
-        population = 6093509,
+        population = 6825445,
         currencyCode = "LBP",
         currencyName = "Lebanese Pound",
         currencySymbol = "LL",
@@ -1907,14 +1907,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇧",
         phoneCode = 961
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LC",
         alpha3 = "LCA",
         englishName = "Saint Lucia",
         demonym = "Saint Lucians",
         capitalEnglishName = "Castries",
         areaKM2 = "616",
-        population = 179667,
+        population = 183627,
         currencyCode = "XCD",
         currencyName = "East Caribbean Dollar",
         currencySymbol = "$",
@@ -1922,14 +1922,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇨",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LI",
         alpha3 = "LIE",
         englishName = "Liechtenstein",
         demonym = "Liechtensteiners",
         capitalEnglishName = "Vaduz",
         areaKM2 = "160",
-        population = 38155,
+        population = 38128,
         currencyCode = "CHF",
         currencyName = "Swiss Franc",
         currencySymbol = "Fr.",
@@ -1937,14 +1937,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇮",
         phoneCode = 423
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LK",
         alpha3 = "LKA",
         englishName = "Sri Lanka",
         demonym = "Sri Lankans",
         capitalEnglishName = "Sri Jayewardenepura Kotte",
         areaKM2 = "65610",
-        population = 20950041,
+        population = 21413249,
         currencyCode = "LKR",
         currencyName = "Sri Lanka Rupee",
         currencySymbol = "රු",
@@ -1952,14 +1952,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇰",
         phoneCode = 94
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LR",
         alpha3 = "LBR",
         englishName = "Liberia",
         demonym = "Liberians",
         capitalEnglishName = "Monrovia",
         areaKM2 = "111369",
-        population = 4853516,
+        population = 5057681,
         currencyCode = "LRD",
         currencyName = "Liberian Dollar",
         currencySymbol = "$",
@@ -1967,14 +1967,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇷",
         phoneCode = 231
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LS",
         alpha3 = "LSO",
         englishName = "Lesotho",
         demonym = "Basotho",
         capitalEnglishName = "Maseru",
         areaKM2 = "30355",
-        population = 2263010,
+        population = 2142249,
         currencyCode = "LSL",
         currencyName = "Lesotho Loti",
         currencySymbol = "M",
@@ -1982,14 +1982,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇸",
         phoneCode = 266
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LT",
         alpha3 = "LTU",
         englishName = "Lithuania",
         demonym = "Lithuanians",
         capitalEnglishName = "Vilnius",
         areaKM2 = "65300",
-        population = 2876475,
+        population = 2722289,
         currencyCode = "LTL",
         currencyName = "Lithuanian Litas",
         currencySymbol = "Lt",
@@ -1997,14 +1997,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇹",
         phoneCode = 370
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LU",
         alpha3 = "LUX",
         englishName = "Luxembourg",
         demonym = "Luxembourgers",
         capitalEnglishName = "Luxembourg",
         areaKM2 = "2586",
-        population = 590321,
+        population = 625978,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -2012,14 +2012,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇺",
         phoneCode = 352
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LV",
         alpha3 = "LVA",
         englishName = "Latvia",
         demonym = "Latvians",
         capitalEnglishName = "Riga",
         areaKM2 = "64589",
-        population = 1929938,
+        population = 1886198,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -2027,14 +2027,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇻",
         phoneCode = 371
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "LY",
         alpha3 = "LBY",
         englishName = "Libya",
         demonym = "Libyans",
         capitalEnglishName = "Tripoli",
         areaKM2 = "1759540",
-        population = 6470956,
+        population = 6871292,
         currencyCode = "LYD",
         currencyName = "Libyan Dinar",
         currencySymbol = "LD",
@@ -2042,14 +2042,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇱🇾",
         phoneCode = 218
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MA",
         alpha3 = "MAR",
         englishName = "Morocco",
         demonym = "Moroccans",
         capitalEnglishName = "Rabat",
         areaKM2 = "446550",
-        population = 36191805,
+        population = 36910560,
         currencyCode = "MAD",
         currencyName = "Moroccan Dirham",
         currencySymbol = "DH",
@@ -2057,14 +2057,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇦",
         phoneCode = 212
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MC",
         alpha3 = "MCO",
         englishName = "Monaco",
         demonym = "Monacans",
         capitalEnglishName = "Monaco",
         areaKM2 = "2",
-        population = 38897,
+        population = 39242,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -2072,14 +2072,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇨",
         phoneCode = 377
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MD",
         alpha3 = "MDA",
         englishName = "Moldova (Republic of)",
         demonym = "Moldovans",
         capitalEnglishName = "Chisinau",
         areaKM2 = "33851",
-        population = 4041065,
+        population = 4033963,
         currencyCode = "MDL",
         currencyName = "Moldovan Leu",
         currencySymbol = "L",
@@ -2087,14 +2087,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇩",
         phoneCode = 373
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "ME",
         alpha3 = "MNE",
         englishName = "Montenegro",
         demonym = "Montenegrins",
         capitalEnglishName = "Podgorica",
         areaKM2 = "13812",
-        population = 629219,
+        population = 628066,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -2102,14 +2102,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇪",
         phoneCode = 382
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MF",
         alpha3 = "MAF",
         englishName = "Saint Martin (French Part)",
         demonym = "Saint-Martinois",
         capitalEnglishName = "Marigot",
         areaKM2 = "54",
-        population = 33100,
+        population = 38666,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -2117,14 +2117,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇫",
         phoneCode = 590
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MG",
         alpha3 = "MDG",
         englishName = "Madagascar",
         demonym = "Malagasy",
         capitalEnglishName = "Antananarivo",
         areaKM2 = "587041",
-        population = 26262810,
+        population = 27691018,
         currencyCode = "MGA",
         currencyName = "Malagasy Ariary",
         currencySymbol = "Ar",
@@ -2132,14 +2132,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇬",
         phoneCode = 261
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MH",
         alpha3 = "MHL",
         englishName = "Marshall Islands",
         demonym = "Marshallese",
         capitalEnglishName = "Majuro",
         areaKM2 = "181",
-        population = 53167,
+        population = 59190,
         currencyCode = "USD",
         currencyName = "United States Dollar",
         currencySymbol = "$",
@@ -2147,14 +2147,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇭",
         phoneCode = 692
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MK",
         alpha3 = "MKD",
         englishName = "North Macedonia",
         demonym = "Macedonians",
         capitalEnglishName = "Skopje",
         areaKM2 = "25713",
-        population = 2085051,
+        population = 2083374,
         currencyCode = "MKD",
         currencyName = "Macedonian Denar",
         currencySymbol = "den",
@@ -2162,14 +2162,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇰",
         phoneCode = 389
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "ML",
         alpha3 = "MLI",
         englishName = "Mali",
         demonym = "Malians",
         capitalEnglishName = "Bamako",
         areaKM2 = "1240192",
-        population = 19107706,
+        population = 20250833,
         currencyCode = "XOF",
         currencyName = "Cfa Franc Bceao",
         currencySymbol = "CFA",
@@ -2177,14 +2177,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇱",
         phoneCode = 223
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MM",
         alpha3 = "MMR",
         englishName = "Myanmar",
         demonym = "Burmese",
         capitalEnglishName = "Pyinmana",
         areaKM2 = "676578",
-        population = 53855735,
+        population = 54409800,
         currencyCode = "MMK",
         currencyName = "Myanmar Kyat",
         currencySymbol = "K",
@@ -2192,14 +2192,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇲",
         phoneCode = 95
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MN",
         alpha3 = "MNG",
         englishName = "Mongolia",
         demonym = "Mongolians",
         capitalEnglishName = "Ulaanbaatar",
         areaKM2 = "1564116",
-        population = 3121772,
+        population = 3278290,
         currencyCode = "MNT",
         currencyName = "Mongolian Tugrik",
         currencySymbol = "₮",
@@ -2207,14 +2207,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇳",
         phoneCode = 976
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MO",
         alpha3 = "MAC",
         englishName = "Macao",
         demonym = "Macanese",
         capitalEnglishName = "-",
         areaKM2 = "31.3",
-        population = 632418,
+        population = 649335,
         currencyCode = "HKD",
         currencyName = "Hong Kong Dollar",
         currencySymbol = "$",
@@ -2222,14 +2222,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇴",
         phoneCode = 853
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MP",
         alpha3 = "MNP",
         englishName = "Northern Mariana Islands",
         demonym = "Northern Marianans",
         capitalEnglishName = "Saipan",
         areaKM2 = "464",
-        population = 55194,
+        population = 57559,
         currencyCode = "USD",
         currencyName = "United States Dollar",
         currencySymbol = "$",
@@ -2237,14 +2237,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇵",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MQ",
         alpha3 = "MTQ",
         englishName = "Martinique",
         demonym = "Martiniquais",
         capitalEnglishName = "Fort-de-france",
         areaKM2 = "1128",
-        population = 385065,
+        population = 375265,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -2252,14 +2252,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇶",
         phoneCode = 596
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MR",
         alpha3 = "MRT",
         englishName = "Mauritania",
         demonym = "Mauritanians",
         capitalEnglishName = "Nouakchott",
         areaKM2 = "1030700",
-        population = 4540068,
+        population = 4649658,
         currencyCode = "MRO",
         currencyName = "Mauritanian Ouguiya",
         currencySymbol = "UM",
@@ -2267,14 +2267,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇷",
         phoneCode = 222
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MS",
         alpha3 = "MSR",
         englishName = "Montserrat",
         demonym = "Montserratians",
         capitalEnglishName = "Plymouth",
         areaKM2 = "102",
-        population = 5203,
+        population = 4992,
         currencyCode = "XCD",
         currencyName = "East Caribbean Dollar",
         currencySymbol = "$",
@@ -2282,14 +2282,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇸",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MT",
         alpha3 = "MLT",
         englishName = "Malta",
         demonym = "Maltese",
         capitalEnglishName = "Valletta",
         areaKM2 = "316",
-        population = 432089,
+        population = 441543,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -2297,14 +2297,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇹",
         phoneCode = 356
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MU",
         alpha3 = "MUS",
         englishName = "Mauritius",
         demonym = "Mauritians",
         capitalEnglishName = "Port Louis",
         areaKM2 = "2040",
-        population = 1268315,
+        population = 1271768,
         currencyCode = "MUR",
         currencyName = "Mauritian Rupee",
         currencySymbol = "₨",
@@ -2312,14 +2312,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇺",
         phoneCode = 230
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MV",
         alpha3 = "MDV",
         englishName = "Maldives",
         demonym = "Maldivians",
         capitalEnglishName = "Male",
         areaKM2 = "298",
-        population = 444259,
+        population = 540544,
         currencyCode = "MVR",
         currencyName = "Maldivian Rufiyaa",
         currencySymbol = "Rf",
@@ -2327,14 +2327,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇻",
         phoneCode = 960
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MW",
         alpha3 = "MWI",
         englishName = "Malawi",
         demonym = "Malawians",
         capitalEnglishName = "Lilongwe",
         areaKM2 = "118484",
-        population = 19164728,
+        population = 19129952,
         currencyCode = "MWK",
         currencyName = "Malawian Kwacha",
         currencySymbol = "K",
@@ -2342,14 +2342,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇼",
         phoneCode = 265
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MX",
         alpha3 = "MEX",
         englishName = "Mexico",
         demonym = "Mexicans",
         capitalEnglishName = "Mexico City",
         areaKM2 = "1964375",
-        population = 130759074,
+        population = 128932753,
         currencyCode = "MXN",
         currencyName = "Mexican Peso",
         currencySymbol = "$",
@@ -2357,14 +2357,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇽",
         phoneCode = 52
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MY",
         alpha3 = "MYS",
         englishName = "Malaysia",
         demonym = "Malaysians",
         capitalEnglishName = "Kuala Lumpur",
         areaKM2 = "329847",
-        population = 32042458,
+        population = 32365999,
         currencyCode = "MYR",
         currencyName = "Malaysian Ringgit",
         currencySymbol = "RM",
@@ -2372,14 +2372,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇾",
         phoneCode = 60
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "MZ",
         alpha3 = "MOZ",
         englishName = "Mozambique",
         demonym = "Mozambicans",
         capitalEnglishName = "Maputo",
         areaKM2 = "799380",
-        population = 30528673,
+        population = 31255435,
         currencyCode = "MZN",
         currencyName = "Mozambican Metical",
         currencySymbol = "MT",
@@ -2387,14 +2387,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇲🇿",
         phoneCode = 258
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NA",
         alpha3 = "NAM",
         englishName = "Namibia",
         demonym = "Namibians",
         capitalEnglishName = "Windhoek",
         areaKM2 = "824292",
-        population = 2587801,
+        population = 2540905,
         currencyCode = "NAD",
         currencyName = "Namibian Dollar",
         currencySymbol = "$",
@@ -2402,14 +2402,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇦",
         phoneCode = 264
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NC",
         alpha3 = "NCL",
         englishName = "New Caledonia",
         demonym = "New Caledonians",
         capitalEnglishName = "Noumea",
         areaKM2 = "18575",
-        population = 279821,
+        population = 285498,
         currencyCode = "XPF",
         currencyName = "Cfp Franc",
         currencySymbol = "₣",
@@ -2417,14 +2417,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇨",
         phoneCode = 687
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NE",
         alpha3 = "NER",
         englishName = "Niger",
         demonym = "Nigeriens",
         capitalEnglishName = "Niamey",
         areaKM2 = "1186408",
-        population = 22311375,
+        population = 24206644,
         currencyCode = "NZD",
         currencyName = "New Zealand Dollar",
         currencySymbol = "$",
@@ -2432,14 +2432,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇪",
         phoneCode = 227
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NF",
         alpha3 = "NFK",
         englishName = "Norfolk Island",
         demonym = "Norfolk Islanders",
         capitalEnglishName = "Kingston",
         areaKM2 = "36",
-        population = 2210,
+        population = 1735,
         currencyCode = "AUD",
         currencyName = "Australian Dollar",
         currencySymbol = "$",
@@ -2447,14 +2447,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇫",
         phoneCode = 672
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NG",
         alpha3 = "NGA",
         englishName = "Nigeria",
         demonym = "Nigerians",
         capitalEnglishName = "Abuja",
         areaKM2 = "923768",
-        population = 195875237,
+        population = 206139589,
         currencyCode = "NGN",
         currencyName = "Nigerian Naira",
         currencySymbol = "₦",
@@ -2462,14 +2462,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇬",
         phoneCode = 234
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NI",
         alpha3 = "NIC",
         englishName = "Nicaragua",
         demonym = "Nicaraguans",
         capitalEnglishName = "Managua",
         areaKM2 = "130370",
-        population = 6284757,
+        population = 6624554,
         currencyCode = "NIO",
         currencyName = "Nicaraguan CÓrdoba",
         currencySymbol = "C$",
@@ -2477,14 +2477,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇮",
         phoneCode = 505
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NL",
         alpha3 = "NLD",
         englishName = "Netherlands",
         demonym = "Netherlanders",
         capitalEnglishName = "Amsterdam",
         areaKM2 = "41543",
-        population = 17110161,
+        population = 17134872,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -2492,14 +2492,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇱",
         phoneCode = 31
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NO",
         alpha3 = "NOR",
         englishName = "Norway",
         demonym = "Norwegians",
         capitalEnglishName = "Oslo",
         areaKM2 = "323802",
-        population = 5353363,
+        population = 5421241,
         currencyCode = "NOK",
         currencyName = "Norwegian Kroner",
         currencySymbol = "kr",
@@ -2507,14 +2507,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇴",
         phoneCode = 47
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NP",
         alpha3 = "NPL",
         englishName = "Nepal",
         demonym = "Nepalese",
         capitalEnglishName = "Kathmandu",
         areaKM2 = "147181",
-        population = 29624035,
+        population = 29136808,
         currencyCode = "NPR",
         currencyName = "Nepalese Rupee",
         currencySymbol = "रू",
@@ -2522,14 +2522,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇵",
         phoneCode = 977
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NR",
         alpha3 = "NRU",
         englishName = "Nauru",
         demonym = "Nauruans",
         capitalEnglishName = "Yaren",
         areaKM2 = "21",
-        population = 11312,
+        population = 10824,
         currencyCode = "AUD",
         currencyName = "Australian Dollar",
         currencySymbol = "$",
@@ -2537,14 +2537,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇷",
         phoneCode = 674
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NU",
         alpha3 = "NIU",
         englishName = "Niue",
         demonym = "Niueans",
         capitalEnglishName = "Alofi",
         areaKM2 = "260",
-        population = 1624,
+        population = 1626,
         currencyCode = "NZD",
         currencyName = "New Zealand Dollar",
         currencySymbol = "$",
@@ -2552,14 +2552,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇺",
         phoneCode = 683
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "NZ",
         alpha3 = "NZL",
         englishName = "New Zealand",
         demonym = "New Zealanders",
         capitalEnglishName = "Wellington",
         areaKM2 = "267710",
-        population = 4749598,
+        population = 4822233,
         currencyCode = "NZD",
         currencyName = "New Zealand Dollar",
         currencySymbol = "$",
@@ -2567,14 +2567,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇳🇿",
         phoneCode = 64
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "OM",
         alpha3 = "OMN",
         englishName = "Oman",
         demonym = "Omanis",
         capitalEnglishName = "Muscat",
         areaKM2 = "309500",
-        population = 4829946,
+        population = 5106626,
         currencyCode = "OMR",
         currencyName = "Omani Rial",
         currencySymbol = "ر.ع.",
@@ -2582,14 +2582,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇴🇲",
         phoneCode = 968
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PA",
         alpha3 = "PAN",
         englishName = "Panama",
         demonym = "Panamanians",
         capitalEnglishName = "Panama",
         areaKM2 = "75420",
-        population = 4162618,
+        population = 4314767,
         currencyCode = "PAB",
         currencyName = "Panamanian Balboa",
         currencySymbol = "B/.",
@@ -2597,14 +2597,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇦",
         phoneCode = 507
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PE",
         alpha3 = "PER",
         englishName = "Peru",
         demonym = "Peruvians",
         capitalEnglishName = "Lima",
         areaKM2 = "1285216",
-        population = 32551815,
+        population = 32971854,
         currencyCode = "PEN",
         currencyName = "Peruvian Nuevo Sol",
         currencySymbol = "S/",
@@ -2612,14 +2612,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇪",
         phoneCode = 51
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PF",
         alpha3 = "PYF",
         englishName = "French Polynesia",
         demonym = "French Polynesians",
         capitalEnglishName = "Papeete",
         areaKM2 = "4167",
-        population = 285859,
+        population = 280908,
         currencyCode = "XPF",
         currencyName = "Cfp Franc",
         currencySymbol = "₣",
@@ -2627,14 +2627,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇫",
         phoneCode = 689
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PG",
         alpha3 = "PNG",
         englishName = "Papua New Guinea",
         demonym = "Papua New Guineans",
         capitalEnglishName = "Port Moresby",
         areaKM2 = "462840",
-        population = 8418346,
+        population = 8947024,
         currencyCode = "PGK",
         currencyName = "Papua New Guinean Kina",
         currencySymbol = "K",
@@ -2642,14 +2642,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇬",
         phoneCode = 675
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PH",
         alpha3 = "PHL",
         englishName = "Philippines",
         demonym = "Filipinos",
         capitalEnglishName = "Manila",
         areaKM2 = "300000",
-        population = 106512074,
+        population = 109581078,
         currencyCode = "PHP",
         currencyName = "Philippine Peso",
         currencySymbol = "₱",
@@ -2657,14 +2657,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇭",
         phoneCode = 63
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PK",
         alpha3 = "PAK",
         englishName = "Pakistan",
         demonym = "Pakistanis",
         capitalEnglishName = "Islamabad",
         areaKM2 = "796095",
-        population = 200813818,
+        population = 220892340,
         currencyCode = "PKR",
         currencyName = "Pakistan Rupee",
         currencySymbol = "₨",
@@ -2672,14 +2672,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇰",
         phoneCode = 92
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PL",
         alpha3 = "POL",
         englishName = "Poland",
         demonym = "Poles",
         capitalEnglishName = "Warsaw",
         areaKM2 = "312685",
-        population = 38104832,
+        population = 37846611,
         currencyCode = "PLN",
         currencyName = "Polish Zloty",
         currencySymbol = "zł",
@@ -2687,14 +2687,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇱",
         phoneCode = 48
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PM",
         alpha3 = "SPM",
         englishName = "Saint Pierre and Miquelon",
         demonym = "Saint-Pierrais or Miquelonnais",
         capitalEnglishName = "Saint-pierre",
         areaKM2 = "242",
-        population = 6342,
+        population = 5794,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -2702,14 +2702,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇲",
         phoneCode = 508
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PN",
         alpha3 = "PCN",
         englishName = "Pitcairn",
         demonym = "Pitcairn Islanders",
         capitalEnglishName = "Adamstown",
         areaKM2 = "47",
-        population = 54,
+        population = 50,
         currencyCode = "NZD",
         currencyName = "New Zealand Dollar",
         currencySymbol = "$",
@@ -2717,14 +2717,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇳",
         phoneCode = 870
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PR",
         alpha3 = "PRI",
         englishName = "Puerto Rico",
         demonym = "Puerto Ricans",
         capitalEnglishName = "San Juan",
         areaKM2 = "13790",
-        population = 3659007,
+        population = 2860853,
         currencyCode = "USD",
         currencyName = "United States Dollar",
         currencySymbol = "$",
@@ -2732,14 +2732,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇷",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PS",
         alpha3 = "PSE",
-        englishName = "Palestinian, State of",
+        englishName = "Palestine, State of",
         demonym = "Palestinians",
         capitalEnglishName = "-",
         areaKM2 = "5860",
-        population = 5052776,
+        population = 5101414,
         currencyCode = "ILS",
         currencyName = "Israeli New Shekel",
         currencySymbol = "₪",
@@ -2747,14 +2747,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇸",
         phoneCode = 970
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PT",
         alpha3 = "PRT",
         englishName = "Portugal",
         demonym = "Portuguese",
         capitalEnglishName = "Lisbon",
         areaKM2 = "92090",
-        population = 10291196,
+        population = 10196709,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -2762,14 +2762,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇹",
         phoneCode = 351
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PW",
         alpha3 = "PLW",
         englishName = "Palau",
         demonym = "Palauans",
         capitalEnglishName = "Melekeok - Palau State Capital",
         areaKM2 = "459",
-        population = 21964,
+        population = 18094,
         currencyCode = "USD",
         currencyName = "United States Dollar",
         currencySymbol = "$",
@@ -2777,14 +2777,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇼",
         phoneCode = 680
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "PY",
         alpha3 = "PRY",
         englishName = "Paraguay",
         demonym = "Paraguayans",
         capitalEnglishName = "Asuncion",
         areaKM2 = "406752",
-        population = 6896908,
+        population = 7132538,
         currencyCode = "PYG",
         currencyName = "Paraguayan GuaranÍ",
         currencySymbol = "₲",
@@ -2792,14 +2792,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇵🇾",
         phoneCode = 595
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "QA",
         alpha3 = "QAT",
         englishName = "Qatar",
         demonym = "Qataris",
         capitalEnglishName = "Doha",
         areaKM2 = "11586",
-        population = 2694849,
+        population = 2881053,
         currencyCode = "QAR",
         currencyName = "Qatari Riyal",
         currencySymbol = "QR",
@@ -2807,14 +2807,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇶🇦",
         phoneCode = 974
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "RE",
         alpha3 = "REU",
-        englishName = "Réunion",
+        englishName = "Reunion",
         demonym = "Réunionese",
         capitalEnglishName = "Saint-denis",
         areaKM2 = "2512",
-        population = 883247,
+        population = 895312,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -2822,14 +2822,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇷🇪",
         phoneCode = 262
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "RO",
         alpha3 = "ROU",
         englishName = "Romania",
         demonym = "Romanians",
         capitalEnglishName = "Bucharest",
         areaKM2 = "238391",
-        population = 19580634,
+        population = 19237691,
         currencyCode = "RON",
         currencyName = "Romanian New Lei",
         currencySymbol = "RON",
@@ -2837,14 +2837,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇷🇴",
         phoneCode = 40
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "RS",
         alpha3 = "SRB",
         englishName = "Serbia",
         demonym = "Serbians",
         capitalEnglishName = "Belgrade",
         areaKM2 = "77474",
-        population = 8762027,
+        population = 8737371,
         currencyCode = "RSD",
         currencyName = "Serbian Dinar",
         currencySymbol = "din",
@@ -2852,14 +2852,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇷🇸",
         phoneCode = 381
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "RU",
         alpha3 = "RUS",
         englishName = "Russian Federation",
         demonym = "Russians",
         capitalEnglishName = "Moscow",
         areaKM2 = "17098242",
-        population = 143964709,
+        population = 145934462,
         currencyCode = "RUB",
         currencyName = "Russian Rouble",
         currencySymbol = "₽",
@@ -2867,14 +2867,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇷🇺",
         phoneCode = 7
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "RW",
         alpha3 = "RWA",
         englishName = "Rwanda",
         demonym = "Rwandans",
         capitalEnglishName = "Kigali",
         areaKM2 = "26338",
-        population = 12501156,
+        population = 12952218,
         currencyCode = "RWF",
         currencyName = "Rwandan Franc",
         currencySymbol = "FRw",
@@ -2882,14 +2882,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇷🇼",
         phoneCode = 250
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SA",
         alpha3 = "SAU",
         englishName = "Saudi Arabia",
         demonym = "Saudis",
         capitalEnglishName = "Riyadh",
         areaKM2 = "2149690",
-        population = 33554343,
+        population = 34813871,
         currencyCode = "SAR",
         currencyName = "Saudi Riyal",
         currencySymbol = "SR",
@@ -2897,14 +2897,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇦",
         phoneCode = 966
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SB",
         alpha3 = "SLB",
         englishName = "Solomon Islands",
         demonym = "Solomon Islanders",
         capitalEnglishName = "Honiara",
         areaKM2 = "28896",
-        population = 623281,
+        population = 686884,
         currencyCode = "SBD",
         currencyName = "Solomon Islands Dollar",
         currencySymbol = "$",
@@ -2912,14 +2912,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇧",
         phoneCode = 677
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SC",
         alpha3 = "SYC",
         englishName = "Seychelles",
         demonym = "Seychellois",
         capitalEnglishName = "Victoria",
         areaKM2 = "455",
-        population = 95235,
+        population = 98347,
         currencyCode = "SCR",
         currencyName = "Seychelles Rupee",
         currencySymbol = "SR",
@@ -2927,14 +2927,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇨",
         phoneCode = 248
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SD",
         alpha3 = "SDN",
         englishName = "Sudan",
         demonym = "Sudanese",
         capitalEnglishName = "Khartoum",
         areaKM2 = "1861484",
-        population = 41511526,
+        population = 43849260,
         currencyCode = "SDG",
         currencyName = "Sudanese Pound",
         currencySymbol = "SD",
@@ -2942,14 +2942,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇩",
         phoneCode = 249
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SE",
         alpha3 = "SWE",
         englishName = "Sweden",
         demonym = "Swedes",
         capitalEnglishName = "Stockholm",
         areaKM2 = "450295",
-        population = 9982709,
+        population = 10099265,
         currencyCode = "SEK",
         currencyName = "Swedish Krona",
         currencySymbol = "kr",
@@ -2957,14 +2957,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇪",
         phoneCode = 46
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SG",
         alpha3 = "SGP",
         englishName = "Singapore",
         demonym = "Singaporeans",
         capitalEnglishName = "Singapore",
         areaKM2 = "697",
-        population = 5791901,
+        population = 5850342,
         currencyCode = "SGD",
         currencyName = "Singapore Dollar",
         currencySymbol = "$",
@@ -2972,14 +2972,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇬",
         phoneCode = 65
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SH",
         alpha3 = "SHN",
         englishName = "Saint Helena, Ascension and Tristan da Cunha",
         demonym = "Saint Helenians",
         capitalEnglishName = "Jamestown",
         areaKM2 = "122",
-        population = 4074,
+        population = 6077,
         currencyCode = "SHP",
         currencyName = "Saint Helena Pound",
         currencySymbol = "£",
@@ -2987,14 +2987,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇭",
         phoneCode = 290
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SI",
         alpha3 = "SVN",
         englishName = "Slovenia",
         demonym = "Slovenes",
         capitalEnglishName = "Ljubljana",
         areaKM2 = "20273",
-        population = 2081260,
+        population = 2078938,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -3002,14 +3002,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇮",
         phoneCode = 386
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SJ",
         alpha3 = "SJM",
         englishName = "Svalbard and Jan Mayen",
         demonym = "Slovakians",
         capitalEnglishName = "Longyearbyen",
         areaKM2 = "62045",
-        population = 2667,
+        population = 2926,
         currencyCode = "NOK",
         currencyName = "Norwegian Krone",
         currencySymbol = "kr",
@@ -3017,14 +3017,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇯",
         phoneCode = 47
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SK",
         alpha3 = "SVK",
         englishName = "Slovakia",
         demonym = "Sierra Leoneans",
         capitalEnglishName = "Bratislava",
         areaKM2 = "49035",
-        population = 5449816,
+        population = 5459642,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -3032,14 +3032,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇰",
         phoneCode = 421
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SL",
         alpha3 = "SLE",
         englishName = "Sierra Leone",
         demonym = "Sammarinese",
         capitalEnglishName = "Freetown",
         areaKM2 = "71740",
-        population = 7719729,
+        population = 7976983,
         currencyCode = "SLL",
         currencyName = "Sierra Leonean Leone",
         currencySymbol = "Le",
@@ -3047,14 +3047,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇱",
         phoneCode = 232
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SM",
         alpha3 = "SMR",
         englishName = "San Marino",
         demonym = "Sammarinese",
         capitalEnglishName = "San Marino",
         areaKM2 = "61",
-        population = 33557,
+        population = 33931,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -3062,14 +3062,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇲",
         phoneCode = 378
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SN",
         alpha3 = "SEN",
         englishName = "Senegal",
         demonym = "Somalis",
         capitalEnglishName = "Dakar",
         areaKM2 = "196722",
-        population = 16294270,
+        population = 16743927,
         currencyCode = "XOF",
         currencyName = "Cfa Franc Bceao",
         currencySymbol = "CFA",
@@ -3077,14 +3077,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇳",
         phoneCode = 221
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SO",
         alpha3 = "SOM",
         englishName = "Somalia",
         demonym = "Somalilanders",
         capitalEnglishName = "Mogadishu",
         areaKM2 = "637657",
-        population = 15181925,
+        population = 15893222,
         currencyCode = "SOS",
         currencyName = "Somali Shilling",
         currencySymbol = "Sh.So.",
@@ -3092,14 +3092,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇴",
         phoneCode = 252
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SR",
         alpha3 = "SUR",
         englishName = "Suriname",
         demonym = "Surinamers",
         capitalEnglishName = "Paramaribo",
         areaKM2 = "163820",
-        population = 568301,
+        population = 586632,
         currencyCode = "SRD",
         currencyName = "Surinamese Dollar",
         currencySymbol = "$",
@@ -3107,14 +3107,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇷",
         phoneCode = 597
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SS",
         alpha3 = "SSD",
         englishName = "South Sudan",
         demonym = "South Sudanese",
         capitalEnglishName = "Juba",
         areaKM2 = "644329",
-        population = 12919053,
+        population = 11193725,
         currencyCode = "SSP",
         currencyName = "South Sudanese Pound",
         currencySymbol = "SD",
@@ -3122,14 +3122,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇸",
         phoneCode = 211
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "ST",
         alpha3 = "STP",
         englishName = "Sao Tome and Principe",
         demonym = "Sao Tomeans",
         capitalEnglishName = "Sao Tome",
         areaKM2 = "964",
-        population = 208818,
+        population = 219159,
         currencyCode = "STD",
         currencyName = "Droba",
         currencySymbol = "Db",
@@ -3137,14 +3137,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇹",
         phoneCode = 239
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SV",
         alpha3 = "SLV",
         englishName = "El Salvador",
         demonym = "Salvadorans",
         capitalEnglishName = "San Salvador",
         areaKM2 = "21041",
-        population = 6411558,
+        population = 6486205,
         currencyCode = "NOK",
         currencyName = "Norwegian Kroner",
         currencySymbol = "kr",
@@ -3152,14 +3152,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇻",
         phoneCode = 503
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SX",
         alpha3 = "SXM",
         englishName = "Sint Maarten (Dutch Part)",
         demonym = "Sint Maartener",
         capitalEnglishName = "Philipsburg",
         areaKM2 = "34",
-        population = 40552,
+        population = 42876,
         currencyCode = "ANG",
         currencyName = "Nl Antillian Guilder",
         currencySymbol = "ƒ",
@@ -3167,14 +3167,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇽",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SY",
         alpha3 = "SYR",
         englishName = "Syrian Arab Republic",
         demonym = "Syrians",
         capitalEnglishName = "Damascus",
         areaKM2 = "185180",
-        population = 18284407,
+        population = 17500658,
         currencyCode = "SYP",
         currencyName = "Syrian Pound",
         currencySymbol = "LS",
@@ -3182,14 +3182,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇾",
         phoneCode = 963
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "SZ",
         alpha3 = "SWZ",
         englishName = "Eswatini",
         demonym = "Swazis",
         capitalEnglishName = "Mbabane",
         areaKM2 = "17364",
-        population = 1391385,
+        population = 1160164,
         currencyCode = "SZL",
         currencyName = "Swazi Lilangeni",
         currencySymbol = "L",
@@ -3197,14 +3197,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇸🇿",
         phoneCode = 268
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TC",
         alpha3 = "TCA",
         englishName = "Turks and Caicos Islands",
         demonym = "Turks and Caicos Islanders",
         capitalEnglishName = "Cockburn Town",
         areaKM2 = "948",
-        population = 35963,
+        population = 38717,
         currencyCode = "USD",
         currencyName = "United States Dollar",
         currencySymbol = "$",
@@ -3212,14 +3212,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇨",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TD",
         alpha3 = "TCD",
         englishName = "Chad",
         demonym = "Chadians",
         capitalEnglishName = "N'djamena",
         areaKM2 = "1284000",
-        population = 15353184,
+        population = 16425864,
         currencyCode = "XAF",
         currencyName = "Cfa Franc Beac",
         currencySymbol = "FCFA",
@@ -3227,7 +3227,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇩",
         phoneCode = 235
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TF",
         alpha3 = "ATF",
         englishName = "French Southern Territories",
@@ -3242,14 +3242,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇫",
         phoneCode = 262
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TG",
         alpha3 = "TGO",
         englishName = "Togo",
         demonym = "Togolese",
         capitalEnglishName = "Lome",
         areaKM2 = "56785",
-        population = 7990926,
+        population = 8278724,
         currencyCode = "XOF",
         currencyName = "Cfa Franc Bceao",
         currencySymbol = "CFA",
@@ -3257,14 +3257,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇬",
         phoneCode = 228
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TH",
         alpha3 = "THA",
         englishName = "Thailand",
         demonym = "Thai",
         capitalEnglishName = "Bangkok",
         areaKM2 = "513120",
-        population = 69183173,
+        population = 69799978,
         currencyCode = "THB",
         currencyName = "Thai Baht",
         currencySymbol = "฿",
@@ -3272,14 +3272,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇭",
         phoneCode = 66
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TJ",
         alpha3 = "TJK",
         englishName = "Tajikistan",
         demonym = "Tajikistanis",
         capitalEnglishName = "Dushanbe",
         areaKM2 = "143100",
-        population = 9107211,
+        population = 9537645,
         currencyCode = "TJS",
         currencyName = "Tajikistani Somoni",
         currencySymbol = "ЅM",
@@ -3287,14 +3287,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇯",
         phoneCode = 992
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TK",
         alpha3 = "TKL",
         englishName = "Tokelau",
         demonym = "Tokelauans",
         capitalEnglishName = "-",
         areaKM2 = "12",
-        population = 1319,
+        population = 1357,
         currencyCode = "NZD",
         currencyName = "New Zealand Dollar",
         currencySymbol = "$",
@@ -3302,14 +3302,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇰",
         phoneCode = 690
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TL",
         alpha3 = "TLS",
         englishName = "Timor-Leste",
         demonym = "Timorese",
         capitalEnglishName = "Dili",
         areaKM2 = "14874",
-        population = 1324094,
+        population = 1318445,
         currencyCode = "NZD",
         currencyName = "New Zealand Dollar",
         currencySymbol = "$",
@@ -3317,14 +3317,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇱",
         phoneCode = 670
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TM",
         alpha3 = "TKM",
         englishName = "Turkmenistan",
         demonym = "Turkmens",
         capitalEnglishName = "Ashgabat",
         areaKM2 = "488100",
-        population = 5851466,
+        population = 6031200,
         currencyCode = "TMT",
         currencyName = "Turkmenistani Manat",
         currencySymbol = "T",
@@ -3332,14 +3332,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇲",
         phoneCode = 993
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TN",
         alpha3 = "TUN",
         englishName = "Tunisia",
         demonym = "Tunisians",
         capitalEnglishName = "Tunis",
         areaKM2 = "163610",
-        population = 11659174,
+        population = 11818619,
         currencyCode = "TND",
         currencyName = "Tunisian Dinar",
         currencySymbol = "DT",
@@ -3347,14 +3347,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇳",
         phoneCode = 216
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TO",
         alpha3 = "TON",
         englishName = "Tonga",
         demonym = "Tongans",
         capitalEnglishName = "Nuku'alofa",
         areaKM2 = "747",
-        population = 109008,
+        population = 105695,
         currencyCode = "TOP",
         currencyName = "Tongan Pa'anga",
         currencySymbol = "T$",
@@ -3362,14 +3362,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇴",
         phoneCode = 676
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TR",
         alpha3 = "TUR",
         englishName = "Turkey",
         demonym = "Turks",
         capitalEnglishName = "Ankara",
         areaKM2 = "783562",
-        population = 81916871,
+        population = 84339067,
         currencyCode = "TRY",
         currencyName = "Turkish Lira",
         currencySymbol = "₺",
@@ -3377,14 +3377,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇷",
         phoneCode = 90
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TT",
         alpha3 = "TTO",
         englishName = "Trinidad and Tobago",
         demonym = "Trinidadians or Tobagonians",
         capitalEnglishName = "Port of Spain",
         areaKM2 = "5128",
-        population = 1372598,
+        population = 1399488,
         currencyCode = "TTD",
         currencyName = "Trinidad/tobago Dollar",
         currencySymbol = "$",
@@ -3392,14 +3392,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇹",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TV",
         alpha3 = "TUV",
         englishName = "Tuvalu",
         demonym = "Tuvaluans",
         capitalEnglishName = "Funafuti",
         areaKM2 = "26",
-        population = 11287,
+        population = 11792,
         currencyCode = "AUD",
         currencyName = "Australian Dollar",
         currencySymbol = "$",
@@ -3407,14 +3407,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇻",
         phoneCode = 688
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TW",
         alpha3 = "TWN",
         englishName = "Taiwan (Province of China)",
         demonym = "Taiwanese",
         capitalEnglishName = "Taipei",
         areaKM2 = "35980",
-        population = 23694089,
+        population = 23816775,
         currencyCode = "TWD",
         currencyName = "Taiwan Dollar",
         currencySymbol = "NT$",
@@ -3422,14 +3422,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇼",
         phoneCode = 886
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "TZ",
         alpha3 = "TZA",
         englishName = "Tanzania, United Republic of",
         demonym = "Tanzanians",
         capitalEnglishName = "Dodoma",
         areaKM2 = "947300",
-        population = 59091392,
+        population = 59734218,
         currencyCode = "TZS",
         currencyName = "Tanzanian Shilling",
         currencySymbol = "TSh",
@@ -3437,14 +3437,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇹🇿",
         phoneCode = 255
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "UA",
         alpha3 = "UKR",
         englishName = "Ukraine",
         demonym = "Ukrainians",
         capitalEnglishName = "Kiev",
         areaKM2 = "603550",
-        population = 44009214,
+        population = 43733762,
         currencyCode = "UAH",
         currencyName = "Ukrainian Hryvnia",
         currencySymbol = "₴",
@@ -3452,14 +3452,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇺🇦",
         phoneCode = 380
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "UG",
         alpha3 = "UGA",
         englishName = "Uganda",
         demonym = "Ugandans",
         capitalEnglishName = "Kampala",
         areaKM2 = "241038",
-        population = 44270563,
+        population = 45741007,
         currencyCode = "UGX",
         currencyName = "Ugandan Shilling",
         currencySymbol = "USh",
@@ -3467,7 +3467,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇺🇬",
         phoneCode = 256
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "UM",
         alpha3 = "UMI",
         englishName = "United States Minor Outlying Islands",
@@ -3482,14 +3482,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇺🇲",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "US",
         alpha3 = "USA",
         englishName = "United States of America",
         demonym = "Americans",
         capitalEnglishName = "Washington, D.C.",
         areaKM2 = "9826675",
-        population = 326766748,
+        population = 331002651,
         currencyCode = "USD",
         currencyName = "United States Dollar",
         currencySymbol = "$",
@@ -3497,14 +3497,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇺🇸",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "UY",
         alpha3 = "URY",
         englishName = "Uruguay",
         demonym = "Uruguayans",
         capitalEnglishName = "Montevideo",
         areaKM2 = "176215",
-        population = 3469551,
+        population = 3473730,
         currencyCode = "UYI",
         currencyName = "Uruguay Peso En Unidades Indexadas",
         currencySymbol = "$",
@@ -3512,14 +3512,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇺🇾",
         phoneCode = 598
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "UZ",
         alpha3 = "UZB",
         englishName = "Uzbekistan",
         demonym = "Uzbekistanis",
         capitalEnglishName = "Tashkent",
         areaKM2 = "447400",
-        population = 32364996,
+        population = 33469203,
         currencyCode = "UZS",
         currencyName = "Uzbekistan Som",
         currencySymbol = "som",
@@ -3527,7 +3527,7 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇺🇿",
         phoneCode = 998
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "VA",
         alpha3 = "VAT",
         englishName = "Holy See",
@@ -3542,14 +3542,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇻🇦",
         phoneCode = 379
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "VC",
         alpha3 = "VCT",
         englishName = "Saint Vincent and the Grenadines",
         demonym = "Saint Vincentians",
         capitalEnglishName = "Kingstown",
         areaKM2 = "389",
-        population = 110200,
+        population = 110940,
         currencyCode = "XCD",
         currencyName = "East Caribbean Dollar",
         currencySymbol = "$",
@@ -3557,14 +3557,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇻🇨",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "VE",
         alpha3 = "VEN",
         englishName = "Venezuela (Bolivarian Republic of)",
         demonym = "Venezuelans",
         capitalEnglishName = "Caracas",
         areaKM2 = "912050",
-        population = 32381221,
+        population = 28435940,
         currencyCode = "VEF",
         currencyName = "Venezuelan Bolivar Fuerte",
         currencySymbol = "Bs.S.",
@@ -3572,14 +3572,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇻🇪",
         phoneCode = 58
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "VG",
         alpha3 = "VGB",
         englishName = "Virgin Islands (British)",
         demonym = "British Virgin Islanders",
         capitalEnglishName = "Road Town",
         areaKM2 = "151",
-        population = 31719,
+        population = 30231,
         currencyCode = "USD",
         currencyName = "United States Dollar",
         currencySymbol = "$",
@@ -3587,14 +3587,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇻🇬",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "VI",
         alpha3 = "VIR",
         englishName = "Virgin Islands (U.S.)",
         demonym = "U.S. Virgin Islanders",
         capitalEnglishName = "Charlotte Amalie",
         areaKM2 = "1910",
-        population = 104914,
+        population = 104425,
         currencyCode = "USD",
         currencyName = "United States Dollar",
         currencySymbol = "$",
@@ -3602,14 +3602,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇻🇮",
         phoneCode = 1
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "VN",
         alpha3 = "VNM",
         englishName = "Viet Nam",
         demonym = "Vietnamese",
         capitalEnglishName = "Ha Noi",
         areaKM2 = "331210",
-        population = 96491146,
+        population = 97338579,
         currencyCode = "VND",
         currencyName = "Vietnamese Dong",
         currencySymbol = "₫",
@@ -3617,14 +3617,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇻🇳",
         phoneCode = 84
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "VU",
         alpha3 = "VUT",
         englishName = "Vanuatu",
         demonym = "Ni-Vanuatu",
         capitalEnglishName = "Port-vila",
         areaKM2 = "12189",
-        population = 282117,
+        population = 307145,
         currencyCode = "VUV",
         currencyName = "Vanuatu Vatu",
         currencySymbol = "VT",
@@ -3632,14 +3632,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇻🇺",
         phoneCode = 678
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "WF",
         alpha3 = "WLF",
         englishName = "Wallis and Futuna",
         demonym = "Wallisians or Futunans",
         capitalEnglishName = "Mata'utu",
         areaKM2 = "142",
-        population = 11683,
+        population = 11239,
         currencyCode = "XPF",
         currencyName = "Cfp Franc",
         currencySymbol = "₣",
@@ -3647,14 +3647,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇼🇫",
         phoneCode = 681
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "WS",
         alpha3 = "WSM",
         englishName = "Samoa",
         demonym = "Samoans",
         capitalEnglishName = "Apia",
         areaKM2 = "2831",
-        population = 197695,
+        population = 198414,
         currencyCode = "WST",
         currencyName = "Samoan Tala",
         currencySymbol = "WS$",
@@ -3662,14 +3662,29 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇼🇸",
         phoneCode = 685
     ),
-    BaseCountry(
+    CountryInfo(
+        alpha2 = "XK",
+        alpha3 = "XKX",
+        englishName = "Kosovo",
+        demonym = "Kosovar",
+        capitalEnglishName = "Pristina",
+        areaKM2 = "10887",
+        population = 1873160,
+        currencyCode = "EUR",
+        currencyName = "Euro",
+        currencySymbol = "€",
+        cctld = "al",
+        flagEmoji = "🇽🇰",
+        phoneCode = 383
+    ),
+    CountryInfo(
         alpha2 = "YE",
         alpha3 = "YEM",
         englishName = "Yemen",
         demonym = "Yemenis",
         capitalEnglishName = "Sanaa",
         areaKM2 = "527968",
-        population = 28915284,
+        population = 29825964,
         currencyCode = "YER",
         currencyName = "Yemeni Rial",
         currencySymbol = "﷼",
@@ -3677,14 +3692,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇾🇪",
         phoneCode = 967
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "YT",
         alpha3 = "MYT",
         englishName = "Mayotte",
         demonym = "Mahorans",
         capitalEnglishName = "Mamoudzou",
         areaKM2 = "374",
-        population = 259682,
+        population = 272815,
         currencyCode = "EUR",
         currencyName = "Euro",
         currencySymbol = "€",
@@ -3692,14 +3707,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇾🇹",
         phoneCode = 262
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "ZA",
         alpha3 = "ZAF",
         englishName = "South Africa",
         demonym = "South Africans",
         capitalEnglishName = "Cape Town",
         areaKM2 = "1219090",
-        population = 57398421,
+        population = 59308690,
         currencyCode = "ZAR",
         currencyName = "South African Rand",
         currencySymbol = "R",
@@ -3707,14 +3722,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇿🇦",
         phoneCode = 27
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "ZM",
         alpha3 = "ZMB",
         englishName = "Zambia",
         demonym = "Zambians",
         capitalEnglishName = "Lusaka",
         areaKM2 = "752618",
-        population = 17609178,
+        population = 18383955,
         currencyCode = "ZMW",
         currencyName = "Zambian Kwacha",
         currencySymbol = "K",
@@ -3722,14 +3737,14 @@ internal val masterBaseList = listOf(
         flagEmoji = "🇿🇲",
         phoneCode = 260
     ),
-    BaseCountry(
+    CountryInfo(
         alpha2 = "ZW",
         alpha3 = "ZWE",
         englishName = "Zimbabwe",
         demonym = "Zimbabweans",
         capitalEnglishName = "Harare",
         areaKM2 = "390757",
-        population = 16913261,
+        population = 14862924,
         currencyCode = "ZWD",
         currencyName = "Zimbabwe Dollar",
         currencySymbol = "$",

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cp_no_match_msg">No matching result found</string>
+    <string name="cp_search_hint">Search…</string>
+    <string name="cp_dialog_title">Select a country</string>
+    <string name="cp_selection_placeholder">Country</string>
+    <string name="cp_clear_selection">Clear Selection</string>
+</resources>

@@ -7,21 +7,18 @@
     android:dividerPadding="@dimen/grid_2x"
     android:orientation="vertical"
     tools:context=".CountryPickerViewDemoActivity">
-<!--
     <com.hbb20.CountryPickerView
         android:id="@+id/countryPicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cp_initialSelectionMode="empty/specificCountry/autoDetectCounty"
-        app:cp_initialSpecificCountry="alpha2/alpha3"
+        app:cpDialog_allowClearSelection="true"
+        app:cpDialog_allowSearch="true"
         app:cp_autoDetectSources="LOCALE_NETWORK_SIM"
-        app:cpDialog_allowClearSelection="true/false"
-        app:cpDialog_allowSearch="true/false"
-        app:cpDialog_showFullScreen="true/false"
-        app:cpDialog_showTitle="true/false"
-        app:cpList_preferredCountryCodes="comma separated alpha2/alpha3"
-     />
--->
+        app:cpDialog_showFullScreen="true"
+        app:cpDialog_showTitle="true"
+        app:cp_initialSelectionMode="specificCountry"
+        app:cp_initialSpecificCountry="IN"
+        app:cpList_preferredCountryCodes="comma separated alpha2/alpha3" />
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/customCountryPickerViewContainer"
         android:layout_width="wrap_content"

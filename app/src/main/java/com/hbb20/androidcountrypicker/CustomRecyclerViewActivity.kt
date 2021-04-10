@@ -4,19 +4,20 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.hbb20.androidcountrypicker.databinding.ActivityCustomRecyclerViewBinding
 import com.hbb20.countrypicker.config.CPListConfig
 import com.hbb20.countrypicker.config.CPRowConfig
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
 import com.hbb20.countrypicker.models.CPCountry
 import com.hbb20.countrypicker.recyclerview.CPRecyclerViewHelper
 import com.hbb20.countrypicker.recyclerview.loadCountries
-import kotlinx.android.synthetic.main.activity_custom_recycler_view.*
 
 class CustomRecyclerViewActivity : AppCompatActivity() {
-
+    lateinit var binding: ActivityCustomRecyclerViewBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_custom_recycler_view)
+        binding = ActivityCustomRecyclerViewBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         setupRecyclerView()
     }
 
@@ -39,12 +40,12 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
             preferredCountryCodes = "IN,US,NZ,AU"
         )
 
-        recyclerView.loadCountries { selectedCountry: CPCountry ->
+        binding.recyclerView.loadCountries { selectedCountry: CPCountry ->
             // your code to handle selected country
         }
 
 
-        recyclerView.loadCountries(
+        binding.recyclerView.loadCountries(
             preferredCountryCodes = "IN,US,NZ,AU"
         ) { selectedCountry ->
             Toast.makeText(this, selectedCountry.name, Toast.LENGTH_SHORT).show()
@@ -54,11 +55,11 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
         val customFlagImageProvider = CPRowConfig.defaultFlagProvider
         val filterQueryEditText = EditText(this)
 
-        //        recyclerView.loadCountries { selectedCountry: CPCountry ->
+        //        binding.recyclerView.loadCountries { selectedCountry: CPCountry ->
         //            // your code to handle selected country
         //        }
         //
-        //        recyclerView.loadCountries(
+        //        binding.recyclerView.loadCountries(
         //            customMasterCountries = "IN,AD,GE,CZ,US,GB,AL,NZ",
         //            customExcludedCountries = "HU,KM",
         //            countryFileReader = dataFileReader,
@@ -92,7 +93,7 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
         }
 
         // attach recyclerView to show list in recyclerView
-        cpRecyclerViewHelper.attachRecyclerView(recyclerView)
+        cpRecyclerViewHelper.attachRecyclerView(binding.recyclerView)
 
         // attach query edit text (optional) to update filtered list when query updated
         cpRecyclerViewHelper.attachFilterQueryEditText(filterQueryEditText)
@@ -121,7 +122,7 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
         }
 
         // attach recyclerView to show list in recyclerView
-        cpRecyclerViewHelper.attachRecyclerView(recyclerView)
+        cpRecyclerViewHelper.attachRecyclerView(binding.recyclerView)
 
         // attach query edit text (optional) to update filtered list when query updated
         cpRecyclerViewHelper.attachFilterQueryEditText(filterQueryEditText)

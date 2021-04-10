@@ -5,10 +5,10 @@ import android.content.res.Resources
 import com.hbb20.countrypicker.R
 import com.hbb20.countrypicker.logger.logMethodEnd
 import com.hbb20.countrypicker.logger.onMethodBegin
-import com.hbb20.countrypicker.models.BaseCountry
 import com.hbb20.countrypicker.models.CPCountry
 import com.hbb20.countrypicker.models.CPDataStore
-import masterBaseList
+import com.hbb20.countrypicker.models.CountryInfo
+import com.hbb20.countrypicker.models.countryInfoList
 
 
 interface CountryFileReading {
@@ -18,7 +18,7 @@ interface CountryFileReading {
 }
 
 object CPFileReader : CountryFileReading {
-    private var baseCountries: List<BaseCountry> = masterBaseList
+    private var countryInfos: List<CountryInfo> = countryInfoList
 
     override fun readMasterDataFromFiles(context: Context): CPDataStore {
         onMethodBegin("readMasterDataFromFiles")
@@ -30,7 +30,7 @@ object CPFileReader : CountryFileReading {
             loadCountryNameTranslations(
                 context
             )
-        val cpCountries = baseCountries.map { CPCountry.from(it, translations[it.alpha2]) }
+        val cpCountries = countryInfos.map { CPCountry.from(it, translations[it.alpha2]) }
         logMethodEnd("readMasterDataFromFiles")
         return CPDataStore(
             cpCountries.toMutableList(),
@@ -44,7 +44,7 @@ object CPFileReader : CountryFileReading {
     private fun loadCountryNameTranslations(context: Context): HashMap<String, String> {
         onMethodBegin("loadCountryNameTranslations")
         val result = hashMapOf<String, String>()
-        masterBaseList.forEach { country ->
+        countryInfoList.forEach { country ->
             val resId: Int = context.resources.getIdentifier(
                 "cp_${country.alpha2}_name",
                 "string",

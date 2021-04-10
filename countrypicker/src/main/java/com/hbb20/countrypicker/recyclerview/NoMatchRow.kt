@@ -7,7 +7,7 @@ import com.airbnb.epoxy.AfterPropsSet
 import com.airbnb.epoxy.ModelProp
 import com.airbnb.epoxy.ModelView
 import com.hbb20.countrypicker.R
-import kotlinx.android.synthetic.main.cp_no_match_row.view.*
+import com.hbb20.countrypicker.databinding.CpNoMatchRowBinding
 
 @ModelView(autoLayout = ModelView.Size.MATCH_WIDTH_WRAP_HEIGHT)
 class NoMatchRow @JvmOverloads constructor(
@@ -15,9 +15,11 @@ class NoMatchRow @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
+    private var binding: CpNoMatchRowBinding
 
     init {
         inflate(context, R.layout.cp_no_match_row, this)
+        binding = CpNoMatchRowBinding.bind(this.findViewById(R.id.rowHolder))
     }
 
     lateinit var noMatchAckText: String
@@ -25,6 +27,6 @@ class NoMatchRow @JvmOverloads constructor(
 
     @AfterPropsSet
     fun updateViews() {
-        tvMsg.text = noMatchAckText
+        binding.tvMsg.text = noMatchAckText
     }
 }

@@ -9,10 +9,10 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:${Versions.GRADLE_BUILD_TOOL}")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN}")
+        classpath("com.android.tools.build:gradle:4.2.0-rc01")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN_GRADLE}")
         classpath("org.jlleitschuh.gradle:ktlint-gradle:${Versions.KTLINT_GRADLE}")
-        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.NAVIGATION_GRAPH}")
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.0.0")
         classpath("com.google.gms:google-services:${Versions.GOOGLE_SERVICES}")
         classpath("com.google.firebase:firebase-crashlytics-gradle:${Versions.FIREBASE_CRASHLYTICS_GRADLE}")
         classpath("org.jacoco:org.jacoco.core:${Versions.JACOCO}")

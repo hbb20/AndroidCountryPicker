@@ -33,6 +33,7 @@ object Versions {
     const val NAVIGATION_GRAPH = "2.3.2"
     const val SCARLET_VERSION = "0.1.11"
     const val KOTLIN = "1.4.21"
+    const val KOTLIN_GRADLE = "1.4.21"
     const val KTLINT_GRADLE = "9.4.1"
     const val KTLINT = "0.40.0"
     const val REALM_GRADLE_PLUGIN = "10.2.0"

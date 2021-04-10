@@ -23,10 +23,10 @@ data class CPCountry(
 
     companion object {
         internal fun from(
-            baseCountry: BaseCountry,
+            countryInfo: CountryInfo,
             translatedName: String?
         ): CPCountry {
-            baseCountry.apply {
+            countryInfo.apply {
                 return CPCountry(
                     alpha2,
                     alpha3,

@@ -1,11 +1,11 @@
 plugins {
     id("com.android.library")
     kotlin("android")
-    kotlin("android.extensions")
     kotlin("kapt")
 }
 
 apply(from = "$rootDir/countrypicker/publish.gradle")
+apply(from = "$rootDir/countrypicker/generateCPAndroidResource.gradle.kts")
 
 android {
     defaultConfig {
