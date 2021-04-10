@@ -1,18 +1,17 @@
 package com.hbb20
 
-import android.content.Context
+import androidx.test.platform.app.InstrumentationRegistry
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
-import com.hbb20.countrypicker.datagenerator.CountryFileReading
-import io.mockk.every
-import io.mockk.mockk
-import io.mockk.verify
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
 
+@RunWith(RobolectricTestRunner::class)
 class CPDataStoreGeneratorTest {
 
-    private val context = mockk<Context> {}
+    private val context = InstrumentationRegistry.getInstrumentation().context
 
 
     @Test
@@ -277,25 +276,5 @@ class CPDataStoreGeneratorTest {
             )
         //master list: AU,TG,ZA,LKA,GHA,AFG
         assertEquals(6, dataStore.countryList.size)
-    }
-
-    @Test
-    fun `force read file using useCache = false`() {
-        val fileReader = mockk<CountryFileReading> {}
-        CPDataStoreGenerator.invalidateCache()
-        every { fileReader.readMasterDataFromFiles(any()) } returns getSampleDataStore()
-        val dataStore =
-            CPDataStoreGenerator.generate(
-                context,
-                countryFileReader = fileReader
-            )
-        verify(exactly = 1) { fileReader.readMasterDataFromFiles(any()) }
-        val dataStore2 =
-            CPDataStoreGenerator.generate(
-                context = context,
-                countryFileReader = fileReader,
-                useCache = false
-            )
-        verify(exactly = 2) { fileReader.readMasterDataFromFiles(any()) }
     }
 }
