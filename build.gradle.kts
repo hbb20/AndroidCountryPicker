@@ -38,8 +38,6 @@ allprojects {
         jcenter()
         mavenCentral()
         maven(url = "https://jitpack.io")
-        maven("https://sdk.withpersona.com/android/releases")
-        maven("http://kochava.bintray.com/maven")
     }
 }
 
