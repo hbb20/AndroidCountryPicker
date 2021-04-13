@@ -8,7 +8,7 @@
 ### 1. Add dependency
    - ```groovy
          dependencies {
-           implementation 'com.hbb20:AndroidCountryPicker:X.Y.Z'
+           implementation 'com.hbb20:android-country-picker:X.Y.Z'
           }
       ```
    - For latest version, [![Add](https://maven-badges.herokuapp.com/maven-central/com.hbb20/android-country-picker/badge.svg?style={style}) ](https://github.com/hbb20/AndroidCountryPicker/blob/develop/CHANGELOG.md)
