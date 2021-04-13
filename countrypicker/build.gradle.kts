@@ -1,10 +1,10 @@
 plugins {
     id("com.android.library")
+    id("com.vanniktech.maven.publish")
     kotlin("android")
     kotlin("kapt")
 }
 
-apply(from = "$rootDir/countrypicker/publish.gradle")
 apply(from = "$rootDir/countrypicker/generateCPAndroidResource.gradle.kts")
 
 android {

@@ -6,8 +6,9 @@ buildscript {
         google()
         mavenCentral()
         maven("https://plugins.gradle.org/m2/")
-        jcenter()
+        maven("https://maven.google.com")
     }
+
     dependencies {
         classpath("com.android.tools.build:gradle:4.2.0-rc01")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN_GRADLE}")
@@ -17,8 +18,8 @@ buildscript {
         classpath("com.google.firebase:firebase-crashlytics-gradle:${Versions.FIREBASE_CRASHLYTICS_GRADLE}")
         classpath("org.jacoco:org.jacoco.core:${Versions.JACOCO}")
         classpath("com.github.ben-manes:gradle-versions-plugin:${Versions.BEN_MANES_VERSION_PLUGIN}")
-        classpath("io.realm:realm-gradle-plugin:${Versions.REALM_GRADLE_PLUGIN}")
-        classpath("com.jfrog.bintray.gradle:gradle-bintray-plugin:${Versions.BINTRAY_GRADLE}")
+        classpath("com.vanniktech:gradle-maven-publish-plugin:0.14.2")
+        classpath("org.jetbrains.dokka:dokka-gradle-plugin:1.4.10.2")
     }
 }
 apply(plugin = "com.github.ben-manes.versions")
@@ -35,8 +36,9 @@ plugins {
 allprojects {
     repositories {
         google()
-        jcenter()
         mavenCentral()
+        maven("https://plugins.gradle.org/m2/")
+        maven("https://maven.google.com")
         maven(url = "https://jitpack.io")
     }
 }

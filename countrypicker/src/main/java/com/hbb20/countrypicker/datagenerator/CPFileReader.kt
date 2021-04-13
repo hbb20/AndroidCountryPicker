@@ -2,6 +2,7 @@ package com.hbb20.countrypicker.datagenerator
 
 import android.content.Context
 import android.content.res.Resources
+import android.util.Log
 import com.hbb20.countrypicker.R
 import com.hbb20.countrypicker.logger.logMethodEnd
 import com.hbb20.countrypicker.logger.onMethodBegin
@@ -45,12 +46,15 @@ object CPFileReader : CountryFileReading {
         onMethodBegin("loadCountryNameTranslations")
         val result = hashMapOf<String, String>()
         countryInfoList.forEach { country ->
+            Log.d("CountryPicker", "Lookinng up resourcee for cp_${country.alpha2}_name")
             val resId: Int = context.resources.getIdentifier(
                 "cp_${country.alpha2}_name",
                 "string",
                 context.packageName
             )
+
             val name: String = context.getString(resId)
+            Log.d("CountryPicker", "found resourcee for cp_${country.alpha2}_name = $name")
             result[country.alpha2] = name
         }
         logMethodEnd("loadCountryNameTranslations")
