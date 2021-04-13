@@ -6,5 +6,6 @@ dependencies {
     implementation("org.apache.commons:commons-csv:1.7")
 }
 repositories {
-    jcenter()
+    maven(url = "https://maven.google.com")
+    mavenCentral()
 }

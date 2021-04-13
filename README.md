@@ -1,5 +1,5 @@
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=AndroidCountryPicker.readme)
-[![Download](https://api.bintray.com/packages/hbb20/maven/AndroidCountryPicker/images/download.svg) ](https://bintray.com/hbb20/maven/AndroidCountryPicker/_latestVersion) 
+[![Add](https://maven-badges.herokuapp.com/maven-central/com.hbb20/android-country-picker/badge.svg?style={style}) ](https://github.com/hbb20/AndroidCountryPicker/blob/develop/CHANGELOG.md) 
 
 
 <img height=500 src="https://user-images.githubusercontent.com/4918760/90301130-32916100-de5b-11ea-8238-3f1e03ef325c.png"/>
@@ -11,7 +11,7 @@
            implementation 'com.hbb20:AndroidCountryPicker:X.Y.Z'
           }
       ```
-   - For latest version, [![Add](https://api.bintray.com/packages/hbb20/maven/AndroidCountryPicker/images/download.svg) ](https://bintray.com/hbb20/maven/AndroidCountryPicker/_latestVersion)
+   - For latest version, [![Add](https://maven-badges.herokuapp.com/maven-central/com.hbb20/android-country-picker/badge.svg?style={style}) ](https://github.com/hbb20/AndroidCountryPicker/blob/develop/CHANGELOG.md)
 
 
 ### 2. Decide your use-case
