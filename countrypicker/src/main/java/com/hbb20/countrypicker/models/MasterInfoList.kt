@@ -3663,6 +3663,21 @@ internal val countryInfoList = listOf(
         phoneCode = 685
     ),
     CountryInfo(
+        alpha2 = "XK",
+        alpha3 = "XKX",
+        englishName = "Kosovo",
+        demonym = "Kosovar",
+        capitalEnglishName = "Pristina",
+        areaKM2 = "10887",
+        population = 1873160,
+        currencyCode = "EUR",
+        currencyName = "Euro",
+        currencySymbol = "€",
+        cctld = "al",
+        flagEmoji = "🇽🇰",
+        phoneCode = 383
+    ),
+    CountryInfo(
         alpha2 = "YE",
         alpha3 = "YEM",
         englishName = "Yemen",
