@@ -17,6 +17,7 @@ import com.hbb20.countrypicker.config.CPListConfig
 import com.hbb20.countrypicker.config.CPRowConfig
 import com.hbb20.countrypicker.models.CPCountry
 import com.hbb20.countrypicker.models.CPDataStore
+import com.hbb20.countrypicker.recyclerview.loadCountriesUsingDataStoreAndConfig
 
 class CPDialogHelper(
     private val cpDataStore: CPDataStore,
