@@ -20,7 +20,7 @@ data class CPViewConfig(
         object EmptySelection : InitialSelection()
 
         class AutoDetectCountry(val autoDetectSources: List<Source> = defaultCountryDetectorSources) :
-                InitialSelection()
+            InitialSelection()
 
         class SpecificCountry(val countryCode: String) : InitialSelection()
     }

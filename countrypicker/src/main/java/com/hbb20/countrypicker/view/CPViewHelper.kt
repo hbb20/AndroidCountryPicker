@@ -121,15 +121,16 @@ class CPViewHelper(
             tvEmojiFlag?.isVisible = flagProvider is DefaultEmojiFlagProvider
             if (flagProvider is DefaultEmojiFlagProvider) {
                 val flagEmoji = when {
-                    flagProvider.useEmojiCompat -> EmojiCompat.get()
-                        .process(selectedCountry?.flagEmoji ?: " ")
-                    else -> selectedCountry?.flagEmoji ?: " "
+                    flagProvider.useEmojiCompat ->
+                        EmojiCompat.get()
+                            .process(selectedCountry.flagEmoji ?: " ")
+                    else -> selectedCountry.flagEmoji ?: " "
                 }
                 tvEmojiFlag?.setText(flagEmoji) ?: kotlin.run {
                     Timber.e("No tvEmojiFlag provided to load emoji flag")
                 }
             } else if (flagProvider is CPFlagImageProvider) {
-                val flagResId = selectedCountry?.let { flagProvider.getFlag(it.alpha2) }
+                val flagResId = selectedCountry.let { flagProvider.getFlag(it.alpha2) }
                 when {
                     flagResId != null -> {
                         imgFlag?.isVisible = true

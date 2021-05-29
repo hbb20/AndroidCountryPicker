@@ -12,7 +12,6 @@ import com.hbb20.countrypicker.models.CPCountry
 import com.hbb20.countrypicker.models.CPDataStore
 import com.hbb20.countrypicker.recyclerview.defaultDataStoreModifier
 
-
 fun Context.launchCountryPickerDialog(
     customMasterCountries: String = CPDataStoreGenerator.defaultMasterCountries,
     customExcludedCountries: String = CPDataStoreGenerator.defaultExcludedCountries,

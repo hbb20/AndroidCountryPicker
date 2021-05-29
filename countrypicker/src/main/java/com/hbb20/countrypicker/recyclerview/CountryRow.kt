@@ -54,7 +54,7 @@ internal class CountryRow @JvmOverloads constructor(
         setHighlightedInfo()
         applyFlag()
 
-        //apply config
+        // apply config
         applyTextSize()
     }
 
@@ -126,5 +126,4 @@ internal class CountryRow @JvmOverloads constructor(
             if (rowConfig.secondaryTextGenerator == null) binding.tvPrimaryText.textSize else binding.tvPrimaryText.textSize * 1.3f
         binding.tvEmojiFlag.setTextSize(TypedValue.COMPLEX_UNIT_PX, emojiSize)
     }
-
 }

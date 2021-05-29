@@ -13,7 +13,6 @@ class CPDataStoreGeneratorTest {
 
     private val context = InstrumentationRegistry.getInstrumentation().context
 
-
     @Test
     fun generate() {
         val dataStore =
@@ -138,7 +137,6 @@ class CPDataStoreGeneratorTest {
         assertEquals(10, dataStore.countryList.size)
     }
 
-
     @Test
     fun `custom excluded countries alpha2`() {
         val dataStore =
@@ -260,8 +258,8 @@ class CPDataStoreGeneratorTest {
                 customExcludedCountries = "AUS,ZA,IN,QQ,DDD,ANYThing",
                 countryFileReader = MockCountryFileReader
             )
-        //master list: AU/AUS,TG,ZA,LKA,GHA,AFG
-        //after excluded: TG,LKA,GHA,AFG
+        // master list: AU/AUS,TG,ZA,LKA,GHA,AFG
+        // after excluded: TG,LKA,GHA,AFG
         assertEquals(4, dataStore.countryList.size)
     }
 
@@ -274,7 +272,7 @@ class CPDataStoreGeneratorTest {
                 customExcludedCountries = "AUS,TG,AU,ZA,LKA,GHA,AFG,QQQ",
                 countryFileReader = MockCountryFileReader
             )
-        //master list: AU,TG,ZA,LKA,GHA,AFG
+        // master list: AU,TG,ZA,LKA,GHA,AFG
         assertEquals(6, dataStore.countryList.size)
     }
 }
