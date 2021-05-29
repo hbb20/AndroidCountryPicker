@@ -1,6 +1,7 @@
 package com.hbb20
 
-import androidx.test.platform.app.InstrumentationRegistry
+import android.content.Context
+import androidx.test.core.app.ApplicationProvider
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
@@ -11,7 +12,7 @@ import org.robolectric.RobolectricTestRunner
 @RunWith(RobolectricTestRunner::class)
 class CPDataStoreGeneratorTest {
 
-    private val context = InstrumentationRegistry.getInstrumentation().context
+    private val context: Context = ApplicationProvider.getApplicationContext()
 
     @Test
     fun generate() {
