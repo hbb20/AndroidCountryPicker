@@ -4,7 +4,6 @@ import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes
 import com.hbb20.countrypicker.R
 
-
 data class CPDialogConfig(
     var dialogViewIds: CPDialogViewIds = defaultCPDialogViewIds,
     var allowSearch: Boolean = defaultCPDialogAllowSearch,

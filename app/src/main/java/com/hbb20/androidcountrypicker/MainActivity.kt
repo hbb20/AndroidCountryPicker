@@ -29,13 +29,11 @@ class MainActivity : AppCompatActivity() {
             override fun getFlag(alpha2Code: String): Int {
                 return R.drawable.ic_flag_black
             }
-
         }
         //        countryPicker.helper.refreshView()
     }
 
     private fun refreshView() {
-
     }
 
     fun openDialogDirectly(view: View) {

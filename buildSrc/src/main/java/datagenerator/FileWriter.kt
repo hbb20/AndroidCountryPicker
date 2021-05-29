@@ -1,3 +1,4 @@
+import datagenerator.SupportedLanguage
 import org.apache.commons.csv.CSVFormat
 import org.apache.commons.csv.CSVPrinter
 import java.io.File
@@ -112,14 +113,23 @@ class FileWriter(val projectRootDir: String) {
         languageTranslation: LanguageTranslation
     ) {
         val countryNameTranslationFilePath =
-            resDirPath + "/values-${languageTranslation.language.identifier.toLowerCase()}/cp_country_translation.xml"
+            resDirPath + "/values-${getLocalDirIdentifier(languageTranslation.language)}/cp_country_translation.xml"
         val messageTranslationFilePath =
-            resDirPath + "/values-${languageTranslation.language.identifier.toLowerCase()}/cp_message_translation.xml"
+            resDirPath + "/values-${getLocalDirIdentifier(languageTranslation.language)}/cp_message_translation.xml"
         writeTranslation(
             countryNameTranslationFilePath,
             messageTranslationFilePath,
             languageTranslation
         )
+    }
+
+    private fun getLocalDirIdentifier(language: SupportedLanguage): String {
+        return if (language.identifier.contains("-")) {
+            val parts = language.identifier.split("-")
+            return parts[0].toLowerCase() + "-r" + parts[1].toUpperCase()
+        } else {
+            language.identifier.toLowerCase()
+        }
     }
 
     fun writeDefaultTranslationFile(

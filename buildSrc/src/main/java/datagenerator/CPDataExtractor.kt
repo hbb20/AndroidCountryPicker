@@ -1,3 +1,5 @@
+import datagenerator.SupportedLanguage
+
 class CPDataExtractor(val projectDir: String) {
     val dataGeneratorRootPath = "$projectDir/buildSrc/src/main/java/datagenerator"
     fun generate(): Unit {
@@ -17,7 +19,8 @@ class CPDataExtractor(val projectDir: String) {
         fileWriter.writeBaseCountriesKt(baseCountries = baseCountries.values.toList())
 
         //countryNameTranslations$
-        val languageTranslations = TranslationReader(dataGeneratorRootPath).readAllTranslations()
+        val languageTranslations =
+            TranslationReader(dataGeneratorRootPath).readAllTranslations(baseCountries.values.toList())
         languageTranslations.forEach {
             fileWriter.writeLanguageTranslation(languageTranslation = it)
             if (it.language == SupportedLanguage.ENGLISH) {

@@ -82,6 +82,8 @@ fun DependencyHandlerScope.implementKotlin(version: String) {
 fun DependencyHandlerScope.implementTesting() {
     add(ANDROID_TEST_IMPLEMENTATION, "androidx.test.ext:junit:1.1.2")
     add(ANDROID_TEST_IMPLEMENTATION, "androidx.test.espresso:espresso-core:3.3.0")
+    add(ANDROID_TEST_IMPLEMENTATION, "androidx.test:core:1.3.0")
+
 
     // https://github.com/robolectric/robolectric/issues/5848 Will be able to update to 4.4 only after mockk can be updated to > 1.10.0
     add(TEST_IMPLEMENTATION, "org.robolectric:robolectric:4.4")

@@ -1,6 +1,7 @@
 package com.hbb20
 
-import androidx.test.platform.app.InstrumentationRegistry
+import android.content.Context
+import androidx.test.core.app.ApplicationProvider
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
@@ -11,8 +12,7 @@ import org.robolectric.RobolectricTestRunner
 @RunWith(RobolectricTestRunner::class)
 class CPDataStoreGeneratorTest {
 
-    private val context = InstrumentationRegistry.getInstrumentation().context
-
+    private val context: Context = ApplicationProvider.getApplicationContext()
 
     @Test
     fun generate() {
@@ -138,7 +138,6 @@ class CPDataStoreGeneratorTest {
         assertEquals(10, dataStore.countryList.size)
     }
 
-
     @Test
     fun `custom excluded countries alpha2`() {
         val dataStore =
@@ -260,8 +259,8 @@ class CPDataStoreGeneratorTest {
                 customExcludedCountries = "AUS,ZA,IN,QQ,DDD,ANYThing",
                 countryFileReader = MockCountryFileReader
             )
-        //master list: AU/AUS,TG,ZA,LKA,GHA,AFG
-        //after excluded: TG,LKA,GHA,AFG
+        // master list: AU/AUS,TG,ZA,LKA,GHA,AFG
+        // after excluded: TG,LKA,GHA,AFG
         assertEquals(4, dataStore.countryList.size)
     }
 
@@ -274,7 +273,7 @@ class CPDataStoreGeneratorTest {
                 customExcludedCountries = "AUS,TG,AU,ZA,LKA,GHA,AFG,QQQ",
                 countryFileReader = MockCountryFileReader
             )
-        //master list: AU,TG,ZA,LKA,GHA,AFG
+        // master list: AU,TG,ZA,LKA,GHA,AFG
         assertEquals(6, dataStore.countryList.size)
     }
 }

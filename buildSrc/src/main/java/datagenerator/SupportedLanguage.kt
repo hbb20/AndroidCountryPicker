@@ -1,3 +1,6 @@
+package datagenerator
+
 enum class SupportedLanguage(val identifier: String) {
-    ENGLISH("EN")
+    ENGLISH("EN"),
+    GUJARATI("GU"),
 }

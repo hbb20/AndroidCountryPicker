@@ -21,7 +21,6 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
         setupRecyclerView()
     }
 
-
     private fun setupRecyclerView() {
 
         val primaryTextGenerator = { cpCountry: CPCountry ->
@@ -43,7 +42,6 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
         binding.recyclerView.loadCountries { selectedCountry: CPCountry ->
             // your code to handle selected country
         }
-
 
         binding.recyclerView.loadCountries(
             preferredCountryCodes = "IN,US,NZ,AU"
@@ -75,7 +73,6 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
         //            // your code to handle selected country
         //        }
 
-
         //        val cpListConfig: CPListConfig = CPListConfig()
 
         // Check CP Row config for available
@@ -97,12 +94,10 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
 
         // attach query edit text (optional) to update filtered list when query updated
         cpRecyclerViewHelper.attachFilterQueryEditText(filterQueryEditText)
-
     }
 
     fun loadUsingCPRecyclerViewHelper() {
         val filterQueryEditText = EditText(this)
-
 
         // Check CPDataStore for available configuration
         val cpDataStore = CPDataStoreGenerator.generate(this)

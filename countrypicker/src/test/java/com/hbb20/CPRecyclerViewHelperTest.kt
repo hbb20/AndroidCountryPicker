@@ -196,5 +196,4 @@ class CPRecyclerViewHelperTest {
         assertTrue(helper.controllerData.allCountries.any { it.alpha2 == "LK" })
         assertEquals(3, helper.controllerData.allCountries.size)
     }
-
 }

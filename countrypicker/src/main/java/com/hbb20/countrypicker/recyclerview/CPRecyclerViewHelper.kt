@@ -56,7 +56,6 @@ class CPRecyclerViewHelper(
         recyclerView.adapter = epoxyController.adapter
     }
 
-
     private fun extractPreferredCountries(
         countries: List<CPCountry>,
         preferredCountryCodes: String? = ""
@@ -75,7 +74,6 @@ class CPRecyclerViewHelper(
         return result.distinctBy { it.alpha2 }
     }
 
-
     private fun List<CPCountry>.filterCountries(
         filterQuery: String,
         cpRowConfig: CPRowConfig
@@ -85,14 +83,18 @@ class CPRecyclerViewHelper(
             cpRowConfig.primaryTextGenerator(it).contains(
                 filterQuery,
                 true
-            ) || (cpRowConfig.secondaryTextGenerator?.invoke(it)?.contains(
-                filterQuery,
-                true
-            ) ?: false)
-                    || (cpRowConfig.highlightedTextGenerator?.invoke(it)?.contains(
-                filterQuery,
-                true
-            ) ?: false)
+            ) || (
+                    cpRowConfig.secondaryTextGenerator?.invoke(it)?.contains(
+                        filterQuery,
+                        true
+                    ) ?: false
+                    ) ||
+                    (
+                            cpRowConfig.highlightedTextGenerator?.invoke(it)?.contains(
+                                filterQuery,
+                                true
+                            ) ?: false
+                            )
         }
     }
 }

@@ -51,14 +51,14 @@ class CountryPickerViewDemoActivity : AppCompatActivity() {
             tvSelectedCountryEmojiFlag = customCPEmojiTextView
         )
 
-        //observe live data
+        // observe live data
         cpViewHelper.selectedCountry.observe(
             lifecycleOwner,
             Observer { selectedCountry: CPCountry? ->
                 // observe live data
                 // your code to handle selected country
-            })
-
+            }
+        )
 
         // Modify CPViewConfig if you need. Access cpViewConfig through `cpViewHelper`
         cpViewHelper.cpViewConfig.viewTextGenerator = { cpCountry: CPCountry ->
@@ -76,7 +76,6 @@ class CountryPickerViewDemoActivity : AppCompatActivity() {
         // Modify CPRowConfig if you need. Access cpRowConfig through `countryPicker.cpViewHelper`
         // cpViewHelper.cpRowConfig.
     }
-
 
     private fun setupCountryPickerView() {
         val countryPicker = findViewById<CountryPickerView>(R.id.countryPicker)
@@ -97,5 +96,4 @@ class CountryPickerViewDemoActivity : AppCompatActivity() {
         // Modify CPRowConfig if you need. Access cpRowConfig through `countryPicker.cpViewHelper`
         // countryPicker.cpViewHelper.cpRowConfig.
     }
-
 }

@@ -11,7 +11,6 @@ import com.hbb20.countrypicker.models.CPDataStore
 import com.hbb20.countrypicker.models.CountryInfo
 import com.hbb20.countrypicker.models.countryInfoList
 
-
 interface CountryFileReading {
     fun readMasterDataFromFiles(
         context: Context
