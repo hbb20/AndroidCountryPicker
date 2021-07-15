@@ -42,7 +42,7 @@
         <ImageView
             android:id="@+id/imgFlag"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="14sp"
             android:adjustViewBounds="true"
             android:contentDescription="Flag Image"
             android:minWidth="@dimen/grid_2x"

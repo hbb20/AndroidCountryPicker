@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.hbb20.contrypicker.flagprovider.CPFlagProvider
 import com.hbb20.countrypicker.R
 import com.hbb20.countrypicker.config.CPRowConfig
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
@@ -64,5 +65,11 @@ class CountryPickerView @JvmOverloads constructor(
             else R.layout.cp_country_picker_view_constrained
         LayoutInflater.from(context)
             .inflate(layoutFile, this, true)
+    }
+
+    fun changeFlagProvider(flagProvider: CPFlagProvider?) {
+        cpViewHelper.cpViewConfig.cpFlagProvider = flagProvider
+        cpViewHelper.cpRowConfig.cpFlagProvider = flagProvider
+        cpViewHelper.refreshView()
     }
 }

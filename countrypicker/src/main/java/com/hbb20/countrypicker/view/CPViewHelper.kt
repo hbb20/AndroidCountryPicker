@@ -8,8 +8,8 @@ import androidx.core.view.isVisible
 import androidx.emoji.text.EmojiCompat
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.hbb20.countrypicker.CPFlagImageProvider
-import com.hbb20.countrypicker.DefaultEmojiFlagProvider
+import com.hbb20.contrypicker.flagprovider.CPFlagImageProvider
+import com.hbb20.contrypicker.flagprovider.DefaultEmojiFlagProvider
 import com.hbb20.countrypicker.config.CPDialogConfig
 import com.hbb20.countrypicker.config.CPListConfig
 import com.hbb20.countrypicker.config.CPRowConfig

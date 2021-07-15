@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:paddingVertical="@dimen/grid_1x"
     tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/flagHolder"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="@dimen/grid_1x"
         android:layout_marginLeft="@dimen/grid_1x"
         android:textColor="@android:color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tvCountryInfo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="@id/tvCountryInfo">
 
         <TextView
             android:id="@+id/tvEmojiFlag"
@@ -31,13 +32,11 @@
         <ImageView
             android:id="@+id/imgFlag"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginVertical="4dp"
             android:adjustViewBounds="true"
             android:contentDescription="Flag Image"
-            android:minWidth="@dimen/grid_2x"
-            android:minHeight="@dimen/grid_2x"
             android:textColor="@android:color/black"
-            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -56,7 +55,6 @@
         android:ellipsize="end"
         android:gravity="center"
         android:maxLines="1"
-        android:minHeight="48dp"
         android:paddingStart="@dimen/grid_1x"
         android:paddingLeft="@dimen/grid_1x"
         android:paddingEnd="@dimen/grid_1x"
@@ -76,4 +74,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-</merge>
+</androidx.constraintlayout.widget.ConstraintLayout>

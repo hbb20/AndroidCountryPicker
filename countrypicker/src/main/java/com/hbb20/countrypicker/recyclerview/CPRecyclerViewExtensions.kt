@@ -2,7 +2,7 @@ package com.hbb20.countrypicker.recyclerview
 
 import android.widget.EditText
 import androidx.recyclerview.widget.RecyclerView
-import com.hbb20.countrypicker.CPFlagProvider
+import com.hbb20.contrypicker.flagprovider.CPFlagProvider
 import com.hbb20.countrypicker.config.CPListConfig
 import com.hbb20.countrypicker.config.CPRowConfig
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator

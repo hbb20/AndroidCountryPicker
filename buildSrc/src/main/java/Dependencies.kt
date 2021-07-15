@@ -15,7 +15,7 @@ object Versions {
     const val CHUCKER: String = "3.4.0"
     const val COROUTINES = "1.4.2"
     const val DAGGER_2 = "2.29.1" // STOP: 2.30 problem with kaptDebugKotlin
-    const val DETEKT = "1.14.2"
+    const val DETEKT = "1.17.1"
     const val EPOXY =
         "4.1.0" //4.2.0 causes error running gradle task :app:checkDebugDuplicateClasses https://github.com/airbnb/epoxy/releases/tag/4.2.0
     const val FIREBASE_CRASHLYTICS_GRADLE = "2.3.0" //2.4.1 causes build error.
@@ -55,6 +55,10 @@ object Deps {
 
 fun DependencyHandlerScope.implementProject(moduleName: String) {
     add(IMPLEMENTATION, project(":$moduleName"))
+}
+
+fun DependencyHandlerScope.apiProject(moduleName: String) {
+    add(API, project(":$moduleName"))
 }
 
 fun DependencyHandlerScope.implementArchitectureComponents() {

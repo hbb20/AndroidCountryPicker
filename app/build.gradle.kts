@@ -69,4 +69,5 @@ dependencies {
     implementEpoxy()
     implementTesting()
     implementProject("countrypicker")
+    implementProject("flagpack1")
 }
