@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.hbb20.CountryPickerView
 import com.hbb20.androidcountrypicker.databinding.ActivityMainBinding
 import com.hbb20.contrypicker.flagpack1.FlagPack1
+import com.hbb20.countrypicker.flagprovider.CPFlagImageProvider
 import com.hbb20.countrypicker.models.CPCountry
 
 class MainActivity : AppCompatActivity() {
@@ -25,7 +26,12 @@ class MainActivity : AppCompatActivity() {
         countryPicker.cpViewHelper.cpViewConfig.viewTextGenerator = { cpCountry: CPCountry ->
             cpCountry.alpha2
         }
-        countryPicker.changeFlagProvider(FlagPack1)
+        countryPicker.changeFlagProvider(
+            CPFlagImageProvider(
+                FlagPack1.alpha2ToFlag,
+                FlagPack1.missingFlagPlaceHolder
+            )
+        )
     }
 
     private fun refreshView() {

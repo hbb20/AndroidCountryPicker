@@ -13,7 +13,10 @@ class OpenDialogDirectlyActivity : AppCompatActivity() {
     }
 
     fun openCPDialog(view: View) {
-        launchCountryPickerDialog { selectedCountry ->
+        launchCountryPickerDialog(
+            customMasterCountries = "IN,PK,US",
+            allowSearch = false
+        ) { selectedCountry ->
             Toast.makeText(
                 this,
                 selectedCountry?.alpha2,

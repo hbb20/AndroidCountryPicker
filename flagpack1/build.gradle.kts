@@ -37,5 +37,4 @@ dependencies {
     implementation(Deps.timber)
     implementEpoxy()
     implementTesting()
-    implementProject("flagprovider")
 }

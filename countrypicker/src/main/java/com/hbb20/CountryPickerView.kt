@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.hbb20.contrypicker.flagprovider.CPFlagProvider
 import com.hbb20.countrypicker.R
 import com.hbb20.countrypicker.config.CPRowConfig
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
+import com.hbb20.countrypicker.flagprovider.CPFlagProvider
 import com.hbb20.countrypicker.helper.readDialogConfigFromAttrs
 import com.hbb20.countrypicker.helper.readListConfigFromAttrs
 import com.hbb20.countrypicker.helper.readViewConfigFromAttrs

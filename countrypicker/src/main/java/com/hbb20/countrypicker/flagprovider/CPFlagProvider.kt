@@ -1,8 +1,8 @@
-package com.hbb20.contrypicker.flagprovider
+package com.hbb20.countrypicker.flagprovider
 
 import androidx.annotation.DrawableRes
 
-sealed class CPFlagProvider
+abstract class CPFlagProvider
 
 /**
  * If you wish to useEmojiCompat = true then make sure to enable emoji-compat in your app using
@@ -11,10 +11,16 @@ sealed class CPFlagProvider
  */
 class DefaultEmojiFlagProvider(val useEmojiCompat: Boolean = false) : CPFlagProvider()
 
-abstract class CPFlagImageProvider : CPFlagProvider() {
-
-    abstract val alpha2ToFlag: Map<String, Int>
-    abstract val missingFlagPlaceHolder: Int
+/**
+ * [alpha2ToFlag] is map of alpha 2 code to drawable res of flag
+ * [missingFlagPlaceHolder] is shown for country for which flag is not found in [alpha2ToFlag].
+ * Ideally [missingFlagPlaceHolder] should be transparent image and it's size should match size of
+ * other flags in this pack to maintain visual symmetry.
+ */
+class CPFlagImageProvider(
+    val alpha2ToFlag: Map<String, Int>,
+    @DrawableRes val missingFlagPlaceHolder: Int
+) : CPFlagProvider() {
 
     @DrawableRes
     fun getFlag(alpha2Code: String): Int {

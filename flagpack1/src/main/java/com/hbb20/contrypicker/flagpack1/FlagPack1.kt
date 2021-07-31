@@ -1,11 +1,10 @@
 package com.hbb20.contrypicker.flagpack1
 
 import androidx.annotation.DrawableRes
-import com.hbb20.contrypicker.flagprovider.CPFlagImageProvider
 
-object FlagPack1 : CPFlagImageProvider() {
-    override val missingFlagPlaceHolder: Int = R.drawable.flag_transparent
-    override val alpha2ToFlag = mapOf<String, @DrawableRes Int>(
+object FlagPack1 {
+    val missingFlagPlaceHolder: Int = R.drawable.flag_transparent
+    val alpha2ToFlag = mapOf<String, @DrawableRes Int>(
         "ad" to R.drawable.flag_andorra,
         "ae" to R.drawable.flag_uae,
         "af" to R.drawable.flag_afghanistan,

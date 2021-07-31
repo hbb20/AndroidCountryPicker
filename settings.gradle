@@ -1,3 +1,2 @@
 include ':app', ':countrypicker'
 include ':flagpack1'
-include ':flagprovider'
