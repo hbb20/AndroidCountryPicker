@@ -8,3 +8,5 @@
 /build
 /captures
 .externalNativeBuild
+/buildSrc/build/**
+/screenshots/~$illustrations.pptx

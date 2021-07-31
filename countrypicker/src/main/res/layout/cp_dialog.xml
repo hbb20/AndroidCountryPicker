@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/ThemeOverlay.MaterialComponents.Dialog">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="@dimen/grid_3x"
+            android:layout_marginLeft="@dimen/grid_3x"
+            android:layout_marginEnd="@dimen/grid_3x"
+            android:layout_marginRight="@dimen/grid_3x"
+            android:firstBaselineToTopHeight="40dp"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Select Country" />
+
+        <EditText
+            android:id="@+id/etQuery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid_3x"
+            android:layout_marginLeft="@dimen/grid_3x"
+            android:hint="Search..."
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toStartOf="@+id/imgClearQuery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            app:layout_goneMarginEnd="@dimen/grid_3x"
+            app:layout_goneMarginTop="@dimen/grid_3x" />
+
+        <ImageView
+            android:id="@+id/imgClearQuery"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/grid_3x"
+            android:layout_marginRight="@dimen/grid_3x"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/grid_1hx"
+            android:src="@drawable/ic_cp_backspace"
+            app:layout_constraintBottom_toBottomOf="@+id/etQuery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etQuery" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCountryList"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_default="wrap"
+            app:layout_constraintBottom_toTopOf="@+id/btnClearSelection"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintTop_toBottomOf="@id/etQuery" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnClearSelection"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/grid_1x"
+            android:layout_marginRight="@dimen/grid_1x"
+            android:layout_marginBottom="@dimen/grid_1x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Clear Selection" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/countryRow"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:minHeight="@dimen/grid_6x"
+    android:paddingStart="@dimen/grid_1x"
+    android:paddingLeft="@dimen/grid_1x"
+    android:paddingTop="@dimen/grid_0hx"
+    android:paddingEnd="@dimen/grid_1x"
+    android:paddingRight="@dimen/grid_1x"
+    android:paddingBottom="@dimen/grid_1x">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/flagHolder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_2x"
+        android:layout_marginLeft="@dimen/grid_2x"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvEmojiFlag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="🏁" />
+
+        <ImageView
+            android:id="@+id/imgFlag"
+            android:layout_width="wrap_content"
+            android:layout_height="14sp"
+            android:adjustViewBounds="true"
+            android:contentDescription="Flag Image"
+            android:minWidth="@dimen/grid_2x"
+            android:minHeight="@dimen/grid_2x"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_flag_black"
+            tools:text="🏁" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvPrimaryText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/grid_2x"
+        android:layout_marginLeft="@dimen/grid_2x"
+        android:layout_marginTop="@dimen/grid_0hx"
+        android:layout_marginEnd="@dimen/grid_1x"
+        android:layout_marginRight="@dimen/grid_1x"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvSecondaryText"
+        app:layout_constraintEnd_toStartOf="@+id/tvHighlightedInfo"
+        app:layout_constraintStart_toEndOf="@id/flagHolder"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginBottom="@dimen/grid_0hx"
+        app:layout_goneMarginEnd="@dimen/grid_2x"
+        app:layout_goneMarginLeft="@dimen/grid_2x"
+        app:layout_goneMarginStart="@dimen/grid_2x"
+        tools:text="India" />
+
+    <TextView
+        android:id="@+id/tvSecondaryText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/grid_0hx"
+        android:text="Indian Rupee (INR)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tvPrimaryText"
+        app:layout_constraintStart_toStartOf="@id/tvPrimaryText"
+        app:layout_constraintTop_toBottomOf="@+id/tvPrimaryText" />
+
+    <TextView
+        android:id="@+id/tvHighlightedInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/grid_2x"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="+1" />
+</androidx.constraintlayout.widget.ConstraintLayout>

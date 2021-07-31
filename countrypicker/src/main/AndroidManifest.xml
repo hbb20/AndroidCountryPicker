@@ -1,2 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.hbb20.countrypicker"/>
+<manifest package="com.hbb20.countrypicker" />

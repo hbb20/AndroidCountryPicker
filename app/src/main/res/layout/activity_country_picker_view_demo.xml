@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:dividerPadding="@dimen/grid_2x"
+    android:orientation="vertical"
+    tools:context=".CountryPickerViewDemoActivity">
+    <com.hbb20.CountryPickerView
+        android:id="@+id/countryPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cpDialog_allowClearSelection="true"
+        app:cpDialog_allowSearch="true"
+        app:cp_autoDetectSources="LOCALE_NETWORK_SIM"
+        app:cpDialog_showFullScreen="true"
+        app:cpDialog_showTitle="true"
+        app:cp_initialSelectionMode="specificCountry"
+        app:cp_initialSpecificCountry="IN"
+        app:cpList_preferredCountryCodes="comma separated alpha2/alpha3" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/customCountryPickerViewContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="@dimen/grid_2x">
+
+        <TextView
+            android:id="@+id/tvSelectedCountryEmojiFlag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="🇦🇩" />
+
+        <TextView
+            android:id="@+id/tvSelectedCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSelectedCountryEmojiFlag"
+            tools:text="Andorra" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

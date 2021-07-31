@@ -1,0 +1,13 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: 'I will look into this as soon as I get some time. If it''s critical, please contact harshbbhakta@gmail.com'
+        pr-message: 'Thank you so much for your contribution. It strenthens the open source projects and community. I will look into this as soon as I I get some time'

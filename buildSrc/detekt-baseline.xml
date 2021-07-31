@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <Blacklist></Blacklist>
+  <Whitelist>
+    <ID>TooManyFunctions:Dependencies.kt$.Dependencies.kt</ID>
+  </Whitelist>
+</SmellBaseline>
