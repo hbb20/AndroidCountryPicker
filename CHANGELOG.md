@@ -7,6 +7,10 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Next Release]
 
+## v0.0.6 2021-07-31
+
+- Option to pass size mode for dialog
+
 ## v0.0.5 2021-07-31
 
 - Fix dependency issue for flag pack
