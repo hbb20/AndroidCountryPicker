@@ -2,11 +2,11 @@ package com.hbb20.countrypicker.recyclerview
 
 import android.widget.EditText
 import androidx.recyclerview.widget.RecyclerView
-import com.hbb20.countrypicker.CPFlagProvider
 import com.hbb20.countrypicker.config.CPListConfig
 import com.hbb20.countrypicker.config.CPRowConfig
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
 import com.hbb20.countrypicker.datagenerator.CountryFileReading
+import com.hbb20.countrypicker.flagprovider.CPFlagProvider
 import com.hbb20.countrypicker.logger.logMethodEnd
 import com.hbb20.countrypicker.logger.onMethodBegin
 import com.hbb20.countrypicker.models.CPCountry

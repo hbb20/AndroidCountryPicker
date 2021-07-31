@@ -4,10 +4,10 @@ import android.content.Context
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import com.hbb20.countrypicker.CPFlagProvider
 import com.hbb20.countrypicker.config.*
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
 import com.hbb20.countrypicker.datagenerator.CountryFileReading
+import com.hbb20.countrypicker.flagprovider.CPFlagProvider
 import com.hbb20.countrypicker.models.CPCountry
 import com.hbb20.countrypicker.models.CPDataStore
 import com.hbb20.countrypicker.recyclerview.defaultDataStoreModifier

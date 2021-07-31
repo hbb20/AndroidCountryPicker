@@ -1,7 +1,7 @@
 package com.hbb20.countrypicker.config
 
-import com.hbb20.countrypicker.CPFlagProvider
-import com.hbb20.countrypicker.DefaultEmojiFlagProvider
+import com.hbb20.countrypicker.flagprovider.CPFlagProvider
+import com.hbb20.countrypicker.flagprovider.DefaultEmojiFlagProvider
 import com.hbb20.countrypicker.helper.CPCountryDetector.Source
 import com.hbb20.countrypicker.models.CPCountry
 

@@ -8,14 +8,14 @@ import androidx.core.view.isVisible
 import androidx.emoji.text.EmojiCompat
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.hbb20.countrypicker.CPFlagImageProvider
-import com.hbb20.countrypicker.DefaultEmojiFlagProvider
 import com.hbb20.countrypicker.config.CPDialogConfig
 import com.hbb20.countrypicker.config.CPListConfig
 import com.hbb20.countrypicker.config.CPRowConfig
 import com.hbb20.countrypicker.config.CPViewConfig
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
 import com.hbb20.countrypicker.dialog.CPDialogHelper
+import com.hbb20.countrypicker.flagprovider.CPFlagImageProvider
+import com.hbb20.countrypicker.flagprovider.DefaultEmojiFlagProvider
 import com.hbb20.countrypicker.helper.CPCountryDetector
 import com.hbb20.countrypicker.models.CPCountry
 import com.hbb20.countrypicker.models.CPDataStore

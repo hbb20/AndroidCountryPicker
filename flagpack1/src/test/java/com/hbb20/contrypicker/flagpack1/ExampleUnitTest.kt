@@ -1,4 +1,4 @@
-package com.hbb20.androidcountrypicker
+package com.hbb20.contrypicker.flagpack1
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

@@ -10,11 +10,11 @@ import com.airbnb.epoxy.AfterPropsSet
 import com.airbnb.epoxy.CallbackProp
 import com.airbnb.epoxy.ModelProp
 import com.airbnb.epoxy.ModelView
-import com.hbb20.countrypicker.CPFlagImageProvider
-import com.hbb20.countrypicker.DefaultEmojiFlagProvider
 import com.hbb20.countrypicker.R
 import com.hbb20.countrypicker.config.CPRowConfig
 import com.hbb20.countrypicker.databinding.CpCountryRowBinding
+import com.hbb20.countrypicker.flagprovider.CPFlagImageProvider
+import com.hbb20.countrypicker.flagprovider.DefaultEmojiFlagProvider
 import com.hbb20.countrypicker.models.CPCountry
 
 @ModelView(autoLayout = ModelView.Size.MATCH_WIDTH_WRAP_HEIGHT)

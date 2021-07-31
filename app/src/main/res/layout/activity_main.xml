@@ -24,7 +24,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/error_color"
-        android:onClick="launchTestActivity"
         android:text="Show Issues"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +53,6 @@
         android:layout_height="wrap_content"
         android:background="@color/warning_color"
         android:foreground="?android:attr/selectableItemBackground"
-        android:onClick="launchTestActivity"
         android:padding="24dp"
         android:text="Lunch Data Test Screen"
         android:textColor="@android:color/white"
@@ -128,7 +126,7 @@
 
     <com.hbb20.CountryPickerView
         android:id="@+id/countryPicker"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:foreground="?attr/selectableItemBackground"
         app:cpDialog_allowClearSelection="true"
