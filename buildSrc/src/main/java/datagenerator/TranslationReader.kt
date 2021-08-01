@@ -1,6 +1,7 @@
 import datagenerator.SupportedLanguage
 import org.apache.commons.csv.CSVFormat
 import org.apache.commons.csv.CSVParser
+import org.gradle.api.resources.MissingResourceException
 import java.nio.file.Files
 import java.nio.file.Paths
 
@@ -37,19 +38,20 @@ class TranslationReader(val dataGeneratorRootDir: String) {
         )
         val messageTranslations =
             getMessageTranslations(messageTranslationFilePath, supportedLangCodes)
-
+        val errors = mutableListOf<String>()
         SupportedLanguage.values().forEach { language ->
             val languageCode = language.identifier.toUpperCase()
+            var isErrorHeaderAdded = false
             val languageTranslationMap = nameTranslations[languageCode]
             baseCountries.forEach { baseCountry ->
                 val alpha2 = baseCountry.alpha2
                 val translation = languageTranslationMap?.get(alpha2)
                 if (translation == null) {
-                    throw Exception(
-                        "Missing ${language.name}($languageCode) translation for country \"${baseCountry.englishName}\"(${alpha2}). " +
-                                "Add following to ADDITIONAL-COUNTRY-MULTILINGUAL.CSV\n " +
-                                """"$languageCode","${alpha2}","TranslatedName of ${baseCountry.englishName}""""
-                    )
+                    if (isErrorHeaderAdded.not()) {
+                        isErrorHeaderAdded = true
+                        errors.add("\n\n\nMissing ${language.name}($languageCode) translation(s). Add following to ADDITIONAL-COUNTRY-MULTILINGUAL.CSV")
+                    }
+                    errors.add(""""$languageCode","${alpha2}","TranslatedName of ${baseCountry.englishName}"""")
                 } else {
                     languageMap[languageCode]!!.countryNameTranslations[alpha2] = translation
                 }
@@ -57,16 +59,20 @@ class TranslationReader(val dataGeneratorRootDir: String) {
 
             val messageGroup = messageTranslations[languageCode]
             if (messageGroup == null) {
-                throw Exception(
-                    "Missing message translation for ${language.name}($languageCode)" +
-                            "Add it to MultilingualCPMessages.csv"
+                errors.add(
+                    "\n\nMissing message translation(s) for ${language.name}($languageCode)" +
+                            "\nAdd it to MultilingualCPMessages.csv\n\n"
                 )
             } else {
                 languageMap[languageCode]!!.messageGroup = messageGroup
             }
         }
 
-        return languageMap.values.toList()
+        if (errors.isNotEmpty()) {
+            throw MissingResourceException(errors.joinToString("\n"))
+        } else {
+            return languageMap.values.toList()
+        }
     }
 
     private fun getMessageTranslations(
