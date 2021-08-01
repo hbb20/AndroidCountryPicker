@@ -7,6 +7,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Next Release]
 
+- Japanese language support by Harsh Bhakta (@hbb20)
+
 ## v0.0.6 2021-07-31
 
 - Option to pass size mode for dialog
