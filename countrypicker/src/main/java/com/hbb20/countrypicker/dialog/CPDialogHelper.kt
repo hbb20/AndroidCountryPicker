@@ -3,6 +3,7 @@ package com.hbb20.countrypicker.dialog
 import android.app.Dialog
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.ViewGroup
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
@@ -10,11 +11,13 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.isVisible
+import androidx.core.view.updateLayoutParams
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.RecyclerView
 import com.hbb20.countrypicker.config.CPDialogConfig
 import com.hbb20.countrypicker.config.CPListConfig
 import com.hbb20.countrypicker.config.CPRowConfig
+import com.hbb20.countrypicker.config.SizeMode
 import com.hbb20.countrypicker.models.CPCountry
 import com.hbb20.countrypicker.models.CPDataStore
 import com.hbb20.countrypicker.recyclerview.loadCountriesUsingDataStoreAndConfig
@@ -33,6 +36,8 @@ class CPDialogHelper(
         val dialogView =
             LayoutInflater.from(context).inflate(cpDialogConfig.dialogViewIds.layoutId, null, false)
         dialog.window?.setContentView(dialogView)
+        val containerViewGroup =
+            dialogView.findViewById<ViewGroup>(cpDialogConfig.dialogViewIds.containerId)
         val recyclerView: RecyclerView =
             dialogView.findViewById(cpDialogConfig.dialogViewIds.recyclerViewId)
         val etQuery: EditText? =
@@ -85,6 +90,12 @@ class CPDialogHelper(
             dialog.dismiss()
         }
 
+        val resizeMode = cpDialogConfig.getApplicableResizeMode()
+        if (resizeMode == SizeMode.Wrap) {
+            containerViewGroup.updateLayoutParams {
+                height = ViewGroup.LayoutParams.WRAP_CONTENT
+            }
+        }
         if (cpDialogConfig.showFullScreen) {
             dialog.window?.setLayout(
                 WindowManager.LayoutParams.MATCH_PARENT,

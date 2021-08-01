@@ -1,10 +1,7 @@
 package com.hbb20.countrypicker.dialog
 
 import android.content.Context
-import com.hbb20.countrypicker.config.CPDialogConfig
-import com.hbb20.countrypicker.config.CPDialogViewIds
-import com.hbb20.countrypicker.config.CPListConfig
-import com.hbb20.countrypicker.config.CPRowConfig
+import com.hbb20.countrypicker.config.*
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
 import com.hbb20.countrypicker.datagenerator.CountryFileReading
 import com.hbb20.countrypicker.flagprovider.CPFlagProvider
@@ -28,6 +25,7 @@ fun Context.launchCountryPickerDialog(
     allowClearSelection: Boolean = CPDialogConfig.defaultCPDialogAllowClearSelection,
     showTitle: Boolean = CPDialogConfig.defaultCPDialogDefaultShowTitle,
     showFullScreen: Boolean = CPDialogConfig.defaultCPDialogShowFullScreen,
+    sizeMode: SizeMode = CPDialogConfig.defaultCPDialogDefaultSizeMode,
     onCountryClickListener: ((CPCountry?) -> Unit)
 ) {
     val cpDataStore = CPDataStoreGenerator.generate(
