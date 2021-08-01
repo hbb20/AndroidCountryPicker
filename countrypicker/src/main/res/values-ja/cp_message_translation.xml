@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cp_no_match_msg">致する結果が見つかりません</string>
+    <string name="cp_search_hint">探す…</string>
+    <string name="cp_dialog_title">国を選択</string>
+    <string name="cp_selection_placeholder">国</string>
+    <string name="cp_clear_selection">明確な選択</string>
+</resources>
