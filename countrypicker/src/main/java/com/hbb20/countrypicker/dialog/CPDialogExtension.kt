@@ -43,7 +43,8 @@ fun Context.launchCountryPickerDialog(
         allowSearch = allowSearch,
         allowClearSelection = allowClearSelection,
         showTitle = showTitle,
-        showFullScreen = showFullScreen
+        showFullScreen = showFullScreen,
+        sizeMode = sizeMode,
     )
 
     val cpCountryRowConfig = CPRowConfig(
@@ -63,7 +64,7 @@ fun Context.launchCountryPickerDialog(
             cpDialogConfig = cpDialogConfig,
             cpListConfig = cpListConfig,
             cpRowConfig = cpCountryRowConfig,
-            onCountryClickListener = onCountryClickListener
+            onCountryClickListener = onCountryClickListener,
         )
 
     val dialog = helper.createDialog(this)
