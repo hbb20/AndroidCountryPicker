@@ -1,52 +1,400 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:dividerPadding="@dimen/grid_2x"
-    android:orientation="vertical"
-    tools:context=".CountryPickerViewDemoActivity">
-    <com.hbb20.CountryPickerView
-        android:id="@+id/countryPicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cpDialog_allowClearSelection="true"
-        app:cpDialog_allowSearch="true"
-        app:cp_autoDetectSources="LOCALE_NETWORK_SIM"
-        app:cpDialog_showFullScreen="true"
-        app:cpDialog_showTitle="true"
-        app:cp_initialSelectionMode="specificCountry"
-        app:cp_initialSpecificCountry="IN"
-        app:cpList_preferredCountryCodes="comma separated alpha2/alpha3" />
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/customCountryPickerViewContainer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:foreground="?attr/selectableItemBackground"
-        android:padding="@dimen/grid_2x">
+    android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tvSelectedCountryEmojiFlag"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dividerPadding="@dimen/grid_2x"
+        android:orientation="vertical"
+        android:padding="@dimen/grid_2x"
+        tools:context=".CountryPickerViewDemoActivity">
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextAppearance.MaterialComponents.Headline6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
-            android:textSize="40sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="🇦🇩" />
+            android:text="Initial Selections" />
 
-        <TextView
-            android:id="@+id/tvSelectedCountry"
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text='Check github wiki for more details' />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/grid_1x">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text='1. Empty selection (Default)'
+                android:textSize="16sp" />
+
+            <com.hbb20.CountryPickerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackground"
+                app:cp_initialSelectionMode="empty" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text='using app:cp_initialSelectionMode="empty"' />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/grid_1x">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text='2. Auto detected country'
+                android:textSize="16sp" />
+
+            <com.hbb20.CountryPickerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackground"
+                app:cp_autoDetectSources="SIM_LOCALE_NETWORK"
+                app:cp_initialSelectionMode="autoDetectCounty" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text='app:cp_initialSelectionMode="autoDetectCounty" \napp:cp_autoDetectSources="SIM_LOCALE_NETWORK" (optional)' />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/grid_1x">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text='3. A specific country'
+                android:textSize="16sp" />
+
+            <com.hbb20.CountryPickerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackground"
+                app:cp_initialSelectionMode="specificCountry"
+                app:cp_initialSpecificCountry="JP" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text='app:cp_initialSelectionMode="specificCountry"
+                app:cp_initialSpecificCountry="JP" (alpha2 code)' />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextAppearance.MaterialComponents.Headline6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvSelectedCountryEmojiFlag"
-            tools:text="Andorra" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:text="View Text" />
 
-</LinearLayout>
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text='Check github wiki for more details' />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/grid_1x">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text='1. Country Name (Default)'
+                android:textSize="16sp" />
+
+            <com.hbb20.CountryPickerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackground"
+                app:cp_initialSelectionMode="specificCountry"
+                app:cp_initialSpecificCountry="MX" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/grid_1x">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text='2. Custom Text'
+                android:textSize="16sp" />
+
+            <com.hbb20.CountryPickerView
+                android:id="@+id/cpCustomText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackground"
+                app:cp_initialSelectionMode="specificCountry"
+                app:cp_initialSpecificCountry="CN" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/grid_1x">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text='3. No Text'
+                android:textSize="16sp" />
+
+            <com.hbb20.CountryPickerView
+                android:id="@+id/cpNoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackground"
+                app:cp_initialSelectionMode="specificCountry"
+                app:cp_initialSpecificCountry="US" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flags" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text='Check github wiki for more details' />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/grid_1x">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text='1. Emoji Flag (Default)'
+                android:textSize="16sp" />
+
+            <com.hbb20.CountryPickerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackground"
+                app:cp_initialSelectionMode="specificCountry"
+                app:cp_initialSpecificCountry="IN" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/grid_1x">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text='2. Flag Pack'
+                android:textSize="16sp" />
+
+            <com.hbb20.CountryPickerView
+                android:id="@+id/cpFlagPack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackground"
+                app:cp_initialSelectionMode="specificCountry"
+                app:cp_initialSpecificCountry="IN" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/grid_1x">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text='3. No Flag'
+                android:textSize="16sp" />
+
+            <com.hbb20.CountryPickerView
+                android:id="@+id/cpNoFlag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackground"
+                app:cp_initialSelectionMode="specificCountry"
+                app:cp_initialSpecificCountry="IN" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Layouts" />
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text='Check github wiki for more details' />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/grid_1x">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text='1. Default Layout (wrap content)'
+                android:textSize="16sp" />
+
+            <com.hbb20.CountryPickerView
+                android:id="@+id/cpWrapContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cpDialog_allowClearSelection="true"
+                app:cpDialog_allowSearch="true"
+                app:cpDialog_showFullScreen="true"
+                app:cpDialog_showTitle="true"
+                app:cpList_preferredCountryCodes="comma separated alpha2/alpha3"
+                app:cp_autoDetectSources="LOCALE_NETWORK_SIM"
+                app:cp_initialSelectionMode="specificCountry"
+                app:cp_initialSpecificCountry="WS" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/grid_1x">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text='2. Default Layout (match parent)'
+                android:textSize="16sp" />
+
+            <com.hbb20.CountryPickerView
+                android:id="@+id/cpMatchParent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cpDialog_allowClearSelection="true"
+                app:cpDialog_allowSearch="true"
+                app:cpDialog_showFullScreen="true"
+                app:cpDialog_showTitle="true"
+                app:cpList_preferredCountryCodes="comma separated alpha2/alpha3"
+                app:cp_autoDetectSources="LOCALE_NETWORK_SIM"
+                app:cp_initialSelectionMode="specificCountry"
+                app:cp_initialSpecificCountry="zm" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/grid_1x">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text='3. Custom Layout'
+                android:textSize="16sp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/customCountryPickerViewContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackground"
+                android:padding="@dimen/grid_2x">
+
+                <TextView
+                    android:id="@+id/tvSelectedCountryEmojiFlag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="40sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="🇦🇩" />
+
+                <TextView
+                    android:id="@+id/tvSelectedCountry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvSelectedCountryEmojiFlag"
+                    tools:text="Andorra" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </LinearLayout>
+</ScrollView>

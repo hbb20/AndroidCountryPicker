@@ -5,18 +5,45 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.Observer
 import com.hbb20.CountryPickerView
+import com.hbb20.androidcountrypicker.databinding.ActivityCountryPickerViewDemoBinding
+import com.hbb20.contrypicker.flagpack1.FlagPack1
+import com.hbb20.countrypicker.config.CPViewConfig
+import com.hbb20.countrypicker.flagprovider.CPFlagImageProvider
 import com.hbb20.countrypicker.models.CPCountry
 import com.hbb20.countrypicker.view.prepareCustomCountryPickerView
 
 class CountryPickerViewDemoActivity : AppCompatActivity() {
+    lateinit var binding: ActivityCountryPickerViewDemoBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_country_picker_view_demo)
+        binding = ActivityCountryPickerViewDemoBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         setupCountryPickerView()
-        //        setupCustomCountryPickerViewCallback()
-        setupCustomCountryPickerViewLivedata()
+        setupFlagCountryPickers()
+        setupCpCustomText()
+        setupCustomCountryPickerViewCallback()
+        //        setupCustomCountryPickerViewLivedata()
+    }
+
+    private fun setupCpCustomText() {
+        binding.cpCustomText.cpViewHelper.cpViewConfig.viewTextGenerator = { country ->
+            "${country.name} (${country.currencyCode} - ${country.currencySymbol})"
+        }
+        binding.cpCustomText.cpViewHelper.refreshView()
+
+        binding.cpNoText.cpViewHelper.cpViewConfig.viewTextGenerator = { "" }
+        binding.cpNoText.cpViewHelper.refreshView()
+    }
+
+    private fun setupFlagCountryPickers() {
+        binding.cpFlagPack.changeFlagProvider(
+            CPFlagImageProvider(
+                FlagPack1.alpha2ToFlag,
+                FlagPack1.missingFlagPlaceHolder
+            )
+        )
+        binding.cpNoFlag.changeFlagProvider(null)
     }
 
     private fun setupCustomCountryPickerViewCallback() {
@@ -29,7 +56,8 @@ class CountryPickerViewDemoActivity : AppCompatActivity() {
         prepareCustomCountryPickerView(
             containerViewGroup = customCPContainer,
             tvSelectedCountryInfo = customCPSelectedCountryTextView,
-            tvSelectedCountryEmojiFlag = customCPEmojiTextView
+            tvSelectedCountryEmojiFlag = customCPEmojiTextView,
+            initialSelection = CPViewConfig.InitialSelection.AutoDetectCountry()
         ) { selectedCountry: CPCountry? ->
             // listen to change through callback
             // your code to handle selected country
@@ -54,7 +82,7 @@ class CountryPickerViewDemoActivity : AppCompatActivity() {
         // observe live data
         cpViewHelper.selectedCountry.observe(
             lifecycleOwner,
-            Observer { selectedCountry: CPCountry? ->
+            { selectedCountry: CPCountry? ->
                 // observe live data
                 // your code to handle selected country
             }
@@ -78,7 +106,7 @@ class CountryPickerViewDemoActivity : AppCompatActivity() {
     }
 
     private fun setupCountryPickerView() {
-        val countryPicker = findViewById<CountryPickerView>(R.id.countryPicker)
+        val countryPicker = findViewById<CountryPickerView>(R.id.cpWrapContent)
 
         // Modify CPViewConfig if you need. Access cpViewConfig through `cpViewHelper`
         countryPicker.cpViewHelper.cpViewConfig.viewTextGenerator = { cpCountry: CPCountry ->
