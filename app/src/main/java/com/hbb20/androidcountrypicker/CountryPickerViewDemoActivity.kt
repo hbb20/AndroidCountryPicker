@@ -19,6 +19,7 @@ class CountryPickerViewDemoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCountryPickerViewDemoBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        title = "Country Picker View Demo"
         setupCountryPickerView()
         setupFlagCountryPickers()
         setupCpCustomText()
