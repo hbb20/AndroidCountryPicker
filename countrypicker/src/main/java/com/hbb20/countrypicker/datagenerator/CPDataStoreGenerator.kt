@@ -4,6 +4,7 @@ import android.content.Context
 import com.hbb20.countrypicker.logger.onMethodBegin
 import com.hbb20.countrypicker.models.CPCountry
 import com.hbb20.countrypicker.models.CPDataStore
+import java.util.*
 
 object CPDataStoreGenerator {
     private var masterDataStore: CPDataStore? = null
@@ -48,7 +49,8 @@ object CPDataStoreGenerator {
         countryList: List<CPCountry>,
         customExcludedCountries: String
     ): List<CPCountry> {
-        val countryAlphaCodes = customExcludedCountries.split(",").map { it.trim() }
+        val countryAlphaCodes =
+            customExcludedCountries.split(",").map { it.trim().toUpperCase(Locale.US) }
         val filteredCountries = countryList.filterNot {
             countryAlphaCodes.contains(it.alpha2) || countryAlphaCodes.contains(it.alpha3)
         }
@@ -63,7 +65,8 @@ object CPDataStoreGenerator {
         masterCountryList: List<CPCountry>,
         customExcludedCountries: String
     ): List<CPCountry> {
-        val countryAlphaCodes = customExcludedCountries.split(",").map { it.trim() }
+        val countryAlphaCodes =
+            customExcludedCountries.split(",").map { it.trim().toUpperCase(Locale.US) }
         val customMasterCountries = masterCountryList.filter {
             countryAlphaCodes.contains(it.alpha2) || countryAlphaCodes.contains(it.alpha3)
         }
