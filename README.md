@@ -4,7 +4,6 @@
 
 <img height=500 src="https://user-images.githubusercontent.com/4918760/90301130-32916100-de5b-11ea-8238-3f1e03ef325c.png"/>
 
-<img src="https://user-images.githubusercontent.com/4918760/154889351-687907cb-ee9b-4e90-b276-afc157459f13.gif" width="200">
 
 | Country Picker View | Country Picker Dialog |
 | --- | ----------- |
