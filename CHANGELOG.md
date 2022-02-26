@@ -6,9 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Next Release]
-
 - Japanese language support by Harsh Bhakta (@hbb20)
 - Print multiple translation errors at once to avoid multiple runs (@hbb20)
+- Change library theme to avoid possible issue @hbb20
 
 ## v0.0.6 2021-07-31
 
