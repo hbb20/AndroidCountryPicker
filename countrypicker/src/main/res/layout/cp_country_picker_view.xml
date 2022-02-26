@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:paddingVertical="@dimen/grid_1x"
     android:layout_height="wrap_content"
+    android:paddingVertical="@dimen/grid_1x"
     tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -33,8 +33,8 @@
             android:id="@+id/imgFlag"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:adjustViewBounds="true"
             android:layout_marginVertical="4dp"
+            android:adjustViewBounds="true"
             android:contentDescription="Flag Image"
             android:textColor="@android:color/black"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -71,5 +71,6 @@
         android:src="@drawable/ic_arrow_drop_down"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvCountryInfo"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="?attr/colorOnSurface" />
 </androidx.constraintlayout.widget.ConstraintLayout>

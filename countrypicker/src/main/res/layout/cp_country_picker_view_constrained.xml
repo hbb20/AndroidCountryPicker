@@ -71,6 +71,7 @@
         android:layout_width="@dimen/grid_3x"
         android:layout_height="@dimen/grid_3x"
         android:src="@drawable/ic_arrow_drop_down"
+        app:tint="?attr/colorOnSurface"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

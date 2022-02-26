@@ -1,3 +1,4 @@
-LANG,NoMatchMsg              ,SearchHint ,DialogTitle     ,SelectionPlaceholder,ClearSelection
-EN  ,No matching result found,Search…  ,Select a country,Country, Clear Selection
-GU  ,પરિણામ મળ્યું નથી       ,શોધ કરો…,દેશ પસંદ કરો    ,દેશ, પસંદગી સાફ કરો
+LANG,NoMatchMsg              ,SearchHint,DialogTitle     ,SelectionPlaceholder,ClearSelection
+EN  ,No matching result found,Search…   ,Select a country,Country             ,Clear Selection
+GU  ,પરિણામ મળ્યું નથી       ,શોધ કરો…  ,દેશ પસંદ કરો    ,દેશ                 ,પસંદગી સાફ કરો
+JA		,致する結果が見つかりません           ,探す…       ,国を選択            ,国                   ,明確な選択

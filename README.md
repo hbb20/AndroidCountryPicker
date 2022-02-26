@@ -5,6 +5,10 @@
 <img height=500 src="https://user-images.githubusercontent.com/4918760/90301130-32916100-de5b-11ea-8238-3f1e03ef325c.png"/>
 
 
+| Country Picker View | Country Picker Dialog |
+| --- | ----------- |
+| <img src="https://user-images.githubusercontent.com/4918760/133714158-7f5f7d49-def9-483c-bc3b-8302965b7a0b.gif" width="200"> | <img src="https://user-images.githubusercontent.com/4918760/154889351-687907cb-ee9b-4e90-b276-afc157459f13.gif" width="200"> |
+
 ### 1. Add dependency
    - ```groovy
          dependencies {
@@ -15,6 +19,8 @@
 
 
 ### 2. Decide your use-case
+
+
 <details>
 <summary><b>Default Country Picker View</b></summary>
 i. add following to your XML layout    
