@@ -8,6 +8,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [Next Release]
 
 - Update ip2location data @hbb20
+- Search for first letters of country name like UAE shows Unite Arab Emirates and USA shows United
+  States of America @hbb20
 
 ## v0.0.7 2022-01
 

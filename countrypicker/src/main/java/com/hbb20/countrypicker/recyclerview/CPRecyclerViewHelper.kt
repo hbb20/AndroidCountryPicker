@@ -79,22 +79,20 @@ class CPRecyclerViewHelper(
         cpRowConfig: CPRowConfig
     ): List<CPCountry> {
         if (filterQuery.isBlank()) return this
+
         return this.filter {
-            cpRowConfig.primaryTextGenerator(it).contains(
-                filterQuery,
-                true
-            ) || (
-                    cpRowConfig.secondaryTextGenerator?.invoke(it)?.contains(
-                        filterQuery,
-                        true
-                    ) ?: false
-                    ) ||
-                    (
-                            cpRowConfig.highlightedTextGenerator?.invoke(it)?.contains(
-                                filterQuery,
-                                true
-                            ) ?: false
-                            )
+            val firstCharsOfWords =
+                cpRowConfig.primaryTextGenerator(it).split(" ").filter { it.isNotBlank() }
+                    .map { it[0] }.filter { it.isUpperCase() }.joinToString("")
+            it.alpha2.startsWith(filterQuery, true) ||
+                    it.alpha3.startsWith(filterQuery, true) ||
+                    firstCharsOfWords.contains(filterQuery, true) ||
+                    cpRowConfig.primaryTextGenerator(it).contains(filterQuery, true) ||
+                    cpRowConfig.secondaryTextGenerator?.invoke(it)?.contains(filterQuery, true)
+                    ?: false ||
+                    cpRowConfig.highlightedTextGenerator?.invoke(it)?.contains(filterQuery, true)
+                    ?: false
+
         }
     }
 }
