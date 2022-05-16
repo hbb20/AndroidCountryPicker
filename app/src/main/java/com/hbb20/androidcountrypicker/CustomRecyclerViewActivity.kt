@@ -51,7 +51,6 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
 
         val dataFileReader = CPDataStoreGenerator.defaultCountryFileReader
         val customFlagImageProvider = CPRowConfig.defaultFlagProvider
-        val filterQueryEditText = EditText(this)
 
         //        binding.recyclerView.loadCountries { selectedCountry: CPCountry ->
         //            // your code to handle selected country
@@ -93,7 +92,7 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
         cpRecyclerViewHelper.attachRecyclerView(binding.recyclerView)
 
         // attach query edit text (optional) to update filtered list when query updated
-        cpRecyclerViewHelper.attachFilterQueryEditText(filterQueryEditText)
+        cpRecyclerViewHelper.attachFilterQueryEditText(binding.etQuery)
     }
 
     fun loadUsingCPRecyclerViewHelper() {

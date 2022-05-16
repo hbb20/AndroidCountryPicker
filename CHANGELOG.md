@@ -8,6 +8,12 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [Next Release]
 
 - Update ip2location data @hbb20
+- Search for first letters of country name like UAE shows Unite Arab Emirates and USA shows United
+  States of America @hbb20
+- Remove preferred countries section if user is entering query. User is searching because they did
+  not find required country in the preferred countries so that section is of no use when searching.
+  Although, preferred country will continue to show up in regular filtered list if matches for
+  query. @hbb20
 
 ## v0.0.7 2022-01
 
