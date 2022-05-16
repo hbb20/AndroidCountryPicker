@@ -15,6 +15,7 @@ class CPRecyclerViewHelper(
     private val cpRowConfig: CPRowConfig = CPRowConfig(),
     onCountryClickListener: ((CPCountry) -> Unit)
 ) {
+    private val additionalSearchTerm = mutableMapOf<String, String>()
 
     var allPreferredCountries = extractPreferredCountries(
         cpDataStore.countryList,
@@ -45,7 +46,7 @@ class CPRecyclerViewHelper(
 
     fun updateDataForQuery(query: String) {
         controllerData.preferredCountries =
-            allPreferredCountries.filterCountries(query, cpRowConfig)
+            if (query.isBlank()) allPreferredCountries else emptyList()
         controllerData.allCountries =
             cpDataStore.countryList.filterCountries(query, cpRowConfig)
     }
@@ -80,17 +81,24 @@ class CPRecyclerViewHelper(
     ): List<CPCountry> {
         if (filterQuery.isBlank()) return this
 
-        return this.filter {
-            val firstCharsOfWords =
-                cpRowConfig.primaryTextGenerator(it).split(" ").filter { it.isNotBlank() }
-                    .map { it[0] }.filter { it.isUpperCase() }.joinToString("")
-            it.alpha2.startsWith(filterQuery, true) ||
-                    it.alpha3.startsWith(filterQuery, true) ||
+        return this.filter { cpCountry ->
+            val firstCharsOfWords by lazy {
+                additionalSearchTerm.getOrPut(cpCountry.alpha2) {
+                    cpRowConfig.primaryTextGenerator(cpCountry).split(" ")
+                        .filter { it.isNotBlank() }
+                        .map { it[0] }.filter { it.isUpperCase() }.joinToString("")
+                }
+            }
+
+            cpCountry.alpha2.startsWith(filterQuery, true) ||
+                    cpCountry.alpha3.startsWith(filterQuery, true) ||
                     firstCharsOfWords.contains(filterQuery, true) ||
-                    cpRowConfig.primaryTextGenerator(it).contains(filterQuery, true) ||
-                    cpRowConfig.secondaryTextGenerator?.invoke(it)?.contains(filterQuery, true)
+                    cpRowConfig.primaryTextGenerator(cpCountry).contains(filterQuery, true) ||
+                    cpRowConfig.secondaryTextGenerator?.invoke(cpCountry)
+                        ?.contains(filterQuery, true)
                     ?: false ||
-                    cpRowConfig.highlightedTextGenerator?.invoke(it)?.contains(filterQuery, true)
+                    cpRowConfig.highlightedTextGenerator?.invoke(cpCountry)
+                        ?.contains(filterQuery, true)
                     ?: false
 
         }
