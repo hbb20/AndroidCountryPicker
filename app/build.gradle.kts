@@ -9,9 +9,9 @@ plugins {
 android {
 
     defaultConfig {
-        compileSdkVersion(BuildData.compileSdkVersion)
-        minSdkVersion(BuildData.minSdkVersion)
-        targetSdkVersion(BuildData.targetSdkVersion)
+        compileSdk = BuildData.compileSdkVersion
+        minSdk = BuildData.minSdkVersion
+        targetSdk = BuildData.targetSdkVersion
         applicationId = BuildData.demoApplicationId
         versionCode = BuildData.versionCode
         versionName = BuildData.versionName
@@ -20,10 +20,6 @@ android {
     buildFeatures {
         dataBinding = true
         viewBinding = true
-    }
-
-    lintOptions {
-        isAbortOnError = false
     }
 
     compileOptions {
@@ -35,19 +31,30 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
     packagingOptions {
-        exclude("META-INF/DEPENDENCIES")
-        exclude("META-INF/LICENSE")
-        exclude("META-INF/LICENSE.txt")
-        exclude("META-INF/license.txt")
-        exclude("META-INF/licenses/**")
-        exclude("META-INF/NOTICE")
-        exclude("META-INF/NOTICE.txt")
-        exclude("META-INF/notice.txt")
-        exclude("META-INF/ASL2.0")
-        exclude("META-INF/AL2.0")
-        exclude("META-INF/*.kotlin_module")
-        exclude("META-INF/LGPL2.1")
-        exclude("**/attach_hotspot_windows.dll")
+        jniLibs {
+            excludes += setOf("META-INF/licenses/**")
+        }
+        resources {
+            excludes += setOf(
+                "META-INF/DEPENDENCIES",
+                "META-INF/LICENSE",
+                "META-INF/LICENSE.txt",
+                "META-INF/license.txt",
+                "META-INF/licenses/**",
+                "META-INF/NOTICE",
+                "META-INF/NOTICE.txt",
+                "META-INF/notice.txt",
+                "META-INF/ASL2.0",
+                "META-INF/AL2.0",
+                "META-INF/*.kotlin_module",
+                "META-INF/LGPL2.1",
+                "**/attach_hotspot_windows.dll"
+            )
+        }
+    }
+    namespace = "com.hbb20.androidcountrypicker"
+    lint {
+        abortOnError = false
     }
 }
 
