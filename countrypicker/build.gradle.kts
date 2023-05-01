@@ -9,8 +9,8 @@ apply(from = "$rootDir/countrypicker/generateCPAndroidResource.gradle.kts")
 
 android {
     defaultConfig {
-        compileSdkVersion(BuildData.compileSdkVersion)
-        minSdkVersion(BuildData.minSdkVersion)
+        compileSdk = BuildData.compileSdkVersion
+        minSdk = BuildData.minSdkVersion
     }
     buildFeatures {
         dataBinding = true
@@ -28,6 +28,7 @@ android {
     testOptions {
         unitTests.isIncludeAndroidResources = true
     }
+    namespace = "com.hbb20.countrypicker"
 }
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))

@@ -10,26 +10,30 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:7.0.3")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN_GRADLE}")
+        classpath("com.android.tools.build:gradle:7.4.2")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN_GRADLE_PLUGIN}")
         classpath("org.jlleitschuh.gradle:ktlint-gradle:${Versions.KTLINT_GRADLE}")
-        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.0.0")
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.NAVIGATION_GRAPH}")
         classpath("com.google.gms:google-services:${Versions.GOOGLE_SERVICES}")
         classpath("com.google.firebase:firebase-crashlytics-gradle:${Versions.FIREBASE_CRASHLYTICS_GRADLE}")
         classpath("org.jacoco:org.jacoco.core:${Versions.JACOCO}")
         classpath("com.github.ben-manes:gradle-versions-plugin:${Versions.BEN_MANES_VERSION_PLUGIN}")
-        classpath("com.vanniktech:gradle-maven-publish-plugin:0.14.2")
+        classpath("com.vanniktech:gradle-maven-publish-plugin:${Versions.GRADLE_MAVEN_PUBLISH}")
         classpath("org.jetbrains.dokka:dokka-gradle-plugin:1.4.10.2")
     }
 }
+apply(from = "$rootDir/scripts/autoUpdateDeps.gradle.kts")
 apply(plugin = "com.github.ben-manes.versions")
+
 ktlint {
     version.set(Versions.KTLINT)
     additionalEditorconfigFile.set(file("./.editorconfig"))
 }
 plugins {
     id("io.gitlab.arturbosch.detekt").version(Versions.DETEKT)
+    id("com.google.devtools.ksp").version(Versions.KSP)
     id("org.jlleitschuh.gradle.ktlint").version(Versions.KTLINT_GRADLE)
+    id("org.jetbrains.kotlin.android") version "1.8.0" apply false
     jacoco
 }
 

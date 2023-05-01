@@ -10,6 +10,6 @@ object BuildData {
 
     // SDK versions
     const val minSdkVersion = 23
-    const val targetSdkVersion = 30
-    const val compileSdkVersion = 30
+    const val targetSdkVersion = 33
+    const val compileSdkVersion = 33
 }

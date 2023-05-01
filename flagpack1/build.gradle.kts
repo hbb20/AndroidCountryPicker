@@ -26,6 +26,7 @@ android {
     testOptions {
         unitTests.isIncludeAndroidResources = true
     }
+    namespace = "com.hbb20.contrypicker.flagpack1"
 }
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))

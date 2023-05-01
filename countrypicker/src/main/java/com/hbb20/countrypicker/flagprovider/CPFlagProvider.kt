@@ -25,8 +25,8 @@ class CPFlagImageProvider(
     @DrawableRes
     fun getFlag(alpha2Code: String): Int {
         return alpha2ToFlag.getOrElse(
-            getNormalizedAlpha2ForFlag(alpha2Code),
-            { missingFlagPlaceHolder })
+            getNormalizedAlpha2ForFlag(alpha2Code)
+        ) { missingFlagPlaceHolder }
     }
 
     /**
