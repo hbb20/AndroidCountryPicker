@@ -23,7 +23,6 @@ private const val CCTLD = "cctld"
 class IP2LocationInfoReader(val rootDir: String) {
 
     fun read(infoFilePath: String = "$rootDir/data/ip2location/IP2LOCATION-COUNTRY-INFORMATION.CSV"): MutableMap<String, IP2LocationInfoCountry> {
-        print("infoFilePath = $infoFilePath")
         val reader = Files.newBufferedReader(Paths.get(infoFilePath))
         // parse the file into csv values
         val csvParser = CSVParser(

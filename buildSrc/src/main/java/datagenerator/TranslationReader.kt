@@ -172,7 +172,6 @@ class TranslationReader(val dataGeneratorRootDir: String) {
             Files.walk(Paths.get(translationDirPath), 1, FileVisitOption.FOLLOW_LINKS)
                 .filter { Files.isDirectory(it).not() }
                 .map { "$translationDirPath/${it.fileName}" }.toList()
-        print("files are $translationFiles")
         for (filePath in listOf(ip2locationTranslationFilePath) + translationFiles) {
             val reader = Files.newBufferedReader(Paths.get(filePath))
             // parse the file into csv values

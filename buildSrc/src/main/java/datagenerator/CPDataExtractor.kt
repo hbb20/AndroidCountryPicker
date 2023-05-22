@@ -3,7 +3,6 @@ import datagenerator.SupportedLanguage
 class CPDataExtractor(val projectDir: String) {
     val dataGeneratorRootPath = "$projectDir/buildSrc/src/main/java/datagenerator"
     fun generate(): Unit {
-        print("root dir is $projectDir/buildSrc/")
         val ip2LocationInfoMap = IP2LocationInfoReader(dataGeneratorRootPath).read()
         val additionalCountryInfoMap = AdditionalCountryInfoReader(dataGeneratorRootPath).read()
         val phoneCodeMap = PhoneCodeReader(dataGeneratorRootPath).read()

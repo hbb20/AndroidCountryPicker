@@ -23,7 +23,6 @@ private const val CCTLD = "cctld"
 class AdditionalCountryInfoReader(val rootDir: String) {
 
     fun read(infoFilePath: String = "$rootDir/data/ADDITIONAL-COUNTRY-INFORMATION.CSV"): MutableMap<String, AdditionalCountryInfo> {
-        print("infoFilePath = $infoFilePath")
         val reader = Files.newBufferedReader(Paths.get(infoFilePath))
         // parse the file into csv values
         val csvParser = CSVParser(
