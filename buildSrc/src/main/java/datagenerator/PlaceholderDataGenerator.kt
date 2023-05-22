@@ -132,7 +132,6 @@ class CPPlaceHolderDataGenerator(val projectDir: String) {
                     it.identifier,
                     translation?.noMatchMsg ?: generateToDo("NO MATCH MESSAGE"),
                     translation?.searchHint ?: generateToDo("SEARCH HINT"),
-                    translation?.noMatchMsg ?: generateToDo("NO MATCH MESSAGE"),
                     translation?.dialogTitle ?: generateToDo("DIALOG TITLE"),
                     translation?.clearSelection ?: generateToDo("CLEAR SELECTION"),
                     translation?.selectionPlaceHolder ?: generateToDo("SELECTION PLACEHOLDER")
