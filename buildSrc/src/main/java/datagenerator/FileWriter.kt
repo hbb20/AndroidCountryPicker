@@ -1,4 +1,5 @@
 import datagenerator.SupportedLanguage
+import datagenerator.CPFilePath
 import org.apache.commons.csv.CSVFormat
 import org.apache.commons.csv.CSVPrinter
 import java.io.File
@@ -75,7 +76,7 @@ class FileWriter(val projectRootDir: String) {
 
         val writer = Files.newBufferedWriter(Paths.get(filePath))
         writer.apply {
-            appendln(
+            appendLine(
                 "package com.hbb20.countrypicker.models\n" +
                         "\n" +
                         "internal val countryInfoList = listOf(\n"
@@ -98,10 +99,10 @@ class FileWriter(val projectRootDir: String) {
                             "        phoneCode = ${it.phoneCode}\n" +
                             "    )"
                 if (index != baseCountries.lastIndex) line += ","
-                appendln(line)
+                appendLine(line)
             }
 
-            appendln(")")
+            appendLine(")")
         }
         writer.flush()
         writer.close()
@@ -159,10 +160,10 @@ class FileWriter(val projectRootDir: String) {
         val countryNamewriter =
             Files.newBufferedWriter(Paths.get(countryNameTranslationFilePath))
         countryNamewriter.apply {
-            appendln("<?xml version=\"1.0\" encoding=\"utf-8\"?>")
-            appendln("<resources>")
+            appendLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>")
+            appendLine("<resources>")
             languageTranslation.countryNameTranslations.forEach { (alpha2, name) ->
-                appendln(
+                appendLine(
                     "    <string name=\"cp_${alpha2}_name\">${
                         name.replace(
                             "'",
@@ -171,7 +172,7 @@ class FileWriter(val projectRootDir: String) {
                     }</string>"
                 )
             }
-            appendln("</resources>")
+            appendLine("</resources>")
         }
         countryNamewriter.flush()
         countryNamewriter.close()
@@ -179,12 +180,12 @@ class FileWriter(val projectRootDir: String) {
         //messages
         val messagesWriter = Files.newBufferedWriter(Paths.get(messageTranslationFilePath))
         messagesWriter.apply {
-            appendln("<?xml version=\"1.0\" encoding=\"utf-8\"?>")
-            appendln("<resources>")
+            appendLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>")
+            appendLine("<resources>")
             languageTranslation.messageGroup?.xmlMessages()?.forEach {
-                appendln("    <string name=\"${it.first}\">${it.second}</string>")
+                appendLine("    <string name=\"${it.first}\">${it.second}</string>")
             }
-            appendln("</resources>")
+            appendLine("</resources>")
         }
         messagesWriter.flush()
         messagesWriter.close()

@@ -6,6 +6,7 @@ plugins {
 }
 
 apply(from = "$rootDir/countrypicker/generateCPAndroidResource.gradle.kts")
+apply(from = "$rootDir/countrypicker/generatePlaceholderData.gradle.kts")
 
 android {
     defaultConfig {
