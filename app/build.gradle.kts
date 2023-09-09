@@ -20,11 +20,16 @@ android {
     buildFeatures {
         dataBinding = true
         viewBinding = true
+        compose = true
     }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = Versions.COMPOSE_COMPILER
     }
 
     kotlinOptions {
@@ -73,6 +78,7 @@ dependencies {
     implementation(Deps.viewModels)
     implementation(Deps.timber)
     implementArchitectureComponents()
+    implementCompose()
     implementEpoxy()
     implementTesting()
     implementProject("countrypicker")

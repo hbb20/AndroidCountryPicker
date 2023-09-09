@@ -13,6 +13,7 @@ android {
         minSdk = BuildData.minSdkVersion
     }
     buildFeatures {
+        compose = true
         dataBinding = true
         viewBinding = true
     }
@@ -28,6 +29,11 @@ android {
     testOptions {
         unitTests.isIncludeAndroidResources = true
     }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = Versions.COMPOSE_COMPILER
+    }
+
     namespace = "com.hbb20.countrypicker"
 }
 dependencies {
@@ -38,6 +44,7 @@ dependencies {
     implementation(Deps.emoji)
     implementation(Deps.googleMaterialDesign)
     implementation(Deps.timber)
+    implementCompose()
     implementEpoxy()
     implementTesting()
 }

@@ -13,6 +13,7 @@ const val KAPT = "kapt"
 object Versions {
     const val BEN_MANES_VERSION_PLUGIN = "0.36.0"
     const val CHUCKER: String = "3.4.0"
+    const val COMPOSE_ACCOMPANIST = "0.28.0"
     const val COROUTINES = "1.6.4"
     const val DAGGER_2 = "2.29.1" // STOP: 2.30 problem with kaptDebugKotlin
     const val DETEKT = "1.17.1"
@@ -56,6 +57,8 @@ object Versions {
 object Deps {
     const val activityKtx = "androidx.activity:activity-ktx:1.2.0-rc01"
     const val appCompat = "androidx.appcompat:appcompat:1.6.1"
+    // BOM to library mapping: https://developer.android.com/jetpack/compose/bom/bom-mapping
+    const val composeBoM = "androidx.compose:compose-bom:2023.01.00"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.1.4"
     const val emoji = "androidx.emoji:emoji:1.1.0"
     const val fragmentKtx = "androidx.fragment:fragment-ktx:1.5.5"
@@ -110,4 +113,30 @@ fun DependencyHandlerScope.implementTesting() {
     add(TEST_IMPLEMENTATION, "io.mockk:mockk:1.13.4")
     add(TEST_IMPLEMENTATION, "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINES}")
     add(TEST_IMPLEMENTATION, "junit:junit:4.13.2")
+}
+
+
+fun DependencyHandlerScope.implementCompose() {
+    // BOM brings in compatible versions of other libraries so they work seamlessly internally.
+    // Since BoM is used, no need to specify versions of other compose libraries.
+    // To check version of particular library coming from BOM check
+    // https://developer.android.com/jetpack/compose/setup#bom-version-mapping
+    add(IMPLEMENTATION, platform(Deps.composeBoM))
+    add(IMPLEMENTATION, "androidx.compose.ui:ui")
+    // Tooling support (Previews, etc.)
+    add(IMPLEMENTATION, "androidx.compose.ui:ui-tooling")
+    // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
+    add(IMPLEMENTATION, "androidx.compose.foundation:foundation")
+    // Material Design
+    add(IMPLEMENTATION, "androidx.compose.material:material")
+    // Material design icons
+    add(IMPLEMENTATION, "androidx.compose.material:material-icons-core")
+    add(IMPLEMENTATION, "androidx.compose.material:material-icons-extended")
+    // Integration with observables
+    add(IMPLEMENTATION, "androidx.compose.runtime:runtime")
+    add(IMPLEMENTATION, "androidx.compose.runtime:runtime-livedata")
+    add(IMPLEMENTATION, "androidx.activity:activity-compose:1.6.1")
+
+    // COMPOSE ACCOMPANIST
+    add(IMPLEMENTATION, "com.google.accompanist:accompanist-drawablepainter:${Versions.COMPOSE_ACCOMPANIST}")
 }
