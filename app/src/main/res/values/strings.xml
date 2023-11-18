@@ -6,4 +6,5 @@
     <string name="file_icon">File icon</string>
     <string name="category_icon">Category icon</string>
     <string name="error_icon">Error Icon</string>
+    <string name="title_activity_compose_demo">ComposeDemoActivity</string>
 </resources>

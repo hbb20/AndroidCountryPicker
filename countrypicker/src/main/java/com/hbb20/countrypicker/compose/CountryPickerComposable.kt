@@ -274,7 +274,7 @@ fun CountryPickerDialog(
 ) {
     Dialog(
         onDismissRequest = { onDismissRequest() },
-        properties = DialogProperties(usePlatformDefaultWidth = true)
+        properties = DialogProperties(usePlatformDefaultWidth = false)
     ) {
         DefaultCountryPickerDialogContent(
             quickAccessCountriesCodes = quickAccessCountries,
@@ -332,7 +332,7 @@ private fun DefaultCountryPickerDialogContent(
         }
         val filteredQuickAccessCountries = remember(showFilter, quickAccessCountries, searchQuery) {
             if (showFilter == false) emptyList()
-            else quickAccessCountries.filter { queryFilter(it, searchQuery) }
+            else quickAccessCountries.filter { queryFilter(it, searchQuery) }.distinctBy(CPCountry::alpha2)
         }
         Column {
             if (showFilter) {
@@ -460,21 +460,11 @@ private fun CountryListItemRowLayout(
         }
         Column(modifier = Modifier.weight(1f)) {
             Text(
-                text = "${country.name} (${country.alpha2})",
+                text = country.name,
                 style = MaterialTheme.typography.body1,
                 color = MaterialTheme.colors.onSurface,
             )
-            Text(
-                text = "${country.capitalEnglishName} - ${country.population}",
-                style = MaterialTheme.typography.body1,
-                color = MaterialTheme.colors.onSurface
-            )
         }
-        Text(
-            text = "+${country.phoneCode}",
-            style = MaterialTheme.typography.body2,
-            color = MaterialTheme.colors.onBackground
-        )
     }
 }
 

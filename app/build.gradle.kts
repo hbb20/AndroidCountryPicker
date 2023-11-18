@@ -16,6 +16,9 @@ android {
         versionCode = BuildData.versionCode
         versionName = BuildData.versionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
     buildFeatures {
         dataBinding = true
@@ -31,10 +34,10 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = Versions.COMPOSE_COMPILER
     }
-
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = "1.8"
     }
+
     packagingOptions {
         jniLibs {
             excludes += setOf("META-INF/licenses/**")

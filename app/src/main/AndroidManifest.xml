@@ -9,10 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CountryPickerViewDemoActivity"></activity>
+        <activity
+            android:name=".compose.ComposeDemoActivity"
+            android:exported="false"
+            android:label="@string/title_activity_compose_demo"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".CountryPickerViewDemoActivity" />
         <activity android:name=".OpenDialogDirectlyActivity" />
         <activity android:name=".CustomRecyclerViewActivity" />
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
