@@ -10,6 +10,7 @@ object CPDataStoreGenerator {
     private var masterDataStore: CPDataStore? = null
     const val defaultMasterCountries = ""
     const val defaultExcludedCountries = ""
+    @Deprecated("no-longer-used")
     const val defaultUseCache = true
     val defaultCountryFileReader = CPFileReader
 
@@ -40,6 +41,28 @@ object CPDataStoreGenerator {
                 countryList = countryList.sortedBy { cpCountry -> cpCountry.name }
                     .toMutableList()
             )
+        }
+
+        throw IllegalStateException("MasterDataStore can not be null at this point.")
+    }
+
+    fun generate(
+        context: Context,
+        countryFileReader: CountryFileReading = defaultCountryFileReader,
+        countryListTransformer: ((List<CPCountry>) -> List<CPCountry>)?
+    ): CPDataStore {
+        onMethodBegin("GenerateDataStore")
+        if (masterDataStore == null) {
+            masterDataStore = countryFileReader.readMasterDataFromFiles(context)
+        }
+
+        masterDataStore?.let {
+            var countryList: List<CPCountry> = it.countryList
+            countryList = countryList.sortedBy { cpCountry -> cpCountry.name }
+            countryListTransformer?.let { transformer ->
+                countryList = transformer(countryList)
+            }
+            return it.copy(countryList.toMutableList())
         }
 
         throw IllegalStateException("MasterDataStore can not be null at this point.")
