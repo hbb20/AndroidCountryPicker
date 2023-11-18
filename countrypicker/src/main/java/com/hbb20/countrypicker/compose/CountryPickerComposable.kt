@@ -92,9 +92,9 @@ val countryMasterListTransformer = { countryList: List<CPCountry> ->
 @Composable
 fun CountryPicker(
     alpha2Code: String?,
+    modifier: Modifier = Modifier,
     cpDataStore: CPDataStore = rememberCPDataStore(),
     flagProvider: CPFlagProvider? = DefaultEmojiFlagProvider(),
-    modifier: Modifier = Modifier,
     selectedCountryLayout: @Composable ((
         country: CPCountry?,
         countryFlag: CountryFlag?,
