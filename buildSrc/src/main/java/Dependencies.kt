@@ -26,7 +26,7 @@ object Versions {
     const val MOSHI = "1.9.3" // v1.10+ causes build dependency error. needs investigation.
     const val MOSHI_SEALED = "0.2.0"
     const val RETROFIT = "2.9.0"
-    const val NAVIGATION_GRAPH = "2.7.2"
+    const val NAVIGATION_GRAPH = "2.7.5"
     const val SCARLET_VERSION = "0.1.11"
     const val KOTLIN = "1.4.21"
     const val KTLINT_GRADLE = "9.4.1"
@@ -49,20 +49,20 @@ object Versions {
     // https://github.com/google/ksp/releases
     // First half of KSP version shows compatible KOTLIN version,
     // For example, ksp version 1.8.0-1.0.9 means it's compatible with KOTLIN 1.8.0
-    const val COMPOSE_COMPILER = "1.5.3"
-    const val KOTLIN_GRADLE_PLUGIN = "1.9.10" // STOP : See 'Linked Dependencies' comment
-    const val KSP = "$KOTLIN_GRADLE_PLUGIN-1.0.13" // STOP : See 'Linked Dependencies' comment
+    const val COMPOSE_COMPILER = "1.5.4"
+    const val KOTLIN_GRADLE_PLUGIN = "1.9.20" // STOP : See 'Linked Dependencies' comment
+    const val KSP = "$KOTLIN_GRADLE_PLUGIN-1.0.14" // STOP : See 'Linked Dependencies' comment
 }
 
 object Deps {
     const val activityKtx = "androidx.activity:activity-ktx:1.2.0-rc01"
     const val appCompat = "androidx.appcompat:appcompat:1.6.1"
     // BOM to library mapping: https://developer.android.com/jetpack/compose/bom/bom-mapping
-    const val composeBoM = "androidx.compose:compose-bom:2023.09.00"
+    const val composeBoM = "androidx.compose:compose-bom:2023.10.01"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.1.4"
     const val emoji = "androidx.emoji:emoji:1.1.0"
-    const val fragmentKtx = "androidx.fragment:fragment-ktx:1.6.1"
-    const val googleMaterialDesign = "com.google.android.material:material:1.11.0-alpha02"
+    const val fragmentKtx = "androidx.fragment:fragment-ktx:1.6.2"
+    const val googleMaterialDesign = "com.google.android.material:material:1.12.0-alpha01"
     const val viewModels = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
     const val timber = "com.jakewharton.timber:timber:5.0.1"
     const val apacheCSV = "org.apache.commons:commons-csv:1.7"
@@ -105,12 +105,12 @@ fun DependencyHandlerScope.implementTesting() {
 
 
     // https://github.com/robolectric/robolectric/issues/5848 Will be able to update to 4.4 only after mockk can be updated to > 1.10.0
-    add(TEST_IMPLEMENTATION, "org.robolectric:robolectric:4.10.3")
+    add(TEST_IMPLEMENTATION, "org.robolectric:robolectric:4.11.1")
 
     add(TEST_IMPLEMENTATION, "androidx.arch.core:core-testing:2.2.0")
     add(TEST_IMPLEMENTATION, "androidx.test:core:1.5.0")
     add(TEST_IMPLEMENTATION, "androidx.test:core-ktx:1.5.0")
-    add(TEST_IMPLEMENTATION, "io.mockk:mockk:1.13.7")
+    add(TEST_IMPLEMENTATION, "io.mockk:mockk:1.13.8")
     add(TEST_IMPLEMENTATION, "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINES}")
     add(TEST_IMPLEMENTATION, "junit:junit:4.13.2")
 }
@@ -135,7 +135,7 @@ fun DependencyHandlerScope.implementCompose() {
     // Integration with observables
     add(IMPLEMENTATION, "androidx.compose.runtime:runtime")
     add(IMPLEMENTATION, "androidx.compose.runtime:runtime-livedata")
-    add(IMPLEMENTATION, "androidx.activity:activity-compose:1.7.2")
+    add(IMPLEMENTATION, "androidx.activity:activity-compose:1.8.1")
 
     // COMPOSE ACCOMPANIST
     add(IMPLEMENTATION, "com.google.accompanist:accompanist-drawablepainter:${Versions.COMPOSE_ACCOMPANIST}")

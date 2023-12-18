@@ -16,7 +16,9 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Card
@@ -25,9 +27,9 @@ import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.LocalContentColor
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
 import androidx.compose.material.TextButton
+import androidx.compose.material.TextFieldDefaults
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.runtime.Composable
@@ -38,19 +40,21 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.focus.FocusRequester
-import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.emoji.text.EmojiCompat
+import com.hbb20.countrypicker.R
 import com.hbb20.countrypicker.compose.CountryFlag.EmojiFlag
 import com.hbb20.countrypicker.compose.CountryFlag.ImageFlag
 import com.hbb20.countrypicker.datagenerator.CPDataStoreGenerator
@@ -131,7 +135,7 @@ fun CountryPicker(
     val (showPickerDialog, setShowPickerDialog) = remember { mutableStateOf(false) }
     val launchPickerDialog = remember { { setShowPickerDialog(true) } }
     val country = rememberCountry(alpha2Code, cpDataStore)
-    val countryFlag = rememberFlag(country, flagProvider)
+    val countryFlag = rememberCountryFlag(country, flagProvider)
     selectedCountryLayout(
         country,
         countryFlag,
@@ -189,23 +193,7 @@ private fun DefaultSelectedCountryLayout(
     ) {
         val textStyle = MaterialTheme.typography.body1
         if (countryFlag != null) {
-            when (countryFlag) {
-                is EmojiFlag -> {
-                    Text(
-                        text = countryFlag.emoji.toString(),
-                        style = MaterialTheme.typography.body1,
-                        color = LocalContentColor.current
-                    )
-                }
-
-                is ImageFlag -> {
-                    Image(
-                        painter = painterResource(id = countryFlag.flagImageRes),
-                        contentDescription = null,
-                        modifier = Modifier.height(textStyle.lineHeight.toDp())
-                    )
-                }
-            }
+            CountryFlagLayout(countryFlag, emojiFlagTextStyle = textStyle)
             Spacer(modifier = Modifier.width(8.dp))
         }
         Text(text = textToShow, style = textStyle, color = LocalContentColor.current)
@@ -218,9 +206,39 @@ private fun DefaultSelectedCountryLayout(
 }
 
 @Composable
-private fun rememberFlag(
+fun CountryFlagLayout(
+    countryFlag: CountryFlag?,
+    modifier: Modifier = Modifier,
+    emojiFlagTextStyle: TextStyle = MaterialTheme.typography.body1,
+    imageFlagHeight: Dp = emojiFlagTextStyle.fontSize.toDp(),
+) {
+    when (countryFlag) {
+        is EmojiFlag -> {
+            Text(
+                text = countryFlag.emoji.toString(),
+                style = emojiFlagTextStyle,
+                color = LocalContentColor.current,
+                modifier = modifier
+            )
+        }
+
+        is ImageFlag -> {
+            Image(
+                painter = painterResource(id = countryFlag.flagImageRes),
+                contentDescription = null,
+                modifier = modifier.height(imageFlagHeight)
+            )
+        }
+
+        null -> { /* do nothing */
+        }
+    }
+}
+
+@Composable
+fun rememberCountryFlag(
     country: CPCountry?,
-    flagProvider: CPFlagProvider?
+    flagProvider: CPFlagProvider? = DefaultEmojiFlagProvider()
 ) = remember(country, flagProvider) {
     if (country != null && flagProvider != null) {
         when (flagProvider) {
@@ -267,7 +285,14 @@ fun CountryPickerDialog(
     fillHeight: Boolean = showFilter,
     allowClearSelection: Boolean = true,
     queryFilter: (country: CPCountry, filterQuery: String) -> Boolean = { country, filterQuery ->
-        defaultFilter(country, filterQuery)
+        defaultCountrySearchFilter(country, filterQuery)
+    },
+    countryRowLayout: @Composable ((
+        country: CPCountry,
+        flagProvider: CPFlagProvider?,
+        onClicked: (CPCountry) -> Unit,
+    ) -> Unit) = { country, flagProvider, onClicked ->
+        CountryListItemRowLayout(country, flagProvider, onClicked)
     },
     onDismissRequest: () -> Unit,
     onCountrySelected: (CPCountry?) -> Unit,
@@ -285,7 +310,8 @@ fun CountryPickerDialog(
             fillHeight = fillHeight,
             flagProvider = flagProvider,
             allowClearSelection = allowClearSelection,
-            queryFilter = queryFilter
+            queryFilter = queryFilter,
+            countryRowLayout = countryRowLayout,
         )
     }
 }
@@ -300,8 +326,9 @@ private fun DefaultCountryPickerDialogContent(
     showFilter: Boolean,
     fillHeight: Boolean,
     allowClearSelection: Boolean,
+    modifier: Modifier = Modifier,
     queryFilter: (country: CPCountry, filterQuery: String) -> Boolean = { country, filterQuery ->
-        defaultFilter(country, filterQuery)
+        defaultCountrySearchFilter(country, filterQuery)
     },
     searchFieldLayout: @Composable ((
         searchQuery: String,
@@ -310,17 +337,25 @@ private fun DefaultCountryPickerDialogContent(
     ) -> Unit) = { searchQuery, setSearchQuery, cpDataStore ->
         DefaultSearchField(searchQuery, setSearchQuery, cpDataStore)
     },
+    countryRowLayout: @Composable ((
+        country: CPCountry,
+        flagProvider: CPFlagProvider?,
+        onClicked: (CPCountry) -> Unit,
+    ) -> Unit) = { country, flagProvider, onClicked ->
+        CountryListItemRowLayout(country, flagProvider, onClicked)
+    },
     onDismissRequest: () -> Unit,
 ) {
     Card(
-        modifier = Modifier
-            .fillMaxWidth()
+        modifier = modifier
+            .fillMaxWidth(0.8f)
             .padding(16.dp),
         shape = RoundedCornerShape(16.dp),
     ) {
         val countryList = remember(cpDataStore) {
             cpDataStore.countryList
         }
+        val scrollState = rememberLazyListState()
         val quickAccessCountries = remember(quickAccessCountriesCodes, countryList) {
             quickAccessCountriesCodes.orEmpty().mapNotNull { alpha2 ->
                 countryList.firstOrNull { it.alpha2.equals(alpha2, ignoreCase = true) }
@@ -332,20 +367,21 @@ private fun DefaultCountryPickerDialogContent(
         }
         val filteredQuickAccessCountries = remember(showFilter, quickAccessCountries, searchQuery) {
             if (showFilter == false) emptyList()
-            else quickAccessCountries.filter { queryFilter(it, searchQuery) }.distinctBy(CPCountry::alpha2)
+            else quickAccessCountries.filter { queryFilter(it, searchQuery) }
+                .distinctBy(CPCountry::alpha2)
+        }
+        LaunchedEffect(key1 = filteredList, key2 = filteredQuickAccessCountries) {
+            scrollState.scrollToItem(0)
         }
         Column {
             if (showFilter) {
                 searchFieldLayout(searchQuery, setSearchQuery, cpDataStore)
             }
-            LazyColumn(modifier = Modifier.weight(1f, fill = fillHeight)) {
+            LazyColumn(modifier = Modifier.weight(1f, fill = fillHeight), state = scrollState) {
                 if (filteredQuickAccessCountries.isNotEmpty()) {
                     filteredQuickAccessCountries.forEach { country ->
                         item("quickAccess-" + country.alpha2) {
-                            CountryListItemRowLayout(
-                                country = country,
-                                flagProvider = flagProvider,
-                            ) {
+                            countryRowLayout(country, flagProvider) {
                                 onCountrySelected(it)
                                 onDismissRequest()
                             }
@@ -355,10 +391,7 @@ private fun DefaultCountryPickerDialogContent(
                 }
                 filteredList.forEach { country ->
                     item(country.alpha2) {
-                        CountryListItemRowLayout(
-                            country = country,
-                            flagProvider = flagProvider,
-                        ) {
+                        countryRowLayout(country, flagProvider) {
                             onCountrySelected(it)
                             onDismissRequest()
                         }
@@ -367,7 +400,10 @@ private fun DefaultCountryPickerDialogContent(
             }
             if (allowClearSelection) {
                 TextButton(
-                    onClick = { onCountrySelected(null) },
+                    onClick = {
+                        onCountrySelected(null)
+                        onDismissRequest()
+                    },
                     modifier = Modifier.padding(start = 8.dp, bottom = 8.dp)
                 ) {
                     Text(
@@ -390,35 +426,43 @@ private fun DefaultSearchField(
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     val focusManager = LocalFocusManager.current
-    val searchFieldFocusRequester = remember {
-        FocusRequester()
-    }
-    OutlinedTextField(
-        value = searchQuery,
-        onValueChange = { setSearchQuery(it) },
-        placeholder = {
-            Text(
-                text = cpDataStore.messageGroup.searchHint,
-                style = MaterialTheme.typography.body1,
-                color = MaterialTheme.colors.onSurface
-            )
-        },
-        textStyle = MaterialTheme.typography.body1,
-        singleLine = true,
-        keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Search),
-        keyboardActions = KeyboardActions(onAny = {
-            keyboardController?.hide()
-            focusManager.clearFocus()
-        }),
-        modifier = Modifier
-            .padding(horizontal = 16.dp)
-            .padding(top = 16.dp)
-            .fillMaxWidth()
-            .focusRequester(searchFieldFocusRequester),
-    )
 
-    LaunchedEffect(key1 = Unit) {
-        searchFieldFocusRequester.requestFocus()
+    Column {
+        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
+            Icon(
+                painter = painterResource(id = R.drawable.ic_cp_search),
+                contentDescription = null,
+                modifier = Modifier.padding(16.dp),
+                tint = MaterialTheme.colors.onSurface.copy(alpha = 0.5f)
+            )
+            Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.CenterStart) {
+                BasicTextField(
+                    value = searchQuery,
+                    onValueChange = { setSearchQuery(it) },
+                    textStyle = MaterialTheme.typography.body1,
+                    cursorBrush = SolidColor(
+                        TextFieldDefaults.outlinedTextFieldColors()
+                            .cursorColor(isError = false).value
+                    ),
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Search),
+                    keyboardActions = KeyboardActions(onAny = {
+                        keyboardController?.hide()
+                        focusManager.clearFocus()
+                    }),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                )
+
+                if (searchQuery.isEmpty()) {
+                    Text(
+                        text = cpDataStore.messageGroup.searchHint,
+                        style = MaterialTheme.typography.body1,
+                        color = MaterialTheme.colors.onSurface.copy(alpha = 0.5f)
+                    )
+                }
+            }
+        }
     }
 }
 
@@ -428,10 +472,11 @@ private fun CountryListItemRowLayout(
     flagProvider: CPFlagProvider?,
     onClicked: (CPCountry) -> Unit,
 ) {
-    val countryFlag = rememberFlag(country, flagProvider)
+    val countryFlag = rememberCountryFlag(country, flagProvider)
     Row(
         modifier = Modifier
             .fillMaxWidth()
+            .clip(RoundedCornerShape(4.dp))
             .clickable {
                 onClicked(country)
             }
@@ -439,23 +484,7 @@ private fun CountryListItemRowLayout(
         verticalAlignment = Alignment.CenterVertically
     ) {
         if (countryFlag != null) {
-            when (countryFlag) {
-                is EmojiFlag -> {
-                    Text(
-                        text = countryFlag.emoji.toString(),
-                        style = MaterialTheme.typography.body1,
-                        color = LocalContentColor.current
-                    )
-                }
-
-                is ImageFlag -> {
-                    Image(
-                        painter = painterResource(id = countryFlag.flagImageRes),
-                        contentDescription = null,
-                        modifier = Modifier.height(MaterialTheme.typography.body1.lineHeight.toDp())
-                    )
-                }
-            }
+            CountryFlagLayout(countryFlag)
             Spacer(modifier = Modifier.width(16.dp))
         }
         Column(modifier = Modifier.weight(1f)) {
@@ -468,7 +497,7 @@ private fun CountryListItemRowLayout(
     }
 }
 
-private fun defaultFilter(
+fun defaultCountrySearchFilter(
     country: CPCountry,
     filterQuery: String,
 ) = if (filterQuery.isBlank()) true
@@ -497,10 +526,10 @@ fun PreviewSomeDialogContent() {
                 cpDataStore = rememberCPDataStore(countryListTransformer = countryMasterListTransformer),
                 flagProvider = DefaultEmojiFlagProvider(),
                 quickAccessCountriesCodes = null,
-                showFilter = false,
+                showFilter = true,
                 fillHeight = false,
                 allowClearSelection = true,
-                queryFilter = { cpCountry, query -> defaultFilter(cpCountry, query) },
+                queryFilter = { cpCountry, query -> defaultCountrySearchFilter(cpCountry, query) },
                 onDismissRequest = {},
                 onCountrySelected = {},
             )
@@ -518,6 +547,11 @@ fun rememberCountry(
     }
 }
 
+/**
+ * For state management,
+ * if you need to hoist the selected country code outside of compose
+ * then use CPCountryDetector::detectCountry()
+ */
 @Composable
 fun rememberAutoDetectedCountryCode(
     sourceOrder: List<CPCountryDetector.Source> = listOf(
