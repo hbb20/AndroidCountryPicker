@@ -36,6 +36,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.hbb20.androidcountrypicker.R
+import com.hbb20.androidcountrypicker.compose.theme.DemoTheme
 import com.hbb20.contrypicker.flagpack1.FlagPack1
 import com.hbb20.countrypicker.compose.CountryFlagLayout
 import com.hbb20.countrypicker.compose.CountryPicker
@@ -51,7 +52,7 @@ class ComposeDemoActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MaterialTheme {
+            DemoTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -157,13 +158,22 @@ class ComposeDemoActivity : ComponentActivity() {
                 flagProvider = CPFlagImageProvider(
                     // map of alpha2 to drawable resource id
                     alpha2ToFlag = mapOf(
-                        "IN" to R.drawable.ic_flag,
-                        "US" to R.drawable.ic_flag,
-                        "GB" to R.drawable.ic_flag,
+                        "IN" to R.drawable.ic_flag_green_outlint,
+                        "gb" to R.drawable.ic_flag_yellow,
+                        "US" to R.drawable.ic_flag_blue,
                     ),
                     // drawable resource id for missing flag
                     missingFlagPlaceHolder = R.drawable.ic_flag
-                )
+                ),
+                pickerDialog = { cpDataStore, flagProvider, onDismissRequest, onCountrySelected ->
+                    CountryPickerDialog(
+                        cpDataStore = cpDataStore,
+                        flagProvider = flagProvider,
+                        onDismissRequest = onDismissRequest,
+                        onCountrySelected = onCountrySelected,
+                        quickAccessCountries = listOf("IN", "us", "GB"),
+                    )
+                }
             ) {
                 setCountryCode(it?.alpha2)
             }
@@ -215,7 +225,7 @@ class ComposeDemoActivity : ComponentActivity() {
                 )
             }
 
-            if(showPickerDialog){
+            if (showPickerDialog) {
                 CountryPickerDialog(
                     cpDataStore = cpDataStore,
                     flagProvider = flagProvider,
@@ -359,21 +369,24 @@ class ComposeDemoActivity : ComponentActivity() {
             modifier = Modifier
                 .fillMaxWidth()
                 .background(MaterialTheme.colors.surface)
-                .padding(16.dp)
+                .padding(16.dp),
+            backgroundColor = MaterialTheme.colors.surface
         ) {
-            Column(modifier = Modifier.padding(16.dp)) {
-                Text(
-                    text = title,
-                    style = MaterialTheme.typography.subtitle1,
-                    color = Color.Black
-                )
-                Text(
-                    text = body,
-                    style = MaterialTheme.typography.body2,
-                    color = Color.DarkGray
-                )
-                Spacer(modifier = Modifier.padding(8.dp))
-                countryPickerLayout()
+            Surface(color = MaterialTheme.colors.surface) {
+                Column(modifier = Modifier.padding(16.dp)) {
+                    Text(
+                        text = title,
+                        style = MaterialTheme.typography.subtitle1,
+                        color = MaterialTheme.colors.onSurface
+                    )
+                    Text(
+                        text = body,
+                        style = MaterialTheme.typography.body2,
+                        color = MaterialTheme.colors.onSurface
+                    )
+                    Spacer(modifier = Modifier.padding(8.dp))
+                    countryPickerLayout()
+                }
             }
         }
     }

@@ -77,7 +77,7 @@ class CPViewHelper(
         val detectedAlpha2 =
             if (isInEditMode) "US" else countryDetector.detectCountry(countryDetectSources)
         val detectedCountry = cpDataStore.countryList.firstOrNull {
-            it.alpha2.toLowerCase(Locale.ROOT) == detectedAlpha2?.toLowerCase(
+            it.alpha2.lowercase(Locale.ROOT) == detectedAlpha2?.lowercase(
                 Locale.ROOT
             )
         }

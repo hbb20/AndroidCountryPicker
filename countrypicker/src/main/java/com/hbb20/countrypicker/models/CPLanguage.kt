@@ -40,5 +40,5 @@ enum class CPLanguage(
     UZBEK("uz"),
     VIETNAMESE("vi");
 
-    val translationFileName: String by lazy { "cp_${name.toLowerCase(Locale.ROOT)}.xml" }
+    val translationFileName: String by lazy { "cp_${name.lowercase(Locale.ROOT)}.xml" }
 }

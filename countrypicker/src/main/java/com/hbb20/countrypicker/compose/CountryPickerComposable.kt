@@ -351,6 +351,7 @@ private fun DefaultCountryPickerDialogContent(
             .fillMaxWidth(0.8f)
             .padding(16.dp),
         shape = RoundedCornerShape(16.dp),
+        backgroundColor = MaterialTheme.colors.surface,
     ) {
         val countryList = remember(cpDataStore) {
             cpDataStore.countryList
@@ -439,7 +440,7 @@ private fun DefaultSearchField(
                 BasicTextField(
                     value = searchQuery,
                     onValueChange = { setSearchQuery(it) },
-                    textStyle = MaterialTheme.typography.body1,
+                    textStyle = MaterialTheme.typography.body1.copy(color = MaterialTheme.colors.onSurface),
                     cursorBrush = SolidColor(
                         TextFieldDefaults.outlinedTextFieldColors()
                             .cursorColor(isError = false).value

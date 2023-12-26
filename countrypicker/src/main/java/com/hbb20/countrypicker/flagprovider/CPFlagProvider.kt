@@ -1,6 +1,7 @@
 package com.hbb20.countrypicker.flagprovider
 
 import androidx.annotation.DrawableRes
+import java.util.Locale
 
 abstract class CPFlagProvider
 
@@ -18,14 +19,17 @@ class DefaultEmojiFlagProvider(val useEmojiCompat: Boolean = false) : CPFlagProv
  * other flags in this pack to maintain visual symmetry.
  */
 class CPFlagImageProvider(
-    val alpha2ToFlag: Map<String, Int>,
+    alpha2ToFlag: Map<String, Int>,
     @DrawableRes val missingFlagPlaceHolder: Int
 ) : CPFlagProvider() {
+    private val flagMap = alpha2ToFlag.map { it.key.uppercase(Locale.ENGLISH) to it.value }.toMap()
 
     @DrawableRes
     fun getFlag(alpha2Code: String): Int {
-        return alpha2ToFlag.getOrElse(
-            getNormalizedAlpha2ForFlag(alpha2Code)
+        val upperCaseAlpha2Code = alpha2Code.uppercase(Locale.ENGLISH)
+        val flag = flagMap[upperCaseAlpha2Code]
+        return flag ?: flagMap.getOrElse(
+            getNormalizedAlpha2ForFlag(upperCaseAlpha2Code)
         ) { missingFlagPlaceHolder }
     }
 
@@ -35,12 +39,12 @@ class CPFlagImageProvider(
      * This function will convert "UM" to "US"
      */
     private fun getNormalizedAlpha2ForFlag(alpha2Code: String): String {
-        return when (alpha2Code.toLowerCase()) {
-            "um" -> "us"
-            "sj" -> "no"
-            "bv" -> "no"
-            "hm" -> "au"
-            else -> alpha2Code.toLowerCase()
+        return when (alpha2Code.uppercase(Locale.ENGLISH)) {
+            "UM" -> "US"
+            "SJ" -> "NO"
+            "BV" -> "NO"
+            "HM" -> "AU"
+            else -> alpha2Code.uppercase(Locale.ENGLISH)
         }
     }
 }
