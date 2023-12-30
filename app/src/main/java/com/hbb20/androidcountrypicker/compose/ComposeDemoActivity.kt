@@ -34,6 +34,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.google.android.material.shape.MarkerEdgeTreatment
 import com.hbb20.androidcountrypicker.R
 import com.hbb20.androidcountrypicker.compose.theme.DemoTheme
 import com.hbb20.contrypicker.flagpack1.FlagPack1
@@ -57,11 +58,8 @@ class ComposeDemoActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background,
                 ) {
-                    val (countryCode, setCountryCode) = remember { mutableStateOf<String?>("In") }
                     Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
-                        CountryPicker(alpha2Code = countryCode) {
-                            setCountryCode(it?.alpha2)
-                        }
+                        Text(text = "Jetpack Compose", style = MaterialTheme.typography.h5, color = MaterialTheme.colors.onSurface, modifier = Modifier.padding(16.dp))
                         OutOfBox()
                         AutoDetectedInitialCountry()
                         UseFlagPack()
