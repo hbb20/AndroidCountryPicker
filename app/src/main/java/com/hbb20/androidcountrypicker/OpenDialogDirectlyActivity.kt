@@ -11,6 +11,7 @@ import com.hbb20.countrypicker.models.CPCountry
 
 class OpenDialogDirectlyActivity : AppCompatActivity() {
     lateinit var binding: ActivityOpenDialogDirectlyBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOpenDialogDirectlyBinding.inflate(layoutInflater)
@@ -21,7 +22,7 @@ class OpenDialogDirectlyActivity : AppCompatActivity() {
     private fun setClickListeners() {
         binding.btnCustomMasterList.setOnClickListener {
             launchCountryPickerDialog(
-                customMasterCountries = "ca,us,mx"
+                customMasterCountries = "ca,us,mx",
             ) { selectedCountry ->
                 // your code here
             }
@@ -29,7 +30,7 @@ class OpenDialogDirectlyActivity : AppCompatActivity() {
 
         binding.btnCustomExcludedList.setOnClickListener {
             launchCountryPickerDialog(
-                customExcludedCountries = "jp"
+                customExcludedCountries = "jp",
             ) { selectedCountry ->
                 // your code here
             }
@@ -54,9 +55,9 @@ class OpenDialogDirectlyActivity : AppCompatActivity() {
                             "\uD83C\uDFC1",
                             0,
                             "Paradise",
-                        )
+                        ),
                     )
-                }
+                },
             ) { selectedCountry ->
                 // your code here
             }
@@ -68,7 +69,7 @@ class OpenDialogDirectlyActivity : AppCompatActivity() {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                         dataStore.countryList.replaceAll { if (it.alpha2 == "IN") it.copy(name = "Bharat") else it }
                     }
-                }
+                },
             ) { selectedCountry ->
                 // your code here
             }
@@ -76,7 +77,7 @@ class OpenDialogDirectlyActivity : AppCompatActivity() {
 
         binding.btnPreferredCountries.setOnClickListener {
             launchCountryPickerDialog(
-                preferredCountryCodes = "IN,JP,US,CA"
+                preferredCountryCodes = "IN,JP,US,CA",
             ) { selectedCountry ->
                 // your code here
             }
@@ -84,10 +85,11 @@ class OpenDialogDirectlyActivity : AppCompatActivity() {
 
         binding.btnFlagPack1.setOnClickListener {
             launchCountryPickerDialog(
-                cpFlagProvider = CPFlagImageProvider(
-                    FlagPack1.alpha2ToFlag,
-                    FlagPack1.missingFlagPlaceHolder
-                )
+                cpFlagProvider =
+                    CPFlagImageProvider(
+                        FlagPack1.alpha2ToFlag,
+                        FlagPack1.missingFlagPlaceHolder,
+                    ),
             ) { selectedCountry ->
                 // your code here
             }
@@ -95,7 +97,7 @@ class OpenDialogDirectlyActivity : AppCompatActivity() {
 
         binding.btnFlagNone.setOnClickListener {
             launchCountryPickerDialog(
-                cpFlagProvider = null
+                cpFlagProvider = null,
             ) { selectedCountry ->
                 // your code here
             }
@@ -106,8 +108,7 @@ class OpenDialogDirectlyActivity : AppCompatActivity() {
                 primaryTextGenerator = { cpCountry -> "${cpCountry.name} (${cpCountry.alpha2})" },
                 secondaryTextGenerator = { cpCountry -> cpCountry.capitalEnglishName },
                 highlightedTextGenerator = { cpCountry -> "+${cpCountry.phoneCode}" },
-
-                ) { selectedCountry ->
+            ) { selectedCountry ->
                 // your code here
             }
         }
@@ -123,20 +124,17 @@ class OpenDialogDirectlyActivity : AppCompatActivity() {
         binding.btnAllowClearSelection.setOnClickListener {
             launchCountryPickerDialog(
                 allowClearSelection = true,
-
-                ) { selectedCountry ->
+            ) { selectedCountry ->
                 // your code here
             }
         }
 
         binding.btnDontAllowClearSelection.setOnClickListener {
             launchCountryPickerDialog(
-                allowClearSelection = false
+                allowClearSelection = false,
             ) { selectedCountry ->
                 // your code here
             }
         }
-
     }
-
 }

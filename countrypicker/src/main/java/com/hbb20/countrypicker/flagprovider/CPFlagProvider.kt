@@ -20,7 +20,7 @@ class DefaultEmojiFlagProvider(val useEmojiCompat: Boolean = false) : CPFlagProv
  */
 class CPFlagImageProvider(
     alpha2ToFlag: Map<String, Int>,
-    @DrawableRes val missingFlagPlaceHolder: Int
+    @DrawableRes val missingFlagPlaceHolder: Int,
 ) : CPFlagProvider() {
     private val flagMap = alpha2ToFlag.map { it.key.uppercase(Locale.ENGLISH) to it.value }.toMap()
 
@@ -29,7 +29,7 @@ class CPFlagImageProvider(
         val upperCaseAlpha2Code = alpha2Code.uppercase(Locale.ENGLISH)
         val flag = flagMap[upperCaseAlpha2Code]
         return flag ?: flagMap.getOrElse(
-            getNormalizedAlpha2ForFlag(upperCaseAlpha2Code)
+            getNormalizedAlpha2ForFlag(upperCaseAlpha2Code),
         ) { missingFlagPlaceHolder }
     }
 

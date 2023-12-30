@@ -12,7 +12,7 @@ internal fun readListConfigFromAttrs(attrs: TypedArray?): CPListConfig {
             attrs.getString(CountryPickerView_cpList_preferredCountryCodes)
 
         CPListConfig(
-            preferredCountryCodes = preferredCountryCodes
+            preferredCountryCodes = preferredCountryCodes,
         )
     }
 }

@@ -5,20 +5,21 @@ import android.os.Build
 import android.telephony.TelephonyManager
 
 class CPCountryDetector(val context: Context) {
-
     fun detectCountry(
-        sources: List<Source> = listOf(
-            Source.SIM,
-            Source.NETWORK,
-            Source.LOCALE
-        )
+        sources: List<Source> =
+            listOf(
+                Source.SIM,
+                Source.NETWORK,
+                Source.LOCALE,
+            ),
     ): String? {
         sources.forEach {
-            val detectedCountry = when (it) {
-                Source.SIM -> detectSIMCountry()
-                Source.NETWORK -> detectNetworkCountry()
-                Source.LOCALE -> detectLocaleCountry()
-            }
+            val detectedCountry =
+                when (it) {
+                    Source.SIM -> detectSIMCountry()
+                    Source.NETWORK -> detectNetworkCountry()
+                    Source.LOCALE -> detectLocaleCountry()
+                }
             if (detectedCountry != null) return detectedCountry
         }
         return null
@@ -61,7 +62,9 @@ class CPCountryDetector(val context: Context) {
 
     sealed class Source(val name: String) {
         object SIM : Source("Sim")
+
         object NETWORK : Source("Network")
+
         object LOCALE : Source("Locale")
     }
 }

@@ -8,18 +8,19 @@ import java.util.*
 
 object CPDataStoreGenerator {
     private var masterDataStore: CPDataStore? = null
-    const val defaultMasterCountries = ""
-    const val defaultExcludedCountries = ""
+    const val DEFAULT_MASTER_COUNTRIES = ""
+    const val DEFAULT_EXCLUDED_COUNTRIES = ""
+
     @Deprecated("no-longer-used")
-    const val defaultUseCache = true
-    val defaultCountryFileReader = CPFileReader
+    const val DEFAULT_USE_CACHE = true
+    val DEFAULT_FILE_READER = CPFileReader
 
     fun generate(
         context: Context,
-        customMasterCountries: String = defaultMasterCountries,
-        customExcludedCountries: String = defaultExcludedCountries,
-        countryFileReader: CountryFileReading = defaultCountryFileReader,
-        useCache: Boolean = defaultUseCache
+        customMasterCountries: String = DEFAULT_MASTER_COUNTRIES,
+        customExcludedCountries: String = DEFAULT_EXCLUDED_COUNTRIES,
+        countryFileReader: CountryFileReading = DEFAULT_FILE_READER,
+        useCache: Boolean = DEFAULT_USE_CACHE,
     ): CPDataStore {
         onMethodBegin("GenerateDataStore")
         if (masterDataStore == null || !useCache) {
@@ -30,16 +31,17 @@ object CPDataStoreGenerator {
             var countryList =
                 filterCustomMasterList(
                     it.countryList,
-                    customMasterCountries
+                    customMasterCountries,
                 )
             countryList =
                 filterExcludedCountriesList(
                     countryList,
-                    customExcludedCountries
+                    customExcludedCountries,
                 )
             return it.copy(
-                countryList = countryList.sortedBy { cpCountry -> cpCountry.name }
-                    .toMutableList()
+                countryList =
+                    countryList.sortedBy { cpCountry -> cpCountry.name }
+                        .toMutableList(),
             )
         }
 
@@ -48,8 +50,8 @@ object CPDataStoreGenerator {
 
     fun generate(
         context: Context,
-        countryFileReader: CountryFileReading = defaultCountryFileReader,
-        countryListTransformer: ((List<CPCountry>) -> List<CPCountry>)?
+        countryFileReader: CountryFileReading = DEFAULT_FILE_READER,
+        countryListTransformer: ((List<CPCountry>) -> List<CPCountry>)?,
     ): CPDataStore {
         onMethodBegin("GenerateDataStore")
         if (masterDataStore == null) {
@@ -70,13 +72,14 @@ object CPDataStoreGenerator {
 
     private fun filterExcludedCountriesList(
         countryList: List<CPCountry>,
-        customExcludedCountries: String
+        customExcludedCountries: String,
     ): List<CPCountry> {
         val countryAlphaCodes =
             customExcludedCountries.split(",").map { it.trim().toUpperCase(Locale.US) }
-        val filteredCountries = countryList.filterNot {
-            countryAlphaCodes.contains(it.alpha2) || countryAlphaCodes.contains(it.alpha3)
-        }
+        val filteredCountries =
+            countryList.filterNot {
+                countryAlphaCodes.contains(it.alpha2) || countryAlphaCodes.contains(it.alpha3)
+            }
         return if (filteredCountries.isNotEmpty()) {
             filteredCountries
         } else {
@@ -86,13 +89,14 @@ object CPDataStoreGenerator {
 
     private fun filterCustomMasterList(
         masterCountryList: List<CPCountry>,
-        customExcludedCountries: String
+        customExcludedCountries: String,
     ): List<CPCountry> {
         val countryAlphaCodes =
             customExcludedCountries.split(",").map { it.trim().toUpperCase(Locale.US) }
-        val customMasterCountries = masterCountryList.filter {
-            countryAlphaCodes.contains(it.alpha2) || countryAlphaCodes.contains(it.alpha3)
-        }
+        val customMasterCountries =
+            masterCountryList.filter {
+                countryAlphaCodes.contains(it.alpha2) || countryAlphaCodes.contains(it.alpha3)
+            }
 
         /**
          * If there is no valid master country, return default master list

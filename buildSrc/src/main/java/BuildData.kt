@@ -1,3 +1,5 @@
+import org.gradle.api.JavaVersion
+
 object BuildData {
     const val demoApplicationId = "com.hbb20.androidcountrypicker"
 
@@ -12,4 +14,6 @@ object BuildData {
     const val minSdkVersion = 23
     const val targetSdkVersion = 34
     const val compileSdkVersion = 34
+
+    val appJavaVersion =  JavaVersion.VERSION_17
 }

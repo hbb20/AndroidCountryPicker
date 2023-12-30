@@ -13,25 +13,27 @@ class CPRecyclerViewHelper(
     private val cpDataStore: CPDataStore,
     cpListConfig: CPListConfig = CPListConfig(),
     private val cpRowConfig: CPRowConfig = CPRowConfig(),
-    onCountryClickListener: ((CPCountry) -> Unit)
+    onCountryClickListener: ((CPCountry) -> Unit),
 ) {
     private val additionalSearchTerm = mutableMapOf<String, String>()
 
-    var allPreferredCountries = extractPreferredCountries(
-        cpDataStore.countryList,
-        cpListConfig.preferredCountryCodes
-    )
+    var allPreferredCountries =
+        extractPreferredCountries(
+            cpDataStore.countryList,
+            cpListConfig.preferredCountryCodes,
+        )
         private set
 
     val epoxyController by lazy { CountryListController() }
 
-    val controllerData = CountryListControllerData(
-        allPreferredCountries,
-        cpDataStore.countryList,
-        onCountryClickListener,
-        cpRowConfig,
-        cpDataStore
-    )
+    val controllerData =
+        CountryListControllerData(
+            allPreferredCountries,
+            cpDataStore.countryList,
+            onCountryClickListener,
+            cpRowConfig,
+            cpDataStore,
+        )
 
     fun attachFilterQueryEditText(queryEditText: EditText?) {
         queryEditText?.doOnTextChanged { query, _, _, _ ->
@@ -59,16 +61,17 @@ class CPRecyclerViewHelper(
 
     private fun extractPreferredCountries(
         countries: List<CPCountry>,
-        preferredCountryCodes: String? = ""
+        preferredCountryCodes: String? = "",
     ): List<CPCountry> {
         val result = mutableListOf<CPCountry>()
 
         preferredCountryCodes?.split(",")?.map { it.trim() }?.mapNotNull { alphaCode ->
-            val country = when (alphaCode.length) {
-                2 -> countries.find { cpCountry -> cpCountry.alpha2.equals(alphaCode, true) }
-                3 -> countries.find { cpCountry -> cpCountry.alpha3.equals(alphaCode, true) }
-                else -> null
-            }
+            val country =
+                when (alphaCode.length) {
+                    2 -> countries.find { cpCountry -> cpCountry.alpha2.equals(alphaCode, true) }
+                    3 -> countries.find { cpCountry -> cpCountry.alpha3.equals(alphaCode, true) }
+                    else -> null
+                }
             country?.let { result.add(it) }
         }
 
@@ -77,7 +80,7 @@ class CPRecyclerViewHelper(
 
     private fun List<CPCountry>.filterCountries(
         filterQuery: String,
-        cpRowConfig: CPRowConfig
+        cpRowConfig: CPRowConfig,
     ): List<CPCountry> {
         if (filterQuery.isBlank()) return this
 
@@ -91,16 +94,15 @@ class CPRecyclerViewHelper(
             }
 
             cpCountry.alpha2.startsWith(filterQuery, true) ||
-                    cpCountry.alpha3.startsWith(filterQuery, true) ||
-                    firstCharsOfWords.contains(filterQuery, true) ||
-                    cpRowConfig.primaryTextGenerator(cpCountry).contains(filterQuery, true) ||
-                    cpRowConfig.secondaryTextGenerator?.invoke(cpCountry)
-                        ?.contains(filterQuery, true)
+                cpCountry.alpha3.startsWith(filterQuery, true) ||
+                firstCharsOfWords.contains(filterQuery, true) ||
+                cpRowConfig.primaryTextGenerator(cpCountry).contains(filterQuery, true) ||
+                cpRowConfig.secondaryTextGenerator?.invoke(cpCountry)
+                    ?.contains(filterQuery, true)
                     ?: false ||
-                    cpRowConfig.highlightedTextGenerator?.invoke(cpCountry)
-                        ?.contains(filterQuery, true)
+                cpRowConfig.highlightedTextGenerator?.invoke(cpCountry)
+                    ?.contains(filterQuery, true)
                     ?: false
-
         }
     }
 }

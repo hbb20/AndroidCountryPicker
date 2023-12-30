@@ -4,7 +4,6 @@ import android.util.Log
 import com.hbb20.countrypicker.models.CP_TAG
 
 object CPLogger {
-
     fun d(message: String) {
         Log.d(CP_TAG, message)
     }

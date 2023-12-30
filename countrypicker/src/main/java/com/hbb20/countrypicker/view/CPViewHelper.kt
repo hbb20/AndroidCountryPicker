@@ -29,7 +29,7 @@ class CPViewHelper(
     val cpDialogConfig: CPDialogConfig = CPDialogConfig(),
     val cpListConfig: CPListConfig = CPListConfig(),
     val cpRowConfig: CPRowConfig = CPRowConfig(cpFlagProvider = cpViewConfig.cpFlagProvider),
-    val isInEditMode: Boolean = false
+    val isInEditMode: Boolean = false,
 ) {
     private val _selectedCountry = MutableLiveData<CPCountry?>().apply { value = null }
     val selectedCountry: LiveData<CPCountry?> = _selectedCountry
@@ -45,17 +45,17 @@ class CPViewHelper(
         setInitialCountry(cpViewConfig.initialSelection)
     }
 
-    fun setInitialCountry(
-        initialSelection: CPViewConfig.InitialSelection
-    ) {
+    fun setInitialCountry(initialSelection: CPViewConfig.InitialSelection) {
         when (initialSelection) {
             CPViewConfig.InitialSelection.EmptySelection -> clearSelection()
-            is CPViewConfig.InitialSelection.AutoDetectCountry -> setAutoDetectedCountry(
-                initialSelection.autoDetectSources
-            )
-            is CPViewConfig.InitialSelection.SpecificCountry -> setCountryForAlphaCode(
-                initialSelection.countryCode
-            )
+            is CPViewConfig.InitialSelection.AutoDetectCountry ->
+                setAutoDetectedCountry(
+                    initialSelection.autoDetectSources,
+                )
+            is CPViewConfig.InitialSelection.SpecificCountry ->
+                setCountryForAlphaCode(
+                    initialSelection.countryCode,
+                )
         }
     }
 
@@ -63,9 +63,10 @@ class CPViewHelper(
      * CountryCode can be alpha2 or alpha3 code
      */
     fun setCountryForAlphaCode(countryCode: String?) {
-        val country = cpDataStore.countryList.firstOrNull {
-            it.alpha2.equals(countryCode, true) || it.alpha3.equals(countryCode, true)
-        }
+        val country =
+            cpDataStore.countryList.firstOrNull {
+                it.alpha2.equals(countryCode, true) || it.alpha3.equals(countryCode, true)
+            }
         setCountry(country)
     }
 
@@ -73,21 +74,26 @@ class CPViewHelper(
         setCountry(null)
     }
 
-    fun setAutoDetectedCountry(countryDetectSources: List<CPCountryDetector.Source> = CPViewConfig.defaultCountryDetectorSources) {
+    fun setAutoDetectedCountry(
+        countryDetectSources: List<CPCountryDetector.Source> = CPViewConfig.defaultCountryDetectorSources,
+    ) {
         val detectedAlpha2 =
             if (isInEditMode) "US" else countryDetector.detectCountry(countryDetectSources)
-        val detectedCountry = cpDataStore.countryList.firstOrNull {
-            it.alpha2.lowercase(Locale.ROOT) == detectedAlpha2?.lowercase(
-                Locale.ROOT
-            )
-        }
+        val detectedCountry =
+            cpDataStore.countryList.firstOrNull {
+                it.alpha2.lowercase(Locale.ROOT) ==
+                    detectedAlpha2?.lowercase(
+                        Locale.ROOT,
+                    )
+            }
         setCountry(detectedCountry)
     }
 
     fun launchDialog() {
-        val dialogHelper = CPDialogHelper(cpDataStore, cpDialogConfig, cpListConfig, cpRowConfig) {
-            setCountry(it)
-        }
+        val dialogHelper =
+            CPDialogHelper(cpDataStore, cpDialogConfig, cpListConfig, cpRowConfig) {
+                setCountry(it)
+            }
         dialogHelper.createDialog(context).show()
     }
 
@@ -95,7 +101,7 @@ class CPViewHelper(
         container: ViewGroup,
         tvCountryInfo: TextView,
         tvEmojiFlag: TextView? = null,
-        imgFlag: ImageView? = null
+        imgFlag: ImageView? = null,
     ) {
         this.viewComponentGroup =
             ViewComponentGroup(container, tvCountryInfo, tvEmojiFlag, imgFlag)
@@ -114,18 +120,23 @@ class CPViewHelper(
         viewComponentGroup?.apply {
             // text
             tvCountryInfo.text =
-                if (selectedCountry != null) cpViewConfig.viewTextGenerator(selectedCountry) else cpDataStore.messageGroup.selectionPlaceholderText
+                if (selectedCountry != null) {
+                    cpViewConfig.viewTextGenerator(selectedCountry)
+                } else {
+                    cpDataStore.messageGroup.selectionPlaceholderText
+                }
 
             val flagProvider = cpViewConfig.cpFlagProvider
             imgFlag?.isVisible = flagProvider is CPFlagImageProvider
             tvEmojiFlag?.isVisible = flagProvider is DefaultEmojiFlagProvider
             if (flagProvider is DefaultEmojiFlagProvider) {
-                val flagEmoji = when {
-                    flagProvider.useEmojiCompat ->
-                        EmojiCompat.get()
-                            .process(selectedCountry?.flagEmoji ?: " ")
-                    else -> selectedCountry?.flagEmoji ?: " "
-                }
+                val flagEmoji =
+                    when {
+                        flagProvider.useEmojiCompat ->
+                            EmojiCompat.get()
+                                .process(selectedCountry?.flagEmoji ?: " ")
+                        else -> selectedCountry?.flagEmoji ?: " "
+                    }
                 tvEmojiFlag?.setText(flagEmoji) ?: kotlin.run {
                     Timber.e("No tvEmojiFlag provided to load emoji flag")
                 }
@@ -150,6 +161,6 @@ class CPViewHelper(
         val container: ViewGroup,
         val tvCountryInfo: TextView,
         val tvEmojiFlag: TextView? = null,
-        val imgFlag: ImageView? = null
+        val imgFlag: ImageView? = null,
     )
 }

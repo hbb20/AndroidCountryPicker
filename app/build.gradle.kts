@@ -27,37 +27,38 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = BuildData.appJavaVersion
+        targetCompatibility = BuildData.appJavaVersion
     }
 
     composeOptions {
         kotlinCompilerExtensionVersion = Versions.COMPOSE_COMPILER
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = BuildData.appJavaVersion.toString()
     }
 
-    packagingOptions {
+    packaging {
         jniLibs {
             excludes += setOf("META-INF/licenses/**")
         }
         resources {
-            excludes += setOf(
-                "META-INF/DEPENDENCIES",
-                "META-INF/LICENSE",
-                "META-INF/LICENSE.txt",
-                "META-INF/license.txt",
-                "META-INF/licenses/**",
-                "META-INF/NOTICE",
-                "META-INF/NOTICE.txt",
-                "META-INF/notice.txt",
-                "META-INF/ASL2.0",
-                "META-INF/AL2.0",
-                "META-INF/*.kotlin_module",
-                "META-INF/LGPL2.1",
-                "**/attach_hotspot_windows.dll"
-            )
+            excludes +=
+                setOf(
+                    "META-INF/DEPENDENCIES",
+                    "META-INF/LICENSE",
+                    "META-INF/LICENSE.txt",
+                    "META-INF/license.txt",
+                    "META-INF/licenses/**",
+                    "META-INF/NOTICE",
+                    "META-INF/NOTICE.txt",
+                    "META-INF/notice.txt",
+                    "META-INF/ASL2.0",
+                    "META-INF/AL2.0",
+                    "META-INF/*.kotlin_module",
+                    "META-INF/LGPL2.1",
+                    "**/attach_hotspot_windows.dll",
+                )
         }
     }
     namespace = "com.hbb20.androidcountrypicker"

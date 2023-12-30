@@ -13,6 +13,7 @@ import com.hbb20.countrypicker.models.CPCountry
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -30,8 +31,8 @@ class MainActivity : AppCompatActivity() {
         countryPicker.changeFlagProvider(
             CPFlagImageProvider(
                 FlagPack1.alpha2ToFlag,
-                FlagPack1.missingFlagPlaceHolder
-            )
+                FlagPack1.missingFlagPlaceHolder,
+            ),
         )
     }
 

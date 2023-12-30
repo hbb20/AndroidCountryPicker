@@ -5,7 +5,7 @@ import java.util.*
 enum class CPLanguage(
     val code: String,
     val country: String? = null,
-    val script: String? = null
+    val script: String? = null,
 ) {
     AFRIKAANS("af"),
     ARABIC("ar"),
@@ -38,7 +38,8 @@ enum class CPLanguage(
     UKRAINIAN("uk"),
     URDU("ur"),
     UZBEK("uz"),
-    VIETNAMESE("vi");
+    VIETNAMESE("vi"),
+    ;
 
     val translationFileName: String by lazy { "cp_${name.lowercase(Locale.ROOT)}.xml" }
 }

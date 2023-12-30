@@ -13,10 +13,10 @@ import com.hbb20.countrypicker.models.CPDataStore
 import com.hbb20.countrypicker.recyclerview.defaultDataStoreModifier
 
 fun Context.prepareCustomCountryPickerView(
-    customMasterCountries: String = CPDataStoreGenerator.defaultMasterCountries,
-    customExcludedCountries: String = CPDataStoreGenerator.defaultExcludedCountries,
-    countryFileReader: CountryFileReading = CPDataStoreGenerator.defaultCountryFileReader,
-    useCache: Boolean = CPDataStoreGenerator.defaultUseCache,
+    customMasterCountries: String = CPDataStoreGenerator.DEFAULT_MASTER_COUNTRIES,
+    customExcludedCountries: String = CPDataStoreGenerator.DEFAULT_EXCLUDED_COUNTRIES,
+    countryFileReader: CountryFileReading = CPDataStoreGenerator.DEFAULT_FILE_READER,
+    useCache: Boolean = CPDataStoreGenerator.DEFAULT_USE_CACHE,
     customDataStoreModifier: ((CPDataStore) -> (Unit))? = defaultDataStoreModifier,
     containerViewGroup: ViewGroup,
     tvSelectedCountryInfo: TextView,
@@ -30,47 +30,51 @@ fun Context.prepareCustomCountryPickerView(
     highlightedTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultHighlightedTextGenerator,
     preferredCountryCodes: String? = null,
     dialogViewIds: CPDialogViewIds = CPDialogConfig.defaultCPDialogViewIds,
-    allowSearch: Boolean = CPDialogConfig.defaultCPDialogAllowSearch,
-    allowClearSelection: Boolean = CPDialogConfig.defaultCPDialogAllowClearSelection,
-    showTitle: Boolean = CPDialogConfig.defaultCPDialogDefaultShowTitle,
-    showFullScreen: Boolean = CPDialogConfig.defaultCPDialogShowFullScreen,
-    onCountryChangedListener: ((CPCountry?) -> Unit)? = null
+    allowSearch: Boolean = CPDialogConfig.DEFAULT_CP_DIALOG_ALLOW_SEARCH,
+    allowClearSelection: Boolean = CPDialogConfig.DEFAULT_CP_DIALOG_ALLOW_CLEAR_SELECTION,
+    showTitle: Boolean = CPDialogConfig.DEFAULT_CP_DIALOG_SHOW_TITLE,
+    showFullScreen: Boolean = CPDialogConfig.DEFAULT_CP_DIALOG_SHOW_FULL_SCREEN,
+    onCountryChangedListener: ((CPCountry?) -> Unit)? = null,
 ): CPViewHelper {
-
-    val cpDataStore = CPDataStoreGenerator.generate(
-        context = this,
-        customMasterCountries = customMasterCountries,
-        customExcludedCountries = customExcludedCountries,
-        countryFileReader = countryFileReader,
-        useCache = useCache
-    )
+    val cpDataStore =
+        CPDataStoreGenerator.generate(
+            context = this,
+            customMasterCountries = customMasterCountries,
+            customExcludedCountries = customExcludedCountries,
+            countryFileReader = countryFileReader,
+            useCache = useCache,
+        )
 
     customDataStoreModifier?.invoke(cpDataStore)
 
-    val cpDialogConfig = CPDialogConfig(
-        dialogViewIds = dialogViewIds,
-        allowSearch = allowSearch,
-        allowClearSelection = allowClearSelection,
-        showTitle = showTitle,
-        showFullScreen = showFullScreen
-    )
+    val cpDialogConfig =
+        CPDialogConfig(
+            dialogViewIds = dialogViewIds,
+            allowSearch = allowSearch,
+            allowClearSelection = allowClearSelection,
+            showTitle = showTitle,
+            showFullScreen = showFullScreen,
+        )
 
-    val cpCountryRowConfig = CPRowConfig(
-        cpFlagProvider = cpFlagProvider,
-        primaryTextGenerator = primaryTextGenerator,
-        secondaryTextGenerator = secondaryTextGenerator,
-        highlightedTextGenerator = highlightedTextGenerator
-    )
+    val cpCountryRowConfig =
+        CPRowConfig(
+            cpFlagProvider = cpFlagProvider,
+            primaryTextGenerator = primaryTextGenerator,
+            secondaryTextGenerator = secondaryTextGenerator,
+            highlightedTextGenerator = highlightedTextGenerator,
+        )
 
-    val cpListConfig = CPListConfig(
-        preferredCountryCodes = preferredCountryCodes
-    )
+    val cpListConfig =
+        CPListConfig(
+            preferredCountryCodes = preferredCountryCodes,
+        )
 
-    val cpViewConfig = CPViewConfig(
-        initialSelection = initialSelection,
-        viewTextGenerator = selectedCountryInfoTextGenerator,
-        cpFlagProvider = cpFlagProvider
-    )
+    val cpViewConfig =
+        CPViewConfig(
+            initialSelection = initialSelection,
+            viewTextGenerator = selectedCountryInfoTextGenerator,
+            cpFlagProvider = cpFlagProvider,
+        )
 
     val helper =
         CPViewHelper(
@@ -79,7 +83,7 @@ fun Context.prepareCustomCountryPickerView(
             cpViewConfig = cpViewConfig,
             cpDialogConfig = cpDialogConfig,
             cpListConfig = cpListConfig,
-            cpRowConfig = cpCountryRowConfig
+            cpRowConfig = cpCountryRowConfig,
         )
 
     helper.onCountryChangedListener = onCountryChangedListener
@@ -88,7 +92,7 @@ fun Context.prepareCustomCountryPickerView(
         container = containerViewGroup,
         tvCountryInfo = tvSelectedCountryInfo,
         tvEmojiFlag = tvSelectedCountryEmojiFlag,
-        imgFlag = imgSelectedCountryFlag
+        imgFlag = imgSelectedCountryFlag,
     )
 
     return helper

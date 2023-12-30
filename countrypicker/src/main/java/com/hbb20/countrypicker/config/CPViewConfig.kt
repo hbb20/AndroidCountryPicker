@@ -8,7 +8,7 @@ import com.hbb20.countrypicker.models.CPCountry
 data class CPViewConfig(
     val initialSelection: InitialSelection = defaultCPInitialSelectionMode,
     var viewTextGenerator: ((CPCountry) -> String) = defaultSelectedCountryInfoTextGenerator,
-    var cpFlagProvider: CPFlagProvider? = DefaultEmojiFlagProvider()
+    var cpFlagProvider: CPFlagProvider? = DefaultEmojiFlagProvider(),
 ) {
     companion object {
         val defaultCPInitialSelectionMode = InitialSelection.EmptySelection

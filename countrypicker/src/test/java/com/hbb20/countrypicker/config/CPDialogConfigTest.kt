@@ -7,7 +7,6 @@ import org.robolectric.RobolectricTestRunner
 
 @RunWith(RobolectricTestRunner::class)
 class CPDialogConfigTest {
-
     @Test
     fun `when resize mode is auto and full screen is false, wrap mode is applied`() {
         val config = CPDialogConfig(showFullScreen = false, sizeMode = SizeMode.Auto)

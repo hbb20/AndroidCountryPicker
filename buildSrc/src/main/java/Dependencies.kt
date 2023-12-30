@@ -26,11 +26,11 @@ object Versions {
     const val MOSHI = "1.9.3" // v1.10+ causes build dependency error. needs investigation.
     const val MOSHI_SEALED = "0.2.0"
     const val RETROFIT = "2.9.0"
-    const val NAVIGATION_GRAPH = "2.7.5"
+    const val NAVIGATION_GRAPH = "2.7.6"
     const val SCARLET_VERSION = "0.1.11"
     const val KOTLIN = "1.4.21"
-    const val KTLINT_GRADLE = "9.4.1"
-    const val KTLINT = "0.40.0"
+    const val KTLINT_GRADLE = "12.0.3" // Stop: Until https://github.com/JLLeitschuh/ktlint-gradle/issues/727
+    const val KTLINT = "1.1.0" // Stop: Manual update https://github.com/pinterest/ktlint/releases
     const val REALM_GRADLE_PLUGIN = "10.2.0"
     const val ROOM = "2.2.6"
     const val BINTRAY_GRADLE = "1.8.5"
@@ -49,9 +49,9 @@ object Versions {
     // https://github.com/google/ksp/releases
     // First half of KSP version shows compatible KOTLIN version,
     // For example, ksp version 1.8.0-1.0.9 means it's compatible with KOTLIN 1.8.0
-    const val COMPOSE_COMPILER = "1.5.4"
-    const val KOTLIN_GRADLE_PLUGIN = "1.9.20" // STOP : See 'Linked Dependencies' comment
-    const val KSP = "$KOTLIN_GRADLE_PLUGIN-1.0.14" // STOP : See 'Linked Dependencies' comment
+    const val COMPOSE_COMPILER = "1.5.6"
+    const val KOTLIN_GRADLE_PLUGIN = "1.9.21" // STOP : See 'Linked Dependencies' comment
+    const val KSP = "$KOTLIN_GRADLE_PLUGIN-1.0.15" // STOP : See 'Linked Dependencies' comment
 }
 
 object Deps {
@@ -62,7 +62,7 @@ object Deps {
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.1.4"
     const val emoji = "androidx.emoji:emoji:1.1.0"
     const val fragmentKtx = "androidx.fragment:fragment-ktx:1.6.2"
-    const val googleMaterialDesign = "com.google.android.material:material:1.12.0-alpha01"
+    const val googleMaterialDesign = "com.google.android.material:material:1.12.0-alpha02"
     const val viewModels = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
     const val timber = "com.jakewharton.timber:timber:5.0.1"
     const val apacheCSV = "org.apache.commons:commons-csv:1.7"
@@ -135,7 +135,7 @@ fun DependencyHandlerScope.implementCompose() {
     // Integration with observables
     add(IMPLEMENTATION, "androidx.compose.runtime:runtime")
     add(IMPLEMENTATION, "androidx.compose.runtime:runtime-livedata")
-    add(IMPLEMENTATION, "androidx.activity:activity-compose:1.8.1")
+    add(IMPLEMENTATION, "androidx.activity:activity-compose:1.8.2")
 
     // COMPOSE ACCOMPANIST
     add(IMPLEMENTATION, "com.google.accompanist:accompanist-drawablepainter:${Versions.COMPOSE_ACCOMPANIST}")

@@ -82,13 +82,14 @@ val countryMasterListTransformer = { countryList: List<CPCountry> ->
     finalList = finalList.sortedBy { it.phoneCode.toString() }
 
     // to modify any property of country
-    finalList = finalList.map { country ->
-        if (country.alpha2 == "IN") {
-            country.copy(name = "Bharat")
-        } else {
-            country
+    finalList =
+        finalList.map { country ->
+            if (country.alpha2 == "IN") {
+                country.copy(name = "Bharat")
+            } else {
+                country
+            }
         }
-    }
 
     finalList
 }
@@ -99,35 +100,38 @@ fun CountryPicker(
     modifier: Modifier = Modifier,
     cpDataStore: CPDataStore = rememberCPDataStore(),
     flagProvider: CPFlagProvider? = DefaultEmojiFlagProvider(),
-    selectedCountryLayout: @Composable ((
-        country: CPCountry?,
-        countryFlag: CountryFlag?,
-        emptySelectionText: String,
-        modifier: Modifier,
-        showCountryPickerDialog: () -> Unit
-    ) -> Unit) = { country, countryFlag, emptySelectionText, modifier, showCountryPickerDialog ->
+    selectedCountryLayout:
+        @Composable (
+        (
+            country: CPCountry?,
+            countryFlag: CountryFlag?,
+            emptySelectionText: String,
+            modifier: Modifier,
+            showCountryPickerDialog: () -> Unit,
+        ) -> Unit
+        ) = { country, countryFlag, emptySelectionText, modifier, showCountryPickerDialog ->
         DefaultSelectedCountryLayout(
             country,
             countryFlag,
             emptySelectionText,
             modifier,
-            showCountryPickerDialog
+            showCountryPickerDialog,
         )
     },
-    pickerDialog: @Composable ((
-        cpDataStore: CPDataStore,
-        flagProvider: CPFlagProvider?,
-        onDismissRequest: () -> Unit,
-        onCountrySelected: (CPCountry?) -> Unit,
-    ) -> Unit) = { cpDataStore,
-                   flagProvider,
-                   onDismissRequest,
-                   onCountrySelected ->
+    pickerDialog:
+        @Composable (
+        (
+            cpDataStore: CPDataStore,
+            flagProvider: CPFlagProvider?,
+            onDismissRequest: () -> Unit,
+            onCountrySelected: (CPCountry?) -> Unit,
+        ) -> Unit
+        ) = { cpDataStore, flagProvider, onDismissRequest, onCountrySelected ->
         CountryPickerDialog(
             cpDataStore = cpDataStore,
             flagProvider = flagProvider,
             onDismissRequest = onDismissRequest,
-            onCountrySelected = onCountrySelected
+            onCountrySelected = onCountrySelected,
         )
     },
     onCountrySelected: (CPCountry?) -> Unit,
@@ -144,32 +148,30 @@ fun CountryPicker(
         launchPickerDialog,
     )
     if (showPickerDialog) {
-        pickerDialog(
-            cpDataStore,
-            flagProvider,
-            { setShowPickerDialog(false) }) {
+        pickerDialog(cpDataStore, flagProvider, { setShowPickerDialog(false) }) {
             onCountrySelected(it)
             setShowPickerDialog(false)
         }
     }
 }
 
-
 @Preview
 @Composable
 fun CountryLayoutPreview() {
     val (selectedCountry, setSelectedCountry) = remember { mutableStateOf<String?>("IN") }
     Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colors.background)
+        modifier =
+            Modifier
+                .fillMaxSize()
+                .background(MaterialTheme.colors.background),
     ) {
         CountryPicker(
             alpha2Code = selectedCountry,
-            modifier = Modifier
-                .fillMaxWidth()
-                .heightIn(min = 48.dp),
-            onCountrySelected = { setSelectedCountry(it?.alpha2) }
+            modifier =
+                Modifier
+                    .fillMaxWidth()
+                    .heightIn(min = 48.dp),
+            onCountrySelected = { setSelectedCountry(it?.alpha2) },
         )
     }
 }
@@ -185,11 +187,12 @@ private fun DefaultSelectedCountryLayout(
     val textToShow = country?.name ?: emptySelectionText
     Row(
         verticalAlignment = Alignment.CenterVertically,
-        modifier = modifier
-            .clip(RoundedCornerShape(4.dp))
-            .clickable { showCountryPickerDialog() }
-            .padding(8.dp),
-        horizontalArrangement = Arrangement.Center
+        modifier =
+            modifier
+                .clip(RoundedCornerShape(4.dp))
+                .clickable { showCountryPickerDialog() }
+                .padding(8.dp),
+        horizontalArrangement = Arrangement.Center,
     ) {
         val textStyle = MaterialTheme.typography.body1
         if (countryFlag != null) {
@@ -218,7 +221,7 @@ fun CountryFlagLayout(
                 text = countryFlag.emoji.toString(),
                 style = emojiFlagTextStyle,
                 color = LocalContentColor.current,
-                modifier = modifier
+                modifier = modifier,
             )
         }
 
@@ -226,11 +229,11 @@ fun CountryFlagLayout(
             Image(
                 painter = painterResource(id = countryFlag.flagImageRes),
                 contentDescription = null,
-                modifier = modifier.height(imageFlagHeight)
+                modifier = modifier.height(imageFlagHeight),
             )
         }
 
-        null -> { /* do nothing */
+        null -> { // do nothing
         }
     }
 }
@@ -238,32 +241,38 @@ fun CountryFlagLayout(
 @Composable
 fun rememberCountryFlag(
     country: CPCountry?,
-    flagProvider: CPFlagProvider? = DefaultEmojiFlagProvider()
+    flagProvider: CPFlagProvider? = DefaultEmojiFlagProvider(),
 ) = remember(country, flagProvider) {
     if (country != null && flagProvider != null) {
         when (flagProvider) {
             is DefaultEmojiFlagProvider -> {
-                val emoji = when {
-                    flagProvider.useEmojiCompat -> EmojiCompat.get().process(country.flagEmoji)
-                    else -> country.flagEmoji
-                }
+                val emoji =
+                    when {
+                        flagProvider.useEmojiCompat -> EmojiCompat.get().process(country.flagEmoji)
+                        else -> country.flagEmoji
+                    }
                 EmojiFlag(emoji)
             }
 
             is CPFlagImageProvider -> ImageFlag(flagProvider.getFlag(country.alpha2))
             else -> null
         }
-    } else null
+    } else {
+        null
+    }
 }
 
 sealed class CountryFlag {
     data class EmojiFlag(val emoji: CharSequence) : CountryFlag()
-    data class ImageFlag(@DrawableRes val flagImageRes: Int) : CountryFlag()
+
+    data class ImageFlag(
+        @DrawableRes val flagImageRes: Int,
+    ) : CountryFlag()
 }
 
 @Composable
 fun rememberCPDataStore(
-    countryFileReader: CountryFileReading = CPDataStoreGenerator.defaultCountryFileReader,
+    countryFileReader: CountryFileReading = CPDataStoreGenerator.DEFAULT_FILE_READER,
     countryListTransformer: ((List<CPCountry>) -> List<CPCountry>)? = null,
 ): CPDataStore {
     val context = LocalContext.current
@@ -271,7 +280,7 @@ fun rememberCPDataStore(
         CPDataStoreGenerator.generate(
             context,
             countryFileReader = countryFileReader,
-            countryListTransformer = countryListTransformer
+            countryListTransformer = countryListTransformer,
         )
     }
 }
@@ -287,11 +296,13 @@ fun CountryPickerDialog(
     queryFilter: (country: CPCountry, filterQuery: String) -> Boolean = { country, filterQuery ->
         defaultCountrySearchFilter(country, filterQuery)
     },
-    countryRowLayout: @Composable ((
+    countryRowLayout: @Composable (
+    (
         country: CPCountry,
         flagProvider: CPFlagProvider?,
         onClicked: (CPCountry) -> Unit,
-    ) -> Unit) = { country, flagProvider, onClicked ->
+    ) -> Unit
+    ) = { country, flagProvider, onClicked ->
         CountryListItemRowLayout(country, flagProvider, onClicked)
     },
     onDismissRequest: () -> Unit,
@@ -299,7 +310,7 @@ fun CountryPickerDialog(
 ) {
     Dialog(
         onDismissRequest = { onDismissRequest() },
-        properties = DialogProperties(usePlatformDefaultWidth = false)
+        properties = DialogProperties(usePlatformDefaultWidth = false),
     ) {
         DefaultCountryPickerDialogContent(
             quickAccessCountriesCodes = quickAccessCountries,
@@ -330,47 +341,59 @@ private fun DefaultCountryPickerDialogContent(
     queryFilter: (country: CPCountry, filterQuery: String) -> Boolean = { country, filterQuery ->
         defaultCountrySearchFilter(country, filterQuery)
     },
-    searchFieldLayout: @Composable ((
+    searchFieldLayout: @Composable (
+    (
         searchQuery: String,
         setSearchQuery: (String) -> Unit,
-        cpDataStore: CPDataStore
-    ) -> Unit) = { searchQuery, setSearchQuery, cpDataStore ->
+        cpDataStore: CPDataStore,
+    ) -> Unit
+    ) = { searchQuery, setSearchQuery, cpDataStore ->
         DefaultSearchField(searchQuery, setSearchQuery, cpDataStore)
     },
-    countryRowLayout: @Composable ((
+    countryRowLayout: @Composable (
+    (
         country: CPCountry,
         flagProvider: CPFlagProvider?,
         onClicked: (CPCountry) -> Unit,
-    ) -> Unit) = { country, flagProvider, onClicked ->
+    ) -> Unit
+    ) = { country, flagProvider, onClicked ->
         CountryListItemRowLayout(country, flagProvider, onClicked)
     },
     onDismissRequest: () -> Unit,
 ) {
     Card(
-        modifier = modifier
-            .fillMaxWidth(0.8f)
-            .padding(16.dp),
+        modifier =
+            modifier
+                .fillMaxWidth(0.8f)
+                .padding(16.dp),
         shape = RoundedCornerShape(16.dp),
         backgroundColor = MaterialTheme.colors.surface,
     ) {
-        val countryList = remember(cpDataStore) {
-            cpDataStore.countryList
-        }
-        val scrollState = rememberLazyListState()
-        val quickAccessCountries = remember(quickAccessCountriesCodes, countryList) {
-            quickAccessCountriesCodes.orEmpty().mapNotNull { alpha2 ->
-                countryList.firstOrNull { it.alpha2.equals(alpha2, ignoreCase = true) }
+        val countryList =
+            remember(cpDataStore) {
+                cpDataStore.countryList
             }
-        }
+        val scrollState = rememberLazyListState()
+        val quickAccessCountries =
+            remember(quickAccessCountriesCodes, countryList) {
+                quickAccessCountriesCodes.orEmpty().mapNotNull { alpha2 ->
+                    countryList.firstOrNull { it.alpha2.equals(alpha2, ignoreCase = true) }
+                }
+            }
         val (searchQuery, setSearchQuery) = remember { mutableStateOf("") }
-        val filteredList = remember(countryList, searchQuery) {
-            countryList.filter { queryFilter(it, searchQuery) }
-        }
-        val filteredQuickAccessCountries = remember(showFilter, quickAccessCountries, searchQuery) {
-            if (showFilter == false) emptyList()
-            else quickAccessCountries.filter { queryFilter(it, searchQuery) }
-                .distinctBy(CPCountry::alpha2)
-        }
+        val filteredList =
+            remember(countryList, searchQuery) {
+                countryList.filter { queryFilter(it, searchQuery) }
+            }
+        val filteredQuickAccessCountries =
+            remember(showFilter, quickAccessCountries, searchQuery) {
+                if (showFilter == false) {
+                    emptyList()
+                } else {
+                    quickAccessCountries.filter { queryFilter(it, searchQuery) }
+                        .distinctBy(CPCountry::alpha2)
+                }
+            }
         LaunchedEffect(key1 = filteredList, key2 = filteredQuickAccessCountries) {
             scrollState.scrollToItem(0)
         }
@@ -400,17 +423,14 @@ private fun DefaultCountryPickerDialogContent(
                 }
             }
             if (allowClearSelection) {
-                TextButton(
-                    onClick = {
-                        onCountrySelected(null)
-                        onDismissRequest()
-                    },
-                    modifier = Modifier.padding(start = 8.dp, bottom = 8.dp)
-                ) {
+                TextButton(onClick = {
+                    onCountrySelected(null)
+                    onDismissRequest()
+                }, modifier = Modifier.padding(start = 8.dp, bottom = 8.dp)) {
                     Text(
                         text = cpDataStore.messageGroup.clearSelectionText,
                         style = MaterialTheme.typography.button,
-                        color = MaterialTheme.colors.onBackground
+                        color = MaterialTheme.colors.onBackground,
                     )
                 }
             }
@@ -423,7 +443,7 @@ private fun DefaultCountryPickerDialogContent(
 private fun DefaultSearchField(
     searchQuery: String,
     setSearchQuery: (String) -> Unit,
-    cpDataStore: CPDataStore
+    cpDataStore: CPDataStore,
 ) {
     val keyboardController = LocalSoftwareKeyboardController.current
     val focusManager = LocalFocusManager.current
@@ -434,32 +454,33 @@ private fun DefaultSearchField(
                 painter = painterResource(id = R.drawable.ic_cp_search),
                 contentDescription = null,
                 modifier = Modifier.padding(16.dp),
-                tint = MaterialTheme.colors.onSurface.copy(alpha = 0.5f)
+                tint = MaterialTheme.colors.onSurface.copy(alpha = 0.5f),
             )
             Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.CenterStart) {
                 BasicTextField(
                     value = searchQuery,
                     onValueChange = { setSearchQuery(it) },
                     textStyle = MaterialTheme.typography.body1.copy(color = MaterialTheme.colors.onSurface),
-                    cursorBrush = SolidColor(
-                        TextFieldDefaults.outlinedTextFieldColors()
-                            .cursorColor(isError = false).value
-                    ),
+                    cursorBrush =
+                        SolidColor(
+                            TextFieldDefaults.outlinedTextFieldColors()
+                                .cursorColor(isError = false).value,
+                        ),
                     singleLine = true,
                     keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Search),
-                    keyboardActions = KeyboardActions(onAny = {
-                        keyboardController?.hide()
-                        focusManager.clearFocus()
-                    }),
-                    modifier = Modifier
-                        .fillMaxWidth()
+                    keyboardActions =
+                        KeyboardActions(onAny = {
+                            keyboardController?.hide()
+                            focusManager.clearFocus()
+                        }),
+                    modifier = Modifier.fillMaxWidth(),
                 )
 
                 if (searchQuery.isEmpty()) {
                     Text(
                         text = cpDataStore.messageGroup.searchHint,
                         style = MaterialTheme.typography.body1,
-                        color = MaterialTheme.colors.onSurface.copy(alpha = 0.5f)
+                        color = MaterialTheme.colors.onSurface.copy(alpha = 0.5f),
                     )
                 }
             }
@@ -475,14 +496,15 @@ private fun CountryListItemRowLayout(
 ) {
     val countryFlag = rememberCountryFlag(country, flagProvider)
     Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clip(RoundedCornerShape(4.dp))
-            .clickable {
-                onClicked(country)
-            }
-            .padding(16.dp),
-        verticalAlignment = Alignment.CenterVertically
+        modifier =
+            Modifier
+                .fillMaxWidth()
+                .clip(RoundedCornerShape(4.dp))
+                .clickable {
+                    onClicked(country)
+                }
+                .padding(16.dp),
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         if (countryFlag != null) {
             CountryFlagLayout(countryFlag)
@@ -501,14 +523,10 @@ private fun CountryListItemRowLayout(
 fun defaultCountrySearchFilter(
     country: CPCountry,
     filterQuery: String,
-) = if (filterQuery.isBlank()) true
-else {
-    val properties = listOf(
-        country.name,
-        country.englishName,
-        country.alpha2,
-        country.alpha3,
-    )
+) = if (filterQuery.isBlank()) {
+    true
+} else {
+    val properties = listOf(country.name, country.englishName, country.alpha2, country.alpha3)
     properties.any { it.contains(filterQuery, ignoreCase = true) }
 }
 
@@ -517,14 +535,18 @@ else {
 fun PreviewSomeDialogContent() {
     MaterialTheme {
         Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(Color.Gray)
-                .padding(20.dp),
+            modifier =
+                Modifier
+                    .fillMaxSize()
+                    .background(Color.Gray)
+                    .padding(20.dp),
             contentAlignment = Alignment.Center,
         ) {
             DefaultCountryPickerDialogContent(
-                cpDataStore = rememberCPDataStore(countryListTransformer = countryMasterListTransformer),
+                cpDataStore =
+                    rememberCPDataStore(
+                        countryListTransformer = countryMasterListTransformer,
+                    ),
                 flagProvider = DefaultEmojiFlagProvider(),
                 quickAccessCountriesCodes = null,
                 showFilter = true,
@@ -541,7 +563,7 @@ fun PreviewSomeDialogContent() {
 @Composable
 fun rememberCountry(
     countryCode: String?,
-    cpDataStore: CPDataStore = rememberCPDataStore()
+    cpDataStore: CPDataStore = rememberCPDataStore(),
 ): CPCountry? {
     return remember(countryCode, cpDataStore) {
         cpDataStore.countryList.firstOrNull { it.alpha2.equals(countryCode, ignoreCase = true) }
@@ -555,11 +577,12 @@ fun rememberCountry(
  */
 @Composable
 fun rememberAutoDetectedCountryCode(
-    sourceOrder: List<CPCountryDetector.Source> = listOf(
-        CPCountryDetector.Source.SIM,
-        CPCountryDetector.Source.NETWORK,
-        CPCountryDetector.Source.LOCALE
-    )
+    sourceOrder: List<CPCountryDetector.Source> =
+        listOf(
+            CPCountryDetector.Source.SIM,
+            CPCountryDetector.Source.NETWORK,
+            CPCountryDetector.Source.LOCALE,
+        ),
 ): String? {
     val context = LocalContext.current
     return remember(sourceOrder) {
@@ -574,10 +597,9 @@ fun rememberQuickAccessCountries(): List<String> {
         listOf(
             countryDetector.detectSIMCountry(),
             countryDetector.detectNetworkCountry(),
-            countryDetector.detectLocaleCountry()
+            countryDetector.detectLocaleCountry(),
         ).filterNotNull().distinct()
     }
 }
-
 
 //

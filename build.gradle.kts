@@ -10,7 +10,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:8.1.1")
+        classpath("com.android.tools.build:gradle:8.2.0")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN_GRADLE_PLUGIN}")
         classpath("org.jlleitschuh.gradle:ktlint-gradle:${Versions.KTLINT_GRADLE}")
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.NAVIGATION_GRAPH}")
@@ -27,7 +27,6 @@ apply(plugin = "com.github.ben-manes.versions")
 
 ktlint {
     version.set(Versions.KTLINT)
-    additionalEditorconfigFile.set(file("./.editorconfig"))
 }
 plugins {
     id("io.gitlab.arturbosch.detekt").version(Versions.DETEKT)
@@ -61,6 +60,7 @@ tasks.register("clean", Delete::class) {
 
 tasks.withType<com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask> {
     val nonStableKeywords = listOf("rc", "Alpha", "Beta", "SNAPSHOT", "ea", "preview")
+
     fun isNonStable(version: String): Boolean {
         val containsNonStableKeyword =
             nonStableKeywords.any { version.toUpperCase().contains(it.toUpperCase()) }

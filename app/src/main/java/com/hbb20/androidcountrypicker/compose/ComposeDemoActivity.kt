@@ -30,7 +30,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
@@ -56,7 +55,7 @@ class ComposeDemoActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
+                    color = MaterialTheme.colors.background,
                 ) {
                     val (countryCode, setCountryCode) = remember { mutableStateOf<String?>("In") }
                     Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
@@ -80,7 +79,7 @@ class ComposeDemoActivity : ComponentActivity() {
     private fun OutOfBox() {
         CardTemplate(
             "Out of box",
-            "This is how it works without any other config changes"
+            "This is how it works without any other config changes",
         ) {
             val (countryCode, setCountryCode) = remember { mutableStateOf<String?>(null) }
             CountryPicker(alpha2Code = countryCode) {
@@ -93,7 +92,8 @@ class ComposeDemoActivity : ComponentActivity() {
     private fun AutoDetectedInitialCountry() {
         CardTemplate(
             "Initial auto detected country",
-            "Detect country and set it as initial country. Optionally pass order of sources (SIM, NETWORK, LOCALE) for country detection.",
+            "Detect country and set it as initial country. " +
+                "Optionally pass order of sources (SIM, NETWORK, LOCALE) for country detection.",
         ) {
             val initialCountryCode = rememberAutoDetectedCountryCode()
             // Note: for state management,
@@ -106,7 +106,6 @@ class ComposeDemoActivity : ComponentActivity() {
         }
     }
 
-
     @Composable
     private fun UseFlagPack() {
         CardTemplate(
@@ -117,10 +116,11 @@ class ComposeDemoActivity : ComponentActivity() {
             val (countryCode, setCountryCode) = remember { mutableStateOf(initialCountryCode) }
             CountryPicker(
                 alpha2Code = countryCode,
-                flagProvider = CPFlagImageProvider(
-                    FlagPack1.alpha2ToFlag,
-                    FlagPack1.missingFlagPlaceHolder
-                )
+                flagProvider =
+                    CPFlagImageProvider(
+                        FlagPack1.alpha2ToFlag,
+                        FlagPack1.missingFlagPlaceHolder,
+                    ),
             ) {
                 setCountryCode(it?.alpha2)
             }
@@ -144,7 +144,6 @@ class ComposeDemoActivity : ComponentActivity() {
         }
     }
 
-
     @Composable
     private fun UseCustomFlagDrawables() {
         CardTemplate(
@@ -155,16 +154,18 @@ class ComposeDemoActivity : ComponentActivity() {
             val (countryCode, setCountryCode) = remember { mutableStateOf(initialCountryCode) }
             CountryPicker(
                 alpha2Code = countryCode,
-                flagProvider = CPFlagImageProvider(
-                    // map of alpha2 to drawable resource id
-                    alpha2ToFlag = mapOf(
-                        "IN" to R.drawable.ic_flag_green_outlint,
-                        "gb" to R.drawable.ic_flag_yellow,
-                        "US" to R.drawable.ic_flag_blue,
+                flagProvider =
+                    CPFlagImageProvider(
+                        // map of alpha2 to drawable resource id
+                        alpha2ToFlag =
+                            mapOf(
+                                "IN" to R.drawable.ic_flag_green_outlint,
+                                "gb" to R.drawable.ic_flag_yellow,
+                                "US" to R.drawable.ic_flag_blue,
+                            ),
+                        // drawable resource id for missing flag
+                        missingFlagPlaceHolder = R.drawable.ic_flag,
                     ),
-                    // drawable resource id for missing flag
-                    missingFlagPlaceHolder = R.drawable.ic_flag
-                ),
                 pickerDialog = { cpDataStore, flagProvider, onDismissRequest, onCountrySelected ->
                     CountryPickerDialog(
                         cpDataStore = cpDataStore,
@@ -173,7 +174,7 @@ class ComposeDemoActivity : ComponentActivity() {
                         onCountrySelected = onCountrySelected,
                         quickAccessCountries = listOf("IN", "us", "GB"),
                     )
-                }
+                },
             ) {
                 setCountryCode(it?.alpha2)
             }
@@ -184,7 +185,9 @@ class ComposeDemoActivity : ComponentActivity() {
     private fun PhoneCodePicker() {
         CardTemplate(
             "Use as Country Phone Code Picker",
-            "Commonly used to select country with phone input box. Note: This does not auto format the phone number. Phone number formatting is beyond the scope of this library.",
+            "Commonly used to select country with phone input box. " +
+                "Note: This does not auto format the phone number." +
+                " Phone number formatting is beyond the scope of this library.",
         ) {
             val initialCountryCode = rememberAutoDetectedCountryCode()
             val cpDataStore = rememberCPDataStore()
@@ -195,33 +198,42 @@ class ComposeDemoActivity : ComponentActivity() {
 
             Row(
                 modifier = Modifier.height(IntrinsicSize.Min),
-                verticalAlignment = CenterVertically
+                verticalAlignment = CenterVertically,
             ) {
                 //
-                Row(modifier = Modifier
-                    .fillMaxHeight()
-                    .clickable { setShowPickerDialog(true) }
-                    .padding(8.dp), verticalAlignment = CenterVertically) {
+                Row(
+                    modifier =
+                        Modifier
+                            .fillMaxHeight()
+                            .clickable { setShowPickerDialog(true) }
+                            .padding(8.dp),
+                    verticalAlignment = CenterVertically,
+                ) {
                     val country = rememberCountry(countryCode)
                     val flag = rememberCountryFlag(country, flagProvider)
 
                     CountryFlagLayout(flag)
                     Spacer(modifier = Modifier.padding(4.dp))
                     val text =
-                        if (country == null) cpDataStore.messageGroup.selectionPlaceholderText else "+${country.phoneCode} "
+                        if (country == null) {
+                            cpDataStore.messageGroup.selectionPlaceholderText
+                        } else {
+                            "+${country.phoneCode} "
+                        }
                     Text(text = text)
                     Icon(
                         painter = painterResource(id = R.drawable.ic_arrow_drop_down),
                         contentDescription = null,
-                        modifier = Modifier
-                            .padding(4.dp)
-                            .size(16.dp)
+                        modifier =
+                            Modifier
+                                .padding(4.dp)
+                                .size(16.dp),
                     )
                 }
                 TextField(
                     value = phoneNumber,
                     onValueChange = { setPhoneNumber(it) },
-                    keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number)
+                    keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
                 )
             }
 
@@ -231,29 +243,33 @@ class ComposeDemoActivity : ComponentActivity() {
                     flagProvider = flagProvider,
                     onDismissRequest = { setShowPickerDialog(false) },
                     countryRowLayout = { country, flagProvider, onClicked ->
-                        Row(modifier = Modifier
-                            .fillMaxWidth()
-                            .heightIn(min = 48.dp)
-                            .clickable { onClicked(country) }
-                            .padding(12.dp),
-                            verticalAlignment = CenterVertically) {
+                        Row(
+                            modifier =
+                                Modifier
+                                    .fillMaxWidth()
+                                    .heightIn(min = 48.dp)
+                                    .clickable { onClicked(country) }
+                                    .padding(12.dp),
+                            verticalAlignment = CenterVertically,
+                        ) {
                             CountryFlagLayout(rememberCountryFlag(country, flagProvider))
                             Spacer(modifier = Modifier.padding(4.dp))
                             Text(
                                 text = country.name,
-                                modifier = Modifier.weight(1f)
+                                modifier = Modifier.weight(1f),
                             )
                             Text(text = "+${country.phoneCode}")
                         }
                     },
                     queryFilter = { country, query ->
-                        val properties = listOf<String>(
-                            country.name,
-                            country.englishName,
-                            country.alpha2,
-                            country.alpha3,
-                            country.phoneCode.toString(),
-                        )
+                        val properties =
+                            listOf<String>(
+                                country.name,
+                                country.englishName,
+                                country.alpha2,
+                                country.alpha3,
+                                country.phoneCode.toString(),
+                            )
                         properties.any { it.contains(query, ignoreCase = true) }
                     },
                 ) {
@@ -269,36 +285,46 @@ class ComposeDemoActivity : ComponentActivity() {
         CardTemplate(
             "Use as Country's Currency Picker",
             "Commonly used to select currency with money input. " +
-                    "\nNote: This does not auto format the phone number." +
-                    " Phone number formatting is beyond the scope of this library.",
+                "\nNote: This does not auto format the phone number." +
+                " Phone number formatting is beyond the scope of this library.",
         ) {
             val initialCountryCode = rememberAutoDetectedCountryCode()
             val (countryCode, setCountryCode) = remember { mutableStateOf(initialCountryCode) }
             val (amount, setAmount) = remember { mutableStateOf("") }
-            CountryPicker(alpha2Code = countryCode,
-                cpDataStore = rememberCPDataStore { originalCountryList ->
-                    originalCountryList.sortedBy { it.currencyName }
-                        .filterNot { it.currencyCode.isBlank() }
-                },
+            CountryPicker(
+                alpha2Code = countryCode,
+                cpDataStore =
+                    rememberCPDataStore { originalCountryList ->
+                        originalCountryList.sortedBy { it.currencyName }
+                            .filterNot { it.currencyCode.isBlank() }
+                    },
                 selectedCountryLayout = { country, flag, emptySelectionText, modifier, showCountryPickerDialog ->
                     Row(
                         modifier = Modifier.height(IntrinsicSize.Min),
-                        verticalAlignment = CenterVertically
+                        verticalAlignment = CenterVertically,
                     ) {
-                        Row(modifier = modifier
-                            .fillMaxHeight()
-                            .clickable { showCountryPickerDialog() }
-                            .padding(8.dp), verticalAlignment = CenterVertically) {
+                        Row(
+                            modifier =
+                                modifier
+                                    .fillMaxHeight()
+                                    .clickable { showCountryPickerDialog() }
+                                    .padding(8.dp),
+                            verticalAlignment = CenterVertically,
+                        ) {
                             CountryFlagLayout(flag)
                             Spacer(modifier = Modifier.padding(4.dp))
                             val text =
-                                if (country == null) emptySelectionText else "${country.currencyCode} ${country.currencySymbol}"
+                                if (country == null) {
+                                    emptySelectionText
+                                } else {
+                                    "${country.currencyCode} ${country.currencySymbol}"
+                                }
                             Text(text = text)
                         }
                         TextField(
                             value = amount,
                             onValueChange = { setAmount(it) },
-                            keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number)
+                            keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
                         )
                     }
                 },
@@ -308,81 +334,81 @@ class ComposeDemoActivity : ComponentActivity() {
                         flagProvider = flagProvider,
                         onDismissRequest = onDismissRequest,
                         countryRowLayout = { country, flagProvider, onClicked ->
-                            Row(modifier = Modifier
-                                .fillMaxWidth()
-                                .heightIn(min = 48.dp)
-                                .clickable { onClicked(country) }
-                                .padding(12.dp),
-                                verticalAlignment = CenterVertically) {
+                            Row(
+                                modifier =
+                                    Modifier
+                                        .fillMaxWidth()
+                                        .heightIn(min = 48.dp)
+                                        .clickable { onClicked(country) }
+                                        .padding(12.dp),
+                                verticalAlignment = CenterVertically,
+                            ) {
                                 CountryFlagLayout(rememberCountryFlag(country, flagProvider))
                                 Spacer(modifier = Modifier.padding(4.dp))
                                 Column(modifier = Modifier.weight(1f)) {
-
                                     Text(
                                         text = "${country.currencyName} (${country.currencySymbol})",
-                                        style = MaterialTheme.typography.subtitle2
+                                        style = MaterialTheme.typography.subtitle2,
                                     )
                                     Text(
                                         text = country.name,
-                                        style = MaterialTheme.typography.body2
+                                        style = MaterialTheme.typography.body2,
                                     )
                                 }
                                 Text(
                                     text = "${country.currencyCode}",
-                                    style = MaterialTheme.typography.subtitle1
+                                    style = MaterialTheme.typography.subtitle1,
                                 )
                             }
                         },
                         queryFilter = { country, query ->
                             val sanitizedQuery = query.trim().removePrefix("+")
-                            val properties = listOf<String>(
-                                country.name,
-                                country.englishName,
-                                country.alpha2,
-                                country.alpha3,
-                                country.currencyName,
-                                country.currencyCode,
-                                country.currencySymbol,
-                            )
+                            val properties =
+                                listOf<String>(
+                                    country.name,
+                                    country.englishName,
+                                    country.alpha2,
+                                    country.alpha3,
+                                    country.currencyName,
+                                    country.currencyCode,
+                                    country.currencySymbol,
+                                )
                             properties.any { it.contains(sanitizedQuery, ignoreCase = true) }
                         },
-                    ) {
-                        setCountryCode(it?.alpha2)
-                        val currencyCode = it?.currencyCode
-                        // your logic to use currency code
-                    }
-                }
+                        onCountrySelected = onCountrySelected,
+                    )
+                },
             ) {
                 setCountryCode(it?.alpha2)
             }
         }
     }
 
-
     @Composable
     private fun CardTemplate(
         title: String,
         body: String,
-        countryPickerLayout: @Composable () -> Unit
+        countryPickerLayout: @Composable () -> Unit,
     ) {
         Card(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(MaterialTheme.colors.surface)
-                .padding(16.dp),
-            backgroundColor = MaterialTheme.colors.surface
+            modifier =
+                Modifier
+                    .fillMaxWidth()
+                    .background(MaterialTheme.colors.surface)
+                    .padding(16.dp),
+            backgroundColor = MaterialTheme.colors.surface,
         ) {
             Surface(color = MaterialTheme.colors.surface) {
                 Column(modifier = Modifier.padding(16.dp)) {
                     Text(
                         text = title,
                         style = MaterialTheme.typography.subtitle1,
-                        color = MaterialTheme.colors.onSurface
+                        color = MaterialTheme.colors.onSurface,
                     )
                     Text(
                         text = body,
                         style = MaterialTheme.typography.body2,
-                        color = MaterialTheme.colors.onSurface
+                        color = MaterialTheme.colors.onSurface,
                     )
                     Spacer(modifier = Modifier.padding(8.dp))
                     countryPickerLayout()
@@ -393,10 +419,13 @@ class ComposeDemoActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting(
+    name: String,
+    modifier: Modifier = Modifier,
+) {
     Text(
         text = "Hello $name!",
-        modifier = modifier
+        modifier = modifier,
     )
 }
 
