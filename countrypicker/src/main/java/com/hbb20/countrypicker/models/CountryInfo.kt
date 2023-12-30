@@ -13,5 +13,5 @@ internal data class CountryInfo(
     val currencySymbol: String,
     val cctld: String,
     val flagEmoji: String,
-    val phoneCode: Short
+    val phoneCode: Short,
 )

@@ -13,11 +13,12 @@ import com.hbb20.countrypicker.models.CPCountry
 import com.hbb20.countrypicker.models.CPDataStore
 
 val defaultDataStoreModifier = null
+
 fun RecyclerView.loadCountries(
-    customMasterCountries: String = CPDataStoreGenerator.defaultMasterCountries,
-    customExcludedCountries: String = CPDataStoreGenerator.defaultExcludedCountries,
-    countryFileReader: CountryFileReading = CPDataStoreGenerator.defaultCountryFileReader,
-    useCache: Boolean = CPDataStoreGenerator.defaultUseCache,
+    customMasterCountries: String = CPDataStoreGenerator.DEFAULT_MASTER_COUNTRIES,
+    customExcludedCountries: String = CPDataStoreGenerator.DEFAULT_EXCLUDED_COUNTRIES,
+    countryFileReader: CountryFileReading = CPDataStoreGenerator.DEFAULT_FILE_READER,
+    useCache: Boolean = CPDataStoreGenerator.DEFAULT_USE_CACHE,
     customDataStoreModifier: ((CPDataStore) -> (Unit))? = defaultDataStoreModifier,
     preferredCountryCodes: String? = CPListConfig.defaultCPListPreferredCountryCodes,
     filterQueryEditText: EditText? = null,
@@ -25,16 +26,17 @@ fun RecyclerView.loadCountries(
     primaryTextGenerator: ((CPCountry) -> String) = CPRowConfig.defaultPrimaryTextGenerator,
     secondaryTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultSecondaryTextGenerator,
     highlightedTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultHighlightedTextGenerator,
-    onCountryClickListener: ((CPCountry) -> Unit)
+    onCountryClickListener: ((CPCountry) -> Unit),
 ) {
     onMethodBegin("loadCountries")
-    val cpDataStore = CPDataStoreGenerator.generate(
-        context,
-        customMasterCountries,
-        customExcludedCountries,
-        countryFileReader,
-        useCache
-    )
+    val cpDataStore =
+        CPDataStoreGenerator.generate(
+            context,
+            customMasterCountries,
+            customExcludedCountries,
+            countryFileReader,
+            useCache,
+        )
 
     customDataStoreModifier?.invoke(cpDataStore)
 
@@ -46,7 +48,7 @@ fun RecyclerView.loadCountries(
         highlightedTextGenerator,
         preferredCountryCodes,
         filterQueryEditText,
-        onCountryClickListener
+        onCountryClickListener,
     )
 
     logMethodEnd("loadCountries")
@@ -60,14 +62,15 @@ fun RecyclerView.loadCountriesUsingDataStore(
     highlightedTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultHighlightedTextGenerator,
     preferredCountryCodes: String? = CPListConfig.defaultCPListPreferredCountryCodes,
     filterQueryEditText: EditText? = null,
-    onCountryClickListener: ((CPCountry) -> Unit)
+    onCountryClickListener: ((CPCountry) -> Unit),
 ) {
-    val cpCountryRowConfig = CPRowConfig(
-        cpFlagProvider = cpFlagProvider,
-        primaryTextGenerator = primaryTextGenerator,
-        secondaryTextGenerator = secondaryTextGenerator,
-        highlightedTextGenerator = highlightedTextGenerator
-    )
+    val cpCountryRowConfig =
+        CPRowConfig(
+            cpFlagProvider = cpFlagProvider,
+            primaryTextGenerator = primaryTextGenerator,
+            secondaryTextGenerator = secondaryTextGenerator,
+            highlightedTextGenerator = highlightedTextGenerator,
+        )
 
     val cpListConfig = CPListConfig(preferredCountryCodes = preferredCountryCodes)
 
@@ -76,7 +79,7 @@ fun RecyclerView.loadCountriesUsingDataStore(
         cpCountryRowConfig,
         cpListConfig,
         filterQueryEditText,
-        onCountryClickListener
+        onCountryClickListener,
     )
 }
 
@@ -85,15 +88,14 @@ fun RecyclerView.loadCountriesUsingDataStoreAndConfig(
     cpRowConfig: CPRowConfig,
     cpListConfig: CPListConfig,
     filterQueryEditText: EditText? = null,
-    onCountryClickListener: (CPCountry) -> Unit
+    onCountryClickListener: (CPCountry) -> Unit,
 ) {
-
     val cpRecyclerViewHelper =
         CPRecyclerViewHelper(
             cpDataStore = cpDataStore,
             onCountryClickListener = onCountryClickListener,
             cpRowConfig = cpRowConfig,
-            cpListConfig = cpListConfig
+            cpListConfig = cpListConfig,
         )
 
     cpRecyclerViewHelper.attachRecyclerView(this)

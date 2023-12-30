@@ -6,19 +6,18 @@ import com.hbb20.countrypicker.R
 
 data class CPDialogConfig(
     var dialogViewIds: CPDialogViewIds = defaultCPDialogViewIds,
-    var allowSearch: Boolean = defaultCPDialogAllowSearch,
-    var allowClearSelection: Boolean = defaultCPDialogAllowClearSelection,
-    var showTitle: Boolean = defaultCPDialogDefaultShowTitle,
-    var showFullScreen: Boolean = defaultCPDialogShowFullScreen,
-    var sizeMode: SizeMode = defaultCPDialogDefaultSizeMode,
+    var allowSearch: Boolean = DEFAULT_CP_DIALOG_ALLOW_SEARCH,
+    var allowClearSelection: Boolean = DEFAULT_CP_DIALOG_ALLOW_CLEAR_SELECTION,
+    var showTitle: Boolean = DEFAULT_CP_DIALOG_SHOW_TITLE,
+    var showFullScreen: Boolean = DEFAULT_CP_DIALOG_SHOW_FULL_SCREEN,
+    var sizeMode: SizeMode = DEFAULT_CP_DIALOG_SIZE_MODE,
 ) {
-
     companion object {
-        const val defaultCPDialogAllowSearch = true
-        const val defaultCPDialogShowFullScreen = false
-        const val defaultCPDialogAllowClearSelection = false
-        const val defaultCPDialogDefaultShowTitle = true
-        val defaultCPDialogDefaultSizeMode: SizeMode = SizeMode.Auto
+        const val DEFAULT_CP_DIALOG_ALLOW_SEARCH = true
+        const val DEFAULT_CP_DIALOG_SHOW_FULL_SCREEN = false
+        const val DEFAULT_CP_DIALOG_ALLOW_CLEAR_SELECTION = false
+        const val DEFAULT_CP_DIALOG_SHOW_TITLE = true
+        val DEFAULT_CP_DIALOG_SIZE_MODE: SizeMode = SizeMode.Auto
 
         val defaultCPDialogViewIds =
             CPDialogViewIds(
@@ -28,7 +27,7 @@ data class CPDialogConfig(
                 R.id.tvTitle,
                 R.id.etQuery,
                 R.id.imgClearQuery,
-                R.id.btnClearSelection
+                R.id.btnClearSelection,
             )
     }
 
@@ -56,11 +55,13 @@ data class CPDialogViewIds(
     @IdRes val titleTextViewId: Int?,
     @IdRes val queryEditTextId: Int?,
     @IdRes val clearQueryImageViewId: Int?,
-    @IdRes val clearSelectionButtonId: Int?
+    @IdRes val clearSelectionButtonId: Int?,
 )
 
 sealed class SizeMode {
     object Auto : SizeMode()
+
     object Unchanged : SizeMode()
+
     object Wrap : SizeMode()
 }
