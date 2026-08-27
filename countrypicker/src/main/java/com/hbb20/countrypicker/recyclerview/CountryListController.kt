@@ -10,15 +10,12 @@ data class CountryListControllerData(
     var allCountries: List<CPCountry>,
     val onCountryClickListener: ((CPCountry) -> Unit),
     val cpRowConfig: CPRowConfig,
-    val cpDataStore: CPDataStore
+    val cpDataStore: CPDataStore,
 )
 
 class CountryListController :
-        TypedEpoxyController<CountryListControllerData>() {
-
-    override fun buildModels(
-        data: CountryListControllerData
-    ) {
+    TypedEpoxyController<CountryListControllerData>() {
+    override fun buildModels(data: CountryListControllerData) {
         data.apply {
             preferredCountries.forEach { country ->
                 countryRow {

@@ -15,6 +15,7 @@ import com.hbb20.countrypicker.view.prepareCustomCountryPickerView
 
 class CountryPickerViewDemoActivity : AppCompatActivity() {
     lateinit var binding: ActivityCountryPickerViewDemoBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCountryPickerViewDemoBinding.inflate(layoutInflater)
@@ -41,8 +42,8 @@ class CountryPickerViewDemoActivity : AppCompatActivity() {
         binding.cpFlagPack.changeFlagProvider(
             CPFlagImageProvider(
                 FlagPack1.alpha2ToFlag,
-                FlagPack1.missingFlagPlaceHolder
-            )
+                FlagPack1.missingFlagPlaceHolder,
+            ),
         )
         binding.cpNoFlag.changeFlagProvider(null)
     }
@@ -58,7 +59,7 @@ class CountryPickerViewDemoActivity : AppCompatActivity() {
             containerViewGroup = customCPContainer,
             tvSelectedCountryInfo = customCPSelectedCountryTextView,
             tvSelectedCountryEmojiFlag = customCPEmojiTextView,
-            initialSelection = CPViewConfig.InitialSelection.AutoDetectCountry()
+            initialSelection = CPViewConfig.InitialSelection.AutoDetectCountry(),
         ) { selectedCountry: CPCountry? ->
             // listen to change through callback
             // your code to handle selected country
@@ -74,11 +75,12 @@ class CountryPickerViewDemoActivity : AppCompatActivity() {
         val customCPSelectedCountryTextView = findViewById<TextView>(R.id.tvSelectedCountry)
         val customCPEmojiTextView = findViewById<TextView>(R.id.tvSelectedCountryEmojiFlag)
 
-        val cpViewHelper = prepareCustomCountryPickerView(
-            containerViewGroup = customCPContainer,
-            tvSelectedCountryInfo = customCPSelectedCountryTextView,
-            tvSelectedCountryEmojiFlag = customCPEmojiTextView
-        )
+        val cpViewHelper =
+            prepareCustomCountryPickerView(
+                containerViewGroup = customCPContainer,
+                tvSelectedCountryInfo = customCPSelectedCountryTextView,
+                tvSelectedCountryEmojiFlag = customCPEmojiTextView,
+            )
 
         // observe live data
         cpViewHelper.selectedCountry.observe(
@@ -86,7 +88,7 @@ class CountryPickerViewDemoActivity : AppCompatActivity() {
             { selectedCountry: CPCountry? ->
                 // observe live data
                 // your code to handle selected country
-            }
+            },
         )
 
         // Modify CPViewConfig if you need. Access cpViewConfig through `cpViewHelper`

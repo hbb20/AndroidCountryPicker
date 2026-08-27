@@ -12,9 +12,7 @@ import com.hbb20.countrypicker.models.CountryInfo
 import com.hbb20.countrypicker.models.countryInfoList
 
 interface CountryFileReading {
-    fun readMasterDataFromFiles(
-        context: Context
-    ): CPDataStore
+    fun readMasterDataFromFiles(context: Context): CPDataStore
 }
 
 object CPFileReader : CountryFileReading {
@@ -24,17 +22,17 @@ object CPFileReader : CountryFileReading {
         onMethodBegin("readMasterDataFromFiles")
         val messageGroup =
             loadMessageGroup(
-                context.resources
+                context.resources,
             )
         val translations =
             loadCountryNameTranslations(
-                context
+                context,
             )
         val cpCountries = countryInfos.map { CPCountry.from(it, translations[it.alpha2]) }
         logMethodEnd("readMasterDataFromFiles")
         return CPDataStore(
             cpCountries.toMutableList(),
-            messageGroup
+            messageGroup,
         )
     }
 
@@ -46,11 +44,12 @@ object CPFileReader : CountryFileReading {
         val result = hashMapOf<String, String>()
         countryInfoList.forEach { country ->
             Log.d("CountryPicker", "Lookinng up resourcee for cp_${country.alpha2}_name")
-            val resId: Int = context.resources.getIdentifier(
-                "cp_${country.alpha2}_name",
-                "string",
-                context.packageName
-            )
+            val resId: Int =
+                context.resources.getIdentifier(
+                    "cp_${country.alpha2}_name",
+                    "string",
+                    context.packageName,
+                )
 
             val name: String = context.getString(resId)
             Log.d("CountryPicker", "found resourcee for cp_${country.alpha2}_name = $name")
@@ -65,13 +64,14 @@ object CPFileReader : CountryFileReading {
      */
     private fun loadMessageGroup(resources: Resources): CPDataStore.MessageGroup {
         onMethodBegin("loadMessageGroup")
-        val messageGroup = CPDataStore.MessageGroup(
-            noMatchMsg = resources.getString(R.string.cp_no_match_msg),
-            searchHint = resources.getString(R.string.cp_search_hint),
-            dialogTitle = resources.getString(R.string.cp_dialog_title),
-            selectionPlaceholderText = resources.getString(R.string.cp_selection_placeholder),
-            clearSelectionText = resources.getString(R.string.cp_clear_selection)
-        )
+        val messageGroup =
+            CPDataStore.MessageGroup(
+                noMatchMsg = resources.getString(R.string.cp_no_match_msg),
+                searchHint = resources.getString(R.string.cp_search_hint),
+                dialogTitle = resources.getString(R.string.cp_dialog_title),
+                selectionPlaceholderText = resources.getString(R.string.cp_selection_placeholder),
+                clearSelectionText = resources.getString(R.string.cp_clear_selection),
+            )
         logMethodEnd("loadMessageGroup")
         return messageGroup
     }

@@ -11,7 +11,6 @@ import org.robolectric.RobolectricTestRunner
 
 @RunWith(RobolectricTestRunner::class)
 class CPDataStoreGeneratorTest {
-
     private val context: Context = ApplicationProvider.getApplicationContext()
 
     @Test
@@ -27,7 +26,7 @@ class CPDataStoreGeneratorTest {
             CPDataStoreGenerator.generate(
                 context,
                 customMasterCountries = "AU,TG,ZA",
-                countryFileReader = MockCountryFileReader
+                countryFileReader = MockCountryFileReader,
             )
 
         assertTrue(dataStore.countryList.any { it.alpha2 == "AU" })
@@ -42,7 +41,7 @@ class CPDataStoreGeneratorTest {
             CPDataStoreGenerator.generate(
                 context,
                 customMasterCountries = "LKA,GHA,AFG",
-                countryFileReader = MockCountryFileReader
+                countryFileReader = MockCountryFileReader,
             )
         assertTrue(dataStore.countryList.any { it.alpha3 == "LKA" })
         assertTrue(dataStore.countryList.any { it.alpha3 == "GHA" })
@@ -56,7 +55,7 @@ class CPDataStoreGeneratorTest {
             CPDataStoreGenerator.generate(
                 context,
                 customMasterCountries = "AU,TG,ZA,LKA,GHA,AFG",
-                countryFileReader = MockCountryFileReader
+                countryFileReader = MockCountryFileReader,
             )
         assertTrue(dataStore.countryList.any { it.alpha3 == "LKA" })
         assertTrue(dataStore.countryList.any { it.alpha3 == "GHA" })
@@ -73,7 +72,7 @@ class CPDataStoreGeneratorTest {
             CPDataStoreGenerator.generate(
                 context,
                 customMasterCountries = "LKA,GHA,AFG,QQQ",
-                countryFileReader = MockCountryFileReader
+                countryFileReader = MockCountryFileReader,
             )
         assertTrue(dataStore.countryList.none { it.alpha3 == "QQQ" })
         assertTrue(dataStore.countryList.any { it.alpha3 == "LKA" })
@@ -88,7 +87,7 @@ class CPDataStoreGeneratorTest {
             CPDataStoreGenerator.generate(
                 context,
                 customMasterCountries = "AU,TG,QQ,ZA",
-                countryFileReader = MockCountryFileReader
+                countryFileReader = MockCountryFileReader,
             )
         assertTrue(dataStore.countryList.none { it.alpha2 == "QQ" })
         assertTrue(dataStore.countryList.any { it.alpha2 == "AU" })
@@ -103,7 +102,7 @@ class CPDataStoreGeneratorTest {
             CPDataStoreGenerator.generate(
                 context,
                 customMasterCountries = "AU,TG,DD,ZA,LKA,GHA,AFG,QQQ",
-                countryFileReader = MockCountryFileReader
+                countryFileReader = MockCountryFileReader,
             )
         assertTrue(dataStore.countryList.none { it.alpha2 == "DD" })
         assertTrue(dataStore.countryList.none { it.alpha3 == "QQQ" })
@@ -122,7 +121,7 @@ class CPDataStoreGeneratorTest {
             CPDataStoreGenerator.generate(
                 context,
                 customMasterCountries = "",
-                countryFileReader = MockCountryFileReader
+                countryFileReader = MockCountryFileReader,
             )
         assertEquals(10, dataStore.countryList.size)
     }
@@ -133,7 +132,7 @@ class CPDataStoreGeneratorTest {
             CPDataStoreGenerator.generate(
                 context,
                 customMasterCountries = "QQ,DDD,ANYThing",
-                countryFileReader = MockCountryFileReader
+                countryFileReader = MockCountryFileReader,
             )
         assertEquals(10, dataStore.countryList.size)
     }
@@ -144,7 +143,7 @@ class CPDataStoreGeneratorTest {
             CPDataStoreGenerator.generate(
                 context,
                 customExcludedCountries = "AU,TG,ZA",
-                countryFileReader = MockCountryFileReader
+                countryFileReader = MockCountryFileReader,
             )
         assertTrue(dataStore.countryList.none { it.alpha2 == "AU" })
         assertTrue(dataStore.countryList.none { it.alpha2 == "TG" })
@@ -158,7 +157,7 @@ class CPDataStoreGeneratorTest {
             CPDataStoreGenerator.generate(
                 context,
                 customExcludedCountries = "LKA,GHA,AFG",
-                countryFileReader = MockCountryFileReader
+                countryFileReader = MockCountryFileReader,
             )
         assertTrue(dataStore.countryList.none { it.alpha3 == "LKA" })
         assertTrue(dataStore.countryList.none { it.alpha3 == "GHA" })
@@ -172,7 +171,7 @@ class CPDataStoreGeneratorTest {
             CPDataStoreGenerator.generate(
                 context,
                 customExcludedCountries = "AU,TG,ZA,LKA,GHA,AFG",
-                countryFileReader = MockCountryFileReader
+                countryFileReader = MockCountryFileReader,
             )
         assertTrue(dataStore.countryList.none { it.alpha3 == "LKA" })
         assertTrue(dataStore.countryList.none { it.alpha3 == "GHA" })
@@ -189,7 +188,7 @@ class CPDataStoreGeneratorTest {
             CPDataStoreGenerator.generate(
                 context,
                 customExcludedCountries = "LKA,GHA,AFG,QQQ",
-                countryFileReader = MockCountryFileReader
+                countryFileReader = MockCountryFileReader,
             )
         assertTrue(dataStore.countryList.none { it.alpha3 == "LKA" })
         assertTrue(dataStore.countryList.none { it.alpha3 == "GHA" })
@@ -203,7 +202,7 @@ class CPDataStoreGeneratorTest {
             CPDataStoreGenerator.generate(
                 context,
                 customExcludedCountries = "AU,TG,QQ,ZA",
-                countryFileReader = MockCountryFileReader
+                countryFileReader = MockCountryFileReader,
             )
         assertTrue(dataStore.countryList.none { it.alpha2 == "AU" })
         assertTrue(dataStore.countryList.none { it.alpha2 == "TG" })
@@ -217,7 +216,7 @@ class CPDataStoreGeneratorTest {
             CPDataStoreGenerator.generate(
                 context,
                 customExcludedCountries = "AU,TG,DD,ZA,LKA,GHA,AFG,QQQ",
-                countryFileReader = MockCountryFileReader
+                countryFileReader = MockCountryFileReader,
             )
         assertTrue(dataStore.countryList.none { it.alpha3 == "LKA" })
         assertTrue(dataStore.countryList.none { it.alpha3 == "GHA" })
@@ -234,7 +233,7 @@ class CPDataStoreGeneratorTest {
             CPDataStoreGenerator.generate(
                 context,
                 customExcludedCountries = "  ",
-                countryFileReader = MockCountryFileReader
+                countryFileReader = MockCountryFileReader,
             )
         assertEquals(10, dataStore.countryList.size)
     }
@@ -245,7 +244,7 @@ class CPDataStoreGeneratorTest {
             CPDataStoreGenerator.generate(
                 context,
                 customExcludedCountries = "QQ,DDD,ANYThing",
-                countryFileReader = MockCountryFileReader
+                countryFileReader = MockCountryFileReader,
             )
         assertEquals(10, dataStore.countryList.size)
     }
@@ -257,7 +256,7 @@ class CPDataStoreGeneratorTest {
                 context,
                 customMasterCountries = "AU,TG,DD,ZA,LKA,GHA,AFG,QQQ",
                 customExcludedCountries = "AUS,ZA,IN,QQ,DDD,ANYThing",
-                countryFileReader = MockCountryFileReader
+                countryFileReader = MockCountryFileReader,
             )
         // master list: AU/AUS,TG,ZA,LKA,GHA,AFG
         // after excluded: TG,LKA,GHA,AFG
@@ -271,7 +270,7 @@ class CPDataStoreGeneratorTest {
                 context,
                 customMasterCountries = "AU,TG,DD,ZA,LKA,GHA,AFG",
                 customExcludedCountries = "AUS,TG,AU,ZA,LKA,GHA,AFG,QQQ",
-                countryFileReader = MockCountryFileReader
+                countryFileReader = MockCountryFileReader,
             )
         // master list: AU,TG,ZA,LKA,GHA,AFG
         assertEquals(6, dataStore.countryList.size)

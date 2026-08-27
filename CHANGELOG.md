@@ -14,6 +14,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   not find required country in the preferred countries so that section is of no use when searching.
   Although, preferred country will continue to show up in regular filtered list if matches for
   query. @hbb20
+- Add support to JetPack Compose @hbb20
+- Out of box composables for Material2 @hbb20
 
 ## v0.0.7 2022-01
 

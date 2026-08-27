@@ -14,6 +14,7 @@ import com.hbb20.countrypicker.recyclerview.loadCountries
 
 class CustomRecyclerViewActivity : AppCompatActivity() {
     lateinit var binding: ActivityCustomRecyclerViewBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCustomRecyclerViewBinding.inflate(layoutInflater)
@@ -22,7 +23,6 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-
         val primaryTextGenerator = { cpCountry: CPCountry ->
             "${cpCountry.name} (${cpCountry.alpha3})"
         }
@@ -35,21 +35,22 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
             "+${cpCountry.phoneCode}"
         }
 
-        val cpListConfig = CPListConfig(
-            preferredCountryCodes = "IN,US,NZ,AU"
-        )
+        val cpListConfig =
+            CPListConfig(
+                preferredCountryCodes = "IN,US,NZ,AU",
+            )
 
         binding.recyclerView.loadCountries { selectedCountry: CPCountry ->
             // your code to handle selected country
         }
 
         binding.recyclerView.loadCountries(
-            preferredCountryCodes = "IN,US,NZ,AU"
+            preferredCountryCodes = "IN,US,NZ,AU",
         ) { selectedCountry ->
             Toast.makeText(this, selectedCountry.name, Toast.LENGTH_SHORT).show()
         }
 
-        val dataFileReader = CPDataStoreGenerator.defaultCountryFileReader
+        val dataFileReader = CPDataStoreGenerator.DEFAULT_FILE_READER
         val customFlagImageProvider = CPRowConfig.defaultFlagProvider
 
         //        binding.recyclerView.loadCountries { selectedCountry: CPCountry ->
@@ -80,13 +81,17 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
         // See CPDataStore for available configuration
         val cpDataStore = CPDataStoreGenerator.generate(this)
 
-        val cpRecyclerViewHelper = CPRecyclerViewHelper(
-            cpDataStore = cpDataStore, // required
-            cpListConfig = cpListConfig, // Default: CPListConfig()
-            cpRowConfig = cpRowConfig // Default: CPRowConfig()
-        ) { selectedCountry: CPCountry ->
-            // required: handle selected country
-        }
+        val cpRecyclerViewHelper =
+            CPRecyclerViewHelper(
+                // required
+                cpDataStore = cpDataStore,
+                // Default: CPListConfig()
+                cpListConfig = cpListConfig,
+                // Default: CPRowConfig()
+                cpRowConfig = cpRowConfig,
+            ) { selectedCountry: CPCountry ->
+                // required: handle selected country
+            }
 
         // attach recyclerView to show list in recyclerView
         cpRecyclerViewHelper.attachRecyclerView(binding.recyclerView)
@@ -107,13 +112,17 @@ class CustomRecyclerViewActivity : AppCompatActivity() {
         // Check CPRowConfig for available configuration
         val cpRowConfig: CPRowConfig = CPRowConfig()
 
-        val cpRecyclerViewHelper = CPRecyclerViewHelper(
-            cpDataStore = cpDataStore, // required
-            cpListConfig = cpListConfig, // Default: CPListConfig()
-            cpRowConfig = cpRowConfig // Default: CPRowConfig()
-        ) { selectedCountry: CPCountry ->
-            // required: handle selected country
-        }
+        val cpRecyclerViewHelper =
+            CPRecyclerViewHelper(
+                // required
+                cpDataStore = cpDataStore,
+                // Default: CPListConfig()
+                cpListConfig = cpListConfig,
+                // Default: CPRowConfig()
+                cpRowConfig = cpRowConfig,
+            ) { selectedCountry: CPCountry ->
+                // required: handle selected country
+            }
 
         // attach recyclerView to show list in recyclerView
         cpRecyclerViewHelper.attachRecyclerView(binding.recyclerView)

@@ -18,13 +18,12 @@ data class CPCountry(
     var cctld: String,
     var flagEmoji: String,
     var phoneCode: Short,
-    var name: String
+    var name: String,
 ) : Comparable<CPCountry> {
-
     companion object {
         internal fun from(
             countryInfo: CountryInfo,
-            translatedName: String?
+            translatedName: String?,
         ): CPCountry {
             countryInfo.apply {
                 return CPCountry(
@@ -41,7 +40,7 @@ data class CPCountry(
                     cctld,
                     flagEmoji,
                     phoneCode,
-                    translatedName ?: englishName
+                    translatedName ?: englishName,
                 )
             }
         }

@@ -10,10 +10,10 @@ import com.hbb20.countrypicker.models.CPDataStore
 import com.hbb20.countrypicker.recyclerview.defaultDataStoreModifier
 
 fun Context.launchCountryPickerDialog(
-    customMasterCountries: String = CPDataStoreGenerator.defaultMasterCountries,
-    customExcludedCountries: String = CPDataStoreGenerator.defaultExcludedCountries,
-    countryFileReader: CountryFileReading = CPDataStoreGenerator.defaultCountryFileReader,
-    useCache: Boolean = CPDataStoreGenerator.defaultUseCache,
+    customMasterCountries: String = CPDataStoreGenerator.DEFAULT_MASTER_COUNTRIES,
+    customExcludedCountries: String = CPDataStoreGenerator.DEFAULT_EXCLUDED_COUNTRIES,
+    countryFileReader: CountryFileReading = CPDataStoreGenerator.DEFAULT_FILE_READER,
+    useCache: Boolean = CPDataStoreGenerator.DEFAULT_USE_CACHE,
     customDataStoreModifier: ((CPDataStore) -> (Unit))? = defaultDataStoreModifier,
     cpFlagProvider: CPFlagProvider? = CPRowConfig.defaultFlagProvider,
     primaryTextGenerator: ((CPCountry) -> String) = CPRowConfig.defaultPrimaryTextGenerator,
@@ -21,42 +21,46 @@ fun Context.launchCountryPickerDialog(
     highlightedTextGenerator: ((CPCountry) -> String)? = CPRowConfig.defaultHighlightedTextGenerator,
     preferredCountryCodes: String? = null,
     dialogViewIds: CPDialogViewIds = CPDialogConfig.defaultCPDialogViewIds,
-    allowSearch: Boolean = CPDialogConfig.defaultCPDialogAllowSearch,
-    allowClearSelection: Boolean = CPDialogConfig.defaultCPDialogAllowClearSelection,
-    showTitle: Boolean = CPDialogConfig.defaultCPDialogDefaultShowTitle,
-    showFullScreen: Boolean = CPDialogConfig.defaultCPDialogShowFullScreen,
-    sizeMode: SizeMode = CPDialogConfig.defaultCPDialogDefaultSizeMode,
-    onCountryClickListener: ((CPCountry?) -> Unit)
+    allowSearch: Boolean = CPDialogConfig.DEFAULT_CP_DIALOG_ALLOW_SEARCH,
+    allowClearSelection: Boolean = CPDialogConfig.DEFAULT_CP_DIALOG_ALLOW_CLEAR_SELECTION,
+    showTitle: Boolean = CPDialogConfig.DEFAULT_CP_DIALOG_SHOW_TITLE,
+    showFullScreen: Boolean = CPDialogConfig.DEFAULT_CP_DIALOG_SHOW_FULL_SCREEN,
+    sizeMode: SizeMode = CPDialogConfig.DEFAULT_CP_DIALOG_SIZE_MODE,
+    onCountryClickListener: ((CPCountry?) -> Unit),
 ) {
-    val cpDataStore = CPDataStoreGenerator.generate(
-        context = this,
-        customMasterCountries = customMasterCountries,
-        customExcludedCountries = customExcludedCountries,
-        countryFileReader = countryFileReader,
-        useCache = useCache
-    )
+    val cpDataStore =
+        CPDataStoreGenerator.generate(
+            context = this,
+            customMasterCountries = customMasterCountries,
+            customExcludedCountries = customExcludedCountries,
+            countryFileReader = countryFileReader,
+            useCache = useCache,
+        )
 
     customDataStoreModifier?.invoke(cpDataStore)
 
-    val cpDialogConfig = CPDialogConfig(
-        dialogViewIds = dialogViewIds,
-        allowSearch = allowSearch,
-        allowClearSelection = allowClearSelection,
-        showTitle = showTitle,
-        showFullScreen = showFullScreen,
-        sizeMode = sizeMode,
-    )
+    val cpDialogConfig =
+        CPDialogConfig(
+            dialogViewIds = dialogViewIds,
+            allowSearch = allowSearch,
+            allowClearSelection = allowClearSelection,
+            showTitle = showTitle,
+            showFullScreen = showFullScreen,
+            sizeMode = sizeMode,
+        )
 
-    val cpCountryRowConfig = CPRowConfig(
-        cpFlagProvider = cpFlagProvider,
-        primaryTextGenerator = primaryTextGenerator,
-        secondaryTextGenerator = secondaryTextGenerator,
-        highlightedTextGenerator = highlightedTextGenerator
-    )
+    val cpCountryRowConfig =
+        CPRowConfig(
+            cpFlagProvider = cpFlagProvider,
+            primaryTextGenerator = primaryTextGenerator,
+            secondaryTextGenerator = secondaryTextGenerator,
+            highlightedTextGenerator = highlightedTextGenerator,
+        )
 
-    val cpListConfig = CPListConfig(
-        preferredCountryCodes = preferredCountryCodes
-    )
+    val cpListConfig =
+        CPListConfig(
+            preferredCountryCodes = preferredCountryCodes,
+        )
 
     val helper =
         CPDialogHelper(

@@ -27,7 +27,7 @@ class CPDialogHelper(
     private val cpDialogConfig: CPDialogConfig,
     private val cpListConfig: CPListConfig,
     private val cpRowConfig: CPRowConfig,
-    val onCountryClickListener: (CPCountry?) -> Unit
+    val onCountryClickListener: (CPCountry?) -> Unit,
 ) {
     fun createDialog(context: Context): Dialog {
         val dialog = Dialog(context)
@@ -43,16 +43,17 @@ class CPDialogHelper(
         val etQuery: EditText? =
             cpDialogConfig.dialogViewIds.queryEditTextId?.let { etQueryId ->
                 dialogView.findViewById(
-                    etQueryId
+                    etQueryId,
                 )
             }
         val imgClearQuery: ImageView? =
             cpDialogConfig.dialogViewIds.clearQueryImageViewId?.let { imgClearQueryId ->
                 dialogView.findViewById(imgClearQueryId)
             }
-        val tvTitle: TextView? = cpDialogConfig.dialogViewIds.titleTextViewId?.let { tvTitleId ->
-            dialogView.findViewById(tvTitleId)
-        }
+        val tvTitle: TextView? =
+            cpDialogConfig.dialogViewIds.titleTextViewId?.let { tvTitleId ->
+                dialogView.findViewById(tvTitleId)
+            }
         val btnClearSelection: Button? =
             cpDialogConfig.dialogViewIds.clearSelectionButtonId?.let { btnClearSelectionId ->
                 dialogView.findViewById(btnClearSelectionId)
@@ -84,7 +85,7 @@ class CPDialogHelper(
             cpDataStore,
             cpRowConfig,
             cpListConfig,
-            etQuery
+            etQuery,
         ) { selectedCountry ->
             onCountryClickListener(selectedCountry)
             dialog.dismiss()
@@ -99,7 +100,7 @@ class CPDialogHelper(
         if (cpDialogConfig.showFullScreen) {
             dialog.window?.setLayout(
                 WindowManager.LayoutParams.MATCH_PARENT,
-                WindowManager.LayoutParams.MATCH_PARENT
+                WindowManager.LayoutParams.MATCH_PARENT,
             )
         }
 

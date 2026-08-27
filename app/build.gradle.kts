@@ -16,40 +16,49 @@ android {
         versionCode = BuildData.versionCode
         versionName = BuildData.versionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
     buildFeatures {
         dataBinding = true
         viewBinding = true
+        compose = true
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = BuildData.appJavaVersion
+        targetCompatibility = BuildData.appJavaVersion
     }
 
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    composeOptions {
+        kotlinCompilerExtensionVersion = Versions.COMPOSE_COMPILER
     }
-    packagingOptions {
+    kotlinOptions {
+        jvmTarget = BuildData.appJavaVersion.toString()
+    }
+
+    packaging {
         jniLibs {
             excludes += setOf("META-INF/licenses/**")
         }
         resources {
-            excludes += setOf(
-                "META-INF/DEPENDENCIES",
-                "META-INF/LICENSE",
-                "META-INF/LICENSE.txt",
-                "META-INF/license.txt",
-                "META-INF/licenses/**",
-                "META-INF/NOTICE",
-                "META-INF/NOTICE.txt",
-                "META-INF/notice.txt",
-                "META-INF/ASL2.0",
-                "META-INF/AL2.0",
-                "META-INF/*.kotlin_module",
-                "META-INF/LGPL2.1",
-                "**/attach_hotspot_windows.dll"
-            )
+            excludes +=
+                setOf(
+                    "META-INF/DEPENDENCIES",
+                    "META-INF/LICENSE",
+                    "META-INF/LICENSE.txt",
+                    "META-INF/license.txt",
+                    "META-INF/licenses/**",
+                    "META-INF/NOTICE",
+                    "META-INF/NOTICE.txt",
+                    "META-INF/notice.txt",
+                    "META-INF/ASL2.0",
+                    "META-INF/AL2.0",
+                    "META-INF/*.kotlin_module",
+                    "META-INF/LGPL2.1",
+                    "**/attach_hotspot_windows.dll",
+                )
         }
     }
     namespace = "com.hbb20.androidcountrypicker"
@@ -73,6 +82,7 @@ dependencies {
     implementation(Deps.viewModels)
     implementation(Deps.timber)
     implementArchitectureComponents()
+    implementCompose()
     implementEpoxy()
     implementTesting()
     implementProject("countrypicker")

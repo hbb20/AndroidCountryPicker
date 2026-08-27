@@ -13,21 +13,27 @@ android {
         minSdk = BuildData.minSdkVersion
     }
     buildFeatures {
+        compose = true
         dataBinding = true
         viewBinding = true
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = BuildData.appJavaVersion
+        targetCompatibility = BuildData.appJavaVersion
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = BuildData.appJavaVersion.toString()
     }
 
     testOptions {
         unitTests.isIncludeAndroidResources = true
     }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = Versions.COMPOSE_COMPILER
+    }
+
     namespace = "com.hbb20.countrypicker"
 }
 dependencies {
@@ -38,6 +44,7 @@ dependencies {
     implementation(Deps.emoji)
     implementation(Deps.googleMaterialDesign)
     implementation(Deps.timber)
+    implementCompose()
     implementEpoxy()
     implementTesting()
 }

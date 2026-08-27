@@ -20,8 +20,8 @@ fun getSampleDataStore(): CPDataStore {
             currencyName = "Afghan Afghani",
             currencySymbol = "؋",
             cctld = "af",
-            flagEmoji = "\uD83C\uDDE6\uD83C\uDDEB"
-        )
+            flagEmoji = "\uD83C\uDDE6\uD83C\uDDEB",
+        ),
     )
 
     masterCountryList.add(
@@ -39,8 +39,8 @@ fun getSampleDataStore(): CPDataStore {
             currencyName = "Australian Dollar",
             currencySymbol = "$",
             cctld = "au",
-            flagEmoji = "\uD83C\uDDE6\uD83C\uDDFA"
-        )
+            flagEmoji = "\uD83C\uDDE6\uD83C\uDDFA",
+        ),
     )
     masterCountryList.add(
         CPCountry(
@@ -57,8 +57,8 @@ fun getSampleDataStore(): CPDataStore {
             currencyName = "Ghanaian New Cedi",
             currencySymbol = "GH₵",
             cctld = "gh",
-            flagEmoji = "\uD83C\uDDEC\uD83C\uDDED"
-        )
+            flagEmoji = "\uD83C\uDDEC\uD83C\uDDED",
+        ),
     )
     masterCountryList.add(
         CPCountry(
@@ -75,8 +75,8 @@ fun getSampleDataStore(): CPDataStore {
             currencyName = "Indian Rupee",
             currencySymbol = "₹",
             cctld = "in",
-            flagEmoji = "\uD83C\uDDEE\uD83C\uDDF3"
-        )
+            flagEmoji = "\uD83C\uDDEE\uD83C\uDDF3",
+        ),
     )
     masterCountryList.add(
         CPCountry(
@@ -93,8 +93,8 @@ fun getSampleDataStore(): CPDataStore {
             currencyName = "Sri Lanka Rupee",
             currencySymbol = "රු",
             cctld = "lk",
-            flagEmoji = "\uD83C\uDDF1\uD83C\uDDF0"
-        )
+            flagEmoji = "\uD83C\uDDF1\uD83C\uDDF0",
+        ),
     )
     masterCountryList.add(
         CPCountry(
@@ -111,8 +111,8 @@ fun getSampleDataStore(): CPDataStore {
             currencyName = "Russian Rouble",
             currencySymbol = "\u20BD",
             cctld = "ru",
-            flagEmoji = "\uD83C\uDDF7\uD83C\uDDFA"
-        )
+            flagEmoji = "\uD83C\uDDF7\uD83C\uDDFA",
+        ),
     )
     masterCountryList.add(
         CPCountry(
@@ -129,8 +129,8 @@ fun getSampleDataStore(): CPDataStore {
             currencyName = "Cfa Franc Bceao",
             currencySymbol = "CFA",
             cctld = "tg",
-            flagEmoji = "\uD83C\uDDF9\uD83C\uDDEC"
-        )
+            flagEmoji = "\uD83C\uDDF9\uD83C\uDDEC",
+        ),
     )
     masterCountryList.add(
         CPCountry(
@@ -147,8 +147,8 @@ fun getSampleDataStore(): CPDataStore {
             currencyName = "United States Dollar",
             currencySymbol = "$",
             cctld = "us",
-            flagEmoji = "\uD83C\uDDFA\uD83C\uDDF8"
-        )
+            flagEmoji = "\uD83C\uDDFA\uD83C\uDDF8",
+        ),
     )
     masterCountryList.add(
         CPCountry(
@@ -165,8 +165,8 @@ fun getSampleDataStore(): CPDataStore {
             currencyName = "South African Rand",
             currencySymbol = "R",
             cctld = "za",
-            flagEmoji = "\uD83C\uDDFF\uD83C\uDDE6"
-        )
+            flagEmoji = "\uD83C\uDDFF\uD83C\uDDE6",
+        ),
     )
     masterCountryList.add(
         CPCountry(
@@ -183,8 +183,8 @@ fun getSampleDataStore(): CPDataStore {
             currencyName = "Zimbabwe Dollar",
             currencySymbol = "$",
             cctld = "zw",
-            flagEmoji = "\uD83C\uDDFF\uD83C\uDDFC"
-        )
+            flagEmoji = "\uD83C\uDDFF\uD83C\uDDFC",
+        ),
     )
     return CPDataStore(
         masterCountryList,
@@ -192,7 +192,7 @@ fun getSampleDataStore(): CPDataStore {
             "No matching result found",
             "Search...",
             "Select a country",
-            "Country"
-        )
+            "Country",
+        ),
     )
 }

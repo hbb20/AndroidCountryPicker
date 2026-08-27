@@ -14,14 +14,15 @@ import org.robolectric.RobolectricTestRunner
  */
 @RunWith(RobolectricTestRunner::class)
 class FlagPackTest {
-
     // add new flag pack here
-    val allFlagPacksProviders = listOf(
-        "FlagPack1" to CPFlagImageProvider(
-            FlagPack1.alpha2ToFlag,
-            FlagPack1.missingFlagPlaceHolder
+    val allFlagPacksProviders =
+        listOf(
+            "FlagPack1" to
+                CPFlagImageProvider(
+                    FlagPack1.alpha2ToFlag,
+                    FlagPack1.missingFlagPlaceHolder,
+                ),
         )
-    )
 
     @Test
     fun `list missing flags in flagpacks`() {
@@ -38,8 +39,9 @@ class FlagPackTest {
             println("Great!!! There is no missing flag in any flag pack")
         } else {
             missingFlags.groupBy { it.first }.forEach { (flagPackName, missingFlagAlpha2) ->
-                println("$flagPackName is missing following flag(s): " +
-                        missingFlagAlpha2.joinToString { it.second }
+                println(
+                    "$flagPackName is missing following flag(s): " +
+                        missingFlagAlpha2.joinToString { it.second },
                 )
             }
         }

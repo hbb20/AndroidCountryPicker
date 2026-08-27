@@ -8,7 +8,7 @@ data class CPRowConfig(
     var cpFlagProvider: CPFlagProvider? = defaultFlagProvider,
     var primaryTextGenerator: ((CPCountry) -> String) = defaultPrimaryTextGenerator,
     var secondaryTextGenerator: ((CPCountry) -> String)? = defaultSecondaryTextGenerator,
-    var highlightedTextGenerator: ((CPCountry) -> String)? = defaultHighlightedTextGenerator
+    var highlightedTextGenerator: ((CPCountry) -> String)? = defaultHighlightedTextGenerator,
 ) {
     companion object {
         val defaultFlagProvider = DefaultEmojiFlagProvider()
